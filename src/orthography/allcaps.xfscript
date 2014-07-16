@@ -1,21 +1,23 @@
-# Xerox xfst script file to optionally uppercase all lexical entries.
-# Extend the alphabet as needed by your language.
+# Initial caps normalisation
+# from Beesley & Karttunen (2003)
+echo <<< defining ALLCAPS >>>
+clear stack 
+define Aupper [A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Á|É|Í|Ó|Ú];
+define Alower [a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|á|é|í|ó|ú];
+define allCap a (->) A, b (->) B, c (->) C, d (->) D, e (->) E, f (->) F, g (->) G, h (->) H, i (->) I, j (->) J, k (->) K, l (->) L, m (->) M, n (->) N, o (->) O, p (->) P, q (->) Q, r (->) R, s (->) S, t (->) T, u (->) U, v (->) V, w (->) W, x (->) X, y (->) Y, z (->) Z, á (->) Á, é (->) É, í (->) Í, ó (->) Ó, ú (->) Ú \/ .#. (Alower) Aupper* _ Aupper* .#. ; 
 
-define uppercase [
-    A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|X|Y|Z|
-    Á|À|Ã|Ä|Å|Æ|É|È|Ê|Ë|Í|Ì|Î|Ï|Ð|Ñ|Ó|Ò|Ô|Õ|Ö|Ø|Ú|Ù|Û|Ü|Ý|Þ
-    ];
+push allCap
 
-define allcaps      a (->) A, b (->) B, c (->) C, d (->) D, e (->) E,
-f (->) F, g (->) G, h (->) H, i (->) I, j (->) J, k (->) K, l (->) L,
-m (->) M, n (->) N, o (->) O, p (->) P, q (->) Q, r (->) R, s (->) S,
-t (->) T, u (->) U, v (->) V, w (->) W, x (->) X, y (->) Y, z (->) Z,
-á (->) Á, à (->) À, â (->) Â, ã (->) Ã, ä (->) Ä, å (->) Å, æ (->) Æ, 
-è (->) È, é (->) É, ê (->) Ê, ë (->) Ë, ì (->) Ì, í (->) Í, î (->) Î, 
-ï (->) Ï, ð (->) Ð, ñ (->) Ñ, ò (->) Ò, ó (->) Ó, ô (->) Ô, õ (->) Õ, 
-ö (->) Ö, ø (->) Ø, ù (->) Ù, ú (->) Ú, û (->) Û, ü (->) Ü, ý (->) Ý, 
-þ (->) Þ
-\/
-.#. uppercase* _ uppercase* .#. ;
+save stack bin/allcaps.fst
 
-push allcaps
+echo <<< COMPOSING >>>
+clear stack
+
+!! read regex allCap .o. @"bin/all.fst";
+read regex @"bin/all.fst" .o. @"bin/allcaps.fst";
+
+save stack bin/allcaps-all.fst
+
+read regex @"bin/all.fst" .o. @"bin/allcaps.fst"; 
+save stack bin/allcaps-all.fst
+

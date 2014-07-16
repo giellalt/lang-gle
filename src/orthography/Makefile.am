@@ -5,9 +5,10 @@
 ####### Source file defs: ########
 
 # set this to names of available orthographic rules in regex and xfst format
-GT_ORTHOGRAPHIC_SRCS=inituppercase.regex \
-					 allcaps.xfscript    \
-					 spellrelax.regex    \
+GT_ORTHOGRAPHIC_SRCS=inituppercase.xfscript \
+					 allcaps.xfscript       \
+					 urucaps.xfscript       \
+					 spellrelax.regex       \
 					 spellrelax-mobile-keyboard.regex
 
 ####### Automake targets: ########
@@ -16,6 +17,7 @@ GT_ORTHOGRAPHIC_FSTS=
 if CAN_HFST
 GT_ORTHOGRAPHIC_FSTS+=allcaps.hfst \
 					  inituppercase.hfst \
+					  urucaps.xfscript \
 					  spellrelax.hfst \
 					  spellrelax-mobile-keyboard.hfst
 endif
