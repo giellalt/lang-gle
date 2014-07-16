@@ -119,12 +119,17 @@ endif # CAN_XFST
 #### slightly more specific than the fallback targets. This is to avoid warnings
 #### about duplicate targets. That is, the local targets should looke like:
 ####
-#### analyser-%.hfst: analyser-%.tmp.hfst
-#### generator-%.hfst: generator-%.tmp.hfst
+
 
 ##################################################################
 #### BEGIN: Add local processing instructions BELOW this line ####
 ##################################################################
+analyser-%.hfst: analyser-%.tmp.hfst fixes.regex
+	$(AM_V_GEN)$(HFST_REGEXP2FST) -S fixes.regex -o fixes.hfst
+	$(AM_V_at)$(HFST_COMPOSE)  fixes.hfst $< |\
+		$(HFST_INVERT) |\
+		$(HFST_MINIMIZE) |\
+		$(HFST_FST2FST) -f olw -o $@
 
 ########################################################
 #### Add language-specific transducer targets here: ####

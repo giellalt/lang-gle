@@ -1,0 +1,118 @@
+# REMOVE UNWANTED STRINGS
+
+# (1) REMOVE THE OVERGENERATION OF INDEFINITE FORM OF VOCATIVE PLURAL
+~$[%+Voc %+Pl [%+Idf|%+Poss]] 
+.o.
+
+# (2) REMOVE UNWANTED ECLIPSED VOCATIVES
+# there should be no Voc form with Eclipsis 
+~$[%+Voc ?* %+Pl %+Ecl]
+
+.o.
+# (3) FIX SOME STRINGS WHICH WERE GENERATED ACCORDING TO THE GENERAL RULES BUT 
+#     WHICH ARE IN FACT IRREGULAR
+
+~$[[{tonn} %+Noun %+Fem %+Gen %+Pl]		! (d)tonnta - doesn't append "ta"
+		|[{crios} %+Noun %+Masc ?+ %+Pl]		! (g)creasanna - "io" doesn't change to "ea"
+		|[{ceann} %+Noun %+Masc %+Voc %+Sg]	! a cheann not a chinn
+		|[{pobal} %+Noun %+Masc %+Voc %+Sg]	! a phobal not a phobail
+		|[{rún} %+Noun %+Masc %+Voc %+Sg]		! a rún not a rúin
+		|[{stór} %+Noun %+Masc %+Voc %+Sg]		! a stór not a stóir
+		|[{abhainn} %+Noun %+Fem ?+ %+Pl]		! aibhneacha not aibhnneacha
+		|[{bráthair} %+Noun %+Masc ?+ %+Pl]		!
+		|[{teanga} %+Noun %+Fem ?+ %+Pl]		! 
+		|[{roinnt} %+Noun %+Fem ?+ %+Pl]		! 
+		|[{toradh} %+Noun %+Masc ?+ %+Pl]		! 
+		|[{ainm} %+Noun %+Masc ?+ %+Pl]			! 
+		|[{croí} %+Noun %+Masc ?+ %+Pl]			!
+		|[{dlí} %+Noun %+Masc ?+ %+Pl]			!
+		|[{rí} %+Noun %+Masc ?+ %+Pl]			!
+		|[{brí} %+Noun %+Fem ?+ %+Pl]			!
+		|[{ubh} %+Noun %+Fem ?+ %+Pl]			! uibheacha not ubhacha
+		|[{caoi} %+Noun %+Fem ?+ %+Pl]			!
+		|[{gnó} %+Noun %+Masc ?+ %+Pl]			!
+		|[{tráthnóna} %+Noun %+Masc ?+ %+Pl]	!
+		|[{contae} %+Noun %+Masc ?+ %+Pl]		!
+		|[{cliabh} %+Noun %+Masc %+Com %+Pl]
+		|[{cliabh} %+Noun %+Masc %+Gen %+Sg]
+		|[{beithíoch} %+Noun %+Masc %+Com %+Pl]
+		|[{beithíoch} %+Noun %+Masc %+Gen %+Sg]
+		|[{díbirt} %+Noun %+Fem %+Gen %+Sg]
+		|[{obair} %+Noun %+Fem %+Gen %+Sg]		! na hoibre not hobrach
+		|[{cearc} %+Noun %+Fem %+Gen %+Sg]		! na circe not ceirce
+		|[{tarlaigh} %+Verb %+VTI %+PastInd %+Len]	! tharla not tharlaigh
+		|[{tarlaigh} %+Verb %+VTI %+PastInd %+Neg %+Len]
+		|[{tarlaigh} %+Verb %+VTI %+PastInd %+NegQ %+Len]
+		|[{tarlaigh} %+Verb %+VTI %+PastInd %+Q %+Len]
+		|[{furasta} %+Adj %+Comp]	! fusa not furasta
+		|[{fada} %+Adj %+Comp]	! faide not fada
+		|[{olc} %+Adj %+Comp]	! measa not oilce
+		|[{feithicil} %+Noun %+Fem %+Com %+Sg]
+#		|[{fidil} %+Noun %+Fem %+Com %+Sg]
+		|[{caibidil} %+Noun %+Fem %+Com %+Sg]
+#		|[{paidir} %+Noun %+Fem %+Com %+Sg]
+		|[{treighid} %+Noun %+Fem %+Com %+Sg]
+#		|[{faighin} %+Noun %+Fem %+Com %+Sg]
+#		|[{faighin} %+Noun %+Fem %+Com %+Sg]
+		|[{saighean} %+Noun %+Fem %+Com %+Sg]
+#		|[{daighear} %+Noun %+Fem %+Com %+Sg]
+#		|[{ladhar} %+Noun %+Fem %+Com %+Sg]
+		|[{meadar} %+Noun %+Fem %+Gen %+Sg]
+#		|[{sceimheal} %+Noun %+Fem %+Com %+Sg]
+		|[{traimil} %+Noun %+Fem %+Com %+Sg]
+		|[{leithinis} %+Noun %+Fem %+Com %+Sg]
+		|[{caingean} %+Noun %+Fem %+Com %+Sg]
+		|[{trilis} %+Noun %+Fem %+Com %+Sg]
+		|[{geimheal} %+Noun %+Fem %+Com %+Sg]
+		|[{aolchoinneal} %+Noun %+Fem %+Com %+Sg]
+		|[{coinneal} %+Noun %+Fem %+Com %+Sg]
+		|[{ceolfhoireann} %+Noun %+Fem %+Com %+Sg]
+#		|[{meitheal} %+Noun %+Fem %+Com %+Sg]
+		|[{aibítir} %+Noun %+Fem %+Com %+Sg]
+		|[{sluasaid} %+Noun %+Fem %+Com %+Sg]
+		|[{dabhach} %+Noun %+Fem %+Com %+Sg]
+		|[{fothair} %+Noun %+Fem %+Com %+Pl]
+		|[{fothair} %+Noun %+Fem %+Voc %+Pl]
+		|[{fothair} %+Noun %+Fem %+Gen %+Strong %+Pl]
+		|[{inis} %+Noun %+Fem %+Com %+Sg]
+		|[{seamair} %+Noun %+Fem %+Com %+Sg]
+		|[{domhain} %+Noun %+Fem %+Com %+Sg]
+		|[{admháil} %+Noun %+Fem %+Com %+Sg]
+		|[{éadáil} %+Noun %+Fem %+Com %+Sg]
+		|[{bréifin} %+Noun %+Fem %+Com %+Sg]
+#		|[{crithir} %+Noun %+Fem %+Com %+Sg]
+		|[{mionn} %+Noun %+Masc %+Com %+Pl]
+		|[{abair} %+Verbal %+Noun %+hPref]
+		|[{tóg} %+Verbal %+Noun %+Gen]
+		|[{mór} %+Adj %+Comp]
+#		|[[{dearg} %+Adj %+Fem %+Gen %+Sg]:{dirge}]
+#		|[{dearg} %+Adj %+Comp]:{dirge}
+#		|[{bándearg} %+Adj %+Fem %+Gen %+Sg]:{bándirge}
+#		|[{bándearg} %+Adj %+Comp]:{bándirge}
+#		|[{liathdhearg} %+Adj %+Fem %+Gen %+Sg]:{liathdhirge}
+#		|[{liathdhearg} %+Adj %+Comp]:{liathdhirge}
+#		|[{maith} %+Adj %+Comp]:{maithe}
+#		|[{maith} %+Adj %+Comp %+Len]:{mhaithe}
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# TEMPORARY REMOVAL OF UNLIKELY ANALYSES FOR MANUAL DISAMB
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		|[{éigh} %+Verb %+VI %+PresSubj %+Neg]
+		|[{nigh} %+Verb %+VTI %+PresSubj ?*]
+#		|[{nigh} %+Verbal ?*]
+#		|[{ní} %+Noun ?*]
+		]
+
+
+
+
+.o.
+
+# this looks at upper level and removes tag from upper level => it cannot tell what surface looks like
+#read regex [[] <- %+hPref || .#. [a|e|i|o|u|á|é|í|ó|ú|b|c|d|f|g|j|l|m|n|p|q|r|s|t|v|w|x|y|z|A|E|I|O|U|Á|É|Í|Ó|Ú|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|S|T|V|W|X|Y|Z] ?+ _ ] .o. @"fix3.fst" ;
+# can at least remove hPref from all non vowel-initial words ...
+[[] <- %+hPref || .#. [b|c|d|f|g|h|j|l|m|n|p|q|r|s|t|v|w|x|y|z|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|S|T|V|W|X|Y|Z] ?+ _ ] 
+; 
+
+
+
+
