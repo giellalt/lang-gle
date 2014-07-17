@@ -124,9 +124,11 @@ endif # CAN_XFST
 ##################################################################
 #### BEGIN: Add local processing instructions BELOW this line ####
 ##################################################################
-analyser-%.hfst: analyser-%.tmp.hfst fixes.regex
+analyser-%.hfst: analyser-%.tmp.hfst fixes.regex fixes-good.regex
 	$(AM_V_GEN)$(HFST_REGEXP2FST) -S fixes.regex -o fixes.hfst
+	$(AM_V_at)$(HFST_REGEXP2FST) -S fixes-good.regex -o fixes-good.hfst
 	$(AM_V_at)$(HFST_COMPOSE)  fixes.hfst $< |\
+		$(HFST_DISJUNCT) fixes-good.hfst |\
 		$(HFST_INVERT) |\
 		$(HFST_MINIMIZE) |\
 		$(HFST_FST2FST) -f olw -o $@

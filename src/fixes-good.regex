@@ -1,0 +1,240 @@
+! corrections
+
+[ [0:d t o n n %+Noun:0 %+Fem:0 %+Gen:0 %+Weak:0 %+Pl:0 %+DefArt:0]
+        |[ t o n n %+Noun:0 %+Fem:0 %+Gen:0 %+Weak:0 %+Pl:0]
+        |[c r i o s 0:a 0:n 0:n 0:a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0]
+        |[c 0:h r i o s 0:a 0:n 0:n 0:a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0]
+        |[c r i o s 0:a 0:n 0:n 0:a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:c r i o s a n n a
+        |[0:g c r i o s 0:a 0:n 0:n 0:a %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{gcriosanna}
+        |[c r i o s 0:a 0:n 0:n 0:a %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:c r i o s a n n a
+        |[c r i o s 0:a 0:n 0:n 0:a %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{chriosanna}
+        |[c 0:h e a n n %+Noun:0 %+Masc:0 %+Voc:0 %+Sg:0] ! ]:c h e a n n
+        |[p 0:h o b a l %+Noun:0 %+Masc:0 %+Voc:0 %+Sg:0] ! ]:p h o b a l
+        |[r ú n %+Noun:0 %+Masc:0 %+Voc:0 %+Sg:0] ! ]:{rún}
+        |[s t ó r %+Noun:0 %+Masc:0 %+Voc:0 %+Sg:0] ! ]:{stór}
+        |[0:h a b h a:n i:e n:a n 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{haibhneacha}
+        |[a 0:i b h a:n i:e n:a n:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:{aibhneacha}
+        |[0:n 0:%- a 0:i b h a:n i:e n:a n:c 0:h 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{n-aibhneacha}
+        |[a 0:i b h a:n i:e n:a n:c 0:h 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{aibhneacha}
+        |[a 0:i b h a:n i:e n:a n:c 0:h 0:a %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{aibhneacha}
+        |[0:h u 0:i b h 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{huibheacha}
+        |[u 0:i b h 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:u i b h e a c h a
+        |[0:n 0:%- u 0:i b h 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{n-uibheacha}
+        |[u 0:i b h 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:u i b h e a c h a
+        |[u 0:i b h 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:u i b h e a c h a
+        |[b r á 0:i t h a:0 i:0 r 0:e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{bráithre}
+        |[b 0:h r á 0:i t h a:0 i:0 r 0:e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:b h r á i t h r e
+        |[b r á 0:i t h a:0 i:0 r 0:e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:{bráithre}
+        |[0:m b r á 0:i t h a:0 i:0 r 0:e %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:m b r á i t h r e
+        |[b r á 0:i t h a:0 i:0 r 0:e %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{bráithre}
+        |[b 0:h r á 0:i t h a:0 i:0 r 0:e %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:b h r á i t h r e
+#!!     |[b l i a i n %+Noun:0 %+Fem:0 %+Com:0 %+Num %+DefArt:0] ! ]:{bliana}
+        |[t e a n g a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:t e a n g a c h a
+        |[t 0:h e a n g a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{theangacha}
+        |[t e a n g a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:t e a n g a c h a
+        |[0:d t e a n g a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{dteangacha}
+        |[t e a n g a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:t e a n g a c h a
+        |[t 0:h e a n g a 0:c 0:h 0:a %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{theangacha}
+        |[r o:a i:0 n n t 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{rannta}
+        |[r o:0 i:0 n n t 0:a %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:{rannta}
+        |[r o:0 i:0 n n t 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{rannta}
+        |[r o:0 i:0 n n t 0:a %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{rannta}
+        |[r o:0 i:0 n n t 0:a %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{rannta}
+        |[t o r a:0 d:t h 0:a 0:í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:t o r t h a í
+        |[t 0:h o r a:0 d:t h 0:a 0:í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:t h o r t h a í
+        |[t o r a:0 d:t h 0:a 0:í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:t o r t h a í
+        |[0:d t o r a:0 d:t h 0:a 0:í %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:d t o r t h a í
+        |[t o r a:0 d:t h 0:a 0:í %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:t o r t h a í
+        |[t 0:h o r a:0 d:t h 0:a 0:í %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:t h o r t h a í
+        |[0:h a i n m 0:n 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{hainmneacha}
+        |[a i n m 0:n 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:{ainmneacha}
+        |[0:n 0:%- a i n m 0:n 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{n-ainmneacha}
+        |[a i n m 0:n 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{ainmneacha}
+        |[a i n m 0:n 0:e 0:a 0:c 0:h 0:a %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{ainmneacha}
+        |[c r o í 0:t 0:h 0:e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:c r o í t h e
+        |[c 0:h r o í 0:t 0:h 0:e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:c h r o í t h e
+        |[c r o í 0:t 0:h 0:e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:c r o í t h e
+        |[0:g c r o í 0:t 0:h 0:e %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:g c r o í t h e
+        |[c r o í 0:t 0:h 0:e %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:c r o í t h e
+        |[c 0:h r o í 0:t 0:h 0:e %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:c h r o í t h e
+] ;
+!        |[d l í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:d l í t h e
+!        |[d l í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:d l í t h e
+!        |[d l í %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:n d l í t h e
+!        |[d l í %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:d l í t h e
+!        |[d l í %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:d h l í t h e
+!        |[r í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:r í t h e
+!        |[r í %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:r í t h e
+!        |[r í %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:r í t h e
+!        |[r í %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:r í t h e
+!        |[r í %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:r í t h e
+!        |[b r í %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:b r í o n n a
+!        |[b r í %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:b h r í o n n a
+!        |[b r í %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:b r í o n n a
+!        |[b r í %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:m b r í o n n a
+!        |[b r í %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:b r í o n n a
+!        |[b r í %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:b h r í o n n a
+!        |[c a o i %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:c a í o n n a
+!        |[c a o i %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:c h a í o n n a
+!        |[c a o i %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:c a í o n n a
+!        |[c a o i %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:g c a í o n n a
+!        |[c a o i %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:c a í o n n a
+!        |[c a o i %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:c h a í o n n a
+!        |[g n ó %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:g n ó t h a í
+!        |[g n ó %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:g h n ó t h a í
+!        |[g n ó %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:g n ó t h a í
+!        |[g n ó %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:g h n ó t h a í
+!        |[g n ó %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:n g n ó t h a í
+!        |[g n ó %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:g n ó t h a í
+!        |[g n ó %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:g h n ó t h a í
+!        |[t r á t h n ó n a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{tráthnónta}
+!        |[t r á t h n ó n a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{thráthnónta}
+!        |[t r á t h n ó n a %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:{tráthnónta}
+!        |[t r á t h n ó n a %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{dtráthnónta}
+!        |[t r á t h n ó n a %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{tráthnónta}
+!        |[t r á t h n ó n a %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{thráthnónta}
+!        |[c o n t a e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:c o n t a e t h a
+!        |[c o n t a e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{chontaetha}
+!        |[c o n t a e %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:c o n t a e t h a
+!        |[c o n t a e %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{gcontaetha}
+!        |[c o n t a e %+Noun:0 %+Masc:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:c o n t a e t h a
+!        |[c o n t a e %+Noun:0 %+Masc:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{chontaetha}
+!        |[c l i a b h %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{cléibh}
+!        |[c l i a b h %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:c h l é i b h
+!        |[c l i a b h %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:{cléibh}
+!        |[c l i a b h %+Noun:0 %+Masc:0 %+Gen:0 %+Sg:0 %+DefArt:0] ! ]:c h l é i b h
+!        |[c l i a b h %+Noun:0 %+Masc:0 %+Gen:0 %+Sg:0] ! ]:{cléibh}
+!        |[b e i t h í o c h %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:b e i t h í g h
+!        |[b e i t h í o c h %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{bheithígh}
+!        |[b e i t h í o c h %+Noun:0 %+Masc:0 %+Com:0 %+Pl:0] ! ]:b e i t h í g h
+!        |[b e i t h í o c h %+Noun:0 %+Masc:0 %+Gen:0 %+Sg:0 %+DefArt:0] ! ]:{bheithígh}
+!        |[b e i t h í o c h %+Noun:0 %+Masc:0 %+Gen:0 %+Sg:0] ! ]:b e i t h í g h
+!        |[d í b i r t %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+DefArt:0] ! ]:d í b e a r t h a
+!        |[d í b i r t %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0] ! ]:d í b e a r t h a
+!        |[o b a i r %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0] ! ]:{oibre}
+!        |[o b a i r %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+DefArt:0] ! ]:h o i b r e
+!        |[c e a r c %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0] ! ]:{circe}
+!        |[c e a r c %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+DefArt:0] ! ]:{circe}
+!        |[c e a r c %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+Len:0] ! ]:c h i r c e
+!        |[c e a r c %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+Ecl:0] ! ]:g c i r c e
+!#       |[c u i d %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:c o d a n n a
+!#       |[c u i d %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:c o d a n n a
+!#       |[c u i d %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:c h o d a n n a
+!#       |[c u i d %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:c o d a n n a
+!#       |[c u i d %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:g c o d a n n a
+!#       |[c u i d %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:c h o d a n n a
+!        |[f u i l %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:{fola}
+!        |[f u i l %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{fola}
+!        |[f u i l %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:f h o l a
+!        |[f u i l %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{fola}
+!        |[f u i l %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:b h f o l a
+!        |[f u i l %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:f h o l a
+!        |[d r a í o c h t %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:d r a í o c h t a
+!        |[d r a í o c h t %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:d r a í o c h t a
+!        |[d r a í o c h t %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{dhraíochta}
+!        |[d r a í o c h t %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:d r a í o c h t a
+!        |[d r a í o c h t %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{ndraíochta}
+!        |[d r a í o c h t %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{dhraíochta}
+!        |[g a b h á i l %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0] ! ]:{gabhálacha}
+!        |[g a b h á i l %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{gabhálacha}
+!        |[g a b h á i l %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{ghabhálacha}
+!        |[g a b h á i l %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{gabhálacha}
+!        |[g a b h á i l %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{ngabhálacha}
+!        |[g a b h á i l %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+DefArt:0] ! ]:{ghabhálacha}
+!        |[t a r l a i g h %+Verb %+VTI %+PastInd %+Len:0] ! ]:t h a r l a ! tharla not tharlaigh
+!        |[t a r l a i g h %+Verb %+VTI %+PastInd %+Neg %+Len:0] ! ]:t h a r l a   ! 
+!        |[t a r l a i g h %+Verb %+VTI %+PastInd %+NegQ %+Len:0] ! ]:t h a r l a  ! 
+!        |[t a r l a i g h %+Verb %+VTI %+PastInd %+Q %+Len:0] ! ]:t h a r l a
+!        |[f e i t h i c i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{feithicil}
+!        |[f e i t h i c i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:{fheithicil}
+!        |[f e i t h i c i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:{bhfeithicil}
+!#       |[f i d i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{fidil}
+!#       |[f i d i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:f h i d i l
+!#       |[f i d i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:b h f i d i l
+!        |[c a i b i d i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{caibidil}
+!        |[c a i b i d i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:c h a i b i d i l
+!        |[c a i b i d i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:g c a i b i d i l
+!#       |[p a i d i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{paidir}
+!#       |[p a i d i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:p h a i d i r
+!#       |[p a i d i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:b p a i d i r
+!        |[t r e i g h i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{treighid}
+!        |[t r e i g h i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:t h r e i g h i d
+!        |[t r e i g h i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:d t r e i g h i d
+!#       |[f a i g h i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{faighin}
+!#       |[f a i g h i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:f h a i g h i n
+!#       |[f a i g h i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:b h f a i g h i n
+!        |[s a i g h e a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{saighean}
+!        |[s a i g h e a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:s h a i g h e a n
+!        |[s a i g h e a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:t s a i g h e a n
+!#       |[d a i g h e a r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{daighear}
+!#       |[d a i g h e a r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:d h a i g h e a r
+!#       |[d a i g h e a r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:n d a i g h e a r
+!#       |[l a d h a r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{ladhar}
+!        |[m e a d a r %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0] ! ]:{meidre}
+!        |[m e a d a r %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+Len:0] ! ]:m h e i d r e
+!        |[m e a d a r %+Noun:0 %+Fem:0 %+Gen:0 %+Sg:0 %+Ecl:0] ! ]:{meidre}
+!#       |[s c e i m h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{sceimheal}
+!#       |[s c e i m h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{tsceimheal}
+!        |[t r a i m i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{traimil}
+!        |[t r a i m i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:t h r a i m i l
+!        |[t r a i m i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:d t r a i m i l
+!        |[i n i s %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{inis}
+!        |[l e i t h i n i s %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{leithinis}
+!        |[c a i n g e a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{caingean}
+!        |[c a i n g e a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:c h a i n g e a n
+!        |[c a i n g e a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:g c a i n g e a n
+!        |[t r i l i s %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{trilis}
+!        |[t r i l i s %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:t h r i l i s
+!        |[t r i l i s %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:d t r i l i s
+!        |[g e i m h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{geimheal}
+!        |[g e i m h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:g h e i m h e a l
+!        |[g e i m h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:n g e i m h e a l
+!        |[{aolchoinneal} %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{aolchoinneal}
+!        |[{aolchoinneal} %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+hPref:0] ! ]:{haolchoinneal}
+!        |[c o i n n e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{coinneal}
+!        |[c o i n n e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:c h o i n n e a l
+!        |[c o i n n e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:g c o i n n e a l
+!        |[{ceolfhoireann} %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{ceolfhoireann}
+!        |[{ceolfhoireann} %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:{cheolfhoireann}
+!        |[{ceolfhoireann} %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:{gceolfhoireann}
+!#       |[m e i t h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{meitheal}
+!#       |[m e i t h e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:m h e i t h e a l
+!        |[a i b í t i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{aibítir}
+!        |[s l u a s a i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{sluasaid}
+!        |[s l u a s a i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:t s l u a s a i d
+!        |[d a b h a c h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{dabhach}
+!        |[d a b h a c h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:d h a b h a c h
+!        |[d a b h a c h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:n d a b h a c h
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+DefArt:0] ! ]:{foithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Len:0] ! ]:{fhoithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Com:0 %+Pl:0 %+Ecl:0] ! ]:{bhfoithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0] ! ]:{foithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+Len:0] ! ]:{fhoithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+DefArt:0] ! ]:{bhfoithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Gen:0 %+Strong:0 %+Pl:0 %+Ecl:0] ! ]:{bhfoithreacha}
+!        |[f o t h a i r %+Noun:0 %+Fem:0 %+Voc:0 %+Pl:0 %+Len:0] ! ]:{fhoithreacha}
+!        |[s e a m a i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{seamair}
+!        |[s e a m a i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:t s e a m a i r
+!        |[d o m h a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{domhain}
+!        |[d o m h a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:d h o m h a i n
+!        |[d o m h a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:n d o m h a i n
+!        |[a d m h á i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{admháil}
+!        |[a d m h á i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+hPref:0] ! ]:h a d m h á i l
+!        |[é a d á i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{éadáil}
+!        |[é a d á i l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+hPref:0] ! ]:h é a d á i l
+!        |[b r é i f i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{bréifin}
+!        |[b r é i f i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:b h r é i f i n
+!        |[b r é i f i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:m b r é i f i n
+!#       |[c r i t h i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0] ! ]:{crithir}
+!#       |[c r i t h i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Len:0] ! ]:c h r i t h i r
+!#       |[c r i t h i r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+Ecl:0] ! ]:g c r i t h i r
+!        |[m i o n n %+Noun:0 %+Masc:0 %+Gen:0 %+Weak:0 %+Pl:0] ! ]:{mionn}
+!        |[m i o n n %+Noun:0 %+Masc:0 %+Gen:0 %+Weak:0 %+Pl:0 %+DefArt:0] ! ]:{mionn}
+!        |[f u r a s t a %+Adj:0 %+Comp:0] ! ]:f u s a        ! not furasta
+!        |[f u r a s t a %+Adj:0 %+Comp:0 %+Len:0] ! ]:f h u s a 
+!        |[f a d a %+Adj:0 %+Comp:0] ! ]:f a i d e          ! not fada
+!        |[f a d a %+Adj:0 %+Comp:0 %+Len:0] ! ]:f h a i d e       
+!        |[o l c %+Adj:0 %+Comp:0] ! ]:m e a s a           ! not oilce
+!        |[m ó r %+Adj:0 %+Comp:0] ! ]:m ó          ! not móire
+!        |[o l c %+Adj:0 %+Comp:0 %+Len:0] ! ]:m h e a s a    
+!;
