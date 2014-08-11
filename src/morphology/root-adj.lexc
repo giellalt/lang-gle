@@ -1,0 +1,681 @@
+! Divvun & Giellatekno - open source grammars for UNDEFINED language
+! Copyright © 2012 The University of Tromsø & the Norwegian Sámi Parliament
+! http://giellatekno.uit.no & http://divvun.no
+!
+! This program is free software; you can redistribute and/or modify
+! this file under the terms of the GNU General Public License as published by
+! the Free Software Foundation, either version 3 of the License, or
+! (at your option) any later version. The GNU General Public License
+! is found at http://www.gnu.org/licenses/gpl.html. It is
+! also available in the file $GTHOME/LICENSE.txt.
+!
+! Other licensing options are available upon request, please contact
+! giellatekno@hum.uit.no or divvun@samediggi.no
+
+! ========================================================================== !
+! !!            !!!Irish morphological analyser                      !
+! ========================================================================== !
+!! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
+ 
+
+Multichar_Symbols  !!≈ !!!@CODE@ definitions
+
+!! !!Analysis symbols
+!! ----------------
+!! The morphological analyses of wordforms of UNDEFINED language are presented
+!! in this system in terms of following symbols.
+!! (It is highly suggested to follow existing standards when adding new tags).
+
+
++Adv		! Adverb
+
++Gn		! General
++Its		! intensifiers e.g. sách, ró- etc.
+!!+Phr		! Phrasal        
++Q		! Interrogative
+!!+Rel		! Relative e.g. mar, nuair
++Dir		! Directional
++Loc		! Locative
++Temp		! Temporal e.g. inniu, amárach etc.
++Past
++Cop
+!---------------------------------------------------------------------------
+
+
+
++Art	! article
++Def	! definite 
+	! There is no explicit indefinite article in Irish -
+	! a noun without an article is indefinite.
++Masc	! masculine gender
++Fem	! feminine gender
+
++Com	! nominative, accusative,dative case
++Gen	! genitive case 
+
++Sg	! singular
++Pl	! plural
+
+
+
++Conj		! conjunction
++Coord		! co-ordinate
++Subord		! subordinate
+
++Past
++Cop
++Len
+
+
++Det		! Determiner
+
++Dem		! Demonstrative
++Poss		! Possessive
++Q			! Interrogative
++Idf		! Indefinite
++Def		! Definite
++Qty		! Quantifier
++Art		! with article
++1P +2P +3P	! first, sceond or third person
+
++Fem		!  feminine gender
++Masc		!  masculine gender
+
++Sg +Pl		! singular or plural in number
+
++CM +CC +CU	! dialects
+
+
++Itj		!  Interjection
++Filler		!  Filled Pause (eh, em,
++Cmc		!  Communicator (yeah, y'know)
++Event		!  Simple Event (laugh, sneeze etc.)
++Xxx		!  Indecipherable speech	
+
+
++Num		! Numeral
++Card		! Cardinal (one two three ...)
++Ord		! Ordinal (first, second, third..) i.e.  mo dhá lámh, an chéad dhá theach 
++Def		! after definite article etc. (an, na, aon, céad)
++Len
++Ecl
++hPref
++Op
+^IM
+^Urú
+^Sé
+^hv
+^tv
+^ts
+
+
++Part		! Particle (not +Vb) (U)
+
++Voc		! Vocative (v)
++Nm		! Numeral (m)
++Inf		! Infinitive (i)
++Pat		! Patronym (p) (e.g. Ó, Ní, Uí, le, de ..)
++Comp		! Comparative degree (c)
++Sup		! Superlative degree (s)
++Cop		!
++Cp		! cop rel part
++Deg		! degree particle with Adj/Abstract Noun (so loud, so sharp etc..
++Ad			! Adverbial particle "go"
+
++Vb			! Verbal (Q)
+
++Neg		! Negative (n)
+!!+ConP		! Continuative Passive (cp)
++Q			! Interrogative verbal particle(q)
++NegQ		! Negative interrogative verbal particle(q)
+
++Rel		! Relative (r)
++Direct
++Indirect
++Pro		! rel part + pron
+
++Subj		! subjunctive
++Imp		! imperative
+!!!+Conj		! conjunction
++Cmpl		! complementizer
+
++Past		! past tense verbal particle
+!!+PastIrreg	! past tense verbal particle
+!!+PastReg	! tenses other than past tense verbal particles
++Fut
++Pres
++Cond
++CU		! canúint Uladh
++CM		! canúint na Mumhan
++CC		! canúint Chonnachta
++Noun
++Subst
++Sg
+
+
++Prep		! Preposition
+
++Simp		! Simple
++Cmpd		! Compound
+!!+Inf		! Infinitive
+
++Rel		! with Relative particle
++Poss		! with Possessive 
++Art		! with Article
++Deg		! with Degree Particle
++Obj		! á = "do a" when obj of VN
+
++1P
++3P
++Sg
++Pl		! plural
++Masc
++Fem
++CU		! Canuint Uladh
++CM
++CC
+!---------------------------------------------------------------------------
+
+
++Pron		! Pronoun
++Pro		! Pronoun with Copula
+
++Prep		! Prepositional pronoun
++Pers		! Personal
++Emph		! Emphatic (Contrastive) form of personal pronoun 
++Ref		! Reflexive
++Idf		! Indefinite
++Dem		! Demonstrative
+!!+Q		! Interrogative
+!!+Art		! 
++hPref		!
++1P +2P +3P	! first, second or third person
++Fem		! feminine gender
++Masc		! masculine gender
+
++Sg +Pl		! singular or plural in number
+
+
+!!+VerbSubj	!  sí, sé and siad are used only when pron follows predicate verb in 
+!! Subj is used for subjunctive
++Sbj	!  sí, sé and siad are used only when pron follows predicate verb in 
+		!  subject position eg Chuaigh SÍ amach (She went out), 
+		!  but Téigh gan Í (Go without her)
+!!!+Obj		! obj pronoun
++CU 
++CM
++CC
+
++Cop
+!---------------------------------------------------------------------------
+
+
++Punct		! Abbreviation
++Int		! sentence internal
++Fin		! sentence final
++Brack		! round, square and curly brackets
++St		! start bracket, quote etc
++End		! end bracket, quote etc
++Q		! question mark ?
++Bar		! hyphen, underscore, dash etc.
++Quo		! all quotation marks double, single etc.
++Conj +Coord	! & 
+!---------------------------------------------------------------------------
+
+
++XMLTag		! 
+
+
++Noun +Com +Gen +Dat +Sg +Pl +Masc +Fem +DefArt +Emph +Subst
++Pron +Prep +Pers +Cmpd +Simp
++Det +Dem +Q +Def +Qty
++Adj +Base
++Adv +Dir
++Cop +Pres +Past
++Art +Def
++Conj +Coord +Subord
+
++Verbal
++Verb
++VT +VI +VTI	! transitive, intrans., both trans & intrans
++1P +2P +3P 	! First, second and third person
++Auto		! Autonomous 
++Vow
+
++Sg +Pl		! Singular and Plural
+
+		!- Indicative Mood - Modh Táscach 
++PresInd	! Present Indicative
++PastInd	! Past Indicative
++FutInd		! Future Indicative
+
+		! Imperfect Indicative
+
++PastImp	! Gháthchaite Past Habitual (Imperfect Indicative)
++PresImp	! Gháthláithreach Pres Habitual (Verb bí only)
+
+		!- Conditional Mood - 
++Cond		! 
+
+		!- Subjunctive Mood - Modh Foshuiteach
++PresSubj	! Present Subjunctive
++PastSubj	! Past Subjunctive
+
+		!- Imperative  Mood - Modh Ordaitheach
++Imper		! 
+
++Rel		! relative forms - direct
++RelInd		! rel. indirect
+
++Dep		! dependant forms
++Neg
++Q
++NegQ
+
++Cop		! Copula
++Pres		! copula present & future
++Past		! copula past & conditional
+
++VF		! - form used before a word starting with a vowel or f+vowel 
++Pro		! - copula - sea
++Emph		! - emphatic forms
++CM		! Canúint na Mumhan
++CC		! Canúint Chonnachta
++CU		! Canúint Uladh
+
++Len
++Ecl
+
+^Verb
+^Sé
+^Urú
+^VN		! verbal noun
+^hv
+!--------------------------------------------------------------------------------
+^Verb
+
++Adj	! adjective
++Base	! positive / base form (changed from +Pos to +Base 10/09/03)
++Comp	! comparative
+! +Sup	! superlative
++Masc	! masculine gender
++Fem	! feminine gender
++Com	! nominative case
++Gen	! genitive case 
++Voc	! vocative case 
++Sg	! singular
++Pl	! plural
+
++Weak	! when an adj is qualifying a strong plural noun(i.e. noun plural is the 
++Strong	! same for all cases) the adj will also have the same form in all cases
+	! BUT when the adj. is qualifying  a weak plural noun,in the gen.case, it  
+	! is not inflected i.e. the base form of the adjective is used. 
+	! Nom and Voc plurals are inflecte as for strong plural nouns
+
++Slender ! qualifies a plural noun ending in a slender consonant
++NotSlen ! qualifies a plural noun ending in a broad consonantor a vowel
++hPref	! prefix e.g. (h)iontach
++Ecl	! eclipsis - urú; e.g. i ngach
++Len	! e.g. ab fhearr, ba mhó
+	! a masc  noun must be either lenitedor eclipsed according to 
+	! preference/dialect. If it is lenited then the adj is likewise lenited.
+	! If it is eclipsed then the adj has no initial mutation.
+
+	! After simple prepositions (e.g. den (from it), don (to it), sa (in it),
+	! san (in it - after vowel initial noun)) both masc and fem
+	! nouns are lenited where possible, an adj following a masc noun which is 
+	! lenited may be *optionally* lenited also. (dialect based ???)
++Cop	! with Copail "is" e.g. b'fhearr
++Its	! Adj+Its
+
+^Adj	! Adjective- used in initial mutations
+^Sé	! Séimhiú (softening) Lenition - h added after certain initial 
+	! consonants (bcdfgmpst)
+^Urú	! eclipsis e.g. i ngach 
+^Ath	! Athrú (change) word ending
+^Caol	! Caolú (slenderise)- Attenuation : ie slenderise the end of word 
+	! (see P9 NIG). 
+	! Usually by adding an "i" after  the last broad vowel 
+	! aouáóú are broad vowels; ieíé are slender vowels  
+	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
+^Lea	! Broaden
+^Coim	! Syncopate
+^IM	! initial mutation
+^hv	! h before vowel
+!**************************************************************************  
+!
+!					L E X I C O N
+!
+!**************************************************************************  
+
+! PART-OF-SPEECH TAGS
++Noun	! noun
++Prop	! proper
++Masc	! masculine gender
++Fem	! feminine gender
++Com	! nominative case 
++Gen	! genitive case 
++Voc	! vocative case 
++Dat	! dative (e.g. teach)
++Sg	! singular
++Pl	! plural
++DefArt	! noun preceeded by definite article (an)
++Def	! noun preceeded by definite article (an)
++Idf	! noun without article (there is no indefinite article)
++Strong	! strong plural 
++Weak	! weak plural
++Emph	! emphasised - ár dteachsa, do theachsa, a teachsa
++Subst	! substantive - functions like a noun, but lack noun inflections
++Len	! (+Sé) lenite after simple prep. eg ar chat
++Ecl	! (+Urú) e.g.  after compound prep eg ar an gcat
++Poss	! possessive e.g. haois, n-aoiseanna 
+	! NOTE m'aois and d'aois will be split into 2 tokens each
++hPref 	! h before vowel 
++CM	! canúint na Mumhan, Munster dialect
++CC	! canúint Chonnachta
++CU	! canúint Uladh
+
++Part	! see irregular nouns
++Num	! see irregular nouns
+
+
+! TAGS TO SIGNIFY WORD-START MUTATIONS
+^M 	! masculine & feminine : initial mutations of singular nouns depend on 
+^F	! whether the noun is masculine or feminine
+
+^C 	! nominative, genitive & vocative : initial mutations of plural nouns 
+^G 	! depend on the case
+^V	!
+
+^Sé	! Séimhiú (softening) Lenition - h added after certain initial 
+	! consonants (bcdfgmpst)
+	! eg "an cat" in gen. sg. becomes "bia an chait" (the cat's  
+	! food) 
+
+^Urú	! Eclipsis - a letter placed before word initial letter  (bcdfgpt)
+	! eg  "g" before "c" - "an cat" in gen. pl. becomes "bia na gcat" 
+	! (the cats' food) 
+
+^tv	! "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
+
+^hv	! "h" before a vowel (eg éan : Nom. Pl. Masc. na héin - the birds) 
+
+^ts	! "t" before "s" 
+	! eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
+^Def	! dntls rule after definite article
+
+! TAGS TO SIGNIFY WORD-END MUTATIONS
+^Caol	! Caolú (slenderise)- Attenuation : ie slenderise the end of word 
+	! Usually by adding an "i" after  the last broad vowel 
+	! aouáóú are broad vowels; ieíé are slender vowels  
+	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
+^Lea	! Leathnú - Broadening eg an "i" is removed 
+	! súil (eye); radharc na súl (eyesight)
+^Coim	! Coimriú - Syncopation - the last unstressed vowel is dropped
+	! eg saghas (type) ->saghs +anna, solas->soils+e (light) - with attenation also
+^Ath	! Athrú (Change) - in certain plurals the ending changes : "e" -> "í",
+	! "each" -> "í" and "ach" changes to "aí" etc.eg gealach -> gealaí (of the moon)
+^VH	! Maintains vowel harmony of broad and slender vowels
+	! Motto : "leathan le leathan agus caol le caol" (slender with slender and 
+	! broad with broad)
+^Emph	! emphatic forms
+^Poss	! possessive marker - singular a haois, ár n-aois
+	! possessive marker - plural   a haoiseanna, ár n-aoiseanna
+^IM	! general initial mutation e.g. mo chat, ar an mballa
+	! 
+
+^CB	! compound boundary
+
+^GUESSNOUN
++Guess
+!**************************************************************************  
+!
+!					L E X I C O N
+!
+!**************************************************************************  
+
+! PART-OF-SPEECH TAGS
++Noun	! noun
++Prop	! proper
++Masc	! masculine gender
++Fem	! feminine gender
++Com	! nominative case 
++Gen	! genitive case 
++Voc	! vocative case 
++Dat
++Sg	! singular
++Pl	! plural
++hPref	! 
++DefArt	! noun preceeded by definite article (an)
++Def	! noun preceeded by definite article (an)
++Idf	! noun without article (there is no indefinite article)
++Strong	! strong plural 
++Weak	! weak plural
++Emph	! emphasised - ár dteachsa, do theachsa, a teachsa
++Len	! lenite after simple prep. eg ar chat
++Prep	! prefix h before vowel
++Ecl	! after compound prep eg ar an gcat
++CM	! canúint na Mumhan, Munster dialect
++CC	! canúint Chonnachta
++CU	! canúint Uladh
+
++Place	! Place name
++Fam	! Family Name
++Pers	! Personal Name
++Adj	! +Adj+Base+DeNom are used for adjectives drived from proper nouns
++Base	! e.g. Spáinneach
++DeNom
+
+
+! TAGS TO SIGNIFY WORD-START MUTATIONS
+^M 	! masculine & feminine : initial mutations of singular nouns depend on 
+^F	! whether the noun is masculine or feminine
+
+^C 	! nominative, genitive & vocative : initial mutations of plural nouns 
+^G 	! depend on the case
+^V	!
+
+^Sé	! Séimhiú (softening) Lenition - h added after certain initial 
+	! consonants (bcdfgmpst)
+	! eg "an cat" in gen. sg. becomes "bia an chait" (the cat's  
+	! food) 
+
+^Urú	! Eclipsis - a letter placed before word initial letter  (bcdfgpt)
+	! eg  "g" before "c" - "an cat" in gen. pl. becomes "bia na gcat" 
+	! (the cats' food) 
+
+^tv	! "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
+
+^hv	! "h" before a vowel (eg éan : Nom. Pl. Masc. na héin - the birds) 
+
+^ts	! "t" before "s" 
+	! eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
+^Def	! dntls rule after definite article
+
+! TAGS TO SIGNIFY WORD-END MUTATIONS
+^Caol	! Caolú (slenderise)- Attenuation : ie slenderise the end of word 
+	! Usually by adding an "i" after  the last broad vowel 
+	! aouáóú are broad vowels; ieíé are slender vowels  
+	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
+^Lea	! Leathnú - Broadening eg an "i" is removed 
+	! súil (eye); radharc na súl (eyesight)
+^Coim	! Coimriú - Syncopation - the last unstressed vowel is dropped
+	! eg saghas (type) ->saghs +anna, solas->soils+e (light) - with attenation also
+^Ath	! Athrú (Change) - in certain plurals the ending changes : "e" -> "í",
+	! "each" -> "í" and "ach" changes to "aí" etc.eg gealach -> gealaí (of the moon)
+^VH	! Maintains vowel harmony of broad and slender vowels
+	! Motto : "leathan le leathan agus caol le caol" (slender with slender and 
+	! broad with broad)
+^Emph	! emphatic forms
+^IM	! general initial mutation e.g. mo chat, ar an mballa
+
+!**************************************************************************  
+!
+!					L E X I C O N
+!
+!**************************************************************************  
+
++Verb
++VT +VI +VTI +VD ! transitive, intrans., both trans & intrans
++Vow 		! vowel initial stem
++Suf 		! -s suffix e.g. a bhíonns
++Typo 		! ta/ata  instead of tá/atá
++Var 		! variant spelling e.g. rabh instead of raibh or dheachaidh
++1P +2P +3P 	! First, second and third person
++Auto		! Autonomous 
+
++Sg +Pl		! Singular and Plural
+
+		!- Indicative Mood - Modh Táscach 
++PresInd	! Present Indicative
++PastInd	! Past Indicative
++FutInd		! Future Indicative
+
+		! Imperfect Indicative
+
++PastImp	! Gháthchaite Past Habitual (Imperfect Indicative)
++PresImp	! Gháthláithreach Pres Habitual (Verb bí only - and deireann (abair)
+
+		!- Conditional Mood - 
++Cond		! 
+
+		!- Subjunctive Mood - Modh Foshuiteach
++PresSubj	! Present Subjunctive
++PastSubj	! Past Subjunctive
+
+		!- Imperative  Mood - Modh Ordaitheach
++Imper		! 
+
+!!+VerbalNoun	!- Verbal Noun - Ainm Briathartha 
+
+!!+VerbalAdj	!- Verbal Adj - Aideacht Briathartha
+
++Rel		! relative forms - direct
++RelInd		! rel. indirect
+
++Dep		! dependant forms
++Neg
++Q
++NegQ
+
++Cop		! Copula
++Pres		! copula present & future
++Past		! copula past & conditional
+
++VF		! - form used before a word starting with a vowel or f+vowel 
++Pron		! - copula+pron - sea
++Art		! - copula+pron+art - sén
++Def		! - copula+pron+art - sén
++Subst		! - copula+pron+art+noun - séard (is é an rud)
++Noun		! - copula+pron+art+noun - séard (is é an rud)
++Emph		! - emphatic forms
++CM		! Canúint na Mumhan
++CC		! Canúint Chonnachta
++CU		! Canúint Uladh
+
++Len
++Ecl
+
+^Verb
+^Sé
+^Urú
+^VN		! verbal noun
+^hv
+!--------------------------------------------------------------------------------
+^Verb
+!--------------------------------------------------------------------------------
+
++Verb
++VT		! transitive
++VD		! ditransitive
++VI		! intransitive
++VTI		! transitive & intransitive
++Vow		! vowel-initial : used to allow past-tense Len e.g. d´ith
+
++1P +2P +3P 	! First, second and third person
++Auto		! Autonomous 
+
++Sg +Pl		! Singular and Plural
+
+! Indicative Mood - Modh Táscach 
+
++PresInd	! Present Indicative
++PastInd	! Past Indicative
++FutInd		! Future Indicative
+!+ImpInd		! Imperfect Indicative
++PastImp	! Past Imperfect Indicative
+
+! Conditional Mood 
+
++Cond		! 
+
+! Subjunctive Mood - Modh Foshuiteach
+
++PresSubj	! Present Subjunctive
++PastSubj	! Past Subjunctive
+
+! Imperative  Mood - Modh Ordaitheach
+
++Imper		! 
++Neg		! Negative
++Q		! Interrogative
++NegQ		! 
++Emph
++Len
++Ecl
+!--------------------------------------------------------------------------------
+^Verb
+^VN
+^Sé		! Séimhiú (Lenite, soften)
+^Caol		! Caolaítear an deireadh (Slenderise the ending)
+^Lea		! Leathnaítear an tús (Broaden the root)
+^LeaS		! Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
+^LC		! leathan/Caol: Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
+
+
+
+^igh 		! remove -igh ending
+^aigh 		! remove -aigh ending
+^Coim		! Coimriú (syncopation)
+^Fr		! Fréamh (root) use root - i.e.don't syncopate in these cases 
+^Urú
+^Do		! d' before Past Past Imperfect (gnáthchaite0 and conditional
+^hv		! h before vowel e.g. ná hólaigí ...
++Verbal
++Noun
++Adj
++Rel
++Len
++Ecl
++Gen
++hPref
++VT
++VI
++VTI
++VD	! ditransitive - not at present
++NStem	! de-nominal verbal (action) noun
+
+^IM	! initial mutation
+^Sé
+^Urú
+^hv
+^Verb
+^áil
+
+LEXICON Root
+	AdjA;				! ORIGINAL TEST LEXICON
+	AdjIrregular;			! ORIGINAL TEST LEXICON
+	Adj-BaseOnly;	!AdjBASE;	! ORIGINAL TEST LEXICON
+	Adj-IrregComp;	!AI-COMP;	! ORIGINAL TEST LEXICON
+	AdjB;				! punk adjs
+	AdjC;				! FP adjs - auto
+	AdjDath; 			! colours
+	AdjE;				! FP adjs - manual
+	Adj-FGB1;			! Foclóir Gaeilge Béarla Uí Dhónaill
+	Adj-FGB2;			! Foclóir Gaeilge Béarla Uí Dhónaill
+	AdjVariants;			! Adj Variants in FGB
+	AdjEqualVariants;		! Adj Variants with Equal Sign in FGB
+
+
+
+! vim: set ft=xfst-lexc:
