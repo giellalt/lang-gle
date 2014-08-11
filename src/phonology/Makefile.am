@@ -25,4 +25,8 @@ GT_PHONOLOGY_SUPPLEMENTS=
 
 include $(top_srcdir)/am-shared/src-phonology-dir-include.am
 
+noinst_DATA+=gle-phon.nouns.hfst gle-phon.verbs.hfst
+
+
+
 # vim: set ft=automake:

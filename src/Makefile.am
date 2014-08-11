@@ -146,12 +146,37 @@ endif # CAN_XFST
 
 #### HFST transducers
 if CAN_HFST
-GT_ANALYSERS_HFST+=
+GT_ANALYSERS_HFST+=analyser-verbs.hfst analyser-nouns.hfst analyser-adj.hfst \
+				   analyser-others.hfst \
+				   analyser-all.hfst
 GT_GENERATORS_HFST+=
 endif # CAN_HFST
 
 #################################################
 #### Add language-specific build rules here: ####
+
+analyser-verbs.hfst: morphology/gle.verb-all.hfst phonology/gle-phon.verbs.hfst
+	hfst-compose-intersect -1 morphology/gle.verb-all.hfst -2 phonology/gle-phon.verbs.hfst |\
+		hfst-minimize -o $@
+
+analyser-nouns.hfst: morphology/gle.noun-all.hfst phonology/gle-phon.nouns.hfst
+	hfst-compose-intersect -1 morphology/gle.noun-all.hfst -2 phonology/gle-phon.nouns.hfst |\
+		hfst-minimize -o $@
+
+analyser-adj.hfst: morphology/gle.adj.hfst phonology/gle-phon.nouns.hfst
+	hfst-compose-intersect -1 morphology/gle.adj.hfst -2 phonology/gle-phon.nouns.hfst |\
+		hfst-minimize -o $@
+
+analyser-others.hfst: morphology/gle.others.hfst
+	hfst-minimize $< -o $@
+
+analyser-all.hfst: analyser-verbs.hfst analyser-nouns.hfst analyser-adj.hfst \
+	analyser-others.hfst
+	hfst-disjunct analyser-verbs.hfst analyser-nouns.hfst |\
+		hfst-disjunct - analyser-adj.hfst |\
+		hfst-disjunct - analyser-others.hfst |\
+		hfst-minimize |\
+		hfst-fst2fst -f olw -o $@
 
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######

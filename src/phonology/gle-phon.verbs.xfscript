@@ -1,0 +1,331 @@
+! Verb (Gaeilge) Replace Rules
+! Elaine Uí Dhonnchadha
+! 
+! (c) 2001 - NEW
+! 2005 - new vn/va triggers
+!***************************************************************************
+!read regex
+! PastInd & Imper use stem
+regex [i g h -> [%^FT] || _ (%^Caol) %^igh ?* %^Verb [[\%^Fr]|.#.]] 
+.o.
+[%^igh ->[]]
+.o.
+[a i g h -> [%^FT] || _ %^aigh ?* %^Verb [\%^Fr]]
+.o.
+[%^aigh ->[]]
+.o.
+!! Verbal Noun Gen
+[á i l t e -> %^FT á l a || _ %^áil %^Verb ] 
+.o.
+[%^áil ->[]]
+.o.
+! Verbal Adjectives
+[t h -> [%^FT] || _ %^th %^Verb ]
+.o.
+! th -> te 
+[%^th ->[]]
+.o.
+! bh/gh/mh -> fa
+[b h -> [%^FT] ,
+g h -> [%^FT] ,
+m h -> [%^FT] || _ %^bgmh %^Verb ]
+.o.
+[%^bgmh ->[]]
+.o.
+
+! 2nd. Conjugation Syncopation of Stem
+
+[a i l -> %^FY l || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[a i n -> %^FY n || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[a i r -> %^FY r || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[a i s -> %^FY s || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[i l -> %^FY l || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[i n -> %^FY n || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[i r -> %^FY r || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[i s -> %^FY s || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[%^Coim ->[]]
+.o.
+[%^Fr ->[]]
+.o.
+
+! 1st Conjugation Slender Stems => broaden stems; leave slender for t endings
+
+[%^LC -> %^Caol || _ %^Verb [t|.#.]]
+.o.
+[i -> [%^FB ] || ?+ _ ? %^LC  %^Verb]
+.o.
+[%^LC -> 0 ]
+.o.
+
+! 1st Conjugation Slender Stems => slenderise endings ! order is important
+
+
+[a i -> %^FS i || %^Caol %^Verb [f|t]* _ ?+]
+.o.
+[a í -> %^FS í || %^Caol %^Verb [f|t]* _  ?* .#.]
+.o.
+[a  -> %^FS e || %^Caol %^Verb [f|t]* _  .#.]
+.o.
+[á  -> %^FS e á || %^Caol %^Verb [f|t]* _  .#.]
+.o.
+[a  -> %^FS e a || %^Caol %^Verb [f|t]* _ ?+] ! f/t - to prevent  amar - eamear
+.o.
+[ó   -> %^FS e o || %^Caol %^Verb [f|t]* _ ?+] 
+.o.
+[%^Caol -> []]
+.o.
+
+! 1st Conjugation Slender Stems => broaden root eg sábháil
+
+[i -> [%^FB ] || _ ? %^Lea]
+.o.
+[%^Lea -> []]
+.o.
+[%^Verb -> []]
+
+.o.
+
+[%^VAdj -> [] ]		!TEMPORARY - VERBAL ADJS. AND VERBAL NOUNS
+			!            IN 2 MUST BE SORTED OUT
+;
+
+! Verb (Gaeilge) Replace Rules
+! Elaine Uí Dhonnchadha
+! 
+! (c) 2001 - NEW
+! 2005 - new vn/va triggers
+!***************************************************************************
+!read regex
+! PastInd & Imper use stem
+regex [i g h -> [%^FT] || _ (%^Caol) %^igh ?* %^Verb [[\%^Fr]|.#.]] 
+.o.
+[%^igh ->[]]
+.o.
+[a i g h -> [%^FT] || _ %^aigh ?* %^Verb [\%^Fr]]
+.o.
+[%^aigh ->[]]
+.o.
+!! Verbal Noun Gen
+[á i l t e -> %^FT á l a || _ %^áil %^Verb ] 
+.o.
+[%^áil ->[]]
+.o.
+! Verbal Adjectives
+[t h -> [%^FT] || _ %^th %^Verb ]
+.o.
+! th -> te 
+[%^th ->[]]
+.o.
+! bh/gh/mh -> fa
+[b h -> [%^FT] ,
+g h -> [%^FT] ,
+m h -> [%^FT] || _ %^bgmh %^Verb ]
+.o.
+[%^bgmh ->[]]
+.o.
+
+! 2nd. Conjugation Syncopation of Stem
+
+[a i l -> %^FY l || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[a i n -> %^FY n || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[a i r -> %^FY r || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[a i s -> %^FY s || _ %^Coim %^Verb [\%^Fr]]
+.o.
+[i l -> %^FY l || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[i n -> %^FY n || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[i r -> %^FY r || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[i s -> %^FY s || _ %^Caol %^Coim %^Verb [\%^Fr]]
+.o.
+[%^Coim ->[]]
+.o.
+[%^Fr ->[]]
+.o.
+
+! 1st Conjugation Slender Stems => broaden stems; leave slender for t endings
+
+[%^LC -> %^Caol || _ %^Verb [t|.#.]]
+.o.
+[i -> [%^FB ] || ?+ _ ? %^LC  %^Verb]
+.o.
+[%^LC -> 0 ]
+.o.
+
+! 1st Conjugation Slender Stems => slenderise endings ! order is important
+
+
+[a i -> %^FS i || %^Caol %^Verb [f|t]* _ ?+]
+.o.
+[a í -> %^FS í || %^Caol %^Verb [f|t]* _  ?* .#.]
+.o.
+[a  -> %^FS e || %^Caol %^Verb [f|t]* _  .#.]
+.o.
+[á  -> %^FS e á || %^Caol %^Verb [f|t]* _  .#.]
+.o.
+[a  -> %^FS e a || %^Caol %^Verb [f|t]* _ ?+] ! f/t - to prevent  amar - eamear
+.o.
+[ó   -> %^FS e o || %^Caol %^Verb [f|t]* _ ?+] 
+.o.
+[%^Caol -> []]
+.o.
+
+! 1st Conjugation Slender Stems => broaden root eg sábháil
+
+[i -> [%^FB ] || _ ? %^Lea]
+.o.
+[%^Lea -> []]
+.o.
+[%^Verb -> []]
+
+.o.
+
+[%^VAdj -> [] ]		!TEMPORARY - VERBAL ADJS. AND VERBAL NOUNS
+			!            IN 2 MUST BE SORTED OUT
+;
+!***************************************************************************
+!SÉIMHIÚ (LENITION)
+!Noun Fem Com Sg / Noun Masc Gen Sg / Noun Voc /Noun IM / Adj / Verb
+!***************************************************************************
+! Séimhiú (Lenite) the following consonants: b,c,d,f,g,m,p,t
+regex [..] -> %^FH h || .#. Len _  ?+ [[%^F %^C]|[%^M %^G]|[%^M %^V]|[%^F %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+,,
+[..] -> %^FH h || .#. [S|s] _  [l|n|r] VowelLC ?+ 
+[[%^F %^C]
+|[%^M %^G]
+|[%^F %^V]
+|[%^M %^V]
+|[%^IM]
+|[%^Adj]
+|[%^Verb]
+|[%^VN]] 
+?* %^Sé
+,,
+[..] -> %^FH h || .#. [S|s] _  VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+!!.o.
+! Séimhiú (Lenite) "s" when followed by Vowel or l|n|r
+!!![..] -> %^FH h || .#. [s|S] _ (%^X) [VowelLC|SWord] ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+!!![..] -> %^FH h || .#. SLen _  VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+!!![..] -> %^FH h || .#. S _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^M %^V]|[%^F %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+!!!,,
+!!![..] -> %^FH h || .#. S _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+!!.o.
+!![..] -> %^FH h || .#. s _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
+!!.o.
+!!,,
+
+!!.o.
+! VERBS ONLY: d' before vowels & f in Past , Imperfect and Conditional of Verbs p97 no.3
+! d'fhéach is split into 2 tokens: d' and fhéach EUD 2004
+!![..] -> d ' || .#. _  [VowelAll|f h] ?+ %^Verb ?* %^Sé
+
+.o.
+%^Sé -> []
+.o.
+%^Do -> []
+.o.
+%^VN -> [] 	! used for séimhiú on f without d' e.g. a fheiceáil not a d'fheiceáil
+
+!***************************************************************************
+!URÚ - ECLIPSIS
+!***************************************************************************
+.o.
+[
+ b -> %^FU m b ,	! consonants
+ B -> %^FU m B ,	! consonants
+ c -> %^FU g c ,
+ C -> %^FU g C ,
+ d -> %^FU n d ,
+ D -> %^FU n D ,
+ f -> %^FU b h f ,
+ F -> %^FU b h F ,
+ g -> %^FU n g ,
+ G -> %^FU n G ,
+ p -> %^FU b p ,
+ P -> %^FU b P ,
+ T -> %^FU d T ,
+ t -> %^FU d t || .#. _ ?+ [[%^G]| [[%^M | %^F] %^C]|[%^Verb]|[%^Adj]|[%^IM]] ?* %^Urú		! Gen Pl & comp prep.
+]
+.o. 
+[..] -> %^FU n %-  || .#. (%^X) _  VowelAll ?* [[%^G]| [[%^M | %^F] %^C]|[%^Verb]|[%^IM]] ?* %^Urú		! Gen Pl only
+
+.o.
+[%^Urú -> []]
+
+
+!***************************************************************************
+! VOWEL PREFIXING t-, h, ts
+!***************************************************************************
+.o.
+! t- before Vowel (lowercase) : Masc Com Sg
+[..] -> %^FV t %- || .#. (%^X) _ VowelLC ?* %^M %^C ?* %^tv			
+.o.
+! t before Vowel (uppercase) : Masc Com Sg
+[..] -> %^FV t || .#. (%^X) _ VowelUC ?* %^M %^C ?* %^tv			
+.o.
+[%^tv -> []]
+
+.o.
+
+! h before Vowel [ Fem Gen Sg | Com Pl]
+! ALSO le hÁine, go hiontach
+[..] -> %^FV h   || .#. (%^X) _ VowelAll ?* [[%^F %^G] | [%^C]|[%^Verb]|%^IM] ?* %^hv		
+!.o.
+! this inserts hPref on lower not upper side
+![0 <- %+hPref || .#. %^FV _ ]
+.o.
+[%^hv -> []]
+
+.o.
+! t before s [ Fem Com Sg | Masc Gen]
+ s -> %^FU t s || .#. _  (%^FH) [VowelAll|l|n|r|h] ?* [[%^F %^C]|[%^M %^G]] ?* %^ts
+
+.o.
+ S -> %^FU t S || .#. _  (%^FH) [VowelAll|l|n|r|h] ?* [[%^F %^C]|[%^M %^G]] ?* %^ts
+.o.
+ 
+%^FH h -> [] || .#. %^FU t [s|S] _ 
+!!!h -> [] || .#. %^FU t [s|S] %^FH  _ 
+
+.o. 
+
+%^ts -> []
+
+
+!***************************************************************************
+! POSSESSIVE PREFIX 
+!***************************************************************************
+.o.
+
+! the following two are now included in determiners with mo and do
+
+![..] -> m '  || .#. _ VowelAll ?+ %^Poss 		! m'athair - my father; m'aithreacha
+!,,
+![..] -> d '  || .#. _ VowelAll ?+ %^Poss		! d'athair - your father
+!,,
+
+! the following are performed in parallel as we want all forms
+
+[..] -> %^FV h  || .#. _ VowelAll ?+ %^Poss			! a hathair - her father
+,,
+[..] -> %^FV n %-  || .#. _ VowelAll ?+ %^Poss 		! n-athair - our/your/their
+.o.
+%^Poss -> []
+
+.o.
+%^IM -> []	! initial mutations caused by compound prepp, possessives etc.
+
+;
+compose net
