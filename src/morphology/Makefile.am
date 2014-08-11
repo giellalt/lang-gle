@@ -47,4 +47,25 @@ GT_XML_SRCS=
 
 include $(top_srcdir)/am-shared/src-morphology-dir-include.am
 
+noinst_DATA+=gle.noun-all.hfst \
+			 gle.adj.hfst \
+			 gle.verb-all.hfst \
+			 gle.others.hfst
+
+generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_LEXC_SRCS)
+	cat $^ > $@
+
+generated_files/gle.adj.lexc: root-adj.lexc $(GT_LEXC_SRCS)
+	cat $^ > $@
+
+generated_files/gle.verb-all.lexc: root-verb-all.lexc $(GT_LEXC_SRCS)
+	cat $^ > $@
+
+generated_files/gle.others.lexc: root-others.lexc $(GT_LEXC_SRCS)
+	cat $^ > $@
+
+
+%.hfst: generated_files/%.lexc
+	hfst-lexc $< -o $@
+
 # vim: set ft=automake:
