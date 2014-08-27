@@ -25,7 +25,9 @@ GT_PHONOLOGY_SUPPLEMENTS=
 
 include $(top_srcdir)/am-shared/src-phonology-dir-include.am
 
-noinst_DATA+=gle-phon.nouns.hfst gle-phon.verbs.hfst
+noinst_DATA+=gle-phon.nouns.hfst gle-phon.verbs.hfst \
+			 gle-phon.initialmutation.hfst \
+			 gle-tidy.hfst
 
 
 
