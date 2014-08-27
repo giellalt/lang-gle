@@ -38,7 +38,7 @@ GT_LEXC_SRCS=\
 			 stems/propernouns.lexc \
 			 stems/punctuations.lexc \
 			 stems/tobar.lexc \
-			 stems/verbs.lexc
+			 stems/VNVA-NEW.lexc
 # Set this to the names of all generated lexc files, if any
 GENERATED_LEXC_SRCS=
 

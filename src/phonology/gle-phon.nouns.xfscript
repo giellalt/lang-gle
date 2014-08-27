@@ -1,117 +1,115 @@
 ! Noun (Gaeilge) Replace Rules
 ! Elaine Uí Dhonnchadha
-! Apr 2004
-! Last Part - tidy up FLASH flags
+! 12/12/96 - continued March 1998
+! 
+!****************************************************************************
+! Certain vowel combinations will be represented by one symbol as these vowel
+! sounds should be treated as a unit.
+! DIPHTHONG EXAMPLE
+! For example in slenderising "ua" we want "uai" not "uiai".
+! Diphthongs 
+!	ua -> U eg bruas ^Caol, buairt ^Lea, díomuach ^Ath (adj.)
+!	ia -> I eg scian ^Lea	(NOT IN USE AT PRESENT)
+! LONG VOWEL EXAMPLE
+! In cathair (city) the "ai" is syncopated but in cathaoir (chair) "aoi" is not.
+! There are two other diphthongs in Irish but the are not explicitly represented
+! orthographically (radharc, etc see Fpóca)
 !
-!**************************************************************************
-read regex [%^FB -> []]		! broadened
-.o.
-[%^FC -> []]		! last syllable changed
-.o.
-[%^FH -> []]		! séimhiú i.e. h inserted
-.o.
-[%^FU -> []]		! urú
-.o.
-[%^FV -> []]		! prefing of vowel-initial words
-.o.
-[%^FS -> []]		! slenderised
-.o.
-[%^FY -> []]		! syncopated
-.o.
-[%^FT -> []]		! verb stem truncated
-.o.
-[%^CB -> []]		! compound boundary e.g. from pref + verb/adj scripts
-;
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! May 2001
-! Last Part - tidy up
+! Long Vowels
+!	ao -> O saol, gaol, cathaoir (sounds like ee)
+!	ae -> E grosaeir, traen ^Lea (sounds like ay)
 !
-!**************************************************************************
-read regex [ %^AE -> a e]
-.o.
-![ %^IA -> i a]
+!	Note: sometimes "eo" has a long sound (like ó) eg ceol, gleo
+!***************************************************************************
+define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA;
+define Nountag  %^F|%^M|%^C|%^G|%^V;
+define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY|%^FS|%^FB;
+
+read regex [ a e -> %^AE ]			! Long vowel symbol
 !.o.
-[ %^AO -> a o]
-.o.
-[ %^UA -> u a]
-.o.
-[%^F -> []]
-.o.
-[%^M -> []]
-.o.
-[%^N -> []]
-.o.
-[%^G -> []]
-.o.
-[%^V -> []]
-.o.
-[%^CB -> []]
-;
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! May 1998
-!
-! Leathú (^Lea) :Broadening of slender words
-! Usually by removing "i"
-! but also by substituting vowels eg io->ea
-! and also by inserting a broad vowel eg í->ío
-!
-! 2004 
-! included %^FC and %^FY in Cons
-! included %^FH in i -> ea rule
-!**************************************************************************
+![ i a -> %^IA ]					! Diphthong symbol
 
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY;
-read regex o i  -> %^FB a || r _ Cons+ %^Lea	! roinn -> rann 
 .o.
+[ a o -> %^AO ]						! Long vowel symbol
 
- i -> %^FB a || [e|é] _ Cons+ %^Lea	! greim(m) -> greama, spéir -> spéartha
 .o.
- 
- i -> %^FB e a || [b|c|m|r] (%^FH h) %^X _ Cons+ %^Lea 	
-				! binn -> beanna, rith -> reatha
-				! cith(m) -> ceatha, crith(m) -> creatha
-				! scian -> sceana (I) imirt -> imeartha
-
- 
-.o.
- i -> [%^FB] || [a|á|%^AE|o|ó|ú|%^UA|%^AO] _ Cons+ %^Lea
-				! CHECK WHETHER "u" SHOULD BE HERE TOO???
-				! OR DOES "ui" ALWAYS GO TO "o" (see next rule)
-				! it appears so ...
-				! súil - súl, dúil, glúin
-				! cóir - córa, móin - móna
-				! deoir - deora, feoil - feola
-				! troid - troda, cainteoir - cainteora
-				! droim(m) - droma, goin - gona, toil
-				! gáir - gártha, tiomáint - tiomána
-				! síocháin - síochána, cáisc - cásca
-				! stair - startha, flaith(m) - flatha
-				! bliain - bliana
-				! grósaeir - grósaera (E), traein - traen(E)
-				! bádóir - bádóra, buairt(U) -> buartha
-				! aoir - aortha (O)
-.o.
- u i -> %^FB o || _ Cons+ %^Lea	! cuid -  na coda, fuil - fola
-.o.
- [..] -> %^FB o || (a) í _ Cons+ %^Lea 	
-				! feadaíl - feadaíola, tír - tíortha
-.o.
-%^Lea -> []
-;
-! Noun & Adjective (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-!
+[ u a -> %^UA ]						! Diphthong symbol
+!;
 ! (c) January 2001
+! (1) Coimriú : Syncopation of Last Unstressed Syllable (^Coim)
+!		before an ending is added
+!***************************************************************************!
+! SYNCOPATION
 !
+! Vowel(s) in last syllable is/are dropped
+! saghas-saghs(anna)
+! (a|e) is required for i->[] in cabh(a)ir 
+! abhh(a)inn nneds fixing
+! daing(e)an, ís(e)al
+! but not cath^AOir 
+! domhn (domhain)
+! folmh (folamh) 
+! bóthr(syncopated bóthar)
+! ramh^Xr (ramhar)
+! uasl (uasal) (^UA=ua diph.)
+! máthr (máthair)
+! dors (doras)
+!***************************************************************************!
+
+! cloigeann - cloigne, craiceann - craicne
+.o.
+[e a n n] -> [%^FY n e] || Cons  _ [Nountag+ |%^Adj] %^Coim
+
+.o.
+! drioball - drible, fuigheall - fuighle
+[e a l l] -> [%^FY l e],
+[a l l]   -> [%^FY l e] || Cons  _ [Nountag+ |%^Adj] %^Coim
+
+.o.
+! abhaill - abhla, abhlacha
+[a i l l]   -> [%^FY l a] || Cons  _ [Nountag+ |%^Adj] %^Coim
+
+.o.
+[a|e|i|o|u] -> [%^FY] || Cons  (a|e) _  ?^<3  [Nountag+ |%^Adj] %^Coim
+.o.
+ %^Coim -> []
+!;
+! 2004 include ^FY flag with consonants 
+!***************************************************************************!
+! (1) Insert "^X" before the final vowel group of every word in the lexicon
+!***************************************************************************!
+! 
+! @-> = match longest string of vowels
+! %^X... = insert ^X before the searched for text
+
+.o.
+Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
+
+!***************************************************************************!
+! (2) These markers are no longer required
+!***************************************************************************!
+
+.o.
+ %^M -> []
+.o.
+ %^F -> []
+.o.
+ %^C -> []
+.o.
+ %^G -> []
+.o.
+ %^V -> []
+.o.
+ %^Adj -> []
+!;
+
 ! Athrú   : Ending Changes (^Ath)
 !
 ! 2004 included ^FC in ea -> 0 correction rule 
 !***************************************************************************!
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY;
-define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AE|%^AO|%^UA;
-read regex é -> %^FC é i || _ %^Ath	! finné -> finnéi+the
+
+.o.
+ é -> %^FC é i || _ %^Ath	! finné -> finnéi+the
 !----------------------------------------------------------------------
 .o.
  í -> %^FC i || _ %^Ath t	! ainmhí -> ainmhi+the
@@ -120,12 +118,14 @@ read regex é -> %^FC é i || _ %^Ath	! finné -> finnéi+the
 !----------------------------------------------------------------------
 .o.
  i ú -> %^FC i || _ %^Ath t	! deimhniú -> deimhni+the (pl)
+
 .o.
  ú -> %^FC u i || _ %^Ath t	! tarlú -> tarlui+the (pl)
 
 !----------------------------------------------------------------------
 .o.
  i ú -> [%^FC ] || _ %^Ath i	! deimhniú -> deimhn+ithe (gen sg)
+
 .o.
 !!! ú -> [%^FC ] || _ %^Ath a	! tarlú -> tarl+aithe (gen sg)
  ú -> [%^FC a] || _ %^Ath i	! tarlú -> tarla+ithe (gen sg)
@@ -141,30 +141,43 @@ read regex é -> %^FC é i || _ %^Ath	! finné -> finnéi+the
 ! and "eadh" become "the|te" loiceadh -> loicthe
 ! and "gt" become "gthe" tarraingt -> tarraingthe
 !new 28/3/08
+
 .o.
  m h n %^X a d h -> [%^FC m h a n]  || _ %^Ath (%^Caol) t ! tamhnadh -> tamhanta
+
 .o.
  n l %^X a d h   -> [%^FC n n a l]  || _ %^Ath (%^Caol) t ! ionladh -> ionnalta
+
 .o.
  a n n %^X a d h   -> [%^FC a n]  || _ %^Ath (%^Caol) t ! foirceannadh -> foirceanta
+
 .o.
  n l %^X e a d h   -> [%^FC n n e a l]  || _ %^Ath (%^Caol) t ! inleadh -> innealta
+
 .o.
  d l %^X a d h   -> [%^FC d l a]  || _ %^Ath (%^Caol) t	! codladh -> codlata
+
 .o.
  t h %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t	! leathadh -> leata
+
 .o.
  t h %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t	! leathadh -> leata
+
 .o.
  t e %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t
+
 .o.
  t %^X a d h     -> [%^FC ]   || _ %^Ath (%^Caol) t
+
 .o.
  e a d h     -> [%^FC ]   || %^X _ %^Ath (%^Caol) t
+
 .o.
     g t      -> [%^FC g]  || _ %^Ath (%^Caol) t	! tarrXaingt -> tarrXaingthe
+
 .o.
   a d h      -> [%^FC ]   || %^X _ %^Ath (%^Caol) t
+
 !!.o.
 !!  a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
 !end new
@@ -230,225 +243,31 @@ read regex é -> %^FC é i || _ %^Ath	! finné -> finnéi+the
 !----------------------------------------------------------------------
 .o.
 %^Ath -> []
+!;
 
-;
-
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! Oct 2003
-! INITIAL MUTATION OF 2nd. PART OF COMPOUND
-! ^Sé : (Séimhiú) Lenition : insert "h" after certain initial consonants
-!***************************************************************************
-
-define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA;
-
-! Séimhiú (Lenite) the following consonants: b,c,d,f,g,m,p,t
-read regex [..] -> h  || %^CB [m|b|c|d|f|g|p|t] _
-.o.
-! Séimhiú (Lenite) "s" when followed by [a|e|i|o|u|l|n|r|á|é|í|ó|ú]
-[..] -> h || %^CB s _ [Vowel|l|n|r] 
-.o. 
-! remove any h prohibited by dntls rule
-! e.g. an-saibhir seanduine
-h -> [] || [d|n|t|l|s] (%-) %^CB [d|n|t|l|s] _	
-!!.o.	NOW REMOVED IN n-reg-tidy AT THE ENd
-!!%^CB -> []	! initial mutation at compound boundary
-;
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! 12/12/96 - continued March 1998
-! 
-!****************************************************************************
-! Certain vowel combinations will be represented by one symbol as these vowel
-! sounds should be treated as a unit.
-! DIPHTHONG EXAMPLE
-! For example in slenderising "ua" we want "uai" not "uiai".
-! LONG VOWEL EXAMPLE
-! In cathair (city) the "ai" is syncopated but in cathaoir (chair) "aoi" is not.
 !
-! (This may reduce network size in places (although it means adding new symbols
-! to the alphabet.)
+! (1) Remove the ^Caol (slenderise) tag if the word is already slender
+!     i.e. if the last vowel is "i" or "í"
+! (2) Remove the ^Lea (broaden) tag if the word is already broad
+!     i.e. if the last vowel is NOT "i" or "í"
+! (3) NB this must happen after Syncopation has taken place
 !
-! Diphthongs 
-!	ua -> U eg bruas ^Caol, buairt ^Lea, díomuach ^Ath (adj.)
-!	ia -> I eg scian ^Lea	(NOT IN USE AT PRESENT)
-! There are two other diphthongs in Irish but the are not explicitly represented
-! orthographically (radharc, etc see Fpóca)
-!
-! Long Vowels
-!	ao -> O saol, gaol, cathaoir (sounds like ee)
-!	ae -> E grosaeir, traen ^Lea (sounds like ay)
-!
-!	Note: sometimes "eo" has a long sound (like ó) eg ceol, gleo
-!***************************************************************************
-
-read regex [ a e -> %^AE ]				! Long vowel symbol
-!.o.
-![ i a -> %^IA ]					! Diphthong symbol
+! 2004 included %^FC and %^FY in Cons 
+!***************************************************************************!
 
 .o.
-[ a o -> %^AO ]						! Long vowel symbol
-
-.o.
-[ u a -> %^UA ];					! Diphthong symbol
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! 12/12/96 - continued March 1998
-! January 2001
-! INITIAL MUTATIONS
-! ^Sé : (Séimhiú) Lenition : insert "h" after certain initial consonants
-! ^Urú : Eclipsis
-! ^tv & ^hv : Prefix "t-" or "h" to words with an initial vowel
-! ^ts : prefix "t" to words starting with "s" followed by "l", "n", "r" or a vowel
-! ^Poss : possessive m', d' etc on nouns
-!
-!xxxx
-!***************************************************************************
-!DEFINITIONS
-!***************************************************************************
-define VowelAll a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA|A|E|I|O|U|Á|É|Í|Ó|Ú;
-define VowelLC a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA;
-define VowelUC A|E|I|O|U|Á|É|Í|Ó|Ú;
-define Len b|c|d|f|g|m|p|t|B|C|D|F|G|M|P|T;
-define SLen S|s;
-define SWord l|n|r;
-!***************************************************************************
-!SÉIMHIÚ (LENITION)
-!Noun Fem Com Sg / Noun Masc Gen Sg / Noun Voc /Noun IM / Adj / Verb
-!***************************************************************************
-! Séimhiú (Lenite) the following consonants: b,c,d,f,g,m,p,t
-regex [..] -> %^FH h || .#. Len _  ?+ [[%^F %^C]|[%^M %^G]|[%^M %^V]|[%^F %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-,,
-[..] -> %^FH h || .#. [S|s] _  [l|n|r] VowelLC ?+ 
-[[%^F %^C]
-|[%^M %^G]
-|[%^F %^V]
-|[%^M %^V]
-|[%^IM]
-|[%^Adj]
-|[%^Verb]
-|[%^VN]] 
-?* %^Sé
-,,
-[..] -> %^FH h || .#. [S|s] _  VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-!!.o.
-! Séimhiú (Lenite) "s" when followed by Vowel or l|n|r
-!!![..] -> %^FH h || .#. [s|S] _ (%^X) [VowelLC|SWord] ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-!!![..] -> %^FH h || .#. SLen _  VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-!!![..] -> %^FH h || .#. S _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^M %^V]|[%^F %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-!!!,,
-!!![..] -> %^FH h || .#. S _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-!!.o.
-!![..] -> %^FH h || .#. s _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé
-!!.o.
-!!,,
-
-!!.o.
-! VERBS ONLY: d' before vowels & f in Past , Imperfect and Conditional of Verbs p97 no.3
-! d'fhéach is split into 2 tokens: d' and fhéach EUD 2004
-!![..] -> d ' || .#. _  [VowelAll|f h] ?+ %^Verb ?* %^Sé
-
-.o.
-%^Sé -> []
-.o.
-%^Do -> []
-.o.
-%^VN -> [] 	! used for séimhiú on f without d' e.g. a fheiceáil not a d'fheiceáil
-
-!***************************************************************************
-!URÚ - ECLIPSIS
-!***************************************************************************
-.o.
-[
- b -> %^FU m b ,	! consonants
- B -> %^FU m B ,	! consonants
- c -> %^FU g c ,
- C -> %^FU g C ,
- d -> %^FU n d ,
- D -> %^FU n D ,
- f -> %^FU b h f ,
- F -> %^FU b h F ,
- g -> %^FU n g ,
- G -> %^FU n G ,
- p -> %^FU b p ,
- P -> %^FU b P ,
- T -> %^FU d T ,
- t -> %^FU d t || .#. _ ?+ [[%^G]| [[%^M | %^F] %^C]|[%^Verb]|[%^Adj]|[%^IM]] ?* %^Urú		! Gen Pl & comp prep.
+[ %^Caol -> [] || [i|í] Cons* _ 	! search to check if 
+				! the last vowel is an "i" or "í" 
 ]
-.o. 
-[..] -> %^FU n %-  || .#. (%^X) _  VowelAll ?* [[%^G]| [[%^M | %^F] %^C]|[%^Verb]|[%^IM]] ?* %^Urú		! Gen Pl only
 
 .o.
-[%^Urú -> []]
+[									
+ %^Lea -> [] || [a|o|u|á|ó|ú|%^UA|%^AO|%^AE|%^IA] Cons* _ 	
+				! check that the last vowel is NOT an "i" or "í" 
+				! U=ua O=ao E=ae (I=ia included though not in use)
+]
+!;
 
-
-!***************************************************************************
-! VOWEL PREFIXING t-, h, ts
-!***************************************************************************
-.o.
-! t- before Vowel (lowercase) : Masc Com Sg
-[..] -> %^FV t %- || .#. (%^X) _ VowelLC ?* %^M %^C ?* %^tv			
-.o.
-! t before Vowel (uppercase) : Masc Com Sg
-[..] -> %^FV t || .#. (%^X) _ VowelUC ?* %^M %^C ?* %^tv			
-.o.
-[%^tv -> []]
-
-.o.
-
-! h before Vowel [ Fem Gen Sg | Com Pl]
-! ALSO le hÁine, go hiontach
-[..] -> %^FV h   || .#. (%^X) _ VowelAll ?* [[%^F %^G] | [%^C]|[%^Verb]|%^IM] ?* %^hv		
-!.o.
-! this inserts hPref on lower not upper side
-![0 <- %+hPref || .#. %^FV _ ]
-.o.
-[%^hv -> []]
-
-.o.
-! t before s [ Fem Com Sg | Masc Gen]
- s -> %^FU t s || .#. _  (%^FH) [VowelAll|l|n|r|h] ?* [[%^F %^C]|[%^M %^G]] ?* %^ts
-
-.o.
- S -> %^FU t S || .#. _  (%^FH) [VowelAll|l|n|r|h] ?* [[%^F %^C]|[%^M %^G]] ?* %^ts
-.o.
- 
-%^FH h -> [] || .#. %^FU t [s|S] _ 
-!!!h -> [] || .#. %^FU t [s|S] %^FH  _ 
-
-.o. 
-
-%^ts -> []
-
-
-!***************************************************************************
-! POSSESSIVE PREFIX 
-!***************************************************************************
-.o.
-
-! the following two are now included in determiners with mo and do
-
-![..] -> m '  || .#. _ VowelAll ?+ %^Poss 		! m'athair - my father; m'aithreacha
-!,,
-![..] -> d '  || .#. _ VowelAll ?+ %^Poss		! d'athair - your father
-!,,
-
-! the following are performed in parallel as we want all forms
-
-[..] -> %^FV h  || .#. _ VowelAll ?+ %^Poss			! a hathair - her father
-,,
-[..] -> %^FV n %-  || .#. _ VowelAll ?+ %^Poss 		! n-athair - our/your/their
-.o.
-%^Poss -> []
-
-.o.
-%^IM -> []	! initial mutations caused by compound prepp, possessives etc.
-
-;
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! (c) 2001
-!
 ! 2004 included %^FC and %^FY in Cons
 !****************************************************************************
 ! ^Caol : Caolú (Attenuation) Slenderisation of broad words
@@ -457,12 +276,11 @@ regex [..] -> %^FH h || .#. Len _  ?+ [[%^F %^C]|[%^M %^G]|[%^M %^V]|[%^F %^V]|[
 !
 !***************************************************************************
 
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY;
-define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AE|%^AO|%^UA;
 
 ! marcach, clúdach, misneach, dúch
 ! polysyllabic stems only, e.g. not beach, laoch
-read regex c h -> %^FC g h || Vowel+ Cons+ %^X (e) a _ %^Caol 
+.o.
+ c h -> %^FC g h || Vowel+ Cons+ %^X (e) a _ %^Caol 
 
 .o.
 ! beithíoch -> beithígh (gs)		13/04/08
@@ -557,61 +375,62 @@ i a -> %^FS e a || %^X _ Cons+ %^Caol a
 !-----------------------------------------------------------------------------
 .o.
  %^Caol -> []
-;
+!;
 
-! Noun & Adjective (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
+! May 1998
+! Leathú (^Lea) :Broadening of slender words
+! Usually by removing "i"
+! but also by substituting vowels eg io->ea
+! and also by inserting a broad vowel eg í->ío
 !
-! (c) January 2001
-!
-! (1) Coimriú : Syncopation of Last Unstressed Syllable (^Coim)
-!		before an ending is added
-!***************************************************************************!
-! SYNCOPATION
-!
-! Vowel(s) in last syllable is/are dropped
-! saghas-saghs(anna)
-! (a|e) is required for i->[] in cabh(a)ir 
-! abhh(a)inn nneds fixing
-! daing(e)an, ís(e)al
-! but not cath^AOir 
-! domhn (domhain)
-! folmh (folamh) 
-! bóthr(syncopated bóthar)
-! ramh^Xr (ramhar)
-! uasl (uasal) (^UA=ua diph.)
-! máthr (máthair)
-! dors (doras)
-!***************************************************************************!
-
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z;
-define Nountag  %^F|%^M|%^C|%^G|%^V;
-! cloigeann - cloigne, craiceann - craicne
-read regex [e a n n] -> [%^FY n e] || Cons  _ [Nountag+ |%^Adj] %^Coim
-.o.
-! drioball - drible, fuigheall - fuighle
-[e a l l] -> [%^FY l e],
-[a l l]   -> [%^FY l e] || Cons  _ [Nountag+ |%^Adj] %^Coim
+! included %^FH in i -> ea rule
+!**************************************************************************
 
 .o.
-! abhaill - abhla, abhlacha
-[a i l l]   -> [%^FY l a] || Cons  _ [Nountag+ |%^Adj] %^Coim
+ o i  -> %^FB a || r _ Cons+ %^Lea	! roinn -> rann 
 
 .o.
-[a|e|i|o|u] -> [%^FY] || Cons  (a|e) _  ?^<3  [Nountag+ |%^Adj] %^Coim
+ i -> %^FB a || [e|é] _ Cons+ %^Lea	! greim(m) -> greama, spéir -> spéartha
+
+.o. 
+ i -> %^FB e a || [b|c|m|r] (%^FH h) %^X _ Cons+ %^Lea 	
+				! binn -> beanna, rith -> reatha
+				! cith(m) -> ceatha, crith(m) -> creatha
+				! scian -> sceana (I) imirt -> imeartha
+
+ 
 .o.
- %^Coim -> []
-;
-! Noun (Gaeilge) Replace Rules - Part E
-! Elaine Uí Dhonnchadha
-!
-! 2001
+ i -> [%^FB] || [a|á|%^AE|o|ó|ú|%^UA|%^AO] _ Cons+ %^Lea
+				! CHECK WHETHER "u" SHOULD BE HERE TOO???
+				! OR DOES "ui" ALWAYS GO TO "o" (see next rule)
+				! it appears so ...
+				! súil - súl, dúil, glúin
+				! cóir - córa, móin - móna
+				! deoir - deora, feoil - feola
+				! troid - troda, cainteoir - cainteora
+				! droim(m) - droma, goin - gona, toil
+				! gáir - gártha, tiomáint - tiomána
+				! síocháin - síochána, cáisc - cásca
+				! stair - startha, flaith(m) - flatha
+				! bliain - bliana
+				! grósaeir - grósaera (E), traein - traen(E)
+				! bádóir - bádóra, buairt(U) -> buartha
+				! aoir - aortha (O)
+
+.o.
+ u i -> %^FB o || _ Cons+ %^Lea	! cuid -  na coda, fuil - fola
+
+.o.
+ [..] -> %^FB o || (a) í _ Cons+ %^Lea 	
+				! feadaíl - feadaíola, tír - tíortha
+.o.
+%^Lea -> []
+!;
+
 !
 ! Vowel Harmony of Broad and Slender Vowels: 
 !	Broad (back) - labio-velarised; sounds like w-glide after vowel
 !	Slender (forward) - palatalised; sounds like y-glide after vowel
-!	Ref: Fiosfeasa
-!
 ! Endings (which are appended to the root) must be broad or slender to agree with root 
 !
 ! NB: this must be tested after ^Coim, ^Caol or ^Lea tags have been applied
@@ -623,10 +442,9 @@ read regex [e a n n] -> [%^FY n e] || Cons  _ [Nountag+ |%^Adj] %^Coim
 !  The broad ending "acha" or "anna" will be applied as standard. If the root
 !  is now found to be slender an "e" will be inserted
 !
-! 2004 included %^FC %^FY %^FB and %^FS in Cons
 !***************************************************************************!
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY|%^FS|%^FB;
-read regex %^X -> []			! no longer required and it would 
+.o.
+ %^X -> []			! no longer required and it would 
 					! get in the way of the next rule
 
 .o.
@@ -634,88 +452,47 @@ read regex %^X -> []			! no longer required and it would
 [ %^VH -> e || [i|í] Cons* _ ]		! check if the last vowel before the %^VH
 					! is slender (ie an "i" or "í" )
 .o.
-
 [ a -> [] || a %^VH _ ]		! remove extre "a" in  Havana^VHach
+
 .o.
  %^VH -> [] 
 
 .o.
-
 [..] -> e || [e|é|i|í|%^AE] Cons* s _ %^Emph
 
 .o.
-
 [..] -> a || [a|á|o|ó|u|ú|%^UA|%^IA|%^AO] Cons* s _ %^Emph
 
 .o.
-
 [..] -> %- ||  s _ s (a|e) %^Emph
 
 .o.
-
 %^Emph -> []
+
+! May 2001
+! Last Part - tidy up
+
+.o.
+[ %^AE -> a e]
+.o.
+![ %^IA -> i a]
+!.o.
+[ %^AO -> a o]
+.o.
+[ %^UA -> u a]
+.o.
+[%^F -> []]
+.o.
+[%^M -> []]
+.o.
+[%^N -> []]
+.o.
+[%^G -> []]
+.o.
+[%^V -> []]
+.o.
+[%^CB -> []]
 ;
 
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-!
-! 2001
-! 2004 include ^FY flag with consonants 
-!***************************************************************************!
-! (1) Insert "^X" before the final vowel group of every word in the lexicon
-!***************************************************************************!
-! 
-define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA;
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FY;
-define Nountag  %^F|%^M|%^C|%^G|%^V;
 
 
-! @-> = match longest string of vowels
-! %^X... = insert ^X before the searched for text
-
-read regex Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
-
-!***************************************************************************!
-! (2) These markers are no longer required
-!***************************************************************************!
-
-.o.
- %^M -> []
-.o.
- %^F -> []
-.o.
- %^C -> []
-.o.
- %^G -> []
-.o.
- %^V -> []
-.o.
- %^Adj -> []
-;
-! Noun (Gaeilge) Replace Rules - Part C0
-! Elaine Uí Dhonnchadha
-!
-! 2001
-!
-! (1) Remove the ^Caol (slenderise) tag if the word is already slender
-!     i.e. if the last vowel is "i" or "í"
-! (2) Remove the ^Lea (broaden) tag if the word is already broad
-!     i.e. if the last vowel is NOT "i" or "í"
-! (3) NB this must happen after Syncopation has taken place
-!
-! 2004 included %^FC and %^FY in Cons 
-!***************************************************************************!
-
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%FY;
-read regex [ %^Caol -> [] || [i|í] Cons* _ 	! search to check if 
-				! the last vowel is an "i" or "í" 
-]
-.o.
-[									
- %^Lea -> [] || [a|o|u|á|ó|ú|%^UA|%^AO|%^AE|%^IA] Cons* _ 	
-				! check that the last vowel is NOT an "i" or "í" 
-				! U=ua O=ao E=ae (I=ia included though not in use)
-]
-;
-
-compose net
