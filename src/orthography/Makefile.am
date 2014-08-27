@@ -16,8 +16,7 @@ GT_ORTHOGRAPHIC_SRCS=inituppercase.xfscript \
 
 GT_ORTHOGRAPHIC_FSTS=
 if CAN_HFST
-GT_ORTHOGRAPHIC_FSTS+=allcaps.hfst \
-					  inituppercase.hfst \
+GT_ORTHOGRAPHIC_FSTS+=  inituppercase.hfst \
 					  urucaps.xfscript \
 					  spellrelax.hfst \
 					  spellrelax-mobile-keyboard.hfst \
