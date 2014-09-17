@@ -2,7 +2,7 @@
 This is a grammatical analyser for Irish.
 
 The analyser behind this source code is written by
-Elaine O'Dhonnchadcha.
+Elaine O'Dhonnchadha.
 
 It contains approximately 80000 stems, and an inflectional component.
 
