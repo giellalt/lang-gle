@@ -1,11 +1,9 @@
 
 This is a grammatical analyser for Irish.
 
-The analyser behind this source code is written by
-Elaine O'Dhonnchadha.
+The analyser behind this source code is written by Elaine Uí Dhonnchadha.
 
 It contains approximately 80000 stems, and an inflectional component.
-
 
 -----
 
