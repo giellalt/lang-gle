@@ -21,14 +21,11 @@
 #! @param GT_TWOLC_SUPPLEMENTS optional, other sources to distribute and
 #! 		  compile for other things
 GT_PHONOLOGY_MAIN=$(GTLANG)-phon.xfsript
-GT_PHONOLOGY_SUPPLEMENTS=
+GT_PHONOLOGY_SUPPLEMENTS=gle-phon.initialmutation.xfscript \
+                         gle-phon.nouns.xfscript           \
+                         gle-phon.verbs.xfscript           \
+                         gle-tidy.xfscript
 
 include $(top_srcdir)/am-shared/src-phonology-dir-include.am
-
-noinst_DATA+=gle-phon.nouns.hfst gle-phon.verbs.hfst \
-			 gle-phon.initialmutation.hfst \
-			 gle-tidy.hfst
-
-
 
 # vim: set ft=automake:
