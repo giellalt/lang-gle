@@ -2257,7 +2257,7 @@ LEXICON NI-biadh
 
 
 LEXICON NP-PLACE
-+Prop+Noun+Masc:	SéUrú;
++Prop+Noun+Masc:	SéUrú2;
 
 LEXICON NP-PLACE-EN-fem
 +Prop+Noun+Fem:		SéUrú-EN;
@@ -2277,13 +2277,13 @@ LEXICON NP-PLACE-pl
 +Prop+Noun+Masc:	SéUrú-PL;
 
 LEXICON NP-FAM-EN
-+Prop+Noun+Masc:	SéUrú;
++Prop+Noun+Masc:	SéUrú2;
 
 LEXICON NP-PERS-EN-fem
-+Prop+Noun+Fem:	SéUrú;
++Prop+Noun+Fem:	SéUrú2;
 
 LEXICON NP-PERS-EN
-+Prop+Noun+Masc:	SéUrú;
++Prop+Noun+Masc:	SéUrú2;
 
 
 LEXICON NP-Fam
@@ -2381,7 +2381,7 @@ LEXICON SéUrú-fem
 +Gen+Sg+hPref:^IM^hve		#;  ! muintir na háite
 +Gen+Pl+Ecl:^IM^Urú		#;
 
-LEXICON SéUrú
+LEXICON SéUrú2
 +Com+Sg:	#; 
 +Gen+Sg+Len:^IM^Sé		#; 
 +Gen+Pl+Ecl:^IM^Urú		#;

@@ -227,7 +227,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj   PL-A;
 +Adj+Com+Slender:^Adj   PL-A-SLENDER;
-+Adj+Gen+Weak:^Adj      PL-TADA;
++Adj+Gen+Weak:^Adj      PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj    PL-A;
 +Adj+Voc:^Adj           PL-A;
 
@@ -244,7 +244,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj   PL-A;
 +Adj+Com+Slender:^Adj   PL-A-SLENDER;
-+Adj+Gen+Weak:^Adj      PL-TADA;
++Adj+Gen+Weak:^Adj      PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj    PL-A;
 +Adj+Voc:^Adj           PL-A;
 
@@ -261,7 +261,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj   PL-A;
 +Adj+Com+Slender:^Adj   PL-A-SLENDER;
-+Adj+Gen+Weak:^Adj      PL-TADA;
++Adj+Gen+Weak:^Adj      PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj    PL-A;
 +Adj+Voc:^Adj           PL-A;
 
@@ -278,7 +278,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj   PL-A;
 +Adj+Com+Slender:^Adj   PL-A-SLENDER;
-+Adj+Gen+Weak:^Adj      PL-TADA;
++Adj+Gen+Weak:^Adj      PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj    PL-A;
 +Adj+Voc:^Adj           PL-A;
 
@@ -295,7 +295,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj   PL-A;
 +Adj+Com+Slender:^Adj   PL-A-SLENDER;
-+Adj+Gen+Weak:^Adj      PL-TADA;
++Adj+Gen+Weak:^Adj      PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj    PL-A;
 +Adj+Voc:^Adj           PL-A;
 
@@ -312,7 +312,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj^Lea   PL-A;
 +Adj+Com+Slender:^Adj^Lea   PL-A-SLENDER;
-+Adj+Gen+Weak:^Adj          PL-TADA;
++Adj+Gen+Weak:^Adj          PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj^Lea    PL-A;
 +Adj+Voc:^Adj^Lea           PL-A;
 
@@ -329,7 +329,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj   PL-E;
 +Adj+Com+Slender:^Adj   PL-E-SLENDER;
-+Adj+Gen+Weak:^Adj      PL-TADA;
++Adj+Gen+Weak:^Adj      PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj    PL-E;
 +Adj+Voc:^Adj           PL-E;
 
@@ -347,11 +347,11 @@ Basic;
 !+Adj+Masc+Gen:^Adj     Masc_gen-D4_voc_sg;
 !+Adj+Masc+Voc:^Adj     Masc_gen-D4_voc_sg;
 
-!+Adj+Com+NotSlen:^Adj  PL-TADA;
+!+Adj+Com+NotSlen:^Adj  PL-TADA-Adj;
 !+Adj+Com+Slender:^Adj  PL-SLENDER;
-!+Adj+Gen+Weak:^Adj     PL-TADA;
-!+Adj+Gen+Strong:^Adj   PL-TADA;
-!+Adj+Voc:^Adj          PL-TADA;
+!+Adj+Gen+Weak:^Adj     PL-TADA-Adj;
+!+Adj+Gen+Strong:^Adj   PL-TADA-Adj;
+!+Adj+Voc:^Adj          PL-TADA-Adj;
 
 
 LEXICON Adj4-1
@@ -366,7 +366,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj^Coim  PL-A;           !sync+a
 +Adj+Com+Slender:^Adj^Coim  PL-A-SLENDER;   !sé+sync+a
-+Adj+Gen+Weak:^Adj          PL-TADA;
++Adj+Gen+Weak:^Adj          PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj^Coim   PL-A;           !sync+a
 +Adj+Voc:^Adj^Coim          PL-A;           !sync+a
 
@@ -382,7 +382,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj^Coim  PL-A;           !sync+a
 +Adj+Com+Slender:^Adj^Coim  PL-A-SLENDER;   !sé+sync+a
-+Adj+Gen+Weak:^Adj          PL-TADA;
++Adj+Gen+Weak:^Adj          PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj^Coim   PL-A;           !sync+a
 +Adj+Voc:^Adj^Coim          PL-A;           !sync+a
 
@@ -399,7 +399,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj^Coim^Caol PL-E;           !sync+slen +e
 +Adj+Com+Slender:^Adj^Coim^Caol PL-E-SLENDER;   !sé+sync+slen +e
-+Adj+Gen+Weak:^Adj              PL-TADA;
++Adj+Gen+Weak:^Adj              PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj^Coim^Caol  PL-E;           !sync+slen +e
 +Adj+Voc:^Adj^Coim^Caol         PL-E;           !sync+slen +e
 
@@ -415,7 +415,7 @@ Basic;
 
 +Adj+Com+NotSlen:^Adj^Coim  PL-A;           !sync+a
 +Adj+Com+Slender:^Adj^Coim  PL-A-SLENDER;   !sé+sync+a
-+Adj+Gen+Weak:^Adj          PL-TADA;
++Adj+Gen+Weak:^Adj          PL-TADA-Adj;
 +Adj+Gen+Strong:^Adj^Coim   PL-A;           !sync+a
 +Adj+Voc:^Adj^Coim          PL-A;           !sync+a
 
@@ -536,12 +536,12 @@ LEXICON PL-SLENDER
 +Pl+Len:^Sé     #;          ! adj IS lenited after a noun ending in a 
                     ! slender consonant
 
-LEXICON PL-TADA                         
+LEXICON PL-TADA-Adj                         
 +Pl:0       #;          ! bean (woman) is a noun with weak plurals
                     ! hataí na mban mór - the big womens' hats 
 !------------------------------------------------------------------------------                 
 LEXICON AdjBASE
-!+Adj+Base:0        SéUrú;
+!+Adj+Base:0        SéUrú-Adj;
 Basic;
 
 
@@ -553,7 +553,7 @@ LEXICON Basic
 +Adj+Base+hPref:^IM^hv  #;  ! e.g. go hiontach
 +Adj+Base+Len:^IM^Sé    #;  ! e.g. ba bhreá
 
-LEXICON SéUrú
+LEXICON SéUrú-Adj
 #;
 +Len:^Adj^Sé    #;
 !:^Adj^Sé   #;
