@@ -38,7 +38,8 @@ GT_LEXC_SRCS_L1_L2=\
 			 stems/propernouns.lexc \
 			 stems/punctuations.lexc \
 			 stems/tobar.lexc \
-			 stems/VNVA-NEW.lexc
+			 stems/verbalnouns.lexc \
+			 stems/verbs.lexc
 # If you are building an error-detecting L2 analyser, specify the lexc files
 # that differ between the regular L1 and the L2 analysers below, in L1 and
 # L2 respectively. L2 files must end in "*-L2.lexc". See SME for an example.
@@ -70,6 +71,9 @@ GT_LOCAL_SRCS=
 ### END: Local processing: ###
 
 include $(top_srcdir)/am-shared/src-morphology-dir-include.am
+
+### This overrides some defaults to handle lexicons of parts-of-speech 
+# separately
 
 noinst_DATA+=gle.noun-all.hfst \
 			 gle.adj.hfst \
