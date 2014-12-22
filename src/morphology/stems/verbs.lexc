@@ -1877,57 +1877,6 @@ LEXICON VI12	! IS (Copula)
 +Cop+Past+RelInd+Neg+VF:nárbh	#;
 
 !************************************************************************************
-
-!************************************************************************************
-LEXICON		SufNegQ
-NegQ;
-+Suf:s	NegQ;			!!! e.g. a bhíonns (may 2012 eud)
-
-LEXICON		NegQ
-+Len:^Verb^Sé		#; ! e.g. a bhíonn
-+Neg+Len:^Verb^Sé	#; ! e.g. ní bhíonn
-+Q+Ecl:^Verb^Urú	#; ! e.g. an mbíonn
-+NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05  e.g. nach mbíonn
-+Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
-#;			   ! e.g. bíonn
-
-LEXICON		NegQ2
-!! 
-+Len:^Verb^Sé		#;
-+Neg+Len:^Verb^Sé	#;
-+Q+Ecl:^Verb^Urú	#;
-+NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
-+Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
-
-LEXICON		NegQIrreg
-!! FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
-!!+Len:^Verb^Sé		#; ! e.g. dhúirt must be neg/negq etc unlike rug which is positive and uses NegQ2 
-+Neg+Len:^Verb^Sé	#;
-+Q+Ecl:^Verb^Urú	#;
-+NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
-+Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
-#;			   ! e.g. dúirt
-
-LEXICON		NegQDep
-+Neg+Len:^Verb^Sé	#;
-+Q+Ecl:^Verb^Urú	#;
-+NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
-+Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
-
-LEXICON		NegSubj
-+Neg+Len:^Verb^Sé	#;
-+Ecl:^Verb^Urú	#;
-
-LEXICON 	NegImper
-#;
-+Neg:^Verb^hv	#;
-!************************************************************************************
-LEXICON		VNRel
-+Rel+Len:^VN^Sé	#;
-#;
-
-!**************************************************************************
-END
 !**************************************************************************
 ! Mixed Verb Stems
  
