@@ -21,10 +21,10 @@
 #! @param GT_TWOLC_SUPPLEMENTS optional, other sources to distribute and
 #! 		  compile for other things
 GT_PHONOLOGY_MAIN=
-GT_PHONOLOGY_SUPPLEMENTS=gle-phon.initialmutation.xfscript \
-                         gle-phon.nouns.xfscript           \
-                         gle-phon.verbs.xfscript           \
-                         gle-tidy.xfscript
+GT_PHONOLOGY_SUPPLEMENTS=gle-phon.init.xfscript \
+                         gle-phon.nounadj.xfscript           \
+                         gle-phon.verb.xfscript           \
+                         gle-phon.tidy.xfscript
 
 include $(top_srcdir)/am-shared/src-phonology-dir-include.am
 

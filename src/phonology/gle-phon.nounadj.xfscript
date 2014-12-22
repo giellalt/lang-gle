@@ -1,3 +1,4 @@
+!THIS ONE
 ! Noun (Gaeilge) Replace Rules
 ! Elaine Uí Dhonnchadha
 ! 12/12/96 - continued March 1998
@@ -81,9 +82,11 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 ! 
 ! @-> = match longest string of vowels
 ! %^X... = insert ^X before the searched for text
-
+! NOTE HFST does not implement the ... operator (unlike xfst and foma)
+! next line changed to remove ... 19-12-2014 (EUD)
+!!!!!Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
 .o.
-Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
+[] @-> %^X || _ Vowel+ Cons* [Nountag|%^Adj]
 
 !***************************************************************************!
 ! (2) These markers are no longer required
@@ -444,7 +447,7 @@ i a -> %^FS e a || %^X _ Cons+ %^Caol a
 !
 !***************************************************************************!
 .o.
- %^X -> []			! no longer required and it would 
+%^X -> []			! no longer required and it would 
 					! get in the way of the next rule
 
 .o.
@@ -493,6 +496,4 @@ i a -> %^FS e a || %^X _ Cons+ %^Caol a
 .o.
 [%^CB -> []]
 ;
-
-
 

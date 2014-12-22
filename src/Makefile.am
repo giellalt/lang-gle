@@ -71,22 +71,22 @@ endif # CAN_HFST
 #################################################
 #### Add language-specific build rules here: ####
 
-analyser-verbs.hfst: morphology/gle.verb-all.hfst phonology/gle-phon.verbs.compose.hfst phonology/gle-phon.initialmutation.compose.hfst phonology/gle-tidy.compose.hfst
-	hfst-compose -1 morphology/gle.verb-all.hfst -2 phonology/gle-phon.initialmutation.compose.hfst |\
-	hfst-compose -2 phonology/gle-phon.verbs.compose.hfst |\
-	hfst-compose -2 phonology/gle-tidy.compose.hfst |\
+analyser-verbs.hfst: morphology/gle.verb-all.hfst phonology/gle-phon.verb.compose.hfst phonology/gle-phon.init.compose.hfst phonology/gle-phon.tidy.compose.hfst
+	hfst-compose -1 morphology/gle.verb-all.hfst -2 phonology/gle-phon.init.compose.hfst |\
+	hfst-compose -2 phonology/gle-phon.verb.compose.hfst |\
+	hfst-compose -2 phonology/gle-phon.tidy.compose.hfst |\
 		hfst-minimize -o $@
 
-analyser-nouns.hfst: morphology/gle.noun-all.hfst phonology/gle-phon.nouns.compose.hfst phonology/gle-phon.initialmutation.compose.hfst phonology/gle-tidy.compose.hfst
-	hfst-compose -1 morphology/gle.noun-all.hfst -2 phonology/gle-phon.initialmutation.compose.hfst |\
-	hfst-compose -2 phonology/gle-phon.nouns.compose.hfst |\
-	hfst-compose -2 phonology/gle-tidy.compose.hfst |\
+analyser-nouns.hfst: morphology/gle.noun-all.hfst phonology/gle-phon.nounadj.compose.hfst phonology/gle-phon.init.compose.hfst phonology/gle-phon.tidy.compose.hfst
+	hfst-compose -1 morphology/gle.noun-all.hfst -2 phonology/gle-phon.init.compose.hfst |\
+	hfst-compose -2 phonology/gle-phon.nounadj.compose.hfst |\
+	hfst-compose -2 phonology/gle-phon.tidy.compose.hfst |\
 		hfst-minimize -o $@
 
-analyser-adj.hfst: morphology/gle.adj.hfst phonology/gle-phon.nouns.compose.hfst phonology/gle-phon.initialmutation.compose.hfst phonology/gle-tidy.compose.hfst
-	hfst-compose -1 morphology/gle.adj.hfst -2 phonology/gle-phon.initialmutation.compose.hfst |\
-	hfst-compose -2 phonology/gle-phon.nouns.compose.hfst |\
-	hfst-compose -2 phonology/gle-tidy.compose.hfst |\
+analyser-adj.hfst: morphology/gle.adj.hfst phonology/gle-phon.nounadj.compose.hfst phonology/gle-phon.init.compose.hfst phonology/gle-phon.tidy.compose.hfst
+	hfst-compose -1 morphology/gle.adj.hfst -2 phonology/gle-phon.init.compose.hfst |\
+	hfst-compose -2 phonology/gle-phon.nounadj.compose.hfst |\
+	hfst-compose -2 phonology/gle-phon.tidy.compose.hfst |\
 		hfst-minimize -o $@
 
 analyser-others.hfst: morphology/gle.others.hfst
