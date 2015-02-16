@@ -1,0 +1,26 @@
+[
+ [ %<noun%> -> %<n%> ] .o.
+ [ %<verb%> -> %<vblex%> ] .o.
+ [ %<art%> -> %<det%> %<def%> ] .o.
+ [ %<prep%> -> %<pr%> ] .o.
+ [ %<pron%> -> %<prn%> ] .o.
+
+ [ %<1p%> -> %<p1%> ] .o.
+ [ %<2p%> -> %<p2%> ] .o.
+ [ %<3p%> -> %<p3%> ] .o.
+
+ [ %<punct%> %<int%>  -> %<cm%>   || %, _ ] .o.
+ [ %<punct%> %<fin%>  -> %<sent%>   || %. _ ] .o.
+
+ [ %<fem%> -> %<f%> ] .o.
+ [ %<masc%> -> %<m%> ] .o.
+
+ [ %<q%> -> %<itg%> ] .o.
+
+ [ %<conj%> %<subord%> -> %<cnjsub%> ] .o.
+ [ %<conj%> %<coord%> -> %<cnjcoo%> ] .o.
+
+ [ %<presind%> -> %<pres%> ] .o.
+
+ [ %<vi%> -> %<iv%> ] 
+]
