@@ -20,7 +20,7 @@
 #! @param GT_TWOLC_MAIN required, the source of phonology
 #! @param GT_TWOLC_SUPPLEMENTS optional, other sources to distribute and
 #! 		  compile for other things
-GT_PHONOLOGY_MAIN=
+GT_PHONOLOGY_MAIN=$(GTLANG)-phon.twolc
 GT_PHONOLOGY_SUPPLEMENTS=gle-phon.init.xfscript \
                          gle-phon.nounadj.xfscript           \
                          gle-phon.verb.xfscript           \
