@@ -599,6 +599,38 @@ LEXICON     NegQ
 +Q+Ecl:^Urú     #;
 +Ecl:^Urú       #;
 
+! Copied from apertium-gle's most recent version (-ryan)
+LEXICON		NegQ2
+!! 
++Len:^Verb^Sé		#;
++Neg+Len:^Verb^Sé	#;
++Q+Ecl:^Verb^Urú	#;
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+
+! Copied from apertium-gle's most recent version (-ryan)
+LEXICON		NegQIrreg
+!! FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
+!!+Len:^Verb^Sé		#; ! e.g. dhúirt must be neg/negq etc unlike rug which is positive and uses NegQ2 
++Neg+Len:^Verb^Sé	#;
++Q+Ecl:^Verb^Urú	#;
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+#;			   ! e.g. dúirt
+
+! Copied from apertium-gle's most recent version (-ryan)
+LEXICON		SufNegQ
+NegQ;
++Suf:s	NegQ;			!!! e.g. a bhíonns (may 2012 eud)
+
+! Copied from apertium-gle's most recent version (-ryan)
+LEXICON		NegQDep
++Neg+Len:^Verb^Sé	#;
++Q+Ecl:^Verb^Urú	#;
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+
+
 LEXICON     NegQPast
 +Len:^Sé    #;
 !!0:^Do     #;
