@@ -4,3 +4,10 @@ your own private purposes as part of working with the language.
 
 Every file in this dir will be ignored by svn, and nothing will be built by the
 build system.
+
+
+--
+
+{{make environment && make external && make all}}
+
+parser for pofiles from Kevin Scannell's gaeilge wordnet -> tsv
