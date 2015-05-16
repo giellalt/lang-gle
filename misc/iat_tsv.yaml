@@ -1,0 +1,22 @@
+﻿# This defines what is iterated over for the remaining part
+Source:
+  row_selector: ".//text/body/termEntry"
+
+# Defines the Target structure
+# `xpath` refers to the source data xpath. xpath queries are relative to
+# this
+Target:
+  sort_by: "gle"
+  columns:
+    - name: gle
+      xpath:  "./langSet[@xml:lang='ga']/tig/term/text()"
+      opts:
+        delim: ";;"
+    - name: eng
+      xpath: "./langSet[@xml:lang='en']/tig/term/text()"
+      opts:
+        delim: ";;"
+    - name: note
+      xpath: "./descripGrp/note/text()"
+      opts:
+        delim: ""

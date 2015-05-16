@@ -1,0 +1,31 @@
+{%- set null = "---" -%}
+{# TODO: filter xmltidy #}
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../../scripts/gt_dictionary.css"?>
+<!DOCTYPE r
+  PUBLIC "-//DivvunGiellatekno//DTD Dictionaries//Multilingual" "../../scripts/gt_dictionary.dtd">
+<r>
+    {% for grouper, g_rows in rows|groupby('gle_words') %}
+       <e>
+          <lg>
+              <l{# pos="TODO"#}>{{ grouper }}</l>
+              {%- for row in g_rows %}
+                  {%- if row.gle_annotation_in_eng != null %}
+                      <re>{{ row.gle_annotation_in_eng }}</re>
+                  {% endif -%}
+              {% endfor %}
+          </lg>
+          <mg>
+            {% for row in g_rows %}
+             <tg xml:lang="eng">
+                 <t pos="{{ row.eng_pos|capitalize }}">{{ row.eng }}</t>
+                 {% if row.eng_annotation_in_eng != null -%}
+                 <re>{{ row.eng_annotation_in_eng }}</re>
+                 {%- endif %}
+             </tg>
+           {% endfor %}
+          </mg>
+       </e>
+   {% endfor %}
+</r>
+{# vim: set ts=4 sw=4 tw=0 syntax=xml : #}
