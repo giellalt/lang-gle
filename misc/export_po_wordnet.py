@@ -43,17 +43,17 @@ def clean_comment(comment):
 
 
 def clean_eng(eng):
-    import re
 
     pos = None
     annotation = None
 
-    parts = re.split('\s*', eng)
-    if len(parts) == 3:
-        _an = parts[2]
-        annotation = _an[1:len(_an)-1]
+    parts = eng.split('  ')
 
     eng, pos = parts[0], parts[1]
+
+    if ' (' in pos:
+        pos, _, annotation = pos.partition(' (')
+        annotation = annotation.replace(')', '')
 
     return {
         'eng': eng,

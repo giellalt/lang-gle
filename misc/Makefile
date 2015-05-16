@@ -19,4 +19,8 @@ wordnet.tsv: wordnet-gaeilge/en2wn.po
 	cat $@.d.tmp | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}' > $@
 	rm $@.d.tmp $@.tmp
 
-all: wordnet.tsv
+wordnet.xml: wordnet.tsv
+	. env/bin/activate && python render_tsv.py entry.j2 $^ > $@
+
+all: wordnet.tsv \
+	 wordnet.xml
