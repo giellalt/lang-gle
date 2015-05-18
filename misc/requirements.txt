@@ -1,1 +1,8 @@
+Jinja2==2.7.3
+MarkupSafe==0.23
+PyYAML==3.11
+gnureadline==6.3.3
+ipython==3.1.0
+lxml==3.4.4
 polib==1.0.6
+wsgiref==0.1.2
