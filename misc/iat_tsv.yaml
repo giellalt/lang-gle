@@ -16,6 +16,10 @@ Target:
       xpath: "./langSet[@xml:lang='en']/tig/term/text()"
       opts:
         delim: ";;"
+    - name: term_type
+      xpath: "./langSet[@xml:lang='en']/tig/termNote[@type='termType']/text()"
+      opts:
+        delim: ";;"
     - name: note
       xpath: "./descripGrp/note/text()"
       opts:

@@ -16,6 +16,7 @@ from jinja2 import Template, Environment, FileSystemLoader
 import sys
 import os
 import csv
+from itertools import izip_longest
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_ENVIRONMENT = Environment(
@@ -24,8 +25,13 @@ TEMPLATE_ENVIRONMENT = Environment(
     trim_blocks=False,
     extensions=[
         'jinja2.ext.autoescape',
-    ]
+        'jinja2.ext.do',
+    ],
 )
+
+TEMPLATE_ENVIRONMENT.globals['zip'] = zip
+TEMPLATE_ENVIRONMENT.globals['len'] = len
+TEMPLATE_ENVIRONMENT.globals['izip_longest'] = izip_longest
 
 def render_template(template_filename, context):
     return TEMPLATE_ENVIRONMENT.get_template(template_filename).render(context)
