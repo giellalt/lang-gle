@@ -1,3 +1,1 @@
-POS tagging of gle side of wordnet? wordnet may already contain POS for some of this
-tsv -> .xml format
-
+* is there a better location for all this stuff? words/dicts/ lets you provide custom scripts?

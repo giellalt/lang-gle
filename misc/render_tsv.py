@@ -2,6 +2,14 @@
 
     python render_tsv.py template.j2 input.tsv > output.whatever
 
+IDEA / TODO: create a template filter that analyzes in an FST, and makes
+the output accesssible as a python obj, allows comparing eng tags, and
+inserting lemmas where they don't exist. This could be done as a
+separate step on a TSV, but what if we also want access to tagsets
+
+IDEA / TODO: merge in additional files by selecting TSV column as ID
+field, but this can be done by merging TSVs before.
+
 """
 
 from jinja2 import Template, Environment, FileSystemLoader
@@ -13,7 +21,11 @@ PATH = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_ENVIRONMENT = Environment(
     autoescape=False,
     loader=FileSystemLoader(os.path.join(PATH, '.')),
-    trim_blocks=False)
+    trim_blocks=False,
+    extensions=[
+        'jinja2.ext.autoescape',
+    ]
+)
 
 def render_template(template_filename, context):
     return TEMPLATE_ENVIRONMENT.get_template(template_filename).render(context)
