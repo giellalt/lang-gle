@@ -55,8 +55,23 @@ wordnet.ga.tsv: tmp/wordnet.ga.noun.tsv \
 wordnet.gle-eng.xml: wordnet.merged.tsv
 	. env/bin/activate && python render_tsv.py entry.j2 $^ > $@.tmp
 	cat $@.tmp | xmllint --format - > $@
+	
+.DELETE_ON_ERROR: iat.gle-eng.tsv
+iat.gle-eng.tsv: IAT_export/export_EN_GA_2015-05-15_All_Langs.tbx
+	. env/bin/activate && python xml_to_tsv.py iat_tsv.yaml $^ > iat.gle-eng.tsv
 
-all: wordnet.tsv \
-	 wordnet.ga.tsv \
-	 wordnet.merged.tsv \
-	 wordnet.gle-eng.xml
+.DELETE_ON_ERROR: iat.gle-eng.xml
+iat.gle-eng.xml: iat.gle-eng.tsv
+	. env/bin/activate && python render_tsv.py iat.gle-eng.j2 $^ > $@.tmp
+
+
+# TODO: combine all the output .xml files into one lexicon for NDS, or Oahpa, etc.
+
+# iat.gle-eng.xml
+all: wordnet.gle-eng.xml
+
+clean: 
+	rm -rf wordnet.tsv wordnet.ga.tsv tmp/*.tsv
+	rm -rf apertium-gle
+	rm -rf wordnet-gaeilge
+	rm -rf *.tmp

@@ -22,10 +22,11 @@
 {#- group by the lemma, and then the POS #}
     {% for lemma_group, g_rows in rows|groupby('gle_words') %}
         {% for lemma_pos_group, pos_rows in g_rows|groupby('gle_pos') %}
+
+              {# nouns get Prop if the first letter is capitalized #}
        <e>
           <lg>
-              {# nouns get Prop if the first letter is capitalized #}
-              {% if lemma_group[0] == lemma_group[0]|capitalize and lemma_pos_group == 'n' %}
+              {%- if lemma_group[0] == lemma_group[0]|capitalize and lemma_pos_group == 'n' %}
                   {% set l_type = ' type="Prop"' %}
               {% else %}
                   {% set l_type = '' %}
@@ -35,22 +36,31 @@
                   {% if row.gle_annotation_in_eng != null %}
                       <re>{{ row.gle_annotation_in_eng }}</re>
                   {% endif %}
-              {% endfor %}
+              {% endfor -%}
           </lg>
-          <mg>
             {# TODO: group on meaning lemma? row.eng is often a vague
             definition, and gle_semantics is more specific. May need to switch these. #}
-            {% for row in pos_rows %}
+            {% for eng_grouper, eng_rows in pos_rows|groupby('eng') %}
+              <mg>
 
+                {% set rendered_rows = [] %}
+
+                {% for eng_row in eng_rows %}
+                    {% if (eng_grouper, eng_row.eng_pos|capitalize, eng_row.eng_annotation_in_eng) not in rendered_rows %}
                  <tg xml:lang="eng">
 
-                     <t pos="{{ row.eng_pos|capitalize }}">{{ row.eng }}</t>
+                     <t pos="{{ eng_row.eng_pos|capitalize }}">{{ eng_grouper }}</t>
 
                      {# some eng_annotation_in_eng values are exactly the same as row.eng #}
-                     {% if row.eng_annotation_in_eng != null and row.eng_annotation_in_eng != row.eng %}
-                        <re>{{ row.eng_annotation_in_eng }}</re>
+                     {% if eng_row.eng_annotation_in_eng != null and eng_row.eng_annotation_in_eng != eng_row.eng %}
+                        <re>{{ eng_row.eng_annotation_in_eng }}</re>
                      {% endif %}
-                     <re>{{ row.gle_semantics }}</re>
+
+                     {% do rendered_rows.append((eng_grouper, eng_row.eng_pos|capitalize, eng_row.eng_annotation_in_eng)) %}
+
+                     {#
+                     <re>{{ eng_row.gle_semantics }}</re>
+                     #}
 
                      {# Don't need these for now, they're lengthy and repetitive. 
                      {% if row.eng_desc != null %}
@@ -62,8 +72,10 @@
                      #}
 
                  </tg>
+             {% endif %}
+             {% endfor %}
+              </mg>
            {% endfor %}
-          </mg>
        </e>
     {% endfor %}
 {% endfor %}
