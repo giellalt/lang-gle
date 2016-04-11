@@ -104,15 +104,14 @@ analyser-all.hfst: analyser-verbs.hfst analyser-nouns.hfst analyser-adj.hfst \
 		hfst-invert |\
 		hfst-minimize -o $@
 
+phonology/$(GTLANG)-phon.compose.hfst:
+	touch $@
+
+generator-raw-gt-desc.hfst: analyser-all.hfst
+	hfst-invert $< -o $@
 
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######
 ##################################################################
 
 include $(top_srcdir)/am-shared/src-dir-include.am
-
-phonology/$(GTLANG)-phon.compose.hfst:
-	touch $@
-
-generator-raw-gt-desc.tmp1.hfst: analyser-all.hfst
-	hfst-invert $< -o $@
