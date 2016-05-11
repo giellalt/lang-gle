@@ -9,12 +9,14 @@
 GT_ORTHOGRAPHIC_REGEX_SRCS=\
 		inituppercase.regex \
 		spellrelax.regex    \
-		spellrelax-mobile-keyboard.regex
+		spellrelax-mobile-keyboard.regex \
+		spellrelax-tags.regex
 
 GT_ORTHOGRAPHIC_XFSCRIPT_SRCS=\
 		allcaps.xfscript      \
 		urucaps.xfscript      \
-		downcase-derived_proper-strings.xfscript
+		downcase-derived_proper-strings.xfscript \
+		spellrelax-with-tags.xfscript
 
 # General build rules included from here:
 include $(top_srcdir)/am-shared/src-orthography-dir-include.am
