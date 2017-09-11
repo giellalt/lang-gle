@@ -81,7 +81,17 @@ z
 @@
 
 ## Transition pair specifications + weight:
-a	á	0.4
+a	á	2
+á	a	2
+e	é	2
+é	e	2
+i	í	2
+í	i	2
+o	ó	2
+ó	o	2
+u	ú	2
+ú	u	2
+
 
 ## Swaps:
 ## Change dh into hd with the weight 0.5:
