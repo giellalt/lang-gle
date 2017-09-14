@@ -60,11 +60,7 @@ endif # CAN_XFST
 
 #### HFST transducers
 if CAN_HFST
-GT_ANALYSERS+=analyser-verbs.hfst \
-			  analyser-nouns.hfst \
-			  analyser-adj.hfst \
-			  analyser-others.hfst \
-			  analyser-all.hfst
+GT_ANALYSERS+=
 GT_GENERATORS+=
 endif # CAN_HFST
 
@@ -77,51 +73,69 @@ endif # CAN_FOMA
 #################################################
 #### Add language-specific build rules here: ####
 
-analyser-verbs.hfst: morphology/gle.verb-all.hfst \
-					 phonology/gle-phon.verb.compose.hfst \
-					 phonology/gle-phon.init.compose.hfst \
-					 phonology/gle-phon.tidy.compose.hfst
-	hfst-compose -1 morphology/gle.verb-all.hfst \
-				 -2 phonology/gle-phon.init.compose.hfst \
-	| hfst-compose -2 phonology/gle-phon.verb.compose.hfst \
-	| hfst-compose -2 phonology/gle-phon.tidy.compose.hfst \
-	| hfst-minimize -o $@
+analyser-verbs.%: morphology/gle.verb-all.% \
+					 phonology/gle-phon.verb.compose.% \
+					 phonology/gle-phon.init.compose.% \
+					 phonology/gle-phon.tidy.compose.%
+	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
+				@\"morphology/gle.verb-all.$*\"   \
+			.o. @\"phonology/gle-phon.init.compose.$*\" \
+			.o. @\"phonology/gle-phon.verb.compose.$*\"    \
+			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
+			;\n\
+		 save stack $@\n\
+		 quit\n" | $(XFST_TOOL)
 
-analyser-nouns.hfst: morphology/gle.noun-all.hfst \
-					 phonology/gle-phon.nounadj.compose.hfst \
-					 phonology/gle-phon.init.compose.hfst \
-					 phonology/gle-phon.tidy.compose.hfst
-	hfst-compose -1 morphology/gle.noun-all.hfst \
-				 -2 phonology/gle-phon.init.compose.hfst \
-	| hfst-compose -2 phonology/gle-phon.nounadj.compose.hfst \
-	| hfst-compose -2 phonology/gle-phon.tidy.compose.hfst \
-	| hfst-minimize -o $@
+analyser-nouns.%: morphology/gle.noun-all.% \
+					 phonology/gle-phon.nounadj.compose.% \
+					 phonology/gle-phon.init.compose.% \
+					 phonology/gle-phon.tidy.compose.%
+	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
+				@\"morphology/gle.noun-all.$*\"   \
+			.o. @\"phonology/gle-phon.init.compose.$*\" \
+			.o. @\"phonology/gle-phon.nounadj.compose.$*\"    \
+			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
+			;\n\
+		 save stack $@\n\
+		 quit\n" | $(XFST_TOOL)
 
-analyser-adj.hfst: morphology/gle.adj.hfst \
-				   phonology/gle-phon.nounadj.compose.hfst \
-				   phonology/gle-phon.init.compose.hfst \
-				   phonology/gle-phon.tidy.compose.hfst
-	hfst-compose -1 morphology/gle.adj.hfst \
-				 -2 phonology/gle-phon.init.compose.hfst \
-	| hfst-compose -2 phonology/gle-phon.nounadj.compose.hfst \
-	| hfst-compose -2 phonology/gle-phon.tidy.compose.hfst \
-	| hfst-minimize -o $@
+analyser-adj.%: morphology/gle.adj.% \
+			    phonology/gle-phon.nounadj.compose.% \
+			    phonology/gle-phon.init.compose.% \
+			    phonology/gle-phon.tidy.compose.%
+	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
+				@\"morphology/gle.adj.$*\"   \
+			.o. @\"phonology/gle-phon.init.compose.$*\" \
+			.o. @\"phonology/gle-phon.nounadj.compose.$*\"    \
+			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
+			;\n\
+		 save stack $@\n\
+		 quit\n" | $(XFST_TOOL)
 
 analyser-others.hfst: morphology/gle.others.hfst
-	hfst-minimize $< -o $@
+	$(AM_V_HMINIM)$(HFST_MINIMIZE) $< -o $@
 
-analyser-all.hfst: analyser-verbs.hfst \
-				   analyser-nouns.hfst \
-				   analyser-adj.hfst \
-				   analyser-others.hfst
-	hfst-disjunct analyser-verbs.hfst analyser-nouns.hfst \
-	| hfst-disjunct - analyser-adj.hfst \
-	| hfst-disjunct - analyser-others.hfst \
-	| hfst-invert \
-	| hfst-minimize -o $@
+analyser-others.%: morphology/gle.others.%
+	$(AM_V_CP)cp $< $@
+
+analyser-all.%: analyser-verbs.% \
+				analyser-nouns.% \
+				analyser-adj.% \
+				analyser-others.%
+	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
+			[ @\"analyser-verbs.$*\"   \
+			| @\"analyser-nouns.$*\"   \
+			| @\"analyser-adj.$*\"     \
+			| @\"analyser-others.$*\" ]\
+			;\n\
+		 save stack $@\n\
+		 quit\n" | $(XFST_TOOL)
 
 generator-raw-gt-desc.hfst: analyser-all.hfst
-	hfst-invert $< -o $@
+	$(AM_V_CP)cp $< $@
+
+analyser-raw-gt-desc.%: analyser-all.%
+	$(AM_V_CP)cp $< $@
 
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######
