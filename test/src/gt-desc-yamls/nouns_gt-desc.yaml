@@ -1,0 +1,14 @@
+# gle/test/src/gt-desc-yamls/nouns_gt-desc.yaml
+
+Config:
+  hfst:
+    Gen: ../../../src/generator-gt-desc.hfst
+    Morph: ../../../src/analyser-gt-desc.hfst
+  xerox:
+    Gen: ../../../src/generator-gt-desc.xfst
+    Morph: ../../../src/analyser-gt-desc.xfst
+    App: lookup
+
+Tests:
+  Nouns - cuid: # ok c 
+    cuid+Noun+Fem+Gen+Sg: coda
