@@ -9,7 +9,7 @@ Alphabet
  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Æ Ø Å
  Á É Ó Ú Í À È Ò Ù Ì Ä Ë Ö Ü Ï Â Ê Ô Û Î Ã Ý þ Ñ Ð
 
- %>:0 ;
+ %> ;
 
 Sets
 
@@ -23,10 +23,10 @@ Rules
  s:0 <=> Vow s %>: _ ;
 
 !!€ primus%>s
-!!€ primus00
+!!€ primus%>0
 
 !!€grís%>s
-!!€grís00
+!!€grís%>0
 
 !!$grís%>s
-!!$grís0s
+!!$grís%>s
