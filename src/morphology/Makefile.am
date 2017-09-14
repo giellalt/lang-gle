@@ -83,33 +83,65 @@ GT_DISTRO_SRCS=
 ### separate fst's that need further treatment in the src/ dir. See the language
 ### gle/ for an example of how this is used.
 
-### This target overrides some defaults to handle lexicons of parts-of-speech 
-# separately
+GIELLA_LOCAL_TARGETS=
 
-GIELLA_LOCAL_TARGETS=\
-			gle.noun-all.hfst \
-			gle.adj.hfst      \
-			gle.verb-all.hfst \
-			gle.others.hfst
+### This target overrides some defaults to handle lexicons of parts-of-speech 
+### separately
+
+GLE_TARGETS=\
+			gle.noun-all \
+			gle.adj      \
+			gle.verb-all \
+			gle.others
+
+if CAN_HFST
+GIELLA_LOCAL_TARGETS+=$(addsuffix .hfst,$(GLE_TARGETS))
+endif # CAN_HFST
+
+if CAN_FOMA
+GIELLA_LOCAL_TARGETS+=$(addsuffix .foma,$(GLE_TARGETS))
+endif # CAN_HFST
+
+if CAN_XFST
+GIELLA_LOCAL_TARGETS+=$(addsuffix .xfst,$(GLE_TARGETS))
+endif # CAN_HFST
 
 generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_LEXC_SRCS)
-	$(MKDIR_P) generated_files
-	cat $^ > $@
+	$(AM_V_at)$(MKDIR_P) generated_files
+	$(AM_V_GEN)cat $^ > $@
 
 generated_files/gle.adj.lexc: root-adj.lexc $(GT_LEXC_SRCS)
-	$(MKDIR_P) generated_files
-	cat $^ > $@
+	$(AM_V_at)$(MKDIR_P) generated_files
+	$(AM_V_GEN)cat $^ > $@
 
 generated_files/gle.verb-all.lexc: root-verb-all.lexc $(GT_LEXC_SRCS)
-	$(MKDIR_P) generated_files
-	cat $^ > $@
+	$(AM_V_at)$(MKDIR_P) generated_files
+	$(AM_V_GEN)cat $^ > $@
 
 generated_files/gle.others.lexc: root-others.lexc $(GT_LEXC_SRCS)
-	$(MKDIR_P) generated_files
-	cat $^ > $@
+	$(AM_V_at)$(MKDIR_P) generated_files
+	$(AM_V_GEN)cat $^ > $@
 
+####### HFST build rules: ########
 %.hfst: generated_files/%.lexc
-	hfst-lexc $(HFST_LEXC_LOCAL_FLAGS) $< -o $@
+	$(AM_V_HLEXC)$(HFST_LEXC) \
+		$(MORE_VERBOSITY) $(HFST_FORMAT) $(HFST_LEXC_FLAGS) \
+		$(HFST_LEXC_LOCAL_FLAGS) -o $@ $^
+
+####### Xerox build rules: #######
+%.xfst: generated_files/%.lexc
+	$(AM_V_XFST)$(XFST) $(VERBOSITY) \
+			-e "read lexc $^" \
+			-e "save stack $@ " \
+			-stop
+
+####### Foma build rules: #######
+%.foma: generated_files/%.lexc
+	$(AM_V_FOMA)$(FOMA) $(VERBOSITY) \
+			-e "set lexc-align ON" \
+			-e "read lexc $^" \
+			-e "save stack $@ " \
+			-s
 
 ### END: Local processing: ###
 
