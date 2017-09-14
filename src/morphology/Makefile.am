@@ -93,21 +93,20 @@ GIELLA_LOCAL_TARGETS=\
 			gle.others.hfst
 
 generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_LEXC_SRCS)
-	$(AC_PROG_MKDIR_P) generated_files
+	$(MKDIR_P) generated_files
 	cat $^ > $@
 
 generated_files/gle.adj.lexc: root-adj.lexc $(GT_LEXC_SRCS)
-	$(AC_PROG_MKDIR_P) generated_files
+	$(MKDIR_P) generated_files
 	cat $^ > $@
 
 generated_files/gle.verb-all.lexc: root-verb-all.lexc $(GT_LEXC_SRCS)
-	$(AC_PROG_MKDIR_P) generated_files
+	$(MKDIR_P) generated_files
 	cat $^ > $@
 
 generated_files/gle.others.lexc: root-others.lexc $(GT_LEXC_SRCS)
-	$(AC_PROG_MKDIR_P) generated_files
+	$(MKDIR_P) generated_files
 	cat $^ > $@
-
 
 %.hfst: generated_files/%.lexc
 	hfst-lexc $(HFST_LEXC_LOCAL_FLAGS) $< -o $@
