@@ -77,11 +77,6 @@ GT_DISTRO_SRCS=
 
 ### BEGIN: Local processing: ###
 
-
-### END: Local processing: ###
-
-include $(top_srcdir)/am-shared/src-morphology-dir-include.am
-
 ### This overrides some defaults to handle lexicons of parts-of-speech 
 # separately
 
@@ -105,5 +100,9 @@ generated_files/gle.others.lexc: root-others.lexc $(GT_LEXC_SRCS)
 
 %.hfst: generated_files/%.lexc
 	hfst-lexc $< -o $@
+
+### END: Local processing: ###
+
+include $(top_srcdir)/am-shared/src-morphology-dir-include.am
 
 # vim: set ft=automake:
