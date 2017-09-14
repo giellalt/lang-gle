@@ -37,36 +37,25 @@ GT_GENERATORS=
 ##################################################################
 #### BEGIN: Add local processing instructions BELOW this line ####
 ##################################################################
-analyser-%.hfst: analyser-%.tmp.hfst \
-				 $(srcdir)/fixes.regex \
-				 $(srcdir)/fixes-good.regex
-	$(AM_V_RGX2FST)$(HFST_REGEXP2FST) -S $(srcdir)/fixes.regex -o fixes.hfst
-	$(AM_V_RGX2FST)$(HFST_REGEXP2FST) -S $(srcdir)/fixes-good.regex \
-								 -o fixes-good.hfst
-	$(AM_V_GEN)$(HFST_COMPOSE) -F fixes.hfst $< |\
-		$(HFST_DISJUNCT) fixes-good.hfst |\
-		$(HFST_INVERT) |\
-		$(HFST_MINIMIZE) |\
-		$(HFST_FST2FST) -f olw -o $@
 
 ########################################################
 #### Add language-specific transducer targets here: ####
 
 #### Xerox transducers:
 if CAN_XFST
-GT_ANALYSERS+=
+GT_ANALYSERS+=fixes.xfst fixes-good.xfst
 GT_GENERATORS+=
 endif # CAN_XFST
 
 #### HFST transducers
 if CAN_HFST
-GT_ANALYSERS+=
+GT_ANALYSERS+=fixes.hfst fixes-good.hfst
 GT_GENERATORS+=
 endif # CAN_HFST
 
 #### FOMA transducers
 if CAN_FOMA
-GT_ANALYSERS+=
+GT_ANALYSERS+=fixes.foma fixes-good.foma
 GT_GENERATORS+=
 endif # CAN_FOMA
 
@@ -78,10 +67,10 @@ analyser-verbs.%: morphology/gle.verb-all.% \
 					 phonology/gle-phon.init.compose.% \
 					 phonology/gle-phon.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
-				@\"morphology/gle.verb-all.$*\"   \
+				@\"morphology/gle.verb-all.$*\"         \
 			.o. @\"phonology/gle-phon.init.compose.$*\" \
-			.o. @\"phonology/gle-phon.verb.compose.$*\"    \
-			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
+			.o. @\"phonology/gle-phon.verb.compose.$*\" \
+			.o. @\"phonology/gle-phon.tidy.compose.$*\" \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
@@ -91,9 +80,9 @@ analyser-nouns.%: morphology/gle.noun-all.% \
 					 phonology/gle-phon.init.compose.% \
 					 phonology/gle-phon.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
-				@\"morphology/gle.noun-all.$*\"   \
-			.o. @\"phonology/gle-phon.init.compose.$*\" \
-			.o. @\"phonology/gle-phon.nounadj.compose.$*\"    \
+				@\"morphology/gle.noun-all.$*\"            \
+			.o. @\"phonology/gle-phon.init.compose.$*\"    \
+			.o. @\"phonology/gle-phon.nounadj.compose.$*\" \
 			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
 			;\n\
 		 save stack $@\n\
@@ -104,9 +93,9 @@ analyser-adj.%: morphology/gle.adj.% \
 			    phonology/gle-phon.init.compose.% \
 			    phonology/gle-phon.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
-				@\"morphology/gle.adj.$*\"   \
-			.o. @\"phonology/gle-phon.init.compose.$*\" \
-			.o. @\"phonology/gle-phon.nounadj.compose.$*\"    \
+				@\"morphology/gle.adj.$*\"                 \
+			.o. @\"phonology/gle-phon.init.compose.$*\"    \
+			.o. @\"phonology/gle-phon.nounadj.compose.$*\" \
 			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
 			;\n\
 		 save stack $@\n\
@@ -131,11 +120,34 @@ analyser-all.%: analyser-verbs.% \
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
 
-generator-raw-gt-desc.hfst: analyser-all.hfst
+### Final processing of the raw analyser/generator:
+generator-raw-gt-desc.hfst: analyser-all.hfst \
+				 fixes.hfst \
+				 fixes-good.hfst
+	$(AM_V_XFST_TOOL)$(PRINTF) "\
+			set harmonize-flags ON\n\
+			read regex \
+			[   @\"fixes.hfst\"          \
+			.o. @\"$<\"                  \
+			] | @\"fixes-good.hfst\"     \
+			;\n\
+		 save stack $@\n\
+		 quit\n" | $(HFST_XFST) -p $(MORE_VERBOSITY) $(HFST_FORMAT)
+
+analyser-raw-gt-desc.hfst: generator-raw-gt-desc.hfst
 	$(AM_V_CP)cp $< $@
 
-analyser-raw-gt-desc.%: analyser-all.%
-	$(AM_V_CP)cp $< $@
+# Wrap processing of Foma and Xfst in a define:
+analyser-raw-gt-desc.%: analyser-all.% \
+				 fixes.% \
+				 fixes-good.%
+	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
+			[   @\"fixes.$*\"          \
+			.o. @\"$<\"                 \
+			] | @\"fixes-good.$*\"     \
+			;\n\
+		 save stack $@\n\
+		 quit\n" | $(XFST_TOOL)
 
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######
