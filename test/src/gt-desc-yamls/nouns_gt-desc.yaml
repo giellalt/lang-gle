@@ -12,3 +12,15 @@ Config:
 Tests:
   Nouns - cuid: # ok c 
     cuid+Noun+Fem+Gen+Sg: coda
+    spéir+Noun+Fem+Gen+Strong+Pl: spéartha    
+    feadaíl+Noun+Fem+Gen+Sg: feadaíola
+    greim+Noun+Masc+Gen+Sg: greama
+    tír+Noun+Fem+Com+Pl+DefArt: tíortha
+
+  Verbalnouns: # ok elaine
+    feadaíl+Verbal+Noun+VI+Gen: feadaíola
+    tíoradh+Verbal+Noun+VT+Gen: tíortha
+    ceangail+Verb+VT+FutInd: ceanglóidh
+    
+  Adjectives: # ok elaine
+    fliuch+Adj+Fem+Gen+Sg: fliche
