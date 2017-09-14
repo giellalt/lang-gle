@@ -77,13 +77,20 @@ GT_DISTRO_SRCS=
 
 ### BEGIN: Local processing: ###
 
-### This overrides some defaults to handle lexicons of parts-of-speech 
+### List additional targets in the following variable, for build targets not
+### covered by other means. This comes ***in addition to*** what you can do by
+### just targeting lexicon.*: lexicon.tmp.*, and is useful if you want to build
+### separate fst's that need further treatment in the src/ dir. See the language
+### gle/ for an example of how this is used.
+
+### This target overrides some defaults to handle lexicons of parts-of-speech 
 # separately
 
-noinst_DATA+=gle.noun-all.hfst \
-			 gle.adj.hfst \
-			 gle.verb-all.hfst \
-			 gle.others.hfst
+GIELLA_LOCAL_TARGETS=\
+			gle.noun-all.hfst \
+			gle.adj.hfst      \
+			gle.verb-all.hfst \
+			gle.others.hfst
 
 generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_LEXC_SRCS)
 	$(AC_PROG_MKDIR_P) generated_files
