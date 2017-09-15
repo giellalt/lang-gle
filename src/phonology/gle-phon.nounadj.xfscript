@@ -83,10 +83,11 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 ! @-> = match longest string of vowels
 ! %^X... = insert ^X before the searched for text
 ! NOTE HFST does not implement the ... operator (unlike xfst and foma)
-! next line changed to remove ... 19-12-2014 (EUD)
-!!!!!Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
+! changed to remove ... 19-12-2014 (EUD)
+! use [..] to map a single empty string, not [] which can map an infinite number of empty strings 15-09-17 (EUD)
 .o.
-[] @-> %^X || _ Vowel+ Cons* [Nountag|%^Adj]
+!!Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
+[..] -> %^X || Cons _ Vowel+ Cons* [Nountag|%^Adj]
 
 !***************************************************************************!
 ! (2) These markers are no longer required
