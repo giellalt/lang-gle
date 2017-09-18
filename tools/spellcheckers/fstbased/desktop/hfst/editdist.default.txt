@@ -91,7 +91,17 @@ o	ó	2
 ó	o	2
 u	ú	2
 ú	u	2
-
+b	p	3
+d	t	3
+g	k	3
+k	g	3
+p	b	3
+t	d	3
+k	c	3
+e	a	5
+e	i	5
+e	u	5
+u	o	5
 
 ## Swaps:
 ## Change dh into hd with the weight 0.5:
