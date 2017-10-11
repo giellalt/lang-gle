@@ -1678,6 +1678,7 @@ LEXICON VI11-PresIndDep		! Present Dependant non Neg. - Láith. Spléach
 
  LEXICON VI11-PresImp	! Present Imperfect  - GhnáthLáithreach
 0:bíonn		SufNegQ;
++Len:bhíonn		SufNegQ; ! Trond: bhíonn
 !!0:bíonns		NegQ;
 +1P+Sg:bím	NegQ;
 +1P+Sg+Emph:bímse	NegQ;
