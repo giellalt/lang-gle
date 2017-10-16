@@ -590,7 +590,7 @@ LEXICON V2-BR-Imper     ! Imperative Mood - Modh Ordaitheach
 !
 !   CONTINUATION CLASSES COMMON TO VERBS 1 & 2
 !***************************************************************************
-
+!! inserted ^Verb (x5) in NegQ (EUD 14-10-2017)
 LEXICON     NegQ
 #;
 +Len:^Sé    #;
