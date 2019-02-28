@@ -219,7 +219,8 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 +Q		! question mark ?
 +Bar		! hyphen, underscore, dash etc.
 +Quo		! all quotation marks double, single etc.
-+Conj +Coord	! & 
++Conj +Coord	! &
++Symbol !!≈ * @CODE@ = independent symbols in the text stream, like £, €, ©
 !---------------------------------------------------------------------------
 
 
