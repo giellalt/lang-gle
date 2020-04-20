@@ -26,6 +26,4 @@ GT_PHONOLOGY_SUPPLEMENTS=gle-phon.init.xfscript    \
                          gle-phon.verb.xfscript    \
                          gle-phon.tidy.xfscript
 
-include $(top_srcdir)/am-shared/src-phonology-dir-include.am
-
 # vim: set ft=automake:
