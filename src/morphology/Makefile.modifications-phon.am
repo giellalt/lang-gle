@@ -21,9 +21,9 @@
 #! @param GT_TWOLC_SUPPLEMENTS optional, other sources to distribute and
 #! 		  compile for other things
 GT_PHONOLOGY_MAIN=phonology.twolc
-GT_PHONOLOGY_SUPPLEMENTS=gle-phon.init.xfscript    \
-                         gle-phon.nounadj.xfscript \
-                         gle-phon.verb.xfscript    \
-                         gle-phon.tidy.xfscript
+GT_PHONOLOGY_SUPPLEMENTS=phonology.init.xfscript    \
+                         phonology.nounadj.xfscript \
+                         phonology.verb.xfscript    \
+                         phonology.tidy.xfscript
 
 # vim: set ft=automake:
