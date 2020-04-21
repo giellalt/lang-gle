@@ -63,40 +63,40 @@ endif # CAN_FOMA
 #### Add language-specific build rules here: ####
 
 analyser-verbs.%: morphology/gle.verb-all.% \
-					 phonology/gle-phon.verb.compose.% \
-					 phonology/gle-phon.init.compose.% \
-					 phonology/gle-phon.tidy.compose.%
+					 morphology/phonology.verb.compose.% \
+					 morphology/phonology.init.compose.% \
+					 morphology/phonology.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
 				@\"morphology/gle.verb-all.$*\"         \
-			.o. @\"phonology/gle-phon.init.compose.$*\" \
-			.o. @\"phonology/gle-phon.verb.compose.$*\" \
-			.o. @\"phonology/gle-phon.tidy.compose.$*\" \
+			.o. @\"morphology/phonology.init.compose.$*\" \
+			.o. @\"morphology/phonology.verb.compose.$*\" \
+			.o. @\"morphology/phonology.tidy.compose.$*\" \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
 
 analyser-nouns.%: morphology/gle.noun-all.% \
-					 phonology/gle-phon.nounadj.compose.% \
-					 phonology/gle-phon.init.compose.% \
-					 phonology/gle-phon.tidy.compose.%
+					 morphology/phonology.nounadj.compose.% \
+					 morphology/phonology.init.compose.% \
+					 morphology/phonology.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
 				@\"morphology/gle.noun-all.$*\"            \
-			.o. @\"phonology/gle-phon.init.compose.$*\"    \
-			.o. @\"phonology/gle-phon.nounadj.compose.$*\" \
-			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
+			.o. @\"morphology/phonology.init.compose.$*\"    \
+			.o. @\"morphology/phonology.nounadj.compose.$*\" \
+			.o. @\"morphology/phonology.tidy.compose.$*\"    \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
 
 analyser-adj.%: morphology/gle.adj.% \
-			    phonology/gle-phon.nounadj.compose.% \
-			    phonology/gle-phon.init.compose.% \
-			    phonology/gle-phon.tidy.compose.%
+			    morphology/phonology.nounadj.compose.% \
+			    morphology/phonology.init.compose.% \
+			    morphology/phonology.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
 				@\"morphology/gle.adj.$*\"                 \
-			.o. @\"phonology/gle-phon.init.compose.$*\"    \
-			.o. @\"phonology/gle-phon.nounadj.compose.$*\" \
-			.o. @\"phonology/gle-phon.tidy.compose.$*\"    \
+			.o. @\"morphology/phonology.init.compose.$*\"    \
+			.o. @\"morphology/phonology.nounadj.compose.$*\" \
+			.o. @\"morphology/phonology.tidy.compose.$*\"    \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
