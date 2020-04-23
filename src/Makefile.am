@@ -62,49 +62,49 @@ endif # CAN_FOMA
 #################################################
 #### Add language-specific build rules here: ####
 
-analyser-verbs.%: morphology/gle.verb-all.% \
-					 morphology/phonology.verb.compose.% \
-					 morphology/phonology.init.compose.% \
-					 morphology/phonology.tidy.compose.%
+analyser-verbs.%: fst/gle.verb-all.% \
+					 fst/phonology.verb.compose.% \
+					 fst/phonology.init.compose.% \
+					 fst/phonology.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
-				@\"morphology/gle.verb-all.$*\"         \
-			.o. @\"morphology/phonology.init.compose.$*\" \
-			.o. @\"morphology/phonology.verb.compose.$*\" \
-			.o. @\"morphology/phonology.tidy.compose.$*\" \
+				@\"fst/gle.verb-all.$*\"         \
+			.o. @\"fst/phonology.init.compose.$*\" \
+			.o. @\"fst/phonology.verb.compose.$*\" \
+			.o. @\"fst/phonology.tidy.compose.$*\" \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
 
-analyser-nouns.%: morphology/gle.noun-all.% \
-					 morphology/phonology.nounadj.compose.% \
-					 morphology/phonology.init.compose.% \
-					 morphology/phonology.tidy.compose.%
+analyser-nouns.%: fst/gle.noun-all.% \
+					 fst/phonology.nounadj.compose.% \
+					 fst/phonology.init.compose.% \
+					 fst/phonology.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
-				@\"morphology/gle.noun-all.$*\"            \
-			.o. @\"morphology/phonology.init.compose.$*\"    \
-			.o. @\"morphology/phonology.nounadj.compose.$*\" \
-			.o. @\"morphology/phonology.tidy.compose.$*\"    \
+				@\"fst/gle.noun-all.$*\"            \
+			.o. @\"fst/phonology.init.compose.$*\"    \
+			.o. @\"fst/phonology.nounadj.compose.$*\" \
+			.o. @\"fst/phonology.tidy.compose.$*\"    \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
 
-analyser-adj.%: morphology/gle.adj.% \
-			    morphology/phonology.nounadj.compose.% \
-			    morphology/phonology.init.compose.% \
-			    morphology/phonology.tidy.compose.%
+analyser-adj.%: fst/gle.adj.% \
+			    fst/phonology.nounadj.compose.% \
+			    fst/phonology.init.compose.% \
+			    fst/phonology.tidy.compose.%
 	$(AM_V_XFST_TOOL)$(PRINTF) "read regex \
-				@\"morphology/gle.adj.$*\"                 \
-			.o. @\"morphology/phonology.init.compose.$*\"    \
-			.o. @\"morphology/phonology.nounadj.compose.$*\" \
-			.o. @\"morphology/phonology.tidy.compose.$*\"    \
+				@\"fst/gle.adj.$*\"                 \
+			.o. @\"fst/phonology.init.compose.$*\"    \
+			.o. @\"fst/phonology.nounadj.compose.$*\" \
+			.o. @\"fst/phonology.tidy.compose.$*\"    \
 			;\n\
 		 save stack $@\n\
 		 quit\n" | $(XFST_TOOL)
 
-analyser-others.hfst: morphology/gle.others.hfst
+analyser-others.hfst: fst/gle.others.hfst
 	$(AM_V_HMINIM)$(HFST_MINIMIZE) $< -o $@
 
-analyser-others.%: morphology/gle.others.%
+analyser-others.%: fst/gle.others.%
 	$(AM_V_CP)cp $< $@
 
 analyser-all.%: analyser-verbs.% \
