@@ -1,0 +1,9 @@
+name = "Irish"
+version = "0.1.0"
+
+[macos]
+system_pkg_id = "no.divvun.MacDivvun.ga"
+
+[windows]
+system_product_code = "D69B037F-205C-4278-91C0-A485C8DC9411"
+msoffice_product_code = "7680D9A9-8F63-4BC8-86A0-DC2A6653BB8B"
