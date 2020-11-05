@@ -21,7 +21,7 @@ Documentation
 
 Documentation can be found at:
 
--   <https://giellalt.uit.no/lang/gledoc/index.html>
+-   <https://giellalt.uit.no/lang/gle/IrishDocumentation.html>
 -   <https://giellalt.uit.no/index.html>
 
 Core dependencies
