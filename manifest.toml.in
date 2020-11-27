@@ -1,9 +1,12 @@
-name = "Irish"
+name = "Gaeilge"
 version = "@SPELLERVERSION@"
 
 [macos]
 system_pkg_id = "no.divvun.MacDivvun.ga"
 
 [windows]
-system_product_code = "D69B037F-205C-4278-91C0-A485C8DC9411"
-msoffice_product_code = "7680D9A9-8F63-4BC8-86A0-DC2A6653BB8B"
+system_product_code = "{F7B2E2B4-F029-41C6-80D1-45348F7B559B}_is1"
+legacy_product_codes = [
+    { value = "D69B037F-205C-4278-91C0-A485C8DC9411", kind = "nsis" },
+    { value = "7680D9A9-8F63-4BC8-86A0-DC2A6653BB8B", kind = "nsis" }
+]
