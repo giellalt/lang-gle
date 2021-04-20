@@ -1,6 +1,10 @@
 The Irish morphology and tools
 ==========================================
 
+[![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/issues)
+[![Build Status](https://github.com/giellalt/lang-gle/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-gle/actions)
+[![License](https://img.shields.io/github/license/giellalt/lang-gle)](https://raw.githubusercontent.com/giellalt/lang-gle/develop/LICENSE)
+
 This repository contains finite state source files for the Irish language,
 for building morphological analysers, proofing tools
 and dictionaries. The data and implementation are licenced under __LICENCE__
@@ -8,10 +12,6 @@ licence, also detailed in the
 [LICENCE](https://github.com/giellalt/lang-gle/blob/develop/LICENCE). The
 authors named in the AUTHORS file are available to grant other licencing
 choices.
-
-[![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/issues)
-[![Build Status](https://github.com/giellalt/lang-gle/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-gle/actions)
-[![License](https://img.shields.io/github/license/giellalt/lang-gle)](https://raw.githubusercontent.com/giellalt/lang-gle/develop/LICENSE)
 
 Install proofing tools and [keyboards](https://github.com/giellalt/keyboard-gle)
 for the Irish language by using the [Divvun Installer](http://divvun.no)
