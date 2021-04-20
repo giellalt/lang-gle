@@ -1,7 +1,7 @@
 # Irish documentation
 
 [![Maturity: Experiment](https://img.shields.io/badge/Maturity-Experiment-black.svg)](https://giellalt.github.io/MaturityClassification.html)
-[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License](https://img.shields.io/github/license/giellalt/template-lang-gle)](https://raw.githubusercontent.com/giellalt/lang-gle/develop/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/issues)
 [![Build status](https://github.com/giellalt/lang-gle/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-gle/actions)
 
