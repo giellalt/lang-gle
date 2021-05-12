@@ -5,11 +5,11 @@
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/issues)
 [![Build status](https://github.com/giellalt/lang-gle/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-gle/actions)
 
-This page documents the work on the **Irish language model**. 
+This page documents the work on the [Irish language model](http://github.com/giellalt/lang-gle). 
 
 # Project documentation
 
-* Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.
+* (Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.)
 
 # In-source documentation
 
