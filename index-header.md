@@ -1,15 +1,15 @@
 # Irish documentation
 
 [![Maturity: Experiment](https://img.shields.io/badge/Maturity-Experiment-black.svg)](https://giellalt.github.io/MaturityClassification.html)
-[![License](https://img.shields.io/github/license/giellalt/lang-gle)](https://raw.githubusercontent.com/giellalt/lang-gle/develop/LICENSE)
+[![License](https://img.shields.io/github/license/giellalt/lang-gle)](https://raw.githubusercontent.com/giellalt/lang-gle/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/issues)
 [![Build status](https://github.com/giellalt/lang-gle/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-gle/actions)
 
-This page documents the work on the **Irish language model**. 
+This page documents the work on the [Irish language model](http://github.com/giellalt/lang-gle). 
 
 # Project documentation
 
-* Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.
+* (Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.)
 
 # In-source documentation
 
