@@ -605,22 +605,17 @@ These were the set types.
 
 
 
-### CONJUNCTIONS
-removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
-e.g. go/gur a/ar nach/nár 
-and which often follow (or attach to) a conjunction
-e.g. cé go, nuair nach, 
-remaining subordinating conjunctions can be followed by verb or copula 
-go mb'fhusa an obair ..., go dtógfadh sé
-e.g. má bhíonn, más
-some still have tense marking as they are combined forms
-e.g. sula, sular, murar etc.
 
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
+ # Multichar_Symbols definitions
 
+## Analysis symbols
+The morphological analyses of wordforms of UNDEFINED language are presented
+in this system in terms of following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
 
-gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé
 
 
 
@@ -632,7 +627,6 @@ gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded 
 
 
 
-Abbreviations
 
 
 
@@ -650,8 +644,6 @@ Abbreviations
 
 
 
-Abbreviations 
-and a few English words
 
 
 
@@ -664,6 +656,7 @@ and a few English words
 
 
 
+Subj is used for subjunctive
 
 
 
@@ -750,12 +743,17 @@ and a few English words
 
 
 
-new category 28/03/08
 
 
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
+ # Multichar_Symbols definitions
 
+## Analysis symbols
+The morphological analyses of wordforms of UNDEFINED language are presented
+in this system in terms of following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
 
 
 
@@ -797,6 +795,7 @@ new category 28/03/08
 
 
 
+Subj is used for subjunctive
 
 
 
@@ -863,7 +862,6 @@ new category 28/03/08
 
 
 
-SEE N-LEX-IRREG muineál	 Nm1-1;	 ! gs & npl -níl
 
 
 
@@ -882,10 +880,7 @@ SEE N-LEX-IRREG muineál	 Nm1-1;	 ! gs & npl -níl
 
 
 
-Automatically assigned CCs
 
-Manually assigned CCs
-see n-lex-stems.txt ceathracha	Nm5-1;	! gs ~d pl ~idí
 
 
 
@@ -913,7 +908,6 @@ see n-lex-stems.txt ceathracha	Nm5-1;	! gs ~d pl ~idí
 
 
 
-CONTINUATION CLASSES MASCULINE
 
 
 
@@ -933,9 +927,6 @@ CONTINUATION CLASSES MASCULINE
 
 
 
-Foclóir Póca etc.
-April 2008: Regenerated from verb stems by Christoph Wendler 
-(v=sceamh) CHECKED
 
 
 
@@ -943,41 +934,23 @@ April 2008: Regenerated from verb stems by Christoph Wendler
 
 
 
-NOTE: 'druideadh' is commented out since it was not found as a verbal noun
-in the corpus, yet chances are that it would get mixed up with 'druideadh'
-as independed form of 'druid', i.e. 'ó druideadh an scoil'
 
 
 
-DETERMINERS
 
 
 
 
 
-this information is on the noun as initial mutation
-use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
 
 
 
 
-SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
-SEE PRON-LEX cad+Det+Q:cad				#;	! what
-SEE PRON-LEX céard+Det+Q:céard			#;	! what
-SEE PRON-LEX cé+Det+Q:cé				#;	! who
-SEE ADV cá+Det+Q:cá					#;	! where
 
 
 
 
 
-the following always come at the end of the noun/pron/adj and cannot 
-be intermingled with other adjectives 
-contextual tagged as demonstrative for now at least ...
-NUMERALS
-Cardinal numbers are described seperately here rather than with other
-Adjectives
-For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 
 
 
@@ -985,7 +958,6 @@ For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 
 
 
-Adverbs
 
 
 
@@ -996,12 +968,9 @@ Adverbs
 
 
 
-MOVED TO ADJ annamh+Adv+Gn:annamh	#;
-what about chomh mór/hálainn etc. etc. 
 
 
 
-see PART-LEX.TXT (etc.) for following
 
 
 
@@ -1048,15 +1017,9 @@ see PART-LEX.TXT (etc.) for following
 
 
 
-no because Na hAfraice Láir/Theas etc ..<A f r a i c %_:%  T h e a s>	Nf2-Prop;	! !!!!South Africa
-Mar 2012
-Mar 2012
 
-Added. Most popular names.
-Male
 
 
-Female
 
 
 
@@ -1069,9 +1032,13 @@ Female
 
 
 
+inserted +Len +Uru to distinguish between a bhíonn & a mbíonn Dir/Indir
+Rel clauses Dec 2004
+inserted ^Verb (x5) in NegQ (EUD 14-10-2017)
 
 
 
+FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
 
 
 
@@ -1085,514 +1052,20 @@ Female
 
 
 
+áil -> Gen ála
 
+Proper noun inflection
+The Irish language proper nouns inflect in the same cases as regular
+nouns, but with a colon (':') as separator.
 
-INTERJECTIONS
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DEFECTIVE VERBS
-
-
-SOME COMMON COMPOUNDS
-leave out _fios from lemma as it prevents some bí CG rules applying
-IRREGULAR VERBS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-auto does not lenite
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-varient
-varient
-varient
-varient
-varient
-varient
-varient
-varient	
-
-
-
-
-
-
-
-
-
-
-
-
-auto does not lenite
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-NEEDS FURTHER TESTING OF -X WORDS
-and TEST
-
-
-
-
-
-
-
-
-
-Multichar_Symbols
-
-+XMLTag		! 
-
-LEXICON Root
-	XMLTags;
-
-
-
-
-
-
-
-
-
-
-
-Common Functional Words
-
-
-
-
-
-
-Prepositions: 
-Simple: le, ag, ar, etc.
-Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
-Emphatic Compound eg agamsa, uaimse, ...
-
-
-
-
-theses are not preps only copula or conj
-this "is" looks like "agus" to me ... removing the prep reading ...
-should be subst except in Prep Cmpd - see below : maidir+Prep+Simp:maidir			#;
-should be subst:  maille+Prep+Simp:maille			#; ! maille le = along with
-
-
-
-
-
-
-
-
-le does not combine with art: but becomes leis before "an"
-
-
-trí does not combine with art: but becomes tríd before "an"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Tobar - ac Grianna
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PLACENAMES
-
-
-Prefixes
-Prefixes in the Irish language are bound to beginning of other words.
-
-
-
+JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
+            : May have implications for CG3
 Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+     C O N T I N U A T I O N     C L A S S E S
+ E. Uí Dhonnchadha
+(c)2001
 
 
 
@@ -1650,11 +1123,14 @@ Na hAidiactaí Tuairisciúla - Descriptive Adjectives
 
 
 
+adj following a fem. noun is always lenited (^Sé) regardless of whether 
+the preceding noun is lenited or eclipsed (neither ??)
+as is the vocative after vocative particle "a"
 
 
+SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
 
 
-SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
 
 
 
@@ -1687,724 +1163,6 @@ SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
 
 
 
-
-
-
-
-
-
-
-
-
-  I R R E G U L A R   A D J E C T I V E S 
-
-
-
-
-the following always come at the end of the noun/pron/adj and cannot 
-be intermingled with other adjectives 
-Have moved to Demonstrative Determiners 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
- Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
-Pronominals - words which act like pronouns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-removed Pro from cén as noun complement is needed unlike cé
-also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PARTICLES
-Preverbal
-Unique Membership classes
-
-
-
-
-
-
-
-
-
-
-tense distiction is unnecessary
-
-
-
-
-
-relative if can be translated as "who/which/whose" (or "that")
-
-
-
-not relative if can't be translated as "who/which/whose" ???
-i.e. complementiser "that" ...
-
-
-
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
-
-
- # Multichar_Symbols definitions
-
-## Analysis symbols
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Subj is used for subjunctive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
-
-
- # Multichar_Symbols definitions
-
-## Analysis symbols
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Subj is used for subjunctive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=================================== !
-The Irish morphophonological/twolc rules file !
-=================================== !
-
-
-
-
-
-
-
-
-* *primus%>s*
-* *primus%>0*
-
-
-* examples:*
-
-* examples:*
-
-
-* examples:*
-
-* examples:*
-
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
-
-
- # Multichar_Symbols definitions
-
-## Analysis symbols
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Subj is used for subjunctive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
-
-
- # Multichar_Symbols definitions
-
-## Analysis symbols
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Subj is used for subjunctive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Symbol affixes
 
 
 
@@ -3028,15 +1786,16 @@ ALL PLURALS
 
 
 
-Proper noun inflection
-The Irish language proper nouns inflect in the same cases as regular
-nouns, but with a colon (':') as separator.
 
+# Symbol affixes
 
 
 
 
 
+=================================== !
+The Irish morphophonological/twolc rules file !
+=================================== !
 
 
 
@@ -3045,20 +1804,30 @@ nouns, but with a colon (':') as separator.
 
 
 
+* *primus%>s*
+* *primus%>0*
 
 
+* examples:*
 
+* examples:*
 
 
+* examples:*
 
+* examples:*
 
 
 
 
 
 
+DEFECTIVE VERBS
 
 
+SOME COMMON COMPOUNDS
+leave out _fios from lemma as it prevents some bí CG rules applying
+IRREGULAR VERBS
 
 
 
@@ -3180,14 +1949,11 @@ nouns, but with a colon (':') as separator.
 
 
 
-inserted +Len +Uru to distinguish between a bhíonn & a mbíonn Dir/Indir
-Rel clauses Dec 2004
-inserted ^Verb (x5) in NegQ (EUD 14-10-2017)
 
 
 
-FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
 
+auto does not lenite
 
 
 
@@ -3200,14 +1966,442 @@ FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
 
 
 
-áil -> Gen ála
 
-JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
-            : May have implications for CG3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+varient
+varient
+varient
+varient
+varient
+varient
+varient
+varient	
+
+
+
+
+
+
+
+
+
+
+
+
+auto does not lenite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NEEDS FURTHER TESTING OF -X WORDS
+and TEST
+
+
+
+
+
+
+
+
+Abbreviations 
+and a few English words
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+no because Na hAfraice Láir/Theas etc ..<A f r a i c %_:%  T h e a s>	Nf2-Prop;	! !!!!South Africa
+Mar 2012
+Mar 2012
+
+Added. Most popular names.
+Male
+
+
+Female
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
+ Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
+Pronominals - words which act like pronouns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+removed Pro from cén as noun complement is needed unlike cé
+also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INTERJECTIONS
+
+
+
+
+
+
+
+
+
+
+NUMERALS
+Cardinal numbers are described seperately here rather than with other
+Adjectives
+For Personal Numerals (duine, beirt, triúr) SEE NOUNS
+
+
+
+
+
+
+
+### CONJUNCTIONS
+removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
+e.g. go/gur a/ar nach/nár 
+and which often follow (or attach to) a conjunction
+e.g. cé go, nuair nach, 
+remaining subordinating conjunctions can be followed by verb or copula 
+go mb'fhusa an obair ..., go dtógfadh sé
+e.g. má bhíonn, más
+some still have tense marking as they are combined forms
+e.g. sula, sular, murar etc.
+
+
+
+
+
+gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé
+
+
+
+
+
+
+
+
+
+
+
 Na hAidiactaí Tuairisciúla - Descriptive Adjectives
-     C O N T I N U A T I O N     C L A S S E S
- E. Uí Dhonnchadha
-(c)2001
 
 
 
@@ -3265,12 +2459,680 @@ Na hAidiactaí Tuairisciúla - Descriptive Adjectives
 
 
 
-adj following a fem. noun is always lenited (^Sé) regardless of whether 
-the preceding noun is lenited or eclipsed (neither ??)
-as is the vocative after vocative particle "a"
 
 
-SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
+
+
+SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  I R R E G U L A R   A D J E C T I V E S 
+
+
+
+
+the following always come at the end of the noun/pron/adj and cannot 
+be intermingled with other adjectives 
+Have moved to Demonstrative Determiners 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tobar - ac Grianna
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PLACENAMES
+
+
+DETERMINERS
+
+
+
+
+
+this information is on the noun as initial mutation
+use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
+
+
+
+
+SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
+SEE PRON-LEX cad+Det+Q:cad				#;	! what
+SEE PRON-LEX céard+Det+Q:céard			#;	! what
+SEE PRON-LEX cé+Det+Q:cé				#;	! who
+SEE ADV cá+Det+Q:cá					#;	! where
+
+
+
+
+
+the following always come at the end of the noun/pron/adj and cannot 
+be intermingled with other adjectives 
+contextual tagged as demonstrative for now at least ...
+Prefixes
+Prefixes in the Irish language are bound to beginning of other words.
+
+
+
+Prepositions: 
+Simple: le, ag, ar, etc.
+Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
+Emphatic Compound eg agamsa, uaimse, ...
+
+
+
+
+theses are not preps only copula or conj
+this "is" looks like "agus" to me ... removing the prep reading ...
+should be subst except in Prep Cmpd - see below : maidir+Prep+Simp:maidir			#;
+should be subst:  maille+Prep+Simp:maille			#; ! maille le = along with
+
+
+
+
+
+
+
+
+le does not combine with art: but becomes leis before "an"
+
+
+trí does not combine with art: but becomes tríd before "an"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Adverbs
+
+
+
+
+
+
+
+
+
+
+MOVED TO ADJ annamh+Adv+Gn:annamh	#;
+what about chomh mór/hálainn etc. etc. 
+
+
+
+see PART-LEX.TXT (etc.) for following
+
+
+
+
+
+
+Abbreviations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Multichar_Symbols
+
++XMLTag		! 
+
+LEXICON Root
+	XMLTags;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Foclóir Póca etc.
+April 2008: Regenerated from verb stems by Christoph Wendler 
+(v=sceamh) CHECKED
+
+
+
+
+
+
+
+NOTE: 'druideadh' is commented out since it was not found as a verbal noun
+in the corpus, yet chances are that it would get mixed up with 'druideadh'
+as independed form of 'druid', i.e. 'ó druideadh an scoil'
+
+
+
+Common Functional Words
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+new category 28/03/08
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEE N-LEX-IRREG muineál	 Nm1-1;	 ! gs & npl -níl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatically assigned CCs
+
+Manually assigned CCs
+see n-lex-stems.txt ceathracha	Nm5-1;	! gs ~d pl ~idí
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTINUATION CLASSES MASCULINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+PARTICLES
+Preverbal
+Unique Membership classes
+
+
+
+
+
+
+
+
+
+
+tense distiction is unnecessary
+
+
+
+
+
+relative if can be translated as "who/which/whose" (or "that")
+
+
+
+not relative if can't be translated as "who/which/whose" ???
+i.e. complementiser "that" ...
+
+
+
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
+
+
+ # Multichar_Symbols definitions
+
+## Analysis symbols
+The morphological analyses of wordforms of UNDEFINED language are presented
+in this system in terms of following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subj is used for subjunctive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3488,19 +3350,141 @@ given the proper use of these flags.
 
 
 
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
-We describe here how abbreviations are in Irish are read out, e.g.
-for text-to-speech systems.
+ # Multichar_Symbols definitions
 
-For example:
+## Analysis symbols
+The morphological analyses of wordforms of UNDEFINED language are presented
+in this system in terms of following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
 
- * s.:syntynyt # ;  
- * os.:omaa% sukua # ;  
- * v.:vuosi # ;  
- * v.:vuonna # ;  
- * esim.:esimerkki # ; 
- * esim.:esimerkiksi # ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subj is used for subjunctive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3556,6 +3540,22 @@ For example:
 % kolon% :%:     Root ;
 % sárggis% :%-   Root ; 
 % násti% :%*     Root ; 
+
+
+
+
+We describe here how abbreviations are in Irish are read out, e.g.
+for text-to-speech systems.
+
+For example:
+
+ * s.:syntynyt # ;  
+ * os.:omaa% sukua # ;  
+ * v.:vuosi # ;  
+ * v.:vuonna # ;  
+ * esim.:esimerkki # ; 
+ * esim.:esimerkiksi # ; 
+
 
 
       [ L A N G U A G E ]  G R A M M A R   C H E C K E R
