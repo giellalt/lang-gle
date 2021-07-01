@@ -16,3 +16,5 @@ LEXICON Root
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/tags.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/tags.lexc)</small>

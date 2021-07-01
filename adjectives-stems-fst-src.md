@@ -102,7 +102,7 @@ SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
 
 
 
-  I R R E G U L A R   A D J E C T I V E S 
+I R R E G U L A R   A D J E C T I V E S 
 
 
 
@@ -142,3 +142,5 @@ Have moved to Demonstrative Determiners
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adjectives.lexc)</small>

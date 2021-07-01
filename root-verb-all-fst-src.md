@@ -137,3 +137,5 @@ Subj is used for subjunctive
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/root-verb-all.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-verb-all.lexc)</small>

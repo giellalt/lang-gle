@@ -38,7 +38,7 @@
 
 
 
-no because Na hAfraice Láir/Theas etc ..<A f r a i c %_:%  T h e a s>	Nf2-Prop;	! !!!!South Africa
+South Africa
 Mar 2012
 Mar 2012
 
@@ -77,3 +77,5 @@ Female
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/propernouns.lexc)</small>

@@ -217,7 +217,7 @@ sliabh -> na sléibhte
 
 3rd Declension
 Strong Plurals : +í 
-    as in Nm7 but singular are different
+as in Nm7 but singular are different
 
 eg. bádóir -> na bádóirí
 
@@ -343,7 +343,7 @@ indefinite => no initial mutation
 appending the +Len & +Ecl rather than creating seperate forms ...
 adds ^h to vowel-initial words ...  but adds the +hPref to all words ... see fix file
 just vowel-initial e.g. doras, fiú etc.
- although no initial mutation takes place 
+although no initial mutation takes place 
 
 
 
@@ -353,12 +353,12 @@ GENITIVE SINGULAR
 
 eg. tábhacht a n-oidhreachta
 eg. bia cait, bia sagairt, bia stóir, 
-    bia rúin, pobail  
-    siopa grósaera - a grocer's shop
+bia rúin, pobail  
+siopa grósaera - a grocer's shop
 eg. bia an chait,an íl, bia an stóir 
-    bia an éin (the bird's food)
+bia an éin (the bird's food)
 eg. bia an tsagairt (overgenerates 
-    tshagairt, h will be removed,
+tshagairt, h will be removed,
 eg. bia an rúin, an phobail
 eg. siopa an ghrósaera - the grocer's shop
 VOCATIVE SINGULAR 
@@ -616,3 +616,5 @@ ALL PLURALS
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/nouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/affixes/nouns.lexc)</small>

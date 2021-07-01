@@ -23,3 +23,5 @@ SEE ADV cá+Det+Q:cá					#;	! where
 the following always come at the end of the noun/pron/adj and cannot 
 be intermingled with other adjectives 
 contextual tagged as demonstrative for now at least ...
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/determiners.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/determiners.lexc)</small>

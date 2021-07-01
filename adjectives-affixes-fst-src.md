@@ -1,8 +1,8 @@
 JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
-            : May have implications for CG3
+: May have implications for CG3
 Na hAidiactaí Tuairisciúla - Descriptive Adjectives
-     C O N T I N U A T I O N     C L A S S E S
- E. Uí Dhonnchadha
+C O N T I N U A T I O N     C L A S S E S
+E. Uí Dhonnchadha
 (c)2001
 
 
@@ -106,3 +106,5 @@ SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/adjectives.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/affixes/adjectives.lexc)</small>
