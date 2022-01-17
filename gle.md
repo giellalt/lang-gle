@@ -606,1415 +606,11 @@ These were the set types.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-gle/blob/main/../src/cg3/functions.cg3)</small>=================================== !
-The Irish morphophonological/twolc rules file !
-=================================== !
-
-
-
-
-
-
-
-
-* *primus%>s*
-* *primus%>0*
-
-
-* examples:*
-
-* examples:*
-
-
-* examples:*
-
-* examples:*
-* * *
-<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/phonology.twolc)</small>
+<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-gle/blob/main/../src/cg3/functions.cg3)</small>
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
- # Multichar_Symbols definitions
-
-## Analysis symbols
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Subj is used for subjunctive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/root-noun-all.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-noun-all.lexc)</small>
-PARTICLES
-Preverbal
-Unique Membership classes
-
-
-
-
-
-
-
-
-
-
-tense distiction is unnecessary
-
-
-
-
-
-relative if can be translated as "who/which/whose" (or "that")
-
-
-
-not relative if can't be translated as "who/which/whose" ???
-i.e. complementiser "that" ...
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/particles.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/particles.lexc)</small>Common Functional Words
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/articles.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/articles.lexc)</small>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-new category 28/03/08
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SEE N-LEX-IRREG muineál	 Nm1-1;	 ! gs & npl -níl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Automatically assigned CCs
-
-Manually assigned CCs
-see n-lex-stems.txt ceathracha	Nm5-1;	! gs ~d pl ~idí
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CONTINUATION CLASSES MASCULINE
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/nouns.lexc)</small>DETERMINERS
-
-
-
-
-
-this information is on the noun as initial mutation
-use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
-
-
-
-
-SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
-SEE PRON-LEX cad+Det+Q:cad				#;	! what
-SEE PRON-LEX céard+Det+Q:céard			#;	! what
-SEE PRON-LEX cé+Det+Q:cé				#;	! who
-SEE ADV cá+Det+Q:cá					#;	! where
-
-
-
-
-
-the following always come at the end of the noun/pron/adj and cannot 
-be intermingled with other adjectives 
-contextual tagged as demonstrative for now at least ...
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/determiners.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/determiners.lexc)</small>Adverbs
-
-
-
-
-
-
-
-
-
-
-MOVED TO ADJ annamh+Adv+Gn:annamh	#;
-what about chomh mór/hálainn etc. etc. 
-
-
-
-see PART-LEX.TXT (etc.) for following
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/adverbs.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adverbs.lexc)</small>Abbreviations 
-and a few English words
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/abbreviations.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/abbreviations.lexc)</small>NUMERALS
-Cardinal numbers are described seperately here rather than with other
-Adjectives
-For Personal Numerals (duine, beirt, triúr) SEE NOUNS
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/numerals.lexc)</small>Prepositions: 
-Simple: le, ag, ar, etc.
-Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
-Emphatic Compound eg agamsa, uaimse, ...
-
-
-
-
-theses are not preps only copula or conj
-this "is" looks like "agus" to me ... removing the prep reading ...
-should be subst except in Prep Cmpd - see below : maidir+Prep+Simp:maidir			#;
-should be subst:  maille+Prep+Simp:maille			#; ! maille le = along with
-
-
-
-
-
-
-
-
-le does not combine with art: but becomes leis before "an"
-
-
-trí does not combine with art: but becomes tríd before "an"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/adpositions.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adpositions.lexc)</small>Na hAidiactaí Tuairisciúla - Descriptive Adjectives
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-I R R E G U L A R   A D J E C T I V E S 
-
-
-
-
-the following always come at the end of the noun/pron/adj and cannot 
-be intermingled with other adjectives 
-Have moved to Demonstrative Determiners 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adjectives.lexc)</small>### CONJUNCTIONS
-removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
-e.g. go/gur a/ar nach/nár 
-and which often follow (or attach to) a conjunction
-e.g. cé go, nuair nach, 
-remaining subordinating conjunctions can be followed by verb or copula 
-go mb'fhusa an obair ..., go dtógfadh sé
-e.g. má bhíonn, más
-some still have tense marking as they are combined forms
-e.g. sula, sular, murar etc.
-
-
-
-
-
-gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/conjunctions.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/conjunctions.lexc)</small>Prefixes
-Prefixes in the Irish language are bound to beginning of other words.
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/prefixes.lexc)</small>Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
-Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
-Pronominals - words which act like pronouns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-removed Pro from cén as noun complement is needed unlike cé
-also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/pronouns.lexc)</small>
-
-
-
-
-
-DEFECTIVE VERBS
-
-
-SOME COMMON COMPOUNDS
-leave out _fios from lemma as it prevents some bí CG rules applying
-IRREGULAR VERBS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-auto does not lenite
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-varient
-varient
-varient
-varient
-varient
-varient
-varient
-varient	
-
-
-
-
-
-
-
-
-
-
-
-
-auto does not lenite
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-NEEDS FURTHER TESTING OF -X WORDS
-and TEST
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/verbs.lexc)</small>Abbreviations
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/punctuations.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/punctuations.lexc)</small>INTERJECTIONS
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/interjections.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/interjections.lexc)</small>
-
-
-
-
-
-
-Foclóir Póca etc.
-April 2008: Regenerated from verb stems by Christoph Wendler 
-(v=sceamh) CHECKED
-
-
-
-
-
-
-
-NOTE: 'druideadh' is commented out since it was not found as a verbal noun
-in the corpus, yet chances are that it would get mixed up with 'druideadh'
-as independed form of 'druid', i.e. 'ó druideadh an scoil'
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/verbalnouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/verbalnouns.lexc)</small>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-South Africa
-Mar 2012
-Mar 2012
-
-Added. Most popular names.
-Male
-
-
-Female
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/propernouns.lexc)</small>
-Multichar_Symbols
-
-+XMLTag		! 
-
-LEXICON Root
-	XMLTags;
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/tags.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/tags.lexc)</small>Tobar - ac Grianna
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PLACENAMES
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/tobar.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/tobar.lexc)</small>
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
-
-
- # Multichar_Symbols definitions
+# Multichar_Symbolsdefinitions definitions
 
 ## Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
@@ -2149,152 +745,12 @@ Subj is used for subjunctive
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/root-others.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-others.lexc)</small>
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
-
-
- # Multichar_Symbols definitions
-
-## Analysis symbols
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Subj is used for subjunctive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/root-verb-all.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-verb-all.lexc)</small>
+<small>This (part of) documentation was generated from [../src/fst/root-adj.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-adj.lexc)</small>
 # Irish morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
- # Definitions for Multichar_Symbols
+# Definitions for Multichar_Symbols@CODE@
 
 ## Analysis symbols
 The morphological analyses of wordforms for the Irish
@@ -2345,7 +801,7 @@ Subj is used for subjunctive
 
 
 
- * +Symbol = independent symbols in the text stream, like £, €, ©
+* +Symbol© = independent symbols in the text stream, like £, €, ©
 
 
 
@@ -2430,29 +886,29 @@ Subj is used for subjunctive
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
 with verbs if the verb is further derived into a noun again:
- |  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @D.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @C.NeedNoun@ | (Dis)allow compounds with verbs unless nominalised
+|  @P.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @D.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @C.NeedNoun@nominalised | (Dis)allow compounds with verbs unless nominalised
 
 For languages that allow compounding, the following flag diacritics are needed
 to control position-based compounding restrictions for nominals. Their use is
 handled automatically if combined with +CmpN/xxx tags. If not used, they will
 do no harm.
- |  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
- |  @D.CmpPref.TRUE@ | Block such words from entering ENDLEX
- |  @P.CmpPref.FALSE@ | Block these words from making further compounds
- |  @D.CmpLast.TRUE@ | Block such words from entering R
- |  @D.CmpNone.TRUE@ | Combines with the next tag to prohibit compounding
- |  @U.CmpNone.FALSE@ | Combines with the prev tag to prohibit compounding
- |  @P.CmpOnly.TRUE@ | Sets a flag to indicate that the word has passed R
- |  @D.CmpOnly.FALSE@ | Disallow words coming directly from root.
+|  @P.CmpFrst.FALSE@first | Require that words tagged as such only appear first
+|  @D.CmpPref.TRUE@ENDLEX | Block such words from entering ENDLEX
+|  @P.CmpPref.FALSE@compounds | Block these words from making further compounds
+|  @D.CmpLast.TRUE@R | Block such words from entering R
+|  @D.CmpNone.TRUE@compounding | Combines with the next tag to prohibit compounding
+|  @U.CmpNone.FALSE@compounding | Combines with the prev tag to prohibit compounding
+|  @P.CmpOnly.TRUE@R | Sets a flag to indicate that the word has passed R
+|  @D.CmpOnly.FALSE@root. | Disallow words coming directly from root.
 
 Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
 these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
- |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
- |  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Obl@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Opt@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
 
 
 
@@ -3379,11 +1835,318 @@ nouns, but with a colon (':') as separator.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/affixes/propernouns.lexc)</small>
+<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/affixes/propernouns.lexc)</small>=================================== !
+The Irish morphophonological/twolc rules file !
+=================================== !
+
+
+
+
+
+
+
+
+* *primus%>s*
+* *primus%>0*
+
+
+* examples:*
+
+* examples:*
+
+
+* examples:*
+
+* examples:*
+* * *
+<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/phonology.twolc)</small>
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
- # Multichar_Symbols definitions
+# Multichar_Symbolsdefinitions definitions
+
+## Analysis symbols
+The morphological analyses of wordforms of UNDEFINED language are presented
+in this system in terms of following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subj is used for subjunctive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/root-verb-all.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-verb-all.lexc)</small>
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
+
+
+# Multichar_Symbolsdefinitions definitions
+
+## Analysis symbols
+The morphological analyses of wordforms of UNDEFINED language are presented
+in this system in terms of following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subj is used for subjunctive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/root-noun-all.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-noun-all.lexc)</small>
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
+
+
+# Multichar_Symbolsdefinitions definitions
 
 ## Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
@@ -3518,7 +2281,1244 @@ Subj is used for subjunctive
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/root-adj.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-adj.lexc)</small>
+<small>This (part of) documentation was generated from [../src/fst/root-others.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/root-others.lexc)</small>INTERJECTIONS
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/interjections.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/interjections.lexc)</small>
+
+
+
+
+
+
+Foclóir Póca etc.
+April 2008: Regenerated from verb stems by Christoph Wendler 
+(v=sceamh) CHECKED
+
+
+
+
+
+
+
+NOTE: 'druideadh' is commented out since it was not found as a verbal noun
+in the corpus, yet chances are that it would get mixed up with 'druideadh'
+as independed form of 'druid', i.e. 'ó druideadh an scoil'
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/verbalnouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/verbalnouns.lexc)</small>Common Functional Words
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/articles.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/articles.lexc)</small>Prefixes
+Prefixes in the Irish language are bound to beginning of other words.
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/prefixes.lexc)</small>Abbreviations 
+and a few English words
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/abbreviations.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/abbreviations.lexc)</small>
+PARTICLES
+Preverbal
+Unique Membership classes
+
+
+
+
+
+
+
+
+
+
+tense distiction is unnecessary
+
+
+
+
+
+relative if can be translated as "who/which/whose" (or "that")
+
+
+
+not relative if can't be translated as "who/which/whose" ???
+i.e. complementiser "that" ...
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/particles.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/particles.lexc)</small>Abbreviations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/punctuations.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/punctuations.lexc)</small>### CONJUNCTIONS
+removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
+e.g. go/gur a/ar nach/nár 
+and which often follow (or attach to) a conjunction
+e.g. cé go, nuair nach, 
+remaining subordinating conjunctions can be followed by verb or copula 
+go mb'fhusa an obair ..., go dtógfadh sé
+e.g. má bhíonn, más
+some still have tense marking as they are combined forms
+e.g. sula, sular, murar etc.
+
+
+
+
+
+gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/conjunctions.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/conjunctions.lexc)</small>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+new category 28/03/08
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEE N-LEX-IRREG muineál	 Nm1-1;	 ! gs & npl -níl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatically assigned CCs
+
+Manually assigned CCs
+see n-lex-stems.txt ceathracha	Nm5-1;	! gs ~d pl ~idí
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTINUATION CLASSES MASCULINE
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/nouns.lexc)</small>DETERMINERS
+
+
+
+
+
+this information is on the noun as initial mutation
+use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
+
+
+
+
+SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
+SEE PRON-LEX cad+Det+Q:cad				#;	! what
+SEE PRON-LEX céard+Det+Q:céard			#;	! what
+SEE PRON-LEX cé+Det+Q:cé				#;	! who
+SEE ADV cá+Det+Q:cá					#;	! where
+
+
+
+
+
+the following always come at the end of the noun/pron/adj and cannot 
+be intermingled with other adjectives 
+contextual tagged as demonstrative for now at least ...
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/determiners.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/determiners.lexc)</small>Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I R R E G U L A R   A D J E C T I V E S 
+
+
+
+
+the following always come at the end of the noun/pron/adj and cannot 
+be intermingled with other adjectives 
+Have moved to Demonstrative Determiners 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adjectives.lexc)</small>Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
+Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
+Pronominals - words which act like pronouns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+removed Pro from cén as noun complement is needed unlike cé
+also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/pronouns.lexc)</small>
+
+
+
+
+
+DEFECTIVE VERBS
+
+
+SOME COMMON COMPOUNDS
+leave out _fios from lemma as it prevents some bí CG rules applying
+IRREGULAR VERBS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+auto does not lenite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+varient
+varient
+varient
+varient
+varient
+varient
+varient
+varient	
+
+
+
+
+
+
+
+
+
+
+
+
+auto does not lenite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NEEDS FURTHER TESTING OF -X WORDS
+and TEST
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/verbs.lexc)</small>Tobar - ac Grianna
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PLACENAMES
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/tobar.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/tobar.lexc)</small>NUMERALS
+Cardinal numbers are described seperately here rather than with other
+Adjectives
+For Personal Numerals (duine, beirt, triúr) SEE NOUNS
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/numerals.lexc)</small>
+Multichar_Symbols
+
++XMLTag		! 
+
+LEXICON Root
+	XMLTags;
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/tags.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/tags.lexc)</small>Adverbs
+
+
+
+
+
+
+
+
+
+
+MOVED TO ADJ annamh+Adv+Gn:annamh	#;
+what about chomh mór/hálainn etc. etc. 
+
+
+
+see PART-LEX.TXT (etc.) for following
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adverbs.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adverbs.lexc)</small>Prepositions: 
+Simple: le, ag, ar, etc.
+Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
+Emphatic Compound eg agamsa, uaimse, ...
+
+
+
+
+theses are not preps only copula or conj
+this "is" looks like "agus" to me ... removing the prep reading ...
+should be subst except in Prep Cmpd - see below : maidir+Prep+Simp:maidir			#;
+should be subst:  maille+Prep+Simp:maille			#; ! maille le = along with
+
+
+
+
+
+
+
+
+le does not combine with art: but becomes leis before "an"
+
+
+trí does not combine with art: but becomes tríd before "an"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adpositions.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/adpositions.lexc)</small>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+South Africa
+Mar 2012
+Mar 2012
+
+Added. Most popular names.
+Male
+
+
+Female
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/propernouns.lexc)</small>
 
 
 We describe here how abbreviations are in Irish are read out, e.g.

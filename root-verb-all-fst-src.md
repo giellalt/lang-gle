@@ -2,7 +2,7 @@
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 
- # Multichar_Symbols definitions
+# Multichar_Symbolsdefinitions definitions
 
 ## Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
