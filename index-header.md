@@ -7,6 +7,10 @@
 
 This page documents the work on the [Irish language model](http://github.com/giellalt/lang-gle). 
 
+The analyser behind this source code is written by Elaine Uí Dhonnchadha.
+
+It contains approximately 80000 stems, and an inflectional component.
+
 # Project documentation
 
 * (Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.)
