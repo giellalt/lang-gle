@@ -9,21 +9,11 @@ e.g. má bhíonn, más
 some still have tense marking as they are combined forms
 e.g. sula, sular, murar etc.
 
-
-
-
-
 gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé
 
-
-
-
-
-
-
-
-
-
-
 * * *
-<small>This (part of) documentation was generated from [../src/fst/stems/conjunctions.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/stems/conjunctions.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/stems/conjunctions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/conjunctions.lexc)</small>
+
+---
+

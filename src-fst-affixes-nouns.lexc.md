@@ -5,72 +5,11 @@ FEMININE NOUN continuation classes
 Weak Plurals : 
 Broad singular is made slender; plural already broad
 
-
-
-
-
-
-
-
-
-
 Weak Plurals : Broaden 
 
 Singular already slender; plural is made broad
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 gamhain - gamhna (gs), midheamhain - midheamhna (gs)
-
-
-
-
-
 
 Strong Plurals :  +(e)anna
 
@@ -79,141 +18,48 @@ scoth -> scothanna
 EXCEPTION: an chuid -> na codanna see FIX file
 EXCEPTION: an raith -> na rathanna see FIX file
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Strong Plurals : +í
 
 an bhearna -> na bearnaí
 an eala -> na healaí
-
-
 
 Strong Plurals : Athrú e -> í
 
 an aicme -> na haicmí (classes)
 an táille -> na táillí (fees)
 
-
-
 Strong Plurals : 
 
-
-
-
-
-
-
-
-
-
-
-
 various ending in vowel  ! plurals +nna
-
-
-
-
-
 
 Strong Plurals : Leathnú  +acha
 
 an bheoir -> na beoracha (beers)
-
-
-
-
 
 Gen Sg : Coim + ach
 
 an chathaoir -> na cathaoireacha (chairs) (Note long vowel aoi is not sync.
 an cathair -> na cathracha
 
-
-
-
 Gen Sg : Coim + a
 samhail -> samhla
 anacair -> anacra
-
 
 Gen Sg : Coim + Slen + e
 crithir - critre
 fothair - foithre
 
-
-
-
-
-
-
-
-
-
-
-
 MASCULINE NOUN continuation classes
-
-
-
-
 
 WEAK PLURALS (i.e. where the nominative and genitive plurals are different) 
 TYPE 1 Nom pl. ends in conson. eg cat : cait, fear : fir, marcach: marcaigh 
 
-
-
-
 TYPE 2 Nom pl. formed by adding -a eg cos : cosa, úll : úlla 
-
-
 
 (TYPE 3) Nom pl. formed by adding -ta eg 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 2nd Declension
 sliabh -> na sléibhte 
-
-
-
-
-
-
-
 
 3rd Declension
 Strong Plurals : +í 
@@ -221,25 +67,18 @@ as in Nm7 but singular are different
 
 eg. bádóir -> na bádóirí
 
-
-
 Strong Plurals : +anna
 
 eg. an bláth -> na bláthanna
 
-
 Strong Plurals : +aí
-
-
 
 gen briocht -> breachta
 Strong Plurals : +aí
 briocht -> briochtaí
 
-
 Strong Plurals : +anna
 eg. an bláth -> na bláthanna
-
 
 ^Lea,broadening, is required, in gen sg: io -> ea (bior, crios) 
 and this is done using ^Ath (change)
@@ -252,16 +91,6 @@ eg. an cith -> na ceathanna
 and this is done using ^Ath (change)
 pl also broadened cith -> ceathanna
 
-
-
-
-
-
-
-
-
-
-
 Strong Plurals : +í
 
 (A) nouns ending in -ín (a diminutive)
@@ -272,56 +101,9 @@ eg. an báidín -> na báidíní (small boats)
 (B) nouns ending in -a
 eg. an balla -> na ballaí (walls)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Strong Plurals : +idí
 an fiche -> na fichidí (the twenties) eidí needs correcting
 an caoga -> na caogaidí (the fifties)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 INITIAL MUTATIONS
 NOMINATIVE SINGULAR 
@@ -345,10 +127,6 @@ adds ^h to vowel-initial words ...  but adds the +hPref to all words ... see fix
 just vowel-initial e.g. doras, fiú etc.
 although no initial mutation takes place 
 
-
-
-
-
 GENITIVE SINGULAR 
 
 eg. tábhacht a n-oidhreachta
@@ -365,256 +143,18 @@ VOCATIVE SINGULAR
 Since this is trivial (always ^Sé) it is included with Final Mutations
 in Voc-sg-0 and Voc-sg-1.
 
-
-
 FINAL MUTATIONS
 NOMINATIVE SINGULAR
 
 GENITIVE SINGULAR 
 
-
-
-
-
-
-
-
 VOCATIVE SINGULAR 
-
-
-
 
 ALL PLURALS
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/nouns.lexc](http://github.com/giellalt/lang-gle/blob/main/../src/fst/affixes/nouns.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/affixes/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/affixes/nouns.lexc)</small>
+
+---
+
