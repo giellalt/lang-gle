@@ -38,6 +38,11 @@
 # emacs grammarchecker.cg3  # and C-c C-i / C-c C-c if you have cg-mode installed
 # echo "Sun ij puátá." | sh modes/???gram.mode  # from the terminal, replacing ??? with your language code
 # echo "Tá cáil dhomhanda ar ghrúdlann Guinness i mBaile Átha Cliath, agus cé nach i seilbh Éireannach a thuilleadh é agus nó mbruitear i dtíortha eile é, meastar go leathan gur fearr Guinness na hÉireann. Déanann an comhlacht chéanna lager Harp, mar aon le beoir eachtrannacha a bhruith agus a dháileadh faoi chonradh." | tools/grammarcheckers/modes/trace-glegram.mode | less
+# echo "Tá cáil dhomhanda ar ghrúdlann Guinness i mBaile Átha Cliath,"
+# echo "Tá cail dhomhanda ar ghrúdlann Guinness i mBaile Átha Cliath,"
+# echo "Tá cáil domhanda ar ghrúdlann Guinness i mBaile Átha Cliath,"
+# echo "Tá cáil dhomhanda ar grúdlann Guinness i mBaile Átha Cliath,"
+# echo "Tá cáil dhomhanda ar ghrúdlann Guinness i Baile Átha Cliath,"
 #
 # ---------------------- #
 #   Other debug-pipes:   #
