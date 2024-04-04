@@ -1,5 +1,5 @@
 
-[ L A N G U A G E ]  G R A M M A R   C H E C K E R
+IRISH  G R A M M A R   C H E C K E R
 
 # DELIMITERS
 

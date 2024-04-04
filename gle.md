@@ -185,7 +185,7 @@ SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/affixes/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/affixes/adjectives.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/adjectives.lexc)</small>
 
 ---
 
@@ -345,7 +345,7 @@ ALL PLURALS
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/affixes/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/affixes/nouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/nouns.lexc)</small>
 
 ---
 
@@ -355,7 +355,7 @@ nouns, but with a colon (':') as separator.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/affixes/propernouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/affixes/propernouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/propernouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/propernouns.lexc)</small>
 
 ---
 
@@ -364,7 +364,7 @@ nouns, but with a colon (':') as separator.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/affixes/symbols.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/affixes/symbols.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/symbols.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/symbols.lexc)</small>
 
 ---
 
@@ -380,7 +380,7 @@ FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/affixes/verbs.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/verbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/verbs.lexc)</small>
 
 ---
 
@@ -390,7 +390,7 @@ a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/phonology.nounadj.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/phonology.nounadj.xfscript)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/phonology.nounadj.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.nounadj.xfscript)</small>
 
 ---
 
@@ -411,7 +411,7 @@ The Irish morphophonological/twolc rules file !
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/phonology.twolc](https://github.com/giellalt/lang-gle/blob/main/src/fst/phonology.twolc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/phonology.twolc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.twolc)</small>
 
 ---
 
@@ -419,7 +419,7 @@ Verbal Noun Gen
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/phonology.verb.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/phonology.verb.xfscript)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/phonology.verb.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.verb.xfscript)</small>
 
 ---
 
@@ -437,7 +437,7 @@ Subj is used for subjunctive
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/root-adj.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/root-adj.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/root-adj.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-adj.lexc)</small>
 
 ---
 
@@ -455,7 +455,7 @@ Subj is used for subjunctive
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/root-noun-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/root-noun-all.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/root-noun-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-noun-all.lexc)</small>
 
 ---
 
@@ -473,7 +473,7 @@ Subj is used for subjunctive
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/root-others.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/root-others.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/root-others.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-others.lexc)</small>
 
 ---
 
@@ -491,7 +491,7 @@ Subj is used for subjunctive
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/root-verb-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/root-verb-all.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/root-verb-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-verb-all.lexc)</small>
 
 ---
 
@@ -540,7 +540,7 @@ given the proper use of these flags.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/root.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/root.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/root.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root.lexc)</small>
 
 ---
 
@@ -549,7 +549,7 @@ and a few English words
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/abbreviations.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/abbreviations.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/abbreviations.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/abbreviations.lexc)</small>
 
 ---
 
@@ -565,7 +565,7 @@ Have moved to Demonstrative Determiners
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/adjectives.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/adjectives.lexc)</small>
 
 ---
 
@@ -585,7 +585,7 @@ trí does not combine with art: but becomes tríd before "an"
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/adpositions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/adpositions.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/adpositions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/adpositions.lexc)</small>
 
 ---
 
@@ -598,7 +598,7 @@ see PART-LEX.TXT (etc.) for following
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/adverbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/adverbs.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/adverbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/adverbs.lexc)</small>
 
 ---
 
@@ -606,7 +606,7 @@ Common Functional Words
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/articles.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/articles.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/articles.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/articles.lexc)</small>
 
 ---
 
@@ -625,7 +625,7 @@ gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded 
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/conjunctions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/conjunctions.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/conjunctions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/conjunctions.lexc)</small>
 
 ---
 
@@ -646,7 +646,7 @@ contextual tagged as demonstrative for now at least ...
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/determiners.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/determiners.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/determiners.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/determiners.lexc)</small>
 
 ---
 
@@ -654,7 +654,7 @@ INTERJECTIONS
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/interjections.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/interjections.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/interjections.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/interjections.lexc)</small>
 
 ---
 
@@ -673,7 +673,7 @@ CONTINUATION CLASSES MASCULINE
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/nouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/nouns.lexc)</small>
 
 ---
 
@@ -684,7 +684,7 @@ For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/numerals.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/numerals.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/numerals.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/numerals.lexc)</small>
 
 ---
 
@@ -702,7 +702,7 @@ i.e. complementiser "that" ...
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/particles.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/particles.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/particles.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/particles.lexc)</small>
 
 ---
 
@@ -711,7 +711,7 @@ Prefixes in the Irish language are bound to beginning of other words.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/prefixes.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/prefixes.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/prefixes.lexc)</small>
 
 ---
 
@@ -724,7 +724,7 @@ also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/pronouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/pronouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/pronouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/pronouns.lexc)</small>
 
 ---
 
@@ -741,7 +741,7 @@ Female
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/propernouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/propernouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/propernouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/propernouns.lexc)</small>
 
 ---
 
@@ -749,7 +749,7 @@ Abbreviations
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/punctuations.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/punctuations.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/punctuations.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/punctuations.lexc)</small>
 
 ---
 
@@ -763,7 +763,7 @@ LEXICON Root
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/tags.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/tags.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/tags.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/tags.lexc)</small>
 
 ---
 
@@ -773,7 +773,7 @@ PLACENAMES
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/tobar.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/tobar.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/tobar.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/tobar.lexc)</small>
 
 ---
 
@@ -789,7 +789,7 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/verbalnouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/verbalnouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/verbalnouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/verbalnouns.lexc)</small>
 
 ---
 
@@ -819,7 +819,7 @@ and TEST
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/stems/verbs.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/verbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/verbs.lexc)</small>
 
 ---
 
@@ -829,7 +829,7 @@ NOW COMPOSED IN LOOKUP.SCRIPT
 
 * * *
 
-<small>This (part of) documentation was generated from [src/orthography/urucaps.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/orthography/urucaps.xfscript)</small>
+<small>This (part of) documentation was generated from [src/fst/orthography/urucaps.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/orthography/urucaps.xfscript)</small>
 
 ---
 
@@ -996,7 +996,7 @@ retracted tongue root			_q
 
 * * *
 
-<small>This (part of) documentation was generated from [src/phonetics/txt2ipa.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/phonetics/txt2ipa.xfscript)</small>
+<small>This (part of) documentation was generated from [src/fst/phonetics/txt2ipa.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/phonetics/txt2ipa.xfscript)</small>
 
 ---
 
@@ -1016,7 +1016,7 @@ For example:
 
 * * *
 
-<small>This (part of) documentation was generated from [src/transcriptions/transcriptor-abbrevs2text.lexc](https://github.com/giellalt/lang-gle/blob/main/src/transcriptions/transcriptor-abbrevs2text.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/transcriptions/transcriptor-abbrevs2text.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/transcriptions/transcriptor-abbrevs2text.lexc)</small>
 
 ---
 
@@ -1030,12 +1030,12 @@ For example:
 
 * * *
 
-<small>This (part of) documentation was generated from [src/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-gle/blob/main/src/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
 
 ---
 
 
-[ L A N G U A G E ]  G R A M M A R   C H E C K E R
+IRISH  G R A M M A R   C H E C K E R
 
 # DELIMITERS
 

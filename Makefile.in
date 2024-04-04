@@ -343,6 +343,10 @@ SEE = @SEE@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 SPELLERVERSION = @SPELLERVERSION@
+SPELLER_DESC_ENG = @SPELLER_DESC_ENG@
+SPELLER_DESC_NATIVE = @SPELLER_DESC_NATIVE@
+SPELLER_NAME_ENG = @SPELLER_NAME_ENG@
+SPELLER_NAME_NATIVE = @SPELLER_NAME_NATIVE@
 STRIP = @STRIP@
 TAR = @TAR@
 TWOLC = @TWOLC@
@@ -936,7 +940,7 @@ regenerate-markdown: generate-markdown
 
 # Generate endpoint json file for shield.io lemma count badge.
 # Only to be stored in the gh-pages branch, ignored in main.
-$(srcdir)/lemmacount.json: $(top_srcdir)/src/fst/stems/*.lexc
+$(srcdir)/lemmacount.json:
 	$(AM_V_GEN)$(GTCORE)/scripts/make-lemmacount.json.sh $(abs_top_srcdir) > $@
 
 # Generate a maturity.json file as endpoint for the maturity badge.
@@ -944,7 +948,7 @@ $(srcdir)/maturity.json:
 	$(AM_V_GEN)$(GTCORE)/scripts/make-maturity.json.sh $(REPONAME) > $@
 
 # Convert source filenames to extracted documentation filenames, VPATH safe:
-# ../../../src/fst/stems/adverbs.lexc => src-fst-stems-adverbs.lexc.md
+# ../../../src/fst/morphology/stems/adverbs.lexc => src-fst-morphology-stems-adverbs.lexc.md
 define src2md
 $(addsuffix .md,$(subst /,-,$(subst $(top_srcdir)/,,$(1))))
 endef
@@ -990,27 +994,42 @@ $(LINKS):
 		d2=`echo "$$d" | cut -d '/' -f 2` ;\
 		d3=`echo "$$d" | cut -d '/' -f 3` ;\
 		d4=`echo "$$d" | cut -d '/' -f 4` ;\
+		d5=`echo "$$d" | cut -d '/' -f 5` ;\
 		if test "x$$d1" != "x$$oldd1" ; then \
 			echo "* \`$$d1/\`" ;\
 			oldd1=$$d1 ;\
+			oldd2="";\
+			oldd3="";\
+			oldd4="";\
 		fi ; \
 		if test "x$$d2" = x ; then \
 			echo "    * [$$docname]($$html) ([src]($(REPOURL)/$$doc))" ;\
 		elif test "x$$d2" != "x$$oldd2" ; then \
 			echo "    * \`$$d2/\`" ;\
 			oldd2=$$d2 ;\
+			oldd3="";\
+			oldd4="";\
+			oldd5="";\
 		fi ; \
 		if test "x$$d3" = x -a "x$$d2" != x; then \
 			echo "        * [$$docname]($$html) ([src]($(REPOURL)/$$doc))" ;\
 		elif test "x$$d3" != "x$$oldd3" ; then \
 			echo "        * \`$$d3/\`" ;\
 			oldd3=$$d3 ;\
+			oldd4="";\
 		fi ; \
 		if test "x$$d4" = x -a "x$$d3" != x ; then \
 			echo "            * [$$docname]($$html) ([src]($(REPOURL)/$$doc))" ;\
 		elif test "x$$d4" != "x$$oldd4" ; then \
 			echo "            * \`$$d4/\`" ;\
 			oldd4=$$d4 ;\
+			oldd5="";\
+		fi ; \
+		if test "x$$d5" = x -a "x$$d4" != x ; then \
+			echo "                * [$$docname]($$html) ([src]($(REPOURL)/$$doc))" ;\
+		elif test "x$$d5" != "x$$oldd5" ; then \
+			echo "                * \`$$d5/\`" ;\
+			oldd5=$$d5 ;\
 		fi ; \
 	done > $@
 
