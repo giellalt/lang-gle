@@ -26,6 +26,13 @@ PREFERRED-TARGETS = Pron Noun PastInd PresSubj ;
 # ==================================================================== #
 # SETS
 # ==================================================================== #
+
+LIST Art = Art ;
+LIST Noun = Noun ;
+LIST Num = Num ;
+LIST Det = Det ;
+LIST Abr = Abr ;
+
 SETS 
 LIST BOS = (>>>) "<p>" "<s>" (ChildesID);
 LIST EOS = (<<<); # end and beg. of sentence. for vislcg.
@@ -1685,7 +1692,7 @@ REMOVE (Art Pl) IF ( NOT 1 (Noun Pl));
 
 # NOTE
 # an 19ú haois déag .. an t-aon ceann amháin, an droch rud ná, an CCEA 
-REMOVE (Art) IF ( NOT 1 (Noun) OR (Num) OR (Det) OR (Abr) OR ADJ-PRENOM );
+REMOVE Art IF (NEGATE 1 Noun OR Num OR Det OR Abr OR ADJ-PRENOM);
 
 # it is an article if followed by definite noun 
 # problem: ar an seilp -> Def forms should be "ar an seilpe" or "an tseilp"
