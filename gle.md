@@ -1,6 +1,10 @@
-# Irish description 
+# Irish language model documentation
 
-All documents in one file
+All doc-comment documentation in one large file.
+
+---
+
+# src-cg3-functions.cg3.md 
 
 
 
@@ -170,7 +174,14 @@ These were the set types.
 ## HNOUN MAPPING
 
 * * *
-<small>This (part of) documentation was generated from [src/cg3/functions.cg3](https://github.com/giellalt/lang-gle/blob/main/src/cg3/functions.cg3)</small>JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
+
+<small>This (part of) documentation was generated from [src/cg3/functions.cg3](https://github.com/giellalt/lang-gle/blob/main/src/cg3/functions.cg3)</small>
+
+---
+
+# src-fst-morphology-affixes-adjectives.lexc.md 
+
+JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
 : May have implications for CG3
 Na hAidiactaí Tuairisciúla - Descriptive Adjectives
 C O N T I N U A T I O N     C L A S S E S
@@ -188,6 +199,8 @@ SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
 <small>This (part of) documentation was generated from [src/fst/morphology/affixes/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/adjectives.lexc)</small>
 
 ---
+
+# src-fst-morphology-affixes-nouns.lexc.md 
 
 +Idf is no longer used with base form .. just +DefArt after article ...
 ## Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
@@ -349,6 +362,8 @@ ALL PLURALS
 
 ---
 
+# src-fst-morphology-affixes-propernouns.lexc.md 
+
 Proper noun inflection
 The Irish language proper nouns inflect in the same cases as regular
 nouns, but with a colon (':') as separator.
@@ -359,6 +374,8 @@ nouns, but with a colon (':') as separator.
 
 ---
 
+# src-fst-morphology-affixes-symbols.lexc.md 
+
 
 # Symbol affixes
 
@@ -367,6 +384,8 @@ nouns, but with a colon (':') as separator.
 <small>This (part of) documentation was generated from [src/fst/morphology/affixes/symbols.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/symbols.lexc)</small>
 
 ---
+
+# src-fst-morphology-affixes-verbs.lexc.md 
 
 
 
@@ -384,6 +403,8 @@ FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
 
 ---
 
+# src-fst-morphology-phonology.nounadj.xfscript.md 
+
 
 
 a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
@@ -393,6 +414,8 @@ a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
 <small>This (part of) documentation was generated from [src/fst/morphology/phonology.nounadj.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.nounadj.xfscript)</small>
 
 ---
+
+# src-fst-morphology-phonology.twolc.md 
 
 =================================== !
 The Irish morphophonological/twolc rules file !
@@ -415,6 +438,8 @@ The Irish morphophonological/twolc rules file !
 
 ---
 
+# src-fst-morphology-phonology.verb.xfscript.md 
+
 Verbal Noun Gen
 
 * * *
@@ -422,6 +447,8 @@ Verbal Noun Gen
 <small>This (part of) documentation was generated from [src/fst/morphology/phonology.verb.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.verb.xfscript)</small>
 
 ---
+
+# src-fst-morphology-root-adj.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
@@ -441,6 +468,8 @@ Subj is used for subjunctive
 
 ---
 
+# src-fst-morphology-root-noun-all.lexc.md 
+
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
@@ -458,6 +487,8 @@ Subj is used for subjunctive
 <small>This (part of) documentation was generated from [src/fst/morphology/root-noun-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-noun-all.lexc)</small>
 
 ---
+
+# src-fst-morphology-root-others.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
@@ -477,6 +508,8 @@ Subj is used for subjunctive
 
 ---
 
+# src-fst-morphology-root-verb-all.lexc.md 
+
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
@@ -494,6 +527,8 @@ Subj is used for subjunctive
 <small>This (part of) documentation was generated from [src/fst/morphology/root-verb-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-verb-all.lexc)</small>
 
 ---
+
+# src-fst-morphology-root.lexc.md 
 
 
 # Irish morphological analyser                      !
@@ -544,6 +579,8 @@ given the proper use of these flags.
 
 ---
 
+# src-fst-morphology-stems-abbreviations.lexc.md 
+
 Abbreviations 
 and a few English words
 
@@ -552,6 +589,8 @@ and a few English words
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/abbreviations.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/abbreviations.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-adjectives.lexc.md 
 
 Na hAidiactaí Tuairisciúla - Descriptive Adjectives
 
@@ -568,6 +607,8 @@ Have moved to Demonstrative Determiners
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/adjectives.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-adpositions.lexc.md 
 
 Prepositions: 
 Simple: le, ag, ar, etc.
@@ -589,6 +630,8 @@ trí does not combine with art: but becomes tríd before "an"
 
 ---
 
+# src-fst-morphology-stems-adverbs.lexc.md 
+
 Adverbs
 
 MOVED TO ADJ annamh+Adv+Gn:annamh	#;
@@ -602,6 +645,8 @@ see PART-LEX.TXT (etc.) for following
 
 ---
 
+# src-fst-morphology-stems-articles.lexc.md 
+
 Common Functional Words
 
 * * *
@@ -609,6 +654,8 @@ Common Functional Words
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/articles.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/articles.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-conjunctions.lexc.md 
 
 ### CONJUNCTIONS
 removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
@@ -628,6 +675,8 @@ gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/conjunctions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/conjunctions.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-determiners.lexc.md 
 
 DETERMINERS
 
@@ -650,6 +699,8 @@ contextual tagged as demonstrative for now at least ...
 
 ---
 
+# src-fst-morphology-stems-interjections.lexc.md 
+
 INTERJECTIONS
 
 * * *
@@ -657,6 +708,8 @@ INTERJECTIONS
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/interjections.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/interjections.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-nouns.lexc.md 
 
 
 
@@ -677,6 +730,8 @@ CONTINUATION CLASSES MASCULINE
 
 ---
 
+# src-fst-morphology-stems-numerals.lexc.md 
+
 NUMERALS
 Cardinal numbers are described seperately here rather than with other
 Adjectives
@@ -687,6 +742,8 @@ For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/numerals.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/numerals.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-particles.lexc.md 
 
 
 PARTICLES
@@ -706,6 +763,8 @@ i.e. complementiser "that" ...
 
 ---
 
+# src-fst-morphology-stems-prefixes.lexc.md 
+
 Prefixes
 Prefixes in the Irish language are bound to beginning of other words.
 
@@ -714,6 +773,8 @@ Prefixes in the Irish language are bound to beginning of other words.
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/prefixes.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/prefixes.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-pronouns.lexc.md 
 
 Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
 Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
@@ -727,6 +788,8 @@ also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/pronouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/pronouns.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-propernouns.lexc.md 
 
 
 
@@ -745,6 +808,8 @@ Female
 
 ---
 
+# src-fst-morphology-stems-punctuations.lexc.md 
+
 Abbreviations
 
 * * *
@@ -752,6 +817,8 @@ Abbreviations
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/punctuations.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/punctuations.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-tags.lexc.md 
 
 
 Multichar_Symbols
@@ -767,6 +834,8 @@ LEXICON Root
 
 ---
 
+# src-fst-morphology-stems-tobar.lexc.md 
+
 Tobar - ac Grianna
 
 PLACENAMES
@@ -776,6 +845,8 @@ PLACENAMES
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/tobar.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/tobar.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-verbalnouns.lexc.md 
 
 
 
@@ -792,6 +863,8 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/verbalnouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/verbalnouns.lexc)</small>
 
 ---
+
+# src-fst-morphology-stems-verbs.lexc.md 
 
 
 
@@ -823,6 +896,8 @@ and TEST
 
 ---
 
+# src-fst-orthography-urucaps.xfscript.md 
+
 
 
 NOW COMPOSED IN LOOKUP.SCRIPT
@@ -832,6 +907,8 @@ NOW COMPOSED IN LOOKUP.SCRIPT
 <small>This (part of) documentation was generated from [src/fst/orthography/urucaps.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/orthography/urucaps.xfscript)</small>
 
 ---
+
+# src-fst-phonetics-txt2ipa.xfscript.md 
 
 
 
@@ -1000,6 +1077,8 @@ retracted tongue root			_q
 
 ---
 
+# src-fst-transcriptions-transcriptor-abbrevs2text.lexc.md 
+
 
 
 We describe here how abbreviations are in Irish are read out, e.g.
@@ -1020,6 +1099,8 @@ For example:
 
 ---
 
+# src-fst-transcriptions-transcriptor-numbers-digit2text.lexc.md 
+
 
 
 % komma% :,      Root ;
@@ -1033,6 +1114,8 @@ For example:
 <small>This (part of) documentation was generated from [src/fst/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
 
 ---
+
+# tools-grammarcheckers-grammarchecker.cg3.md 
 
 
 IRISH  G R A M M A R   C H E C K E R
@@ -1331,7 +1414,14 @@ expression **WORD - premodifiers**.
 ### Grammarchecker sets
 
 * * *
-<small>This (part of) documentation was generated from [tools/grammarcheckers/grammarchecker.cg3](https://github.com/giellalt/lang-gle/blob/main/tools/grammarcheckers/grammarchecker.cg3)</small># Tokeniser for gle
+
+<small>This (part of) documentation was generated from [tools/grammarcheckers/grammarchecker.cg3](https://github.com/giellalt/lang-gle/blob/main/tools/grammarcheckers/grammarchecker.cg3)</small>
+
+---
+
+# tools-tokenisers-tokeniser-disamb-gt-desc.pmscript.md 
+
+# Tokeniser for gle
 
 Usage:
 ```
@@ -1393,6 +1483,8 @@ Finally we mark as a token any sequence making up a:
 <small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-disamb-gt-desc.pmscript](https://github.com/giellalt/lang-gle/blob/main/tools/tokenisers/tokeniser-disamb-gt-desc.pmscript)</small>
 
 ---
+
+# tools-tokenisers-tokeniser-gramcheck-gt-desc.pmscript.md 
 
 # Grammar checker tokenisation for gle
 
@@ -1457,6 +1549,8 @@ Finally we mark as a token any sequence making up a:
 
 ---
 
+# tools-tokenisers-tokeniser-tts-cggt-desc.pmscript.md 
+
 # TTS tokenisation for smj
 
 Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
@@ -1518,6 +1612,3 @@ Needs hfst-tokenise to output things differently depending on the tag they get
 * * *
 
 <small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-tts-cggt-desc.pmscript](https://github.com/giellalt/lang-gle/blob/main/tools/tokenisers/tokeniser-tts-cggt-desc.pmscript)</small>
-
----
-

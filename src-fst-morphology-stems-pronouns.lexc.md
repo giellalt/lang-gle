@@ -8,6 +8,3 @@ also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/pronouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/pronouns.lexc)</small>
-
----
-

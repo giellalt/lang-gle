@@ -11,6 +11,3 @@ FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/affixes/verbs.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/verbs.lexc)</small>
-
----
-

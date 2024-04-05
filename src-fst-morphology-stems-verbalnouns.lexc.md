@@ -11,6 +11,3 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/verbalnouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/verbalnouns.lexc)</small>
-
----
-

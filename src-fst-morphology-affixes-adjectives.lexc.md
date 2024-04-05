@@ -14,6 +14,3 @@ SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/affixes/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/adjectives.lexc)</small>
-
----
-

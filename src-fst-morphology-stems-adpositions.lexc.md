@@ -15,6 +15,3 @@ trí does not combine with art: but becomes tríd before "an"
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/adpositions.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/adpositions.lexc)</small>
-
----
-
