@@ -1,29 +1,30 @@
-!! ### CONJUNCTIONS
-!! removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
-!! e.g. go/gur a/ar nach/nár 
-!! and which often follow (or attach to) a conjunction
-!! e.g. cé go, nuair nach, 
-!! remaining subordinating conjunctions can be followed by verb or copula 
-!! go mb'fhusa an obair ..., go dtógfadh sé
-!! e.g. má bhíonn, más
-!! some still have tense marking as they are combined forms
-!! e.g. sula, sular, murar etc.
+!! ## CONJUNCTIONS
 
+!! removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
+!! e.g. `go/gur`, `a/ar`, `nach/nár`
+!! and which often follow (or attach to) a conjunction
+!! e.g. `cé go`, `nuair nach`.
+!! Remaining subordinating conjunctions can be followed by verb or copula:
+!! `go mb'fhusa an obair ...`, `go dtógfadh sé`
+!! e.g. `má bhíonn`, `más`.
+!! Some still have tense marking as they are combined forms
+!! e.g. `sula`, `sular`, `murar` etc.
 
 LEXICON Conjunctions
+!! ### LEXICON @LEXNAME@
 
-agus+Conj+Coord:is		#;
-agus+Conj+Coord:'s		#;
-agus+Conj+Coord:a's		#;
-agus+Conj+Coord:agus		#;
-ná+Conj+Coord:ná			#; !!! ní ... ná
-ná+Conj+Subord:ná			#;
-nó+Conj+Coord:nó			#;
-nó+Conj+Coord:no			#;
-!!!cé+Conj+Coord:cé			#;  ! also with copula see NIG p113
-!!!ach+Conj+Coord:ach			#;  ! NOT USUALLY CO-ORD?????
+agus+Conj+Coord:is		# ; !!≈ - **@LEMMA@**
+agus+Conj+Coord:'s		# ; !!≈ - **@LEMMA@**
+agus+Conj+Coord:a's		# ; !!≈ - **@LEMMA@**
+agus+Conj+Coord:agus	# ; !!≈ - **@LEMMA@**
+ná+Conj+Coord:ná		# ; !!≈ - **@LEMMA@**, cf ní ... ná
+ná+Conj+Subord:ná		# ; !!≈ - **@LEMMA@**
+nó+Conj+Coord:nó		# ; !!≈ - **@LEMMA@**
+nó+Conj+Coord:no		# ; !!≈ - **@LEMMA@**
+!cé+Conj+Coord:cé		# ;  ! also with copula see NIG p113
+!ach+Conj+Coord:ach		# ;  ! NOT USUALLY CO-ORD?????
 
-!!nár+Conj+Subord:nár			#;
+!nár+Conj+Subord:nár			#;
 má+Conj+Subord:má			#;
 mura+Conj+Subord:mura		#;
 muna+Conj+Subord:muna		#;
@@ -43,7 +44,7 @@ ach+Conj+Subord:ach			#;
 dá+Conj+Subord:dá			#;
 go+Conj+Subord:go			#;	! SEE ALSO PART-LEX.TXT
 nach+Conj+Subord:nach			#;	! SEE ALSO PART-LEX.TXT
-!! gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé
+!! `gur` (=NOT?) moved to Verb Part as it a) is always precede a verb b) have tense c) is preceded by conjs like `nuair`, `cé`.
 gur+Conj+Subord:gur		#;  ! COPULA FORM SEE V3-LEX.TXT & PART-LEX.TXT
 nuair+Conj+Subord:nuair		#;
 fad+Conj+Subord:fad		#;
@@ -86,8 +87,3 @@ dar+Conj+Subord+Cop+Past:darbh		#; ! before vowel
 
 trá+Conj:trá	#; ! (Added CW 09/08) Lit: Then, indeed
 trá+Conj:tra	#; ! (Added CW 09/08) Lit: Then, indeed
-
-
-
-
-
