@@ -53,6 +53,32 @@ GT_LEXC_SRCS_L1_L2=\
 			stems/verbalnouns.lexc \
 			stems/verbs.lexc
 
+# Irish specifics
+GT_NOUN_SRCS=\
+			affixes/nouns.lexc \
+			stems/nouns.lexc \
+			stems/verbalnouns.lexc \
+			stems/propernouns.lexc
+GT_ADJ_SRCS=\
+			affixes/adjectives.lexc \
+			stems/adjectives.lexc
+GT_VERB_SRCS=\
+			affixes/verbs.lexc \
+			stems/verbs.lexc
+GT_OTHER_SRCS=\
+			affixes/symbols.lexc     \
+			stems/tags.lexc \
+			stems/abbreviations.lexc \
+			stems/adpositions.lexc \
+			stems/adverbs.lexc \
+			stems/articles.lexc \
+			stems/conjunctions.lexc \
+			stems/determiners.lexc \
+			stems/interjections.lexc \
+			stems/particles.lexc \
+			stems/pronouns.lexc \
+			stems/tobar.lexc
+
 # If you are building an error-detecting L2 analyser, specify the lexc files
 # that differ between the regular L1 and the L2 analysers below, in L1 and
 # L2 respectively. L2 files must end in "*-L2.lexc". See SME for an example.
@@ -136,19 +162,19 @@ if CAN_XFST
 GIELLA_LOCAL_TARGETS+=$(addsuffix .xfst,$(GLE_TARGETS))
 endif # CAN_HFST
 
-generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_LEXC_SRCS)
+generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_NOUN_SRCS)
 	$(AM_V_at)$(MKDIR_P) generated_files
 	$(AM_V_GEN)cat $^ > $@
 
-generated_files/gle.adj.lexc: root-adj.lexc $(GT_LEXC_SRCS)
+generated_files/gle.adj.lexc: root-adj.lexc $(GT_ADJ_SRCS)
 	$(AM_V_at)$(MKDIR_P) generated_files
 	$(AM_V_GEN)cat $^ > $@
 
-generated_files/gle.verb-all.lexc: root-verb-all.lexc $(GT_LEXC_SRCS)
+generated_files/gle.verb-all.lexc: root-verb-all.lexc $(GT_VERB_SRCS)
 	$(AM_V_at)$(MKDIR_P) generated_files
 	$(AM_V_GEN)cat $^ > $@
 
-generated_files/gle.others.lexc: root-others.lexc $(GT_LEXC_SRCS)
+generated_files/gle.others.lexc: root-others.lexc $(GT_OTHER_SRCS)
 	$(AM_V_at)$(MKDIR_P) generated_files
 	$(AM_V_GEN)cat $^ > $@
 
