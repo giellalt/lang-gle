@@ -1,4 +1,4 @@
-DETERMINERS
+# DETERMINERS
 
 this information is on the noun as initial mutation
 use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem

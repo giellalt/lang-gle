@@ -690,7 +690,7 @@ e.g. `sula`, `sular`, `murar` etc.
 
 # src-fst-morphology-stems-determiners.lexc.md 
 
-DETERMINERS
+# DETERMINERS
 
 this information is on the noun as initial mutation
 use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
@@ -1353,7 +1353,8 @@ OBJ>
 <OBJ-OTHERS
 OBJ>-OTHERS
 SYN-V
-@X
+
+----
 
 ## Sets containing sets of lists and tags
 
