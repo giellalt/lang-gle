@@ -14,7 +14,8 @@ It contains approximately 80000 stems, and an inflectional component.
 
 # Project documentation
 
-* (Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.)
+* [grammar checker project](gramcheck/index.md) - cooperation between [Seanán Ó Coistín](https://github.com/seananocoistin) and the Divvun group, building on earlier FST and disambiguation work by [Elaine Uí Dhonnchadha](https://www.tcd.ie/slscs/staff/uidhonne) and Christoph Wendler.
+
 
 # In-source documentation
 
