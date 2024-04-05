@@ -608,10 +608,23 @@ LIST &err-no-conneg = &err-no-conneg ;
 LIST &err-orrood-inf = &err-orrood-inf ;
 LIST &err-ext-agr = &err-ext-agr ;
 LIST &err-ext-vagr = &err-ext-vagr ;
+LIST &lex-tá-is = &lex-tá-is ;
+LIST &SUGGEST = &SUGGEST ;
 
 MAPPING-PREFIX = & ;
 
 SECTION
+
+
+# Copula errors tá vs. is
+
+LIST HUMAN-N = "dochtúir" "múinteoir" "bean";
+
+ADD:lex-tá-is (&lex-tá-is) TARGET ("bí" Verb VI PresInd) IF (1 HUMAN-N) ;
+COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-is) TARGET (&lex-tá-is);
+	## Tá bean tuirseach mé. 
+	## Tá dochtuir mé. 
+	## Tá múinteoir mé.
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
