@@ -33972,8 +33972,8 @@ gráidhínteacht		Nf3-SINGULAR;		! Entry: gráidhínteacht = gráínteacht.
 graifneoir		Nm3-1;		! Entry: graifneoir, ~eacht = grafnóir, -eacht.
 graifneoireacht		Nf3-SINGULAR;		! Entry: graifneoir, ~eacht = grafnóir, -eacht.
 gráig		Nf2-1;		! Entry: gráig, f = grág.
-graigh+Noun+Fem+Com+Sg:0	#;
-graigh+Noun+Fem+Com+Sg+DefArt:0	#;
+!!graigh+Noun+Fem+Com+Sg:0	#;
+!!graigh+Noun+Fem+Com+Sg+DefArt:0	#;
 graimisc		Nf2-SINGULAR;		! Entry: graimisc = gramaisc.
 graimpéir		Nm3-1;		! Entry: graimpéir, m = grampar.
 gráinneachán		Nm1-SINGULAR;		! Entry: gráinneachán = gráinseachán.

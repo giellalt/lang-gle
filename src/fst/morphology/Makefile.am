@@ -77,6 +77,7 @@ GT_OTHER_SRCS=\
 			stems/interjections.lexc \
 			stems/particles.lexc \
 			stems/pronouns.lexc \
+			stems/punctuations.lexc \
 			stems/tobar.lexc
 
 # If you are building an error-detecting L2 analyser, specify the lexc files
