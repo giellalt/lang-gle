@@ -149,6 +149,11 @@ LIST Rom = Rom ; #!! Romertall
 
 #!! ### Tags for morphosyntactic properties
 
+LIST DefArt = DefArt ; #!! DefArt
+LIST Def = Def ; #!! Def
+LIST Fem = Fem ; #!! Fem
+LIST Masc = Masc ; #!! Masc
+
 LIST Nom = Nom ; #!! Nom
 LIST Acc = Acc ; #!! Acc
 LIST Gen = Gen ; #!! Gen
@@ -610,6 +615,7 @@ LIST &err-ext-agr = &err-ext-agr ;
 LIST &err-ext-vagr = &err-ext-vagr ;
 LIST &lex-tá-is = &lex-tá-is ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
+LIST &msyn-adj-gender = &msyn-adj-gender ;
 LIST &SUGGEST = &SUGGEST ;
 
 MAPPING-PREFIX = & ;
@@ -627,11 +633,24 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 	## Tá mé dochtúir. 
 	## Tá mé múinteoir.
 	## Tá mé fear.
+	
+# Gender errors in nouns
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Fem Com Sg) IF (-1 ("an" Art Sg Def)) ;
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def))(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
+	
+# Definiteness errors in adjectives
+
+ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Base) IF (-1 (Noun Fem Com Sg) LINK -1 ("an" Art Sg Def)) ;
+COPY:msyn-adj-gender (Fem &SUGGEST) EXCEPT (Masc &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
+COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Base &msyn-adj-gender) TARGET (Base &msyn-adj-gender);
+	## Ta an dochtuir ag seasamh le hais an fuinneog mór. - incorrect
+	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór. - correct
+	
+ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Fem Com Sg DefArt) IF (-1 (Noun Masc Com Sg) LINK -1 ("an" Art Sg Def)) ;
+COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &msyn-adj-gender);
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
