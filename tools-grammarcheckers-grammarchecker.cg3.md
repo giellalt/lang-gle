@@ -227,8 +227,7 @@ OBJ
 `<OBJ-OTHERS`
 `OBJ>-OTHERS`
 SYN-V
-
-----
+@X
 
 ## Sets containing sets of lists and tags
 
