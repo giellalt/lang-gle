@@ -60,6 +60,11 @@ Romertall
 
 ### Tags for morphosyntactic properties
 
+DefArt
+Def
+Fem
+Masc
+
 Nom
 Acc
 Gen
