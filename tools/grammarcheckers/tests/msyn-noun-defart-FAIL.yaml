@@ -5,3 +5,4 @@ Config:
 Tests:
   - "Tá an dochtúir ag seasamh ag an {fuinneog}£{fhuinneog}"
   - "Tá an dochtúir ag seasamh ag an fhuinneog {mór}£{mhór}"
+  - "Eagla a {chraiceann}£{chraicinn}"
