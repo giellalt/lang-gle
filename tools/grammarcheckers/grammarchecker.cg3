@@ -624,6 +624,7 @@ LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-adj-gender = &msyn-adj-gender ;
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
+LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;
 LIST &SUGGEST = &SUGGEST ;
 
 MAPPING-PREFIX = & ;
@@ -641,8 +642,6 @@ SECTION
 ## An dara bhliain. - incorrect: dara spelling error
 #$ An dara bliain. - correct
 #
-# "teastaigh" + "ó" 
-# 
 ## Is fada buí mé. - incorrect
 #$ Is fada buí uaim. - correct
 # 
@@ -732,6 +731,16 @@ COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-�
 	#$ Teastaíonn uaim. - correct - Pron + Prep
 	#$ Teastaíonn mala uaim.
 	## Teastaíonn mala mé.
+	
+# Cúpla ("a couple") number errors (Pl > Sg)
+	
+ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty)) ;
+COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnoun) TARGET (&msyn-cúpla-plnoun-sgnoun);
+	## Cúpla laethanta. - incorrect
+	#$ Cúpla lá. - correct 
+	## Cúpla focail. - incorrect
+	#$ Cúpla focal. - correct
+
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
