@@ -1148,6 +1148,10 @@ EOS
 
 ### Parts of speech tags
 
+Art
+Noun
+Prep
+
 N
 A
 Adv
@@ -1175,6 +1179,8 @@ COMMA
 
 ### Tags for POS sub-categories
 
+Simp
+
 Pers
 Dem
 Interr
@@ -1195,6 +1201,7 @@ DefArt
 Def
 Fem
 Masc
+Len
 
 Nom
 Acc
