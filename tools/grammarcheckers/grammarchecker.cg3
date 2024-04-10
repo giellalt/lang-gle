@@ -620,6 +620,68 @@ MAPPING-PREFIX = & ;
 
 SECTION
 
+#Here is a list of some errors that I collated. 
+# 
+#eagla a chraiceann - incorrect
+#eagla a chraicinn - correct
+# 
+#chuig an Chomhairle - incorrect
+#chuig an gComhairle - correct
+# 
+#ar bhuile - incorrect
+#ar buile - correct
+# 
+#ar mheisce - incorrect
+#ar meisce - correct
+# 
+#An bean - incorrect 
+#an bhean - correct
+# 
+#éadaí an fear - incorrect
+#éadaí an fhir - correct
+# 
+#thar bharr - incorrect
+#thar barr - correct
+# 
+#cúig bhliana - incorrect
+#cúig bliana - correct
+# 
+#An dara bhliain - incorrect
+#an dara bliain - correct
+# 
+#teastaíonn mé - incorrect 
+#teastaíonn uaim - correct
+# 
+#Is fada buí mé - incorrect
+#is fada buí uaim - correct
+# 
+#cúpla laethanta - incorrect
+#cúpla lá - correct
+# 
+#cúpla focail - incorrect
+#cúpla focal - correct
+# 
+#níos mór - incorrect 
+#níos mó - correct
+# 
+#Ag deireadh an lae - incorrect
+#I ndeireadh na dála - correct
+# 
+#suas le dáta - incorrect
+#cothrom le dáta - correct
+# 
+#Inis le - incorrect
+#Inis de - correct
+# 
+#roinnt bliain - incorrect 
+#roinnt blianta - correct
+# 
+#roinnt lá - incorrect
+#roinnt laethanta - correct
+# 
+#áfach… - incorrect if it is at the beginning of a sentence 
+#…, áfach. - correct if it is at the end of a sentence
+
 
 # Copula errors tá vs. is
 
