@@ -623,6 +623,7 @@ LIST &lex-tá-is = &lex-tá-is ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-adj-gender = &msyn-adj-gender ;
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;
+LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
 LIST &SUGGEST = &SUGGEST ;
 
 MAPPING-PREFIX = & ;
@@ -639,9 +640,8 @@ SECTION
 # 
 ## An dara bhliain. - incorrect: dara spelling error
 #$ An dara bliain. - correct
-# 
-## Teastaíonn mé. - incorrect - Pron Pers
-#$ Teastaíonn uaim. - correct - Pron Prep
+#
+# "teastaigh" + "ó" 
 # 
 ## Is fada buí mé. - incorrect
 #$ Is fada buí uaim. - correct
@@ -722,6 +722,16 @@ COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&m
 	#$ Ar meisce. - correct
 	## Thar bharr. - incorrect
 	#$ Thar barr. - correct
+
+# Valency errors
+# "teastaigh" + "ó"	
+	
+ADD:msyn-teastaigh-ó (&msyn-teastaigh-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("teastaigh") BARRIER (*) - (Noun Com)) ;
+COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó);
+	## Teastaíonn mé. - incorrect - Pron Pers
+	#$ Teastaíonn uaim. - correct - Pron + Prep
+	#$ Teastaíonn mala uaim.
+	## Teastaíonn mala mé.
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
