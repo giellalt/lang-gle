@@ -28,6 +28,7 @@ PREFERRED-TARGETS = Pron Noun PastInd PresSubj ;
 # ==================================================================== #
 
 LIST Art = Art ;
+LIST DefArt = DefArt ;
 LIST Noun = Noun ;
 LIST Num = Num ;
 LIST Det = Det ;
@@ -368,7 +369,7 @@ REMOVE (Verb Imper) IF ( -1 ("ní")) ;
 REMOVE (Verb Imper) IF ( *1 (Part Vb Rel) BARRIER (Noun)) ;
 
 # Fear maith is ea é 
-REMOVE (Verb Imper) IF ( *1 (Cop) LINK 1 ("ea") BARRIER (Noun)) ;
+REMOVE (Verb Imper) IF (*1 (Cop) BARRIER Noun LINK 1 ("ea")) ;
 
 # Ith PastInd Len not possible unless preceded by "do" verbal particle
 REMOVE (Verb Vow PastInd) IF (NOT -1 (Part Vb)) ;
@@ -625,14 +626,14 @@ REMOVE (Noun Gen) IF ( -1C (Art)) (-2C (Verb));
 # APR 2010
 # we should not have a gen noun form directly following a simple prep
 REMOVE (Noun Gen) IF (-1C (Prep Simp));
-REMOVE (Noun Gen) IF ( -1C (Art)) (-2C (Prep Simp));
+REMOVE (Noun Gen) IF (-1C (Art)) (-2C (Prep Simp));
 
 # ==================================================================== #
 # -------------------------------------------------------------------- #
 # S1 ARTICLE 
 # -------------------------------------------------------------------- #
 # a = an is only allowed in time phrases such as "trí a chlog" etc.
-REMOVE (Art Sg) IF (0 ("<a>")) (NOT 1 ("clog"));
+#REMOVE (Art Sg) IF (0 ("<a>")) (NOT 1 ("clog")); #S: What about Eagla a chraicinn. ???
 # ==================================================================== #
 # -------------------------------------------------------------------- #
 # S1 POSSESSIVE DETERMINER 
