@@ -1,8 +1,8 @@
 # ==================================================================== #
-# I R I S H   D I S A M B I G U A T I O N  
+# I R I S H   D I S A M B I G U A T I O N  FOR GRAMMAR CHECKING
 # ==================================================================== #
-# Elaine Uí Dhonnchadha
-# March 2004-2012
+# Elaine Uí Dhonnchadha, Linda Wiechetek (grammar checker modifications)
+# March 2004-2024
 # Christoph Wendler 
 # 2008/9
 # ==================================================================== #
@@ -549,7 +549,7 @@ REMOVE (Noun Masc) IF (0 ("breac")) (-1 ("bí")) (-2 (Part Vb Rel));
 REMOVE (Noun Ecl) IF (-1 ("an")) (NOT -2 (Prep));
 
 # it cannot have the DefArt reading if not preceded by an Art (or Prep Art etc.)
-REMOVE (Noun DefArt) IF ( NOT -1 (Art));
+REMOVE (Noun DefArt) IF (NEGATE -1 Art);
 
 # Unlikely to have emphatic noun without possessive determiner
 # mo theachsa, a ngalfchúrsa
