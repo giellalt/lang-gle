@@ -631,56 +631,47 @@ SECTION
 
 #Here is a list of some errors that I collated. 
 # 
-#ar mheisce - incorrect
-#ar meisce - correct
+## éadaí an fear. - incorrect: Com
+#$ éadaí an fhir. - correct: Gen
 # 
-#An bean - incorrect 
-#an bhean - correct
+## Cúig bhliana. - incorrect: Len
+#$ Cúig bliana. - correct: X
 # 
-#éadaí an fear - incorrect
-#éadaí an fhir - correct
+## An dara bhliain. - incorrect: dara spelling error
+#$ An dara bliain. - correct
 # 
-#thar bharr - incorrect
-#thar barr - correct
+## Teastaíonn mé. - incorrect - Pron Pers
+#$ Teastaíonn uaim. - correct - Pron Prep
 # 
-#cúig bhliana - incorrect
-#cúig bliana - correct
+## Is fada buí mé. - incorrect
+#$ Is fada buí uaim. - correct
 # 
-#An dara bhliain - incorrect
-#an dara bliain - correct
+## Cúpla laethanta. - incorrect
+#$ Cúpla lá. - correct
 # 
-#teastaíonn mé - incorrect 
-#teastaíonn uaim - correct
+## Cúpla focail. - incorrect
+#$ Cúpla focal. - correct
 # 
-#Is fada buí mé - incorrect
-#is fada buí uaim - correct
+## níos mór. - incorrect 
+#$ níos mó. - correct
 # 
-#cúpla laethanta - incorrect
-#cúpla lá - correct
+## Ag deireadh an lae. - incorrect
+#$ I ndeireadh na dála. - correct
 # 
-#cúpla focail - incorrect
-#cúpla focal - correct
+## suas le dáta. - incorrect
+#$ cothrom le dáta. - correct
 # 
-#níos mór - incorrect 
-#níos mó - correct
+## Inis le. - incorrect
+#$ Inis de. - correct
 # 
-#Ag deireadh an lae - incorrect
-#I ndeireadh na dála - correct
+## roinnt bliain. - incorrect 
+#$ roinnt blianta. - correct
 # 
-#suas le dáta - incorrect
-#cothrom le dáta - correct
+## roinnt lá. - incorrect
+#$ roinnt laethanta. - correct
 # 
-#Inis le - incorrect
-#Inis de - correct
-# 
-#roinnt bliain - incorrect 
-#roinnt blianta - correct
-# 
-#roinnt lá - incorrect
-#roinnt laethanta - correct
-# 
-#áfach… - incorrect if it is at the beginning of a sentence 
-#…, áfach. - correct if it is at the end of a sentence
+## áfach… - incorrect if it is at the beginning of a sentence 
+#$ …, áfach. - correct if it is at the end of a sentence
 
 
 # Copula errors tá vs. is
@@ -704,7 +695,8 @@ COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn
 	#$ eagla a chraicinn - correct
 	## Chuig an Chomhairle. - incorrect
 	#$ Chuig an Comhairle. - correct
-
+	## An bean. - incorrect 
+	#$ An bhean. - correct
 	
 # Gender errors in adjectives
 
@@ -720,12 +712,16 @@ COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &
 
 # Noun errors (Len vs. not Len) after prepositions
 
-LIST LEN-PREP = "ag" "ar" ;
+LIST LEN-PREP = "ag" "ar" "thar" ;
 
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 (Prep Simp)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
+	## Ar mheisce. - incorrect
+	#$ Ar meisce. - correct
+	## Thar bharr. - incorrect
+	#$ Thar barr. - correct
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
