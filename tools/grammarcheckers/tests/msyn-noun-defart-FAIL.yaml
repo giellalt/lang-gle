@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Tá an dochtúir ag seasamh ag an {fuinneog}£{fhuinneog}"
+  - "Tá an dochtúir ag seasamh ag an fhuinneog {mór}£{mhór}"
