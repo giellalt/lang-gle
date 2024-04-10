@@ -18,7 +18,7 @@
 # ==================================================================== #
 # ====================================================================
 
-#  Sámi language technology 2000-2024, UiT The arctic University of Norway #
+#  Sámi language technology 2000-2024, UiT The Arctic University of Norway #
 
 # ---------------------- #
 #   Development setup:   #
@@ -102,6 +102,11 @@ LIST EOS = (<<<) (</s>) ; #!! EOS
 
 #!! ### Parts of speech tags
 
+
+LIST Art = Art ; #!! Art
+LIST Noun = Noun ; #!! Noun
+LIST Prep = Prep ; #!! Prep
+
 LIST N = N ;		    #!! N
 LIST A = A ;		    #!! A
 LIST Adv = Adv ;	    #!! Adv
@@ -132,6 +137,8 @@ LIST ¶ = ¶;   #!! ¶
 
 #!! ### Tags for POS sub-categories
 
+LIST Simp = Simp ; #!! Simp
+
 LIST Pers = Pers ;	    #!! Pers
 LIST Dem = Dem ;	    #!! Dem
 LIST Interr = Interr ;  #!! Interr
@@ -153,6 +160,7 @@ LIST DefArt = DefArt ; #!! DefArt
 LIST Def = Def ; #!! Def
 LIST Fem = Fem ; #!! Fem
 LIST Masc = Masc ; #!! Masc
+LIST Len = Len ; #!! Len
 
 LIST Nom = Nom ; #!! Nom
 LIST Acc = Acc ; #!! Acc
@@ -614,6 +622,7 @@ LIST &err-ext-vagr = &err-ext-vagr ;
 LIST &lex-tá-is = &lex-tá-is ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-adj-gender = &msyn-adj-gender ;
+LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &SUGGEST = &SUGGEST ;
 
 MAPPING-PREFIX = & ;
@@ -621,15 +630,6 @@ MAPPING-PREFIX = & ;
 SECTION
 
 #Here is a list of some errors that I collated. 
-# 
-#eagla a chraiceann - incorrect
-#eagla a chraicinn - correct
-# 
-#chuig an Chomhairle - incorrect
-#chuig an gComhairle - correct
-# 
-#ar bhuile - incorrect
-#ar buile - correct
 # 
 #ar mheisce - incorrect
 #ar meisce - correct
@@ -697,9 +697,14 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 # Definiteness errors in nouns
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def))(NOT 0 DefArt) ;
-COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
+COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
+	## eagla a chraiceann - incorrect
+	#$ eagla a chraicinn - correct
+	## Chuig an Chomhairle. - incorrect
+	#$ Chuig an Comhairle. - correct
+
 	
 # Gender errors in adjectives
 
@@ -711,6 +716,16 @@ COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Base &msyn-adj-gender) TA
 	
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Fem Com Sg DefArt) IF (-1 (Noun Masc Com Sg) LINK -1 ("an" Art Sg Def)) ;
 COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &msyn-adj-gender);
+
+
+# Noun errors (Len vs. not Len) after prepositions
+
+LIST LEN-PREP = "ag" "ar" ;
+
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 (Prep Simp)) ;
+COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
+	## Ar bhuile. - incorrect
+	#$ Ar buile. - correct
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
