@@ -138,6 +138,7 @@ LIST ¶ = ¶;   #!! ¶
 #!! ### Tags for POS sub-categories
 
 LIST Simp = Simp ; #!! Simp
+LIST Sbj = Sbj ; #!! Sbj
 
 LIST Pers = Pers ;	    #!! Pers
 LIST Dem = Dem ;	    #!! Dem
@@ -642,9 +643,6 @@ SECTION
 ## An dara bhliain. - incorrect: dara spelling error
 #$ An dara bliain. - correct
 #
-## Is fada buí mé. - incorrect
-#$ Is fada buí uaim. - correct
-# 
 ## Cúpla laethanta. - incorrect
 #$ Cúpla lá. - correct
 # 
@@ -723,14 +721,28 @@ COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&m
 	#$ Thar barr. - correct
 
 # Valency errors
-# "teastaigh" + "ó"	
+# "teastaigh" V + "ó"	
 	
 ADD:msyn-teastaigh-ó (&msyn-teastaigh-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("teastaigh") BARRIER (*) - (Noun Com)) ;
-COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó);
+COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó);
 	## Teastaíonn mé. - incorrect - Pron Pers
 	#$ Teastaíonn uaim. - correct - Pron + Prep
 	#$ Teastaíonn mala uaim.
 	## Teastaíonn mala mé.
+
+LIST SCALE-WORDS = "buí" ;	#Seanán
+
+# "fada" (far) A + "ó"	
+ADD:msyn-fada-ó (&msyn-fada-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
+COPY:msyn-fada-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers Sbj &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-fada-ó) IF (NEGATE 1 (Verb PastInd));	
+	## Is fada buí mé. - incorrect
+	#$ Is fada buí uaim. - correct 
+	## Is fada buí é.
+	## Is fada buí siad.
+	
+COPY:msyn-fada-ó ("ó" Prep Simp &SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-teastaigh-ó) OR ("tú" Pers Pers 2P Sg &msyn-teastaigh-ó) OR ("é" Pers Pers 3P Sg Masc &msyn-teastaigh-ó) OR ("í" Pers Pers 1P Sg Fem &msyn-teastaigh-ó) OR ("sinn" Pers Pers 1P Pl &msyn-teastaigh-ó) OR ("sibh" Pers Pers 2P Pl &msyn-teastaigh-ó) OR ("siad" Pron Pers 3P Pl Sbj &msyn-teastaigh-ó) TARGET (&msyn-fada-ó) IF (1 (Verb PastInd));
+	## Is fada mé bhí mise i mo mhac léinn.
+	#$ Is fada ó bhí mise i mo mhac léinn.
 	
 # Cúpla ("a couple") number errors (Pl > Sg)
 	
