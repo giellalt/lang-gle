@@ -1180,6 +1180,7 @@ COMMA
 ### Tags for POS sub-categories
 
 Simp
+Sbj
 
 Pers
 Dem
