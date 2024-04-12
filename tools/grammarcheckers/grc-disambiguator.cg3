@@ -2016,7 +2016,8 @@ SELECT (Cop) IF ( 1C  (Noun) OR (Adj) ) (2 ("le"));
 # It is a copula if there is no verb to the left ...
 # and if there is no verb to the right ...
 # TRY Prep Phrase ???
-SELECT (Cop) IF (NOT *-1 (Verb) ) (NOT *1 (Verb) );
+SELECT (Cop) IF (NOT *-1 (Verb)) (NOT *1 (Verb))(NEGATE 0 (Pron Pers));
+	#$ Is fada buí siad.
 
 # if the sentence starts with any form of copula "is" choose this
 # reading as long as it is not followed by a verb
