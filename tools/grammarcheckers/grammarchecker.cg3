@@ -625,6 +625,7 @@ LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-adj-gender = &msyn-adj-gender ;
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
+LIST &msyn-inis-de = &msyn-inis-de ;
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;
 LIST &SUGGEST = &SUGGEST ;
 
@@ -658,9 +659,6 @@ SECTION
 ## suas le dáta. - incorrect
 #$ cothrom le dáta. - correct
 # 
-## Inis le. - incorrect
-#$ Inis de. - correct
-# 
 ## roinnt bliain. - incorrect 
 #$ roinnt blianta. - correct
 # 
@@ -669,6 +667,12 @@ SECTION
 # 
 ## áfach… - incorrect if it is at the beginning of a sentence 
 #$ …, áfach. - correct if it is at the end of a sentence
+## Sa gheimhreadh afách, agus na laethanta ag dul i ndorchadas, bhí a chuid saighdiúirí bochta préachta leis an bhfuacht, agus bhí air mar sin na cnoic a fhágáil le caisleán breá teolaí a thógáil cois trá.
+## Ar an lámh eile afách ba é 21% an líon a bhí ann de bhanscríbhneoirí agus 18% de bhanstiúrthóirí.
+#$ Is imreoir den scoth Steve Finnan, afách.
+#$ Tá mé i mo chónaí in aice le SF, afách; b’fhéidir gur chóir dom dul ar cuairt ar an fíonlann!
+## Dúirt sé afách, go gcaithfeadh an coimisiún a chinntiú go gcaithfear  go cothrom leo siúd go bhfuil na dtáillí íoctha acu cheana féin.
+## Thug siad le fios, afách, go mbeadh siad ar fáil le haon chúnamh breise a thabhairt don Roinn.
 
 
 # Copula errors tá vs. is
@@ -729,6 +733,13 @@ COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-�
 	#$ Teastaíonn uaim. - correct - Pron + Prep
 	#$ Teastaíonn mala uaim.
 	## Teastaíonn mala mé.
+	
+ADD:msyn-inis-de (&msyn-inis-de) TARGET ("le" Prep) IF (NOT 0 ("de" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
+COPY:msyn-inis-de ("de" &SUGGEST) EXCEPT ("le" &msyn-inis-de) TARGET (&msyn-inis-de);	
+	## Inis le. - incorrect ("le" with)
+	#$ Inis de. - correct ("de" of)
+	## Tá na mílte inis le taiscéaladh ar bháid a sheolann ar feadh an lae ó lár Stócólm.
+
 
 LIST SCALE-WORDS = "buí" ;	#Seanán
 
