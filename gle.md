@@ -1199,10 +1199,12 @@ Romertall
 ### Tags for morphosyntactic properties
 
 DefArt
+Art
 Def
 Fem
 Masc
 Len
+Ecl
 
 Nom
 Acc
