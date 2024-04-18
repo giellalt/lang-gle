@@ -118,6 +118,9 @@ LIST CUMANN-PRON = "<tú>" "<sé>" "<sí>" "<muid>" "<sibh>" "<siad>";
 LIST NOUN-VERB-PAIR = "bac";
 LIST UAIN-FEM-SURR = ("an" Def Art) ("aon" Det Qty) ("céad" Num Ord Len);
 LIST NOUN-LEN = "ar" "de" "do" "faoi" "mar" "ó" "roimh" "trí" "um" ;
+
+
+
 # ==================================================================== #
 # DISAMBIGUATION RULES
 # ==================================================================== #
