@@ -158,10 +158,12 @@ LIST Rom = Rom ; #!! Romertall
 #!! ### Tags for morphosyntactic properties
 
 LIST DefArt = DefArt ; #!! DefArt
+LIST Art = Art ; #!! Art
 LIST Def = Def ; #!! Def
 LIST Fem = Fem ; #!! Fem
 LIST Masc = Masc ; #!! Masc
 LIST Len = Len ; #!! Len
+LIST Ecl = Ecl ; #!! Ecl
 
 LIST Nom = Nom ; #!! Nom
 LIST Acc = Acc ; #!! Acc
@@ -688,7 +690,9 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 	
 # Definiteness errors in nouns
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def))(NOT 0 DefArt) ;
+LIST ECL-PREP = "ag" "ar" "thar" ;
+
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
@@ -723,6 +727,21 @@ COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&m
 	#$ Ar meisce. - correct
 	## Thar bharr. - incorrect
 	#$ Thar barr. - correct
+	
+# Noun errors (Ecl vs. not Ecl) after prepositions
+
+
+LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile";
+LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ;
+LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ;
+LIST PREP-ECL = "<i>" ; # etc. etc.
+LIST PREP-LEN = "<de>" "<do>"; # etc. etc. 
+
+LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
+
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF (*-1 ECL-PREP + (Prep Simp) BARRIER (*) - Art)(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
 
 # Valency errors
 # "teastaigh" V + "ó"	
