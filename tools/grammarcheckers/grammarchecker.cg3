@@ -731,6 +731,14 @@ COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&m
 	#$ Ar meisce. - correct
 	## Thar bharr. - incorrect
 	#$ Thar barr. - correct
+	## ar fhud - incorrect
+	#$ ar fud - correct.
+	##ar fhud an tír.
+	#$ar fud na tíre.
+	##ar fhud an Eoraip.
+	#$ar fud na hEorpa.
+	##ar fhud an domhan.
+	#$ar fud an domhain.
 	
 # Noun errors (Ecl vs. not Ecl) after prepositions
 
