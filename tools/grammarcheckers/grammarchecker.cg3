@@ -695,12 +695,16 @@ LIST ECL-PREP = "ag" "ar" "thar" ;
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
+	#S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
+	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
 	## eagla a chraiceann - incorrect
 	#$ eagla a chraicinn - correct
+	## doras mo theach - incorrect
+	#$ doras mo thí - correct
 	## Chuig an Chomhairle. - incorrect
-	#$ Chuig an Comhairle. - correct
-	## An bean. - incorrect 
+	#$ Chuig an gComhairle. - correct
+	## An bean. - incorrect
 	#$ An bhean. - correct
 	
 # Gender errors in adjectives
@@ -709,7 +713,7 @@ ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj 
 COPY:msyn-adj-gender (Fem &SUGGEST) EXCEPT (Masc &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
 COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Base &msyn-adj-gender) TARGET (Base &msyn-adj-gender);
 	## Ta an dochtuir ag seasamh le hais an fuinneog mór. - incorrect
-	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór. - correct
+	#$ Tá an dochtúir ag seasamh le hais na fuinneoige móire. - correct
 	
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Fem Com Sg DefArt) IF (-1 (Noun Masc Com Sg) LINK -1 ("an" Art Sg Def)) ;
 COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &msyn-adj-gender);
@@ -742,23 +746,33 @@ LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF (*-1 ECL-PREP + (Prep Simp) BARRIER (*) - Art)(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
+   #$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
 
 # Valency errors
 # "teastaigh" V + "ó"	
 	
 ADD:msyn-teastaigh-ó (&msyn-teastaigh-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("teastaigh") BARRIER (*) - (Noun Com)) ;
-COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó);
+COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("muid" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó);
 	## Teastaíonn mé. - incorrect - Pron Pers
 	#$ Teastaíonn uaim. - correct - Pron + Prep
-	#$ Teastaíonn mala uaim.
-	## Teastaíonn mala mé.
+	#$ Teastaíonn mála uaim.
+	## Teastaíonn mála mé.
 	
-ADD:msyn-inis-de (&msyn-inis-de) TARGET ("le" Prep) IF (NOT 0 ("de" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
-COPY:msyn-inis-de ("de" &SUGGEST) EXCEPT ("le" &msyn-inis-de) TARGET (&msyn-inis-de);	
+ADD:msyn-inis-de (&msyn-inis-do) TARGET ("le" Prep) IF (NOT 0 ("do" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
+COPY:msyn-inis-do ("do" &SUGGEST) EXCEPT ("le" &msyn-inis-do) TARGET (&msyn-inis-do);	
 	## Inis le. - incorrect ("le" with)
-	#$ Inis de. - correct ("de" of)
+	#$ Inis do. - correct ("do" to)
 	## Tá na mílte inis le taiscéaladh ar bháid a sheolann ar feadh an lae ó lár Stócólm.
 
+ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
+COPY:msyn-ar-an-aonach ("ar" &SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
+	## Ag an aonach. - incorrect ("ag" at)
+	#$ Ar an aonach. - correct ("ar" on)
+
+ADD:msyn-ar-a-haon-a-chlog (&msyn-ar-a-haon-a-chlog) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("a haon a chlog") BARRIER (*) - (Noun Com)) ;
+COPY:msynar-a-haon-a-chlog ("ar" &SUGGEST) EXCEPT ("ag" &msynar-a-haon-a-chlog) TARGET (&msynar-a-haon-a-chlog);	
+	## Ag a haon a chlog. - incorrect ("ag" at)
+	#$ Ar a haon a chlog. - correct ("ar" on)
 
 LIST SCALE-WORDS = "buí" ;	#Seanán
 
@@ -768,7 +782,13 @@ COPY:msyn-fada-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR
 	## Is fada buí mé. - incorrect
 	#$ Is fada buí uaim. - correct 
 	## Is fada buí é.
-	## Is fada buí siad.
+	## Is fada buí iad.
+
+# "beag is fiú de" (far) A + "de"	
+ADD:msyn-beag-is-fiú-de (&msynmsyn-beag-is-fiú-de) TARGET (Pron Pers) IF (NOT 0 ("de" Prep))(*-1 ("beag is fiú de" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
+COPY:msyn-beag-is-fiú-de ("de" Prep &SUGGEST) EXCEPT ("dom" Pers &msyn-teastaigh-ó) OR ("duit" Pers &msyn-teastaigh-ó) OR ("dó" Pers &msyn-teastaigh-ó) OR ("di" Pers &msyn-teastaigh-ó) OR ("dúinn" Pers &msyn-teastaigh-ó) OR ("daoibh" Pers &msyn-teastaigh-ó) OR ("dóibh" Pers Sbj &msyn-beag-is-fiú-de) AFTER Pron TARGET (&msyn-beag-is-fiú-de) IF (NEGATE 1 (Verb PastInd));	
+	## Ná déan beag is fiú dom. - incorrect
+	#$ Ná déan beag is fiú díom. - correct 
 	
 COPY:msyn-fada-ó ("ó" Prep Simp &SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-teastaigh-ó) OR ("tú" Pers Pers 2P Sg &msyn-teastaigh-ó) OR ("é" Pers Pers 3P Sg Masc &msyn-teastaigh-ó) OR ("í" Pers Pers 1P Sg Fem &msyn-teastaigh-ó) OR ("sinn" Pers Pers 1P Pl &msyn-teastaigh-ó) OR ("sibh" Pers Pers 2P Pl &msyn-teastaigh-ó) OR ("siad" Pron Pers 3P Pl Sbj &msyn-teastaigh-ó) TARGET (&msyn-fada-ó) IF (1 (Verb PastInd));
 	## Is fada mé bhí mise i mo mhac léinn.
