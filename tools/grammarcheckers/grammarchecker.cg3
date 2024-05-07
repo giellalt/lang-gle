@@ -107,6 +107,8 @@ LIST Art = Art ; #!! Art
 LIST Noun = Noun ; #!! Noun
 LIST Prep = Prep ; #!! Prep
 
+LIST Subst = Subst ; #!! Subst Check what it is
+
 LIST N = N ;		    #!! N
 LIST A = A ;		    #!! A
 LIST Adv = Adv ;	    #!! Adv
@@ -723,7 +725,7 @@ COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &
 
 LIST LEN-PREP = "ag" "ar" "thar" ;
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 (Prep Simp)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
@@ -733,12 +735,12 @@ COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&m
 	#$ Thar barr. - correct
 	## ar fhud - incorrect
 	#$ ar fud - correct.
-	##ar fhud an tír.
-	#$ar fud na tíre.
-	##ar fhud an Eoraip.
-	#$ar fud na hEorpa.
-	##ar fhud an domhan.
-	#$ar fud an domhain.
+	## ar fhud an tír.
+	#$ ar fud na tíre.
+	## ar fhud an Eoraip.
+	#$ ar fud na hEorpa.
+	## ar fhud an domhan.
+	#$ ar fud an domhain.
 	
 # Noun errors (Ecl vs. not Ecl) after prepositions
 
@@ -766,7 +768,7 @@ COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-�
 	#$ Teastaíonn mála uaim.
 	## Teastaíonn mála mé.
 	
-ADD:msyn-inis-de (&msyn-inis-do) TARGET ("le" Prep) IF (NOT 0 ("do" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
+ADD:msyn-inis-do (&msyn-inis-do) TARGET ("le" Prep) IF (NOT 0 ("do" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
 COPY:msyn-inis-do ("do" &SUGGEST) EXCEPT ("le" &msyn-inis-do) TARGET (&msyn-inis-do);	
 	## Inis le. - incorrect ("le" with)
 	#$ Inis do. - correct ("do" to)
