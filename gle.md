@@ -1152,6 +1152,8 @@ Art
 Noun
 Prep
 
+Subst Check what it is
+
 N
 A
 Adv
