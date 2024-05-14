@@ -226,7 +226,7 @@ LIST Sup = Sup ;			   #!! Sup
 LIST Actio = Actio ;		   #!! Actio
 LIST VAbess = VAbess ;		   #!! VAbess
 
-
+SET NUMBER = Sg OR Pl ;
 
 LIST Err/Orth = Err/Orth Err/Orth-a/á Err/Orth-nom/gen Err/Orth-nom/acc Err/DerSub Err/CmpSub Err/UnspaceCmp Err/HyphSub Err/SpaceCmp Err/Spellrelax err_orth_mt ; #!! Err/Orth
 
@@ -631,7 +631,9 @@ LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
 LIST &msyn-inis-de = &msyn-inis-de ;
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;
+LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;
 LIST &SUGGEST = &SUGGEST ;
+LIST SUGGEST = SUGGEST ;
 
 MAPPING-PREFIX = & ;
 
@@ -803,6 +805,34 @@ COPY:msyn-beag-is-fiú-de ("de" Prep &SUGGEST) EXCEPT ("dom" Pers &msyn-teastaig
 COPY:msyn-fada-ó ("ó" Prep Simp &SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-teastaigh-ó) OR ("tú" Pers Pers 2P Sg &msyn-teastaigh-ó) OR ("é" Pers Pers 3P Sg Masc &msyn-teastaigh-ó) OR ("í" Pers Pers 1P Sg Fem &msyn-teastaigh-ó) OR ("sinn" Pers Pers 1P Pl &msyn-teastaigh-ó) OR ("sibh" Pers Pers 2P Pl &msyn-teastaigh-ó) OR ("siad" Pron Pers 3P Pl Sbj &msyn-teastaigh-ó) TARGET (&msyn-fada-ó) IF (1 (Verb PastInd));
 	## Is fada mé bhí mise i mo mhac léinn.
 	#$ Is fada ó bhí mise i mo mhac léinn.
+	
+LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" ;
+	
+	
+# "i_rith" Prep Cmpd + Gen (not Nom)	
+ADD:msyn-i-rith-nom-gen (&msyn-i-rith-nom-gen) TARGET (Noun Com DefArt) IF (*-1 GEN-PREP + (Prep Cmpd) BARRIER (*) - (Art Def)) ;
+	## I rith an {bhliain}.
+	## Le linn an {bhliain}.
+	#$ i rith na {bliana}. 
+
+COPY:msyn-i-rith-nom-gen (Gen SUGGEST) EXCEPT (Com &msyn-i-rith-nom-gen) BEFORE NUMBER TARGET (Noun &msyn-i-rith-nom-gen) ;
+
+ADD:msyn-i-rith-nom-gen (&msyn-i-rith-nom-gen) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+
+COPY:msyn-i-rith-nom-gen ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-i-rith-nom-gen) TARGET (Art &msyn-i-rith-nom-gen) IF (1 (Noun Fem)) ;
+
+#How do we get from A to B?
+
+#A) "an" Art Sg Def 
+#B) "na" Art Gen Sg Def Fem
+
+
+#How do we get from A to B?
+#A) "<bhliain>"-- "bliain" Noun Fem Com Sg DefArt
+#B) "<bliana>" -- "bliain" Noun Fem Gen Sg DefArt
+#Com -> Gen
+
+
 	
 # Cúpla ("a couple") number errors (Pl > Sg)
 	
