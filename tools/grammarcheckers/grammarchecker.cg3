@@ -1,6 +1,6 @@
 # -*- cg-pre-pipe: "hfst-tokenise -g ../../tools/tokenisers/tokeniser-gramcheck-gt-desc.pmhfst" -*-
 # Divvun & Giellatekno - open source grammars for Sámi and other languages
-# Copyright © 2000-2024 UiT The arctic University of Norway
+# Copyright © 2000-2024 UiT The Arctic University of Norway
 # http://giellatekno.uit.no & http://divvun.no
 #
 # This program is free software; you can redistribute and/or modify
@@ -365,7 +365,7 @@ LIST @X = @X ;    #!! @X
 
 LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"
         "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
-        "á" "æ" "ø" "å" "ö" "ä" ; #!! INITIAL
+        "á" ; #!! INITIAL
 
 
 #!! ### Sets for word or not
@@ -410,14 +410,14 @@ SET NOT-PRFPRC = WORD - PrfPrc ; #!! NOT-PRFPRC
 #!! ### Sets for person
 # - - - -
 
-LIST SG1-V = (V Sg1)  ; #!! SG1-V
+LIST SG1-V = (V Sg1)  ;  #!! SG1-V
 LIST SG2-V = (V Sg2)  ;  #!! SG2-V
 LIST SG3-V = (V Sg3)  ;  #!! SG3-V
 LIST DU1-V = (V Du1)  ;  #!! DU1-V
 LIST DU2-V = (V Du2)  ;  #!! DU2-V
 LIST DU3-V = (V Du3)  ;  #!! DU3-V
-LIST PL1-V = (V Pl1) ;   #!! PL1-V
-LIST PL2-V = (V Pl2) ;   #!! PL2-V
+LIST PL1-V = (V Pl1)  ;  #!! PL1-V
+LIST PL2-V = (V Pl2)  ;  #!! PL2-V
 LIST PL3-V = (V Pl3)  ;  #!! PL3-V
 
  # Note that imperative verbs are not included in these sets!
@@ -674,10 +674,10 @@ SECTION
 ## áfach… - incorrect if it is at the beginning of a sentence 
 #$ …, áfach. - correct if it is at the end of a sentence
 ## Sa gheimhreadh afách, agus na laethanta ag dul i ndorchadas, bhí a chuid saighdiúirí bochta préachta leis an bhfuacht, agus bhí air mar sin na cnoic a fhágáil le caisleán breá teolaí a thógáil cois trá.
-## Ar an lámh eile afách ba é 21% an líon a bhí ann de bhanscríbhneoirí agus 18% de bhanstiúrthóirí.
+## Os a choinne sin, afách ba é 21% an líon a bhí ann de bhanscríbhneoirí agus 18% de bhanstiúrthóirí.
 #$ Is imreoir den scoth Steve Finnan, afách.
 #$ Tá mé i mo chónaí in aice le SF, afách; b’fhéidir gur chóir dom dul ar cuairt ar an fíonlann!
-## Dúirt sé afách, go gcaithfeadh an coimisiún a chinntiú go gcaithfear  go cothrom leo siúd go bhfuil na dtáillí íoctha acu cheana féin.
+## Dúirt sé afách, go gcaithfeadh an coimisiún a chinntiú go gcaithfear go cothrom leo siúd a bhfuil na dtáillí íoctha acu cheana féin.
 ## Thug siad le fios, afách, go mbeadh siad ar fáil le haon chúnamh breise a thabhairt don Roinn.
 
 
@@ -729,20 +729,25 @@ LIST LEN-PREP = "ag" "ar" "thar" ;
 
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
+COPY:msyn-len-after-prep (Gen SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
+
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+
+COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
 	## Ar mheisce. - incorrect
 	#$ Ar meisce. - correct
 	## Thar bharr. - incorrect
 	#$ Thar barr. - correct
-	## ar fhud - incorrect
-	#$ ar fud - correct.
-	## ar fhud an tír.
-	#$ ar fud na tíre.
-	## ar fhud an Eoraip.
-	#$ ar fud na hEorpa.
-	## ar fhud an domhan.
-	#$ ar fud an domhain.
+	## ar fhud. - incorrect
+	#$ ar fud. - correct.
+	## ar fhud an tír. - incorrect
+	#$ ar fud na tíre. - correct
+	## ar fhud an Eoraip. - incorrect
+	#$ ar fud na hEorpa. - correct
+	## ar fhud an domhan. - incorrect
+	#$ ar fud an domhain. - correct
 	
 # Noun errors (Ecl vs. not Ecl) after prepositions
 
@@ -758,7 +763,7 @@ LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF (*-1 ECL-PREP + (Prep Simp) BARRIER (*) - Art)(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
-   #$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
+    #$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
 
 # Valency errors
 # "teastaigh" V + "ó"	
@@ -774,7 +779,6 @@ ADD:msyn-inis-do (&msyn-inis-do) TARGET ("le" Prep) IF (NOT 0 ("do" Prep))(*-1 (
 COPY:msyn-inis-do ("do" &SUGGEST) EXCEPT ("le" &msyn-inis-do) TARGET (&msyn-inis-do);	
 	## Inis le. - incorrect ("le" with)
 	#$ Inis do. - correct ("do" to)
-	## Tá na mílte inis le taiscéaladh ar bháid a sheolann ar feadh an lae ó lár Stócólm.
 
 ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
 COPY:msyn-ar-an-aonach ("ar" &SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
@@ -833,7 +837,7 @@ COPY:msyn-i-rith-nom-gen ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 #Com -> Gen
 
 
-	
+
 # Cúpla ("a couple") number errors (Pl > Sg)
 	
 ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty)) ;
