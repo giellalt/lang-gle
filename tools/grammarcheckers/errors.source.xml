@@ -61,6 +61,34 @@
     </body>
   </error>
 
+  <error id="msyn-ar-a-haon-a-chlog">
+    <header>
+      <title xml:lang="ga">ar a haon blabla</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">cur síos anseo ... blabla bla bla</description>
+    <examples>
+      <ex xml:lang="ga">exex1.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ar-an-aonach">
+    <header>
+      <title xml:lang="en">Use preposition ar and not ag in this context</title>
+      <title xml:lang="ga">ar ag explanation in Irish in here</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">description in here</description>
+      <description xml:lang="ga">cur síos anseo ... blabla bla bla</description>
+    <examples>
+      <ex xml:lang="ga">exex1.</ex>
+    </examples>
+    </body>
+  </error>
+
 
   <error id="msyn-adj-gender">
     <header>
@@ -69,10 +97,10 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Gender long ...</description>
-      <description xml:lang="ga">illatiiva iige nominatiiva</description>
+      <description xml:lang="en">When an adjective, here "$1", is preceeded by a noun, here "$2", it should agree with the noun in gender.</description>
+      <description xml:lang="ga">Nuair a chuirtear ainmfhocal, anseo "$2" roimh aidiacht, anseo "$1", ba cheart go n-aontódh sé leis an ainmfhocal in inscne.</description>
     <examples>
-      <ex xml:lang="ga">Mun čálán {reive}.</ex>
+      <ex xml:lang="ga">Nice example {here}.</ex>
     </examples>
     </body>
   </error>
@@ -146,5 +174,21 @@
     </examples>
     </body>
   </error>
+
+  
+  <error id="msyn-ecl-after-prep">
+    <header>
+      <title xml:lang="ga">Tá urú in easnamh</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">In the sequence of preposition ("$2") followed by the definite article "an", the following noun ("$1") needs to be eclipsed.</description>
+      <description xml:lang="ga">Nuair a bhíonn réamhfhocal "$2" agus an t-alt "an" le chéile, ní mór urú a bheith ar an bhfocal ina lorg "$1".</description>
+    <examples>
+      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+    </examples>
+    </body>
+  </error>
+
 
 </errors>

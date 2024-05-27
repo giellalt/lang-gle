@@ -618,21 +618,30 @@ SET CCCOMMA = CC OR COMMA ;
 
 #!! ### Grammarchecker sets
 
+LIST &SUGGEST = &SUGGEST ;
 LIST &err-agr = &err-agr ;
+LIST &err-ext-agr = &err-ext-agr ;
+LIST &err-ext-vagr = &err-ext-vagr ;
 LIST &err-gen-po = &err-gen-po ;
 LIST &err-no-conneg = &err-no-conneg ;
 LIST &err-orrood-inf = &err-orrood-inf ;
-LIST &err-ext-agr = &err-ext-agr ;
-LIST &err-ext-vagr = &err-ext-vagr ;
 LIST &lex-tá-is = &lex-tá-is ;
-LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-adj-gender = &msyn-adj-gender ;
-LIST &msyn-len-after-prep = &msyn-len-after-prep ;
-LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
-LIST &msyn-inis-de = &msyn-inis-de ;
+LIST &msyn-ar-a-haon-a-chlog = &msyn-ar-a-haon-a-chlog ;
+LIST &msyn-ar-an-aonach = &msyn-ar-an-aonach ;
+LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ;
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;
+LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;
+LIST &fada-ó = &fada-ó ;
 LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;
-LIST &SUGGEST = &SUGGEST ;
+LIST &msyn-inis-de = &msyn-inis-de ;
+LIST &msyn-len-after-prep = &msyn-len-after-prep ;
+LIST &msyn-noun-defart = &msyn-noun-defart ;
+LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
+LIST &spell-conservatively = spell-conservatively  ;
+LIST &spell-it-all = spell-it-all ;
+LIST &use-ellipsis = &use-ellipsis ;
+LIST &use-guillemets = &use-guillemets ;
 LIST SUGGEST = SUGGEST ;
 
 MAPPING-PREFIX = & ;
@@ -699,7 +708,7 @@ LIST ECL-PREP = "ag" "ar" "thar" ;
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
-## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
+	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
 	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
@@ -763,8 +772,13 @@ LIST PREP-LEN = "<de>" "<do>"; # etc. etc.
 
 LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF (*-1 ECL-PREP + (Prep Simp) BARRIER (*) - Art)(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
+	(-1 Art)
+	(-2 ECL-PREP + (Prep Simp))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
     #$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
 
