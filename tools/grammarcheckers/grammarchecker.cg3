@@ -272,6 +272,11 @@ LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; #!! PROP-SUR
 SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
 
 
+#!! ### Lookalikes
+
+LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ;
+LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ;
+
 #!! ###  Syntactic tags
 
 LIST @+FAUXV = @+FAUXV ;	         #!! `@+FAUXV     `
@@ -637,6 +642,7 @@ LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;
 LIST &msyn-inis-de = &msyn-inis-de ;
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
+LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
 LIST &spell-conservatively = spell-conservatively  ;
 LIST &spell-it-all = spell-it-all ;
@@ -861,6 +867,13 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	## Cúpla focail. - incorrect
 	#$ Cúpla focal. - correct
 
+
+ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss))(-2 (Noun Com));
+COPY:msyn-possadj-nom-gen (Gen Sg Len &SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
+ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
+
+	## carr a athair
+	#$ carr a athar
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
