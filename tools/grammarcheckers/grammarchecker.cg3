@@ -698,7 +698,8 @@ LIST ECL-PREP = "ag" "ar" "thar" ;
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
+ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
 	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct

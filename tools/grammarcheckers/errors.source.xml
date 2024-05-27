@@ -11,11 +11,11 @@
       </ids>
       <header>
         <title xml:lang="en">Real-word error</title>
-        <title xml:lang="ga">Čállinmeattáhus</title>
+        <title xml:lang="ga">Earráid fhíor-fhocail</title>
       </header>
       <body>
         <description xml:lang="en">The word "$1" exists in the dictionary, but means something different in this context.</description>
-        <description xml:lang="ga">"$1" maŋis galggašii leat blah</description>
+        <description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach ciallaíonn sé rud éigin difriúil sa chomhthéacs seo.</description>
       </body>
     </default>
 
@@ -24,8 +24,8 @@
         <e id="default"/>
       </ids>
       <header>
-        <title xml:lang="en">Grammar error</title>
-        <title xml:lang="ga">Čállinmeattáhus</title>
+        <title xml:lang="en">Grammatical error</title>
+        <title xml:lang="ga">Earráid ghramadaí</title>
       </header>
       <body>
         <description xml:lang="en">The word "$1" exists in the dictionary, but means something different in this context.</description>
@@ -45,30 +45,31 @@
     </body>
   </error>
 
-  <error id="msyn-valency-ill">
+
+  <error id="msyn-noun-defart">
     <header>
-      <title xml:lang="en">illative instead of accusative</title>
-      <title xml:lang="ga">illatiiva iige akkusatiiva</title>
+      <title xml:lang="en">Definite article of noun</title>
+      <title xml:lang="ga">Alt cinnte an ainmfhocail</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">illative instead of accusative</description>
-      <description xml:lang="ga">illatiiva iige akkusatiiva</description>
+      <description xml:lang="en">If the noun, here "$1" is preceded by a definite article, here "$2", it should itself be in the definite form.ç∂</description>
+      <description xml:lang="ga">Má thagann alt cinnte roimh an ainmfhocal, anseo "$1", anseo "$2", ba cheart go mbeadh sé san fhoirm cinnte.</description>
     <examples>
-      <ex xml:lang="ga">Hui ollu liikon {bohccobierggu} ja {goikebierggu}.</ex>
+      <ex xml:lang="ga">exex1.</ex>
     </examples>
     </body>
   </error>
 
 
-  <error id="msyn-valency-acc">
+  <error id="msyn-adj-gender">
     <header>
-      <title xml:lang="en">accusative instead of nominative</title>
-      <title xml:lang="ga">akkusatiiva iige nominatiiva</title>
+      <title xml:lang="en">The adjective should agree with the noun in gender</title>
+      <title xml:lang="ga">Ba chóir go n-aontódh an aidiacht leis an ainmfhocal in inscne</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">accusative instead of nominative</description>
+      <description xml:lang="en">Gender long ...</description>
       <description xml:lang="ga">illatiiva iige nominatiiva</description>
     <examples>
       <ex xml:lang="ga">Mun čálán {reive}.</ex>
@@ -76,14 +77,14 @@
     </body>
   </error>
 
-  <error id="msyn-valency-loc-com">
+  <error id="msyn-len-after-prep">
     <header>
-      <title xml:lang="en">msyn thing</title>
-      <title xml:lang="ga">msyn thingy</title>
+      <title xml:lang="en">Soft consonant after preposition</title>
+      <title xml:lang="ga">Consan bog i ndiaidh na réamhfhocal</title>
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">wrong word</description>
+      <description xml:lang="en">wrong initial consonant</description>
       <description xml:lang="ga">boasttut sátni</description>
     <examples>
       <ex xml:lang="ga">Ovdalgihtiigeassima sierra máksingoartta ferte álohii atnit go máksá boastagiro dahje báŋku {badjel}.</ex>
@@ -91,14 +92,14 @@
     </body>
   </error>
 
-  <error id="lex-bokte-not-badjel">
+  <error id="msyn-teastaigh-ó">
     <header>
-      <title xml:lang="en">"bokte" not "badjel"</title>
-      <title xml:lang="ga">"bokte" iige "badjel"</title>
+      <title xml:lang="en">teastaigh ó</title>
+      <title xml:lang="ga">teastaigh ó</title>
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">wrong word</description>
+      <description xml:lang="en">teastaigh ó longer expl</description>
       <description xml:lang="ga">boasttut sátni</description>
     <examples>
       <ex xml:lang="ga">Ovdalgihtiigeassima sierra máksingoartta ferte álohii atnit go máksá boastagiro dahje báŋku {badjel}.</ex>
@@ -106,8 +107,9 @@
     </body>
   </error>
 
-  <error id="syn-pred-not-attr-msg">
+  <error id="msyn-inis-de">
     <header>
+      <title xml:lang="en">«$1» and «$2» are blah</title>
       <title xml:lang="ga">«$1» ja «$2» leaba blah</title>
     </header>
     <body>
@@ -115,9 +117,24 @@
     </body>
   </error>
 
-  <error id="msyn-valency-go-inf">
+  <error id="msyn-cúpla-plnoun-sgnoun">
     <header>
-      <title xml:lang="en">Try a subclause with <em>go</em> instead of illative</title>
+      <title xml:lang="en">cúpla in plural ... in singular</title>
+      <title xml:lang="ga">Iskka<em>go</em>-oalgecealkaga iige infinitiiva</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">... and longer version</description>
+      <description xml:lang="ga"><em>go</em> iige infinitiiva</description>
+    <examples>
+      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-i-rith-nom-gen">
+    <header>
+      <title xml:lang="en">i rith should b3 g3n and not nom</title>
       <title xml:lang="ga">Iskka<em>go</em>-oalgecealkaga iige infinitiiva</title>
       <references> <ref n=""/></references>
     </header>
