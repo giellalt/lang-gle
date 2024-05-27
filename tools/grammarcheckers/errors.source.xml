@@ -190,5 +190,20 @@
     </body>
   </error>
 
+  
+  <error id="msyn-possadj-nom-gen">
+    <header>
+      <title xml:lang="ga">A short name in Irish</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Following a noun ("$2") and a possessor, the noun ("$1") must be in the genitive.</description>
+      <description xml:lang="ga">Blabla "$2" more and "$1".</description>
+    <examples>
+      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+    </examples>
+    </body>
+  </error>
+
 
 </errors>
