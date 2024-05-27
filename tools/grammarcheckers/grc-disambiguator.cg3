@@ -33,6 +33,7 @@ LIST Noun = Noun ;
 LIST Num = Num ;
 LIST Det = Det ;
 LIST Abr = Abr ;
+LIST Cop = Cop ;
 
 SETS 
 LIST BOS = (>>>) "<p>" "<s>" (ChildesID);
@@ -1702,7 +1703,7 @@ REMOVE Art IF (NEGATE 1 Noun OR Num OR Det OR Abr OR ADJ-PRENOM);
 # problem: ar an seilp -> Def forms should be "ar an seilpe" or "an tseilp"
 # => remove DefArt on Noun from rule for robustness
 # also remove Com on Noun  e.g. An fíor é? an=cop
-SELECT (Art Sg) IF (1C (Noun Sg));
+REMOVE Cop IF (0 (Art Sg)) (1C (Noun Sg));
 SELECT (Art Pl) IF (1 (Noun Pl));
 
 # it is a fem gen article if followed by definite fem gen noun 
