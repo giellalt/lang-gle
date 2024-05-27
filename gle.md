@@ -1302,6 +1302,8 @@ PROP-SUR
 
 TIME-N-SET
 
+### Lookalikes
+
 ###  Syntactic tags
 
 `@+FAUXV     `
