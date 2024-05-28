@@ -879,7 +879,7 @@ ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possa
 	#$ doras mo thí - correct
 	#(Com Sg &msyn-gen-case) OR (Com Pl &msyn-gen-case)
 	
-ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))((-2 (Noun Com));
+ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun Com));
 COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
 
 
