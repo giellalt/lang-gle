@@ -66,7 +66,6 @@
     </body>
   </error>
 
-
   <error id="msyn-adj-gender">
     <header>
       <title xml:lang="ga">Ba cheart go n-aontódh an aidiacht le hinscne an ainmfhocail.</title>
@@ -143,7 +142,6 @@
     </examples>
     </body>
   </error>
-
   
   <error id="msyn-ecl-after-prep">
     <header>
@@ -157,7 +155,6 @@
     </examples>
     </body>
   </error>
-
   
   <error id="msyn-possadj-nom-gen">
     <header>
@@ -171,6 +168,5 @@
     </examples>
     </body>
   </error>
-
 
 </errors>
