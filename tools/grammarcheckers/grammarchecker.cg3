@@ -644,6 +644,8 @@ LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;
 LIST &msyn-gen-case = &msyn-gen-case ;
+LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;
+LIST &msyn-gen-case-article = &msyn-gen-case-article ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
 LIST &spell-conservatively = spell-conservatively  ;
 LIST &spell-it-all = spell-it-all ;
@@ -714,7 +716,7 @@ LIST ECL-PREP = "ag" "ar" "thar" ;
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+#ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
 
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
@@ -742,15 +744,15 @@ COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &
 
 LIST LEN-PREP = "ag" "ar" "thar" ;
 
-LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" ;
+#LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" ;
 	
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 COPY:msyn-len-after-prep (Gen SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+#ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
 
-COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
+#COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
 	## Ar mheisce. - incorrect
@@ -832,31 +834,6 @@ COPY:msyn-fada-ó ("ó" Prep Simp &SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-
 	## Is fada mé bhí mise i mo mhac léinn.
 	#$ Is fada ó bhí mise i mo mhac léinn.
 	
-# "i_rith" Prep Cmpd + Gen (not Nom)	
-ADD:msyn-i-rith-nom-gen (&msyn-i-rith-nom-gen) TARGET (Noun Com DefArt) IF (*-1 GEN-PREP + (Prep Cmpd) BARRIER (*) - (Art Def)) ;
-	## I rith an {bhliain}.
-	## Le linn an {bhliain}.
-	#$ i rith na {bliana}. 
-
-COPY:msyn-i-rith-nom-gen (Gen SUGGEST) EXCEPT (Com &msyn-i-rith-nom-gen) BEFORE NUMBER TARGET (Noun &msyn-i-rith-nom-gen) ;
-
-ADD:msyn-i-rith-nom-gen (&msyn-i-rith-nom-gen) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
-
-COPY:msyn-i-rith-nom-gen ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-i-rith-nom-gen) TARGET (Art &msyn-i-rith-nom-gen) IF (1 (Noun Fem)) ;
-
-#How do we get from A to B?
-
-#A) "an" Art Sg Def 
-#B) "na" Art Gen Sg Def Fem
-
-
-#How do we get from A to B?
-#A) "<bhliain>"-- "bliain" Noun Fem Com Sg DefArt
-#B) "<bliana>" -- "bliain" Noun Fem Gen Sg DefArt
-#Com -> Gen
-
-
-
 # Cúpla ("a couple") number errors (Pl > Sg)
 	
 ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty)) ;
@@ -865,7 +842,28 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	#$ Cúpla lá. - correct 
 	## Cúpla focail. - incorrect
 	#$ Cúpla focal. - correct
+	
+# A rule to indicate that when two nouns come together, the second noun has to be in the genitive case.
 
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (-1 (Noun Com));
+COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (&msyn-gen-case-nouns);
+
+# A rule to indicate that when two nouns with an article between them come together, the second noun has to be in the genitive case.
+
+ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun Com));
+COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
+COPY:msyn-gen-case (Gen Sg DefArt Fem &SUGGEST) EXCEPT (Com Sg DefArt Fem &msyn-gen-case) TARGET (&msyn-gen-case);
+
+# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the genitive case.
+
+ADD:msyn-gen-case-article (&msyn-gen-case-article) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) BARRIER (*) - (Art Def)) ;
+ADD:msyn-gen-case-article (&msyn-gen-case-article) TARGET ("na" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
+
+COPY:msyn-gen-case-article (Gen SUGGEST) EXCEPT (Com Fem &mmsyn-gen-case-article) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article) ;
+COPY:msyn-gen-case-article ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def Fem &msyn-gen-case-article) TARGET (Art &msyn-gen-case-article) IF (1 (Noun Fem)) ;
+
+
+# A rule to indicate that when a noun comes before a possessor followed by a noun, the second noun has to be in the genitive case.
 
 ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss))(-2 (Noun Com));
 COPY:msyn-possadj-nom-gen (Gen Sg Len &SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
@@ -877,19 +875,7 @@ ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possa
 	#$ eagla a chraicinn - correct
 	## doras mo theach - incorrect
 	#$ doras mo thí - correct
-	#(Com Sg &msyn-gen-case) OR (Com Pl &msyn-gen-case)
 	
-ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun Com));
-COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
-
-
-	##lár an pháirc - incorrect
-	#$lár na páirce - correct
-	##oifig an post - incorrect
-	#$oifig an phoist - correct
-	##éadaí an fear - incorrect
-	#$éadaí an fhir - correct
-
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
 # The simplest is to just add it to all spelled words:
