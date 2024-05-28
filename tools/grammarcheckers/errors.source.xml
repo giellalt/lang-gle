@@ -2,6 +2,7 @@
 <!DOCTYPE errors>
 
 <errors>
+   <defaults>
     <default type="Grammar error">
       <ids>
         <e id="default"/>
