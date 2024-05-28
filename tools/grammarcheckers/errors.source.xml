@@ -15,7 +15,7 @@
     </default>
   </defaults>
 
-  <error id="&msyn-gen-case">
+  <error id="msyn-gen-case">
     <header>
       <title xml:lang="ga">An tuiseal ginideach</title>
       <references> <ref n=""/></references>
