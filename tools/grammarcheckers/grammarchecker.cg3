@@ -645,7 +645,10 @@ LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;
 LIST &msyn-gen-case = &msyn-gen-case ;
 LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;
-LIST &msyn-gen-case-article = &msyn-gen-case-article ;
+LIST msyn-gen-case-article-fem-sing = msyn-gen-case-article-fem-sing ;
+LIST msyn-gen-case-article-masc-sing = msyn-gen-case-article-masc-sing ;
+LIST msyn-gen-case-article-fem-plural = msyn-gen-case-article-fem-plural ;
+LIST msyn-gen-case-article-masc-sing = msyn-gen-case-article-masc-sing ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
 LIST &spell-conservatively = spell-conservatively  ;
 LIST &spell-it-all = spell-it-all ;
@@ -854,14 +857,39 @@ ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun 
 COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
 COPY:msyn-gen-case (Gen Sg DefArt Fem &SUGGEST) EXCEPT (Com Sg DefArt Fem &msyn-gen-case) TARGET (&msyn-gen-case);
 
-# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the genitive case.
+# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive singular case.
 
-ADD:msyn-gen-case-article (&msyn-gen-case-article) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) BARRIER (*) - (Art Def)) ;
-ADD:msyn-gen-case-article (&msyn-gen-case-article) TARGET ("na" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
+ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+#ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
 
-COPY:msyn-gen-case-article (Gen SUGGEST) EXCEPT (Com Fem &mmsyn-gen-case-article) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article) ;
-COPY:msyn-gen-case-article ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def Fem &msyn-gen-case-article) TARGET (Art &msyn-gen-case-article) IF (1 (Noun Fem)) ;
+COPY:msyn-gen-case-article-fem-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-sing) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-fem-sing) ;
+#COPY:msyn-gen-case-article-fem-sing ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-sing) TARGET (Art &msyn-gen-case-article-fem-sing) IF (1 (Noun Fem)) ;
 
+
+# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive singular case.
+
+ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET ("an" Art Sg Def) IF (-1 (Noun Com));
+
+COPY:msyn-gen-case-article-masc-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-sing) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-masc-sing) ;
+COPY:msyn-gen-case-article-masc-sing ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-masc-sing) TARGET (Art &msyn-gen-case-article-masc-sing) ;
+
+# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive plural case.
+
+ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
+
+COPY:msyn-gen-case-article-fem-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-plural) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-fem-plural) ;
+#COPY:msyn-gen-case-article-fem-plural ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-plural) TARGET (Art &msyn-gen-case-article-fem-plural) IF (1 (Noun Fem)) ;
+
+
+# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive plural case.
+
+ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET ("an" Art Sg Def) IF (-1 (Noun Com));
+
+COPY:msyn-gen-case-article-masc-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-plural) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-masc-plural) ;
+COPY:msyn-gen-case-article-masc-plural ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-masc-plural) TARGET (Art &msyn-gen-case-article-masc-plural) ;
 
 # A rule to indicate that when a noun comes before a possessor followed by a noun, the second noun has to be in the genitive case.
 
