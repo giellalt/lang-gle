@@ -2,7 +2,6 @@
 <!DOCTYPE errors>
 
 <errors>
-   <defaults>
     <default type="Grammar error">
       <ids>
         <e id="default"/>
@@ -14,7 +13,6 @@
         <description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach tá brí eile leis sa chomhthéacs seo.</description>
       </body>
     </default>
-  </defaults>
 
   <error id="msyn-gen-case">
     <header>
