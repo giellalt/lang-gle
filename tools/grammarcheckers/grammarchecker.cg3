@@ -643,6 +643,7 @@ LIST &msyn-inis-de = &msyn-inis-de ;
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;
+LIST &msyn-gen-case = &msyn-gen-case ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
 LIST &spell-conservatively = spell-conservatively  ;
 LIST &spell-it-all = spell-it-all ;
@@ -714,14 +715,12 @@ LIST ECL-PREP = "ag" "ar" "thar" ;
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+
+
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
 	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
-	## eagla a chraiceann - incorrect
-	#$ eagla a chraicinn - correct
-	## doras mo theach - incorrect
-	#$ doras mo thí - correct
 	## Chuig an Chomhairle. - incorrect
 	#$ Chuig an gComhairle. - correct
 	## An bean. - incorrect
@@ -786,7 +785,7 @@ COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt
 ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
-    #$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
+    	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
 
 # Valency errors
 # "teastaigh" V + "ó"	
@@ -874,6 +873,22 @@ ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possa
 
 	## carr a athair
 	#$ carr a athar
+	## eagla a chraiceann - incorrect
+	#$ eagla a chraicinn - correct
+	## doras mo theach - incorrect
+	#$ doras mo thí - correct
+	#(Com Sg &msyn-gen-case) OR (Com Pl &msyn-gen-case)
+	
+ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))((-2 (Noun Com));
+COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
+
+
+	##lár an pháirc - incorrect
+	#$lár na páirce - correct
+	##oifig an post - incorrect
+	#$oifig an phoist - correct
+	##éadaí an fear - incorrect
+	#$éadaí an fhir - correct
 
 # Speller suggestions rule – add &SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
