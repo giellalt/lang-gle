@@ -2,17 +2,17 @@
 <!DOCTYPE errors>
 
 <errors>
-    <default type="Grammar error">
-      <ids>
-        <e id="default"/>
-      </ids>
-      <header>
-        <title xml:lang="ga">Botún gramadaí</title>
-      </header>
-      <body>
-        <description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach tá brí eile leis sa chomhthéacs seo.</description>
-      </body>
-    </default>
+    <!--<default type="Grammar error">-->
+      <!--<ids>-->
+       <!-- <e id="default"/>-->
+      <!--</ids>-->
+    <!--  <header>-->
+      <!-- <title xml:lang="ga">Botún gramadaí</title>-->
+      <!--</header>-->
+      <!--<body>-->
+        <!--<description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach tá brí eile leis sa chomhthéacs seo.</description>-->
+      <!--</body>-->
+    <!--</default>-->
 
   <error id="msyn-gen-case">
     <header>
