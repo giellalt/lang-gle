@@ -2,89 +2,67 @@
 <!DOCTYPE errors>
 
 <errors>
-
-  <defaults>
-    <default type="Grammar error">
-      <ids>
-        <re v="real-.*"/>
-        <e id="unreal-girjji"/>
-      </ids>
-      <header>
-        <title xml:lang="en">Real-word error</title>
-        <title xml:lang="ga">Earráid fhíor-fhocail</title>
-      </header>
-      <body>
-        <description xml:lang="en">The word "$1" exists in the dictionary, but means something different in this context.</description>
-        <description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach ciallaíonn sé rud éigin difriúil sa chomhthéacs seo.</description>
-      </body>
-    </default>
-
     <default type="Grammar error">
       <ids>
         <e id="default"/>
       </ids>
       <header>
-        <title xml:lang="en">Grammatical error</title>
-        <title xml:lang="ga">Earráid ghramadaí</title>
+        <title xml:lang="ga">Botún gramadaí</title>
       </header>
       <body>
-        <description xml:lang="en">The word "$1" exists in the dictionary, but means something different in this context.</description>
-        <description xml:lang="ga">"$1" maŋis galggašii leat blah</description>
+        <description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach tá brí eile leis sa chomhthéacs seo.</description>
       </body>
     </default>
   </defaults>
 
-  <error id="real-override">
+  <error id="&msyn-gen-case">
     <header>
-      <title xml:lang="en">cake instead of cheese</title>
-      <title xml:lang="ga">gáhkku iige vuostá</title>
+      <title xml:lang="ga">An tuiseal ginideach</title>
+      <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">this should be "cake" instead of "cheese"</description>
-      <description xml:lang="ga">galggašii leat "gáhkku" iige "vuostá"</description>
+      <description xml:lang="ga">Má thagann an t-alt agus ainmfhocal ("$2") i lorg ainmfhocail eile ("$1"), ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
+    <examples>
+      <ex xml:lang="ga">Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.</ex>
+    </examples>
     </body>
   </error>
 
-
   <error id="msyn-noun-defart">
     <header>
-      <title xml:lang="en">Definite article of noun</title>
       <title xml:lang="ga">Alt cinnte an ainmfhocail</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">If the noun, here "$1" is preceded by a definite article, here "$2", it should itself be in the definite form.ç∂</description>
-      <description xml:lang="ga">Má thagann alt cinnte roimh an ainmfhocal, anseo "$1", anseo "$2", ba cheart go mbeadh sé san fhoirm cinnte.</description>
+      <description xml:lang="ga">Má thagann an t-alt "$2" roimh an ainmfhocail, "$1" sa chás seo, ba cheart go mbeadh sé san fhoirm cinnte.</description>
     <examples>
-      <ex xml:lang="ga">exex1.</ex>
+      <ex xml:lang="ga">An t-uachtarán.</ex>
     </examples>
     </body>
   </error>
 
   <error id="msyn-ar-a-haon-a-chlog">
     <header>
-      <title xml:lang="ga">ar a haon blabla</title>
+      <title xml:lang="ga">Ar agus an t-am</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">cur síos anseo ... blabla bla bla</description>
+      <description xml:lang="ga">Is ceart an réamhfhocal AR a úsáid nuair atáthar ag caint faoin am ar an gclog.</description>
     <examples>
-      <ex xml:lang="ga">exex1.</ex>
+      <ex xml:lang="ga">Ithfear an dinnéar ar a seacht a chlog.</ex>
     </examples>
     </body>
   </error>
 
   <error id="msyn-ar-an-aonach">
     <header>
-      <title xml:lang="en">Use preposition ar and not ag in this context</title>
-      <title xml:lang="ga">ar ag explanation in Irish in here</title>
+      <title xml:lang="ga">Ar an aonach</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">description in here</description>
-      <description xml:lang="ga">cur síos anseo ... blabla bla bla</description>
+      <description xml:lang="ga">Bítear ar an aonach, ní ag an aonach.</description>
     <examples>
-      <ex xml:lang="ga">exex1.</ex>
+      <ex xml:lang="ga">Bhí slua mór ar an aonach inniu.</ex>
     </examples>
     </body>
   </error>
@@ -92,85 +70,77 @@
 
   <error id="msyn-adj-gender">
     <header>
-      <title xml:lang="en">The adjective should agree with the noun in gender</title>
-      <title xml:lang="ga">Ba chóir go n-aontódh an aidiacht leis an ainmfhocal in inscne</title>
+      <title xml:lang="ga">Ba cheart go n-aontódh an aidiacht le hinscne an ainmfhocail.</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">When an adjective, here "$1", is preceeded by a noun, here "$2", it should agree with the noun in gender.</description>
-      <description xml:lang="ga">Nuair a chuirtear ainmfhocal, anseo "$2" roimh aidiacht, anseo "$1", ba cheart go n-aontódh sé leis an ainmfhocal in inscne.</description>
+      <description xml:lang="ga">Ní mór don aidiacht,"$1" sa chás seo, teacht le hinscne an ainmfhocail, "$2" sa chás seo.</description>
     <examples>
-      <ex xml:lang="ga">Nice example {here}.</ex>
+      <ex xml:lang="ga">Beidh slua mór ar an bhfaiche mhór an Aoine bheag seo.</ex>
     </examples>
     </body>
   </error>
 
   <error id="msyn-len-after-prep">
     <header>
-      <title xml:lang="en">Soft consonant after preposition</title>
-      <title xml:lang="ga">Consan bog i ndiaidh na réamhfhocal</title>
+      <title xml:lang="ga">Consan séimhithe i lorg an réamhfhocail bhaininscnigh</title>
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">wrong initial consonant</description>
-      <description xml:lang="ga">boasttut sátni</description>
+      <description xml:lang="ga">Tá an séimhiú in easnamh.</description>
     <examples>
-      <ex xml:lang="ga">Ovdalgihtiigeassima sierra máksingoartta ferte álohii atnit go máksá boastagiro dahje báŋku {badjel}.</ex>
+      <ex xml:lang="ga">Níor oscail mé an fhuinneog mhór.</ex>
     </examples>
     </body>
   </error>
 
   <error id="msyn-teastaigh-ó">
     <header>
-      <title xml:lang="en">teastaigh ó</title>
       <title xml:lang="ga">teastaigh ó</title>
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">teastaigh ó longer expl</description>
-      <description xml:lang="ga">boasttut sátni</description>
+      <description xml:lang="ga">Is é an réamhfhocal ó a thagann i lorg an bhriathair teastaigh.</description>
     <examples>
-      <ex xml:lang="ga">Ovdalgihtiigeassima sierra máksingoartta ferte álohii atnit go máksá boastagiro dahje báŋku {badjel}.</ex>
+      <ex xml:lang="ga">Teastaíonn post nua uaim.</ex>
     </examples>
     </body>
   </error>
 
   <error id="msyn-inis-de">
     <header>
-      <title xml:lang="en">«$1» and «$2» are blah</title>
-      <title xml:lang="ga">«$1» ja «$2» leaba blah</title>
+      <title xml:lang="ga">Inis agus de</title>
     </header>
     <body>
-      <description xml:lang="ga">Predicative, iige attributive – «$1» ja «$2» leaba blah</description>
+      <description xml:lang="ga">Nuair a bhíonn an briathar inis ann, is é DE an réamhfhocal a oireann dó.</description>
+    <examples>
+      <ex xml:lang="ga">Inis dom céard a tharla. Ar inis tú di é? Inseofar duit ar ball.</ex>
+    </examples>
     </body>
   </error>
 
   <error id="msyn-cúpla-plnoun-sgnoun">
     <header>
-      <title xml:lang="en">cúpla in plural ... in singular</title>
-      <title xml:lang="ga">Iskka<em>go</em>-oalgecealkaga iige infinitiiva</title>
+      <title xml:lang="ga">Bíonn uimhir uatha ann i lorg an fhocail cúpla</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">... and longer version</description>
-      <description xml:lang="ga"><em>go</em> iige infinitiiva</description>
+      <description xml:lang="ga">Bíonn uimhir uatha ann i lorg an fhocail cúpla.</description>
     <examples>
-      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+      <ex xml:lang="ga">Cúpla lá, cúpla focal, cúpla bliain.</ex>
     </examples>
     </body>
   </error>
 
   <error id="msyn-i-rith-nom-gen">
     <header>
-      <title xml:lang="en">i rith should b3 g3n and not nom</title>
-      <title xml:lang="ga">Iskka<em>go</em>-oalgecealkaga iige infinitiiva</title>
+      <title xml:lang="ga">An<em>ginideach</em> i lorg ainmfhocail ama.</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en"><em>go</em> instead of illative</description>
-      <description xml:lang="ga"><em>go</em> iige infinitiiva</description>
+      <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara hainmfhocal <em>sa ghinideach</em>.</description>
     <examples>
-      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+      <ex xml:lang="ga">I rith na bliana, i rith na seachtaine, le linn an tsamhraidh, ar feadh an lae.</ex>
     </examples>
     </body>
   </error>
@@ -182,10 +152,9 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">In the sequence of preposition ("$2") followed by the definite article "an", the following noun ("$1") needs to be eclipsed.</description>
-      <description xml:lang="ga">Nuair a bhíonn réamhfhocal "$2" agus an t-alt "an" le chéile, ní mór urú a bheith ar an bhfocal ina lorg "$1".</description>
+      <description xml:lang="ga">Nuair a bhíonn réamhfhocal "$2" agus an t-alt "an" le chéile, ní mór urú a bheith ar an bhfocal ina lorg, "$1" sa chás seo.</description>
     <examples>
-      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+      <ex xml:lang="ga">Ar an mbord, ag an bhfuinneog, chuig an gcomhairle.</ex>
     </examples>
     </body>
   </error>
@@ -193,14 +162,13 @@
   
   <error id="msyn-possadj-nom-gen">
     <header>
-      <title xml:lang="ga">A short name in Irish</title>
+      <title xml:lang="ga">An ginideach i lorg na haidiachta sealbhaí</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Following a noun ("$2") and a possessor, the noun ("$1") must be in the genitive.</description>
-      <description xml:lang="ga">Blabla "$2" more and "$1".</description>
+      <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach an ginideach ar ceal.</description>
     <examples>
-      <ex xml:lang="ga">Soai leaigga sihke dolkan ja suhttan gullat olbmuid šláddariid sudno birra, ja bovdiiga.</ex>
+      <ex xml:lang="ga">Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.</ex>
     </examples>
     </body>
   </error>
