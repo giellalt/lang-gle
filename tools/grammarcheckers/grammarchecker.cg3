@@ -637,6 +637,7 @@ LIST &msyn-ar-an-aonach = &msyn-ar-an-aonach ;
 LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ;
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;
+LIST &msyn-ecl-after-prep2 = msyn-ecl-after-prep2 ;
 LIST &fada-ó = &fada-ó ;
 LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;
 LIST &msyn-inis-de = &msyn-inis-de ;
@@ -645,12 +646,13 @@ LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;
 LIST &msyn-gen-case = &msyn-gen-case ;
 LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;
-LIST msyn-gen-case-article-fem-sing = msyn-gen-case-article-fem-sing ;
-LIST msyn-gen-case-article-masc-sing = msyn-gen-case-article-masc-sing ;
-LIST msyn-gen-case-article-fem-plural = msyn-gen-case-article-fem-plural ;
-LIST msyn-gen-case-article-masc-sing = msyn-gen-case-article-masc-sing ;
+LIST &msyn-gen-case-article-fem-sing = &msyn-gen-case-article-fem-sing ;
+LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;
+LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ;
+LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;
-LIST &spell-conservatively = spell-conservatively  ;
+LIST &msyn-fem-article = &msyn-fem-article ;
+LIST &spell-conservatively = spell-conservatively ;
 LIST &spell-it-all = spell-it-all ;
 LIST &use-ellipsis = &use-ellipsis ;
 LIST &use-guillemets = &use-guillemets ;
@@ -696,7 +698,7 @@ SECTION
 #$ …, áfach. - correct if it is at the end of a sentence
 ## Sa gheimhreadh afách, agus na laethanta ag dul i ndorchadas, bhí a chuid saighdiúirí bochta préachta leis an bhfuacht, agus bhí air mar sin na cnoic a fhágáil le caisleán breá teolaí a thógáil cois trá.
 ## Os a choinne sin, afách ba é 21% an líon a bhí ann de bhanscríbhneoirí agus 18% de bhanstiúrthóirí.
-#$ Is imreoir den scoth Steve Finnan, afách.
+#$ Is imreoir den scoth é Steve Finnan, afách.
 #$ Tá mé i mo chónaí in aice le SF, afách; b’fhéidir gur chóir dom dul ar cuairt ar an fíonlann!
 ## Dúirt sé afách, go gcaithfeadh an coimisiún a chinntiú go gcaithfear go cothrom leo siúd a bhfuil na dtáillí íoctha acu cheana féin.
 ## Thug siad le fios, afách, go mbeadh siad ar fáil le haon chúnamh breise a thabhairt don Roinn.
@@ -715,11 +717,11 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 	
 # Definiteness errors in nouns
 
-LIST ECL-PREP = "ag" "ar" "thar" ;
+LIST-PREP = "ag" "ar" "thar" ;
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
 COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-#ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
 
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
@@ -733,14 +735,19 @@ COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn
 	
 # Gender errors in adjectives
 
-ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Base) IF (-1 (Noun Fem Com Sg) LINK -1 ("an" Art Sg Def)) ;
-COPY:msyn-adj-gender (Fem &SUGGEST) EXCEPT (Masc &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
-COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Base &msyn-adj-gender) TARGET (Base &msyn-adj-gender);
-	## Ta an dochtuir ag seasamh le hais an fuinneog mór. - incorrect
-	#$ Tá an dochtúir ag seasamh le hais na fuinneoige móire. - correct
+#ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Adj Base) IF (-1 (Noun Fem Com Sg) LINK -1) ;
+#COPY:msyn-adj-gender (Fem Sg Defart &SUGGEST) EXCEPT (Masc &msyn-adj-gender) TARGET (&msyn-adj-gender);
+#COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Base &msyn-adj-gender) TARGET (&msyn-adj-gender);
+
 	
-ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Fem Com Sg DefArt) IF (-1 (Noun Masc Com Sg) LINK -1 ("an" Art Sg Def)) ;
-COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (Fem &msyn-adj-gender);
+#ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Fem Com Sg DefArt) IF (-1 (Noun Masc Com Sg) LINK -1 ("an" Art Sg Def)) ;
+#COPY:msyn-adj-gender (Masc &SUGGEST) EXCEPT (Fem &msyn-adj-gender) TARGET (&msyn-adj-gender);
+
+#ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Adj Masc) IF (-1 (Noun Fem Com Sg);
+#COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Base &msyn-adj-gender) TARGET (&msyn-adj-gender);
+
+ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg)) ;
+COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
 
 
 # Noun errors (Len vs. not Len) after prepositions
@@ -753,9 +760,9 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subs
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 COPY:msyn-len-after-prep (Gen SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
-#ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
 
-#COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
+COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
 	## Ar mheisce. - incorrect
@@ -787,16 +794,23 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
 	(-2 ECL-PREP + (Prep Simp))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
-ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+#ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
     	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
+    	
+ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
+	(-1 ECL-PREP + (Prep Simp))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+COPY:msyn-ecl-after-prep2 (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
+ADDRELATION:msyn-ecl-after-prep2 ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
 
 # Valency errors
 # "teastaigh" V + "ó"	
 	
 ADD:msyn-teastaigh-ó (&msyn-teastaigh-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("teastaigh") BARRIER (*) - (Noun Com)) ;
-COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("muid" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó);
+COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("muid" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó) ;
+
 	## Teastaíonn mé. - incorrect - Pron Pers
 	#$ Teastaíonn uaim. - correct - Pron + Prep
 	#$ Teastaíonn mála uaim.
@@ -819,15 +833,17 @@ COPY:msynar-a-haon-a-chlog ("ar" &SUGGEST) EXCEPT ("ag" &msynar-a-haon-a-chlog) 
 
 LIST SCALE-WORDS = "buí" ;	#Seanán
 
-# "fada" (far) A + "ó"	
+# "fada" A + "ó"
+	
 ADD:msyn-fada-ó (&msyn-fada-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
-COPY:msyn-fada-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers Sbj &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-fada-ó) IF (NEGATE 1 (Verb PastInd));	
+COPY:msyn-fada-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers Sbj &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-fada-ó) IF (NEGATE 1 (Verb PastInd));
+
 	## Is fada buí mé. - incorrect
 	#$ Is fada buí uaim. - correct 
 	## Is fada buí é.
 	## Is fada buí iad.
 
-# "beag is fiú de" (far) A + "de"	
+# "beag is fiú de" A + "de"	
 ADD:msyn-beag-is-fiú-de (&msynmsyn-beag-is-fiú-de) TARGET (Pron Pers) IF (NOT 0 ("de" Prep))(*-1 ("beag is fiú de" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
 COPY:msyn-beag-is-fiú-de ("de" Prep &SUGGEST) EXCEPT ("dom" Pers &msyn-teastaigh-ó) OR ("duit" Pers &msyn-teastaigh-ó) OR ("dó" Pers &msyn-teastaigh-ó) OR ("di" Pers &msyn-teastaigh-ó) OR ("dúinn" Pers &msyn-teastaigh-ó) OR ("daoibh" Pers &msyn-teastaigh-ó) OR ("dóibh" Pers Sbj &msyn-beag-is-fiú-de) AFTER Pron TARGET (&msyn-beag-is-fiú-de) IF (NEGATE 1 (Verb PastInd));	
 	## Ná déan beag is fiú dom. - incorrect
@@ -853,43 +869,43 @@ COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) 
 
 # A rule to indicate that when two nouns with an article between them come together, the second noun has to be in the genitive case.
 
-ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun Com));
-COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
-COPY:msyn-gen-case (Gen Sg DefArt Fem &SUGGEST) EXCEPT (Com Sg DefArt Fem &msyn-gen-case) TARGET (&msyn-gen-case);
+#ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun Com));
+#COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
+#COPY:msyn-gen-case (Gen Sg DefArt Fem &SUGGEST) EXCEPT (Com Sg DefArt Fem &msyn-gen-case) TARGET (&msyn-gen-case);
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive singular case.
 
-ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+#ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
 #ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
 
-COPY:msyn-gen-case-article-fem-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-sing) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-fem-sing) ;
+#COPY:msyn-gen-case-article-fem-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-sing) (Noun &msyn-gen-case-article-fem-sing) ;
 #COPY:msyn-gen-case-article-fem-sing ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-sing) TARGET (Art &msyn-gen-case-article-fem-sing) IF (1 (Noun Fem)) ;
 
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive singular case.
 
-ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET ("an" Art Sg Def) IF (-1 (Noun Com));
+#ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+#ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET (Art Sg Def) IF (-1 (Noun Com));
 
-COPY:msyn-gen-case-article-masc-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-sing) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-masc-sing) ;
-COPY:msyn-gen-case-article-masc-sing ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-masc-sing) TARGET (Art &msyn-gen-case-article-masc-sing) ;
+#COPY:msyn-gen-case-article-masc-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-sing) (Noun &msyn-gen-case-article-masc-sing) ;
+#COPY:msyn-gen-case-article-masc-sing (Gen Sg Def SUGGEST) EXCEPT (Sg Def &msyn-gen-case-article-masc-sing) TARGET (Art &msyn-gen-case-article-masc-sing) ;
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive plural case.
 
-ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
+#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET ("na" Art Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
 
-COPY:msyn-gen-case-article-fem-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-plural) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-fem-plural) ;
-#COPY:msyn-gen-case-article-fem-plural ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-plural) TARGET (Art &msyn-gen-case-article-fem-plural) IF (1 (Noun Fem)) ;
+#COPY:msyn-gen-case-article-fem-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-plural) (Noun &msyn-gen-case-article-fem-plural) ;
+#COPY:msyn-gen-case-article-fem-plural ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-plural) TARGET (Art Pl &msyn-gen-case-article-fem-plural) IF (1 (Noun Fem)) ;
 
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive plural case.
 
-ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET ("an" Art Sg Def) IF (-1 (Noun Com));
+#ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET (Noun Com DefArt Pl) IF (*-1 (Noun Com) - (Art Def Pl)) ;
+#ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET ("an" Art Def) IF (-1 (Noun Com));
 
-COPY:msyn-gen-case-article-masc-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-plural) BEFORE NUMBER TARGET (Noun &msyn-gen-case-article-masc-plural) ;
-COPY:msyn-gen-case-article-masc-plural ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-masc-plural) TARGET (Art &msyn-gen-case-article-masc-plural) ;
+#COPY:msyn-gen-case-article-masc-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-plural) (Noun &msyn-gen-case-article-masc-plural) ;
+#COPY:msyn-gen-case-article-masc-plural ("na" Gen Pl Def SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-case-article-masc-plural) TARGET (Art Pl &msyn-gen-case-article-masc-plural) ;
 
 # A rule to indicate that when a noun comes before a possessor followed by a noun, the second noun has to be in the genitive case.
 
@@ -933,6 +949,11 @@ COPY:right-guillemet ("»" &SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 
 ADD:use-ellipsis (&ellipsis) TARGET ("...");
 COPY:use-ellipsis ("…" &SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
+
+
+ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (("na" Art Def Fem))((*1 (Noun Com)(-1 (Noun Com)));
+COPY:msyn-fem-article (Art Gen Sg Def Fem &SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
+
 
 LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 
