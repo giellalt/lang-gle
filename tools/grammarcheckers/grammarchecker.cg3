@@ -272,6 +272,9 @@ LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; #!! PROP-SUR
 SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
 
 
+LIST ECL-PREP = "ag" "chuig" "hais" ;
+LIST GEN-PREP = "ar" "thar" ;
+
 #!! ### Lookalikes
 
 LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ;
@@ -791,7 +794,7 @@ LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
 	(-1 Art)
-	(-2 ECL-PREP + (Prep Simp))
+	(-2 ECL-PREP + Prep + Simp)
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 #ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
@@ -943,7 +946,7 @@ COPY:attr-not-pred (Attr &SUGGEST) EXCEPT (Sg) TARGET (&attr-not-pred) ;
 # used to create human-readable messages.
 
 # Simple punctuation rules showing how to change the lemma in the suggestions:
-ADD:use-guillemets (&guillemets) TARGET (""");
+ADD:use-guillemets (&guillemets) TARGET ("""); #"
 COPY:left-guillemet ("«" &SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 COPY:right-guillemet ("»" &SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 
@@ -951,7 +954,7 @@ ADD:use-ellipsis (&ellipsis) TARGET ("...");
 COPY:use-ellipsis ("…" &SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 
 
-ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (("na" Art Def Fem))((*1 (Noun Com)(-1 (Noun Com)));
+ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
 COPY:msyn-fem-article (Art Gen Sg Def Fem &SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
 
 
