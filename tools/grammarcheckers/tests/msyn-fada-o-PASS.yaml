@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## Is fada buí mé. - incorrect
+  #$ Is fada buí uaim. - correct
+  - Is fada buí {mé}£{uaim}.

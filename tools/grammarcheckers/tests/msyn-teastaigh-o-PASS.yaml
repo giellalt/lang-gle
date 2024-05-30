@@ -1,0 +1,15 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  # This was the original data from grammarchecker.cg3
+  ## Teastaíonn mé. - incorrect - Pron Pers
+  #$ Teastaíonn uaim. - correct - Pron + Prep
+  # Written as a yaml test
+  - "Teastaíonn {mé}£{uaim}."
+
+  ## Teastaíonn mála mé.
+  #$ Teastaíonn mála uaim.
+  # As a yaml test
+  - "Teastaíonn mála {mé}£{uaim}."

@@ -1,0 +1,12 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## Cúpla laethanta. - incorrect
+  #$ Cúpla lá. - correct
+  - "Cúpla {laethanta}£{lá}."
+
+  ## Cúpla focail. - incorrect
+  #$ Cúpla focal. - correct
+  - "Cúpla {focail}£{focal}."

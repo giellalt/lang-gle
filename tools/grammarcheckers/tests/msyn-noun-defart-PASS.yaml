@@ -4,3 +4,7 @@ Config:
 
 Tests:
   - "Eagla a {chraiceann}£{chraicinn}"
+
+  ## An bean. - incorrect
+  #$ An bhean. - correct
+  - "An {bean}£{bhean}."

@@ -1,0 +1,39 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## Tests sentences moved from grammarcheckers.cg3 to this file
+
+  ## éadaí an fear. - incorrect: Com
+  #$ éadaí an fhir. - correct: Gen
+  # Rewritten as a test:
+  - éadaí an {fear}£{fhir}.
+
+  ## Cúig bhliana. - incorrect: Len
+  #$ Cúig bliana. - correct: X
+  - Cúig {bhliana}£{bliain}.
+
+  ## An dara bhliain. - incorrect: dara spelling error
+  #$ An dara bliain. - correct
+  - An dara {bhliain}£{bliain}.
+
+  ## níos mór. - incorrect
+  #$ níos mó. - correct
+  - níos {mór}£{mó}.
+
+  ## Ag deireadh an lae. - incorrect
+  #$ I ndeireadh na dála. - correct
+  - Ag deireadh an {lae}£{dála}.
+
+  ## suas le dáta. - incorrect
+  #$ cothrom le dáta. - correct
+  - "{suas}£{cothrom} le dáta."
+
+  ## roinnt bliain. - incorrect
+  #$ roinnt blianta. - correct
+  - roinnt {bliain}£{blianta}.
+
+  ## roinnt lá. - incorrect
+  #$ roinnt laethanta. - correct
+  - roinnt {lá}£{laethanta}.

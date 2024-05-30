@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## Is fada buí é.
+  ## Is fada buí iad.
+  - Is fada buí {é}£{iad}.

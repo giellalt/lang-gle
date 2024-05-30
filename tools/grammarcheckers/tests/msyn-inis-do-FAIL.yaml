@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## Inis le. - incorrect ("le" with)
+  #$ Inis do. - correct ("do" to)
+  - Inis {le}£{do}.

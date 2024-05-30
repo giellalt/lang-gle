@@ -1,0 +1,16 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## carr a athair
+  #$ carr a athar
+  - "carr a {athair}£{athar}"
+
+  ## eagla a chraiceann - incorrect
+  #$ eagla a chraicinn - correct
+  - "eagla a {chraiceann}£{chraicinn}"
+
+  ## doras mo theach - incorrect
+  #$ doras mo thí - correct
+  - "doras mo {theach}£{thí}"

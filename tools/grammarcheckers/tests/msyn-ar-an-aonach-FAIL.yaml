@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  ## Ag an aonach. - incorrect ("ag" at)
+  #$ Ar an aonach. - correct ("ar" on)
+  - "{Ag}£{Ar} an aonach."
