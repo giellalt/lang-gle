@@ -1,0 +1,6 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Eagla a {chraiceann}£{chraicinn}"
