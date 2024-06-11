@@ -5,4 +5,4 @@ Config:
 Tests:
   ## Ná déan beag is fiú dom. - incorrect
   #$ Ná déan beag is fiú díom. - correct
-  - Ná déan beag is fiú {dom}£{díom}.
+  - "Ná déan beag is fiú {dom}£{díom}."

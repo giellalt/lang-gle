@@ -5,4 +5,4 @@ Config:
 Tests:
   ## Tá an dochtúir ag seasamh ag an fuinneog mhór.
   #$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
-  - Tá an dochtúir ag seasamh ag an fuinneog {mór}£{mhór}.
+  - "Tá an dochtúir ag seasamh ag an fuinneog {mór}£{mhór}."

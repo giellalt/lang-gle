@@ -8,23 +8,23 @@ Tests:
   ## éadaí an fear. - incorrect: Com
   #$ éadaí an fhir. - correct: Gen
   # Rewritten as a test:
-  - éadaí an {fear}£{fhir}.
+  - "éadaí an {fear}£{fhir}."
 
   ## Cúig bhliana. - incorrect: Len
   #$ Cúig bliana. - correct: X
-  - Cúig {bhliana}£{bliain}.
+  - "Cúig {bhliana}£{bliain}."
 
   ## An dara bhliain. - incorrect: dara spelling error
   #$ An dara bliain. - correct
-  - An dara {bhliain}£{bliain}.
+  - "An dara {bhliain}£{bliain}."
 
   ## níos mór. - incorrect
   #$ níos mó. - correct
-  - níos {mór}£{mó}.
+  - "Níos {mór}£{mó}."
 
   ## Ag deireadh an lae. - incorrect
   #$ I ndeireadh na dála. - correct
-  - Ag deireadh an {lae}£{dála}.
+  - "Ag deireadh an {lae}£{dála}."
 
   ## suas le dáta. - incorrect
   #$ cothrom le dáta. - correct
@@ -32,8 +32,8 @@ Tests:
 
   ## roinnt bliain. - incorrect
   #$ roinnt blianta. - correct
-  - roinnt {bliain}£{blianta}.
+  - "Roinnt {bliain}£{blianta}."
 
   ## roinnt lá. - incorrect
   #$ roinnt laethanta. - correct
-  - roinnt {lá}£{laethanta}.
+  - "Roinnt {lá}£{laethanta}."

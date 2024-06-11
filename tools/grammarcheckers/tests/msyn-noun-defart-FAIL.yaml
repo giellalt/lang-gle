@@ -8,12 +8,12 @@ Tests:
 
   ## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
   #S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
-  - Ta an dochtuir ag seasamh le hais {an fuinneog}£{na fuinneoige}.
+  - "Ta an dochtuir ag seasamh le hais {an fuinneog}£{na fuinneoige}."
 
   ## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
   #$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
-  - Ta an dochtuir ag seasamh ag an {fuinneog}£{bhfuinneog}.
+  - "Ta an dochtuir ag seasamh ag an {fuinneog}£{bhfuinneog}."
 
   ## Chuig an Chomhairle. - incorrect
   #$ Chuig an gComhairle. - correct
-  - Chuig an {Chomhairle}£{gComhairle}.
+  - "Chuig an {Chomhairle}£{gComhairle}."

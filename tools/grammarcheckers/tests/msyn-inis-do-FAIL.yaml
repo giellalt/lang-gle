@@ -5,4 +5,4 @@ Config:
 Tests:
   ## Inis le. - incorrect ("le" with)
   #$ Inis do. - correct ("do" to)
-  - Inis {le}£{do}.
+  - "Inis {le}£{do}."
