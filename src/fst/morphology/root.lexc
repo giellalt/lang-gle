@@ -27,76 +27,76 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !! (It is highly suggested to follow existing standards when adding new tags).
 
 
-+Adv		! Adverb
++Adv		!!= - **@CODE@** = Adverb
 
-+Gn		! General
-+Its		! intensifiers e.g. sách, ró- etc.
-!!+Phr		! Phrasal        
-+Q		! Interrogative
-!!+Rel		! Relative e.g. mar, nuair
-+Dir		! Directional
-+Loc		! Locative
-+Temp		! Temporal e.g. inniu, amárach etc.
++Gn		!!= - **@CODE@** = General
++Its		!!= - **@CODE@** = intensifiers e.g. sách, ró- etc.
+!!+Phr		!!= - **@CODE@** = Phrasal        
++Q		!!= - **@CODE@** = Interrogative
+!!+Rel		!!= - **@CODE@** = Relative e.g. mar, nuair
++Dir		!!= - **@CODE@** = Directional
++Loc		!!= - **@CODE@** = Locative
++Temp		!!= - **@CODE@** = Temporal e.g. inniu, amárach etc.
 +Past
 +Cop
 !---------------------------------------------------------------------------
 
 
 
-+Art	! article
-+Def	! definite 
++Art	!!= - **@CODE@** = article
++Def	!!= - **@CODE@** = definite 
 	! There is no explicit indefinite article in Irish -
 	! a noun without an article is indefinite.
-+Masc	! masculine gender
-+Fem	! feminine gender
++Masc	!!= - **@CODE@** = masculine gender
++Fem	!!= - **@CODE@** = feminine gender
 
-+Com	! nominative, accusative,dative case
-+Gen	! genitive case 
++Com	!!= - **@CODE@** = nominative, accusative,dative case
++Gen	!!= - **@CODE@** = genitive case 
 
-+Sg	! singular
-+Pl	! plural
++Sg	!!= - **@CODE@** = singular
++Pl	!!= - **@CODE@** = plural
 
 
 
-+Conj		! conjunction
-+Coord		! co-ordinate
-+Subord		! subordinate
++Conj		!!= - **@CODE@** = conjunction
++Coord		!!= - **@CODE@** = co-ordinate
++Subord		!!= - **@CODE@** = subordinate
 
 +Past
 +Cop
 +Len
 
 
-+Det		! Determiner
++Det		!!= - **@CODE@** = Determiner
 
-+Dem		! Demonstrative
-+Poss		! Possessive
-+Q			! Interrogative
-+Idf		! Indefinite
-+Def		! Definite
-+Qty		! Quantifier
-+Art		! with article
-+1P +2P +3P	! first, sceond or third person
++Dem		!!= - **@CODE@** = Demonstrative
++Poss		!!= - **@CODE@** = Possessive
++Q			!!= - **@CODE@** = Interrogative
++Idf		!!= - **@CODE@** = Indefinite
++Def		!!= - **@CODE@** = Definite
++Qty		!!= - **@CODE@** = Quantifier
++Art		!!= - **@CODE@** = with article
++1P +2P +3P	!!= - **@CODE@** = first, sceond or third person
 
-+Fem		!  feminine gender
-+Masc		!  masculine gender
++Fem		!!= - **@CODE@** =  feminine gender
++Masc		!!= - **@CODE@** =  masculine gender
 
-+Sg +Pl		! singular or plural in number
++Sg +Pl		!!= - **@CODE@** = singular or plural in number
 
-+CM +CC +CU	! dialects
-
-
-+Itj		!  Interjection
-+Filler		!  Filled Pause (eh, em,
-+Cmc		!  Communicator (yeah, y'know)
-+Event		!  Simple Event (laugh, sneeze etc.)
-+Xxx		!  Indecipherable speech	
++CM +CC +CU	!!= - **@CODE@** = dialects
 
 
-+Num		! Numeral
-+Card		! Cardinal (one two three ...)
-+Ord		! Ordinal (first, second, third..) i.e.  mo dhá lámh, an chéad dhá theach 
-+Def		! after definite article etc. (an, na, aon, céad)
++Itj		!!= - **@CODE@** =  Interjection
++Filler		!!= - **@CODE@** =  Filled Pause (eh, em,
++Cmc		!!= - **@CODE@** =  Communicator (yeah, y'know)
++Event		!!= - **@CODE@** =  Simple Event (laugh, sneeze etc.)
++Xxx		!!= - **@CODE@** =  Indecipherable speech	
+
+
++Num		!!= - **@CODE@** = Numeral
++Card		!!= - **@CODE@** = Cardinal (one two three ...)
++Ord		!!= - **@CODE@** = Ordinal (first, second, third..) i.e.  mo dhá lámh, an chéad dhá theach 
++Def		!!= - **@CODE@** = after definite article etc. (an, na, aon, céad)
 +Len
 +Ecl
 +hPref
@@ -109,96 +109,96 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 ^ts
 
 
-+Part		! Particle (not +Vb) (U)
++Part		!!= - **@CODE@** = Particle (not +Vb) (U)
 
-+Voc		! Vocative (v)
-+Nm		! Numeral (m)
-+Inf		! Infinitive (i)
-+Pat		! Patronym (p) (e.g. Ó, Ní, Uí, le, de ..)
-+Comp		! Comparative degree (c)
-+Sup		! Superlative degree (s)
++Voc		!!= - **@CODE@** = Vocative (v)
++Nm		!!= - **@CODE@** = Numeral (m)
++Inf		!!= - **@CODE@** = Infinitive (i)
++Pat		!!= - **@CODE@** = Patronym (p) (e.g. Ó, Ní, Uí, le, de ..)
++Comp		!!= - **@CODE@** = Comparative degree (c)
++Sup		!!= - **@CODE@** = Superlative degree (s)
 +Cop		!
-+Cp		! cop rel part
-+Deg		! degree particle with Adj/Abstract Noun (so loud, so sharp etc..
-+Ad			! Adverbial particle "go"
++Cp		!!= - **@CODE@** = cop rel part
++Deg		!!= - **@CODE@** = degree particle with Adj/Abstract Noun (so loud, so sharp etc..
++Ad			!!= - **@CODE@** = Adverbial particle "go"
 
-+Vb			! Verbal (Q)
++Vb			!!= - **@CODE@** = Verbal (Q)
 
-+Neg		! Negative (n)
-!!+ConP		! Continuative Passive (cp)
-+Q			! Interrogative verbal particle(q)
-+NegQ		! Negative interrogative verbal particle(q)
++Neg		!!= - **@CODE@** = Negative (n)
+!!+ConP		!!= - **@CODE@** = Continuative Passive (cp)
++Q			!!= - **@CODE@** = Interrogative verbal particle(q)
++NegQ		!!= - **@CODE@** = Negative interrogative verbal particle(q)
 
-+Rel		! Relative (r)
++Rel		!!= - **@CODE@** = Relative (r)
 +Direct
 +Indirect
-+Pro		! rel part + pron
++Pro		!!= - **@CODE@** = rel part + pron
 
-+Subj		! subjunctive
-+Imp		! imperative
-!!!+Conj		! conjunction
-+Cmpl		! complementizer
++Subj		!!= - **@CODE@** = subjunctive
++Imp		!!= - **@CODE@** = imperative
+!!!+Conj		!!= - **@CODE@** = conjunction
++Cmpl		!!= - **@CODE@** = complementizer
 
-+Past		! past tense verbal particle
-!!+PastIrreg	! past tense verbal particle
-!!+PastReg	! tenses other than past tense verbal particles
++Past		!!= - **@CODE@** = past tense verbal particle
+!!+PastIrreg	!!= - **@CODE@** = past tense verbal particle
+!!+PastReg	!!= - **@CODE@** = tenses other than past tense verbal particles
 +Fut
 +Pres
 +Cond
-+CU		! canúint Uladh
-+CM		! canúint na Mumhan
-+CC		! canúint Chonnachta
++CU		!!= - **@CODE@** = canúint Uladh
++CM		!!= - **@CODE@** = canúint na Mumhan
++CC		!!= - **@CODE@** = canúint Chonnachta
 +Noun
 +Subst
 +Sg
 
 
-+Prep		! Preposition
++Prep		!!= - **@CODE@** = Preposition
 
-+Simp		! Simple
-+Cmpd		! Compound
-!!+Inf		! Infinitive
++Simp		!!= - **@CODE@** = Simple
++Cmpd		!!= - **@CODE@** = Compound
+!!+Inf		!!= - **@CODE@** = Infinitive
 
-+Rel		! with Relative particle
-+Poss		! with Possessive 
-+Art		! with Article
-+Deg		! with Degree Particle
-+Obj		! á = "do a" when obj of VN
++Rel		!!= - **@CODE@** = with Relative particle
++Poss		!!= - **@CODE@** = with Possessive 
++Art		!!= - **@CODE@** = with Article
++Deg		!!= - **@CODE@** = with Degree Particle
++Obj		!!= - **@CODE@** = á = "do a" when obj of VN
 
 +1P
 +3P
 +Sg
-+Pl		! plural
++Pl		!!= - **@CODE@** = plural
 +Masc
 +Fem
-+CU		! Canuint Uladh
++CU		!!= - **@CODE@** = Canuint Uladh
 +CM
 +CC
 !---------------------------------------------------------------------------
 
 
-+Pron		! Pronoun
-+Pro		! Pronoun with Copula
++Pron		!!= - **@CODE@** = Pronoun
++Pro		!!= - **@CODE@** = Pronoun with Copula
 
-+Prep		! Prepositional pronoun
-+Pers		! Personal
-+Emph		! Emphatic (Contrastive) form of personal pronoun 
-+Ref		! Reflexive
-+Idf		! Indefinite
-+Dem		! Demonstrative
++Prep		!!= - **@CODE@** = Prepositional pronoun
++Pers		!!= - **@CODE@** = Personal
++Emph		!!= - **@CODE@** = Emphatic (Contrastive) form of personal pronoun 
++Ref		!!= - **@CODE@** = Reflexive
++Idf		!!= - **@CODE@** = Indefinite
++Dem		!!= - **@CODE@** = Demonstrative
 !!+Q		! Interrogative
 !!+Art		! 
 +hPref		!
-+1P +2P +3P	! first, second or third person
-+Fem		! feminine gender
-+Masc		! masculine gender
++1P +2P +3P	!!= - **@CODE@** = first, second or third person
++Fem		!!= - **@CODE@** = feminine gender
++Masc		!!= - **@CODE@** = masculine gender
 
-+Sg +Pl		! singular or plural in number
++Sg +Pl		!!= - **@CODE@** = singular or plural in number
 
 
 !!+VerbSubj	!  sí, sé and siad are used only when pron follows predicate verb in 
 !! Subj is used for subjunctive
-+Sbj	!  sí, sé and siad are used only when pron follows predicate verb in 
++Sbj	!!= - **@CODE@** =  sí, sé and siad are used only when pron follows predicate verb in 
 		!  subject position eg Chuaigh SÍ amach (She went out), 
 		!  but Téigh gan Í (Go without her)
 !!!+Obj		! obj pronoun
@@ -210,21 +210,21 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !---------------------------------------------------------------------------
 
 
-+Punct		! Abbreviation
-+Int		! sentence internal
-+Fin		! sentence final
-+Brack		! round, square and curly brackets
-+St		! start bracket, quote etc
-+End		! end bracket, quote etc
-+Q		! question mark ?
-+Bar		! hyphen, underscore, dash etc.
-+Quo		! all quotation marks double, single etc.
-+Conj +Coord	! &
++Punct		!!= - **@CODE@** = Abbreviation
++Int		!!= - **@CODE@** = sentence internal
++Fin		!!= - **@CODE@** = sentence final
++Brack		!!= - **@CODE@** = round, square and curly brackets
++St		!!= - **@CODE@** = start bracket, quote etc
++End		!!= - **@CODE@** = end bracket, quote etc
++Q		!!= - **@CODE@** = question mark ?
++Bar		!!= - **@CODE@** = hyphen, underscore, dash etc.
++Quo		!!= - **@CODE@** = all quotation marks double, single etc.
++Conj +Coord	!!= - **@CODE@** = &
 +Symbol !!≈ * @CODE@ = independent symbols in the text stream, like £, €, ©
 !---------------------------------------------------------------------------
 
 
-+XMLTag		! 
++XMLTag		!!= - **@CODE@** = 
 
 
 +Noun +Com +Gen +Dat +Sg +Pl +Masc +Fem +DefArt +Emph +Subst
@@ -238,51 +238,51 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 
 +Verbal
 +Verb
-+VT +VI +VTI	! transitive, intrans., both trans & intrans
-+1P +2P +3P 	! First, second and third person
-+Auto		! Autonomous 
++VT +VI +VTI	!!= - **@CODE@** = transitive, intrans., both trans & intrans
++1P +2P +3P 	!!= - **@CODE@** = First, second and third person
++Auto		!!= - **@CODE@** = Autonomous 
 +Vow
 
-+Sg +Pl		! Singular and Plural
++Sg +Pl		!!= - **@CODE@** = Singular and Plural
 
 		!- Indicative Mood - Modh Táscach 
-+PresInd	! Present Indicative
-+PastInd	! Past Indicative
-+FutInd		! Future Indicative
++PresInd	!!= - **@CODE@** = Present Indicative
++PastInd	!!= - **@CODE@** = Past Indicative
++FutInd		!!= - **@CODE@** = Future Indicative
 
 		! Imperfect Indicative
 
-+PastImp	! Gháthchaite Past Habitual (Imperfect Indicative)
-+PresImp	! Gháthláithreach Pres Habitual (Verb bí only)
++PastImp	!!= - **@CODE@** = Gháthchaite Past Habitual (Imperfect Indicative)
++PresImp	!!= - **@CODE@** = Gháthláithreach Pres Habitual (Verb bí only)
 
 		!- Conditional Mood - 
-+Cond		! 
++Cond		!!= - **@CODE@** = 
 
 		!- Subjunctive Mood - Modh Foshuiteach
-+PresSubj	! Present Subjunctive
-+PastSubj	! Past Subjunctive
++PresSubj	!!= - **@CODE@** = Present Subjunctive
++PastSubj	!!= - **@CODE@** = Past Subjunctive
 
 		!- Imperative  Mood - Modh Ordaitheach
-+Imper		! 
++Imper		!!= - **@CODE@** = 
 
-+Rel		! relative forms - direct
-+RelInd		! rel. indirect
++Rel		!!= - **@CODE@** = relative forms - direct
++RelInd		!!= - **@CODE@** = rel. indirect
 
-+Dep		! dependant forms
++Dep		!!= - **@CODE@** = dependant forms
 +Neg
 +Q
 +NegQ
 
-+Cop		! Copula
-+Pres		! copula present & future
-+Past		! copula past & conditional
++Cop		!!= - **@CODE@** = Copula
++Pres		!!= - **@CODE@** = copula present & future
++Past		!!= - **@CODE@** = copula past & conditional
 
-+VF		! - form used before a word starting with a vowel or f+vowel 
-+Pro		! - copula - sea
-+Emph		! - emphatic forms
-+CM		! Canúint na Mumhan
-+CC		! Canúint Chonnachta
-+CU		! Canúint Uladh
++VF		!!= - **@CODE@** = - form used before a word starting with a vowel or f+vowel 
++Pro		!!= - **@CODE@** = - copula - sea
++Emph		!!= - **@CODE@** = - emphatic forms
++CM		!!= - **@CODE@** = Canúint na Mumhan
++CC		!!= - **@CODE@** = Canúint Chonnachta
++CU		!!= - **@CODE@** = Canúint Uladh
 
 +Len
 +Ecl
@@ -290,34 +290,34 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 ^Verb
 ^Sé
 ^Urú
-^VN		! verbal noun
+^VN		!!= - **@CODE@** = verbal noun
 ^hv
 !--------------------------------------------------------------------------------
 ^Verb
 
-+Adj	! adjective
-+Base	! positive / base form (changed from +Pos to +Base 10/09/03)
-+Comp	! comparative
-! +Sup	! superlative
-+Masc	! masculine gender
-+Fem	! feminine gender
-+Com	! nominative case
-+Gen	! genitive case 
-+Voc	! vocative case 
-+Sg	! singular
-+Pl	! plural
++Adj	!!= - **@CODE@** = adjective
++Base	!!= - **@CODE@** = positive / base form (changed from +Pos to +Base 10/09/03)
++Comp	!!= - **@CODE@** = comparative
+!!= - **@CODE@** = +Sup	!!= - **@CODE@** = superlative
++Masc	!!= - **@CODE@** = masculine gender
++Fem	!!= - **@CODE@** = feminine gender
++Com	!!= - **@CODE@** = nominative case
++Gen	!!= - **@CODE@** = genitive case 
++Voc	!!= - **@CODE@** = vocative case 
++Sg	!!= - **@CODE@** = singular
++Pl	!!= - **@CODE@** = plural
 
-+Weak	! when an adj is qualifying a strong plural noun(i.e. noun plural is the 
-+Strong	! same for all cases) the adj will also have the same form in all cases
++Weak	!!= - **@CODE@** = when an adj is qualifying a strong plural noun(i.e. noun plural is the 
++Strong	!!= - **@CODE@** = same for all cases) the adj will also have the same form in all cases
 	! BUT when the adj. is qualifying  a weak plural noun,in the gen.case, it  
 	! is not inflected i.e. the base form of the adjective is used. 
 	! Nom and Voc plurals are inflecte as for strong plural nouns
 
 +Slender ! qualifies a plural noun ending in a slender consonant
-+NotSlen ! qualifies a plural noun ending in a broad consonantor a vowel
-+hPref	! prefix e.g. (h)iontach
-+Ecl	! eclipsis - urú; e.g. i ngach
-+Len	! e.g. ab fhearr, ba mhó
++NotSlen !!= - **@CODE@** = qualifies a plural noun ending in a broad consonantor a vowel
++hPref	!!= - **@CODE@** = prefix e.g. (h)iontach
++Ecl	!!= - **@CODE@** = eclipsis - urú; e.g. i ngach
++Len	!!= - **@CODE@** = e.g. ab fhearr, ba mhó
 	! a masc  noun must be either lenitedor eclipsed according to 
 	! preference/dialect. If it is lenited then the adj is likewise lenited.
 	! If it is eclipsed then the adj has no initial mutation.
@@ -329,20 +329,20 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Cop	! with Copail "is" e.g. b'fhearr
 +Its	! Adj+Its
 
-^Adj	! Adjective- used in initial mutations
-^Sé	! Séimhiú (softening) Lenition - h added after certain initial 
+^Adj	!!= - **@CODE@** = Adjective- used in initial mutations
+^Sé	!!= - **@CODE@** = Séimhiú (softening) Lenition - h added after certain initial 
 	! consonants (bcdfgmpst)
-^Urú	! eclipsis e.g. i ngach 
-^Ath	! Athrú (change) word ending
-^Caol	! Caolú (slenderise)- Attenuation : ie slenderise the end of word 
+^Urú	!!= - **@CODE@** = eclipsis e.g. i ngach 
+^Ath	!!= - **@CODE@** = Athrú (change) word ending
+^Caol	!!= - **@CODE@** = Caolú (slenderise)- Attenuation : ie slenderise the end of word 
 	! (see P9 NIG). 
 	! Usually by adding an "i" after  the last broad vowel 
 	! aouáóú are broad vowels; ieíé are slender vowels  
 	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
-^Lea	! Broaden
-^Coim	! Syncopate
-^IM	! initial mutation
-^hv	! h before vowel
+^Lea	!!= - **@CODE@** = Broaden
+^Coim	!!= - **@CODE@** = Syncopate
+^IM	!!= - **@CODE@** = initial mutation
+^hv	!!= - **@CODE@** = h before vowel
 !**************************************************************************  
 !
 !					L E X I C O N
@@ -350,45 +350,45 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !**************************************************************************  
 
 ! PART-OF-SPEECH TAGS
-+Noun	! noun
-+Prop	! proper
-+Masc	! masculine gender
-+Fem	! feminine gender
-+Com	! nominative case 
-+Gen	! genitive case 
-+Voc	! vocative case 
-+Dat	! dative (e.g. teach)
-+Sg	! singular
-+Pl	! plural
-+DefArt	! noun preceeded by definite article (an)
-+Def	! noun preceeded by definite article (an)
-+Idf	! noun without article (there is no indefinite article)
-+Strong	! strong plural 
-+Weak	! weak plural
-+Emph	! emphasised - ár dteachsa, do theachsa, a teachsa
-+Subst	! substantive - functions like a noun, but lack noun inflections
-+Len	! (+Sé) lenite after simple prep. eg ar chat
-+Ecl	! (+Urú) e.g.  after compound prep eg ar an gcat
-+Poss	! possessive e.g. haois, n-aoiseanna 
++Noun	!!= - **@CODE@** = noun
++Prop	!!= - **@CODE@** = proper
++Masc	!!= - **@CODE@** = masculine gender
++Fem	!!= - **@CODE@** = feminine gender
++Com	!!= - **@CODE@** = nominative case 
++Gen	!!= - **@CODE@** = genitive case 
++Voc	!!= - **@CODE@** = vocative case 
++Dat	!!= - **@CODE@** = dative (e.g. teach)
++Sg	!!= - **@CODE@** = singular
++Pl	!!= - **@CODE@** = plural
++DefArt	!!= - **@CODE@** = noun preceeded by definite article (an)
++Def	!!= - **@CODE@** = noun preceeded by definite article (an)
++Idf	!!= - **@CODE@** = noun without article (there is no indefinite article)
++Strong	!!= - **@CODE@** = strong plural 
++Weak	!!= - **@CODE@** = weak plural
++Emph	!!= - **@CODE@** = emphasised - ár dteachsa, do theachsa, a teachsa
++Subst	!!= - **@CODE@** = substantive - functions like a noun, but lack noun inflections
++Len	!!= - **@CODE@** = (+Sé) lenite after simple prep. eg ar chat
++Ecl	!!= - **@CODE@** = (+Urú) e.g.  after compound prep eg ar an gcat
++Poss	!!= - **@CODE@** = possessive e.g. haois, n-aoiseanna 
 	! NOTE m'aois and d'aois will be split into 2 tokens each
-+hPref 	! h before vowel 
-+CM	! canúint na Mumhan, Munster dialect
-+CC	! canúint Chonnachta
-+CU	! canúint Uladh
++hPref 	!!= - **@CODE@** = h before vowel 
++CM	!!= - **@CODE@** = canúint na Mumhan, Munster dialect
++CC	!!= - **@CODE@** = canúint Chonnachta
++CU	!!= - **@CODE@** = canúint Uladh
 
-+Part	! see irregular nouns
-+Num	! see irregular nouns
++Part	!!= - **@CODE@** = see irregular nouns
++Num	!!= - **@CODE@** = see irregular nouns
 
 
 ! TAGS TO SIGNIFY WORD-START MUTATIONS
-^M 	! masculine & feminine : initial mutations of singular nouns depend on 
-^F	! whether the noun is masculine or feminine
+^M 	!!= - **@CODE@** = masculine & feminine : initial mutations of singular nouns depend on 
+^F	!!= - **@CODE@** = whether the noun is masculine or feminine
 
-^C 	! nominative, genitive & vocative : initial mutations of plural nouns 
-^G 	! depend on the case
+^C 	!!= - **@CODE@** = nominative, genitive & vocative : initial mutations of plural nouns 
+^G 	!!= - **@CODE@** = depend on the case
 ^V	!
 
-^Sé	! Séimhiú (softening) Lenition - h added after certain initial 
+^Sé	!!= - **@CODE@** = Séimhiú (softening) Lenition - h added after certain initial 
 	! consonants (bcdfgmpst)
 	! eg "an cat" in gen. sg. becomes "bia an chait" (the cat's  
 	! food) 
@@ -397,35 +397,37 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 	! eg  "g" before "c" - "an cat" in gen. pl. becomes "bia na gcat" 
 	! (the cats' food) 
 
-^tv	! "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
+^tv	!!= - **@CODE@** = "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
 
-^hv	! "h" before a vowel (eg éan : Nom. Pl. Masc. na héin - the birds) 
+^hv	!!= - **@CODE@** = "h" before a vowel (eg éan : Nom. Pl. Masc. na héin - the birds) 
 
-^ts	! "t" before "s" 
+^ts	!!= - **@CODE@** = "t" before "s" 
 	! eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
-^Def	! dntls rule after definite article
+^Def	!!= - **@CODE@** = dntls rule after definite article
 
 ! TAGS TO SIGNIFY WORD-END MUTATIONS
-^Caol	! Caolú (slenderise)- Attenuation : ie slenderise the end of word 
+^Caol	!!= - **@CODE@** = Caolú (slenderise)- Attenuation : ie slenderise the end of word 
 	! Usually by adding an "i" after  the last broad vowel 
 	! aouáóú are broad vowels; ieíé are slender vowels  
 	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
-^Lea	! Leathnú - Broadening eg an "i" is removed 
+^Lea	!!= - **@CODE@** = Leathnú - Broadening eg an "i" is removed 
 	! súil (eye); radharc na súl (eyesight)
-^Coim	! Coimriú - Syncopation - the last unstressed vowel is dropped
+^Coim	!!= - **@CODE@** = Coimriú - Syncopation - the last unstressed vowel is dropped
 	! eg saghas (type) ->saghs +anna, solas->soils+e (light) - with attenation also
-^Ath	! Athrú (Change) - in certain plurals the ending changes : "e" -> "í",
+^Ath	!!= - **@CODE@** = Athrú (Change) - in certain plurals the ending changes : "e" -> "í",
 	! "each" -> "í" and "ach" changes to "aí" etc.eg gealach -> gealaí (of the moon)
-^VH	! Maintains vowel harmony of broad and slender vowels
+^VH	!!= - **@CODE@** = Maintains vowel harmony of broad and slender vowels
 	! Motto : "leathan le leathan agus caol le caol" (slender with slender and 
 	! broad with broad)
-^Emph	! emphatic forms
+^Emph	!!= - **@CODE@** = emphatic forms
 ^Poss	! possessive marker - singular a haois, ár n-aois
 	! possessive marker - plural   a haoiseanna, ár n-aoiseanna
-^IM	! general initial mutation e.g. mo chat, ar an mballa
+^IM	!!= - **@CODE@** = general initial mutation e.g. mo chat, ar an mballa
 	! 
 
-^CB	! compound boundary
+^CB	!!= - **@CODE@** = compound boundary
+
++CmpdNoGen !!= - **@CODE@** = 
 
 ^GUESSNOUN
 +Guess
@@ -435,80 +437,80 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !
 !**************************************************************************  
 
-! PART-OF-SPEECH TAGS
-+Noun	! noun
-+Prop	! proper
-+Masc	! masculine gender
-+Fem	! feminine gender
-+Com	! nominative case 
-+Gen	! genitive case 
-+Voc	! vocative case 
+!!= - **@CODE@** = PART-OF-SPEECH TAGS
++Noun	!!= - **@CODE@** = noun
++Prop	!!= - **@CODE@** = proper
++Masc	!!= - **@CODE@** = masculine gender
++Fem	!!= - **@CODE@** = feminine gender
++Com	!!= - **@CODE@** = nominative case 
++Gen	!!= - **@CODE@** = genitive case 
++Voc	!!= - **@CODE@** = vocative case 
 +Dat
-+Sg	! singular
-+Pl	! plural
-+hPref	! 
-+DefArt	! noun preceeded by definite article (an)
-+Def	! noun preceeded by definite article (an)
-+Idf	! noun without article (there is no indefinite article)
-+Strong	! strong plural 
-+Weak	! weak plural
-+Emph	! emphasised - ár dteachsa, do theachsa, a teachsa
-+Len	! lenite after simple prep. eg ar chat
-+Prep	! prefix h before vowel
-+Ecl	! after compound prep eg ar an gcat
-+CM	! canúint na Mumhan, Munster dialect
-+CC	! canúint Chonnachta
-+CU	! canúint Uladh
++Sg	!!= - **@CODE@** = singular
++Pl	!!= - **@CODE@** = plural
++hPref	!!= - **@CODE@** = 
++DefArt	!!= - **@CODE@** = noun preceeded by definite article (an)
++Def	!!= - **@CODE@** = noun preceeded by definite article (an)
++Idf	!!= - **@CODE@** = noun without article (there is no indefinite article)
++Strong	!!= - **@CODE@** = strong plural 
++Weak	!!= - **@CODE@** = weak plural
++Emph	!!= - **@CODE@** = emphasised - ár dteachsa, do theachsa, a teachsa
++Len	!!= - **@CODE@** = lenite after simple prep. eg ar chat
++Prep	!!= - **@CODE@** = prefix h before vowel
++Ecl	!!= - **@CODE@** = after compound prep eg ar an gcat
++CM	!!= - **@CODE@** = canúint na Mumhan, Munster dialect
++CC	!!= - **@CODE@** = canúint Chonnachta
++CU	!!= - **@CODE@** = canúint Uladh
 
-+Place	! Place name
-+Fam	! Family Name
-+Pers	! Personal Name
-+Adj	! +Adj+Base+DeNom are used for adjectives drived from proper nouns
-+Base	! e.g. Spáinneach
++Place	!!= - **@CODE@** = Place name
++Fam	!!= - **@CODE@** = Family Name
++Pers	!!= - **@CODE@** = Personal Name
++Adj	!!= - **@CODE@** = +Adj+Base+DeNom are used for adjectives drived from proper nouns
++Base	!!= - **@CODE@** = e.g. Spáinneach
 +DeNom
 
 
 ! TAGS TO SIGNIFY WORD-START MUTATIONS
-^M 	! masculine & feminine : initial mutations of singular nouns depend on 
-^F	! whether the noun is masculine or feminine
+^M 	!!= - **@CODE@** = masculine & feminine : initial mutations of singular nouns depend on 
+^F	!!= - **@CODE@** = whether the noun is masculine or feminine
 
-^C 	! nominative, genitive & vocative : initial mutations of plural nouns 
-^G 	! depend on the case
+^C 	!!= - **@CODE@** = nominative, genitive & vocative : initial mutations of plural nouns 
+^G 	!!= - **@CODE@** = depend on the case
 ^V	!
 
-^Sé	! Séimhiú (softening) Lenition - h added after certain initial 
+^Sé	!!= - **@CODE@** = Séimhiú (softening) Lenition - h added after certain initial 
 	! consonants (bcdfgmpst)
 	! eg "an cat" in gen. sg. becomes "bia an chait" (the cat's  
 	! food) 
 
-^Urú	! Eclipsis - a letter placed before word initial letter  (bcdfgpt)
+^Urú	!!= - **@CODE@** = Eclipsis - a letter placed before word initial letter  (bcdfgpt)
 	! eg  "g" before "c" - "an cat" in gen. pl. becomes "bia na gcat" 
 	! (the cats' food) 
 
-^tv	! "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
+^tv	!!= - **@CODE@** = "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
 
 ^hv	! "h" before a vowel (eg éan : Nom. Pl. Masc. na héin - the birds) 
 
-^ts	! "t" before "s" 
+^ts	!!= - **@CODE@** = "t" before "s" 
 	! eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
-^Def	! dntls rule after definite article
+^Def	!!= - **@CODE@** = dntls rule after definite article
 
 ! TAGS TO SIGNIFY WORD-END MUTATIONS
-^Caol	! Caolú (slenderise)- Attenuation : ie slenderise the end of word 
+^Caol	!!= - **@CODE@** = Caolú (slenderise)- Attenuation : ie slenderise the end of word 
 	! Usually by adding an "i" after  the last broad vowel 
 	! aouáóú are broad vowels; ieíé are slender vowels  
 	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
-^Lea	! Leathnú - Broadening eg an "i" is removed 
+^Lea	!!= - **@CODE@** = Leathnú - Broadening eg an "i" is removed 
 	! súil (eye); radharc na súl (eyesight)
-^Coim	! Coimriú - Syncopation - the last unstressed vowel is dropped
+^Coim	!!= - **@CODE@** = Coimriú - Syncopation - the last unstressed vowel is dropped
 	! eg saghas (type) ->saghs +anna, solas->soils+e (light) - with attenation also
-^Ath	! Athrú (Change) - in certain plurals the ending changes : "e" -> "í",
+^Ath	!!= - **@CODE@** = Athrú (Change) - in certain plurals the ending changes : "e" -> "í",
 	! "each" -> "í" and "ach" changes to "aí" etc.eg gealach -> gealaí (of the moon)
-^VH	! Maintains vowel harmony of broad and slender vowels
+^VH	!!= - **@CODE@** = Maintains vowel harmony of broad and slender vowels
 	! Motto : "leathan le leathan agus caol le caol" (slender with slender and 
 	! broad with broad)
-^Emph	! emphatic forms
-^IM	! general initial mutation e.g. mo chat, ar an mballa
+^Emph	!!= - **@CODE@** = emphatic forms
+^IM	!!= - **@CODE@** = general initial mutation e.g. mo chat, ar an mballa
 
 !**************************************************************************  
 !
@@ -517,32 +519,32 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !**************************************************************************  
 
 +Verb
-+VT +VI +VTI +VD ! transitive, intrans., both trans & intrans
-+Vow 		! vowel initial stem
-+Suf 		! -s suffix e.g. a bhíonns
-+Typo 		! ta/ata  instead of tá/atá
-+Var 		! variant spelling e.g. rabh instead of raibh or dheachaidh
-+1P +2P +3P 	! First, second and third person
-+Auto		! Autonomous 
++VT +VI +VTI +VD !!= - **@CODE@** = transitive, intrans., both trans & intrans
++Vow 		!!= - **@CODE@** = vowel initial stem
++Suf 		!!= - **@CODE@** = -s suffix e.g. a bhíonns
++Typo 		!!= - **@CODE@** = ta/ata  instead of tá/atá
++Var 		!!= - **@CODE@** = variant spelling e.g. rabh instead of raibh or dheachaidh
++1P +2P +3P 	!!= - **@CODE@** = First, second and third person
++Auto		!!= - **@CODE@** = Autonomous 
 
-+Sg +Pl		! Singular and Plural
++Sg +Pl		!!= - **@CODE@** = Singular and Plural
 
 		!- Indicative Mood - Modh Táscach 
-+PresInd	! Present Indicative
-+PastInd	! Past Indicative
-+FutInd		! Future Indicative
++PresInd	!!= - **@CODE@** = Present Indicative
++PastInd	!!= - **@CODE@** = Past Indicative
++FutInd		!!= - **@CODE@** = Future Indicative
 
 		! Imperfect Indicative
 
-+PastImp	! Gháthchaite Past Habitual (Imperfect Indicative)
-+PresImp	! Gháthláithreach Pres Habitual (Verb bí only - and deireann (abair)
++PastImp	!!= - **@CODE@** = Gháthchaite Past Habitual (Imperfect Indicative)
++PresImp	!!= - **@CODE@** = Gháthláithreach Pres Habitual (Verb bí only - and deireann (abair)
 
 		!- Conditional Mood - 
 +Cond		! 
 
 		!- Subjunctive Mood - Modh Foshuiteach
-+PresSubj	! Present Subjunctive
-+PastSubj	! Past Subjunctive
++PresSubj	!!= - **@CODE@** = Present Subjunctive
++PastSubj	!!= - **@CODE@** = Past Subjunctive
 
 		!- Imperative  Mood - Modh Ordaitheach
 +Imper		! 
@@ -551,28 +553,28 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 
 !!+VerbalAdj	!- Verbal Adj - Aideacht Briathartha
 
-+Rel		! relative forms - direct
-+RelInd		! rel. indirect
++Rel		!!= - **@CODE@** = relative forms - direct
++RelInd		!!= - **@CODE@** = rel. indirect
 
-+Dep		! dependant forms
++Dep		!!= - **@CODE@** = dependant forms
 +Neg
 +Q
 +NegQ
 
-+Cop		! Copula
-+Pres		! copula present & future
-+Past		! copula past & conditional
++Cop		!!= - **@CODE@** = Copula
++Pres		!!= - **@CODE@** = copula present & future
++Past		!!= - **@CODE@** = copula past & conditional
 
-+VF		! - form used before a word starting with a vowel or f+vowel 
-+Pron		! - copula+pron - sea
-+Art		! - copula+pron+art - sén
-+Def		! - copula+pron+art - sén
-+Subst		! - copula+pron+art+noun - séard (is é an rud)
-+Noun		! - copula+pron+art+noun - séard (is é an rud)
-+Emph		! - emphatic forms
-+CM		! Canúint na Mumhan
-+CC		! Canúint Chonnachta
-+CU		! Canúint Uladh
++VF		!!= - **@CODE@** = - form used before a word starting with a vowel or f+vowel 
++Pron		!!= - **@CODE@** = - copula+pron - sea
++Art		!!= - **@CODE@** = - copula+pron+art - sén
++Def		!!= - **@CODE@** = - copula+pron+art - sén
++Subst		!!= - **@CODE@** = - copula+pron+art+noun - séard (is é an rud)
++Noun		!!= - **@CODE@** = - copula+pron+art+noun - séard (is é an rud)
++Emph		!!= - **@CODE@** = - emphatic forms
++CM		!!= - **@CODE@** = Canúint na Mumhan
++CC		!!= - **@CODE@** = Canúint Chonnachta
++CU		!!= - **@CODE@** = Canúint Uladh
 
 +Len
 +Ecl
@@ -580,68 +582,68 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 ^Verb
 ^Sé
 ^Urú
-^VN		! verbal noun
+^VN		!!= - **@CODE@** = verbal noun
 ^hv
 !--------------------------------------------------------------------------------
 ^Verb
 !--------------------------------------------------------------------------------
 
 +Verb
-+VT		! transitive
-+VD		! ditransitive
-+VI		! intransitive
-+VTI		! transitive & intransitive
-+Vow		! vowel-initial : used to allow past-tense Len e.g. d´ith
++VT		!!= - **@CODE@** = transitive
++VD		!!= - **@CODE@** = ditransitive
++VI		!!= - **@CODE@** = intransitive
++VTI		!!= - **@CODE@** = transitive & intransitive
++Vow		!!= - **@CODE@** = vowel-initial : used to allow past-tense Len e.g. d´ith
 
-+1P +2P +3P 	! First, second and third person
-+Auto		! Autonomous 
++1P +2P +3P 	!!= - **@CODE@** = First, second and third person
++Auto		!!= - **@CODE@** = Autonomous 
 
-+Sg +Pl		! Singular and Plural
++Sg +Pl		!!= - **@CODE@** = Singular and Plural
 
 ! Indicative Mood - Modh Táscach 
 
-+PresInd	! Present Indicative
-+PastInd	! Past Indicative
-+FutInd		! Future Indicative
-!+ImpInd		! Imperfect Indicative
-+PastImp	! Past Imperfect Indicative
++PresInd	!!= - **@CODE@** = Present Indicative
++PastInd	!!= - **@CODE@** = Past Indicative
++FutInd		!!= - **@CODE@** = Future Indicative
+!+ImpInd		!!= - **@CODE@** = Imperfect Indicative
++PastImp	!!= - **@CODE@** = Past Imperfect Indicative
 
 ! Conditional Mood 
 
-+Cond		! 
++Cond		!!= - **@CODE@** = 
 
 ! Subjunctive Mood - Modh Foshuiteach
 
-+PresSubj	! Present Subjunctive
-+PastSubj	! Past Subjunctive
++PresSubj	!!= - **@CODE@** = Present Subjunctive
++PastSubj	!!= - **@CODE@** = Past Subjunctive
 
 ! Imperative  Mood - Modh Ordaitheach
 
-+Imper		! 
-+Neg		! Negative
-+Q		! Interrogative
-+NegQ		! 
++Imper		!!= - **@CODE@** = 
++Neg		!!= - **@CODE@** = Negative
++Q		!!= - **@CODE@** = Interrogative
++NegQ		!!= - **@CODE@** = 
 +Emph
 +Len
 +Ecl
 !--------------------------------------------------------------------------------
 ^Verb
 ^VN
-^Sé		! Séimhiú (Lenite, soften)
-^Caol		! Caolaítear an deireadh (Slenderise the ending)
-^Lea		! Leathnaítear an tús (Broaden the root)
-^LeaS		! Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
-^LC		! leathan/Caol: Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
+^Sé		!!= - **@CODE@** = Séimhiú (Lenite, soften)
+^Caol		!!= - **@CODE@** = Caolaítear an deireadh (Slenderise the ending)
+^Lea		!!= - **@CODE@** = Leathnaítear an tús (Broaden the root)
+^LeaS		!!= - **@CODE@** = Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
+^LC		!!= - **@CODE@** = leathan/Caol: Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
 
 
 
-^igh 		! remove -igh ending
-^aigh 		! remove -aigh ending
-^Coim		! Coimriú (syncopation)
-^Fr		! Fréamh (root) use root - i.e.don't syncopate in these cases 
+^igh 		!!= - **@CODE@** = remove -igh ending
+^aigh 		!!= - **@CODE@** = remove -aigh ending
+^Coim		!!= - **@CODE@** = Coimriú (syncopation)
+^Fr		!!= - **@CODE@** = Fréamh (root) use root - i.e.don't syncopate in these cases 
 ^Urú
-^Do		! d' before Past Past Imperfect (gnáthchaite0 and conditional
-^hv		! h before vowel e.g. ná hólaigí ...
+^Do		!!= - **@CODE@** = d' before Past Past Imperfect (gnáthchaite0 and conditional
+^hv		!!= - **@CODE@** = h before vowel e.g. ná hólaigí ...
 +Verbal
 +Noun
 +Adj
@@ -653,10 +655,10 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +VT
 +VI
 +VTI
-+VD	! ditransitive - not at present
-+NStem	! de-nominal verbal (action) noun
++VD	!!= - **@CODE@** = ditransitive - not at present
++NStem	!!= - **@CODE@** = de-nominal verbal (action) noun
 
-^IM	! initial mutation
+^IM	!!= - **@CODE@** = initial mutation
 ^Sé
 ^Urú
 ^hv
@@ -713,37 +715,37 @@ LEXICON Root
 
         Tobar;
 
-	AdjA;				! ORIGINAL TEST LEXICON
-	AdjIrregular;			! ORIGINAL TEST LEXICON
-	Adj-BaseOnly;	!AdjBASE;	! ORIGINAL TEST LEXICON
-	Adj-IrregComp;	!AI-COMP;	! ORIGINAL TEST LEXICON
-	AdjB;				! punk adjs
-	AdjC;				! FP adjs - auto
-	AdjDath; 			! colours
-	AdjE;				! FP adjs - manual
-	Adj-FGB1;			! Foclóir Gaeilge Béarla Uí Dhónaill
-	Adj-FGB2;			! Foclóir Gaeilge Béarla Uí Dhónaill
-	AdjVariants;			! Adj Variants in FGB
-	AdjEqualVariants;		! Adj Variants with Equal Sign in FGB
+	AdjA;				!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	AdjIrregular;			!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	Adj-BaseOnly;	!AdjBASE;	!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	Adj-IrregComp;	!AI-COMP;	!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	AdjB;				!!= - **@CODE@** = punk adjs
+	AdjC;				!!= - **@CODE@** = FP adjs - auto
+	AdjDath; 			!!= - **@CODE@** = colours
+	AdjE;				!!= - **@CODE@** = FP adjs - manual
+	Adj-FGB1;			!!= - **@CODE@** = Foclóir Gaeilge Béarla Uí Dhónaill
+	Adj-FGB2;			!!= - **@CODE@** = Foclóir Gaeilge Béarla Uí Dhónaill
+	AdjVariants;			!!= - **@CODE@** = Adj Variants in FGB
+	AdjEqualVariants;		!!= - **@CODE@** = Adj Variants with Equal Sign in FGB
 
 !************************************************************************** 
-        Nouns; 			! ORIGINAL TEST LEXICON
-	Dative;			! ORIGINAL TEST LEXICON
-	Other;			! ORIGINAL TEST LEXICON
-	NounsB;			! nouns
-	NounsC;			! FP nouns (automatic)
-	NounsD;			! FP nouns (manual Decl 1-3)
-	NounsE;			! FP nouns (manual Decs 4-5)
-	NounsF;			! FP nouns (manual Irregular)
+        Nouns; 			!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	Dative;			!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	Other;			!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	NounsB;			!!= - **@CODE@** = nouns
+	NounsC;			!!= - **@CODE@** = FP nouns (automatic)
+	NounsD;			!!= - **@CODE@** = FP nouns (manual Decl 1-3)
+	NounsE;			!!= - **@CODE@** = FP nouns (manual Decs 4-5)
+	NounsF;			!!= - **@CODE@** = FP nouns (manual Irregular)
 	NounsIrregular;
 	Substantive; 
-	NounsFGB1;		! FGB (O Donaill) automatic (in NCI corpus) 
-	NounsFGB2;		! FGB (O Donaill) automatic (additional)
-	NounsVariants;		! Variants extracted from FGB
-	NounsEqualVariants;	! Variants extracted from FGB (2011 EUD)
+	NounsFGB1;		!!= - **@CODE@** = FGB (O Donaill) automatic (in NCI corpus) 
+	NounsFGB2;		!!= - **@CODE@** = FGB (O Donaill) automatic (additional)
+	NounsVariants;		!!= - **@CODE@** = Variants extracted from FGB
+	NounsEqualVariants;	!!= - **@CODE@** = Variants extracted from FGB (2011 EUD)
 
 
-	NP-Irregular;		! ORIGINAL TEST LEXICON
+	NP-Irregular;		!!= - **@CODE@** = ORIGINAL TEST LEXICON
 	NP-LEX-FAM;
 	NP-LEX-FAM-EN;
 	NP-LEX-PERS;
@@ -759,25 +761,25 @@ LEXICON Root
 !!!!
         Verbs;
 
-        VerbsC1A;		! ORIGINAL TEST LEXICON
-        VerbsC2A;		! ORIGINAL TEST LEXICON
-	VerbsB;			! verbs
-	VerbsC;			! FP verbs
-	Verbs-FGB1;		! FGB verbs
-	Verbs-FGB2;		! FGB verbs
-	Verb-Variants;		! FGB verb variants
-	VerbsEqualVariants;	! FGB verb = variants
+        VerbsC1A;		!!= - **@CODE@** = ORIGINAL TEST LEXICON
+        VerbsC2A;		!!= - **@CODE@** = ORIGINAL TEST LEXICON
+	VerbsB;			!!= - **@CODE@** = verbs
+	VerbsC;			!!= - **@CODE@** = FP verbs
+	Verbs-FGB1;		!!= - **@CODE@** = FGB verbs
+	Verbs-FGB2;		!!= - **@CODE@** = FGB verbs
+	Verb-Variants;		!!= - **@CODE@** = FGB verb variants
+	VerbsEqualVariants;	!!= - **@CODE@** = FGB verb = variants
 
 !!!
 !!! Foclóir Póca etc.
 !!! Generated by EUD
 !!! * Fixed by hand Chrishoph Wendler
 !!!
-	VerbalNouns;		! Version 3 VNs in TEST Lex & Foclóir Póca
-	VerbalAdjs;		! Version 3 VAs in TEST Lex & Foclóir Póca
-	VerbalNounsGen;		! Version 4 VNs in TEST Lex & Foclóir Póca
-	VNVA-FGB1;		! Foclóir Gaeilge Béarla Ó Dónaill
-	VN-Variants;		! FGB VN variants (VN, VNG & VA included)
+	VerbalNouns;		!!= - **@CODE@** = Version 3 VNs in TEST Lex & Foclóir Póca
+	VerbalAdjs;		!!= - **@CODE@** = Version 3 VAs in TEST Lex & Foclóir Póca
+	VerbalNounsGen;		!!= - **@CODE@** = Version 4 VNs in TEST Lex & Foclóir Póca
+	VNVA-FGB1;		!!= - **@CODE@** = Foclóir Gaeilge Béarla Ó Dónaill
+	VN-Variants;		!!= - **@CODE@** = FGB VN variants (VN, VNG & VA included)
 	VNEqualVariants;
 
 
