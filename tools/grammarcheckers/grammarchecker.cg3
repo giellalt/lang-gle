@@ -783,9 +783,11 @@ LIST PREP-LEN = "<de>" "<do>" "<i>"; # etc. etc.
 LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
-	(-1 Art)
-	(-2 ECL-PREP + Prep + Simp)
-	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + Prep + Simp) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        (NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc) ; #The rule dosn't target a masculine word starting with the letter S.   
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
