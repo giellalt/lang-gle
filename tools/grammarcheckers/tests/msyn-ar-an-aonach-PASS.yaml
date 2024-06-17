@@ -1,15 +1,10 @@
-  - "{Ag}£{Ar} an aonach."
-  - "ar an asal."
-  - "Beidh an fear ar an aonach."
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
   - "Ar an tsráid."
+  - "Beidh an fear ar an aonach."
+  - "ar an asal."
   - "chuig an {cailín}£{gcailín}."
   - "{Ag}£{Ar} an aonach."
-  - "ar an asal."
-  - "Beidh an fear ar an aonach."
-  - "Ar an tsráid."
-  - "chuig an {cailín}£{gcailín}."
-  - "{Ag}£{Ar} an aonach."
-  - "ar an asal."
-  - "Beidh an fear ar an aonach."
-  - "Ar an tsráid."
-  - "chuig an {cailín}£{gcailín}."
