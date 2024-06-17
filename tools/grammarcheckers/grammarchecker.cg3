@@ -272,7 +272,7 @@ LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; #!! PROP-SUR
 SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
 
 
-LIST ECL-PREP = "ar" "ag" "chuig" "hais" ;
+LIST ECL-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
 #LIST GEN-PREP = "ar" "thar" ;
 
 #!! ### Lookalikes
@@ -724,11 +724,11 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 	
 # Definiteness errors in nouns
 
-LIST-PREP = "ag" "ar" "thar" "i";
+LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
 
-#ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
-#COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-#ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
+COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
+ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
 
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
@@ -782,14 +782,27 @@ LIST PREP-ECL = "<i>" "<ar>"; # etc. etc.
 LIST PREP-LEN = "<de>" "<do>" "<i>"; # etc. etc. 
 LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 Art) # One to the left of the thing you TARGET is Art
-        (-2 ECL-PREP + Prep + Simp) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
-        (NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
         (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
-        (NEGATE 0 ("<[s].*>"r) + Masc) ; #The rule dosn't target a masculine word starting with the letter S.   
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) ;
 COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
-ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+
+ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
+        (0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc) ; #The rule dosn't target a masculine word starting with the letter S.
+
+COPY:msyn-ecl-after-prep-sfem (DefArt &SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
 
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
     	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
@@ -811,10 +824,9 @@ COPY:msyn-teastaigh-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-�
 	#$ Teastaíonn mála uaim.
 	## Teastaíonn mála mé.
 	
-ADD:msyn-inis-do (&msyn-inis-do) TARGET ("le" Prep) IF (NOT 0 ("do" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
-COPY:msyn-inis-do ("do" &SUGGEST) EXCEPT ("le" &msyn-inis-do) TARGET (&msyn-inis-do);	
-	## Inis le. - incorrect ("le" with)
-	#$ Inis do. - correct ("do" to)
+ADD:msyn-inis-do (&msyn-inis-do) TARGET (Prep Prep Rel) IF (NOT 0 ("do" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
+COPY:msyn-inis-do ("do" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-inis-do) OR ("tú" Pers &msyn-inis-do) OR ("é" Pers &msyn-inis-do) OR ("í" Pers &msyn-inis-do) OR ("sinn" Pers &msyn-inis-do) OR ("muid" Pers &msyn-inis-do) OR ("sibh" Pers &msyn-inis-do) OR ("siad" Pers &msyn-inis-do) AFTER Pron TARGET (&msyn-inis-do) ;
+
 
 #ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
 #COPY:msyn-ar-an-aonach ("ar" &SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
@@ -844,10 +856,10 @@ COPY:msyn-fada-ó ("ó" Prep &SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR
 	## Is fada buí iad.
 
 # "beag is fiú de" A + "de"	
-ADD:msyn-beag-is-fiú-de (&msynmsyn-beag-is-fiú-de) TARGET (Pron Pers) IF (NOT 0 ("de" Prep))(*-1 ("beag is fiú de" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
+ADD:msyn-beag-is-fiú-de (&msyn-beag-is-fiú-de) TARGET (Pron Pers) IF (NOT 0 ("de" Prep))(*-1 ("beag is fiú de" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
 COPY:msyn-beag-is-fiú-de ("de" Prep &SUGGEST) EXCEPT ("dom" Pers &msyn-teastaigh-ó) OR ("duit" Pers &msyn-teastaigh-ó) OR ("dó" Pers &msyn-teastaigh-ó) OR ("di" Pers &msyn-teastaigh-ó) OR ("dúinn" Pers &msyn-teastaigh-ó) OR ("daoibh" Pers &msyn-teastaigh-ó) OR ("dóibh" Pers Sbj &msyn-beag-is-fiú-de) AFTER Pron TARGET (&msyn-beag-is-fiú-de) IF (NEGATE 1 (Verb PastInd));	
 	## Ná déan beag is fiú dom. - incorrect
-	#$ Ná déan beag is fiú díom. - correct 
+	#$ Ná déan beag is fiú díom. - correct
 	
 COPY:msyn-fada-ó ("ó" Prep Simp &SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-teastaigh-ó) OR ("tú" Pers Pers 2P Sg &msyn-teastaigh-ó) OR ("é" Pers Pers 3P Sg Masc &msyn-teastaigh-ó) OR ("í" Pers Pers 1P Sg Fem &msyn-teastaigh-ó) OR ("sinn" Pers Pers 1P Pl &msyn-teastaigh-ó) OR ("sibh" Pers Pers 2P Pl &msyn-teastaigh-ó) OR ("siad" Pron Pers 3P Pl Sbj &msyn-teastaigh-ó) TARGET (&msyn-fada-ó) IF (1 (Verb PastInd));
 	## Is fada mé bhí mise i mo mhac léinn.
@@ -861,8 +873,7 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	#$ Cúpla lá. - correct 
 	## Cúpla focail. - incorrect
 	#$ Cúpla focal. - correct
-	
-# A rule to indicate that when two nouns come together, the second noun has to be in the genitive case.
+
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) IF (*-1 (Noun Com) BARRIER (*) - Art);
 COPY:msyn-gen-case-nouns (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
@@ -880,11 +891,12 @@ COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt &SUGGEST) EXCEPT (Gen Weak Pl &msyn
 	## Cumann na Fear.
 	#$ Cumann na bhFear.
 
-# A rule to indicate that when two nouns with an article between them come together, the second noun has to be in the genitive case.
+	
+# A rule to indicate that when two nouns come together, the second noun has to be in the genitive case.
 
-#ADD:msyn-gen-case (&msyn-gen-case) TARGET (Noun Com) IF (-1 (Art Def))(-2 (Noun Com));
-#COPY:msyn-gen-case (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-case) TARGET (&msyn-gen-case);
-#COPY:msyn-gen-case (Gen Sg DefArt Fem &SUGGEST) EXCEPT (Com Sg DefArt Fem &msyn-gen-case) TARGET (&msyn-gen-case);
+#ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (-1 (Noun Com));
+#COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (&msyn-gen-case-nouns);
+
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive singular case.
 
@@ -905,12 +917,11 @@ COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt &SUGGEST) EXCEPT (Gen Weak Pl &msyn
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive plural case.
 
-ADD:msyn-gen-case-article-fem-plural &msyn-gen-case-article-fem-plural TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
+#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
+#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET ("na" Art Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
 
-COPY:msyn-gen-case-article-fem-plural ("na" Art Gen Sg Def Fem &SUGGEST) EXCEPT ("an" Art Sg Def &msyn-gen-case-article-fem-plural) TARGET &msyn-gen-case-article-fem-plural IF (1 (Noun Fem Sg)) ;
-COPY:msyn-gen-case-article-fem-plural ("na" Art Gen Sg Def Fem &SUGGEST) EXCEPT ("an" Art Pl Def &msyn-gen-case-article-fem-plural) TARGET &msyn-gen-case-article-fem-plural IF (1 (Noun Fem Pl)) ;
-	## Uachtarán {na} hollscoile. 
-	#$ Uachtarán {an} ollscoil.
+#COPY:msyn-gen-case-article-fem-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-plural) (Noun &msyn-gen-case-article-fem-plural) ;
+#COPY:msyn-gen-case-article-fem-plural ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-plural) TARGET (Art Pl &msyn-gen-case-article-fem-plural) IF (1 (Noun Fem)) ;
 
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive plural case.
@@ -996,15 +1007,20 @@ COPY:msyn-ar-an-gcaife ("ar" Prep Simp &SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET
 #COPY:msyn-ecl-after-prep (Ecl &SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 #ADDRELATION:msyn-ecl-after-prep ($2) ECL-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
-
-
 LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 
 ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
- ## Chuaigh an bad go toin {poll}
+#Chuaigh an bad go toin {poll}
 
 COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
 COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
+
+
+LIST &msyn-ie.i. = &msyn-&.i. ;
+
+ADD:&msyn-ie.i. (&msyn-&.i.) TARGET ("i.e." i.e.+Abr) ;
+COPY:&msyn-ie.i. (".i." SUGGEST) TARGET (&msyn-ie.i.) ;
+
 
 LIST &msyn-i-dt = &msyn-i-dt ;
 
