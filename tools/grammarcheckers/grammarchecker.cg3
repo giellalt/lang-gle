@@ -726,9 +726,9 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 
 LIST-PREP = "ag" "ar" "thar" "i";
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
-COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+#ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
+#COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
+#ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
 
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
@@ -864,8 +864,21 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	
 # A rule to indicate that when two nouns come together, the second noun has to be in the genitive case.
 
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (-1 (Noun Com));
-COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (&msyn-gen-case-nouns);
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) IF (*-1 (Noun Com) BARRIER (*) - Art);
+COPY:msyn-gen-case-nouns (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+	## Parlaimint an Eoraip. (erroneous)
+	#$ Parlaimint na hEorpa. (correct)
+COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - &SUGGEST)(-1 (Art Def));
+	## Uachtarán an ollscoil. (erroneous)
+	#$ Uachtarán na hollscoile. (correct)
+	
+	
+COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt &SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+#COPY:msyn-gen-case-nouns (Gen Weak Pl &SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+#COPY:msyn-gen-case-nouns (Gen Weak Pl &SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(0 DefArt - &SUGGEST)(-1 (Art Def));
+	## Cumann na Fear.
+	#$ Cumann na bhFear.
 
 # A rule to indicate that when two nouns with an article between them come together, the second noun has to be in the genitive case.
 
@@ -892,11 +905,12 @@ COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) 
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive plural case.
 
-#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET ("na" Art Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
+ADD:msyn-gen-case-article-fem-plural &msyn-gen-case-article-fem-plural TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
 
-#COPY:msyn-gen-case-article-fem-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-plural) (Noun &msyn-gen-case-article-fem-plural) ;
-#COPY:msyn-gen-case-article-fem-plural ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-plural) TARGET (Art Pl &msyn-gen-case-article-fem-plural) IF (1 (Noun Fem)) ;
+COPY:msyn-gen-case-article-fem-plural ("na" Art Gen Sg Def Fem &SUGGEST) EXCEPT ("an" Art Sg Def &msyn-gen-case-article-fem-plural) TARGET &msyn-gen-case-article-fem-plural IF (1 (Noun Fem Sg)) ;
+COPY:msyn-gen-case-article-fem-plural ("na" Art Gen Sg Def Fem &SUGGEST) EXCEPT ("an" Art Pl Def &msyn-gen-case-article-fem-plural) TARGET &msyn-gen-case-article-fem-plural IF (1 (Noun Fem Pl)) ;
+	## Uachtarán {na} hollscoile. 
+	#$ Uachtarán {an} ollscoil.
 
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive plural case.
@@ -987,7 +1001,7 @@ COPY:msyn-ar-an-gcaife ("ar" Prep Simp &SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET
 LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 
 ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
-#Chuaigh an bad go toin {poll}
+ ## Chuaigh an bad go toin {poll}
 
 COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
 COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
