@@ -5,4 +5,17 @@ Config:
 Tests:
   ## Ag an aonach. - incorrect ("ag" at)
   #$ Ar an aonach. - correct ("ar" on)
-  - "{Ag}£{Ar} an aonach."
+  - "Ar an {sráid}£{tsráid}."
+  - "Ar an {sráideánach}£{tsráideánach}." 
+  - "Beidh an fear ag an aonach." 
+  - "Tá comhráite ar siúl inniu idir Aer Lingus agus Chumann Phíolótaí Aerlínte na hÉireann maidir le haighneas pá a bhféadfadh stailc a bheith mar thoradh air."
+  - "Inné, vótáil baill den cheardchumann sin in Aer Lingus le móramh mór i bhfabhar tabhairt faoin {gníomhaíocht}£{ngníomhaíocht} thionsclaíoch – stailc san áireamh – mura dtiocfaí ar chomhréiteach idir dhá linn."
+  - "Roimh na comhchainteanna inniu, d'iarr Aer Lingus fógra cúig lá dhéag ar na píolótaí sula rachaidís ar stailc."
+  - "De réir chód cleachtais an Choimisiúin um Chaidreamh san Áit Oibre, moltar fógra seachtaine ar a laghad a thabhairt sula {téitear}£{dtéitear} ar stailc."
+  - "Dúirt uachtarán cheardchumann na bpíolótaí, an Captaen Mark Tighe, go {fógródh}£{bhfógródh} na baill in am trátha cén sórt gníomhaíochta tionsclaíche go baileach a dtabharfaidís faoi."
+  - "Thug sé le fios mar sin féin gur mhian leis na píolótaí gan cur as do dhaoine a bhfuil sé i {ceist}£{gceist} acu dul ar saoire thar lear an samhradh seo."
+  - "Os a choinne sin, arsa Mark Tighe, tá na píolótaí meáite ar a gcothrom féin a fháil den bhrabach mór atá Aer Lingus a dhéanamh faoi láthair."
+  - "An {tseachtain}£{seachtain} seo caite, dhiúltaigh an ceardchumann moladh ón {Cúirt}{gCúirt} Oibreachais ardú pá 9.2% san iomlán a thabhairt dóibh mar chuid de réiteach eatramhach."
+  - "Tá an moladh sin i bhfad ón marc, ámh, ós ardú pá 23.8% atá na píolótaí a éileamh."
+  - "Dar leis na píolótaí nach bhfuil na tairiscintí ar ardú pá a tugadh dóibh go dtí seo, nach bhfuil siad ag teacht le ráta an bhoilscithe ná leis an {brabach}£{mbrabach} mór atá Aer Lingus a dhéanamh, agus nach {cuirtear}£{gcuirtear} san áireamh iontu na sochair ar fad a lig siad uathu ar son an chomhlachta aimsir na paindéime Covid-19."
+  - "Dúirt Príomhoifigeach Gnóthaí Corparáideacha Aer Lingus, Donal Moriarty, áfach, go raibh éileamh na bpíolótaí as compás agus dochurtha i gcrích."
