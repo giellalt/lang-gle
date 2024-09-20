@@ -861,8 +861,13 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	# nouns should be genitive
 	
 
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) IF (*-1 (Noun Com) BARRIER (*) - Art);
-COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art);
+COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Com Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+
+COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-case-nouns) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-case-nouns)(NEGATE 0 DefArt);
+	## Chuaigh na saighdiúirí isteach i mbialann na hoifigigh.
+	#$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
+	
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
 	## Parlaimint an Eoraip. (erroneous)
 	#$ Parlaimint na hEorpa. (correct)
@@ -870,7 +875,9 @@ COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) B
 	## Uachtarán an ollscoil. (erroneous)
 	#$ Uachtarán na hollscoile. (correct)
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
-	#$ Tá an dochtúir ag seasamh le hais na fuinneoige. - correct	
+	#$ Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
+	
+
 	
 COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
 #COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
@@ -882,6 +889,8 @@ ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET ("an" Art Sg Def) IF (NEGA
 
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Fem));
 
+
+COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 
