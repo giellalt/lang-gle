@@ -722,23 +722,6 @@ COPY:lex-tá-is ("is" Cop Pres &SUGGEST) EXCEPT ("bí" Verb VI PresInd &lex-tá-
 	## Tá mé múinteoir.
 	## Tá mé fear.
 	
-# Definiteness errors in nouns
-
-LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
-
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NOT 0 DefArt) ;
-COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
-
-
-	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
-	#S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
-	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
-	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
-	## Chuig an Chomhairle. - incorrect
-	#$ Chuig an gComhairle. - correct
-	## An bean. - incorrect
-	#$ An bhean. - correct
 	
 # Gender errors in adjectives
 
@@ -876,6 +859,7 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 
 
 	# nouns should be genitive
+	
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) IF (*-1 (Noun Com) BARRIER (*) - Art);
 COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
@@ -885,7 +869,8 @@ COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) B
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	## Uachtarán an ollscoil. (erroneous)
 	#$ Uachtarán na hollscoile. (correct)
-	
+	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
+	#$ Tá an dochtúir ag seasamh le hais na fuinneoige. - correct	
 	
 COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
 #COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
@@ -906,11 +891,26 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
 SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
-	
-# A rule to indicate that when two nouns come together, the second noun has to be in the genitive case.
 
-#ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (-1 (Noun Com));
-#COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (&msyn-gen-case-nouns);
+#ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
+#COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
+
+	
+# Definiteness errors in nouns
+
+LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
+
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns) ;
+COPY:msyn-noun-defart (DefArt &SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
+ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+
+	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
+	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
+	## Chuig an Chomhairle. - incorrect
+	#$ Chuig an gComhairle. - correct
+	## An bean. - incorrect
+	#$ An bhean. - correct
+
 
 
 # A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive singular case.
@@ -989,10 +989,6 @@ COPY:right-guillemet ("»" &SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 
 ADD:use-ellipsis (&ellipsis) TARGET ("...");
 COPY:use-ellipsis ("…" &SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
-
-
-ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
-COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
 
 
 ADD:msyn-ar-an-tae (&msyn-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 ("tae")) ;
