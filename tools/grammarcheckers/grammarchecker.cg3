@@ -875,21 +875,36 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	#$ Cúpla focal. - correct
 
 
+	# nouns should be genitive
+
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) IF (*-1 (Noun Com) BARRIER (*) - Art);
-COPY:msyn-gen-case-nouns (Gen Sg DefArt &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
-COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
 	## Parlaimint an Eoraip. (erroneous)
 	#$ Parlaimint na hEorpa. (correct)
-COPY:msyn-gen-case-nouns (Gen Sg &SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - &SUGGEST)(-1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	## Uachtarán an ollscoil. (erroneous)
 	#$ Uachtarán na hollscoile. (correct)
 	
 	
-COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt &SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
-#COPY:msyn-gen-case-nouns (Gen Weak Pl &SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
-#COPY:msyn-gen-case-nouns (Gen Weak Pl &SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(0 DefArt - &SUGGEST)(-1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+#COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+#COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	## Cumann na Fear.
 	#$ Cumann na bhFear.
+	
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET ("an" Art Sg Def) IF (NEGATE 0 Gen)(1 (Noun &msyn-gen-case-nouns));
+
+COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Fem));
+
+
+COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
+
+
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
+
+SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
+MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 	
 # A rule to indicate that when two nouns come together, the second noun has to be in the genitive case.
