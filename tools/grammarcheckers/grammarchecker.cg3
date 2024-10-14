@@ -1049,3 +1049,7 @@ ADD:msyn-i-dt (&msyn-i-dt) TARGET ("" Noun Com Sg) OR ("" Noun Fem Gen Strong Pl
 
 COPY:msyn-i-dt (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-i-dt) ;
 COPY:msyn-i-dt (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-i-dt) ;
+
+
+LIST <fixedcase> = <fixedcase>;
+ADD <fixedcase> TARGET ("<Eoraip>") ;
