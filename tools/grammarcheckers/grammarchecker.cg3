@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "hfst-tokenise -g ../../tools/tokenisers/tokeniser-gramcheck-gt-desc.pmhfst" -*-
+# -*- cg-pre-pipe: "./modes/glegram-dev6-cg.mode" -*-
 # Divvun & Giellatekno - open source grammars for Sámi and other languages
 # Copyright © 2000-2024 UiT The Arctic University of Norway
 # http://giellatekno.uit.no & http://divvun.no
@@ -666,6 +666,11 @@ LIST &use-guillemets = &use-guillemets ;
 LIST SUGGEST = SUGGEST ;
 
 MAPPING-PREFIX = & ;
+
+BEFORE-SECTIONS
+
+LIST <fixedcase> = <fixedcase>;
+ADD:fixedcase-np <fixedcase> TARGET Prop ; # Never change case of proper nouns
 
 SECTION
 
