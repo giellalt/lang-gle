@@ -5,7 +5,7 @@ Config:
 Tests:
   ## carr a athair
   #$ carr a athar
-  - "carr a {athair}£{athar}"
+  - "carr a {athair}£{athar}" # The car of his father.gen
 
   ## eagla a chraiceann - incorrect
   #$ eagla a chraicinn - correct
