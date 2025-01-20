@@ -1,0 +1,18 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+
+## áfach… - incorrect if it is at the beginning of a sentence 
+#$ …, áfach. - correct if it is at the end of a sentence
+
+
+  - "Sa gheimhreadh {afách}${áfach}, agus na laethanta ag dul i ndorchadas, bhí a chuid saighdiúirí bochta préachta leis an bhfuacht, agus bhí air mar sin na cnoic a fhágáil le caisleán breá teolaí a thógáil cois trá."
+  - "Os a choinne sin, {afách}${áfach} ba é 21% an líon a bhí ann de bhanscríbhneoirí agus 18% de bhanstiúrthóirí."
+  - "Is imreoir den scoth é Steve Finnan, {afách}${áfach}."
+  - "Tá mé i mo chónaí in aice le SF, {afách}${áfach}; b’fhéidir gur chóir dom dul ar cuairt ar an {{fíonlann}${Fionlainn}}£{bhFionlainn}!"
+  - "Dúirt sé {afách}${áfach}, go gcaithfeadh an coimisiún a chinntiú go gcaithfear go cothrom leo siúd a bhfuil na dtáillí íoctha acu cheana féin."
+  - "Thug siad le fios, {afách}${áfach}, go mbeadh siad ar fáil le haon chúnamh breise a thabhairt don Roinn."
+  - "{Áfach, ní raibh muid tapa go leor}¥{wo|Ní raibh muid tapa go leor, áfach}."
+
