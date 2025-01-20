@@ -80,11 +80,13 @@ Ecl
 Nom
 Acc
 Gen
+Dat
 Ill
 Loc
 Com
 Ess
-Ess
+Par
+Voc
 Sg
 Du
 Pl
@@ -165,6 +167,9 @@ Sem/Time
 Sem/Txt
 
 HUMAN
+
+HAB-ACTOR
+HAB-ACTOR-NOT-HUMAN
 
 PROP-ATTR
 PROP-SUR
