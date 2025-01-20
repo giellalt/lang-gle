@@ -1,6 +1,6 @@
 # -*- cg-pre-pipe: "./modes/glegram-dev6-cg.mode" -*-
 # Divvun & Giellatekno - open source grammars for Sámi and other languages
-# Copyright © 2000-2024 UiT The Arctic University of Norway
+# Copyright © 2000-2025 UiT The Arctic University of Norway
 # http://giellatekno.uit.no & http://divvun.no
 #
 # This program is free software; you can redistribute and/or modify
@@ -18,7 +18,7 @@
 # ==================================================================== #
 # ====================================================================
 
-#  Sámi language technology 2000-2024, UiT The Arctic University of Norway #
+#  Sámi language technology 2000-2025, UiT The Arctic University of Norway #
 
 # ---------------------- #
 #   Development setup:   #
@@ -36,7 +36,6 @@
 # ---------------------- #
 #
 # emacs grammarchecker.cg3  # and C-c C-i / C-c C-c if you have cg-mode installed
-# echo "Sun ij puátá." | sh modes/???gram.mode  # from the terminal, replacing ??? with your language code
 # echo "Tá cáil dhomhanda ar ghrúdlann Guinness i mBaile Átha Cliath, agus cé nach i seilbh Éireannach a thuilleadh é agus nó mbruitear i dtíortha eile é, meastar go leathan gur fearr Guinness na hÉireann. Déanann an comhlacht chéanna lager Harp, mar aon le beoir eachtrannacha a bhruith agus a dháileadh faoi chonradh." | tools/grammarcheckers/modes/trace-glegram.mode | less
 # echo "Tá cáil dhomhanda ar ghrúdlann Guinness i mBaile Átha Cliath,"
 # echo "Tá cail dhomhanda ar ghrúdlann Guinness i mBaile Átha Cliath,"
@@ -51,11 +50,6 @@
 # ls modes/
 #
 # ---------------------- #
-
-
-# The pipeline (but use modes, above)
-#  echo "Sun ij puátá." | hfst-tokenise —giella-cg tools/tokenisers/tokeniser-gramcheck-gt-desc.pmhfst | vislcg3 -g src/cg3/disambiguator.cg3 -t | vislcg3 -g tools/grammarcheckers/grammarchecker.cg3 -t
-
 
 
       # =========================================== #
@@ -170,11 +164,13 @@ LIST Ecl = Ecl ; #!! Ecl
 LIST Nom = Nom ; #!! Nom
 LIST Acc = Acc ; #!! Acc
 LIST Gen = Gen ; #!! Gen
+LIST Dat = Dat ; #!! Dat
 LIST Ill = Ill ; #!! Ill
 LIST Loc = Loc ; #!! Loc
 LIST Com = Com ; #!! Com
 LIST Ess = Ess ; #!! Ess
-LIST Par = Par ; #!! Ess
+LIST Par = Par ; #!! Par
+LIST Voc = Voc ; #!! Voc
 LIST Sg = Sg ;   #!! Sg
 LIST Du = Du ;   #!! Du
 LIST Pl = Pl ;   #!! Pl
@@ -260,8 +256,8 @@ LIST Sem/Txt = Sem/Txt ;				    #!! Sem/Txt
 
 LIST HUMAN = Sem/Fem Sem/Mal Sem/Sur ;	    #!! HUMAN
 
-SET HAB-ACTOR = HUMAN ; # Goal: make this like the sme one. #!! HAB-ACTOR
-SET HAB-ACTOR-NOT-HUMAN = Sem/Org ; # make this like the sme one #!! HAB-ACTOR-NOT-HUMAN
+SET HAB-ACTOR = HUMAN ; #!! HAB-ACTOR
+SET HAB-ACTOR-NOT-HUMAN = Sem/Org ; #!! HAB-ACTOR-NOT-HUMAN
 
 
 LIST PROP-ATTR = Sem/Mal Sem/Sur Sem/Fem ; #!! PROP-ATTR
@@ -388,10 +384,10 @@ SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA
 #!! ### Case sets
 # ---------
 
-LIST ADVLCASE = Ill Loc Com Ess ; #!! ADLVCASE
+LIST ADVLCASE = Dat Com ; #!! ADLVCASE
 
-LIST CASE-AGREEMENT = Nom Acc Gen (Pl Ill) Loc Com Ess ; #!! CASE-AGREEMENT
-LIST CASE = Nom Acc Gen Ill Loc Com Ess ; #!! CASE
+LIST CASE-AGREEMENT = Nom Acc Gen Dat Com ; #!! CASE-AGREEMENT
+LIST CASE = Nom Acc Gen Dat Com Voc ; #!! CASE
 
 SET NOT-NOM = CASE - Nom ; #!! NOT-NOM
 SET NOT-GEN = CASE - Gen ; #!! NOT-GEN
@@ -505,13 +501,12 @@ SET NOT-Attr = WORD - Attr ;
 SET NOT-A-PCLE = WORD - A - Pcle ;
 SET NOT-A-CC = WORD - A-CC ;
 
- # and many others
 
 #!! ### Adverbial sets and their complements
 # ------------------------------------
 SET LEX-ADV = Adv - (AA) ;
 
-SET NOT-ADV-DE            = WORD - Adv ;
+SET NOT-ADV-DE         = WORD - Adv ;
 SET NOT-ADV            = NOT-ADV-DE OR CLB ;
 SET NOT-ADV-N          = NOT-ADV - N;
 SET NOT-ADV-PCLE       = NOT-ADV - Pcle ;
@@ -676,44 +671,6 @@ SECTION
 
 #Here is a list of some errors that I collated. 
 # 
-## éadaí an fear. - incorrect: Com
-#$ éadaí an fhir. - correct: Gen
-# 
-## Cúig bhliana. - incorrect: Len
-#$ Cúig bliana. - correct: X
-# 
-## An dara bhliain. - incorrect: dara spelling error
-#$ An dara bliain. - correct
-#
-## Cúpla laethanta. - incorrect
-#$ Cúpla lá. - correct
-# 
-## Cúpla focail. - incorrect
-#$ Cúpla focal. - correct
-# 
-## níos mór. - incorrect 
-#$ níos mó. - correct
-# 
-## Ag deireadh an lae. - incorrect
-#$ I ndeireadh na dála. - correct
-# 
-## suas le dáta. - incorrect
-#$ cothrom le dáta. - correct
-# 
-## roinnt bliain. - incorrect 
-#$ roinnt blianta. - correct
-# 
-## roinnt lá. - incorrect
-#$ roinnt laethanta. - correct
-# 
-## áfach… - incorrect if it is at the beginning of a sentence 
-#$ …, áfach. - correct if it is at the end of a sentence
-## Sa gheimhreadh afách, agus na laethanta ag dul i ndorchadas, bhí a chuid saighdiúirí bochta préachta leis an bhfuacht, agus bhí air mar sin na cnoic a fhágáil le caisleán breá teolaí a thógáil cois trá.
-## Os a choinne sin, afách ba é 21% an líon a bhí ann de bhanscríbhneoirí agus 18% de bhanstiúrthóirí.
-#$ Is imreoir den scoth é Steve Finnan, afách.
-#$ Tá mé i mo chónaí in aice le SF, afách; b’fhéidir gur chóir dom dul ar cuairt ar an fíonlann!
-## Dúirt sé afách, go gcaithfeadh an coimisiún a chinntiú go gcaithfear go cothrom leo siúd a bhfuil na dtáillí íoctha acu cheana féin.
-## Thug siad le fios, afách, go mbeadh siad ar fáil le haon chúnamh breise a thabhairt don Roinn.
 
 
 # Copula errors tá vs. is
