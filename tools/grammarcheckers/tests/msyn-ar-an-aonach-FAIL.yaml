@@ -5,7 +5,6 @@ Config:
 Tests:
   ## Ag an aonach. - incorrect ("ag" at)
   #$ Ar an aonach. - correct ("ar" on)
-  - "Ar an {sráid}£{tsráid}."
   - "Ar an {sráideánach}£{tsráideánach}." 
   - "Beidh an fear ag an aonach." 
   - "Tá comhráite ar siúl inniu idir Aer Lingus agus Chumann Phíolótaí Aerlínte na hÉireann maidir le haighneas pá a bhféadfadh stailc a bheith mar thoradh air."

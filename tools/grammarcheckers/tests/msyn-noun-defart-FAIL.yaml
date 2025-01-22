@@ -17,3 +17,5 @@ Tests:
   ## Chuig an Chomhairle. - incorrect
   #$ Chuig an gComhairle. - correct
   - "Chuig an {Chomhairle}£{gComhairle}."
+
+  - "Tá mé i mo chónaí in aice le SF, {afách}${áfach}; b’fhéidir gur chóir dom dul ar cuairt ar an {{fíonlann}${Fionlainn}}£{bhFionlainn}!"

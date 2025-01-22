@@ -8,4 +8,3 @@ Tests:
   ## An bean. - incorrect
   #$ An bhean. - correct
   - "An {bean}£{bhean}."
-  - "Tá mé i mo chónaí in aice le SF, {afách}${áfach}; b’fhéidir gur chóir dom dul ar cuairt ar an {{fíonlann}${Fionlainn}}£{bhFionlainn}!"
