@@ -656,6 +656,7 @@ LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;
 LIST &msyn-fem-article = &msyn-fem-article ;
 LIST &spell-conservatively = spell-conservatively ;
 LIST &spell-it-all = spell-it-all ;
+LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;
 LIST &use-ellipsis = &use-ellipsis ;
 LIST &use-guillemets = &use-guillemets ;
 LIST SUGGEST = SUGGEST ;
@@ -696,7 +697,7 @@ LIST LEN-PREP = "ag" "ar" "i" "thar" ;
 
 LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;
 	
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp))(NEGATE 0 (Noun Fem Com Sg Len)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
@@ -1015,3 +1016,19 @@ COPY:msyn-i-dt (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-i-dt) ;
 
 LIST <fixedcase> = <fixedcase>;
 ADD <fixedcase> TARGET ("<Eoraip>") ;
+
+	# syntax rules (word order, insertion, etc.)
+	
+	
+ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
+
+	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
+	## An ceol sheinneann sé gach lá agus é i mbun oibre.
+	## An obair {rinne} an bainisteoir.
+	## Sin an cleas céanna d'imir sé orm.
+	## Tá sé ar intinn aici é sin {dhéanamh}.
+	## Sin an obair {chríochnófar} amárach
+
+ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem &ADDED &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 &ADDED);
+
+ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 &ADDED) ;
