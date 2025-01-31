@@ -696,6 +696,12 @@ COPY:msyn-adj-gender (Fem Com Sg Len &SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gen
 LIST LEN-PREP = "ag" "ar" "i" "thar" ;
 
 LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;
+
+
+
+	# Prepositions
+	
+ADD:msyn-prep-pron-le (&msyn-prep-pron-le) TARGET (Prep Simp) (1 (Pron Pers)) ;
 	
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp))(NEGATE 0 (Noun Fem Com Sg Len)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
@@ -824,16 +830,26 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	# nouns should be genitive
 	
 
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art);
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art))(NEGATE 0 (Gen Sg))(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A);
+	#$ An múinteoir Ben
+
 COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Com Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
 
 COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-case-nouns) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-case-nouns)(NEGATE 0 DefArt);
 	## Chuaigh na saighdiúirí isteach i mbialann na hoifigigh.
 	#$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
 	
-COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+	# definite	
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (DefArt Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
 	## Parlaimint an Eoraip. (erroneous)
 	#$ Parlaimint na hEorpa. (correct)
+	
+	# indefinite
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) - DefArt (NEGATE -1 (Art Def));
+	## bosca bruscar.
+	#$ bosca bruscair.
+
+
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	## Uachtarán an ollscoil. (erroneous)
 	#$ Uachtarán na hollscoile. (correct)
