@@ -644,6 +644,7 @@ LIST &msyn-inis-de = &msyn-inis-de ;
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;
 LIST &msyn-noun-defart = &msyn-noun-defart ;
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;
+LIST &msyn-prep-pron = &msyn-prep-pron ;
 LIST &msyn-gen-case = &msyn-gen-case ;
 LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;
 LIST &msyn-gen-case-article-fem-sing = &msyn-gen-case-article-fem-sing ;
@@ -701,7 +702,35 @@ LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;
 
 	# Prepositions
 	
-ADD:msyn-prep-pron-le (&msyn-prep-pron-le) TARGET (Prep Simp) (1 (Pron Pers)) ;
+ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
+
+ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
+
+ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron)) ;
+
+
+COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
+COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Masc)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Fem)) ;
+COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
+COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
+
+SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
+
+ADDRELATION:msyn-prep-pron (DELETE1) (co&msyn-prep-pron) TO (-1 &msyn-prep-pron) ;
+
+	## Tá an madra ag siúl le tú.
+	#$ Tá súil aige leis (correct)
+	## Tá súil aige le sé (incorrect)
+	## Tá súil aige le sí (incorrect)
+	#$ Tá súil aige léi (correct)
+
+
+
+
+
 	
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp))(NEGATE 0 (Noun Fem Com Sg Len)) ;
 COPY:msyn-len-after-prep (&SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
