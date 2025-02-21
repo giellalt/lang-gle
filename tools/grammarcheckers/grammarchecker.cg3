@@ -708,18 +708,10 @@ ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
 
 ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron)) ;
 
-
-COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
-COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
-COPY:msyn-prep-pron (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Masc)) ;
-COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Fem)) ;
-COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
-COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
-COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp &msyn-prep-pron) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
-
 SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
 
-ADDRELATION:msyn-prep-pron (DELETE1) (co&msyn-prep-pron) TO (-1 &msyn-prep-pron) ;
+ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
+	# ordet som blir igjen starter relasjonen
 
 	## Tá an madra ag siúl le tú.
 	#$ Tá súil aige leis (correct)
@@ -728,6 +720,18 @@ ADDRELATION:msyn-prep-pron (DELETE1) (co&msyn-prep-pron) TO (-1 &msyn-prep-pron)
 	#$ Tá súil aige léi (correct)
 
 
+COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
+COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Masc)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Fem)) ;
+COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
+COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
+
+
+SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
+
+MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 
 
@@ -966,7 +970,7 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 
 # A rule to indicate that when a noun comes before a possessor followed by a noun, the second noun has to be in the genitive case.
 
-ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss))(-2 (Noun Com));
+ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
 COPY:msyn-possadj-nom-gen (Gen Sg Len &SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
 ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
 
