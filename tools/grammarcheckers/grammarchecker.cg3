@@ -195,6 +195,8 @@ LIST Ord = Ord ;		   #!! Ord
 LIST Qst = Qst ;		   #!! Qst
 LIST IV = IV ; #!! IV
 LIST TV = TV ; #!! TV
+LIST VD = VD ; #!! VD
+LIST VTI = VTI ; #!! VTI
 LIST Prt = Prt;				   #!! Prt
 LIST Prs = Prs ;			   #!! Prs
 LIST Ind = Ind ;			   #!! Ind
@@ -711,7 +713,7 @@ ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron))
 SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
 
 ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
-	# ordet som blir igjen starter relasjonen
+	# ordet som blir igjen starter relasjonen - the word that we want to keep starts the relation
 
 	## Tá an madra ag siúl le tú.
 	#$ Tá súil aige leis (correct)
@@ -863,8 +865,10 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	# nouns should be genitive
 	
 
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art))(NEGATE 0 (Gen Sg))(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A);
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art))(NEGATE 0 (Gen Sg))(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
+(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD);
 	#$ An múinteoir Ben
+	#$ Thug an rialtas airgead do é.
 
 COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Com Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
 
