@@ -1668,6 +1668,8 @@ Ord
 Qst
 IV
 TV
+VD
+VTI
 Prt
 Prs
 Ind
