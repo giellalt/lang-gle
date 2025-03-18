@@ -2,7 +2,7 @@
 # I R I S H   D I S A M B I G U A T I O N  FOR GRAMMAR CHECKING
 # ==================================================================== #
 # Elaine Uí Dhonnchadha, Linda Wiechetek (grammar checker modifications)
-# March 2004-2024
+# March 2004-2025
 # Christoph Wendler 
 # 2008/9
 # ==================================================================== #
@@ -40,6 +40,7 @@ LIST BOS = (>>>) "<p>" "<s>" (ChildesID);
 LIST EOS = (<<<); # end and beg. of sentence. for vislcg.
 
 LIST COMMA = "<,>" ;
+LIST CITATION = "«" "“" "\"" "„" "‟" "'" "‹" "‘" "‚" "‛" "❛" "❝" "❮" "〝" "〟" "»" "“" "\"" "'" "›" "’" "❜" "❞" "❯" "〞" "＂" """ ; 
 LIST PUNCT-INT = (Punct Int) (Punct Bar) (Punct Brack);
 
 LIST CLB = (Rel) (Coord) (Subord) (Cmpl) ;
@@ -131,8 +132,14 @@ LIST NOUN-LEN = "ar" "de" "do" "faoi" "mar" "ó" "roimh" "trí" "um" ;
 CONSTRAINTS
 # ==================================================================== #
 # -------------------------------------------------------------------- #
-# S1 IDIOMS
+# S1 IDIOSYNCHRATIC RULES AND IDIOMS
 # -------------------------------------------------------------------- #
+
+# "í" Pron Pers 3P Sg Fem (not "í" Noun Fem Sg)
+
+SELECT ("í" Pron Pers 3P Sg Fem) IF (0 ("í" Noun Fem Sg))(NEGATE 0 ("Í") LINK *-2 BOS);
+	## Nach moch an siúl atá ar í?
+
 # maille le
 SELECT (Prep) IF (0 ("<maille>")) (1 ("<le>"));
 
@@ -210,8 +217,11 @@ SELECT (Prep Simp) IF (0 ("<dar>") OR ("<Dar>")) (1C (Noun) OR NOUN-PREMOD);
 
 # ar sise/seisean/
 # dont use Prop Noun as too many many Prep + Placenames/Orgn.
-SELECT (Verb) IF (0 ("<ar>") OR ("<Ar>")) (1 (Sbj));
+SELECT (Verb) IF (0 ("<ar>") OR ("<Ar>")) (1 (Sbj) LINK 1 (":") OR CITATION);
+SELECT (Verb) IF (0 ("<ar>") OR ("<Ar>")) (1 (Sbj))(-1 CITATION OR (",") OR ("-"));
 REMOVE (Verb) IF (0 ("<ar>") OR ("<Ar>")) (NOT 1 (Sbj) OR ("mé"));
+	## Ar seisean: "Mo áitse nó do áitse?"
+	## "Is mise Jan Swammerdam," ar seisean go neirbhíseach.
 
 # a bheag nó/ná a mhór
 SELECT (Det Poss) (1 ("mór")) (0 ("a"));
@@ -328,7 +338,7 @@ SELECT (Verb) IF (0 ("<Bhí>")) (NOT -1 (Art));
 
 # -------------- @END ADDED CW 09/08 --------------
 
-SELECT (Verb) IF (1 (Sbj));
+SELECT (Verb) IF (1 (Sbj))(NEGATE 0 (Prep Simp));
 REMOVE (Verb Auto) IF (1C (Sbj));
 
 # TYPE 1
@@ -698,7 +708,8 @@ SELECT (Cop) IF ( 1  ("féidir"));
 
 # e.g. Ba iad, is é ... perhaps this is too broad
 # an é , nach é, ní hí 
-SELECT (Cop) IF (1 ("é") OR ("í") OR ("iad") OR ("hé") OR ("hí") OR ("hiad"));
+SELECT (Cop) IF (1 ("é") OR ("í") OR ("iad") OR ("hé") OR ("hí") OR ("hiad"))(NEGATE 0 ("ar" Prep Simp));
+	#$ I ndilchuimhne ar iad siúd a dtug a mbeatha muirneacha ar son na Poblachta.
 
 # Is/Ní gá: is/ní are most likely to be a copula if followed by "gá"
 # but exclude "an" as this could be either Art or Cop e.g  an gá
@@ -1946,7 +1957,7 @@ REMOVE (Q)    IF  (NOT *1 (Punct Q));
 # following doesnt work over long distances .. so limit it with punctuation
 # also don't have more than two interrogatives ...
 # e.g. Cad(=Q) chuige nach n-abrófá amhráin agus tú an fear ceol is fearr ar(!=Q) an mbaile?
-SELECT (Q)    IF  (*1 (Punct Q) BARRIER (Punct Int)) (NOT *-1C (Q));
+SELECT (Q) IF  (*1 (Punct Q) BARRIER (Punct Int)) (NOT *-1C (Q))(NEGATE 0 (Prep Simp) LINK 1 (Pron Pers) OR Noun);
 
 # ar/Q chuala/V tú nach/Vb raibh/V sé ann?
 # is/Cop maith an rud nár/Vb tháinig/V tú.
@@ -2020,13 +2031,13 @@ SELECT (Cop) IF ( 1C  (Noun) OR (Adj) ) (2 ("le"));
 # It is a copula if there is no verb to the left ...
 # and if there is no verb to the right ...
 # TRY Prep Phrase ???
-SELECT (Cop) IF (NOT *-1 (Verb)) (NOT *1 (Verb))(NEGATE 0 (Pron Pers));
+SELECT (Cop) IF (NOT *-1 (Verb)) (NOT *1 (Verb))(NEGATE 0 (Pron Pers) OR (Prep Simp));
 	#$ Is fada buí siad.
 
 # if the sentence starts with any form of copula "is" choose this
 # reading as long as it is not followed by a verb
 # Ní hé la na gaoth ... If it is at the start of a sentence choose Cop
-SELECT (Cop) IF (-1 BOS) (NOT 1 (Verb));
+SELECT (Cop) IF (-1 BOS) (NOT 1 (Verb))(NEGATE 0 (Prep Simp));
 
 #It is a relative copula if preceded by the subject or direct object
 # e.g.dir. rel: an áit is deise ar domhain , an bhean ab óige
