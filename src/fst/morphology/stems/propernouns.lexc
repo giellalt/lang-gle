@@ -32,10 +32,11 @@ Bus% Éireann+MWE:Bus% Éireann	NP-PLACE;
 Bus% Éireann+MWE+Err/Orth:Bus% Éire 	NP-PLACE; !Err/Orth
 Raidió% Teilifís% Éireann+MWE:Raidió% Teilifís% Éireann  	NP-PLACE;
 Raidió% Teilifís% Éireann+MWE+Err/Orth:Raidió% Teilifís% Éire  	NP-PLACE; !Err/Orth
-!!!!Met Éireann NP-PLACE-fem;
-!!!!Met Éire NP-PLACE-fem; !Err/Orth
+Met% Éireann+MWE:Met% Éireann NP-PLACE-fem;
+Met% Éireann+MWE+Err/Orth:Met% Éire NP-PLACE-fem; !Err/Orth
 !!!! "hÉire" Prop Noun Fem Gen Sg DefArt (people of the Ireland)
-!!!! Iarnród Éireann = correct; Iarnród Éire = incorrect
+Iarnród% Éireann+MWE:Iarnród% Éireann  	NP-PLACE; 
+Iarnród% Éireann+MWE+Err/Orth:Iarnród% Éire  	NP-PLACE;
 !!!! Muintir na hÉireann, Uachtarán na hIodáile
 
 
