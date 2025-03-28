@@ -21,7 +21,7 @@ LEXICON NP-LEX-EIRE
 <C a i s l e á n %_:%  R i a b h a c h> NP-PLACE;
 <C l o c h %_:%  L i a t h> NP-PLACE;	! Greystone
 
-!!!!Roinn% an% Taoisigh	NP-PLACE;	!TROND
+Roinn% an% Taoisigh+MWE:Roinn% an% Taoisigh	NP-PLACE;	!TROND
 Áras% an% Uachtaráin+MWE:Áras% an% Uachtaráin	NP-PLACE; !president's house
 Parlaimint% na% hEorpa+MWE:Parlaimint% na% hEorpa	NP-PLACE;
 Parlaimint% na% hEorpa+MWE+Err/Orth:Parlaimint% an% Eoraip	NP-PLACE; !Err/Orth
@@ -43,14 +43,14 @@ Iarnród% Éireann+MWE+Err/Orth:Iarnród% Éire  	NP-PLACE;
 BÁC	NP-PLACE;
 BAC	NP-PLACE;
 Cabhán	NP-PLACE;	! Cavan
-!!Caisleán Nua	NP-PLACE;	! Newcastle
+Caisleán% Nua+MWE:Caisleán% Nua	NP-PLACE;	! Newcastle
 Cóbh	NP-PLACE;	! Cobh
 Conamara	NP-PLACE;	! 
 Daingean	NP-PLACE;	! Dingle
 Longfort	NP-PLACE;	! Longford
 Lorgain	NP-PLACE;	! Lurgan
 Móta	NP-PLACE;	! Moate
-!!Muileann gCearr	NP-PLACE;	! Mullingar
+Muileann% gCearr+MWE:Muileann% gCearr	NP-PLACE;	! Mullingar
 Nás	NP-PLACE;	! Naas
 Ómaigh	NP-PLACE;	! Omagh
 Seanchaisleán	NP-PLACE-fem;	! Oldcastle
@@ -63,82 +63,82 @@ Uaimh	NP-PLACE;	! Navan
 Mhacha	NP-PLACE;	! !!!!Co Armagh
 Macha	NP-PLACE;	! Armagh
 Mhóta	NP-PLACE;	! Ballymote
-!!!!Baile Átha Buí	NP-PLACE;	! Athboy
+Baile% Átha% Buí+MWE:Baile% Átha% Buí	NP-PLACE;	! Athboy
 Baile	NP-PLACE;	! 
 Átha NP-PLACE;	! 
 Cliath	NP-PLACE;	! Dublin
 Fhirdhia	NP-PLACE;	! Ardee
-!!!!Baile Átha Í	NP-PLACE;	! Athy
-!!!!Baile Atha Luain	NP-PLACE;	! Athlone
+Baile% Átha% Í+MWE:Baile% Átha% Í	NP-PLACE;	! Athy
+Baile% Atha% Luain+MWE:Baile% Atha% Luain	NP-PLACE;	! Athlone
 luain	NP-PLACE;	! Athlone
-!!!!Baile Átha Troim	NP-PLACE;	! Trim
+Baile% Átha% Troim+MWE:Baile% Átha% Troim	NP-PLACE;	! Trim
 Brigín	NP-PLACE;	! Balbriggan
 Riach	NP-PLACE;	! Loughrea
-!!!!Baile Shéamais Dhuibh	NP-PLACE;	! Ballyjamesduff
-!!!!Béal an Átha	NP-PLACE;	! Ballina
-!!!!Béal an Atha Móir	NP-PLACE;	! Ballinamore
+Baile% Shéamais% Dhuibh+MWE:Baile% Shéamais% Dhuibh	NP-PLACE;	! Ballyjamesduff
+Béal% an% Átha+MWE:Béal% an% Átha	NP-PLACE;	! Ballina
+Béal% an% Atha% Móir+MWE:Béal% an% Atha% Móir	NP-PLACE;	! Ballinamore
 Liag	NP-PLACE;	! Lanesborough
 Sluaighe	NP-PLACE-fem;	! Ballinasloe
 Seanaidh	NP-PLACE;	! Ballyshannon
-!!!!Béal Feirste	NP-PLACE;	! Belfast
-!!!!Béal Leice	NP-PLACE;	! Beleek
+Béal% Feirste+MWE:Béal% Feirste	NP-PLACE;	! Belfast
+Béal% Leice+MWE:Béal% Leice	NP-PLACE;	! Beleek
 Tairbirt	NP-PLACE;	! Belturbet
 Doirín	NP-PLACE;	! Ballaghaderreen
-!!!!Binn Éadair	NP-PLACE;	! Howth
-!!!!Caisleán an Bharraigh	NP-PLACE;	! Castlebar
-!!!!Caisleán an Chomair	NP-PLACE;	! Castlecomer
-!!!!Carraig Fhearghais	NP-PLACE;	! Carrickfergus
-!!!!Carraig Mhachaire Rois	NP-PLACE;	! Carrickmacross
-!!!!Cathair na Mart	NP-PLACE;	! Westport
-!!!!Ceapach Choinn	NP-PLACE;	! Cappoquin
+Binn% Éadair+MWE:Binn% Éadair	NP-PLACE;	! Howth
+Caisleán% an% Bharraigh+MWE:Caisleán% an% Bharraigh	NP-PLACE;	! Castlebar
+Caisleán% an% Chomair+MWE:Caisleán% an% Chomair	NP-PLACE;	! Castlecomer
+Carraig% Fhearghais+MWE:Carraig% Fhearghais	NP-PLACE;	! Carrickfergus
+Carraig% Mhachaire% Rois+MWE:Carraig% Mhachaire% Rois	NP-PLACE;	! Carrickmacross
+Cathair% na% Mart+MWE:Cathair% na% Mart	NP-PLACE;	! Westport
+Ceapach% Choinn+MWE:Ceapach% Choinn	NP-PLACE;	! Cappoquin
 Cill NP-PLACE;	! !!!!Co. Kilkenny
 Chainnigh	NP-PLACE;	! !!!!Co. Kilkenny
-!!Chill Dara	NP-PLACE;	! !!!!Co. Kildare
+Chill% Dara+MWE:Chill% Dara	NP-PLACE;	! !!!!Co. Kildare
 Mhantáin	NP-PLACE;	! !!!!Co. Wicklow
-!!!!Cill Airne	NP-PLACE;	! Killarney
-!!!!Cill Bheagáin	NP-PLACE;	! Kilbeggan
-!!!!Cill Chainnigh	NP-PLACE;	! Kilkenny
-!!!!Cill Chaoi	NP-PLACE;	! Kilkee
-!!!!Cill Chuillinn	NP-PLACE;	! Kilcullen
+Cill% Airne+MWE:Cill% Airne	NP-PLACE;	! Killarney
+Cill% Bheagáin+MWE:Cill% Bheagáin	NP-PLACE;	! Kilbeggan
+Cill% Chainnigh+MWE:Cill% Chainnigh	NP-PLACE;	! Kilkenny
+Cill% Chaoi+MWE:Cill% Chaoi	NP-PLACE;	! Kilkee
+Cill% Chuillinn+MWE:Cill% Chuillinn	NP-PLACE;	! Kilcullen
 Dalua	NP-PLACE;	! Killaloe
-!!!!Cill Dara	NP-PLACE;	! Kildare
-!!!!Cill Mhantáin	NP-PLACE;	! Wicklow
-!!!!Cill Rois	NP-PLACE;	! Kilrush
-!!!!Cluain Eois	NP-PLACE;	! Clones
-!!!!Cluain Meala	NP-PLACE;	! Clonmel
-!!!!Co. Bhaile Átha Cliath	NP-PLACE;	! !!!!Co. Dublin
-!!!!Cora Droma Rúisc	NP-PLACE;	! Carrick-on-Shannon
-!!!!Crois Mhic Lionnáin	NP-PLACE;	! Crosmaglen
-!!!!Cúige Laighean	NP-PLACE;	! Leinster
-!!!!Cúige Uladh	NP-PLACE;	! Ulster
-!!!!Cúil an tSúdaire	NP-PLACE;	! Portarlington
+Cill% Dara+MWE:Cill% Dara	NP-PLACE;	! Kildare
+Cill% Mhantáin+MWE:Cill% Mhantáin	NP-PLACE;	! Wicklow
+Cill% Rois+MWE:Cill% Rois	NP-PLACE;	! Kilrush
+Cluain% Eois+MWE:Cluain% Eois	NP-PLACE;	! Clones
+Cluain% Meala+MWE:Cluain% Meala	NP-PLACE;	! Clonmel
+!!!!Co. Bhaile Átha Cliath+MWE:	NP-PLACE;	! !!!!Co. Dublin
+!!!!Cora Droma Rúisc+MWE:	NP-PLACE;	! Carrick-on-Shannon
+!!!!Crois Mhic Lionnáin+MWE:	NP-PLACE;	! Crosmaglen
+!!!!Cúige Laighean+MWE:	NP-PLACE;	! Leinster
+!!!!Cúige Uladh+MWE:	NP-PLACE;	! Ulster
+!!!!Cúil an tSúdaire+MWE:	NP-PLACE;	! Portarlington
 Súdaire	NP-PLACE;	! Portarlington
-!!!!Cúil Raithin	NP-PLACE;	! Coleraine
+!!!!Cúil Raithin+MWE:	NP-PLACE;	! Coleraine
 !!!!Dhún na nGall, Tír Chonaill	NP-PLACE;	! !!!!Co. Donegal
-!!!!Droichead Átha	NP-PLACE;	! Drogheda
-!!!!Droichead na Bandan	NP-PLACE;	! Bandon
-!!!!Droichead na Banna	NP-PLACE;	! Banbridge
-!!!!Droichead Nua	NP-PLACE;	! Newbridge
-!!!!Dún Dealgan	NP-PLACE;	! Dundalk
-!!!!Dún Garbhán	NP-PLACE;	! Dungarvan
-!!!!Dún Geanainn	NP-PLACE;	! Dungannon
-!!!!Dún Laoghaire	NP-PLACE;	! !!!!Dún Laoghaire
-!!!!Dún Léire	NP-PLACE;	! Dunleer
-!!!!Dún na nGall	NP-PLACE;	! Donegal
-!!!!Dún Pádraig	NP-PLACE;	! Downpatrick
-!!!!Éadan Doire	NP-PLACE;	! Edenderry
-!!!!Fhear Manach	NP-PLACE;	! !!!!Co. Fermanagh
-!!!!Gleann Dá Ghrua	NP-PLACE;	! !!!!Glen of the Downs
+!!!!Droichead Átha+MWE:	NP-PLACE;	! Drogheda
+!!!!Droichead na Bandan+MWE:	NP-PLACE;	! Bandon
+!!!!Droichead na Banna+MWE:	NP-PLACE;	! Banbridge
+!!!!Droichead Nua+MWE:	NP-PLACE;	! Newbridge
+!!!!Dún Dealgan+MWE:	NP-PLACE;	! Dundalk
+!!!!Dún Garbhán+MWE:	NP-PLACE;	! Dungarvan
+!!!!Dún Geanainn+MWE:	NP-PLACE;	! Dungannon
+!!!!Dún Laoghaire+MWE:	NP-PLACE;	! !!!!Dún Laoghaire
+!!!!Dún Léire+MWE:	NP-PLACE;	! Dunleer
+!!!!Dún na nGall+MWE:	NP-PLACE;	! Donegal
+!!!!Dún Pádraig+MWE:	NP-PLACE;	! Downpatrick
+!!!!Éadan Doire+MWE:	NP-PLACE;	! Edenderry
+!!!!Fhear Manach+MWE:	NP-PLACE;	! !!!!Co. Fermanagh
+!!!!Gleann Dá Ghrua+MWE:	NP-PLACE;	! !!!!Glen of the Downs
 Ceithleann	NP-PLACE;	! Enniskillen
 Córthaidh	NP-PLACE;	! Enniscorthy
-!!!!Léim an Mhadaidh	NP-PLACE;	! Limavady
+!!!!Léim an Mhadaidh+MWE:	NP-PLACE;	! Limavady
 Leithghlinn	NP-PLACE;	! Leighlinbridge
-!!!!Leitir Ceanainn	NP-PLACE;	! Letterkenny
-!!!!Lias na gCearrbhach	NP-PLACE;	! Lisburn
-!!!!Lios Mór	NP-PLACE;	! Lismore
-!!!!Lios na Scéithe	NP-PLACE;	! Lisnaskea
-!!!!Lios Tuathail	NP-PLACE;	! Listowel
-!!!!Loch Garman	NP-PLACE;	! !!!!Co Wexford
+!!!!Leitir Ceanainn+MWE:	NP-PLACE;	! Letterkenny
+!!!!Lias na gCearrbhach+MWE:	NP-PLACE;	! Lisburn
+!!!!Lios Mór+MWE:	NP-PLACE;	! Lismore
+!!!!Lios na Scéithe+MWE:	NP-PLACE;	! Lisnaskea
+!!!!Lios Tuathail+MWE:	NP-PLACE;	! Listowel
+!!!!Loch Garman+MWE:	NP-PLACE;	! !!!!Co Wexford
 !!!!Loch Garman	NP-PLACE;	! Wexford
 !!!!Maigh Nuad	NP-PLACE;	! Maynooth
 !!!!Mainistir Fhear Maí	NP-PLACE;	! Fermoy
