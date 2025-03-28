@@ -1,5 +1,5 @@
 ! Divvun & Giellatekno - open source grammars for Irish language
-! Copyright © 2015 The University of Tromsø & the Norwegian Sámi Parliament
+! Copyright © 2025 UiT The Arctic University of Norway & the Norwegian Sámi Parliament
 ! http://giellatekno.uit.no & http://divvun.no
 !
 ! This program is free software; you can redistribute and/or modify
@@ -664,6 +664,11 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 ^hv
 ^Verb
 ^áil
+
+!! ## New tags from 2025
++MWE !!= - **@CODE@** = Multi word expression
++Err/Orth !!= - **@CODE@** = Orthografical error
++Err/SpaceCmp !!= - **@CODE@** = Compound space error
 
 !! ## Flag diacritics
 !! We have manually optimised the structure of our lexicon using following
