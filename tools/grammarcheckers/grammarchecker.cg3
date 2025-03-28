@@ -865,7 +865,7 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg &SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgno
 	# nouns should be genitive
 	
 
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art))(NEGATE 0 (Gen Sg))(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg))(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
 (NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD);
 	#$ An múinteoir Ben
 	#$ Thug an rialtas airgead do é.
