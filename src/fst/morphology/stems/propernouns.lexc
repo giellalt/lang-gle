@@ -21,17 +21,17 @@ LEXICON NP-LEX-EIRE
 <C a i s l e á n %_:%  R i a b h a c h> NP-PLACE;
 <C l o c h %_:%  L i a t h> NP-PLACE;	! Greystone
 
-!!!!Roinn an Taoisigh	NP-PLACE;	!TROND
-!!!!Áras an Uachtaráin	NP-PLACE; !president's house
-!!!!Parlaimint na hEorpa	NP-PLACE;
-!!!!Parlaimint an Eoraip	NP-PLACE; !Err/Orth
+!!!!Roinn% an% Taoisigh	NP-PLACE;	!TROND
+Áras% an% Uachtaráin+MWE:Áras% an% Uachtaráin	NP-PLACE; !president's house
+Parlaimint% na% hEorpa+MWE:Parlaimint% na% hEorpa	NP-PLACE;
+Parlaimint% na% hEorpa+MWE+Err/Orth:Parlaimint% an% Eoraip	NP-PLACE; !Err/Orth
+Dáil% Éireann+MWE+Err/Orth:Dáil% Éire NP-PLACE-fem; !Err/Orth
+Dáil% Éireann+MWE:Dáil% Éireann NP-PLACE-fem;
 !!!!Dáil Éire !Err/Orth
-!!!!Dáil Éireann NP-PLACE-fem;
-!!!!Dáil Éire !Err/Orth
-!!!!Bus Éireann
-!!!!Bus Éire !Err/Orth
-!!!!Raidió Teilifís Éireann
-!!!!Raidió Teilifís Éire !Err/Orth
+Bus% Éireann+MWE:Bus% Éireann	NP-PLACE;
+Bus% Éireann+MWE+Err/Orth:Bus% Éire 	NP-PLACE; !Err/Orth
+Raidió% Teilifís% Éireann+MWE:Raidió% Teilifís% Éireann  	NP-PLACE;
+Raidió% Teilifís% Éireann+MWE+Err/Orth:Raidió% Teilifís% Éire  	NP-PLACE; !Err/Orth
 !!!!Met Éireann NP-PLACE-fem;
 !!!!Met Éire NP-PLACE-fem; !Err/Orth
 !!!! "hÉire" Prop Noun Fem Gen Sg DefArt (people of the Ireland)
@@ -12312,6 +12312,7 @@ LEXICON NPI-Gaelainn
 
 LEXICON NPI-Éire
 +Prop+Noun+Fem+Com+Sg:Éire			InitMut;
++Prop+Noun+Fem+Com+Sg+DefArt:hÉire	#;
 +Prop+Noun+Fem+Gen+Sg:Éireann	#;
 +Prop+Noun+Fem+Gen+Sg+DefArt:hÉireann	#;
 +Prop+Noun+Fem+Dat+Sg:Éirinn		#;
