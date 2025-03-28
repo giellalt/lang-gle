@@ -396,6 +396,11 @@ Subj is used for subjunctive
 
 - **^IM	** = initial mutation
 
+## New tags from 2025
+- **+MWE ** = Multi word expression
+- **+Err/Orth ** = Orthografical error
+- **+Err/SpaceCmp ** = Compound space error
+
 ## Flag diacritics
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
