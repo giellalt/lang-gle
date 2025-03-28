@@ -20,6 +20,25 @@ LEXICON NP-LEX-EIRE
 <T í r %_:%  E o g h a i n> NP-PLACE;
 <C a i s l e á n %_:%  R i a b h a c h> NP-PLACE;
 <C l o c h %_:%  L i a t h> NP-PLACE;	! Greystone
+
+!!!!Roinn an Taoisigh	NP-PLACE;	!TROND
+!!!!Áras an Uachtaráin	NP-PLACE; !president's house
+!!!!Parlaimint na hEorpa	NP-PLACE;
+!!!!Parlaimint an Eoraip	NP-PLACE; !Err/Orth
+!!!!Dáil Éire !Err/Orth
+!!!!Dáil Éireann NP-PLACE-fem;
+!!!!Dáil Éire !Err/Orth
+!!!!Bus Éireann
+!!!!Bus Éire !Err/Orth
+!!!!Raidió Teilifís Éireann
+!!!!Raidió Teilifís Éire !Err/Orth
+!!!!Met Éireann NP-PLACE-fem;
+!!!!Met Éire NP-PLACE-fem; !Err/Orth
+!!!! "hÉire" Prop Noun Fem Gen Sg DefArt (people of the Ireland)
+!!!! Iarnród Éireann = correct; Iarnród Éire = incorrect
+!!!! Muintir na hÉireann, Uachtarán na hIodáile
+
+
 BÁC	NP-PLACE;
 BAC	NP-PLACE;
 Cabhán	NP-PLACE;	! Cavan
