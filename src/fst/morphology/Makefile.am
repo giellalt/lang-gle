@@ -162,10 +162,6 @@ if CAN_FOMA
 GIELLA_LOCAL_TARGETS+=$(addsuffix .foma,$(GLE_TARGETS))
 endif # CAN_HFST
 
-if CAN_XFST
-GIELLA_LOCAL_TARGETS+=$(addsuffix .xfst,$(GLE_TARGETS))
-endif # CAN_HFST
-
 generated_files/gle.noun-all.lexc: root-noun-all.lexc $(GT_NOUN_SRCS)
 	$(AM_V_at)$(MKDIR_P) generated_files
 	$(AM_V_GEN)cat $^ > $@
