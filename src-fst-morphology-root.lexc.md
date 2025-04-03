@@ -138,11 +138,8 @@ Subj is used for subjunctive
 
 - **+XMLTag		** = 
 
-- **+VT +VI +VTI	** = transitive, intrans., both trans & intrans
 - **+1P +2P +3P 	** = First, second and third person
 - **+Auto		** = Autonomous 
-
-- **+Sg +Pl		** = Singular and Plural
 
 - **+PresInd	** = Present Indicative
 - **+PastInd	** = Past Indicative
@@ -391,7 +388,6 @@ Subj is used for subjunctive
 - **^Fr		** = Fréamh (root) use root - i.e.don't syncopate in these cases 
 - **^Do		** = d' before Past Past Imperfect (gnáthchaite0 and conditional
 - **^hv		** = h before vowel e.g. ná hólaigí ...
-- **+VD	** = ditransitive - not at present
 - **+NStem	** = de-nominal verbal (action) noun
 
 - **^IM	** = initial mutation
