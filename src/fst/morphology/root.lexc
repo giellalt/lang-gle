@@ -237,13 +237,10 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Conj +Coord +Subord
 
 +Verbal
-+Verb
-+VT +VI +VTI	!!= - **@CODE@** = transitive, intrans., both trans & intrans
 +1P +2P +3P 	!!= - **@CODE@** = First, second and third person
 +Auto		!!= - **@CODE@** = Autonomous 
 +Vow
 
-+Sg +Pl		!!= - **@CODE@** = Singular and Plural
 
 		!- Indicative Mood - Modh Táscach 
 +PresInd	!!= - **@CODE@** = Present Indicative
@@ -652,10 +649,6 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Ecl
 +Gen
 +hPref
-+VT
-+VI
-+VTI
-+VD	!!= - **@CODE@** = ditransitive - not at present
 +NStem	!!= - **@CODE@** = de-nominal verbal (action) noun
 
 ^IM	!!= - **@CODE@** = initial mutation
