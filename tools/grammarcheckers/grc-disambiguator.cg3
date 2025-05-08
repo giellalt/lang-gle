@@ -1800,7 +1800,7 @@ REMOVE (Prep Simp) IF (0 ("a")) ( NOT 1 A-PREP-PHR OR (Verbal Noun Len) OR (Gues
 # BUT:  trí sheisiún could be prep or num
 # "a" could be Det Poss or Prep Simp before Noun
 # e.g. a shúil ar an pheata madaidh ...
-SELECT (Prep Simp) IF (1C NOUN-PREMOD OR (Noun)) (NOT 0 ("<trí>") OR ("<a>"));
+SELECT (Prep Simp) IF (1C NOUN-PREMOD OR (Noun)) (NOT 0 ("<trí>") OR ("<a>") OR Det);
 
 # NEW EUD
 SELECT (Part Inf) IF (1C (Verbal Noun));
@@ -1899,7 +1899,7 @@ SELECT (Adj) IF (-1 (",")) (-2 (Adj)) (-3 (",")) (-4 (Adj));
 #SELECT (Poss 3P Sg Fem) IF ( 1C (Noun hPref) OR (Verbal Noun));
 
 REMOVE (Det Poss 3P Pl) IF ( NOT 1 (Noun Ecl) );
-REMOVE (Det Poss 3P Sg Masc) IF ( NOT 1 (Noun Len));
+#REMOVE (Det Poss 3P Sg Masc) IF ( NOT 1 (Noun Len));
 
 SELECT (Det Poss 3P Pl) IF ( 1C (Noun Ecl) ) (NOT 1 (Verbal Noun));
 SELECT (Det Poss 3P Sg Masc) IF ( 1C (Noun Len) ) (NOT 1C (Noun Voc)) (NOT 1 (Verbal Noun));
