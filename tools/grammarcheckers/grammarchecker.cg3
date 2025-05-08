@@ -160,7 +160,12 @@ LIST Def = Def ; #!! Def
 LIST Fem = Fem ; #!! Fem
 LIST Masc = Masc ; #!! Masc
 LIST Len = Len ; #!! Len
+LIST hPref = hPref ; #!! hPref, for h prefixation
 LIST Ecl = Ecl ; #!! Ecl
+LIST Poss = Poss ; #!! Poss, possessive
+LIST 1P = 1P ;
+LIST 2P = 2P ;
+LIST 3P = 3P ;
 
 LIST Nom = Nom ; #!! Nom
 LIST Acc = Acc ; #!! Acc
@@ -425,6 +430,8 @@ LIST PL2-V = (V Pl2)  ;  #!! PL2-V
 LIST PL3-V = (V Pl3)  ;  #!! PL3-V
 
 LIST MODOA = (Poss 1P Sg) (Poss 2P Sg) (Poss 3P Sg Masc) ; #!! Set for your, my and his
+
+LIST PLPOSS = (Poss Pl)  ;
 
  # Note that imperative verbs are not included in these sets!
 
@@ -730,6 +737,10 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 ADD:msyn-lenition-after-possessive-adjective (&msyn-lenition-after-possessive-adjective) TARGET (Noun Com) IF (-1 Det +  MODOA)(NOT 0 Len) ;
 COPY:msyn-lenition-after-possessive-adjective (Len &SUGGEST) EXCEPT (&msyn-lenition-after-possessive-adjective) TARGET (&msyn-lenition-after-possessive-adjective) ;
 #ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+
+ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
+COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
+#ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 
 
 
