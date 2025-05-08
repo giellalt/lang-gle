@@ -632,6 +632,7 @@ LIST &err-gen-po = &err-gen-po ;
 LIST &err-no-conneg = &err-no-conneg ;
 LIST &err-orrood-inf = &err-orrood-inf ;
 LIST &lex-tá-is = &lex-tá-is ;
+LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;
 LIST &msyn-adj-gender = &msyn-adj-gender ;
 LIST &msyn-adj-gender2 = &msyn-adj-gender2 ;
 LIST &msyn-ar-a-haon-a-chlog = &msyn-ar-a-haon-a-chlog ;
@@ -734,6 +735,9 @@ COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &m
 SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
 
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
+
+ADD:msyn-lenition-after-possessive-adjective (&msyn-lenition-after-possessive-adjective) TARGET (Noun Com) IF (-1 (Det Poss 1P Sg))(NOT 0 Len) ;
+COPY:msyn-lenition-after-possessive-adjective (Len &SUGGEST) EXCEPT (&msyn-lenition-after-possessive-adjective) TARGET (&msyn-lenition-after-possessive-adjective) ;
 
 
 
