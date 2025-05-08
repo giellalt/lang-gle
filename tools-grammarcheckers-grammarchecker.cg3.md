@@ -76,7 +76,9 @@ Def
 Fem
 Masc
 Len
+hPref, for h prefixation
 Ecl
+Poss, possessive
 
 Nom
 Acc

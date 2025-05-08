@@ -565,7 +565,8 @@ language are presented in this system in terms of the following symbols.
 - **+Coord		** = co-ordinate
 - **+Subord		** = subordinate
 
-- **+Det		** = Determiner
+- **+Det		** = Determiner, e.g. mo, do
+- **+Short		** = Short determiner, e.g. m', d'
 
 - **+Dem		** = Demonstrative
 - **+Poss		** = Possessive
@@ -1634,7 +1635,9 @@ Def
 Fem
 Masc
 Len
+hPref, for h prefixation
 Ecl
+Poss, possessive
 
 Nom
 Acc
