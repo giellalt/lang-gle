@@ -10,10 +10,10 @@ LEXICON Determiners
 !!!!POSSESSIVE !!!!!
 
 mo+Det+Poss+1P+Sg:mo		#;	! my
-mo+Det+Poss+1P+Sg:m'		#;	! my
+mo+Det+Short+Poss+1P+Sg:m'	#;	! my, Trond added +Short, this should be discussed.
 do+Det+Poss+2P+Sg:do		#;	! your
-do+Det+Poss+2P+Sg:d'		#;	! your
-ár+Det+Poss+1P+Pl:ár			#;	! our
+do+Det+Short+Poss+2P+Sg:d'	#;	! your
+ár+Det+Poss+1P+Pl:ár		#;	! our
 bhur+Det+Poss+2P+Pl:bhur	#;	! your 
 
 !! this information is on the noun as initial mutation
