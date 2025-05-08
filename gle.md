@@ -1601,6 +1601,7 @@ LEFT
 RIGHT
 WEB
 PPUNCT
+Det
 PUNCT
 
 COMMA
@@ -1851,12 +1852,11 @@ NOT-PRFPRC
 SG1-V
 SG2-V
 SG3-V
-DU1-V
-DU2-V
-DU3-V
 PL1-V
 PL2-V
 PL3-V
+
+Set for your, my and his
 
 ### Pronoun sets
 
