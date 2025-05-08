@@ -171,6 +171,24 @@
     </body>
   </error>
 
+
+  <error id="msyn-lenition-after-possessive-adjective">
+    <header>
+      <title xml:lang="ga">asd asdf</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">blabla.</description>
+      <description xml:lang="en">Remember lenition after possessive pronouns.</description>
+    <examples>
+      <ex xml:lang="ga">Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.</ex>
+    </examples>
+    </body>
+  </error>
+  
+  
+
+  
   <error id="typo">
     <header>
       <title xml:lang="en">Spelling error</title>
