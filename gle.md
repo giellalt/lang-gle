@@ -362,6 +362,17 @@ ALL PLURALS
 
 ---
 
+# src-fst-morphology-affixes-prefixes.lexc.md 
+
+Prefixes
+Prefixes in the Irish language are bound to beginning of other words.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/prefixes.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/prefixes.lexc)</small>
+
+---
+
 # src-fst-morphology-affixes-propernouns.lexc.md 
 
 Proper noun inflection
@@ -1200,17 +1211,6 @@ i.e. complementiser "that" ...
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/particles.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/particles.lexc)</small>
-
----
-
-# src-fst-morphology-stems-prefixes.lexc.md 
-
-Prefixes
-Prefixes in the Irish language are bound to beginning of other words.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/morphology/stems/prefixes.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/prefixes.lexc)</small>
 
 ---
 
