@@ -21,7 +21,12 @@ set need-separators off
 
 Define lexmorph @bin"analyser_relabelled-gramcheck-gt-desc.hfst" ;
 
-Define morphology [ lexmorph | UpCase(lexmorph, U) ] ;
+Define prefixes_v [ [ {m'} | {d'} | {s'} ] .o. lexmorph
+                  [ 0:"@PMATCH_INPUT_MARK@" | 0:"@PMATCH_BACKTRACKING@" ]
+                ] ;
+
+Define morphology [ lexmorph | UpCase(lexmorph, U) |
+                    prefixes_v [ [ [ [a|e|i|o|u|á|é|í|ó|ú]  ?* ] .o. lexmorph ] ] ] ;
 
 Define url @bin"analyser-url-gt-desc.hfst" ;
 
