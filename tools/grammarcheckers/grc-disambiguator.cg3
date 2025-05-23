@@ -1,7 +1,10 @@
 # ==================================================================== #
 # I R I S H   D I S A M B I G U A T I O N  FOR GRAMMAR CHECKING
 # ==================================================================== #
-# Elaine Uí Dhonnchadha, Linda Wiechetek (grammar checker modifications)
+# Elaine Uí Dhonnchadha # 2004-2024
+# Christoph Wendler # 2008-2009
+# Gearóid Ó Donnchadha # 2015
+# Linda Wiechetek (grammar checker modifications) # 2024-2025
 # March 2004-2025
 # Christoph Wendler 
 # 2008/9
@@ -19,7 +22,7 @@
 # SENTENCE DELIMITERS
 # ==================================================================== #
 
-DELIMITERS = "<.>" "<!>" "<?>" "<#>" "<</p>>" "<</s>>" "<...>";
+DELIMITERS = "<.>" "<!>" "<?>" "<$.>" "<#>" "<</p>>" "<</s>>" "<...>" "</p>" "</s>" "</u>";
 
 PREFERRED-TARGETS = Pron Noun PastInd PresSubj ;
 
@@ -43,17 +46,22 @@ LIST COMMA = "<,>" ;
 LIST CITATION = "«" "“" "\"" "„" "‟" "'" "‹" "‘" "‚" "‛" "❛" "❝" "❮" "〝" "〟" "»" "“" "\"" "'" "›" "’" "❜" "❞" "❯" "〞" "＂" """ ; 
 LIST PUNCT-INT = (Punct Int) (Punct Bar) (Punct Brack);
 
-LIST CLB = (Rel) (Coord) (Subord) (Cmpl) ;
+#LIST CLB = (Rel) (Coord) (Subord) (Cmpl) (Punct Fin) ; # punct fin 2018
+# removed Coord as it can coord anything not just sentences
+# added Part to Rel to stop atá being counted as a clause boundary in rule expecting Rel to come before Verb 
+LIST CLB = (Part Rel) (Subord) (Cmpl) (Punct Fin) ; 
 SETS
+
+
+LIST COP-COND = "<Ba>" "<Ar>" "<B'>" "<Nár>" "<nár>" "<Arbh>";
 
 # attributive adj. set
 LIST ADJ-ATTR = (Adj Com) (Adj Gen) (Adj Voc) ;
-
-LIST ADJ-NOT-VA = (Adj Com) (Adj Gen) (Adj Voc) (Adj Base) (Guess Adj) ;
+LIST ADJ-NOT-VA = (Adj Com) (Adj Gen) (Adj Voc) (Adj Base) (Guess Adj) ; # 
 
 # adjectives follow nouns but the following is 
 # a list of the few adjectives can precede a noun
-LIST ADJ-PRENOM = "droch" "sean" "príomh" "fíor" "iontach" "dearg" "leath" "corr" "gnáth" "mór"; 
+LIST ADJ-PRENOM = "droch" "sean" "príomh" "fíor" "iontach" "dearg" "leath" "corr" "gnáth" "mór";
 
 # Any noun other than verbal-noun
 # the are several types of Noun: +Noun, Subst+Noun, Prop+Noun, Verbal+Noun,
