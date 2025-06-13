@@ -837,8 +837,8 @@ COPY:msyn-inis-do ("do" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-inis-do) OR ("tú
 	
 ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
 COPY:msyn-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&msyn-ar-an-aonach) ;
-ADDCOHORT:msyn-ar-an-aonach ("<an>" "an" ADDED &msyn-ar-an-aonach) AFTER &msyn-ar-an-aonach (NEGATE 0 ADDED);
-ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED)) ;
+ADDCOHORT:msyn-ar-an-aonach ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-aonach) AFTER &msyn-ar-an-aonach (NEGATE 0 ADDED);
+ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 ADD:msyn-ar-a-haon-a-chlog (&msyn-ar-a-haon-a-chlog) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("a haon a chlog") BARRIER (*) - (Noun Com)) ;
 COPY:msynar-a-haon-a-chlog ("ar" SUGGEST) EXCEPT ("ag" &msynar-a-haon-a-chlog) TARGET (&msynar-a-haon-a-chlog);	
@@ -1043,8 +1043,8 @@ ADD:msyn-ar-an-tae (&msyn-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 ("tae")) ;
 	#$Bainne a chur ar do chuid tae.
 	##Bainne a chur sa tae.
 COPY:msyn-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&msyn-ar-an-tae) ;
-ADDCOHORT:msyn-ar-an-tae ("<an>" "an" ADDED &msyn-ar-an-tae) AFTER &msyn-ar-an-tae (NEGATE 0 ADDED);
-ADDRELATION:msyn-ar-an-tae ($2 RIGHT) (V &msyn-ar-an-tae) TO (1 (ADDED)) ;
+ADDCOHORT:msyn-ar-an-tae ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-tae) AFTER &msyn-ar-an-tae (NEGATE 0 ADDED);
+ADDRELATION:msyn-ar-an-tae ($2 RIGHT) (V &msyn-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
 #This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
@@ -1056,8 +1056,8 @@ ADDRELATION:msyn-ar-an-tae ($2 RIGHT) (V &msyn-ar-an-tae) TO (1 (ADDED)) ;
 
 ADD:msyn-ar-an-gcaife (&msyn-ar-an-gcaife) TARGET ("i" Prep Art Sg) IF (1 ("caife" Noun Masc Gen Sg DefArt)) ;
 COPY:msyn-ar-an-gcaife ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&msyn-ar-an-gcaife) ;
-#ADDCOHORT:msyn-ar-an-gcaife ("<an>" "an" ADDED &msyn-ar-an-gcaife) AFTER &msyn-ar-an-gcaife (NEGATE 0 ADDED);
-#ADDRELATION:msyn-ar-an-gcaife ($2 RIGHT) (V &msyn-ar-an-gcaife) TO (1 (ADDED)) ;
+#ADDCOHORT:msyn-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-gcaife) AFTER &msyn-ar-an-gcaife (NEGATE 0 ADDED);
+#ADDRELATION:msyn-ar-an-gcaife ($2 RIGHT) (V &msyn-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
 #ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
 	#(-1 Art)
 	#(-2 ECL-PREP + Prep + Simp)
@@ -1104,6 +1104,6 @@ ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET 
 	## Tá sé ar intinn aici é sin {dhéanamh}.
 	## Sin an obair {chríochnófar} amárach
 
-ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED);
+ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED);
 
 ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
