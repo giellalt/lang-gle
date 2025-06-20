@@ -1879,6 +1879,8 @@ expression **WORD - premodifiers**.
 
 ### Border sets and their complements
 
+### Morphoponological sets
+
 ### Grammarchecker sets
 
 * * *
