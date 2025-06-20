@@ -1,5 +1,5 @@
 # -*- cg-pre-pipe: "./modes/glegram-dev6-cg.mode" -*-
-# Divvun & Giellatekno - open source grammars for Sámi and otMODOher languages
+# Divvun & Giellatekno - open source grammars for Sámi and other languages
 # Copyright © 2000-2025 UiT The Arctic University of Norway
 # http://giellatekno.uit.no & http://divvun.no
 #
@@ -11,7 +11,7 @@
 # also available in the file $GTHOME/LICENSE.txt.
 #
 # Other licensing options are available upon request, please contact
-# giellatekno@hum.uit.no or divvun@hum.uit.no
+# giellatekno@uit.no or divvun@uit.no
 
 # ==================================================================== #
 #!!       IRISH  G R A M M A R   C H E C K E R
@@ -932,7 +932,12 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns) ;
+LIST WORD-BEGIN-NO-LEN = ("<[dntls].*>"r) ;
+
+LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
+
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
+
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
