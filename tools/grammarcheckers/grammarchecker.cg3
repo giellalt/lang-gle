@@ -616,7 +616,12 @@ SET SV-BOUNDARY = S-BOUNDARY OR Inf OR Sup OR FMAINV ;
 SET CCCOMMA = CC OR COMMA ;
 	# remember that those are potential sentence boundaries, too
 
+#!! ### Morphoponological sets
 
+
+LIST WORD-BEGIN-NO-LEN = ("<[dntls].*>"r) ;
+
+LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
 
 
 #!! ### Grammarchecker sets
@@ -671,6 +676,9 @@ LIST <fixedcase> = <fixedcase>;
 ADD:fixedcase-np <fixedcase> TARGET Prop ; # Never change case of proper nouns
 
 SECTION
+
+ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;
+
 
 #Here is a list of some errors that I collated. 
 # 
@@ -873,7 +881,8 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg))(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
-(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD);
+(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)
+(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
 	#$ An múinteoir Ben
 	#$ Thug an rialtas airgead do é.
 
@@ -931,10 +940,6 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 # Definiteness errors in nouns
 
 LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
-
-LIST WORD-BEGIN-NO-LEN = ("<[dntls].*>"r) ;
-
-LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECL-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
 
