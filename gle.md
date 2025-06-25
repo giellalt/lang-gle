@@ -816,6 +816,29 @@ given the proper use of these flags.
 |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
 |  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
 
+# The Root lexicon etc.
+
+- **LEXICON Root			    	** = 
+- **	Abbrev;				    	** = 
+- **	Adverb;				    	** = 
+- **        Articles;		    	** = 
+- **	Conjunctions;		    	** = 
+- **	Determiners;		    	** = 
+- **	Interjections;		    	** = 
+- **	Fillers;			    	** = 
+- **	Communicators;		    	** = 
+- **	Events;				    	** = 
+- **	Numerals;			    	** = 
+- **		Prepositions;	    	** = 
+- **        Personal_Pronouns;  	** = 
+
+- **	Punctuation ;	** = 
+- **    Symbols     ; 	** = 
+
+- **	XMLTags; 	** = 
+
+- **        Tobar;	** = 
+
 - **	AdjA;				** = ORIGINAL TEST LEXICON
 - **	AdjIrregular;			** = ORIGINAL TEST LEXICON
 - **	Adj-BaseOnly;	!AdjBASE;	** = ORIGINAL TEST LEXICON
@@ -837,6 +860,8 @@ given the proper use of these flags.
 - **	NounsD;			** = FP nouns (manual Decl 1-3)
 - **	NounsE;			** = FP nouns (manual Decs 4-5)
 - **	NounsF;			** = FP nouns (manual Irregular)
+- **	NounsIrregular; 	** = 
+- **	Substantive;  	** = 
 - **	NounsFGB1;		** = FGB (O Donaill) automatic (in NCI corpus) 
 - **	NounsFGB2;		** = FGB (O Donaill) automatic (additional)
 - **	NounsVariants;		** = Variants extracted from FGB
@@ -868,6 +893,7 @@ given the proper use of these flags.
 - **	VerbalNounsGen;		** = Version 4 VNs in TEST Lex & Foclóir Póca
 - **	VNVA-FGB1;		** = Foclóir Gaeilge Béarla Ó Dónaill
 - **	VN-Variants;		** = FGB VN variants (VN, VNG & VA included)
+- **	VNEqualVariants; 	** = 
 
 * * *
 
