@@ -26,7 +26,7 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 !! in this system in terms of following symbols.
 !! (It is highly suggested to follow existing standards when adding new tags).
 
-
++MWE
 +Adv		! Adverb
 
 +Gn		! General
@@ -80,8 +80,6 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 
 +Fem		!  feminine gender
 +Masc		!  masculine gender
-
-+Sg +Pl		! singular or plural in number
 
 +CM +CC +CU	! dialects
 
