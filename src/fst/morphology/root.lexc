@@ -307,29 +307,30 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
  @U.Cap.Opt@        !!≈ |  @CODE@ | Allowing downcasing of derived names: deatnulasj.
 
 
+!! # The Root lexicon etc.
 
 
-LEXICON Root
-	Abbrev;
-	Adverb;
-        Articles;
-	Conjunctions;
-	Determiners;
-	Interjections;
-	Fillers;
-	Communicators;
-	Events;
-	Numerals;
-		Prepositions;
-        Personal_Pronouns;
+LEXICON Root			    	!!= - **@CODE@** = 
+	Abbrev;				    	!!= - **@CODE@** = 
+	Adverb;				    	!!= - **@CODE@** = 
+        Articles;		    	!!= - **@CODE@** = 
+	Conjunctions;		    	!!= - **@CODE@** = 
+	Determiners;		    	!!= - **@CODE@** = 
+	Interjections;		    	!!= - **@CODE@** = 
+	Fillers;			    	!!= - **@CODE@** = 
+	Communicators;		    	!!= - **@CODE@** = 
+	Events;				    	!!= - **@CODE@** = 
+	Numerals;			    	!!= - **@CODE@** = 
+		Prepositions;	    	!!= - **@CODE@** = 
+        Personal_Pronouns;  	!!= - **@CODE@** = 
  
 !***************************************************************************
-	Punctuation ;
-    Symbols     ;
+	Punctuation ;	!!= - **@CODE@** = 
+    Symbols     ; 	!!= - **@CODE@** = 
 
-	XMLTags;
+	XMLTags; 	!!= - **@CODE@** = 
 
-        Tobar;
+        Tobar;	!!= - **@CODE@** = 
 
 	AdjA;				!!= - **@CODE@** = ORIGINAL TEST LEXICON
 	AdjIrregular;			!!= - **@CODE@** = ORIGINAL TEST LEXICON
@@ -353,8 +354,8 @@ LEXICON Root
 	NounsD;			!!= - **@CODE@** = FP nouns (manual Decl 1-3)
 	NounsE;			!!= - **@CODE@** = FP nouns (manual Decs 4-5)
 	NounsF;			!!= - **@CODE@** = FP nouns (manual Irregular)
-	NounsIrregular;
-	Substantive; 
+	NounsIrregular; 	!!= - **@CODE@** = 
+	Substantive;  	!!= - **@CODE@** = 
 	NounsFGB1;		!!= - **@CODE@** = FGB (O Donaill) automatic (in NCI corpus) 
 	NounsFGB2;		!!= - **@CODE@** = FGB (O Donaill) automatic (additional)
 	NounsVariants;		!!= - **@CODE@** = Variants extracted from FGB
@@ -396,7 +397,7 @@ LEXICON Root
 	VerbalNounsGen;		!!= - **@CODE@** = Version 4 VNs in TEST Lex & Foclóir Póca
 	VNVA-FGB1;		!!= - **@CODE@** = Foclóir Gaeilge Béarla Ó Dónaill
 	VN-Variants;		!!= - **@CODE@** = FGB VN variants (VN, VNG & VA included)
-	VNEqualVariants;
+	VNEqualVariants; 	!!= - **@CODE@** = 
 
 
 
