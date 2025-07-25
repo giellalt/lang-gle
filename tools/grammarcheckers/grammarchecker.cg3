@@ -793,7 +793,8 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (NEGATE 0 ("<st.*>"r) + Fem)
         (NEGATE 0 ("<se.*>"r) + Fem)
         (NEGATE 0 ("<si.*>"r) + Fem)   
-        (NEGATE 0 ("<sr.*>"r) + Fem) ;
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
 ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
