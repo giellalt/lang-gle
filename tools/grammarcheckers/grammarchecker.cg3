@@ -787,7 +787,7 @@ LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
         #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
-        (0 ("<[bcdfgpst].*>"r)) # the thing you TARGET itself if starting with the letters bcdfgpst
+        (0 ("<[bcdfgpstBCDFGPST].*>"r)) # the thing you TARGET itself if starting with the letters bcdfgpst
         (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
         (NEGATE 0 ("<st.*>"r) + Fem)
         (NEGATE 0 ("<se.*>"r) + Fem)
