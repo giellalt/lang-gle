@@ -277,7 +277,7 @@ SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
 
 
 LIST ECL-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
-LIST LEN-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
+#LIST LEN-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
 
 #!! ### Lookalikes
 
@@ -784,11 +784,275 @@ LIST PREP-ECL = "<i>" "<ar>"; # etc. etc.
 LIST PREP-LEN = "<de>" "<do>" "<i>"; # etc. etc. 
 LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ;
 
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
-        (-1 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+#Caithfear a bheith airdeallach maidir leis na haidiachtaí taispeántacha ‘seo’ agus ‘sin’ a úsáid
+#le réamhfhocail chomhshuite. Is é an tuiseal ginideach a leanann leithéidí ‘de bharr’, ‘de bhrí’, ‘in
+#ainneoin’ agus ‘os coinne’ de ghnáth. Bíodh sin mar atá, ní féidir ‘seo’ agus ‘sin’ a infhilleadh. Botún
+#atá ann a leithéid seo a scríobh: ‘de bharr sin’, ‘in ainneoin sin’ agus ‘os coinne sin’ Ina áit sin, ní mór
+#an aidiacht shealbhach fhirinscneach sa tríú pearsa uatha a chur leo: ‘dá bharr sin’, ‘ina ainneoin sin’
+#agus ‘os a choinne sin.’ Úsáidtear an aidiacht shealbhach sa tríú pearsa iolra chomh maith, de réir mar
+#is cuí: ‘dá mbarr sin’, ‘ina n-ainneoin sin’ agus ‘os a gcoinne sin.’
+
+##de bharr sin - #$dá bharr sin,
+##in ainneoin sin - #$ina ainneoin sin,
+##os coinne sin - #$os a choinn sin.
+##in ainneoin - #$d'ainneoin.
+
+##faoi: faoi bhord
+##de: de chapall
+##do: do Mháire
+##ó: ó Sheán
+##mar: mar dhuine
+##um: um thráthnóna
+##trí: trí dhoras
+##roimh: roimh mhaidin
+##thar: thar fhalla (fisiciúil)
+##eisceacht – thar fóir, thar barr (neamh-fhisiciúil)
+##ar: ar chathaoir (fisiciúil)
+##eisceacht – ar bord, ar maidin (neamh-fhisiciúil)
+##i: i gCorcaigh, i dtigh
+##ag: ag duine
+##ar: ar baile
+##chuig: chuig dochtúir
+##go: go Ciarraí
+##le: le fear
+##idir: idir Corcaigh agus Baile Átha Cliath
+##‘h’ nuair a chiallaíonn idir ’both’ – idir fhir agus mhná
+##gan: gan Seán
+##‘h’ uaireanta – gan mhaith, gan mhoill
+##go: go hálainn
+##le: le háthas, le heagla
+
+# A rule to correct eclipse errors after the preposition AR.
+ADD:msyn-ecl-after-prep-ar (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
         #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
-        (0 ("<[bcdfgpstBCDFGPST].*>"r)) # the thing you TARGET itself if starting with the letters bcdfgpst
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
         (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-ar (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-ar) OR (DefArt &msyn-ecl-after-prep-ar) TARGET (&msyn-ecl-after-prep-ar);
+
+# A rule to correct eclipse errors after the preposition AG.
+ADD:msyn-ecl-after-prep-ag (&msyn-ecl-after-prep-ag) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-ag (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-ag) OR (DefArt &msyn-ecl-after-prep-ag) TARGET (&msyn-ecl-after-prep-ag);
+
+# A rule to correct eclipse errors after the preposition DE.
+ADD:msyn-ecl-after-prep-de (&msyn-ecl-after-prep-de) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-de (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-de) OR (DefArt &msyn-ecl-after-prep-de) TARGET (&msyn-ecl-after-prep-de);
+
+# A rule to correct eclipse errors after the preposition DO.
+ADD:msyn-ecl-after-prep-do (&msyn-ecl-after-prep-do) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-do (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-do) OR (DefArt &msyn-ecl-after-prep-do) TARGET (&msyn-ecl-after-prep-do);
+
+# A rule to correct eclipse errors after the preposition FAOI.
+ADD:msyn-ecl-after-prep-faoi (&msyn-ecl-after-prep-faoi) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-faoi (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-faoi) OR (DefArt &msyn-ecl-after-prep-faoi) TARGET (&msyn-ecl-after-prep-faoi);
+
+# A rule to correct eclipse errors after the preposition GAN.
+ADD:msyn-ecl-after-prep-gan (&msyn-ecl-after-prep-gan) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-gan (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-gan) OR (DefArt &msyn-ecl-after-prep-gan) TARGET (&msyn-ecl-after-prep-gan);
+
+# A rule to correct eclipse errors after the preposition I.
+ADD:msyn-ecl-after-prep-i (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-i (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-i) OR (DefArt &msyn-ecl-after-prep-i) TARGET (&msyn-ecl-after-prep-i);
+
+# A rule to correct eclipse errors after the preposition CHUIG.
+ADD:msyn-ecl-after-prep-chuig (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-chuig (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-chuig) OR (DefArt &msyn-ecl-after-prep-chuig) TARGET (&msyn-ecl-after-prep-chuig);
+
+# A rule to correct eclipse errors after the preposition IDIR.
+ADD:msyn-ecl-after-prep-idir (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-idir (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-idir) OR (DefArt &msyn-ecl-after-prep-idir) TARGET (&msyn-ecl-after-prep-idir);
+
+# A rule to correct eclipse errors after the preposition Ó.
+ADD:msyn-ecl-after-prep-ó (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-ó (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-ó) OR (DefArt &msyn-ecl-after-prep-ó) TARGET (&msyn-ecl-after-prep-ó);
+
+# A rule to correct eclipse errors after the preposition LE.
+ADD:msyn-ecl-after-prep-le (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-le (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-le) OR (DefArt &msyn-ecl-after-prep-le) TARGET (&msyn-ecl-after-prep-le);
+
+# A rule to correct eclipse errors after the preposition MAR.
+ADD:msyn-ecl-after-prep-mar (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-mar (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-mar) OR (DefArt &msyn-ecl-after-prep-mar) TARGET (&msyn-ecl-after-prep-mar);
+
+# A rule to correct eclipse errors after the preposition ROIMH.
+ADD:msyn-ecl-after-prep-roimh (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-roimh (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-roimh) OR (DefArt &msyn-ecl-after-prep-roimh) TARGET (&msyn-ecl-after-prep-roimh);
+
+# A rule to correct eclipse errors after the preposition THAR.
+ADD:msyn-ecl-after-prep-thar (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-thar (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-thar) OR (DefArt &msyn-ecl-after-prep-thar) TARGET (&msyn-ecl-after-prep-thar);
+
+
+# A rule to correct eclipse errors after the preposition TRÍ.
+ADD:msyn-ecl-after-prep-trí (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-trí (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-trí) OR (DefArt &msyn-ecl-after-prep-trí) TARGET (&msyn-ecl-after-prep-trí);
+
+
+# A rule to correct eclipse errors after the preposition UM.
+ADD:msyn-ecl-after-prep-um (&msyn-ecl-after-prep-ar) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 Art) # One to the left of the thing you TARGET is Art
+        (-2 ECL-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET ECL-PREP and also has Prep and Simp tags
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc)  #The rule dosn't target a masculine word starting with the letter S. 
+        (NEGATE 0 ("<st.*>"r) + Fem)
+        (NEGATE 0 ("<se.*>"r) + Fem)
+        (NEGATE 0 ("<si.*>"r) + Fem)   
+        (NEGATE 0 ("<sr.*>"r) + Fem) 
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep-um (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-um) OR (DefArt &msyn-ecl-after-prep-um) TARGET (&msyn-ecl-after-prep-um);
+
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 ECL-PREP + (Prep Simp))
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)
+        (0 ("<[bcdfgpstBCDFGPST].*>"r))
+        (NEGATE 0 ("<[s].*>"r) + Masc)
         (NEGATE 0 ("<st.*>"r) + Fem)
         (NEGATE 0 ("<se.*>"r) + Fem)
         (NEGATE 0 ("<si.*>"r) + Fem)   
