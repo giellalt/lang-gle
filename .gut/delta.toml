@@ -1,6 +1,6 @@
 template = "https://github.com/giellalt/template-lang-und"
-rev_id = 227
-template_sha = "9cfaba0c14c1b854228423435aa2fb6dff3045a5"
+rev_id = 229
+template_sha = "c66d0efaddcfcb5c57a3fb6eb7a7a3caecd1ecc9"
 
 [replacements]
 __REPO__ = "lang-gle"
