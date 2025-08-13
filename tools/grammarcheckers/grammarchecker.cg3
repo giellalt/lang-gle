@@ -844,12 +844,12 @@ COPY:msyn-ecl-after-prep-ar (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-ar) OR (D
 ## Tá bainisteoir nua ar an mbanc. # ok
 
 
-# A rule to correct eclipse errors without an intervening article
+# A rule to correct eclipse errors without an intervening article.
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 PREP-ECL + (Prep Simp))
         (0 ("<[bcdfgpstBCDFGPST].*>"r))
         (NEGATE 0 Ecl);
-
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
 
 ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
