@@ -8,6 +8,7 @@
        <e id="default"/>
       </ids>
     <header>
+      <title xml:lang="en">Grammatical error</title>
       <title xml:lang="ga">Botún gramadaí</title>
       </header>
       <body>
@@ -16,7 +17,7 @@
     </default>
     </defaults>
         
-  <error id="msyn-gen-case">
+  <error id="msyn-gen-case-nouns">
     <header>
       <title xml:lang="ga">An tuiseal ginideach</title>
       <references> <ref n=""/></references>
@@ -25,6 +26,219 @@
       <description xml:lang="ga">Má thagann an t-alt agus ainmfhocal ("$2") i lorg ainmfhocail eile ("$1"), ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
     <examples>
       <ex xml:lang="ga">Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.</ex>
+    </examples>
+    </body>
+  </error>
+
+
+  <error id="fixedcase-np">
+    <header>
+      <title xml:lang="en">Proper noun capital letter</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Never change the case of proper
+      nouns, or perhaps in Irish? Check.</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="lex-tá-is">
+    <header>
+      <title xml:lang="en">Use "is", not "tá"</title>
+      <title xml:lang="ga">Use "is", not "tá"</title>
+    </header>
+    <body>
+      <description xml:lang="en">When "tá" has a first person pronoun to the
+      right, use "is" and not "tá".</description>
+      <description xml:lang="ga">When a first person pronoun to the
+      right, use is and not tá.</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ar-an-gcaife">
+    <header>
+      <title xml:lang="en">Ar and not i in front of caife</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ar-an-tae">
+    <header>
+      <title xml:lang="en">Ar and not i in front of tae</title>
+      <title xml:lang="ga">Ar and not i in front of tae</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-beag-is-fiú-de">
+    <header>
+      <title xml:lang="en">De, not dom, after is fiú</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">Ná déan beag is fiú dom.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ecl-after-prep-sfem">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga"></ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-fada-ó">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-h-after-fem-possessive-adjective">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ie.i.">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-prep-pron">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-tóin-poill">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="spell-conservatively">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="spell-it-all">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="syn-a-before-verb-relativephrase">
+    <header>
+      <title xml:lang="en">English title</title>
+      <title xml:lang="ga">And Irish title...</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">English description</description>
+      <description xml:lang="ga">Irish description</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
     </examples>
     </body>
   </error>
@@ -119,6 +333,20 @@
     </body>
   </error>
 
+  <error id="msyn-inis-do">
+    <header>
+      <title xml:lang="en">Inis agus do</title>
+      <title xml:lang="ga">Inis agus do</title>
+    </header>
+    <body>
+      <description xml:lang="en">Not done.</description>
+      <description xml:lang="ga">Not done.</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+
   <error id="msyn-cúpla-plnoun-sgnoun">
     <header>
       <title xml:lang="ga">Bíonn uimhir uatha ann i lorg an fhocail cúpla</title>
@@ -132,7 +360,8 @@
     </body>
   </error>
 
-  <error id="msyn-i-rith-nom-gen">
+  <error id="msyn-i-rith-nom-gen"><!-- Note! This rule is not found in
+				       grammarchecker.cg3 -->
     <header>
       <title xml:lang="ga">An<em>ginideach</em> i lorg ainmfhocail ama.</title>
       <references> <ref n=""/></references>
@@ -186,6 +415,29 @@
     </body>
   </error>
   
+  
+  <error id="use-ellipsis">
+    <header>
+      <title xml:lang="en">Ellipsis</title>
+      <title xml:lang="ga">Ellipse</title>
+    </header>
+    <body>
+      <description xml:lang="en">You have used three periods, "$1". Here an ellipsis would have been a better choice.</description>
+      <description xml:lang="ga">Tun lah kiävttám 3 čuággá. Toos heivee kevttiđ ellipsa, "…".</description>
+    </body>
+  </error>
+  
+  
+  <error id="use-guillemets">
+    <header>
+      <title xml:lang="en">Guillemets</title>
+      <title xml:lang="ga">.. in Irish</title>
+    </header>
+    <body>
+      <description xml:lang="en">in engl</description>
+      <description xml:lang="ga">In Irish</description>
+    </body>
+  </error>
   
 
   
