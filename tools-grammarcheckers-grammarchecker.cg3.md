@@ -181,6 +181,8 @@ PROP-SUR
 
 TIME-N-SET
 
+### Sets for prepositions
+
 ### Lookalikes
 
 ###  Syntactic tags
@@ -323,6 +325,8 @@ expression **WORD - premodifiers**.
 ### Morphoponological sets
 
 ### Grammarchecker sets
+
+### RUles for lenition
 
 * * *
 
