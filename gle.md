@@ -1526,28 +1526,16 @@ Nom
 Acc
 Gen
 Dat
-Ill
 Loc
 Com
 Ess
 Par
 Voc
 Sg
-Du
 Pl
 Cmp/SplitR
 Cmp/SgNom Cmp/SgGen
 Cmp/SgGen
-PxSg1
-PxSg2
-PxSg3
-PxDu1
-PxDu2
-PxDu3
-PxPl1
-PxPl2
-PxPl3
-Px
 
 Comp
 Superl
@@ -1624,6 +1612,12 @@ PROP-SUR
 TIME-N-SET
 
 ### Sets for prepositions
+
+The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
+
+These prepositions want an additonal consonant in front of its complement in order to cause ECL:
+
+Noun errors (Ecl vs. not Ecl) after prepositions
 
 ### Lookalikes
 
@@ -1705,12 +1699,11 @@ See the sourcefile itself to inspect the sets, what follows here is an overview 
 
 ### Sets for Single-word sets
 
-INITIAL
-
 ### Sets for word or not
 
 WORD
-NOT-COMMA
+any word
+NOT-COMMA !!= * @NO CODE@
 
 ### Case sets
 
@@ -1724,6 +1717,8 @@ NOT-GEN
 NOT-ACC
 
 ### Verb sets
+
+#### Verbs and their complements
 
 NOT-V
 
@@ -1745,6 +1740,10 @@ PL2-V
 PL3-V
 
 Set for your, my and his
+
+Note that imperative verbs are not included in these sets!
+
+Some subsets of the VFIN sets
 
 ### Pronoun sets
 
@@ -1768,7 +1767,143 @@ expression **WORD - premodifiers**.
 
 ### Grammarchecker sets
 
-### RUles for lenition
+* LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
+* LIST ADDED = ADDED ;   tag ensuring ... hmm
+* LIST &err-agr = &err-agr ;  tags for error types (all must be declared)
+* LIST &err-ext-agr = &err-ext-agr ; ...
+* LIST &err-ext-vagr = &err-ext-vagr ;       
+* LIST &err-gen-po = &err-gen-po ;       
+* LIST &err-no-conneg = &err-no-conneg ;       
+* LIST &err-orrood-inf = &err-orrood-inf ;       
+* LIST &lex-tá-is = &lex-tá-is ;       
+* LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
+* LIST &msyn-adj-gender = &msyn-adj-gender ;       
+* LIST &msyn-adj-gender2 = &msyn-adj-gender2 ;  
+* LIST &msyn-ar-a-haon-a-chlog = &msyn-ar-a-haon-a-chlog ;  
+* LIST &msyn-ar-an-aonach = &msyn-ar-an-aonach ;  
+* LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ;  
+* LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
+* LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
+* LIST &msyn-ecl-after-prep2 = msyn-ecl-after-prep2 ;      
+* LIST &fada-ó = &fada-ó ;     
+* LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;     
+* LIST &msyn-ie.i. = &msyn-&.i. ;     
+* LIST &msyn-inis-de = &msyn-inis-de ;     
+* LIST &msyn-inis-do = &msyn-inis-do ;     
+* LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
+* LIST &msyn-noun-defart = &msyn-noun-defart ;     
+* LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
+* LIST &msyn-prep-pron = &msyn-prep-pron ;     
+* LIST &msyn-gen-case = &msyn-gen-case ;     
+* LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;     
+* LIST &msyn-gen-case-fem-sing = &msyn-gen-case-article-fem-sing ;     
+* LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;     
+* LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ;     
+* LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;     
+* LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
+* LIST &msyn-ar-an-tae = &msyn-ar-an-tae;     
+* LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;     
+* LIST &msyn-tóin-poill = &msyn-tóin-poill ;     
+* LIST &msyn-fem-article = &msyn-fem-article ;     
+* LIST &spell-conservatively = spell-conservatively ;     
+* LIST &spell-it-all = spell-it-all ;     
+* LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;     
+* LIST &use-ellipsis = &use-ellipsis ;     
+* LIST &use-guillemets = &use-guillemets ;     
+* LIST SUGGEST = SUGGEST ;     
+
+* MAPPING-PREFIX = & ;     
+
+Here ends the list and set section
+
+# BEFORE-SECTIONS       
+
+* LIST <fixedcase> = <fixedcase>;        
+* ADD:fixedcase-np <fixedcase> TARGET Prop ;      ,  Never change case of proper nouns
+
+# SECTION       
+
+## spellchecking
+
+* ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;       = add rule marking typos
+
+* LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;      (to be moved to other tags)
+
+* **RULE: lex-tá-is ** to change *tá* to *is*
+
+## Gender errors in adjectives
+
+**RULE: msyn-adj-gender** to change Masc adjective to Fem if it modifies a feminine noun
+
+## Noun errors (Len vs. not Len) after prepositions
+
+* LIST LEN-PREP = "ag" "ar" "i" "thar" "de" "do" "faoi" "gan" "idir" "ó" "roimh" "thar" "trí" "um" ;      
+These prepositions want an lenited version, adding an h after the initial letter
+
+* LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;      
+This is what ???
+
+## Prepositions
+
+**ADD:msyn-prep-pron** rule complex that turns a simple preposition into a person-inflected preposition
+
+**ADD:msyn-lenition-after-possessive-adjective**: rule to add lenition to nouns following a possessive adjective
+
+**ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
+
+**ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
+
+**ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
+
+**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors with an intervening article
+
+**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article.
+
+**ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
+
+### Rules for lenition
+
+More rules here forthcoming
+
+**ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
+
+**ADD:msyn-inis-do** ...	
+
+**ADD:msyn-ar-an-aonach**: ...	
+
+**ADD:msyn-ar-a-haon-a-chlog** ...
+
+**ADD:msyn-fada-ó** ...
+
+**ADD:msyn-beag-is-fiú-de** "beag is fiú de" A + "de"	
+
+**ADD:msyn-cúpla-plnoun-sgnoun** ..
+
+**ADD:msyn-gen-case-nouns**
+
+**ADD:msyn-gen-case-nouns** ...
+
+## Definiteness errors in nouns
+
+**ADD:msyn-noun-defart** ..
+
+**ADD:msyn-possadj-nom-gen** ...
+
+**ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
+
+**ADD:use-ellipsis** ...
+
+**ADD:msyn-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
+
+This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
+
+**ADD:msyn-ar-an-gcaife** ...
+
+**ADD:msyn-tóin-poill**
+
+**ADD:msyn-ie.i.** ...
+
+**ADD:syn-a-before-verb-relativephrase** ...
 
 * * *
 
