@@ -1,0 +1,135 @@
+!****************************************************************************
+! Bardic - Classical Irish
+!
+! E. Uí Dhonnchadha
+!
+! Nov 2020 
+!****************************************************************************
+!--------------------------------------------------------------------------------
+!LEXICON Root
+!        Bardic;
+
+LEXICON Bardiclex
+
+file+Noun+Masc+Acc+Sg+NG:filidh	#;
+file+Noun+Masc+Acc+Sg+Len+NG:fhilidh	#;
+file+Noun+Masc+Acc+Sg+Ecl+NG:bhfilidh	#;
+
+file+Noun+Masc+Gen+Sg+NG:fileadh	#;
+file+Noun+Masc+Gen+Sg+Len+NG:fhileadh	#;
+file+Noun+Masc+Gen+Sg+Ecl+NG:bhfileadh	#;
+
+file+Noun+Masc+Dat+Sg+NG:filidh	#;
+file+Noun+Masc+Dat+Sg+Len+NG:fhilidh	#;
+file+Noun+Masc+Dat+Sg+Ecl+NG:bhfilidh	#;
+
+file+Noun+Masc+Nom+Pl+NG:filidh	#;
+file+Noun+Masc+Nom+Pl+Len+NG:fhilidh	#;
+file+Noun+Masc+Nom+Pl+Ecl+NG:bhfilidh	#;
+
+file+Noun+Masc+Acc+Pl+NG:fileadha	#;
+file+Noun+Masc+Acc+Pl+Len+NG:fhileadha	#;
+file+Noun+Masc+Acc+Pl+Ecl+NG:bhfileadha	#;
+
+file+Noun+Masc+Gen+Pl+NG:fileadh	#;
+file+Noun+Masc+Gen+Pl+Len+NG:fhileadh	#;
+file+Noun+Masc+Gen+Pl+Ecl+NG:bhfileadh	#;
+
+file+Noun+Masc+Dat+Pl+NG:fileadhaibh	#;
+file+Noun+Masc+Dat+Pl+Len+NG:fhileadhaibh	#;
+file+Noun+Masc+Dat+Pl+Ecl+NG:bhfileadhaibh	#;
+
+
+
+bíobha+Noun+Masc+Nom+Sg+NG:biodhbha	#;
+bíobha+Noun+Masc+Nom+Sg+Len+NG:bhiodhbha	#;
+bíobha+Noun+Masc+Nom+Sg+Ecl+NG:mbiodhbha	#;
+
+bíobha+Noun+Masc+Acc+Sg+NG:biodhbhaidh	#;
+bíobha+Noun+Masc+Acc+Sg+Len+NG:bhiodhbhaidh	#;
+bíobha+Noun+Masc+Acc+Sg+Ecl+NG:mbiodhbhaidh	#;
+
+bíobha+Noun+Masc+Gen+Sg+NG:biodhbhadh	#;
+bíobha+Noun+Masc+Gen+Sg+Len+NG:bhiodhbhadh	#;
+bíobha+Noun+Masc+Gen+Sg+Ecl+NG:mbiodhbhadh	#;
+
+bíobha+Noun+Masc+Dat+Sg+NG:biodhbhaidh	#;
+bíobha+Noun+Masc+Dat+Sg+Len+NG:bhiodhbhaidh	#;
+bíobha+Noun+Masc+Dat+Sg+Ecl+NG:mbiodhbhaidh	#;
+
+bíobha+Noun+Masc+Nom+Pl+NG:biodhbhaidh	#;
+bíobha+Noun+Masc+Nom+Pl+Len+NG:bhiodhbhaidh	#;
+bíobha+Noun+Masc+Nom+Pl+Ecl+NG:mbiodhbhaidh	#;
+
+bíobha+Noun+Masc+Acc+Pl+NG:biodhbhadha	#;
+bíobha+Noun+Masc+Acc+Pl+Len+NG:biodhbhadha	#;
+bíobha+Noun+Masc+Acc+Pl+Ecl+NG:biodhbhadha	#;
+
+bíobha+Noun+Masc+Gen+Pl+NG:biodhbhadh	#;
+bíobha+Noun+Masc+Gen+Pl+Len+NG:bhiodhbhadh	#;
+bíobha+Noun+Masc+Gen+Pl+Ecl+NG:mbiodhbhadh	#;
+
+bíobha+Noun+Masc+Dat+Pl+NG:biodhbhadhaibh	#;
+bíobha+Noun+Masc+Dat+Pl+Len+NG:bhiodhbhadhaibh	#;
+bíobha+Noun+Masc+Dat+Pl+Ecl+NG:mbiodhbhadhaibh	#;
+
+
+
+
+cú+Noun+Masc+Acc+Sg+NG:coin	#;
+cú+Noun+Masc+Acc+Sg+Len+NG:choin	#;
+cú+Noun+Masc+Acc+Sg+Ecl+NG:gcoin	#;
+
+cú+Noun+Masc+Gen+Sg+NG:con	#;
+cú+Noun+Masc+Gen+Sg+Len+NG:chon	#;
+cú+Noun+Masc+Gen+Sg+Ecl+NG:gcon	#;
+
+cú+Noun+Masc+Dat+Sg+NG:coin	#;
+cú+Noun+Masc+Dat+Sg+Len+NG:choin	#;
+cú+Noun+Masc+Dat+Sg+Ecl+NG:gcoin	#;
+
+cú+Noun+Masc+Nom+Pl+NG:coin	#;
+cú+Noun+Masc+Nom+Pl+Len+NG:choin	#;
+cú+Noun+Masc+Nom+Pl+Ecl+NG:gcoin	#;
+
+cú+Noun+Masc+Acc+Pl+NG:cona	#;
+cú+Noun+Masc+Acc+Pl+Len+NG:chona	#;
+cú+Noun+Masc+Acc+Pl+Ecl+NG:gcona	#;
+
+cú+Noun+Masc+Gen+Pl+NG:con	#;
+cú+Noun+Masc+Gen+Pl+Len+NG:chon	#;
+cú+Noun+Masc+Gen+Pl+Ecl+NG:gcon	#;
+
+cú+Noun+Masc+Dat+Pl+NG:conaibh	#;
+cú+Noun+Masc+Dat+Pl+Len+NG:chonaibh	#;
+cú+Noun+Masc+Dat+Pl+Ecl+NG:gconaibh	#;
+
+
+
+cara+Noun+Masc+Acc+Sg+NG:caraid	#;
+cara+Noun+Masc+Acc+Sg+Len+NG:charaid	#;
+cara+Noun+Masc+Acc+Sg+Ecl+NG:gcaraid	#;
+
+!!cara+Noun+Masc+Gen+Sg+NG:carad	#;	!! included in n-lex-irreg.txt
+!!cara+Noun+Masc+Gen+Sg+Len+NG:charad	#;
+!!cara+Noun+Masc+Gen+Sg+Ecl+NG:gcarad	#;
+
+cara+Noun+Masc+Dat+Sg+NG:caraid	#;
+cara+Noun+Masc+Dat+Sg+Len+NG:charaid	#;
+cara+Noun+Masc+Dat+Sg+Ecl+NG:gcaraid	#;
+
+cara+Noun+Masc+Nom+Pl+NG:caraid	#;
+cara+Noun+Masc+Nom+Pl+Len+NG:charaid	#;
+cara+Noun+Masc+Nom+Pl+Ecl+NG:gcaraid	#;
+
+cara+Noun+Masc+Acc+Pl+NG:cairde	#;
+cara+Noun+Masc+Acc+Pl+Len+NG:chairde	#;
+cara+Noun+Masc+Acc+Pl+Ecl+NG:gcairde	#;
+
+cara+Noun+Masc+Gen+Pl+NG:carad	#;
+cara+Noun+Masc+Gen+Pl+Len+NG:charad	#;
+cara+Noun+Masc+Gen+Pl+Ecl+NG:gcarad	#;
+
+cara+Noun+Masc+Dat+Pl+NG:cairdibh	#;
+cara+Noun+Masc+Dat+Pl+Len+NG:chairadibh	#;
+cara+Noun+Masc+Dat+Pl+Ecl+NG:gcairadibh	#;
