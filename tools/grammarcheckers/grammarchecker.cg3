@@ -60,7 +60,7 @@
 #!! # DELIMITERS
 # =============== #
 
-DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; !!= * @CODE@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; #!!= * @CODE@
 
 # ================== #
 #!! # TAGS AND SETS
@@ -214,7 +214,7 @@ LIST Sup = Sup ;			   #!! Sup
 LIST Actio = Actio ;		   #!! Actio
 LIST VAbess = VAbess ;		   #!! VAbess
 
-SET NUMBER = Sg OR Pl ;  !!= * @CODE@
+SET NUMBER = Sg OR Pl ;  #!!= * @CODE@
 
 LIST Err/Orth = Err/Orth Err/Orth-a/á Err/Orth-nom/gen Err/Orth-nom/acc Err/DerSub Err/CmpSub Err/UnspaceCmp Err/HyphSub Err/SpaceCmp Err/Spellrelax err_orth_mt ; #!! Err/Orth
 
@@ -264,25 +264,25 @@ SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
 #!! ### Sets for prepositions
 	
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; !!= * @CODE@
+LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; #!!= * @CODE@
 
 #!! These prepositions want an additonal consonant in front of its complement in order to cause ECL:
-LIST ART-PREP-ECL = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; !!= * @CODE@
+LIST ART-PREP-ECL = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; #!!= * @CODE@
 
-LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  !!= * @CODE@
+LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  #!!= * @CODE@
 
 #!! Noun errors (Ecl vs. not Ecl) after prepositions
 
-LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; !!= * @CODE@
-LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; !!= * @CODE@
-LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; !!= * @CODE@
-LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; !!= * @CODE@
+LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; #!!= * @CODE@
+LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; #!!= * @CODE@
+LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; #!!= * @CODE@
+LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; #!!= * @CODE@
 
 
 #!! ### Lookalikes
 
-LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; !!= * @CODE@
-LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; !!= * @CODE@
+LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; #!!= * @CODE@
+LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; #!!= * @CODE@
 
 #!! ###  Syntactic tags
 
@@ -375,9 +375,9 @@ LIST @X = @X ;    #!! @X
 
 #!! ### Sets for Single-word sets
 
-LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  !!= * @CODE@
-        "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           !!= * @CODE@
-        "á" ;  !!= * @CODE@INITIAL
+LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  #!!= * @CODE@
+        "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           #!!= * @CODE@
+        "á" ;  #!!= * @CODE@INITIAL
 
 
 #!! ### Sets for word or not
@@ -385,8 +385,8 @@ LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  !!= * @CODE@
 LIST WORD = N A Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR  \? ; #!! WORD
  #!! any word
 # SET REAL-WORD = WORD - Num - Ord ; #!! REAL-WORD
-SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR !!= * @CODE@
-SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA !!= * @CODE@
+SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR #!!= * @CODE@
+SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA #!!= * @CODE@
 
 
 #!! ### Case sets
@@ -431,14 +431,14 @@ LIST PL3-V = (V Pl3)  ;  #!! PL3-V
 
 LIST MODOA = (Poss 1P Sg) (Poss 2P Sg) (Poss 3P Sg Masc) ; #!! Set for your, my and his
 
-LIST PLPOSS = (Poss Pl)  ;  !!= * @CODE@
+LIST PLPOSS = (Poss Pl)  ;  #!!= * @CODE@
 
 #!! Note that imperative verbs are not included in these sets!
 
 #!! Some subsets of the VFIN sets
 # - - - - - - - - - - - - - - -
-SET SG-V = SG1-V OR SG2-V OR SG3-V ;  !!= * @CODE@
-SET PL-V = PL1-V OR PL2-V OR PL3-V ; !!= * @CODE@
+SET SG-V = SG1-V OR SG2-V OR SG3-V ;  #!!= * @CODE@
+SET PL-V = PL1-V OR PL2-V OR PL3-V ; #!!= * @CODE@
 
 
 #!! ### Pronoun sets
