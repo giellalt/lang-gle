@@ -335,10 +335,10 @@ LEXICON Root			!!= - **@CODE@** =
 	Personal_Pronouns;	!!= - **@CODE@** = 
 	
 	Englishlex;				!!= - **@CODE@** = English lexicon including all parts of speech
-	Communicators-English;	!!= - **@CODE@** = English multi word communicator d'ya know
+	Communicators-English;	!!= - **@CODE@** = English multi word communicators, e.g. d'ya know
 	Bardiclex;				!!= - **@CODE@** = classical Irish lexicon from TCD Bardic corpus - 
 	Latinlex;				!!= - **@CODE@** = Latin lexicom from RIA historical corpus
-	!Tobar;					!!= - **@CODE@** = omitting this (non-standard forms)
+	!Tobar;					!!= - **@CODE@** = omitting this (non-standard older forms)
 	
 	Punctuation ;		!!= - **@CODE@** = 
 	Symbols;			!!= - **@CODE@** = 

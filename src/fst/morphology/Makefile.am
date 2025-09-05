@@ -52,7 +52,9 @@ GT_LEXC_SRCS_L1_L2=\
 			stems/particles.lexc \
 			stems/pronouns.lexc \
 			stems/propernouns.lexc \
-			stems/tobar.lexc \
+			stems/english.lexc \
+			stems/bardic.lexc \
+			stems/latin.lexc \
 			stems/verbalnouns.lexc \
 			stems/verbs.lexc
 
@@ -81,7 +83,9 @@ GT_OTHER_SRCS=\
 			stems/particles.lexc \
 			stems/pronouns.lexc \
 			stems/punctuations.lexc \
-			stems/tobar.lexc
+			stems/english.lexc \
+			stems/latin.lexc \
+			stems/bardic.lexc
 
 # If you are building an error-detecting L2 analyser, specify the lexc files
 # that differ between the regular L1 and the L2 analysers below, in L1 and

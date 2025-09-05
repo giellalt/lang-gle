@@ -9,30 +9,30 @@
 !**************************************************************************
 LEXICON NP-LEX-EIRE
 
-<Á t h %_:%  C l i a t h> NP-PLACE;
-<Á i t h %_:%  C l i a t h> NP-PLACE;
+< Á t h %_:%  C l i a t h > NP-PLACE;
+< Á i t h %_:%  C l i a t h > NP-PLACE;
 !!!{Áith_Cliath}:{Áith Cliath}  NP-PLACE;
-<Á t h a %_:%  C l i a t h> NP-PLACE;
-<B a i l e %_:%  Á t h a %_:%  C l i a t h> NP-PLACE;	! (Added CW 09/08)
-<C e a n n %_:%  Á t h a %_:%  G a d> NP-PLACE;	! (Added CW 09/08)
-<C i o n n %_:%  Á t h a %_:%  G a d> NP-PLACE;	! (Added CW 09/08)
-<C i l l %_:%  C h a i n n i g h> NP-PLACE;
-<C i l l %_:%  D a r a > NP-PLACE;
-<C i l l %_:%  M h a n t á i n> NP-PLACE;
-<L o c h %_:%  G a r m a n> NP-PLACE;
-<U í b h %_:%  F h á i l í> NP-PLACE;
-<P o r t %_:%  L á i r g e> NP-PLACE;
-<T i o b r a i d %_:%  Á r a n n> NP-PLACE;
-<M a i g h %_:%  E o> NP-PLACE;
-<R o s %_:%  C o m á i n> NP-PLACE;
-<A r d %_:%  M h a c h a> NP-PLACE;
-<D ú n %_:%  n a %_:%  n G a l l> NP-PLACE;
-<F e a r %_:%  M a n a c h> NP-PLACE;
-<T í r %_:%  E o g h a i n> NP-PLACE;
-<T í r %_:%  n a %_:%  n Ó g> NP-PLACE-fem;
-<C a i s l e á n %_:%  R i a b h a c h> NP-PLACE;
-<C l o c h %_:%  L i a t h> NP-PLACE;	! Greystone
-<L e i t i r %_:%  C e a n a n n>	NP-PLACE; 
+< Á t h a %_:%  C l i a t h > NP-PLACE;
+< B a i l e %_:%  Á t h a %_:%  C l i a t h > NP-PLACE;	! (Added CW 09/08)
+< C e a n n %_:%  Á t h a %_:%  G a d > NP-PLACE;	! (Added CW 09/08)
+< C i o n n %_:%  Á t h a %_:%  G a d > NP-PLACE;	! (Added CW 09/08)
+< C i l l %_:%  C h a i n n i g h > NP-PLACE;
+< C i l l %_:%  D a r a  > NP-PLACE;
+< C i l l %_:%  M h a n t á i n > NP-PLACE;
+< L o c h %_:%  G a r m a n > NP-PLACE;
+< U í b h %_:%  F h á i l í > NP-PLACE;
+< P o r t %_:%  L á i r g e > NP-PLACE;
+< T i o b r a i d %_:%  Á r a n n > NP-PLACE;
+< M a i g h %_:%  E o > NP-PLACE;
+< R o s %_:%  C o m á i n > NP-PLACE;
+< A r d %_:%  M h a c h a > NP-PLACE;
+< D ú n %_:%  n a %_:%  n G a l l > NP-PLACE;
+< F e a r %_:%  M a n a c h > NP-PLACE;
+< T í r %_:%  E o g h a i n > NP-PLACE;
+< T í r %_:%  n a %_:%  n Ó g > NP-PLACE-fem;
+< C a i s l e á n %_:%  R i a b h a c h > NP-PLACE;
+< C l o c h %_:%  L i a t h > NP-PLACE;	! Greystone
+< L e i t i r %_:%  C e a n a n n >	NP-PLACE; 
 
 Oileán	Nm1-Prop-Place;
 Oileáin	NP-PLACE-pl;
@@ -3689,11 +3689,11 @@ Valera	NP-Fam-V;
 ! 2024 added +Orgn for semantic tagging NER (named entity recognition)
 !**************************************************************************
 LEXICON NP-LEX-ORG
-<S i n n %  F é i n %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<F i a n n a %  F á i l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<F i n e %  G a e l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<L u c h t %  O i b r e  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<O n e %  D i r e c t i o n  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+< S i n n %  F é i n %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
+< F i a n n a %  F á i l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
+< F i n e %  G a e l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
+< L u c h t %  O i b r e  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
+< O n e %  D i r e c t i o n  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
 
 anois+Prop+Noun+Masc+Com+Sg:Anois      #; 
 anois+Prop+Noun+Masc+Com+Sg:ANOIS      #; 
@@ -4234,13 +4234,14 @@ Daid		Nm4-Prop-PName;
 Platón	Nm1-Prop-PName;
 
 Hansel	Nm4-Prop-PName;
-Gretel	Nf5-Prop-PName;
-<C i n n í n %_:%  Ó i r>	Nf5-Prop-PName;
+Gretel	Nf2-Prop-PName;
+< C i n n í n %_:%  Ó i r >	Nf4-Prop-PName;
+
 LEXICON NP-LEX-TIR
-!! no because Na hAfraice Láir/Theas etc ..<A f r a i c %_:%  T h e a s>	Nf2-Prop-Place;	! !!!!South Africa
-<B a i l e %_:%  A t h a %_:%  C l i a t h>	Nm4-Prop-Place;	! Dublin
-<B é a l %_:%  F e i r s t e>	Nm4-Prop-Place;	! Belfast
-<A n %_:%  N í l>	Nf2-Prop-Place;	! Nile
+!! no because Na hAfraice Láir/Theas etc ..< A f r a i c %_:%  T h e a s >	Nf2-Prop-Place;	! !!!!South Africa
+< B a i l e %_:%  A t h a %_:%  C l i a t h >	Nm4-Prop-Place;	! Dublin
+< B é a l %_:%  F e i r s t e >	Nm4-Prop-Place;	! Belfast
+< A n %_:%  N í l >	Nf2-Prop-Place;	! Nile
 Abcáis	Nf2-Prop-Place;	! Abkhazia
 Aeigéach	NP-PLACE-sg;	! !!!!Aegean (Sea)
 Aetóip	Nf2-Prop-Place;	! Ethiopia
@@ -4272,7 +4273,7 @@ Antuairp	Nf4-Prop-Place;	! Antwerp
 Arabacha	AdjM-Prop-pl;	! !!!!United Arab Emirates
 Sóivéadach	Nm1-Prop-Place;	! Soviet Union - Aontas na Sóivéadach
 Araib	Nf2-Prop-Place;	! Arabia
-Shádach	AdjF-Prop-Place;	! !!!!Saudi Arabia
+Shádach	AdjF-Prop;	! !!!!Saudi Arabia
 Asarbaiseáin	Nf2-Prop-Place;	! Azerbaijan
 Astracáin	Nf2-Prop-Place;	! Astrak(h)an
 Astráil	Nf2-Prop-Place;	! Australia
@@ -4369,7 +4370,7 @@ Cóbanhávan	Nm4-Prop-Place;	! Copenhagen
 Cóiré	Nf4-Prop-Place;	! Korea
 Colóim	Nf2-Prop-Place;	! Columbia
 Comhlathas Nm1-Prop-Place;
-Briotanach	AdjM-Prop-Place;	! !!!!British Commonwealth - Comhlathas Briotanach
+Briotanach	AdjM-Prop;	! !!!!British Commonwealth - Comhlathas Briotanach
 !!!!Cónaidhm na Rúise	NP-PLACE-sg;	! !!!!Russian Federation
 Cónaidhm Nf2-Prop-Place;
 Rúis	Nf2-Prop-Place;	! !!!!Russian Federation
@@ -4428,7 +4429,7 @@ Genova	NP-PLACE-sg;	! Genoa
 Gabúin	Nf3-Prop-Place;	! Gabon
 Gaimbia	Nf4-Prop-Place;	! Gambia
 Guine 	Nf4-Prop-Place;	! !!!!Equatorial Guinea
-Mheánchriosach	AdjM-Prop-Place;	! !!!!Equatorial Guinea - Ghuine Mheánchriosach
+Mheánchriosach	AdjM-Prop;	! !!!!Equatorial Guinea - Ghuine Mheánchriosach
 Ginéiv	Nf2-Prop-Place;	! Geneva
 Giobráltar	Nm4-Prop-Place;	! Gibraltar
 Glaschú	Nm4-Prop-Place;	! Glasgow
@@ -4717,11 +4718,11 @@ Súlúlainn	NP-PLACE-sg;	! Zululand
 Táidsíceastáin	NP-PLACE-sg;	! Tajikistan
 !!!!Aigéan
 Aigéan 	Nm1-Prop-Place;	! !!!!Antarctic Ocean
-Antartach	AdjM-Prop-Place;	! !!!!Antarctic Ocean
-Artach		AdjM-Prop-Place;	! !!!!Arctic Ocean
-Atlantach	AdjM-Prop-Place;	! !!!!Atlantic Ocean
-Ciúin		AdjM-Prop-Place;	! !!!!Pacific Ocean
-Indiach		AdjM-Prop-Place;	! !!!!Indian Ocean
+Antartach	AdjM-Prop;	! !!!!Antarctic Ocean
+Artach		AdjM-Prop;	! !!!!Arctic Ocean
+Atlantach	AdjM-Prop;	! !!!!Atlantic Ocean
+Ciúin		AdjM-Prop;	! !!!!Pacific Ocean
+Indiach		AdjM-Prop;	! !!!!Indian Ocean
 Taihítí	NP-PLACE-sg;	! Tahiti
 !!!!Talamh an Éisc	NP-PLACE-sg;	! Newfoundland
 !!!!Talamh Naofa	Nm1-Prop-Place;	! !!!!Holy Land
@@ -12414,12 +12415,12 @@ Coilligeán		NP-PLACE;	! ID: 2375; English: Colligan
 
 !!COMPOSED NAMES
 
-<A b h a %_:%  B h a i l e %_:%  a n %_:%  M h u i l i n n>	NP-PLACE;	! ID: 116434; English: Milltown
-<A b h a %_:%  B h a r r %_:%  D u í n s e>			NP-PLACE;	! ID: 1395062; English: Bardinch River
-<B á %_:%  n a %_:%  C u a i l l í>				NP-PLACE;	! ID: 1165490; English: Coulagh Bay
-<B á %_:%  n a %_:%  M a i g h n e>				NP-PLACE;	! ID: 104243; English: Moyne Bay
-<C a r r a i g %_:%  a n %_:%  A i b h n í n>			NP-PLACE;	! ID: 1397620; English: Carrickanevneen
-<C a r r a i g %_:%  a n %_:%  A i r d>				NP-PLACE;	! ID: 50372; English: Carriganard
+< A b h a %_:%  B h a i l e %_:%  a n %_:%  M h u i l i n n >	NP-PLACE;	! ID: 116434; English: Milltown
+< A b h a %_:%  B h a r r %_:%  D u í n s e >			NP-PLACE;	! ID: 1395062; English: Bardinch River
+< B á %_:%  n a %_:%  C u a i l l í >				NP-PLACE;	! ID: 1165490; English: Coulagh Bay
+< B á %_:%  n a %_:%  M a i g h n e >				NP-PLACE;	! ID: 104243; English: Moyne Bay
+< C a r r a i g %_:%  a n %_:%  A i b h n í n >			NP-PLACE;	! ID: 1397620; English: Carrickanevneen
+< C a r r a i g %_:%  a n %_:%  A i r d >				NP-PLACE;	! ID: 50372; English: Carriganard
 
 !!GENITIVE FORMS
 

@@ -1246,8 +1246,9 @@ LEXICON NP-Fam-chg
 !! new 5-6-2024
 !! Place and Personal name files both use Nf1-Prop and Nm1-Prop etc.
 !
-LEXICON Nf1-Prop-Place
-+Place:		Nf1-Prop;
+! currently not used
+!LEXICON Nf1-Prop-Place
+!+Place:		Nf1-Prop;
 
 LEXICON Nf2-Prop-Place
 +Place:		Nf2-Prop;
@@ -1264,8 +1265,9 @@ LEXICON Nf5-Prop-Place
 LEXICON Nm1-Prop-Place
 +Place:		Nm1-Prop;
 
-LEXICON Nm2-Prop-Place
-+Place:		Nm2-Prop;
+! currently not used
+!LEXICON Nm2-Prop-Place
+!+Place:		Nm2-Prop;
 
 LEXICON Nm3-Prop-Place
 +Place:		Nm3-Prop;
@@ -1273,16 +1275,18 @@ LEXICON Nm3-Prop-Place
 LEXICON Nm4-Prop-Place
 +Place:		Nm4-Prop;
 
-LEXICON Nm5-Prop-Place
-+Place:		Nm5-Prop;
+! currently not used
+!LEXICON Nm5-Prop-Place
+!+Place:		Nm5-Prop;
 
 
 
 LEXICON Nm1-Prop-PName
 +PersName:		Nm1-Prop;
 
-LEXICON Nm2-Prop-PName
-+PersName:		Nm2-Prop;
+! currently not used
+!LEXICON Nm2-Prop-PName
+!+PersName:		Nm2-Prop;
 
 LEXICON Nm3-Prop-PName
 +PersName:		Nm3-Prop;
@@ -1290,12 +1294,13 @@ LEXICON Nm3-Prop-PName
 LEXICON Nm4-Prop-PName
 +PersName:		Nm4-Prop;
 
-LEXICON Nm5-Prop-PName
-+PersName:		Nm5-Prop;
+! currently not used
+!LEXICON Nm5-Prop-PName
+!+PersName:		Nm5-Prop;
 
-
-LEXICON Nf1-Prop-PName
-+PersName:		Nf1-Prop;
+! used for MWE names without inflection
+!LEXICON Nf1-Prop-PName
+!+PersName:		Nf1-Prop;
 
 LEXICON Nf2-Prop-PName
 +PersName:		Nf2-Prop;
@@ -1306,8 +1311,9 @@ LEXICON Nf3-Prop-PName
 LEXICON Nf4-Prop-PName
 +PersName:		Nf4-Prop;
 
-LEXICON Nf5-Prop-PName
-+PersName:		Nf5-Prop;
+! currently not used
+!LEXICON Nf5-Prop-PName
+!+PersName:		Nf5-Prop;
 
 
 !! masc nouns - slenderise
