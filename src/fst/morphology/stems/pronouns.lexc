@@ -13,21 +13,19 @@
 !! Pronominals - words which act like pronouns
 !****************************************************************************
 
- 
-!***************************************************************************
-
 LEXICON Personal_Pronouns
+!! Personal Pronouns
 
 mé+Pron+Pers+1P+Sg:mé				#;	! me
 tú+Pron+Pers+2P+Sg:tú				#;	! you
 tú+Pron+Pers+2P+Sg+Len:thú				#;	! you
 
 sí+Pron+Pers+3P+Sg+Fem+Sbj:sí	#;	! she
-í+Pron+Pers+3P+Sg+Fem:í				#;	! she/her
+í+Pron+Pers+3P+Sg+Fem:í				Demonstrative;	! she/her
 í+Pron+Pers+3P+Sg+Fem+hPref:hí		#;	! (not) she/her
 
 sé+Pron+Pers+3P+Sg+Masc+Sbj:sé	#;	! he
-é+Pron+Pers+3P+Sg+Masc:é			#;	! he
+é+Pron+Pers+3P+Sg+Masc:é			Demonstrative;	! he
 é+Pron+Pers+3P+Sg+Masc+hPref:hé			#;	! (not) he
 
 sinn+Pron+Pers+1P+Pl:sinn			#;	! we
@@ -37,16 +35,16 @@ sibh+Pron+Pers+2P+Pl:sibh			#;	! you pl. (also ye or yous)
 
 siad+Pron+Pers+3P+Pl+Sbj:siad	#;	! they
 iad+Pron+Pers+3P+Pl:iad				#;	! they
-iad+Pron+Pers+3P+Pl:hiad			#;	! (not) they
+iad+Pron+Pers+3P+Pl+hPref:hiad			#;	! (not) they
 
 !!! SEE PREP-LEX á+Pron+Pers+3P+Obj:á			#;	!it as obj bhí siad á bhualadh
 
 ea+Pron+Pers+3P+Sg:ea					#;	! it
-ea+Pron+Pers+3P+Sg:hea					#;	! (not) it
-ea+Pron+Pers+3P+Sg:eadh					#;	! it
+ea+Pron+Pers+3P+Sg+hPref:hea					#;	! (not) it
+ea+Pron+Pers+3P+Sg+NG:eadh					#;	! it
 
 !---------------------------------------------------------------------------
-! Contrastive 
+!! Emphatic/Contrastive Pronouns
 
 mé+Pron+Pers+1P+Sg+Emph:mise			#;	! me/myself
 tú+Pron+Pers+2P+Sg+Emph:tusa			#;	! you/yourself
@@ -58,23 +56,25 @@ sí+Pron+Pers+3P+Sg+Fem+Sbj+Emph:sise	#;	! she
 sé+Pron+Pers+3P+Sg+Masc+Sbj+Emph:seisean	#;	! he
 é+Pron+Pers+3P+Sg+Masc+Emph:eisean			#;	! he
 
-sinn+Pron+Pers+1P+Pl+Sbj+Emph:sinne		#;	! we
-muid+Pron+Pers+1P+Pl+Emph:muide				#;	! we
+!sinn+Pron+Pers+1P+Pl+Sbj:sinn				Emph_e;	! we NB not subject only
+sinn+Pron+Pers+1P+Pl:sinn				Emph_e;	! we  e.g. chonaic siad sinn
+muid+Pron+Pers+1P+Pl:muid					Emph_e;	! we
+muid+Pron+Pers+1P+Pl+Emph:muidne			#;	! we
+muid+Pron+Pers+1P+Pl+Emph+NG:muidinne			#;	! we
 
-sibh+Pron+Pers+2P+Pl+Emph:sibhse			#;	! you pl. (also ye or yous)
+sibh+Pron+Pers+2P+Pl:sibh				Emph_se;	! you pl. (also ye or yous)
 
-
-siad+Pron+Pers+3P+Pl+Sbj+Emph:siadsan		#;	! they/them
-iad+Pron+Pers+3P+Pl+Emph:iadsan				#;	! they
-
-!---------------------------------------------------------------------------
-! Reflexive 
-
-féin+Pron+Ref:féin				#;	! self
-féin+Pron+Ref+Len:fhéin				#;	! self
+siad+Pron+Pers+3P+Pl+Sbj:siad			Emph_san;	! they/them
+iad+Pron+Pers+3P+Pl:iad					Emph_san;	! they
 
 !---------------------------------------------------------------------------
-! Indefinite
+! Reflexive - moved to part-lex.txt
+!! this is not an independent pronoun - it accompanies an pronoun or noun
+!!féin+Pron+Ref:féin				#;	! self
+!!féin+Pron+Ref+Len:fhéin				#;	! self
+
+!---------------------------------------------------------------------------
+!! Indefinite Pronouns
 ! these can follow a preposition e.g de cheachtar
 ceachtar+Pron+Idf:ceachtar	#;	! any/either
 ceachtar+Pron+Idf+Len:cheachtar	#;	! any/either
@@ -83,11 +83,12 @@ cibé+Pron+Idf:cibé		#;	! whoever whichever
 pé+Pron+Idf:pé			#;	! whoever
 !!!té+Pron+Idf:té	MOVED TO IRREG NOUNS AS IS USED WITH "AN"	#;	! person
 !---------------------------------------------------------------------------
-! Interrogative (added Feb 05) 
+!! Interrogative Pronouns (added Feb 05) 
 !!!! ADDED COP SEPT 07
 !!!! Changed Pron to Pro in Copula forms to distinguish it from other Pron
-cad+Pron+Q:cad			#;	! what: cad a rinne sé?
-cad+Cop+Pro+Q:cad		#;	! what: cad is ainm duit?
+cad+Pron+Q:cad			#;	! what: cad is ainm duit?
+cad+Cop+Pro+Q:cad		#;	! what: cad [] iad na rudaí sin?
+					! what: cad a bhí ann? (cleft +rel) 
 cad_chuige+CC+Cop+Pro+Q:tuige	#;	! what for
 cad_é+CU+Cop+Pro+Q:caidé	#;	! caidé mar atá tú
 cé+Pron+Q:cé			#;	! cé acu - which of them
@@ -96,35 +97,38 @@ cé+Cop+Pro+Q:cé			#;	! cé a bhí ann - who was there?
 !! removed Pro from cén as noun complement is needed unlike cé
 !! also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
 cé+Cop+Q+Art+Sg:cén		#;	! cé + an
-cé+Cop+Pro+Q:céard		#;	! cé + an + rud
+céard+Cop+Pro+Q:céard		#;	! cé + an + rud
 cé+Cop+Pro+Q+Cop:cér		#;	! cé + ar
-cé+Cop+Pro+Q+Cop:cérbh		#;	! cé + arbh
+cé+Cop+Pro+Q+Cop+Vow:cérbh		#;	! cé + arbh
 
 !---------------------------------------------------------------------------
-!!!! DEMONSTRATIVE  !!!!! also in Determiners
+!! Copular DEMONSTRATIVE  See also Determiners
+
+!---> check whether to remove all +Pron+Dem ? 
+!---> maybe need only +Det+Dem amd +Cop+Pro+Dem?
 
 seo+Cop+Pro+Dem:Seo		#;	! this
-seo+Pron+Dem:seo		#;	! this
-seo+CM+Pron+Dem:so		#;	! this
+seo+Pron+Dem:seo		#;	! this -REMOVE THIS ?
+seo+CM+Pron+Dem+NG:so		#;	! this -REMOVE THIS ?
 
 sin+Cop+Pro+Dem:sin		#;	! that
-sin+Pron+Dem:sin		#;	! that
-sin+Pron+Dem:san		#;	! that
-sin+Pron+Dem:shin		#;	! that e.g. ó shin
-siúd+Pron+Dem:siúd		#;	! those 
-siúd+Pron+Dem:iúd		#;	! those (usually with copula e.g. B'iúd
-sin+Pron+Dem:in			#;	! that (usually with copula e.g. B'in
+sin+Pron+Dem:sin		#;	! that -REMOVE THIS ?
+sin+Pron+Dem+NG:san		#;	! that -REMOVE THIS ?
+sin+Pron+Dem+NG:shin		#;	! that e.g. ó shin -REMOVE THIS ?
+siúd+Pron+Dem:siúd		#;	! those -REMOVE THIS ?
+siúd+Pron+Dem+Past:iúd		#;	! those (usually with copula Ba e.g. B'iúd
+sin+Pron+Dem+Past:in			#;	! that (usually with copula Ba e.g. B'in
 
 
 !---------------------------------------------------------------------------
 !---------------------------------------------------------------------------
-! PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
+!! PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 !
 
 ag+Pron+Prep+1P+Sg:agam				Emph_sa;	! at me
-ag+Pron+Prep+1P+Sg:a'm				Emph_sa;	! at me
+ag+Pron+Prep+1P+Sg+NG:a'm				Emph_sa;	! at me
 ag+Pron+Prep+2P+Sg:agat				Emph_sa;	! at you
-ag+Pron+Prep+2P+Sg:a'at				Emph_sa;	! at you
+ag+Pron+Prep+2P+Sg+NG:a'at				Emph_sa;	! at you
 ag+Pron+Prep+3P+Sg+Masc:aige		Emph_sean;	! at him
 ag+Pron+Prep+3P+Sg+Fem:aici			Emph_se;	! at her
 ag+Pron+Prep+1P+Pl:againn			Emph_e;		! at us
@@ -150,6 +154,7 @@ as+Pron+Prep+2P+Pl:asaibh			Emph_se;  	! out of you
 as+Pron+Prep+3P+Pl:astu				Emph_san;	! out of them
 
 chuig+Pron+Prep+1P+Sg:chugam		Emph_sa;  	! to(wards) me
+chuig+Pron+Prep+1P+Sg+NG:chúm		Emph_sa;  	! to(wards) me Tomás Ó Croimthinn
 chuig+Pron+Prep+2P+Sg:chugat		Emph_sa;	! to(wards) you
 chuig+Pron+Prep+3P+Sg+Masc:chuige	Emph_sean;  ! to(wards) him
 chuig+Pron+Prep+3P+Sg+Fem:chuici	Emph_se; 	! to(wards) her
@@ -164,9 +169,9 @@ de+Pron+Prep+3P+Sg+Fem:di			Emph_se;  	! from her
 de+Pron+Prep+1P+Pl:dínn				Emph_e;  	! from us
 de+Pron+Prep+2P+Pl:díbh				Emph_se;  	! from you
 de+Pron+Prep+3P+Pl:díobh			Emph_san;  	! from them
-do+Pron+Prep+3P+Pl:daofa			Emph_san;  ! 
+de+Pron+Prep+3P+Pl+NG:daofa			Emph_san;  ! from them
 
-!!! WITH SÉIMHIÚ !!!
+! WITH SÉIMHIÚ !!!
 de+Pron+Prep+1P+Sg+Len:dhíom		Emph_sa;  	! from me
 de+Pron+Prep+2P+Sg+Len:dhíot		Emph_sa;  	! from you
 de+Pron+Prep+3P+Sg+Masc+Len:dhe		Emph_sean;  ! from him
@@ -183,9 +188,9 @@ do+Pron+Prep+3P+Sg+Fem:di			Emph_se;  	! to her
 do+Pron+Prep+1P+Pl:dúinn			Emph_e;  	! to us
 do+Pron+Prep+2P+Pl:daoibh			Emph_se;  	! to you
 do+Pron+Prep+3P+Pl:dóibh			Emph_sean;  ! to them
-do+Pron+Prep+3P+Pl:dófa				Emph_sean;  ! to them
+do+Pron+Prep+3P+Pl+NG:dófa				Emph_sean;  ! to them
 
-!!! WITH SÉIMHIÚ !!!
+! WITH SÉIMHIÚ !!!
 do+Pron+Prep+1P+Sg+Len:dhom				Emph_sa;  	! to me
 do+CU+Pron+Prep+1P+Sg+Len:dhomh			Emph_sa;  	! to me
 do+Pron+Prep+2P+Sg+Len:dhuit			Emph_se;  	! to you
@@ -201,7 +206,7 @@ faoi+Pron+Prep+3P+Sg+Masc:faoi		Emph_sean;  ! under him
 faoi+CU+Pron+Prep+3P+Sg+Masc:fá		Emph_san;  ! under him
 faoi+Pron+Prep+3P+Sg+Masc:fé		Emph_san;  ! under him
 faoi+Pron+Prep+3P+Sg+Fem:fúithi		Emph_se;  	! under her
-faoi+Pron+Prep+3P+Sg+Fem:fúithe		Emph_se;  	! under her
+faoi+Pron+Prep+3P+Sg+Fem+NG:fúithe		Emph_se;  	! under her
 faoi+Pron+Prep+1P+Pl:fúinn			Emph_e;  	! under us
 faoi+Pron+Prep+2P+Pl:fúibh			Emph_se;  	! under you
 faoi+Pron+Prep+3P+Pl:fúthu			Emph_san;  	! under them
@@ -240,16 +245,17 @@ le+Pron+Prep+1P+Sg:liom				Emph_sa;	!  with me
 le+Pron+Prep+2P+Sg:leat				Emph_sa;	!  with you
 le+Pron+Prep+3P+Sg+Masc:leis		Emph_sean;	!  with his
 le+Pron+Prep+3P+Sg+Fem:léi			Emph_se;	!  with her
-le+Pron+Prep+3P+Sg+Fem:léithe			Emph_se;	!  with her
+le+Pron+Prep+3P+Sg+Fem+NG:léithe			Emph_se;	!  with her
 le+Pron+Prep+1P+Pl:linn				Emph_e;		!  with us
 le+Pron+Prep+2P+Pl:libh				Emph_se;	!  with you
 le+Pron+Prep+3P+Pl:leo				Emph_san;	!  with them
+le+Pron+Prep+3P+Pl+NG:leofa			Emph_san;	!  with them
 
 ó+Pron+Prep+1P+Sg:uaim				Emph_se;	!  from me
 ó+Pron+Prep+2P+Sg:uait 				Emph_se;	!  from you
 ó+Pron+Prep+3P+Sg+Masc:uaidh		Emph_sean;	!  from him
 ó+Pron+Prep+3P+Sg+Fem:uaithi		Emph_se;	!  from her
-ó+Pron+Prep+3P+Sg+Fem:uaithe		Emph_se;	!  from her
+ó+Pron+Prep+3P+Sg+Fem+NG:uaithe		Emph_se;	!  from her
 ó+Pron+Prep+1P+Pl:uainn				Emph_e;		!  from us
 ó+Pron+Prep+2P+Pl:uaibh				Emph_se;	!  from you
 ó+Pron+Prep+3P+Pl:uathu				Emph_san;	!  from them
@@ -298,20 +304,33 @@ um+Pron+Prep+3P+Pl:umpu				Emph_san; 	!  about them
 
 LEXICON Emph_sa			! Broad: 1S & 2S & 3S(Fem) & 2P
 +Emph:sa	#;
-#;
++Emph:-sa	#;
+Demonstrative;
 
 LEXICON Emph_se			! Slender: 1S & 2S & 3S(Fem) & 2P
 +Emph:se	#;
-#;
++Emph:-se	#;
+Demonstrative;
 
 LEXICON Emph_san		! Broad: 3S(Masc) & 3P
 +Emph:san	#;
-#;
++Emph:-san	#;
+Demonstrative;
 
 LEXICON Emph_sean		! Slender: 3S(Masc) & 3P
 +Emph:sean	#;
-#;
++Emph:-sean	#;
+Demonstrative;
 
 LEXICON Emph_e			! Br/Sl: 1P
 +Emph:e	#;
+#;
+
+!!! These demonstrative suffixes are used in historical text
+!!! e.g. aici-sin, aici-seo etc. Only 3rd person??? é & í
+
+LEXICON Demonstrative
++Dem:-sin	#;
++Dem:-seo	#;
++Dem:-siúd	#;
 #;

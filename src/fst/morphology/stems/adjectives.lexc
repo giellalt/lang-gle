@@ -1,18 +1,55 @@
 !****************************************************************************
-!! Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+! Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+!****************************************************************************!
+! change:
+! July 2004: 
+! removed +Len +Ecl from lexical level see  LEXICON SéUrú
+! removed +hPref see LEXICON Base
+! Nov 2004
+! relaced +Len +Ecl in lexical level see  LEXICON SéUrú
+! added Its as in go_leor+Adj+Its
+! Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+!****************************************************************************!  E. Uí Dhonnchadha
+! (c)2001
+! (1) New Irish Grammar by The Christian Brothers  
+! (2) Réchúrsa Gramadaí, Brian Mac Giolla Phádraig
+! (3) Graméir Gaeilge na mBráithre Críostaí
+! (4) Nuachúrsa Gaeilge na mBráithre Críostaí
+! (5) A Handbook of Irish Vol 2.An Outline of Modern Irish Grammar,
+!     Alfred Bammesberger
+! (6) Ó Dónaill Irish-English Dictionary
+! (7) Gléacht - Ó Dónaill Online Dictionary 
+!
+! Descriptive adjectives can be used in two ways (REF P59 NIG)
+!
+! a) predicatively - quailifies a noun/pronoun *indirectly* as a predicate 
+!    or part of a predicate
+!    E.G. Is BREÁ an lá é (It is a LOVELY day, lit. it is lovely that the day is (approx!)
+!    E.G. Tá mé TUIRSEACH (I am TIRED)
+!    E.G. Tá sé FUAR (It is COLD)
+!    E.G. Tá an fhuinneog GLAN (The window is CLEAN) !    Used in this way the base form IS NOT INFLECTED to agree with case/number/gender
+!    of the noun - except in a few cases ... see p 59 s4 NIG
+!    The base form (positive degree) is used
+!
+! b) attributively - qualifies a noun *directly*
+!    E.G. Tá an páiste ÓG ar scoil (The YOUNG child is a at school
+!    E.G. Níl pingin RUA agam (I haven't a RED penny)
+!    E.G. Chonaic mé an fhuinneog GHLAN (I saw the CLEAN window)
+!    Used in this form the adjective IS INFLECTED to agree with case/number/gender of the noun
+!
+!    The adjective usually follows the noun though some forms can be prefixed
+!    to the noun e.g. SEANfhear (old man) LAGmhisneach ((in) low spirits),
+!    ARDeagalis (cathedral - lit. high church) 
 !**************************************************************************  
 !
 !					L E X I C O N
 !
 !**************************************************************************  
-
-
 LEXICON AdjA
 
 deas		Adj1-1;		! nice
 mall		Adj1-1;		! slow
 toll		Adj1-1;		! hollow
-
 
 gann		Adj1-1;		! scarce
 
@@ -12984,6 +13021,14 @@ doiligh+Adj+Fem+Gen+Sg:doilghe	#;
 doiligh+Adj+Com+Pl:doilghe	#;
 doiligh+Adj+Comp:doilghe	#;
 doiligh+Adj+Comp:doilgheacha	#;
+!ALSO
+doiligh+Adj+Base:doiligh	#;
+doiligh+Adj+Base+Len:dhoiligh	#;
+doiligh+Adj+Masc+Com+Sg:doiligh	#;
+doiligh+Adj+Fem+Com+Sg+Len:dhoiligh	#;
+doiligh+Adj+Fem+Gen+Sg:doilí	#;
+doiligh+Adj+Com+Pl:doilí	#;
+doiligh+Adj+Comp:doilí	#;
 
 !amainiris		amairinis
 amainiris	AdjBASE;
@@ -13024,97 +13069,6 @@ cothromúil	Adj2-1; ! Headword: cothrom (a1); (Var: ~úil a2) ***
 stuamach		Adj1-3; ! Headword: stuama
 stuamdha		Adj3-1; ! Headword: stuama
 !trá		tra
-!****************************************************************************
-! change:
-! July 2004: 
-! removed +Len +Ecl from lexical level see  LEXICON SéUrú
-! removed +hPref see LEXICON Base
-! Nov 04
-! relaced +Len +Ecl in lexical level see  LEXICON SéUrú
-! added Its as in go_leor+Adj+Its
-! Na hAidiactaí Tuairisciúla - Descriptive Adjectives
-!
-!  E. Uí Dhonnchadha
-! (c)2001
-! (1) New Irish Grammar by The Christian Brothers  
-! (2) Réchúrsa Gramadaí, Brian Mac Giolla Phádraig
-! (3) Graméir Gaeilge na mBráithre Críostaí
-! (4) Nuachúrsa Gaeilge na mBráithre Críostaí
-! (5) A Handbook of Irish Vol 2.An Outline of Modern Irish Grammar,
-!     Alfred Bammesberger
-! (6) Ó Dónaill Irish-English Dictionary
-! (7) Gléacht - Ó Dónaill Online Dictionary 
-!
-! Descriptive adjectives can be used in two ways (REF P59 NIG)
-!
-! a) predicatively - quailifies a noun/pronoun *indirectly* as a predicate 
-!    or part of a predicate
-!    E.G. Is BREÁ an lá é (It is a LOVELY day, lit. it is lovely that the day is (approx!)
-!    E.G. Tá mé TUIRSEACH (I am TIRED)
-!    E.G. Tá sé FUAR (It is COLD)
-!    Used in this way the base form IS NOT INFLECTED to agree with case/number/gender
-!    of the noun - except in a few cases ... see p 59 s4 NIG
-!    The base form (positive degree) is used
-!
-! b) attributively - qualifies a noun *directly*
-!    E.G. Tá an páiste ÓG ar scoil (The YOUNG child is a at school
-!    E.G. Tá an fhuinneog GHLAN (The window is CLEAN)
-!    E.G. Níl pingin RUA agam (I haven't a (RED) penny)
-!
-!    Used in this form it IS INFLECTED to agree with case/number/gender of the noun
-!
-!    The adjective usually follows the noun though some forms can be prefixed
-!    to the noun e.g. SEANfhear (old man) LAGmhisneach?? ((in) low spirits),
-!    ARDeagalis (cathedral - lit. high church)
-! 
-!****************************************************************************
-
-
-!************************************************************************** 
-!****************************************************************************
-! change:
-! July 2004: 
-! removed +Len +Ecl from lexical level see  LEXICON SéUrú
-! removed +hPref see LEXICON Base
-! Nov 04
-! relaced +Len +Ecl in lexical level see  LEXICON SéUrú
-! added Its as in go_leor+Adj+Its
-! Na hAidiactaí Tuairisciúla - Descriptive Adjectives
-!
-!  E. Uí Dhonnchadha
-! (c)2001
-! (1) New Irish Grammar by The Christian Brothers  
-! (2) Réchúrsa Gramadaí, Brian Mac Giolla Phádraig
-! (3) Graméir Gaeilge na mBráithre Críostaí
-! (4) Nuachúrsa Gaeilge na mBráithre Críostaí
-! (5) A Handbook of Irish Vol 2.An Outline of Modern Irish Grammar,
-!     Alfred Bammesberger
-! (6) Ó Dónaill Irish-English Dictionary
-! (7) Gléacht - Ó Dónaill Online Dictionary 
-!
-! Descriptive adjectives can be used in two ways (REF P59 NIG)
-!
-! a) predicatively - quailifies a noun/pronoun *indirectly* as a predicate 
-!    or part of a predicate
-!    E.G. Is BREÁ an lá é (It is a LOVELY day, lit. it is lovely that the day is (approx!)
-!    E.G. Tá mé TUIRSEACH (I am TIRED)
-!    E.G. Tá sé FUAR (It is COLD)
-!    Used in this way the base form IS NOT INFLECTED to agree with case/number/gender
-!    of the noun - except in a few cases ... see p 59 s4 NIG
-!    The base form (positive degree) is used
-!
-! b) attributively - qualifies a noun *directly*
-!    E.G. Tá an páiste ÓG ar scoil (The YOUNG child is a at school
-!    E.G. Tá an fhuinneog GHLAN (The window is CLEAN)
-!    E.G. Níl pingin RUA agam (I haven't a (RED) penny)
-!
-!    Used in this form it IS INFLECTED to agree with case/number/gender of the noun
-!
-!    The adjective usually follows the noun though some forms can be prefixed
-!    to the noun e.g. SEANfhear (old man) LAGmhisneach?? ((in) low spirits),
-!    ARDeagalis (cathedral - lit. high church)
-! 
-!****************************************************************************
 
 !************************************************************************** 
 !!   I R R E G U L A R   A D J E C T I V E S 
@@ -13130,6 +13084,27 @@ ionann	AdjBASE;	! same, identical
 mó	AdjBASE;	! many as in "An mó ..?" "How many...?"
 mórmhór	AdjBASE;	! especially as in "go mórmhór
 mórmór	AdjBASE;	! especially as in "go mórmór
+
+! Prefixes which may have been written separately in historical texts
+
+adh+Adj+Pref:adh	#;
+ath+Adj+Pref:ath	#;
+deá+Adj+Pref:deá	#;
+droch+Adj+Pref:droch	#;
+feill+Adj+Pref:feill	#;
+fo+Adj+Pref:fo	#;
+fó+Adj+Pref:fó	#;
+freas+Adj+Pref:freas	#;
+frith+Adj+Pref:frith	#;
+iom+Adj+Pref:iom	#;
+íos+Adj+Pref:íos	#;
+réi+Adj+Pref:réi	#;
+sain+Adj+Pref:sain	#;
+tiú+Adj+Pref:tiú	#;
+tob+Adj+Pref:tob	#;
+tras+Adj+Pref:tras	#;
+uas+Adj+Pref:uas	#;
+uir+Adj+Pref:uir	#;
 
 píre+Adj+Base:píre			#;	! dáiríre píre
 !uile+Adj+Base:uilig	SEE DET-LEX		#;	! all, entirely
@@ -13166,6 +13141,7 @@ imníoch:imníche		AI-COMP;
 láidir:láidre		AI-COMP;
 leathan:leithne		AI-COMP;
 liath:léithe		AI-COMP;
+lia:lia			AI-COMP;	! (=iomaí) Apr 2018 Ní lia duine ná tuairim
 maith:fearr		AI-COMP;
 minic:minicí		AI-COMP;	! variation on regular minice
 mall:moille		AI-COMP;	! var. on maille
@@ -13205,6 +13181,7 @@ bricliath:bric	AI-liath;		! streaked with grey
 
 sean:0		AI-sean;
 te:0		AI-te; 			! hot
+the:0		AI-the;			! English the/The
 
 LEXICON AI-álainn
 álainn+Adj+Base:álainn		#;
@@ -13285,6 +13262,9 @@ LEXICON AI-sean
 +Adj+Gen+Strong+Pl:seana		#;
 +Adj+Voc+Pl:sheana			#;
 
+LEXICON AI-the
++Foreign+English+Art:the		#;
++Foreign+English+Art+NER:The		#; ! The is probably part of a Named Entity, e.g. The Wire
 
 LEXICON AI-te
 +Adj+Base:te				#;
@@ -13304,4 +13284,97 @@ LEXICON AI-te
 +Adj+Gen+Strong+Pl:teo		#;
 +Adj+Voc+Pl:teo				#;
 
+LEXICON AdjF
+Acaech	Adj1-3;	! Achaean
+Aegéach	Adj1-3;	! Aegean
+Aeólach	Adj1-3;	! Aeolian
+Afra-Mheiriceánach	Adj1-3;	! Afro-American
+Agragantach	Adj1-3;	! Agrigentian
+Ailbíseach	Adj1-3;	! Albigensian
+Airiasach      Adj1-3;  ! Arian
+Aiticeach	Adj1-3;	! Attic (Greek)
+Andalúiseach	Adj1-3;	! Andalusian
+Angla-Caitliceach	Adj1-3;	! Anglo-Catholic
+Angla-Indiach	Adj1-3;	! Anglo-Indian
+Angla-Éireannach	Adj1-3;	! Anglo Irish
+Aontachtach	Adj1-3;	! Unionist
+Apaláiseach	Adj1-3;	! Appalachian
+Bailéarach	Adj1-3;	! Balearic
+Beirbeireach	Adj1-3;	! Berber
+Búrbónach	Adj1-3;	! Bourbon
+Canárach	Adj1-3;	! Canarian
+Coirdíneach	Adj1-3;	! Kurdish
+Céiniach	Adj1-3;	 ! Kenyan
+Cóiréach	Adj1-3;	 ! Korean
+Formósach	Adj1-3;	! Formosan
+Fíníneach	Adj1-3;	! Fenian
+Gael-Mheiriceánach	Adj1-3;	! Irish American
+Heiseánach	Adj1-3;	! Hessian
+Iar-Indiach	Adj1-3;	 ! West Indian
+Iaránach	Adj1-3;	 ! Iranian
+Inceach	Adj1-3;	! Incan
+Indiach	Adj1-3;	 ! Indian
+Indiach-Mheiriceánach	Adj1-3;	! Indian-American
+Ioruach	Adj1-3;	 ! Norwegian, Norse
+Iútlannach	Adj1-3;	! Jutlandic
+Laitviach	Adj1-3;	 ! Latvian
+Leiveantach	Adj1-3;	! Levantine
+Londanach	Adj1-3;	! Londoner
+Lucsamburgach	Adj1-3;	 ! Luxembourgish
+Lúsatánach	Adj1-3;	! Lusitanian
+Madagascrach	Adj1-3;	! Madagascan
+Malaeisiach	Adj1-3;	 ! Malaysian
+Moldávach	Adj1-3;	! Moldovan
+Mícéanach	Adj1-3;	! Mycenaean
+Naipleach	Adj1-3;	! Neapolitan
+Nua-Chaladónach	Adj1-3;	! New Caledonian
+Nua-Shéalannach	Adj1-3;	 ! New Zealand
+Oir-Indiach	Adj1-3;	 ! East Indian
+Pan-Mheiriceánach	Adj1-3;	! Pan-American
+Paraguach	Adj1-3;	 ! Paraguaian
+Patagónach	Adj1-3;	! Patagonian
+Piréineach	Adj1-3;	! Pyrenean
+Prúiseach	Adj1-3;	 ! Prussian
+Ríceach	Adj1-3;	! Rican (Cósta Ríceach, Portó Ríceach)
+Sadúisíneach	Adj1-3;	! Sadducean
+Saimbiach	Adj1-3;	 ! Zambian
+Sargasach	Adj1-3;	! Sargasso (An Mhuir Sargasach: The Sargasso Sea)
+Seineagálach	Adj1-3;	! Senegalese
+Seirbiach	Adj1-3;	 ! Serbian
+Siléiseach	Adj1-3;	! Silesian
+Siriach	Adj1-3;	 ! Syrian
+Slóivéanach	Adj1-3;	 ! Slovenian
+Sóivéadach	Adj1-3;	 ! Soviet
+Somálach	Adj1-3;	! Somalian
+Sorbach	Adj1-3;	! Sorbian
+Spartach	Adj1-3;	! Spartan
+Suiméarach	Adj1-3;	! Sumerian
+Suranamach	Adj1-3;	! Surinamese
+Sóróstarach	Adj1-3;	! Zoroastrian
+Tansánach	Adj1-3;	! Tanzanian
+Tasmánach	Adj1-3;	! Tasmanian
+Teasálach	Adj1-3;	! Thessalian
+Turcamánach	Adj1-3;	! Turkmen
+Tuscánach	Adj1-3;	 ! Tuscan
+Téacrach	Adj1-3;	! Teucrian
+Tógalannach	Adj1-3;	! Togolese, Togolander
+Uraguach	Adj1-3;	! Uruguayan
+Voltach	Adj1-3;	! Voltaic
+Áigéach	Adj1-3;	! Augean
+Éatrúscach	Adj1-3;	! Etruscan
+
+LEXICON AdjG
+dobharshaothraithe	Adj3-1;	! aquaculture
+digiteach	Adj1-3;	! digital
+vioscósach	Adj1-3;	! viscose, viscuous
+móruasal	Adj4-3;	! magnific
+mór-uasal	Adj4-3;	! var:móruasal
+feimineach	Adj1-3;	! feminist
+optamach	Adj1-3;	! optimal
+réamhghabhálach	Adj1-3;	! preemptive, pre-emptive
+neamh-réamhghabhálach	Adj1-3;	! non-preemptive, nonpre-emptive
+sochapatach	Adj1-3;	! sociopathic
+eipiceach	Adj1-3;	! epic
+ailbheol-charballach	Adj1-3;	! alveolo-palatal, alveopalatal
+achuimilteach	Adj1-3;	! affricate
 

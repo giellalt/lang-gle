@@ -1,45 +1,50 @@
 !*************************************************
+!! DETERMINERS
 !
-!! # DETERMINERS
-!
+!! E. Uí Dhonnchadha
+! 
 !*************************************************
-
 
 LEXICON Determiners
 
-!!!!POSSESSIVE !!!!!
+!! Determiners: Possessives
 
+! mo/do etc have no independent existance, therefore they are possessive determiners not possessive pronouns.
 mo+Det+Poss+1P+Sg:mo		#;	! my
-mo+Det+Short+Poss+1P+Sg:m'	#;	! my, Trond added +Short, this should be discussed.
+!mo+Det+Poss+1P+Sg+NG:m'		#;	! my
+mo+Det+Poss+1P+Sg+Short:m'		#;	! my  - changed +NG to +Short (as per Trond) for m' before a vowel
 do+Det+Poss+2P+Sg:do		#;	! your
-do+Det+Short+Poss+2P+Sg:d'	#;	! your
-ár+Det+Poss+1P+Pl:ár		#;	! our
+!do+Det+Poss+2P+Sg+NG:d'		#;	! your
+do+Det+Poss+2+Sg+Short:d'		#;	! your - changed +NG to +Short (as per Trond for m' for d' before a vowel
+do+Det+Poss+2P+Sg+NG:t'		#;	! your Bardic Apr 2019
+do+Det+Poss+2P+Sg+NG:th'		#;	! your Bardic Apr 2019
+ár+Det+Poss+1P+Pl:ár			#;	! our
 bhur+Det+Poss+2P+Pl:bhur	#;	! your 
 
-!! this information is on the noun as initial mutation
-!! use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
-!!a+Det+Poss:a			#;	! her/his/their
-a+Det+Poss+3P+Pl:a		#;	! their
-a+Det+Poss+3P+Sg+Fem:a		#;	! her
-a+Det+Poss+3P+Sg+Masc:a		#;	! his
+! this information is on the noun as initial mutation
+! use corresponding +Len / +Ecl to determine whether sing/pl, masc/fem
+a+Det+Poss+3P:a			#;	! her/his/their
+! a+Det+Poss+3P+Pl:a		#;	! their
+! a+Det+Poss+3P+Sg+Fem:a		#;	! her
+! a+Det+Poss+3P+Sg+Masc:a		#;	! his
 
-!!! SEE PRON-LEX á+Det+Poss+3P:á		#;	! it: bhí sé á dhíol (he was selling it)
-!!á+Det+Poss+3P+Sg+Fem:á		#;	! it: bhí sé á dhíol (he was selling it)
-!!á+Det+Poss+3P+Sg+Masc:á		#;	! it
-!!á+Det+Poss+3P+Pl:á			#;	! it
+! SEE PRON-LEX á+Det+Poss+3P:á		#;	! it: bhí sé á dhíol  (being sold?)
+!á+Det+Poss+3P+Sg+Fem:á		#;	! it: bhí sé á dhíol aici (she was selling it)
+!á+Det+Poss+3P+Sg+Masc:á		#;	! it: bhí sé á dhíol aige (he was selling it)
+!á+Det+Poss+3P+Pl:á			#;	! it: bhí sé á dhíol acu  (they were selling it)
 
 
-!!!! INTERROGATIVE !!!!
+!! Determiners: INTERROGATIVES
 
-!! SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
-!! SEE PRON-LEX cad+Det+Q:cad				#;	! what
-!! SEE PRON-LEX céard+Det+Q:céard			#;	! what
-!! SEE PRON-LEX cé+Det+Q:cé				#;	! who
+! SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
+! SEE PRON-LEX cad+Det+Q:cad				#;	! what
+! SEE PRON-LEX céard+Det+Q:céard			#;	! what
+! SEE PRON-LEX cé+Det+Q:cé				#;	! who
 cé+Det+Q+Art+Sg:cén	#;	! which: Det not Pron as requires a noun comp.
-!! SEE ADV cá+Det+Q:cá					#;	! where
-!!cathain+Det+Q:cathain		#;	! when
+! SEE ADV cá+Det+Q:cá					#;	! where
+!cathain+Det+Q:cathain		#;	! when
 
-!!!! QUANTIFIER !!!! (definite & indefinite amounts)
+!! Determiners: QUANTIFIERS!!!! (definite & indefinite amounts)
 
 aon+Det+Qty+Idf:aon		#;	! any
 aon+Det+Qty+Idf+hPref:haon	#;	! any
@@ -48,8 +53,8 @@ cibé+Det+Qty+Idf:cibé		#;	! whatever
 leath+Det+Qty:leath		#;	! half
 cupla+Det+Qty:cupla		#;	! few/pair
 cúpla+Det+Qty:cúpla		#;	! few/pair
-!!! shouldnt mod pron. It intensifies amháin perhaps
-!!!ach+Det+Qty:ach			#;	! only "ach sinne amháin"
+! shouldnt mod pron. It intensifies amháin perhaps
+!ach+Det+Qty:ach			#;	! only "ach sinne amháin"
 
 gach+Det+Qty+Def:gach		#;	! every
 gach+Det+Qty+Def+Ecl:ngach	#;	! every
@@ -63,16 +68,17 @@ uile+Det+Qty+Idf:uile		#;	! all
 uile+Det+Qty:uilig		#;	! all together (=uile go léir)
 iomaí+Det+Qty+Def:iomaí		#;	! many
 
-!!!! DEMONSTRATIVE !!!!
+!! Determiners: DEMONSTRATIVES !!!!
 
-!! the following always come at the end of the noun/pron/adj and cannot 
-!! be intermingled with other adjectives 
+! the following always come at the end of the noun/pron/adj and cannot 
+! be intermingled with other adjectives 
 seo+Det+Dem:seo			#;	! this
-seo+CM+Det+Dem:so		#;	! this
+seo+CM+Det+Dem+NG:so		#;	! this 8-Feb-2023 added NG
 sin+Det+Dem:sin			#;	! that
-sin+CM+Det+Dem:san		#;	! that
-s+Det+Dem:s'			#;	! seo or sin e.g. teach s'againne
+sin+CM+Det+Dem+NG:san		#;	! that
+!seo+Det+Dem+NG:s'			#;	! seo (or sin?) e.g. teach s'againne 
+seo+Det+Dem+Short:s'			#;	! seo (or sin?) e.g. teach s'againne - shanged to +Short as for m' and d'
 siúd+Det+Dem:siúd		#;	! those
 úd+Det+Dem:úd			#;	! (those?) yonder
-!! contextual tagged as demonstrative for now at least ...
+! contextual tagged as demonstrative for now at least ...
 eile+Det+Dem:eile		#;	! other

@@ -1,6 +1,17 @@
+!**************************************************************************
+!! Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+!**************************************************************************
+!!		PROPER NOUNS
+!**************************************************************************
+! E. Uí Dhonnchadha 
+! 2003
+! 2024 Updated for +Org, +PersName, etc for Semantic tagging and NER
+!**************************************************************************
 LEXICON NP-LEX-EIRE
 
 <Á t h %_:%  C l i a t h> NP-PLACE;
+<Á i t h %_:%  C l i a t h> NP-PLACE;
+!!!{Áith_Cliath}:{Áith Cliath}  NP-PLACE;
 <Á t h a %_:%  C l i a t h> NP-PLACE;
 <B a i l e %_:%  Á t h a %_:%  C l i a t h> NP-PLACE;	! (Added CW 09/08)
 <C e a n n %_:%  Á t h a %_:%  G a d> NP-PLACE;	! (Added CW 09/08)
@@ -18,28 +29,15 @@ LEXICON NP-LEX-EIRE
 <D ú n %_:%  n a %_:%  n G a l l> NP-PLACE;
 <F e a r %_:%  M a n a c h> NP-PLACE;
 <T í r %_:%  E o g h a i n> NP-PLACE;
+<T í r %_:%  n a %_:%  n Ó g> NP-PLACE-fem;
 <C a i s l e á n %_:%  R i a b h a c h> NP-PLACE;
 <C l o c h %_:%  L i a t h> NP-PLACE;	! Greystone
+<L e i t i r %_:%  C e a n a n n>	NP-PLACE; 
 
-Roinn% an% Taoisigh+MWE:Roinn% an% Taoisigh	NP-PLACE;	!TROND
-Áras% an% Uachtaráin+MWE:Áras% an% Uachtaráin	NP-PLACE; !president's house
-Parlaimint% na% hEorpa+MWE:Parlaimint% na% hEorpa	NP-PLACE;
-Parlaimint% na% hEorpa+MWE+Err/Orth:Parlaimint% an% Eoraip	NP-PLACE; !Err/Orth
-Dáil% Éireann+MWE+Err/Orth:Dáil% Éire NP-PLACE-fem; !Err/Orth
-Dáil% Éireann+MWE:Dáil% Éireann NP-PLACE-fem;
-!!!!Dáil Éire !Err/Orth
-Bus% Éireann+MWE:Bus% Éireann	NP-PLACE;
-Bus% Éireann+MWE+Err/Orth:Bus% Éire 	NP-PLACE; !Err/Orth
-Raidió% Teilifís% Éireann+MWE:Raidió% Teilifís% Éireann  	NP-PLACE;
-Raidió% Teilifís% Éireann+MWE+Err/Orth:Raidió% Teilifís% Éire  	NP-PLACE; !Err/Orth
-Met% Éireann+MWE:Met% Éireann NP-PLACE-fem;
-Met% Éireann+MWE+Err/Orth:Met% Éire NP-PLACE-fem; !Err/Orth
-!!!! "hÉire" Prop Noun Fem Gen Sg DefArt (people of the Ireland)
-Iarnród% Éireann+MWE:Iarnród% Éireann  	NP-PLACE; 
-Iarnród% Éireann+MWE+Err/Orth:Iarnród% Éire  	NP-PLACE;
-!!!! Muintir na hÉireann, Uachtarán na hIodáile
-
-
+Oileán	Nm1-Prop-Place;
+Oileáin	NP-PLACE-pl;
+Meán	Nm1-Prop-Place;
+Oírr	Nm1-Prop-Place;
 BÁC	NP-PLACE;
 BAC	NP-PLACE;
 Cabhán	NP-PLACE;	! Cavan
@@ -161,12 +159,13 @@ Comáin	NP-PLACE;	! Roscommon
 Triúin	NP-PLACE;	! !!!!New Ross
 !!!!Thiobraid Árann	NP-PLACE;	! !!!!Co. Tipperary
 Tiobraid NP-PLACE;	! !!!!Co. Tipperary
+Árainn	Nf5-Prop-Place;	! generates Árann (gen)
 !!!!Thír Eoghain	NP-PLACE;	! !!!!Co. Tyrone
 !!!!Tobar an Choire	NP-PLACE;	! Tobercurry
 !!!!Trá Lí	NP-PLACE;	! Tralee
 !!!!Tulach Mhór	NP-PLACE;	! Tullamore
 !!!!Uíbh Fhailí	NP-PLACE;	! !!!!Co. Offaly
-Aontraim	Nf3-Prop;	! !!!!Co. Antrim
+Aontraim	Nf3-Prop-Place;	! !!!!Co. Antrim
 Beannchar	NP-PLACE;	! Banagher
 Beannchar	NP-PLACE;	! Bangor
 Biorra	NP-PLACE;	! Birr
@@ -174,7 +173,7 @@ Bré	NP-PLACE;	! Bray
 Cairlinn	NP-PLACE;	! Carlingford
 Ceanannas	NP-PLACE;	! Kells
 Ceatharlach	NP-PLACE;	! Carlow
-Cabháin	NP-PLACE-fem;	! !!!!Co. Cavan
+!Cabháin	NP-PLACE-fem;	! !!!!Co. Cavan
 Ceatharlach	NP-PLACE-fem;	! !!!!Co. Carlow
 Ciarraí	NP-PLACE-fem;	! !!!!Co. Kerry
 Cláir	NP-PLACE-fem;	! !!!!Co. Clare
@@ -187,12 +186,13 @@ Doire	NP-PLACE;	! Derry
 Dúin	NP-PLACE;	! !!!!Co. Down
 Durlas	NP-PLACE;	! Thurles
 Gaillimh	NP-PLACE-fem;	! Galway
+Gleanntaí	NP-PLACE;	! Glenties
 Gránard	NP-PLACE;	! Granard
 Iarmhí	NP-PLACE-fem;	! !!!!Co. Westmeath
-inis	NP-PLACE;	! Ennis
+Inis	NP-PLACE;	! Ennis
 Laois	NP-PLACE-fem;	! !!!!Co. Laois
 Leifear	NP-PLACE;	! Lifford
-Liatroim	Nf3-Prop;	! !!!!Co. Leitrim
+Liatroim	Nf3-Prop-Place;	! !!!!Co. Leitrim
 Longfoirt	NP-PLACE;	! !!!!Co. Longford
 Lú	NP-PLACE;	! !!!!Co. Louth
 Luimneach	NP-PLACE;	! Limerick
@@ -891,6 +891,7 @@ Comhaill	NP-Fam;
 Comhain	NP-Fam;
 Comhain	NP-Fam;
 Cónaill	NP-Fam;
+Congáil	NP-Fam;
 Críost	NP-Fam;
 Crosáin	NP-Fam;
 Cuda	NP-Fam-V;
@@ -957,22 +958,22 @@ Cúille	NP-Fam;
 
 Ciabhaigh	NP-Fam-chg;
 Ciabháin	NP-Fam;
-Ciabháin	NP-Fam;
+
 Cianaigh	NP-Fam-chg;
 Cianáin	NP-Fam;
 Ciaragáin	NP-Fam;
-Ciaragáin	NP-Fam;
+
 Ciaráin	NP-Fam;
-Ciaráin	NP-Fam;
+
 Ciara	NP-Fam-V;
-Ciara	NP-Fam-V;
+
 Ciarasach	NP-Fam-0;
 Ciarba	NP-Fam-V;
 Ciarmhaic	NP-Fam;
 Ciarubháin	NP-Fam;
 Cibhil	NP-Fam;
 Cibhleacháin	NP-Fam;
-Cibhleacháin	NP-Fam;
+
 Cibhlín	NP-Fam;
 Ciceam	NP-Fam;
 Cilleáin	NP-Fam;
@@ -990,13 +991,13 @@ Cinsealaigh	NP-Fam-chg;
 Ciobúin	NP-Fam;
 Cíocharáin	NP-Fam;
 Cionaoith	NP-Fam;
-Cionaoith	NP-Fam;
+
 Cionga	NP-Fam-V;
 Ciosáin	NP-Fam;
 Cíosáin	NP-Fam;
-Cíosáin	NP-Fam;
+
 Cíosóg	NP-Fam;
-Cíosóg	NP-Fam;
+
 Ciothrua	NP-Fam-V;
 Ciseáin	NP-Fam;
 Clabaigh	NP-Fam-chg;
@@ -1012,14 +1013,14 @@ Cléir	NP-Fam;
 Cligeoir	NP-Fam;
 Clinse	NP-Fam;
 Cliontún	NP-Fam;
-Cliseam	NP-Fam;
+
 Cliseam	NP-Fam;
 Clochacháin	NP-Fam;
 Clochaire	NP-Fam;
-Clochaire	NP-Fam;
+
 Clochartaigh	NP-Fam-chg;
 Clochasaigh	NP-Fam-chg;
-Cluanaigh	NP-Fam-chg;
+
 Cluanaigh	NP-Fam-chg;
 Cluanáin	NP-Fam;
 Cluasaigh	NP-Fam-chg;
@@ -1031,7 +1032,7 @@ Cnáimhin	NP-Fam;
 Cnáimhín	NP-Fam;
 Cnáimh	NP-Fam;
 Cnáimhsí	NP-Fam;
-Cnáimhsí	NP-Fam;
+
 Cnámhaigh	NP-Fam-chg;
 Cnoc	NP-Fam;
 Cobhaigh	NP-Fam-chg;
@@ -1043,32 +1044,32 @@ Cógan	NP-Fam;
 Cogarain	NP-Fam;
 Cogaráin	NP-Fam;
 Coibheanaigh	NP-Fam-chg;
-Coibheanaigh	NP-Fam-chg;
+
 Coifín	NP-Fam;
 Coigligh	NP-Fam-chg;
-Coigligh	NP-Fam-chg;
+
 Coileáin	NP-Fam;
 Coiléir	NP-Fam;
 Coilféir	NP-Fam;
 Coilín	NP-Fam;
-Coilín	NP-Fam;
+
 Coill	NP-Fam;
-Coill	NP-Fam;
+
 Coimín	NP-Fam;
-Coimín	NP-Fam;
+
 Coineáin	NP-Fam;
 Coineoif	NP-Fam;
 Coineoil	NP-Fam;
-Coineoil	NP-Fam;
+
 Coinín	NP-Fam;
-Coinín	NP-Fam;
+
 Coinneacháin	NP-Fam;
 Coinneagáin	NP-Fam;
 Coinneáin	NP-Fam;
-Coinneáin	NP-Fam;
+
 Coinneallaigh	NP-Fam-chg;
 Coinne	NP-Fam;
-Coinne	NP-Fam;
+
 Coinnigh	NP-Fam-chg;
 Coinnill	NP-Fam;
 Coinn	NP-Fam;
@@ -1076,14 +1077,14 @@ Coipingéir	NP-Fam;
 Cóiplí	NP-Fam;
 Coirbhín	NP-Fam;
 Coirbín	NP-Fam;
-Coirbín	NP-Fam;
+
 Coirc	NP-Fam;
 Coirealláin	NP-Fam;
-Coirealláin	NP-Fam;
+
 Coirill	NP-Fam;
 Coirnín	NP-Fam;
 Coise	NP-Fam;
-Coise	NP-Fam;
+
 Coisteala	NP-Fam-V;
 Coitil	NP-Fam;
 Colaim	NP-Fam;
@@ -1103,31 +1104,31 @@ Coltil	NP-Fam;
 Comada	NP-Fam-V;
 Comaín	NP-Fam;
 Comáin	NP-Fam;
-Comáín	NP-Fam;
+
 Comartún	NP-Fam;
 Comhaill	NP-Fam;
 Comhain	NP-Fam;
-Comhain	NP-Fam;
+
 Comhaln	NP-Fam;
 Comhaltáin	NP-Fam;
 Comhraí	NP-Fam;
 Conaill	NP-Fam;
-Conaill	NP-Fam;
+
 Conail	NP-Fam;
 Conaing	NP-Fam;
-Conaing	NP-Fam;
+
 Conáin	NP-Fam;
 Conairce	NP-Fam;
 Conaire	NP-Fam;
 Conalláin	NP-Fam;
 Conallta	NP-Fam-V;
-Conallta	NP-Fam-V;
+
 Conámha	NP-Fam-V;
 Conanaonaigh	NP-Fam-chg;
 Conaola	NP-Fam-V;
-Conaola	NP-Fam-V;
+
 Conaonaigh	NP-Fam-chg;
-Conaonaigh	NP-Fam-chg;
+
 Conaráin	NP-Fam;
 Conbá	NP-Fam;
 Conba	NP-Fam-V;
@@ -1135,7 +1136,6 @@ Conbháin	NP-Fam;
 Conbhuí	NP-Fam;
 Conboirne	NP-Fam;
 Concatha	NP-Fam-V;
-Concharraige	NP-Fam;
 Concharraige	NP-Fam;
 Concharridge	NP-Fam;
 Concheanainn	NP-Fam;
@@ -1427,6 +1427,7 @@ Donnagáin	NP-Fam;
 Donnchaidh	NP-Fam;
 Donnchaidh	NP-Fam;
 Donncha	NP-Fam-V;
+Donnchadha	NP-Fam-V;
 Dorchaidh	NP-Fam;
 Dorchaidh	NP-Fam;
 Dorcha	NP-Fam-V;
@@ -1526,7 +1527,6 @@ Doibhilin	NP-Fam;
 Doibín	NP-Fam;
 Doidín	NP-Fam;
 Doilfín	NP-Fam;
-Doineannaigh	NP-Fam;
 Doineannaigh	NP-Fam-chg;
 Doinnchinn	NP-Fam;
 Doinneabháin	NP-Fam;
@@ -1556,6 +1556,7 @@ Donnáin	NP-Fam;
 Donnasa	NP-Fam-V;
 Donnchaidh	NP-Fam;
 Donncha	NP-Fam-V;
+Donnchadha	NP-Fam-V;
 Donnchathaigh	NP-Fam-chg;
 Donnchú	NP-Fam;
 Donnuartaigh	NP-Fam-chg;
@@ -1564,10 +1565,8 @@ Doraidh	NP-Fam;
 Dorcháin	NP-Fam;
 Dorchaí	NP-Fam;
 Dorcha	NP-Fam-V;
-Dorcha	NP-Fam-V;
 Dornáin	NP-Fam;
 Drach	NP-Fam-0;
-Draighneáin	NP-Fam;
 Draighneáin	NP-Fam;
 Draoda	NP-Fam-V;
 Draoileáin	NP-Fam;
@@ -1593,17 +1592,14 @@ Druifín	NP-Fam;
 Duacháin	NP-Fam;
 Duagáin	NP-Fam;
 Duáin	NP-Fam;
-Duáin	NP-Fam;
 Dúain	NP-Fam;
 Duánaigh	NP-Fam-chg;
 Duartaigh	NP-Fam-chg;
-Dubhaigh	NP-Fam-chg;
 Dubhaigh	NP-Fam-chg;
 Dubháin	NP-Fam;
 Dubhánaigh	NP-Fam-chg;
 Dubhasa	NP-Fam-V;
 Dubhuí	NP-Fam;
-Dubhuir	NP-Fam;
 Dubhuír	NP-Fam;
 Dúchair	NP-Fam;
 Dúchonna	NP-Fam-V;
@@ -1615,7 +1611,6 @@ Dúdal	NP-Fam;
 Dúda	NP-Fam-V;
 Dúdhíorma	NP-Fam-V;
 Dufaigh	NP-Fam-chg;
-Dúghaill	NP-Fam;
 Dúghaill	NP-Fam;
 Dúghlais	NP-Fam;
 Duibheanaigh	NP-Fam-chg;
@@ -1635,13 +1630,10 @@ Duifiolla	NP-Fam-V;
 Duifleáin	NP-Fam;
 Duiflín	NP-Fam;
 Duigeadáin	NP-Fam;
-Duígeadáin	NP-Fam;
-Duigeannáin	NP-Fam;
 Duígeannáin	NP-Fam;
 Duighiolla	NP-Fam-V;
 Duíginn	NP-Fam;
 Duíleacháin	NP-Fam;
-Duílearga	NP-Fam-V;
 Duílearga	NP-Fam-V;
 Duilé	NP-Fam;
 Duineacháin	NP-Fam;
@@ -1659,7 +1651,6 @@ Duir	NP-Fam;
 Dúlacháin	NP-Fam;
 Dúlachta	NP-Fam-V;
 Dúladaigh	NP-Fam-chg;
-Dúláinne	NP-Fam;
 Dúláinne	NP-Fam;
 Dúlainn	NP-Fam;
 Dúláin	NP-Fam;
@@ -1685,31 +1676,22 @@ Dúthaigh	NP-Fam-chg;
 Eachach	NP-Fam-0;
 Eachagáin	NP-Fam;
 Eachaidh	NP-Fam;
-Eachaidh	NP-Fam;
-Eachaídh	NP-Fam;
 Eachaigh	NP-Fam-chg;
 Eachaín	NP-Fam;
 Eacháin	NP-Fam;
-Eacháin	NP-Fam;
-Eacháin	NP-Fam;
 Eacharna	NP-Fam-V;
 Eachartaigh	NP-Fam-chg;
-Eachmhile	NP-Fam;
 Eachmhíle	NP-Fam;
 Eachráin	NP-Fam;
-Eachráin	NP-Fam;
 Eachtair	NP-Fam;
-Eachuáin	NP-Fam;
 Eachuáin	NP-Fam;
 Eachú	NP-Fam;
 Eadamháin	NP-Fam;
 Éadbhaird	NP-Fam;
 Eadromáin	NP-Fam;
 Éafaígh	NP-Fam;
-Eafarcaigh	NP-Fam-chg;
 Eafartaigh	NP-Fam-chg;
 Eaglais	Nf2-Prop;
-Eáin	NP-Fam;
 Eáin	NP-Fam;
 Éamainn	NP-Fam;
 Éanacháin	NP-Fam;
@@ -1717,16 +1699,12 @@ Eáin	NP-Fam;
 Eanchaí	NP-Fam;
 Eanna	NP-Fam-V;
 Éanna	NP-Fam-V;
-Éanna	NP-Fam-V;
-Eanraic	NP-Fam;
 Eanraic	NP-Fam;
 Éanú	NP-Fam;
 Earaile	NP-Fam;
 Earaíle	NP-Fam;
 Earail	NP-Fam;
-Earail	NP-Fam;
 Earaíl	NP-Fam;
-Earáin	NP-Fam;
 Earáin	NP-Fam;
 Eáráin	NP-Fam;
 Eára	NP-Fam-V;
@@ -1738,14 +1716,10 @@ Earchaí	NP-Fam;
 Earchaír	NP-Fam;
 Earga	NP-Fam-V;
 Earnáin	NP-Fam;
-Earnáin	NP-Fam;
-Earna	NP-Fam-V;
 Earna	NP-Fam-V;
 Easmann	NP-Fam;
 Easpaig	NP-Fam;
-Easpaig	NP-Fam;
 Eathach	NP-Fam-0;
-Eathírn	NP-Fam;
 Eathírn	NP-Fam;
 Éatún	NP-Fam;
 Eibhearard	NP-Fam;
@@ -1779,29 +1753,19 @@ Eímhín	NP-Fam;
 Éimhrín	NP-Fam;
 Éineacháin	NP-Fam;
 Éinrí	NP-Fam;
-Éinrí	NP-Fam;
 Eirc	NP-Fam;
-Eirc	NP-Fam;
-Eireamhóin	NP-Fam;
 Eireamhóin	NP-Fam;
 Eislin	NP-Fam;
 Eiteagáin	NP-Fam;
 Eithírn	NP-Fam;
 Eitigh	NP-Fam-chg;
-Eitigh	NP-Fam-chg;
 Eochach	NP-Fam-0;
 Eochagáin	NP-Fam;
-Eochagáin	NP-Fam;
-Eochaidh	NP-Fam;
 Eochaidh	NP-Fam;
 Eochaín	NP-Fam;
 Eocháin	NP-Fam;
 Eoghain	NP-Fam;
-Eoghain	NP-Fam;
 Eoghanáin	NP-Fam;
-Eoin	NP-Fam;
-Eoin	NP-Fam;
-Eoín	NP-Fam;
 Eolasa	NP-Fam-V;
 Eosa	NP-Fam-V;
 Eothach	NP-Fam-0;
@@ -1822,27 +1786,22 @@ Faoileáin	NP-Fam;
 Faoite	NP-Fam;
 Faoitigh	NP-Fam-chg;
 Faoláin	NP-Fam;
-Faoláin	NP-Fam;
 Faolchaidh	NP-Fam;
 Faolchair	NP-Fam;
 Farannáin	NP-Fam;
 Farcháin	NP-Fam;
 Farraigh	NP-Fam-chg;
 Fathaigh	NP-Fam-chg;
-Fathaigh	NP-Fam-chg;
 Fathartaigh	NP-Fam-chg;
 Feadagáin	NP-Fam;
 Fearaigh	NP-Fam-chg;
-Fearaigh	NP-Fam-chg;
 Fearail	NP-Fam;
 Fearáin	NP-Fam;
-Fearais	NP-Fam;
 Fearais	NP-Fam;
 Fearasa	NP-Fam-V;
 Fearchaí	NP-Fam;
 Fearchair	NP-Fam;
 Fearghail	NP-Fam;
-Fearghais	NP-Fam;
 Fearghais	NP-Fam;
 Fearghasa	NP-Fam-V;
 Fearsíthe	NP-Fam;
@@ -1855,73 +1814,51 @@ Feirtéir	NP-Fam;
 Feoirling	NP-Fam;
 
 Fachtna	NP-Fam-V;
-Fachtna	NP-Fam-V;
 Faifí	NP-Fam;
 Failigh	NP-Fam-chg;
-Failigh	NP-Fam-chg;
 Failí	NP-Fam;
-Failí	NP-Fam;
-Faoláin	NP-Fam;
 Faoláin	NP-Fam;
 Fearaígh	NP-Fam;
 Fearaigh	NP-Fam-chg;
-Fearaigh	NP-Fam-chg;
 Fearaile	NP-Fam;
 Fearail	NP-Fam;
-Fearail	NP-Fam;
-Fearaíl	NP-Fam;
 Fearaíl	NP-Fam;
 Fearchail	NP-Fam;
 Fearchair	NP-Fam;
-Fearchair	NP-Fam;
 Feargail	NP-Fam;
-Feargall	NP-Fam;
 Fearga	NP-Fam-V;
 Fearghail	NP-Fam;
 Fearghasa	NP-Fam-V;
 Feorais	NP-Fam;
-Feorais	NP-Fam;
-Fiachra	NP-Fam-V;
+!!!!Fiachra	NP-Fam-V;
 Fiarais	NP-Fam;
 Fibín	NP-Fam;
-Fibín	NP-Fam;
-File	NP-Fam;
 File	NP-Fam;
 Filib	NP-Fam;
 Fílíb	NP-Fam;
 Finín	NP-Fam;
 Fínneachtaigh	NP-Fam-chg;
 Finneachta	NP-Fam-V;
-Finneachta	NP-Fam-V;
 Finnéin	NP-Fam;
-Finnéin	NP-Fam;
-Fínnéín	NP-Fam;
 Finn	NP-Fam;
-Finn	NP-Fam;
-Fíobhuí	NP-Fam;
 Fíobhuí	NP-Fam;
 Fíodair	NP-Fam;
-Fiondáin	NP-Fam;
 Fiondáin	NP-Fam;
 Fionda	NP-Fam-V;
 Fionnachta	NP-Fam-V;
 Fionnaíle	NP-Fam;
 Fionnail	NP-Fam;
 Fionnáin	NP-Fam;
-Fionnáin	NP-Fam;
-Fionnbhairr	NP-Fam;
 Fionnbhairr	NP-Fam;
 Fionnlaoich	NP-Fam;
 Fionnmhacáin	NP-Fam;
 Fionntáin	NP-Fam;
 Fiontáin	NP-Fam;
 Firléinn	NP-Fam;
-Firléinn	NP-Fam;
 Fírléinn	NP-Fam;
 Fir	NP-Fam;
 Flainn	NP-Fam;
 Fleastair	NP-Fam;
-Floinn	NP-Fam;
 Floinn	NP-Fam;
 Fógartaigh	NP-Fam-chg;
 Frainc	NP-Fam;
@@ -2006,11 +1943,7 @@ Fualáin	NP-Fam;
 
 Fiacháin	NP-Fam;
 Fiacha	NP-Fam-V;
-Fiacha	NP-Fam-V;
 Fiachna	NP-Fam-V;
-Fiachra	NP-Fam-V;
-Fiachra	NP-Fam-V;
-Fiaich	NP-Fam;
 Fiaich	NP-Fam;
 Fialáin	NP-Fam;
 Fiannachta	NP-Fam-V;
@@ -2078,7 +2011,6 @@ Frithil	NP-Fam;
 Friúin	NP-Fam;
 Fuadacháin	NP-Fam;
 Fuada	NP-Fam-V;
-Fuada	NP-Fam-V;
 Fuallaigh	NP-Fam-chg;
 Fuaráin	NP-Fam;
 Fuartháin	NP-Fam;
@@ -2092,6 +2024,11 @@ Fuitléigh	NP-Fam-chg;
 Fuitnigh	NP-Fam-chg;
 Furlong	NP-Fam;
 Futrail	NP-Fam;
+
+
+
+
+
 Gábháin	NP-Fam;
 Gabhalaigh	NP-Fam-chg;
 Gabhann	NP-Fam;
@@ -2530,7 +2467,6 @@ Leoid	NP-Fam;
 Leoid	NP-Fam;
 Liain	NP-Fam;
 Liammóir	NP-Fam;
-Liam	NP-Fam;
 Liam	NP-Fam;
 Lia	NP-Fam-V;
 Lia	NP-Fam-V;
@@ -3109,7 +3045,7 @@ Pléimeann	NP-Fam;
 Pluincéid	NP-Fam;
 Póiléid	NP-Fam;
 Póilín	NP-Fam;
-Póil	NP-Fam;
+!!Póil	NP-Fam;
 Poire	NP-Fam;
 Póirtéir	NP-Fam;
 Poirtingéil	NP-Fam;
@@ -3356,7 +3292,7 @@ Seáin	NP-Fam;
 Sealbhaigh	NP-Fam-chg;
 Sealmair	NP-Fam;
 Séamais	NP-Fam;
-Séamas	NP-Fam;
+!!!Séamas	NP-Fam;
 Seambar	NP-Fam;
 Seamróg	NP-Fam;
 Seanacháin	NP-Fam;
@@ -3694,8 +3630,10 @@ Uallaigh	NP-Fam-chg;
 Ualraig	NP-Fam;
 Ualtair	NP-Fam;
 Uanacháin	NP-Fam;
+
+
+
 Uarais	NP-Fam;
-Uaruisce	NP-Fam;
 Uaruisce	NP-Fam;
 Uastún	NP-Fam;
 Úbáin	NP-Fam;
@@ -3705,13 +3643,9 @@ Ugán	NP-Fam;
 Úgán	NP-Fam;
 Uidhir	NP-Fam;
 Uidhrín	NP-Fam;
-Uidhrín	NP-Fam;
-Uid	NP-Fam;
 Uid	NP-Fam;
 Uigeamór	NP-Fam;
 Uiginn	NP-Fam;
-Uiginn	NP-Fam;
-Uilcín	NP-Fam;
 Uilcín	NP-Fam;
 Uileagóid	NP-Fam;
 Uiliam	NP-Fam;
@@ -3719,7 +3653,6 @@ Uilic	NP-Fam;
 Uilín	NP-Fam;
 Uilí	NP-Fam;
 Uilis	NP-Fam;
-Uilliam	NP-Fam;
 Uilliam	NP-Fam;
 Uilliméid	NP-Fam;
 Uíllíméíd	NP-Fam;
@@ -3729,20 +3662,17 @@ Uingséil	NP-Fam;
 Uinseannáin	NP-Fam;
 Uinseann	NP-Fam;
 Uír	NP-Fam;
-Uír	NP-Fam;
 Uisce	NP-Fam;
 Uiscín	NP-Fam;
 Uiscín	NP-Fam;
 Uiséir	NP-Fam;
 Úisfín	NP-Fam;
 Úistín	NP-Fam;
-Úistín	NP-Fam;
 Uitheachair	NP-Fam;
 Uladh	NP-Fam;
 Ulcín	NP-Fam;
 Ultacháin	NP-Fam;
 Ultach	NP-Fam-0;
-Ultaigh	NP-Fam-chg;
 Ultaigh	NP-Fam-chg;
 Ultáin	NP-Fam;
 Ultalgh	NP-Fam;
@@ -3752,805 +3682,891 @@ Urnaí	NP-Fam;
 Urthuile	NP-Fam;
 Vailintín	NP-Fam;
 Valera	NP-Fam-V;
-!!!
-!!!! Organisations
-!!!!
+!**************************************************************************
+! E. Uí Dhonnchadha 
+! 2023
+! Organisations
+! 2024 added +Orgn for semantic tagging NER (named entity recognition)
+!**************************************************************************
 LEXICON NP-LEX-ORG
-<S i n n %  F é i n %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<F i a n n a %  F á i l %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<F i n e %  G a e l %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<L u c h t %  O i b r e  %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<S i n n %  F é i n %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<F i a n n a %  F á i l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<F i n e %  G a e l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<L u c h t %  O i b r e  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<O n e %  D i r e c t i o n  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
 
 anois+Prop+Noun+Masc+Com+Sg:Anois      #; 
 anois+Prop+Noun+Masc+Com+Sg:ANOIS      #; 
-LEXICON NP-LEX-PERS
-Afraic	Nf2-Prop;
-Ailís	Nf2-Prop;
-Anastáis	Nf2-Prop;
-Aoibeann	Nf2-Prop;
-Aoibheann	Nf2-Prop;
-Béibhinn	Nf2-Prop;
-Bríd	Nf2-Prop;
-Caoileann	Nf2-Prop;
-Doireann	Nf2-Prop;
-Éadaoin	Nf2-Prop;
-Eilís	Nf2-Prop;
-Glóir	Nf2-Prop;
-Laoiseach	Nf2-Prop;
-Lil	Nf2-Prop;
-Méabh	Nf2-Prop;
-!!!Mór	Nf2-Prop; Rare usage as personal name in current times
-Muireal	Nf2-Prop;
-Muireann	Nf2-Prop;
-Niamh	Nf2-Prop;
-Richeal	Nf2-Prop;
-Ríonach	Nf2-Prop;
-Róis	Nf2-Prop;
-Sadhbh	Nf2-Prop;
-Gormlaith	Nf3-Prop;
-Laisrian	Nf3-Prop;
-Orlaith	Nf3-Prop;
-Ros	Nf3-Prop;
-Agata	Nf4-Prop;
-Aghna	Nf4-Prop;
-Aiche	Nf4-Prop;
-Ailbhe	Nf4-Prop;
-Ailsíse	Nf4-Prop;
-Aimilíona	Nf4-Prop;
-Áine	Nf4-Prop;
-Aingeal	Nf4-Prop;
-Aisling	Nf4-Prop;
-Aisún	Nf4-Prop;
-Alaidh	Nf4-Prop;
-Alastríona	Nf4-Prop;
-Alma	Nf4-Prop;
-Anna	Nf4-Prop;
-Aodhnait	Nf4-Prop;
-Aoife	Nf4-Prop;
-Aoileann	Nf4-Prop;
-Athracht	Nf4-Prop;
-Báb	Nf4-Prop;
-Baibín	Nf4-Prop;
-Bairbre	Nf4-Prop;
-!!!!Bean Mhí	Nf4-Prop;
-!!!!Bean Mhumhan	Nf4-Prop;
-Béatraís	Nf4-Prop;
-Bláthnaid	Nf4-Prop;
-Brídín	Nf4-Prop;
-Cairméal	Nf4-Prop;
-Cáit	Nf4-Prop;
-Cáitín	Nf4-Prop;
-Caitlín	Nf4-Prop;
-Caitríona	Nf4-Prop;
-Caoilfhionn	Nf4-Prop;
-Caoimhe	Nf4-Prop;
-Caral	Nf4-Prop;
-Cearúilín	Nf4-Prop;
-Ceilín	Nf4-Prop;
-Cianait	Nf4-Prop;
-Ciara	Nf4-Prop;
-Cití	Nf4-Prop;
-Clár	Nf4-Prop;
-Clóda	Nf4-Prop;
-Colma	Nf4-Prop;
-Córa	Nf4-Prop;
-Cráinne	Nf4-Prop;
-Cristíona	Nf4-Prop;
-Damhnait	Nf4-Prop;
-Diána	Nf4-Prop;
-Dóirín	Nf4-Prop;
-Ealáir	Nf4-Prop;
-Earnait	Nf4-Prop;
-Eibhfín	Nf4-Prop;
-Eibhlín	Nf4-Prop;
-Eileanóra	Nf4-Prop;
-Eilionóir	Nf4-Prop;
-Eilís	Nf4-Prop;
-Eimhear	Nf4-Prop;
-Eimíle	Nf4-Prop;
-Eistir	Nf4-Prop;
-Eithne	Nf4-Prop;
-Faoiltiarna	Nf4-Prop;
-Filimín	Nf4-Prop;
-Filis	Nf4-Prop;
-Fíonnuala	Nf4-Prop;
-Gaibriélle	Nf4-Prop;
-Gearóidin	Nf4-Prop;
-Gobnait	Nf4-Prop;
-Gráinne	Nf4-Prop;
-Hilde	Nf4-Prop;
-íde	Nf4-Prop;
-Imelda	Nf4-Prop;
-Isibéal	Nf4-Prop;
-Labhaoise	Nf4-Prop;
-Lára	Nf4-Prop;
-Lasairíona	Nf4-Prop;
-Léan	Nf4-Prop;
-Lile	Nf4-Prop;
-Lorna	Nf4-Prop;
-Irial	Nf4-Prop;
-Máda	Nf4-Prop;
-Madailín	Nf4-Prop;
-Máible	Nf4-Prop;
-Maighréad	Nf4-Prop;
-Máille	Nf4-Prop;
-Maim	Nf4-Prop;	! mar 2012
-Máire	Nf4-Prop;
-Máiréad	Nf4-Prop;
-Máirín	Nf4-Prop;
-Mairsile	Nf4-Prop;
-Maití	Nf4-Prop;
-Maitilde	Nf4-Prop;
-Marta	Nf4-Prop;
-Mealla	Nf4-Prop;
-Míde	Nf4-Prop;
-Miriam	Nf4-Prop;
-Móirín	Nf4-Prop;
-Moncha	Nf4-Prop;
-Muanait	Nf4-Prop;
-Nábla	Nf4-Prop;
-Neans	Nf4-Prop;
-Neasa	Nf4-Prop;
-Neill	Nf4-Prop;
-Nóirín	Nf4-Prop;
-Nollaig	Nf4-Prop;
-Nóra	Nf4-Prop;
-Norma	Nf4-Prop;
-Nuala	Nf4-Prop;
-Oilbhe	Nf4-Prop;
-Onóra	Nf4-Prop;
-Ornáit	Nf4-Prop;
-Pádraigín	Nf4-Prop;
-Peig	Nf4-Prop;
-Peigí	Nf4-Prop;
-Póilín	Nf4-Prop;
-Pol	Nf4-Prop;
-Rathnait	Nf4-Prop;
-Réaltán	Nf4-Prop;
-Ríte	Nf4-Prop;
-Róise	Nf4-Prop;
-Róisín	Nf4-Prop;
-Róna	Nf4-Prop;
-Rút	Nf4-Prop;
-Sadhbh	Nf4-Prop;
-Saidhbhín	Nf4-Prop;
-Sandra	Nf4-Prop;
-Séarlait	Nf4-Prop;
-Seoighe	Nf4-Prop;
-Seosaimhín	Nf4-Prop;
-Sibéal	Nf4-Prop;
-Sífe	Nf4-Prop;
-Sílbhe	Nf4-Prop;
-Síle	Nf4-Prop;
-Sinéad	Nf4-Prop;
-Siobhán	Nf4-Prop;
-Sláine	Nf4-Prop;
-Sorcha	Nf4-Prop;
-Stáise	Nf4-Prop;
-Stiofáinín	Nf4-Prop;
-Susanna	Nf4-Prop;
-Tilde	Nf4-Prop;
-Treasa	Nf4-Prop;
-Tríona	Nf4-Prop;
-Una	Nf4-Prop;
-Úna	Nf4-Prop;
-Ursula	Nf4-Prop;
-!!!!Giolla Bhearaigh	Nm1-Prop;
-Abán	Nm1-Prop;
-Ábraham	Nm1-Prop;
-Adam	Nm1-Prop;
-Adhamhnán	Nm1-Prop;
-Aibhistín	Nm1-Prop;
-Aindréas	Nm1-Prop;
-Alastar	Nm1-Prop;
-Albán	Nm1-Prop;
-Alfonsas	Nm1-Prop;
-Alsandar	Nm1-Prop;
-Ambrós	Nm1-Prop;
-Anluan	Nm1-Prop;
-Aodhán	Nm1-Prop;
-Aogán	Nm1-Prop;
-Aonas	Nm1-Prop;
-Ardal	Nm1-Prop;
-Art	Nm1-Prop;
-Artúr	Nm1-Prop;
-Bairtliméad	Nm1-Prop;
-Baolach	Nm1-Prop;
-Beacán	Nm1-Prop;
-Bearchán	Nm1-Prop;
-Bearnard	Nm1-Prop;
-Beineán	Nm1-Prop;
-Beircheart	Nm1-Prop;
-Bran	Nm1-Prop;
-Breandán	Nm1-Prop;
-Breasal	Nm1-Prop;
-Buach	Nm1-Prop;
-Cafarr	Nm1-Prop;
-Cainneach	Nm1-Prop;
-Calbhach	Nm1-Prop;
-Caolán	Nm1-Prop;
-Caomhán	Nm1-Prop;
-Cárthach	Nm1-Prop;
-Cathal	Nm1-Prop;
-Ceallach	Nm1-Prop;
-Ceallachán	Nm1-Prop;
-Cearúil	Nm1-Prop;
-Ceiteach	Nm1-Prop;
-Cianán	Nm1-Prop;
-Ciarán	Nm1-Prop;
-Coireall	Nm1-Prop;
-Colmán	Nm1-Prop;
-Comán	Nm1-Prop;
-Comhall	Nm1-Prop;
-Comhan	Nm1-Prop;
-Conall	Nm1-Prop;
-Conán	Nm1-Prop;
-Conchur	Nm1-Prop;
-Conchúr	Nm1-Prop;
-Conn	Nm1-Prop;
-Cormac	Nm1-Prop;
-Criofann	Nm1-Prop;
-Cróchán	Nm1-Prop;
-Crónán	Nm1-Prop;
-Cuan	Nm1-Prop;
-Cúchoigrí	Nm1-Prop;
-Déaglán	Nm1-Prop;
-Deasún	Nm1-Prop;
-Dónall	Nm1-Prop;
-Donn	Nm1-Prop;
-Donnagán	Nm1-Prop;
-Donnán	Nm1-Prop;
-Donncha	Nm1-Prop;
-Dualtach	Nm1-Prop;
-Dubhán	Nm1-Prop;
-Dúghall	Nm1-Prop;
-Dúghlas	Nm1-Prop;
-Dubhghlas	Nm1-Prop;
-Éadbhard	Nm1-Prop;
-Éamann	Nm1-Prop;
-Éanán	Nm1-Prop;
-Earcán	Nm1-Prop;
-Earnán	Nm1-Prop;
-Eighneachán	Nm1-Prop;
-Éimhear	Nm1-Prop;
-Eireamhón	Nm1-Prop;
-Eoghan	Nm1-Prop;
-Faolán	Nm1-Prop;
-Fearach	Nm1-Prop;
-Fearal	Nm1-Prop;
-Fearghal	Nm1-Prop;
-Fearghas	Nm1-Prop;
-Fionn	Nm1-Prop;
-Fionnán	Nm1-Prop;
-Fionnbharr	Nm1-Prop;
-Fiontán	Nm1-Prop;
-Flann	Nm1-Prop;
-Flannán	Nm1-Prop;
-Garbhán	Nm1-Prop;
-Gearalt	Nm1-Prop;
-Gearard	Nm1-Prop;
-Geaspar	Nm1-Prop;
-Gilleán	Nm1-Prop;
-Giobún	Nm1-Prop;
-Gordan	Nm1-Prop;
-Hoibeard	Nm1-Prop;
-Íomhar	Nm1-Prop;
-Indiach		Nm1-Prop;	! mar 2012
-Labhrás	Nm1-Prop;
-Laoiseach	Nm1-Prop;
-Leon	Nm1-Prop;
-Lionard	Nm1-Prop;
-Lomán	Nm1-Prop;
-Lonán	Nm1-Prop;
-Lorcán	Nm1-Prop;
-Lúcás	Nm1-Prop;
-Lústás	Nm1-Prop;
-Maitias	Nm1-Prop;
-Mánas	Nm1-Prop;
-Mantán	Nm1-Prop;
-Marcas	Nm1-Prop;
-Meallán	Nm1-Prop;
-Mícheál	Nm1-Prop;
-Muireartach	Nm1-Prop;
-Muirteartach	Nm1-Prop;
-Naomhán	Nm1-Prop;
-Naomh	Nm1-Prop;
-Neasán	Nm1-Prop;
-Niall	Nm1-Prop;
-Niallán	Nm1-Prop;
-Niocal	Nm1-Prop;
-Nioclás	Nm1-Prop;
-Odhrán	Nm1-Prop;
-Oilibhéar	Nm1-Prop;
-Órán	Nm1-Prop;
-Oscar	Nm1-Prop;
-Parthalán	Nm1-Prop;
-Pascal	Nm1-Prop;
-Peadar	Nm1-Prop;
-Pól	Nm1-Prop;
-Ránall	Nm1-Prop;
-Rannulbh	Nm1-Prop;
-Réamann	Nm1-Prop;
-Riocard	Nm1-Prop;
-Risteard	Nm1-Prop;
-Roibeard	Nm1-Prop;
-Rólann	Nm1-Prop;
-Rónán	Nm1-Prop;
-Ruán	Nm1-Prop;
-Saerbhreathach	Nm1-Prop;
-Sailbheastar	Nm1-Prop;
-Séamas	Nm1-Prop;
-Seán	Nm1-Prop;
-Seanán	Nm1-Prop;
-Séarlas	Nm1-Prop;
-Séathrún	Nm1-Prop;
-Seosamh	Nm1-Prop;
-Sial	Nm1-Prop;
-Síomón	Nm1-Prop;
-Siseal	Nm1-Prop;
-Solamh	Nm1-Prop;
-Stiofán	Nm1-Prop;
-Tadhg	Nm1-Prop;
-Tiarnach	Nm1-Prop;
-Tiarnán	Nm1-Prop;
-Toirealach	Nm1-Prop;
-Tomaltach	Nm1-Prop;
-Tomás	Nm1-Prop;
-Tuathal	Nm1-Prop;
-Ualtar	Nm1-Prop;
-Uinseann	Nm1-Prop;
-Úistean	Nm1-Prop;
-Ultán	Nm1-Prop;
-Aodh	Nm3-Prop;
-Aonghus	Nm3-Prop;
-Connlaodh	Nm3-Prop;
-Críostóir	Nm3-Prop;
-Diarmaid	Nm3-Prop;
-Diarmuid	Nm3-Prop;
-Gréagóir	Nm3-Prop;
-Iarlaith	Nm3-Prop;
-Iarlaith	Nm3-Prop;
-Mathúin	Nm3-Prop;
-Matha	Nm4-Prop;  ! Mathew?
-Meilseoir	Nm3-Prop;
-Naos	Nm3-Prop;
-Téadóir	Nm3-Prop;
-!!!!Giolla Bhríde	Nm4-Prop;
-!!!!Giolla Dé	Nm4-Prop;
-!!!!Giolla Íosa	Nm4-Prop;
-Íosa	Nm4-Prop;
-Agaistín	Nm4-Prop;
-Aibhistin	Nm4-Prop;
-Aibhne	Nm4-Prop;
-Aidhleart	Nm4-Prop;
-Aidhlmear	Nm4-Prop;
-Ailbhe	Nm4-Prop;
-Ailéin	Nm4-Prop;
-Ailfrid	Nm4-Prop;
-Ailín	Nm4-Prop;
-Aindriú	Nm4-Prop;
-Ainéislis	Nm4-Prop;
-Áistín	Nm4-Prop;
-Alabhaois	Nm4-Prop;
-Amhlaoibh	Nm4-Prop;
-Antain	Nm4-Prop;
-Antaine	Nm4-Prop;
-Aodhán	Nm4-Prop;
-Arascain	Nm4-Prop;
-Barra	Nm4-Prop;
-Beartlaidh	Nm4-Prop;
-Beiniaimín	Nm4-Prop;
-Beinidict	Nm4-Prop;
-Bonaveantúr	Nm4-Prop;
-Buach	Nm4-Prop;
-Cairbre	Nm4-Prop;
-Caoimhín	Nm4-Prop;
-Cathair	Nm4-Prop;
-Cian	Nm4-Prop;
-Cillian	Nm4-Prop;
-Cinnéide	Nm4-Prop;
-Coilín	Nm4-Prop;
-Coimín	Nm4-Prop;
-Colla	Nm4-Prop;
-Colm	Nm4-Prop;
-Conaire	Nm4-Prop;
-Consaidín	Nm4-Prop;
-!!!!Cú Uladh	Nm4-Prop;
-Cuimín	Nm4-Prop;
-Cumhaí	Nm4-Prop;
-Cúmhaí	Nm4-Prop;
-Daibhéid	Nm4-Prop;
-Dáire	Nm4-Prop;
-Dáithí	Nm4-Prop;
-Dioraí	Nm4-Prop;
-Doiminic	Nm4-Prop;
-Donncha	Nm4-Prop;
-Eachaidh	Nm4-Prop;
-Éanna	Nm4-Prop;
-Eiméid	Nm4-Prop;
-Éimhín	Nm4-Prop;
-Eirnín	Nm4-Prop;
-Eochaidh	Nm4-Prop;
-Eoghainín	Nm4-Prop;
-Eoin	Nm4-Prop;
-!!!!Eoin Baiste	Nm4-Prop;
-Fachna	Nm4-Prop;
-Fáilbhe	Nm4-Prop;
-Feardorcha	Nm4-Prop;
-Feichín	Nm4-Prop;
-Féilim	Nm4-Prop;
-Feilimí	Nm4-Prop;
-Fiacha	Nm4-Prop;
-Fiachra	Nm4-Prop;
-Finín	Nm4-Prop;
-Finnian	Nm4-Prop;
-Flaithrí	Nm4-Prop;
-Frainc	Nm4-Prop;
-Fursa	Nm4-Prop;
-Gaibriél	Nm4-Prop;
-Gearóid	Nm4-Prop;
-Gilbeirt	Nm4-Prop;
-!!!!Giolla Chríost	Nm4-Prop;
-!!!!Giolla Easpaig	Nm4-Prop;
-!!!!Giolla na Naomh	Nm4-Prop;
-Glaisne	Nm4-Prop;
-Gothraidh	Nm4-Prop;
-Haol	Nm4-Prop;
-Íácób	Nm4-Prop;
-íosóg	Nm4-Prop;
-Laimbeart	Nm4-Prop;
-Leaslaoi	Nm4-Prop;
-Liam	Nm4-Prop;
-Lochlainn	Nm4-Prop;
-Lughaidh	Nm4-Prop;
-iúil	Nm4-Prop;
-Mainchín	Nm4-Prop;
-Máirtín	Nm4-Prop;
-Mait	Nm4-Prop;
-Maitiú	Nm4-Prop;
-Maodhóg	Nm4-Prop;
-Maoileachlainn	Nm4-Prop;
-Maoilíosa	Nm4-Prop;
-Maoilir	Nm4-Prop;
-Maolcholaim	Nm4-Prop;
-Maolmhuire	Nm4-Prop;
-Maolruáin	Nm4-Prop;
-Muireách	Nm4-Prop;
-Muirí	Nm4-Prop;
-Muiris	Nm4-Prop;
-Murcha	Nm4-Prop;
-Naoise	Nm4-Prop;
-Nollaig	Nm4-Prop;
-Oisín	Nm4-Prop;
-Pádraig	Nm4-Prop;
-Páid	Nm4-Prop;
-Páidín	Nm4-Prop;
-Piaras	Nm4-Prop;
-Pilib	Nm4-Prop;
-Píus	Nm4-Prop;
-Proinsias	Nm4-Prop;
-Raibhilín	Nm4-Prop;
-Raphael	Nm4-Prop;
-Ráulbh	Nm4-Prop;
-Roibín	Nm4-Prop;
-Ruairí	Nm4-Prop;
-Séafra	Nm4-Prop;
-Séanna	Nm4-Prop;
-Séathra	Nm4-Prop;
-Séimí	Nm4-Prop;
-Seoirse	Nm4-Prop;
-Somhairle	Nm4-Prop;
-Suibhne	Nm4-Prop;
-Taidhgín	Nm4-Prop;
-Tiobóid	Nm4-Prop;
-Uaine	Nm4-Prop;
-Úgaine	Nm4-Prop;
-Uileag	Nm4-Prop;
-Uilfrid	Nm4-Prop;
-Vail	Nm4-Prop;
-Vailintín	Nm4-Prop;
-Punk		Nm4-Prop;
-Rex		Nm4-Prop;
-Eiffel		Nm4-Prop;
-Daid		Nm4-Prop;
+O2+Prop+Noun+Masc+Com+Sg:O2      #;
+U2+Prop+Noun+Masc+Com+Sg:U2      #; 
+Childline+Prop+Noun+Masc+Com+Sg:Childline      #; 
+McDonalds+Prop+Noun+Masc+Com+Sg:McDonalds      #; 
 
+Google+Org+Prop+Noun+Masc+Com+Sg:Google      #; 
+eBay+Org+Prop+Noun+Masc+Com+Sg:eBay      #; 
+Twitter+Org+Prop+Noun+Masc+Com+Sg:Twitter      #; 
+Facebook+Org+Prop+Noun+Masc+Com+Sg:Facebook      #; 
+Skype+Prop+Noun+Masc+Com+Sg:Skype      #; 
+Moodle+Prop+Noun+Masc+Com+Sg:Moodle      #; 
+Instagram+Org+Prop+Noun+Masc+Com+Sg:Instagram      #; 
+Snapchat+Org+Prop+Noun+Masc+Com+Sg:Snapchat      #; 
+Netflix+Org+Prop+Noun+Masc+Com+Sg:Netflix      #; 
+YouTube+Org+Prop+Noun+Masc+Com+Sg:YouTube      #; 
+iPad+Prop+Noun+Masc+Com+Sg:iPad      #; 
+iPhone+Prop+Noun+Masc+Com+Sg:iPhone      #; 
+
+Roinn% an% Taoisigh+MWE:Roinn% an% Taoisigh	NP-PLACE;	!TROND
+Áras% an% Uachtaráin+MWE:Áras% an% Uachtaráin	NP-PLACE; !president's house
+Parlaimint% na% hEorpa+MWE:Parlaimint% na% hEorpa	NP-PLACE;
+Parlaimint% na% hEorpa+MWE+Err/Orth:Parlaimint% an% Eoraip	NP-PLACE; !Err/Orth
+Dáil% Éireann+MWE+Err/Orth:Dáil% Éire NP-PLACE-fem; !Err/Orth
+Dáil% Éireann+MWE:Dáil% Éireann NP-PLACE-fem;
+!!!!Dáil Éire !Err/Orth
+Bus% Éireann+MWE:Bus% Éireann	NP-PLACE;
+Bus% Éireann+MWE+Err/Orth:Bus% Éire 	NP-PLACE; !Err/Orth
+Raidió% Teilifís% Éireann+MWE:Raidió% Teilifís% Éireann  	NP-PLACE;
+Raidió% Teilifís% Éireann+MWE+Err/Orth:Raidió% Teilifís% Éire  	NP-PLACE; !Err/Orth
+Met% Éireann+MWE:Met% Éireann NP-PLACE-fem;
+Met% Éireann+MWE+Err/Orth:Met% Éire NP-PLACE-fem; !Err/Orth
+!!!! "hÉire" Prop Noun Fem Gen Sg DefArt (people of the Ireland)
+Iarnród% Éireann+MWE:Iarnród% Éireann  	NP-PLACE; 
+Iarnród% Éireann+MWE+Err/Orth:Iarnród% Éire  	NP-PLACE;
+!!!! Muintir na hÉireann, Uachtarán na hIodáile
+
+
+LEXICON NP-LEX-PERS
+Afraic	Nf2-Prop-PName;
+Ailís	Nf2-Prop-PName;
+Anastáis	Nf2-Prop-PName;
+Aoibeann	Nf2-Prop-PName;
+Aoibheann	Nf2-Prop-PName;
+Béibhinn	Nf2-Prop-PName;
+Bríd	Nf2-Prop-PName;
+Caoileann	Nf2-Prop-PName;
+Doireann	Nf2-Prop-PName;
+Éadaoin	Nf2-Prop-PName;
+Eilís	Nf2-Prop-PName;
+Glóir	Nf2-Prop-PName;
+Laoiseach	Nf2-Prop-PName;
+Lil	Nf2-Prop-PName;
+Méabh	Nf2-Prop-PName;
+!!!Mór	Nf2-Prop-PName; Rare usage as personal name in current times
+Muireal	Nf2-Prop-PName;
+Muireann	Nf2-Prop-PName;
+Niamh	Nf2-Prop-PName;
+Richeal	Nf2-Prop-PName;
+Ríonach	Nf2-Prop-PName;
+Róis	Nf2-Prop-PName;
+Sadhbh	Nf2-Prop-PName;
+Gormlaith	Nf3-Prop-PName;
+Laisrian	Nf3-Prop-PName;
+Orlaith	Nf3-Prop-PName;
+Ros	Nf3-Prop-PName;
+Agata	Nf4-Prop-PName;
+Aghna	Nf4-Prop-PName;
+Aiche	Nf4-Prop-PName;
+Ailbhe	Nf4-Prop-PName;
+Ailsíse	Nf4-Prop-PName;
+Aimilíona	Nf4-Prop-PName;
+Áine	Nf4-Prop-PName;
+Aingeal	Nf4-Prop-PName;
+Aisling	Nf4-Prop-PName;
+Aisún	Nf4-Prop-PName;
+Alaidh	Nf4-Prop-PName;
+Alastríona	Nf4-Prop-PName;
+Alma	Nf4-Prop-PName;
+Anna	Nf4-Prop-PName;
+Aodhnait	Nf4-Prop-PName;
+Aoife	Nf4-Prop-PName;
+Aoileann	Nf4-Prop-PName;
+Athracht	Nf4-Prop-PName;
+Báb	Nf4-Prop-PName;
+Baibín	Nf4-Prop-PName;
+Bairbre	Nf4-Prop-PName;
+!!!!Bean Mhí	Nf4-Prop-PName;
+!!!!Bean Mhumhan	Nf4-Prop-PName;
+Béatraís	Nf4-Prop-PName;
+Bláthnaid	Nf4-Prop-PName;
+Brídín	Nf4-Prop-PName;
+Cairméal	Nf4-Prop-PName;
+Cáit	Nf4-Prop-PName;
+Cáitín	Nf4-Prop-PName;
+Caitlín	Nf4-Prop-PName;
+Caitríona	Nf4-Prop-PName;
+Caoilfhionn	Nf4-Prop-PName;
+Caoimhe	Nf4-Prop-PName;
+Caral	Nf4-Prop-PName;
+Cearúilín	Nf4-Prop-PName;
+Ceilín	Nf4-Prop-PName;
+Cianait	Nf4-Prop-PName;
+Ciara	Nf4-Prop-PName;
+Cití	Nf4-Prop-PName;
+Clár	Nf4-Prop-PName;
+Clóda	Nf4-Prop-PName;
+Colma	Nf4-Prop-PName;
+Córa	Nf4-Prop-PName;
+Cráinne	Nf4-Prop-PName;
+Cristíona	Nf4-Prop-PName;
+Damhnait	Nf4-Prop-PName;
+Diána	Nf4-Prop-PName;
+Dóirín	Nf4-Prop-PName;
+Ealáir	Nf4-Prop-PName;
+Earnait	Nf4-Prop-PName;
+Eibhfín	Nf4-Prop-PName;
+Eibhlín	Nf4-Prop-PName;
+Eileanóra	Nf4-Prop-PName;
+Eilionóir	Nf4-Prop-PName;
+Eilís	Nf4-Prop-PName;
+Eimhear	Nf4-Prop-PName;
+Eimíle	Nf4-Prop-PName;
+Eistir	Nf4-Prop-PName;
+Eithne	Nf4-Prop-PName;
+Faoiltiarna	Nf4-Prop-PName;
+Filimín	Nf4-Prop-PName;
+Filis	Nf4-Prop-PName;
+Fíonnuala	Nf4-Prop-PName;
+Gaibriélle	Nf4-Prop-PName;
+Gearóidin	Nf4-Prop-PName;
+Gobnait	Nf4-Prop-PName;
+Gráinne	Nf4-Prop-PName;
+Hilde	Nf4-Prop-PName;
+íde	Nf4-Prop-PName;
+Imelda	Nf4-Prop-PName;
+Isibéal	Nf4-Prop-PName;
+Labhaoise	Nf4-Prop-PName;
+Lára	Nf4-Prop-PName;
+Lasairíona	Nf4-Prop-PName;
+Léan	Nf4-Prop-PName;
+Lile	Nf4-Prop-PName;
+Lorna	Nf4-Prop-PName;
+Irial	Nf4-Prop-PName;
+Máda	Nf4-Prop-PName;
+Madailín	Nf4-Prop-PName;
+Máible	Nf4-Prop-PName;
+Maighréad	Nf4-Prop-PName;
+Máille	Nf4-Prop-PName;
+Maim	Nf4-Prop-PName;	! mar 2012
+Máire	Nf4-Prop-PName;
+Maire	Nf4-Prop-PName;	! may 2018
+Máiréad	Nf4-Prop-PName;
+Máirín	Nf4-Prop-PName;
+Mairsile	Nf4-Prop-PName;
+Maití	Nf4-Prop-PName;
+Maitilde	Nf4-Prop-PName;
+Marta	Nf4-Prop-PName;
+Mealla	Nf4-Prop-PName;
+Míde	Nf4-Prop-PName;
+Miriam	Nf4-Prop-PName;
+Móirín	Nf4-Prop-PName;
+Moncha	Nf4-Prop-PName;
+Muanait	Nf4-Prop-PName;
+Nábla	Nf4-Prop-PName;
+Neans	Nf4-Prop-PName;
+Neasa	Nf4-Prop-PName;
+Neill	Nf4-Prop-PName;
+Neilí	Nf4-Prop-PName;
+Nóirín	Nf4-Prop-PName;
+! Nollaig	Nf4-Prop-PName;
+Nóra	Nf4-Prop-PName;
+Norma	Nf4-Prop-PName;
+Nuala	Nf4-Prop-PName;
+Oilbhe	Nf4-Prop-PName;
+Onóra	Nf4-Prop-PName;
+Ornáit	Nf4-Prop-PName;
+Pádraigín	Nf4-Prop-PName;
+Peig	Nf4-Prop-PName;
+Peigí	Nf4-Prop-PName;
+Póilín	Nf4-Prop-PName;
+Pol	Nf4-Prop-PName;
+Rathnait	Nf4-Prop-PName;
+Réaltán	Nf4-Prop-PName;
+Ríte	Nf4-Prop-PName;
+Róise	Nf4-Prop-PName;
+Róisín	Nf4-Prop-PName;
+Róna	Nf4-Prop-PName;
+Rút	Nf4-Prop-PName;
+Sadhbh	Nf4-Prop-PName;
+Saidhbhín	Nf4-Prop-PName;
+Sandra	Nf4-Prop-PName;
+Séarlait	Nf4-Prop-PName;
+Seoighe	Nf4-Prop-PName;
+Seosaimhín	Nf4-Prop-PName;
+Sibéal	Nf4-Prop-PName;
+Sífe	Nf4-Prop-PName;
+Sílbhe	Nf4-Prop-PName;
+Síle	Nf4-Prop-PName;
+Sinéad	Nf4-Prop-PName;
+Siobhán	Nf4-Prop-PName;
+Sláine	Nf4-Prop-PName;
+Sorcha	Nf4-Prop-PName;
+Stáise	Nf4-Prop-PName;
+Stiofáinín	Nf4-Prop-PName;
+Susanna	Nf4-Prop-PName;
+Tilde	Nf4-Prop-PName;
+Treasa	Nf4-Prop-PName;
+Tríona	Nf4-Prop-PName;
+Una	Nf4-Prop-PName;
+Úna	Nf4-Prop-PName;
+Ursula	Nf4-Prop-PName;
+!!!!Giolla Bhearaigh	Nm1-Prop-PName;
+Abán	Nm1-Prop-PName;
+Ábraham	Nm1-Prop-PName;
+Adam	Nm1-Prop-PName;
+Adhamhnán	Nm1-Prop-PName;
+Aibhistín	Nm1-Prop-PName;
+Aindréas	Nm1-Prop-PName;
+Alastar	Nm1-Prop-PName;
+Albán	Nm1-Prop-PName;
+Alfonsas	Nm1-Prop-PName;
+Alsandar	Nm1-Prop-PName;
+Ambrós	Nm1-Prop-PName;
+Anluan	Nm1-Prop-PName;
+Aodhán	Nm1-Prop-PName;
+Aogán	Nm1-Prop-PName;
+Aonas	Nm1-Prop-PName;
+Ardal	Nm1-Prop-PName;
+Art	Nm1-Prop-PName;
+Artúr	Nm1-Prop-PName;
+Bairtliméad	Nm1-Prop-PName;
+Baolach	Nm1-Prop-PName;
+Beacán	Nm1-Prop-PName;
+Bearchán	Nm1-Prop-PName;
+Bearnard	Nm1-Prop-PName;
+Beineán	Nm1-Prop-PName;
+Beircheart	Nm1-Prop-PName;
+Bran	Nm1-Prop-PName;
+Breandán	Nm1-Prop-PName;
+Breasal	Nm1-Prop-PName;
+Buach	Nm1-Prop-PName;
+Cafarr	Nm1-Prop-PName;
+Cainneach	Nm1-Prop-PName;
+Calbhach	Nm1-Prop-PName;
+Caolán	Nm1-Prop-PName;
+Caomhán	Nm1-Prop-PName;
+Cárthach	Nm1-Prop-PName;
+Cathal	Nm1-Prop-PName;
+Ceallach	Nm1-Prop-PName;
+Ceallachán	Nm1-Prop-PName;
+Cearúil	Nm1-Prop-PName;
+Ceiteach	Nm1-Prop-PName;
+Cianán	Nm1-Prop-PName;
+Ciarán	Nm1-Prop-PName;
+Coireall	Nm1-Prop-PName;
+Colmán	Nm1-Prop-PName;
+Comán	Nm1-Prop-PName;
+Comhall	Nm1-Prop-PName;
+Comhan	Nm1-Prop-PName;
+Conall	Nm1-Prop-PName;
+Conán	Nm1-Prop-PName;
+Conchur	Nm1-Prop-PName;
+Conchúr	Nm1-Prop-PName;
+Conn	Nm1-Prop-PName;
+Cormac	Nm1-Prop-PName;
+Criofann	Nm1-Prop-PName;
+Cróchán	Nm1-Prop-PName;
+Crónán	Nm1-Prop-PName;
+crom	Nm1-Prop-PName; !!! moved from general noun lexicon; must have small "c" here or chrom as verb/adj will never be reached
+Cuan	Nm1-Prop-PName;
+Cúchoigrí	Nm1-Prop-PName;
+Déaglán	Nm1-Prop-PName;
+Deasún	Nm1-Prop-PName;
+Dónall	Nm1-Prop-PName;
+Donn	Nm1-Prop-PName;
+Donnagán	Nm1-Prop-PName;
+Donnán	Nm1-Prop-PName;
+Donncha	Nm1-Prop-PName;
+Dualtach	Nm1-Prop-PName;
+Dubhán	Nm1-Prop-PName;
+Dúghall	Nm1-Prop-PName;
+Dúghlas	Nm1-Prop-PName;
+Dubhghlas	Nm1-Prop-PName;
+Éadbhard	Nm1-Prop-PName;
+Éamann	Nm1-Prop-PName;
+Éanán	Nm1-Prop-PName;
+Earcán	Nm1-Prop-PName;
+Earnán	Nm1-Prop-PName;
+Eighneachán	Nm1-Prop-PName;
+Éimhear	Nm1-Prop-PName;
+Eireamhón	Nm1-Prop-PName;
+Eoghan	Nm1-Prop-PName;
+Faolán	Nm1-Prop-PName;
+Fearach	Nm1-Prop-PName;
+Fearal	Nm1-Prop-PName;
+Fearghal	Nm1-Prop-PName;
+Fearghas	Nm1-Prop-PName;
+Finnéigeas	Nm1-Prop-PName;  ! added 02-02-2022
+Fionn	Nm1-Prop-PName;
+Fionnán	Nm1-Prop-PName;
+Fionnbharr	Nm1-Prop-PName;
+Fiontán	Nm1-Prop-PName;
+Flann	Nm1-Prop-PName;
+Flannán	Nm1-Prop-PName;
+Garbhán	Nm1-Prop-PName;
+Gearalt	Nm1-Prop-PName;
+Gearard	Nm1-Prop-PName;
+Geaspar	Nm1-Prop-PName;
+Gilleán	Nm1-Prop-PName;
+Giobún	Nm1-Prop-PName;
+Gordan	Nm1-Prop-PName;
+Hoibeard	Nm1-Prop-PName;
+Íomhar	Nm1-Prop-PName;
+Indiach		Nm1-Prop-PName;	! mar 2012
+Labhrás	Nm1-Prop-PName;
+Laoiseach	Nm1-Prop-PName;
+Leon	Nm1-Prop-PName;
+Lionard	Nm1-Prop-PName;
+Lomán	Nm1-Prop-PName;
+Lonán	Nm1-Prop-PName;
+Lorcán	Nm1-Prop-PName;
+Lúcás	Nm1-Prop-PName;
+Lústás	Nm1-Prop-PName;
+Maitias	Nm1-Prop-PName;
+Mánas	Nm1-Prop-PName;
+Mantán	Nm1-Prop-PName;
+Marcas	Nm1-Prop-PName;
+Meallán	Nm1-Prop-PName;
+Mícheál	Nm1-Prop-PName;
+Muireartach	Nm1-Prop-PName;
+Muirteartach	Nm1-Prop-PName;
+Naomhán	Nm1-Prop-PName;
+Naomh	Nm1-Prop-PName;
+Neasán	Nm1-Prop-PName;
+Niall	Nm1-Prop-PName;
+Niallán	Nm1-Prop-PName;
+Niocal	Nm1-Prop-PName;
+Nioclás	Nm1-Prop-PName;
+Odhrán	Nm1-Prop-PName;
+Oilibhéar	Nm1-Prop-PName;
+Órán	Nm1-Prop-PName;
+Oscar	Nm1-Prop-PName;
+Parthalán	Nm1-Prop-PName;
+Pascal	Nm1-Prop-PName;
+Peadar	Nm1-Prop-PName;
+Pól	Nm1-Prop-PName;
+Ránall	Nm1-Prop-PName;
+Rannulbh	Nm1-Prop-PName;
+Réamann	Nm1-Prop-PName;
+Riocard	Nm1-Prop-PName;
+Risteard	Nm1-Prop-PName;
+Roibeard	Nm1-Prop-PName;
+Rólann	Nm1-Prop-PName;
+Rónán	Nm1-Prop-PName;
+Ruán	Nm1-Prop-PName;
+Saerbhreathach	Nm1-Prop-PName;
+Sailbheastar	Nm1-Prop-PName;
+Séamas	Nm1-Prop-PName;
+Séamus	Nm1-Prop-PName;
+Seán	Nm1-Prop-PName;
+Seán:Seagháin	Nm1-Prop-PName;
+Seanán	Nm1-Prop-PName;
+Séarlas	Nm1-Prop-PName;
+Séathrún	Nm1-Prop-PName;
+Seosamh	Nm1-Prop-PName;
+Setanta	Nm1-Prop-PName;	!!! added 1-FEB-2022
+Sial	Nm1-Prop-PName;
+Síomón	Nm1-Prop-PName;
+Siseal	Nm1-Prop-PName;
+Solamh	Nm1-Prop-PName;
+Stiofán	Nm1-Prop-PName;
+Tadhg	Nm1-Prop-PName;
+Tiarnach	Nm1-Prop-PName;
+Tiarnán	Nm1-Prop-PName;
+Toirealach	Nm1-Prop-PName;
+Tomaltach	Nm1-Prop-PName;
+Tomás	Nm1-Prop-PName;
+Tuathal	Nm1-Prop-PName;
+Ualtar	Nm1-Prop-PName;
+Uinseann	Nm1-Prop-PName;
+Úistean	Nm1-Prop-PName;
+Ultán	Nm1-Prop-PName;
+Aodh	Nm3-Prop-PName;
+Aonghus	Nm3-Prop-PName;
+Connlaodh	Nm3-Prop-PName;
+Críostóir	Nm3-Prop-PName;
+Diarmaid	Nm3-Prop-PName;
+Diarmuid	Nm3-Prop-PName;
+Gréagóir	Nm3-Prop-PName;
+Iarlaith	Nm3-Prop-PName;
+Iarlaith	Nm3-Prop-PName;
+Mathúin	Nm3-Prop-PName;
+Matha	Nm4-Prop-PName;  ! Mathew?
+Meilseoir	Nm3-Prop-PName;
+Naos	Nm3-Prop-PName;
+Téadóir	Nm3-Prop-PName;
+!!!!Giolla Bhríde	Nm4-Prop-PName;
+!!!!Giolla Dé	Nm4-Prop-PName;
+!!!!Giolla Íosa	Nm4-Prop-PName;
+Íosa	Nm4-Prop-PName;
+Agaistín	Nm4-Prop-PName;
+Aibhistin	Nm4-Prop-PName;
+Aibhne	Nm4-Prop-PName;
+Aidhleart	Nm4-Prop-PName;
+Aidhlmear	Nm4-Prop-PName;
+Ailbhe	Nm4-Prop-PName;
+Ailéin	Nm4-Prop-PName;
+Ailfrid	Nm4-Prop-PName;
+Ailín	Nm4-Prop-PName;
+Aindriú	Nm4-Prop-PName;
+Ainéislis	Nm4-Prop-PName;
+Áistín	Nm4-Prop-PName;
+Alabhaois	Nm4-Prop-PName;
+Amhlaoibh	Nm4-Prop-PName;
+Antain	Nm4-Prop-PName;
+Antaine	Nm4-Prop-PName;
+Aodhán	Nm4-Prop-PName;
+Arascain	Nm4-Prop-PName;
+Barra	Nm4-Prop-PName;
+Beartlaidh	Nm4-Prop-PName;
+Beiniaimín	Nm4-Prop-PName;
+Beinidict	Nm4-Prop-PName;
+Bonaveantúr	Nm4-Prop-PName;
+Buach	Nm4-Prop-PName;
+Cairbre	Nm4-Prop-PName;
+Caoimhín	Nm4-Prop-PName;
+Cathair	Nm4-Prop-PName;
+Cian	Nm4-Prop-PName;
+Cillian	Nm4-Prop-PName;
+Cinnéide	Nm4-Prop-PName;
+Coilín	Nm4-Prop-PName;
+Coimín	Nm4-Prop-PName;
+Colla	Nm4-Prop-PName;
+Colm	Nm4-Prop-PName;
+Conaire	Nm4-Prop-PName;
+Consaidín	Nm4-Prop-PName;
+!!!!Cú Uladh	Nm4-Prop-PName;
+Cuimín	Nm4-Prop-PName;
+Cumhaí	Nm4-Prop-PName;
+Cúmhaí	Nm4-Prop-PName;
+Daibhéid	Nm4-Prop-PName;
+Dáire	Nm4-Prop-PName;
+Dáithí	Nm4-Prop-PName;
+Dioraí	Nm4-Prop-PName;
+Doiminic	Nm4-Prop-PName;
+Donncha	Nm4-Prop-PName;
+Eachaidh	Nm4-Prop-PName;
+Éanna	Nm4-Prop-PName;
+Eiméid	Nm4-Prop-PName;
+Éimhín	Nm4-Prop-PName;
+Eirnín	Nm4-Prop-PName;
+Eochaidh	Nm4-Prop-PName;
+Eoghainín	Nm4-Prop-PName;
+Eoin	Nm4-Prop-PName;
+!!!!Eoin Baiste	Nm4-Prop-PName;
+Fachna	Nm4-Prop-PName;
+Fáilbhe	Nm4-Prop-PName;
+Feardorcha	Nm4-Prop-PName;
+Feichín	Nm4-Prop-PName;
+Féilim	Nm4-Prop-PName;
+Feilimí	Nm4-Prop-PName;
+Fiacha	Nm4-Prop-PName;
+Fiachra	Nm4-Prop-PName;
+Finín	Nm4-Prop-PName;
+Finnian	Nm4-Prop-PName;
+Flaithrí	Nm4-Prop-PName;
+Frainc	Nm4-Prop-PName;
+Fursa	Nm4-Prop-PName;
+Gaibriél	Nm4-Prop-PName;
+Gearóid	Nm4-Prop-PName;
+Gilbeirt	Nm4-Prop-PName;
+!!!!Giolla Chríost	Nm4-Prop-PName;
+!!!!Giolla Easpaig	Nm4-Prop-PName;
+!!!!Giolla na Naomh	Nm4-Prop-PName;
+Glaisne	Nm4-Prop-PName;
+Gothraidh	Nm4-Prop-PName;
+Haol	Nm4-Prop-PName;
+Íácób	Nm4-Prop-PName;
+íosóg	Nm4-Prop-PName;
+Laimbeart	Nm4-Prop-PName;
+Leaslaoi	Nm4-Prop-PName;
+Liam	Nm4-Prop-PName;
+Lochlainn	Nm4-Prop-PName;
+Lughaidh	Nm4-Prop-PName;
+iúil	Nm4-Prop-PName;
+Mainchín	Nm4-Prop-PName;
+Máirtín	Nm4-Prop-PName;
+Mait	Nm4-Prop-PName;
+Maitiú	Nm4-Prop-PName;
+Maodhóg	Nm4-Prop-PName;
+Maoileachlainn	Nm4-Prop-PName;
+Maoilíosa	Nm4-Prop-PName;
+Maoilir	Nm4-Prop-PName;
+Maolcholaim	Nm4-Prop-PName;
+Maolmhuire	Nm4-Prop-PName;
+Maolruáin	Nm4-Prop-PName;
+Muireách	Nm4-Prop-PName;
+Muirí	Nm4-Prop-PName;
+Muiris	Nm4-Prop-PName;
+Murcha	Nm4-Prop-PName;
+Naoise	Nm4-Prop-PName;
+! Nollaig	Nm4-Prop-PName;
+Oisín	Nm4-Prop-PName;
+Pádraig	Nm4-Prop-PName;
+Páid	Nm4-Prop-PName;
+Páidín	Nm4-Prop-PName;
+Piaras	Nm4-Prop-PName;
+Pilib	Nm4-Prop-PName;
+Píus	Nm4-Prop-PName;
+Proinsias	Nm4-Prop-PName;
+Raibhilín	Nm4-Prop-PName;
+Raphael	Nm4-Prop-PName;
+Ráulbh	Nm4-Prop-PName;
+Roibín	Nm4-Prop-PName;
+Ruairí	Nm4-Prop-PName;
+Séafra	Nm4-Prop-PName;
+Séanna	Nm4-Prop-PName;
+Séathra	Nm4-Prop-PName;
+Séimí	Nm4-Prop-PName;
+Seoirse	Nm4-Prop-PName;
+Somhairle	Nm4-Prop-PName;
+Suibhne	Nm4-Prop-PName;
+Taidhgín	Nm4-Prop-PName;
+Tiobóid	Nm4-Prop-PName;
+Uaine	Nm4-Prop-PName;
+Úgaine	Nm4-Prop-PName;
+Uileag	Nm4-Prop-PName;
+Uilfrid	Nm4-Prop-PName;
+Vail	Nm4-Prop-PName;
+Vailintín	Nm4-Prop-PName;
+Punk		Nm4-Prop-PName;
+Rex		Nm4-Prop-PName;
+Eiffel		Nm4-Prop-PName;
+Daid		Nm4-Prop-PName;
+Platón	Nm1-Prop-PName;
+
+Hansel	Nm4-Prop-PName;
+Gretel	Nf5-Prop-PName;
+<C i n n í n %_:%  Ó i r>	Nf5-Prop-PName;
 LEXICON NP-LEX-TIR
-!! no because Na hAfraice Láir/Theas etc ..<A f r a i c %_:%  T h e a s>	Nf2-Prop;	! !!!!South Africa
-<B a i l e %_:%  A t h a %_:%  C l i a t h>	Nm4-Prop;	! Dublin
-<B é a l %_:%  F e i r s t e>	Nm4-Prop;	! Belfast
-<A n %_:%  N í l>	Nf2-Prop;	! Nile
+!! no because Na hAfraice Láir/Theas etc ..<A f r a i c %_:%  T h e a s>	Nf2-Prop-Place;	! !!!!South Africa
+<B a i l e %_:%  A t h a %_:%  C l i a t h>	Nm4-Prop-Place;	! Dublin
+<B é a l %_:%  F e i r s t e>	Nm4-Prop-Place;	! Belfast
+<A n %_:%  N í l>	Nf2-Prop-Place;	! Nile
+Abcáis	Nf2-Prop-Place;	! Abkhazia
 Aeigéach	NP-PLACE-sg;	! !!!!Aegean (Sea)
-Aetóip	Nf2-Prop;	! Ethiopia
-Afganastáin	Nf2-Prop;	! Afghanistan
-Afraic	Nf2-Prop;	! Africa
-Áidin	NP-PLACE-sg;	! Aden
+Aetóip	Nf2-Prop-Place;	! Ethiopia
+Afganastáin	Nf2-Prop-Place;	! Afghanistan
+Afraic	Nf2-Prop-Place;	! Africa
+Aibisín	Nf2-Prop-Place;	! Abyssinia
+Áidin	Nf4-Prop-Place;	! Aden
 Aidriad	NP-PLACE-sg;	! !!!!Adriatic (Sea)
-Aigéine	NP-PLACE-sg;	! Oceania
-Ailgéir	Nf2-Prop;	! Algeria
-Airgintín	Nf2-Prop;	! Argentina
-Airméin	NP-PLACE-sg;	! Armenia
+Aigéine	Nf4-Prop-Place;	! Oceania
+Ailgéir	Nf2-Prop-Place;	! Algeria
+Airgintín	Nf2-Prop-Place;	! Argentina
+Airméin	Nf2-Prop-Place;	! Armenia
 Aise	NP-PLACE-sg;	! !!!!Asia Minor
-Aíse	Nf4-Prop;	! Asia
-Aithin	NP-PLACE-sg;	! Athens
-Alasca	NP-PLACE-sg;	! Alaska
-Albáin	Nf2-Prop;	! Albania
-Albain	NP-PLACE-sg;	! Scotland
-Alsáis	NP-PLACE-sg;	! Alsace
-Amasóin	Nf2-Prop;	! Amazon
-Amstardam	NP-PLACE-sg;	! Amsterdam
-Andóra	NP-PLACE-sg;	! Andorra
-Angóla	NP-PLACE-sg;	! Angola
-Antuairp	NP-PLACE-sg;	! Antwerp
+Aíse	Nf4-Prop-Place;	! Asia
+Aisiria	Nf4-Prop-Place;	! Assyria
+Aithin	Nf2-Prop-Place;	! Athens
+!!Alasca+Place:Alasca	Nm4-Prop-Place;	! Alaska
+Alasca	Nm4-Prop-Place;	! Alaska
+Albáin	Nf2-Prop-Place;	! Albania
+Albain	Nf5-Prop-Place;	! Scotland
+Alsáis	Nf2-Prop-Place;	! Alsace
+Amasóin	Nf2-Prop-Place;	! Amazon
+Amstardam	Nm4-Prop-Place;	! Amsterdam
+Andóra	Nm4-Prop-Place;	! Andorra
+Angóla	Nm4-Prop-Place;	! Angola
+Antartaice	Nf4-Prop-Place;	! Antarctica
+Antuairp	Nf4-Prop-Place;	! Antwerp
 Éimíríochtaí	NP-PLACE-pl;	! !!!!United Arab Emirates - Aontas na nÉimíríochtaí Arabacha
 Arabacha	AdjM-Prop-pl;	! !!!!United Arab Emirates
-Sóivéadach	Nf4-Prop;	! !!!!Soviet Union - Aontas na Sóivéadach
-Araib	Nf2-Prop;	! Arabia
-Shádach	AdjF-Prop;	! !!!!Saudi Arabia
-Árainn	NP-PLACE-sg;	! Arainn 
-Astracáin	NP-PLACE-sg;	! Astrak(h)an
-Astráil	Nf2-Prop;	! Australia
-Astraláise	NP-PLACE-sg;	! Australasia
-Bahámaí	NP-PLACE-sg;	! !!!!Bahamas (The )
-Bairéin	NP-PLACE-sg;	! Bahrein
+Sóivéadach	Nm1-Prop-Place;	! Soviet Union - Aontas na Sóivéadach
+Araib	Nf2-Prop-Place;	! Arabia
+Shádach	AdjF-Prop-Place;	! !!!!Saudi Arabia
+Asarbaiseáin	Nf2-Prop-Place;	! Azerbaijan
+Astracáin	Nf2-Prop-Place;	! Astrak(h)an
+Astráil	Nf2-Prop-Place;	! Australia
+Astraláise	Nf4-Prop-Place;	! Australasia
+Bahámaí	NP-PLACE-pl;	! !!!!Bahamas (The )
+Bairéin	Nf4-Prop-Place;	! Bahrein
 Balcáin	NP-PLACE-pl;	! Balkans
-Bioscáin	Nf2-Prop;	!!!!Bá na Bioscáine! !!!!Biscay (Bayof )
-Banglaidéis	Nf2-Prop;	! Bangladesh
-Barbadós	NP-PLACE-sg;	! Barbados
-Béalgrád	NP-PLACE-sg;	! Belgrade
-Beangál	NP-PLACE-sg;	! Bengal
-Beilg	Nf2-Prop;	! Belgium
-Beinin	NP-PLACE-sg;	! Benin
-Beirlín	NP-PLACE-sg;	! Berlin
-Beirmiúdaí	NP-PLACE-sg;	! !!!!Bermudas (The)
-Beirmiúda	NP-PLACE-sg;	! Bermuda
-Beirn	NP-PLACE-sg;	! Berne
-Beithil	Nf2-Prop;	! Bethlehem
-Bablóinia	Nf4-Prop;	! Babylonia
-Bablóin	Nf2-Prop;	! Babylon
-Bainglaidéis	Nf2-Prop;	! !!!!Bangla Desh
-Banglaidéis	Nf2-Prop;	! !!!!Bangla Desh
-Balúchastáin	Nf2-Prop;	! Baluchistan
-Barbair	Nf2-Prop;	! Barbary
-Bealarúis	Nf2-Prop;	! Belarus
-Bílearúis	Nf2-Prop;	! Byelorussia
-Boisnia-Heirseagaivéin	Nf2-Prop;	! Bosnia-Herzegovina
-Boisnia	Nf4-Prop;	! Bosnia
-!!!Breatain	Nf2-Prop; !!!!Bhreatain Bheag (Wales)
-Burgúin	Nf2-Prop;	! Burgundy
-Burúin	Nf2-Prop;	! Burundi
-Bútáin	Nf2-Prop;	! Bhutan
-Biafra	NP-PLACE-sg;	! Biafra
-Biosáint	Nf2-Prop;	! Byzantium
-Boirneo	NP-PLACE-sg;	! Borneo
-Bolaiv	Nf2-Prop;	! Bolivia
-Bostún	NP-PLACE-sg;	! Boston
-Brasaíl	Nf2-Prop;	! Brazil
-Briostó	NP-PLACE-sg;	! Bristol
-Briotáin	Nf2-Prop;	! Brittany
-Bruiséil	Nf2-Prop;	! Brussels
-Búcairist	NP-PLACE-sg;	! Bucharest
-Búdaipeist	NP-PLACE-sg;	! Budapest
-Bulgáir	Nf2-Prop;	! Bulgaria
-Burma	NP-PLACE-sg;	! Burma
+Balúcastáin	Nf2-Prop-Place;	! Baluchistan
+Banglaidéis	Nf2-Prop-Place;	! Bangladesh
+Barbadós	Nm4-Prop-Place;	! Barbados
+Basútlainn	Nf2-Prop-Place;	! Basutoland
+Baváir	Nf2-Prop-Place;	! Bavaria
+Bioscáin	Nf2-Prop-Place;	!!!!Bá na Bioscáine! !!!!Biscay (Bayof )
+Beachuanlainn	Nf2-Prop-Place;	! Bechuanaland
+Béalgrád	Nm4-Prop-Place;	! Belgrade
+Beangál	Nm4-Prop-Place;	! Bengal
+Beilg	Nf2-Prop-Place;	! Belgium
+Beilís	Nf2-Prop-Place;	! Belize
+Beinin	Nf4-Prop-Place;	! Benin
+Beirlín	Nf4-Prop-Place;	! Berlin
+Beirmiúdaí	NP-PLACE-pl;	! !!!!Bermudas (The)
+Beirmiúda	Nm4-Prop-Place;	! Bermuda
+Beirn	Nf4-Prop-Place;	! Berne
+Beithil	Nf2-Prop-Place;	! Bethlehem
+Bablóinia	Nf4-Prop-Place;	! Babylonia
+Bablóin	Nf2-Prop-Place;	! Babylon
+Bainglaidéis	Nf2-Prop-Place;	! !!!!Bangla Desh
+Banglaidéis	Nf2-Prop-Place;	! !!!!Bangla Desh
+Balúchastáin	Nf2-Prop-Place;	! Baluchistan
+Barbair	Nf2-Prop-Place;	! Barbary
+Bealarúis	Nf2-Prop-Place;	! Belarus
+Béóitia	Nf4-Prop-Place;	! Boeotia
+Bílearúis	Nf2-Prop-Place;	! Byelorussia
+Bitín	Nf2-Prop-Place;	! Bithynia
+Boihéim	Nf2-Prop-Place;	! Bohemia
+Boisnia-Heirseagaivéin	Nf2-Prop-Place;	! Bosnia-Herzegovina
+Boisnia	Nf4-Prop-Place;	! Bosnia
+Boróbadúr	Nm4-Prop-Place;	! Borobudur
+Botsuáin	Nf2-Prop-Place;	! Botswana
+Bratasláiv	Nf2-Prop-Place;	! Bratislava
+!!!Breatain	Nf2-Prop-Place; !!!!Bhreatain Bheag (Wales)
+Burgúin	Nf2-Prop-Place;	! Burgundy
+Burúin	Nf2-Prop-Place;	! Burundi
+Bútáin	Nf2-Prop-Place;	! Bhutan
+Biafra	Nm4-Prop-Place;	! Biafra
+Biosáint	Nf2-Prop-Place;	! Byzantium
+Boirneo	Nm4-Prop-Place;	! Borneo
+Bolaiv	Nf2-Prop-Place;	! Bolivia
+Bostún	Nm1-Prop-Place;	! Boston
+Brasaíl	Nf2-Prop-Place;	! Brazil
+Briostó	Nm4-Prop-Place;	! Bristol
+Briotáin	Nf2-Prop-Place;	! Brittany
+Bruiséil	Nf2-Prop-Place;	! Brussels
+Búcairist	Nf4-Prop-Place;	! Bucharest
+Búdaipeist	Nf4-Prop-Place;	! Budapest
+Bulgáir	Nf2-Prop-Place;	! Bulgaria
+Burma	Nm4-Prop-Place;	! Burma
 Caerdydd	NP-PLACE-sg;	! Cardiff
-Caireo	NP-PLACE-sg;	! Cairo
-Calcúta	NP-PLACE-sg;	! Calcutta
+Caireo	Nm4-Prop-Place;	! Cairo
+Calcúta	Nm4-Prop-Place;	! Calcutta
 Camarúin	NP-PLACE-sg;	! !!!!Cameroons (The )
-Camarún	Nm1-Prop;	! Cameroon
+Camarún	Nm1-Prop-Place;	! Cameroon
+Capadóic	Nf2-Prop-Place;	! Cappadocia
 !!!!Caolas Bheiring	! !!!!Bering Straits
-Beiring	Nm4-Prop;	! !!!!Bering Straits
-Catalóin	Nf2-Prop;	! Catalonia
-Catar	NP-PLACE-sg;	! Qatar
+Beiring	Nm4-Prop-Place;	! !!!!Bering Straits
+Casacstáin	Nf2-Prop-Place;	! Kazakhstan
+Catalóin	Nf2-Prop-Place;	! Catalonia
+Catar	Nm4-Prop-Place;	! Qatar
 !!!!CATHAIR!!!!! 
-Alastair	Nm4-Prop;	! Alexandria
-Ailgéir		Nf2-Prop;	! Algiers Cathair na hAilgéire
-Vatacáin	Nf2-Prop;	! Vatican City Cathair na Vatacáine
+Alastair	Nm4-Prop-Place;	! Alexandria
+Ailgéir		Nf2-Prop-Place;	! Algiers Cathair na hAilgéire
+Vatacáin	Nf2-Prop-Place;	! Vatican City Cathair na Vatacáine
 !!!!CATHAIR!!!!! 
-Ceanada	NP-PLACE-sg;	! Canada
-Céinia	Nf4-Prop;	! Kenya
-Cairéil	Nf2-Prop;	! Karelia
-Caismír	Nf2-Prop;	! Kasbmir
-Caistíl	Nf2-Prop;	! Castile
-Cambóid	Nf2-Prop;	! Cambodia
-Campúis	Nf2-Prop;	! Kampucbea
-Cartaig	Nf2-Prop;	! Carthage
-Ceilibéis	Nf2-Prop;	! Celebes
-Coraint	Nf2-Prop;	! Corinth
-Cordastáin	Nf2-Prop;	! Kurdistan
-Cosaiv	Nf4-Prop;	! Kosovo
-Crimé	Nf4-Prop;	! Crimea
-Cróit	Nf2-Prop;	! Croatia
-Cipir	Nf2-Prop;	! Cyprus
-Cóbanhávan	NP-PLACE-sg;	! Copenhagen
+Ceanada	Nm4-Prop-Place;	! Canada
+Céinia	Nf4-Prop-Place;	! Kenya
+Cairéil	Nf2-Prop-Place;	! Karelia
+Caismír	Nf2-Prop-Place;	! Kasbmir
+Caistíl	Nf2-Prop-Place;	! Castile
+Cambóid	Nf2-Prop-Place;	! Cambodia
+Campúis	Nf2-Prop-Place;	! Kampucbea
+Cartaig	Nf2-Prop-Place;	! Carthage
+Ceilibéis	Nf2-Prop-Place;	! Celebes
+Cirgeastáin	Nf2-Prop-Place;	! Kyrgyzstan
+Cianoirthear	Nm1-Prop-Place;	! Far East !!! g. Cianoirthir
+Meánoirthear	Nm1-Prop-Place;	! Middle East
+Coraint	Nf2-Prop-Place;	! Corinth
+Cordastáin	Nf2-Prop-Place;	! Kurdistan
+Cosaiv	Nf4-Prop-Place;	! Kosovo
+Crimé	Nf4-Prop-Place;	! Crimea
+Cróit	Nf2-Prop-Place;	! Croatia
+Cipir	Nf2-Prop-Place;	! Cyprus
+Cóbanhávan	Nm4-Prop-Place;	! Copenhagen
 !!!!Coilíneacht na Rinne	NP-PLACE-sg;	! !!!!Cape Colony
-Cóiré	Nf4-Prop;	! Korea
-Colóim	Nf2-Prop;	! Columbia
-Comhlathas Nm1-Prop;
-Briotanach	AdjM-Prop;	! !!!!British Commonwealth - Comhlathas Briotanach
+Cóiré	Nf4-Prop-Place;	! Korea
+Colóim	Nf2-Prop-Place;	! Columbia
+Comhlathas Nm1-Prop-Place;
+Briotanach	AdjM-Prop-Place;	! !!!!British Commonwealth - Comhlathas Briotanach
 !!!!Cónaidhm na Rúise	NP-PLACE-sg;	! !!!!Russian Federation
-Cónaidhm Nf2-Prop;
-Rúis	Nf2-Prop;	! !!!!Russian Federation
-Congó	Nm4-Prop;	! Congo
-Congó	NP-PLACE-sg;	! Congó
+Cónaidhm Nf2-Prop-Place;
+Rúis	Nf2-Prop-Place;	! !!!!Russian Federation
+Congó	Nm4-Prop-Place;	! Congo
 !!!!Corn na Breataine	NP-PLACE-sg;	! Cornwall
-Breatain	Nf2-Prop;	! 
-Corsaic	Nf2-Prop;	! Corsica
+Breatain	Nf2-Prop-Place;	! 
+Corsaic	Nf2-Prop-Place;	! Corsica
 !!!!Cósta Eabhair	NP-PLACE-sg;	! !!!!Ivory Coast
 !!!!Cósta Ríce	NP-PLACE-sg;	! !!!!Costa Rica
-Créit	Nf2-Prop;	! Crete
+Créit	Nf2-Prop-Place;	! Crete
 !!!!Críoch Lochlann	NP-PLACE-sg;	! Scandinavia
-Cuáit	NP-PLACE-sg;	! Kuwait
-Cúba	NP-PLACE-sg;	! Cuba
-Dagastáin	NP-PLACE-sg;	! Dagestan
-Dalmáit	NP-PLACE-sg;	! Dalmatia
-Damaisc	NP-PLACE-sg;	! Damascos
-Danmhairg	Nf2-Prop;	! Denmark
-Danóib	Nf2-Prop;	! Danube
-Dardainéil	NP-PLACE-sg;	! Dardanelles
+Cuáit	Nf4-Prop-Place;	! Kuwait
+Cúba	Nm4-Prop-Place;	! Cuba
+Dagastáin	Nf2-Prop-Place;	! Dagestan
+Dalmáit	Nf2-Prop-Place;	! Dalmatia
+Damaisc	Nf2-Prop-Place;	! Damascos
+Danmhairg	Nf2-Prop-Place;	! Denmark
+Danóib	Nf2-Prop-Place;	! Danube
+Dardainéil	Nf2-Prop-Place;	! Dardanelles
 Deilí	NP-PLACE-sg;	! Delhi
 !!!!Deilí Nua	NP-PLACE-sg;	! !!!!New Delhi
-!!!!Dnípir Dniester An Drnsir	NP-PLACE-sg;	! Dnieper
+Dnípir	Nf2-Prop-Place;	! Dnieper (river)
+Dnístir	Nf2-Prop-Place;	! Dniester (river)
 !!!!Dúiche na Réine	NP-PLACE-sg;	! !!!!Rhineland (The)
 !!!!Dún Éideann	NP-PLACE-sg;	! Edinburgh
-Eabhrac	NP-PLACE-sg;	! York
-Eabró	NP-PLACE-sg;	! Ebro
-Eacuadór	NP-PLACE-sg;	! Ecuador
-Eastóin	NP-PLACE-sg;	! Estonia
-Éigipt	Nf2-Prop;	! Egypt
-Eilbe	NP-PLACE-sg;	! Elbe
-Eilvéis	Nf2-Prop;	! Switzerland
-Éimin	NP-PLACE-sg;	! Yemen
-Eofrait	NP-PLACE-sg;	! Euphrates
-Féiníc	Nf2-Prop;	! Phoenicia
-Freaslainn	Nf2-Prop;	! Friesland
+Eabhrac	Nm4-Prop-Place;	! York
+Eabró	Nf4-Prop-Place;	! Ebro
+Eacuadór	Nm4-Prop-Place;	! Ecuador
+Eastóin	Nf2-Prop-Place;	! Estonia
+Éigipt	Nf2-Prop-Place;	! Egypt
+Eilbe	Nf4-Prop-Place;	! Elbe
+Eilvéis	Nf2-Prop-Place;	! Switzerland
+Éimin	Nf4-Prop-Place;	! Yemen
+Eofrait	Nf2-Prop-Place;	! Euphrates
+Eoráise	Nf4-Prop-Place;	! Eurasia
+Féiníc	Nf2-Prop-Place;	! Phoenicia
+Freaslainn	Nf2-Prop-Place;	! Friesland
 Filipíneacha	NP-PLACE-sg;	! !!!!Philippines (The )
-Fionlainn	Nf2-Prop;	! Finland
-Flóndras	NP-PLACE-sg;	! Flanders
-Flórans	NP-PLACE-sg;	! Firenze
-Flórans	NP-PLACE-sg;	! Florence
-Frainc	Nf2-Prop;	! France
-Gaillimh	Nf2-Prop;	! Galway
-Gaill	Nf2-Prop;	! Gaul
-Gainséis	Nf2-Prop;	! Ganges
-Gána	NP-PLACE-sg;	! Ghana
+Fionlainn	Nf2-Prop-Place;	! Finland
+Flóndras	Nm4-Prop-Place;	! Flanders
+Flórans	Nm4-Prop-Place;	! Florence (Firenze)
+Frainc	Nf2-Prop-Place;	! France
+Frigia	Nf4-Prop-Place;	! Phrygia
+Gailíl	Nf2-Prop-Place;	! Galilee
+Gailís	Nf2-Prop-Place;	! Galicia
+Gaillimh	Nf2-Prop-Place;	! Galway
+Gaill	Nf2-Prop-Place;	! Gaul
+Gainséis	Nf2-Prop-Place;	! Ganges
+Galáit	Nf2-Prop-Place;	! Galatia
+Gána	Nm4-Prop-Place;	! Ghana
 !!!!Garbhchríocha na hAlban	NP-PLACE-sg;	! !!!!Scottish Highlands (The )
-Geansaí	NP-PLACE-sg;	! Guernsey
-Gearmáin	Nf2-Prop;	! Germany
-Geirsí	NP-PLACE-sg;	! Jersey
+Geansaí	Nf4-Prop-Place;	! Guernsey
+Gearmáin	Nf2-Prop-Place;	! Germany
+Geirsí	Nf4-Prop-Place;	! Jersey
 Genova	NP-PLACE-sg;	! Genoa
-Gabúin	Nf3-Prop;	! Gabon
-Gaimbia	Nf4-Prop;	! Gambia
-Guine 	Nf4-Prop;	! !!!!Equatorial Guinea
-Mheánchriosach	AdjM-Prop;	! !!!!Equatorial Guinea - Ghuine Mheánchriosach
-Ginéiv	Nf2-Prop;	! Geneva
-Giobráltar	NP-PLACE-sg;	! Gibraltar
-Glaschú	NP-PLACE-sg;	! Glasgow
-Graonlainn	Nf2-Prop;	! Greenland
-Gréig	Nf2-Prop;	! Greece
+Gabúin	Nf3-Prop-Place;	! Gabon
+Gaimbia	Nf4-Prop-Place;	! Gambia
+Guine 	Nf4-Prop-Place;	! !!!!Equatorial Guinea
+Mheánchriosach	AdjM-Prop-Place;	! !!!!Equatorial Guinea - Ghuine Mheánchriosach
+Ginéiv	Nf2-Prop-Place;	! Geneva
+Giobráltar	Nm4-Prop-Place;	! Gibraltar
+Glaschú	Nm4-Prop-Place;	! Glasgow
+Graonlainn	Nf2-Prop-Place;	! Greenland
+Gréig	Nf2-Prop-Place;	! Greece
 !!!!Guadalúip (agus a Spleáchríocha)	NP-PLACE-sg;	! !!!!Guadeloupe (and Dependencies)
-Guáin	Nf2-Prop;	! Guyana
+Guáin	Nf2-Prop-Place;	! Guyana
 Gúam	NP-PLACE-sg;	! Guam
-Guatamala	NP-PLACE-sg;	! Guatemala
+Guatamala	Nm4-Prop-Place;	! Guatemala
 !!!!Guine Bhissau	NP-PLACE-sg;	! !!!!Guinea Bissau
-Guine	Nf4-Prop;	! Guinea
-Háig	Nf2-Prop;	! !!!!Hague, the
+Guine	Nf4-Prop-Place;	! Guinea
+Háig	Nf2-Prop-Place;	! !!!!Hague, the
 Aindéis	NP-PLACE-pl;	! Andes
 !!!!hAintillí, Oileáin Aintillí	NP-PLACE-sg;	! Antilles
 Aipiníní	NP-PLACE-pl;	! Appenines
 Háití	NP-PLACE-sg;	! Haiti
 Alpa	NP-PLACE-pl;	! Alps
 Asóir	NP-PLACE-pl;	! !!!!Azores (The)
-Haváí	NP-PLACE-sg;	! Hawaii
+Haváí	Nf4-Prop-Place;	! Hawaii
 Havána	NP-PLACE-sg;	! Havana
-Heilsincí	NP-PLACE-sg;	! Helsinki
+Heilsincí	Nf4-Prop-Place;	! Helsinki
 Himiléithe	NP-PLACE-pl;	! !!!!Himalayas (The)
 !!!!hIndiacha Thoir	NP-PLACE-pl;	! !!!!East Indies
 !!!!hIndiacha Thoir Thiar	NP-PLACE-sg;	! !!!!Indies (The East West)
 !!!!hOileáin Bhailéaracha	NP-PLACE-sg;	! !!!!Balearic Islands (The )
 Canáracha	NP-PLACE;	! !!!!Canary Islands
 !!!!hOileáin Fhílipíneacha	NP-PLACE-pl;	! Philippines
-Hondúras	NP-PLACE-sg;	! Honduras
+Hondúras	Nm4-Prop-Place;	! Honduras
 !!!!Hong Cong	NP-PLACE-sg;	! !!!!Hong Kong
-Iacúit	NP-PLACE-sg;	! Yakut
-Iacútsc	NP-PLACE-sg;	! Yakutsk
-Iamáice	NP-PLACE-sg;	! Jamaica
+Iacúit	Nf2-Prop-Place;	! Yakut
+Iacútsc	Nm4-Prop-Place;	! Yakutsk
+Iamáice	Nf4-Prop-Place;	! Jamaica
 Iarachó	NP-PLACE-sg;	! Jericho
-Iaráin	Nf2-Prop;	! Iran
-Iarúsailéim	Nf2-Prop;	! Jerusalem
-Iáva	NP-PLACE-sg;	! Java
-Ibéir	Nf2-Prop;	! lberia
-India	Nf4-Prop;	! India
-Indinéis	Nf2-Prop;	! Indonesia
-Ind-Sín	NP-PLACE-sg;	! Indo-China
+Iaráin	Nf2-Prop-Place;	! Iran
+Iarúsailéim	Nf2-Prop-Place;	! Jerusalem
+Iáva	Nm4-Prop-Place;	! Java
+Ibéir	Nf2-Prop-Place;	! lberia
+India	Nf4-Prop-Place;	! India
+Indinéis	Nf2-Prop-Place;	! Indonesia
+Ind-Sín	Nf2-Prop-Place;	! Indo-China
 !!!!Inis Iocht	NP-PLACE-sg;	! !!!!Wight, The Isle of
 !!!!Inse Ghall	NP-PLACE-sg;	! Hebrides
 !!!!Inse Orc	NP-PLACE-sg;	! !!!!Orkneys (The )
-Iodáil	Nf2-Prop;	! Italy
+Iodáil	Nf2-Prop-Place;	! Italy
+Iodúimé	Nf4-Prop-Place;	! Idumea
 Ióhanasburg	NP-PLACE-sg;	! Johannesburg
-Iondúis	NP-PLACE-sg;	! Indus
-Iordáin	Nf2-Prop;	! Jordan
-Iorua	Nf4-Prop;	! Norway
-Íoslann	Nf2-Prop;	! Iceland
-Iosrael	NP-PLACE-sg;	! Israel
-Iostanbúl	NP-PLACE-sg;	! Istanbul
-Ísiltír	NP-PLACE-pl;	! !!!!Netherlands ( The)
-Iúgslaiv	Nf2-Prop;	! Yugoslavia
-Iútlainn	NP-PLACE-sg;	! Jutland
-Labradar	NP-PLACE-sg;	! Labrador
+Iondúis	Nf2-Prop-Place;	! Indus
+Iordáin	Nf2-Prop-Place;	! Jordan
+Iorua	Nf4-Prop-Place;	! Norway
+Íoslann	Nf2-Prop-Place;	! Iceland
+Iosrael	Nm4-Prop-Place;	! Israel
+Iostanbúl	Nm4-Prop-Place;	! Istanbul
+Ísiltír	Nf2-Prop-Place;	! Netherlands ( The)
+Iúgslaiv	Nf2-Prop-Place;	! Yugoslavia
+Iútlainn	Nf2-Prop-Place;	! Jutland
+Labradar	Nm4-Prop-Place;	! Labrador
+Labhráise	Nf4-Prop-Place;	! Laurasia
 Lagáin	NP-PLACE-sg;	! Lagan
-Laitvia	NP-PLACE-sg;	! Latvia
-Laoi	Nf4-Prop;	! Lee
+Laitvia	Nf4-Prop-Place;	! Latvia
+Laoi	Nf4-Prop-Place;	! Lee
 Laos	NP-PLACE-sg;	! Laos
-Laplainn	NP-PLACE-sg;	! Lapland
-Iaráic	Nf2-Prop;	! Iraq
-Learpholl	Nm1-Prop;	! Liverpool
+Laplainn	Nf2-Prop-Place;	! Lapland
+Iaráic	Nf2-Prop-Place;	! Iraq
+Learpholl	Nm1-Prop-Place;	! Liverpool
 !!!!Leithinis Bhalcánach	NP-PLACE-sg;	! !!!!Balkan Peninsula
 !!!!Leithinis Mhalae	NP-PLACE-sg;	! !!!!Malay Peninsulà
-Leiveaint	NP-PLACE-sg;	! !!!!Levant (The )
-Leódhas	NP-PLACE-sg;	! !!!!Lewis Island
-Leosóta	NP-PLACE-sg;	! Lesotho
-Libéir	NP-PLACE-sg;	! Liberia
-Libia	Nf4-Prop;	! Libya
-Lichtinstéin	NP-PLACE-sg;	! Liechtenstein
-Life	Nf4-Prop;	! Liffey
-Liobáin	Nf2-Prop;	! Lebanon
-Liospóin	Nf2-Prop;	! Lisbon
-Liotuáin	NP-PLACE-sg;	! Lithuania
+Leiveaint	Nf2-Prop-Place;	! Levant (The )
+Leódhas	Nm4-Prop-Place;	! Lewis Island
+Leosóta	Nm4-Prop-Place;	! Lesotho
+Libéir	Nf2-Prop-Place;	! Liberia
+Libia	Nf4-Prop-Place;	! Libya
+Lichtinstéin	Nf4-Prop-Place;	! Liechtenstein
+Licia	Nf4-Prop-Place;	! Lycia
+Life	Nf4-Prop-Place;	! Liffey
+Liobáin	Nf2-Prop-Place;	! Lebanon
+Liospóin	Nf2-Prop-Place;	! Lisbon
+Liotuáin	Nf2-Prop-Place;	! Lithuania
 !!!!Loch Cuan	NP-PLACE-sg;	! !!!!Strangford Lough
 !!!!Loch Dearg	NP-PLACE-sg;	! !!!!Lough Derg
 !!!!Loch Deirgeirt	NP-PLACE-sg;	! !!!!Lough Derg
 !!!!Loch Eirne	NP-PLACE-sg;	! !!!!Lough Erne
 !!!!Loch Lao	NP-PLACE-sg;	! !!!!Belfast Lough
 !!!!Loch nEathach	NP-PLACE-sg;	! !!!!Lough Neagh
-Lombaird	NP-PLACE-sg;	! Lombardy
-Lorráin	NP-PLACE-sg;	! Lorraine
-Lováin	NP-PLACE-sg;	! Louvain
-Lucsamburg	NP-PLACE-sg;	! Luxembourg
-Luimneach	Nm1-Prop;	! Limerick
+Lombaird	Nf2-Prop-Place;	! Lombardy
+Lorráin	Nf2-Prop-Place;	! Lorraine
+Lováin	Nf4-Prop-Place;	! Louvain
+Lucsamburg	Nm4-Prop-Place;	! Luxembourg
+Luimneach	Nm1-Prop-Place;	! Limerick
 Madagascar	NP-PLACE-sg;	! Madagascar
-Maidéara	NP-PLACE-sg;	! Madeira
-Maidéara	NP-PLACE-sg;	! Maderia
-Maidrid	NP-PLACE-sg;	! Madrid
-Mailí	NP-PLACE-sg;	! Mali
-Mainile	NP-PLACE-sg;	! Manila
-Malaeisia	Nf4-Prop;	! Malaysia
-Mallarca	NP-PLACE-sg;	! Majorca
-Málta	NP-PLACE-sg;	! Malta
-Manainn	NP-PLACE-sg;	! !!!!Man, Isle of
-Manchain	NP-PLACE-sg;	! Manchester
-Maracó	NP-PLACE-sg;	! Morocco
-Meice	NP-PLACE-sg;	! Mecca
-Meicsiceo	NP-PLACE-sg;	! Mexico
-!!!!Meiriceá Laidineach	Nm4-Prop;	! !!!!Latin America
-Macadóin	Nf4-Prop;	! Macedonia
-Maláiv		Nf4-Prop;	! Malawi
-Manchúir	Nf4-Prop;	! Manchuria
-Máratáin	Nf2-Prop;	! Mauritania
-Meánmhuir	Nf3-Prop;	! !!!!Mediterranean Sea
-Measpatáim	Nf2-Prop;	! Mesopotamia
-Moldóiv	Nf4-Prop;	! Moldova
+Maidéara	Nm4-Prop-Place;	! Madeira
+Maidrid	Nf4-Prop-Place;	! Madrid
+Mailí	Nf4-Prop-Place;	! Mali
+Mainile	Nf4-Prop-Place;	! Manila
+Malaeisia	Nf4-Prop-Place;	! Malaysia
+Mallarca	Nm4-Prop-Place;	! Majorca
+Málta	Nm4-Prop-Place;	! Malta
+Manainn	Nf2-Prop-Place;	! Man, Isle of
+Manchain	Nf4-Prop-Place;	! Manchester
+Maracó	Nm4-Prop-Place;	! Morocco
+Meice	Nf4-Prop-Place;	! Mecca
+Meicsiceo	Nm4-Prop-Place;	! Mexico
+Meilinéis	Nf2-Prop-Place;	! Melanesia
+!!!!Meiriceá Laidineach	Nm4-Prop-Place;	! !!!!Latin America
+Macadóin	Nf4-Prop-Place;	! Macedonia
+Maláiv		Nf4-Prop-Place;	! Malawi
+Manchúir	Nf4-Prop-Place;	! Manchuria
+Máratáin	Nf2-Prop-Place;	! Mauritania
+Meánmhuir	Nf3-Prop-Place;	! !!!!Mediterranean Sea
+Measpatáim	Nf2-Prop-Place;	! Mesopotamia
+Micrinéis	Nf2-Prop-Place;	! Micronesia
+Moldóiv	Nf4-Prop-Place;	! Moldova
 !!!!Mhuir Bhailéarach	NP-PLACE-sg;	! !!!!Balearic Sea
 !!!!Mhuir Bhailt	NP-PLACE-sg;	! !!!!Baltic Sea (The )
 !!!!Mhuir Bhuí	NP-PLACE-sg;	! !!!!Yellow Sea (The)
 !!!!Mhuir Chairib	NP-PLACE-sg;	! !!!!Caribbean Sea
-!!!!Mhuir Cheilteach	Nf3-Prop;	! !!!!Celtic Sea
-!!!!Mhuir Dhubh	Nf3-Prop;	! !!!!Black Sea
-!!!!Mhuir Mharbh	Nf3-Prop;	! !!!!Dead Sea
+!!!!Mhuir Cheilteach	Nf3-Prop-Place;	! !!!!Celtic Sea
+!!!!Mhuir Dhubh	Nf3-Prop-Place;	! !!!!Black Sea
+!!!!Mhuir Mharbh	Nf3-Prop-Place;	! !!!!Dead Sea
 !!!!Mhuir Mheann, Muir Eireann	NP-PLACE-sg;	! !!!!Irish Sea (The)
 !!!!Mhuir Mheoid	NP-PLACE-sg;	! !!!!Azov (Sea of)
-!!!!Mhuir Rua	Nf3-Prop;	! !!!!Red Sea
+!!!!Mhuir Rua	Nf3-Prop-Place;	! !!!!Red Sea
 !!!!Mhuir Rua	NP-PLACE-sg;	! !!!!Red Sea (The )
 !!!!Mhuir Shargasach	NP-PLACE-sg;	! !!!!Sargasso Sea (The )
-!!!!Mhuir Thuaidh	Nf3-Prop;	! !!!!North Sea
+!!!!Mhuir Thuaidh	Nf3-Prop-Place;	! !!!!North Sea
 !!!!Mhuir Thuaidh	NP-PLACE-sg;	! !!!!North Sea (The )
-Mionarca	NP-PLACE-sg;	! Minorca
-Molacaí	NP-PLACE-sg;	! !!!!Molucca Islands (The)
-Monacó	NP-PLACE-sg;	! Monaco
-Mongóil	Nf2-Prop;	! Mongolia
-Montainéagró	NP-PLACE-sg;	! Montenegro
-Montsarat	NP-PLACE-sg;	! Montserrat
-Mósaimbíc	Nf2-Prop;	! Mozambique
-Moscó	NP-PLACE-sg;	! Moscow
+Mionarca	Nm4-Prop-Place;	! Minorca
+Molacaí	NP-PLACE-pl;	! !!!!Molucca Islands (The)
+Moldáiv	Nf2-Prop-Place;	! Moldavia
+Valáic-Mholdáiv	Nf2-Prop-Place;	! Wallacia-Moldavia
+Valáic	Nf2-Prop-Place;	! Wallacia
+Monacó	Nm4-Prop-Place;	! Monaco
+Mongóil	Nf2-Prop-Place;	! Mongolia
+Montainéagró	Nm4-Prop-Place;	! Montenegro
+Montsarat	Nm4-Prop-Place;	! Montserrat
+Moráiv	Nf2-Prop-Place;	! Moravia
+Mordóiv	Nf2-Prop-Place;	! Mordovia
+Mósaimbíc	Nf2-Prop-Place;	! Mozambique
+Moscó	Nm4-Prop-Place;	! Moscow
 !!!!Muir Bhailt	NP-PLACE-sg;	! !!!!Baltic Sea
 !!!!Muir Bhreatan	NP-PLACE-sg;	! !!!!Saint George's Channel
 !!!!Muir Bhreatan	NP-PLACE-sg;	! !!!!St George's Channel
@@ -4566,125 +4582,125 @@ Moscó	NP-PLACE-sg;	! Moscow
 !!!!Murascaill na Peirse	NP-PLACE-sg;	! !!!!Persian Gulf (The )
 Muscat	NP-PLACE-sg;	! Muscat
 !!!!Na hOileáin Mhaildíve	NP-PLACE-sg;	! !!!!Maldive Islands (The )
-Namaib	NP-PLACE-sg;	! Namibia
-Nárú	NP-PLACE-sg;	! Naura
+Namaib	Nf2-Prop-Place;	! Namibia
+Nárú	Nm4-Prop-Place;	! Naura
 Nasaireit	NP-PLACE-sg;	! Nazareth
 Natal	NP-PLACE-sg;	! Natal
 Neipeál	NP-PLACE-sg;	! Nepal
-Niasalainn	NP-PLACE-sg;	! Nyasaland
-Nicearagua	NP-PLACE-sg;	! Nicaragua
-Nigéir	Nf2-Prop;	! Nigeria
-Nígir	Nf2-Prop;	! Niger
-Normainn	NP-PLACE-sg;	! Normandy
-Nua-Eabhrac	NP-PLACE-sg;	! !!!!New York
-Nua-Ghuíne	Nf4-Prop;	! !!!!New Guinea
-Nua-Shéalainn	Nf2-Prop;	! !!!!New Zealand
+Niasalainn	Nf2-Prop-Place;	! Nyasaland
+Nicearagua	Nm4-Prop-Place;	! Nicaragua
+Nigéir	Nf2-Prop-Place;	! Nigeria
+Nígir	Nf2-Prop-Place;	! Niger
+Normainn	Nf2-Prop-Place;	! Normandy
+Nua-Eabhrac	Nm4-Prop-Place;	! New York
+Nua-Ghuíne	Nf4-Prop-Place;	! !!!!New Guinea
+Nua-Shéalainn	Nf2-Prop-Place;	! !!!!New Zealand
 !!!!OILEÁIN!!!!! 
 Ailiúit	NP-PLACE-pl;	! O. Ailiúit - Aleutian Islands
 Comóra	NP-PLACE-sg;	! !!!!Comoro Islands
-Fáclann	Nf2-Prop;	! !!!!Falkland Islands
-Faró	NP-PLACE-sg;	! !!!!Faroe Islands
+Fáclann	Nf2-Prop-Place;	! !!!!Falkland Islands
+Faró	Nm4-Prop-Place;	! !!!!Faroe Islands
 Fidsí	NP-PLACE-sg;	! !!!!Fiji Islands
 Maildíve	NP-PLACE-sg;	! !!!!Maldive Islands (The )
 !!!!Oileáin Mhuir nIocht	NP-PLACE-sg;	! !!!!Channel Islands
-Aimiréalacht	Nf3-Prop;	! !!!!Admirality Islands
+Aimiréalacht	Nf3-Prop-Place;	! !!!!Admirality Islands
 Manann	NP-PLACE-sg;	! !!!!Isle of Man
 Muirís	NP-PLACE-sg;	! Mauritius
-Deascabháil	Nf3-Prop;	! !!!!Ascension Island
-Tobága	NP-PLACE-sg;	! !!!!Trinidad and Tobago
-Oiséit	NP-PLACE-sg;	! Ossetia
-Ollainn	NP-PLACE-sg;	! Holland
+Deascabháil	Nf3-Prop-Place;	! !!!!Ascension Island
+Tobága	Nm4-Prop-Place;	! !!!!Trinidad and Tobago
+Oiséit	Nf2-Prop-Place;	! Ossetia
+Ollainn	Nf2-Prop-Place;	! Holland
 Oman	NP-PLACE-sg;	! Oman
-Oranócó	NP-PLACE-sg;	! Orinoco
-Osló	NP-PLACE-sg;	! Oslo
-Ostainn	NP-PLACE-sg;	! Ostend
-Ostair	Nf2-Prop;	! Austria
-Pacastáín	Nf2-Prop;	! Pakistan
-Palaistín	Nf2-Prop;	! Palestine
-Panama	NP-PLACE-sg;	! Panama
-Papua	NP-PLACE-sg;	! Papua
-Paragua	NP-PLACE-sg;	! Paraguay
-Páras	NP-PLACE-sg;	! Paris
-Péicing	NP-PLACE-sg;	! Beijing
-Péicing	NP-PLACE-sg;	! Peking
-Peiriú	NP-PLACE-sg;	! Peru
-Patagóin	Nf4-Prop;	! Patagonia
+Oranócó	Nf4-Prop-Place;	! Orinoco
+Osló	Nm4-Prop-Place;	! Oslo
+Ostainn	Nf4-Prop-Place;	! Ostend
+Ostair	Nf2-Prop-Place;	! Austria
+Pacastáín	Nf2-Prop-Place;	! Pakistan
+Palaistín	Nf2-Prop-Place;	! Palestine
+Panama	Nm4-Prop-Place;	! Panama
+Papua	Nm4-Prop-Place;	! Papua
+Paragua	Nm4-Prop-Place;	! Paraguay
+Páras	Nm4-Prop-Place;	! Paris
+Péicing	Nf4-Prop-Place;	! Peking
+Béising	Nf4-Prop-Place;	! Beijing
+Peiriú	Nm4-Prop-Place;	! Peru
+Patagóin	Nf4-Prop-Place;	! Patagonia
+Portaingéil	Nf2-Prop-Place;	! Portugal
 Malagásach	NP-PLACE-sg;	! !!!!Malagasy Republic
-Polainéis	Nf2-Prop;	! Polynesia
-Pó		Nf4-Prop;	! Po
-Pontmhuir	Nf3-Prop;	! !!!!Pontian Sea
-Prúis		Nf4-Prop;	! Prussia
-Puinseaib	Nf4-Prop;	! Punjab
+Polainéis	Nf2-Prop-Place;	! Polynesia
+Pó		Nf4-Prop-Place;	! Po
+Pontmhuir	Nf3-Prop-Place;	! !!!!Pontian Sea
+Prúis		Nf4-Prop-Place;	! Prussia
+Puinseaib	Nf4-Prop-Place;	! Punjab
 Piréiní	NP-PLACE-pl;	! Pyrenees
-Piréiní	NP-PLACE-sg;	! !!!!Pyrenees (The)
-Seic	Nf2-Prop;	! !!!!Czech Republic (The )
+Seic	Nf2-Prop-Place;	! !!!!Czech Republic (The )
 Volta	NP-PLACE-fem;	! !!!!Voltaic Republic
-Polainn	Nf2-Prop;	! Poland
-Portaingéíl	Nf2-Prop;	! Portugal
+Polainn	Nf2-Prop-Place;	! Poland
+Portaingéíl	Nf2-Prop-Place;	! Portugal
 !!!!Port Láirge	NP-PLACE-sg;	! Waterford
 !!!!Portó Ríce	NP-PLACE-sg;	! !!!!Puerto Rico
 Prág	NP-PLACE-sg;	! Prague
 !!!!Prionsacht Mhónacó	NP-PLACE-sg;	! !!!!Principality of Monaco
-Réin	Nf2-Prop;	! Rhine
+Réin	Nf2-Prop-Place;	! Rhine
 !!!!Rinn an Choirn	NP-PLACE-sg;	! !!!!Cape Horn
 !!!!Rinn an Dóchais	NP-PLACE-sg;	! !!!!Cape of Good Hope
-!!!!Riocht Aontaithe	Nf3-Prop;	! !!!!United Kingdom
+!!!!Riocht Aontaithe	Nf3-Prop-Place;	! !!!!United Kingdom
 !!!!Ríocht Aontaithe	NP-PLACE-sg;	! !!!!United Kinglom
 Rivéara	NP-PLACE-sg;	! !!!!Riviera (The )
 Ródas	NP-PLACE-sg;	! Rhodes
 Róidéis	NP-PLACE-sg;	! Rhodesia
-Róimh	Nf2-Prop;	! Rome
+Róimh	Nf2-Prop-Place;	! Rome
 Róin	NP-PLACE-sg;	! Rhone
-Rómáin	Nf2-Prop;	! Romania
+Rómáin	Nf2-Prop-Place;	! Romania
 Rómáin	NP-PLACE-sg;	! Rumania
 Ruanda	NP-PLACE-sg;	! Rwanda
-Rúis	Nf2-Prop;	! Russia
-Sahára	Nm4-Prop;	! Sahara
-Sahára	NP-PLACE-sg;	! !!!!Sahara (The )
+Rúis	Nf2-Prop-Place;	! Russia
+Sahára	Nm4-Prop-Place;	! Sahara
 Saimbéis	NP-PLACE-sg;	! Zambesi
-Saimbia	Nf4-Prop;	! Zambia
+Saimbia	Nf4-Prop-Place;	! Zambia
 Sainsibeár	NP-PLACE-sg;	! Zanzibar
-Sairdín	Nf2-Prop;	! Sardinia
-Sáír	Nf2-Prop;	! Zaire
-Salvadóir	Nf2-Prop;	! !!!!El Salvador
+Sairdín	Nf2-Prop-Place;	! Sardinia
+Sáír	Nf2-Prop-Place;	! Zaire
+Salvadóir	Nf2-Prop-Place;	! !!!!El Salvador
 Samáir	NP-PLACE-sg;	! Samaria
 Samó	NP-PLACE-sg;	! Samoa
 !!!!Samó Thiar	NP-PLACE-sg;	! !!!!Western Samoa
 !!!!San Héilin	NP-PLACE-sg;	! !!!!Saint Helena
 !!!!San Mairíne	NP-PLACE-sg;	! !!!!San Marino
-Sasana	NP-PLACE-sg;	! England
-Sceilt	NP-PLACE-sg;	! Scheldt
+Sasana	Nm4-Prop-Place;	! England
+Sceilt	Nf2-Prop-Place;	! Scheldt
 Scillí	NP-PLACE-sg;	! !!!!Scilly Islands (The)
-Sead	NP-PLACE-sg;	! Chad
+Sead	Nm4-Prop-Place;	! Chad
 Séalainn	NP-PLACE-sg;	! Zealand
 Sealtainn	NP-PLACE-pl;	! Shetlands
-Seapáin	Nf2-Prop;	! Japan
-Seicslóvaic	Nf2-Prop;	! Czechoslovakia
-Seineagáil	NP-PLACE-sg;	! Senegal
+Seapáin	Nf2-Prop-Place;	! Japan
+Seicslóvaic	Nf2-Prop-Place;	! Czechoslovakia
+Seineagáil	Nf2-Prop-Place;	! Senegal
 Séin	NP-PLACE-sg;	! Seine
-Seirbia	NP-PLACE-sg;	! Serbia
-Seisnia	NP-PLACE-sg;	! Chechnia
-Seoirsia	NP-PLACE-sg;	! Georgia
+Seirbia	Nf4-Prop-Place;	! Serbia
+Seisnia	Nf4-Prop-Place;	! Chechnia
+Seoirsia	Nf4-Prop-Place;	! Georgia
 !!!!Siarra Leon	NP-PLACE-sg;	! !!!!Sierra Leone
-Sibéir	Nf2-Prop;	! Siberia
-Sicil	NP-PLACE-sg;	! Sicily
-Sile	Nf4-Prop;	! Chile
-Singeapór	NP-PLACE-sg;	! Singapore
-Sín	Nf2-Prop;	! China
-Siombáib	Nf2-Prop;	! Zimbabwe
-Sionainn	Nf2-Prop;	! Shannon
-Sionainn	NP-PLACE-sg;	! !!!!Shannon (The )
-Siria	Nf4-Prop;	! Syria
+Sibéir	Nf2-Prop-Place;	! Siberia
+Sicil	Nf2-Prop-Place;	! Sicily
+Sile	Nf4-Prop-Place;	! Chile
+Singeapór	Nm4-Prop-Place;	! Singapore
+Sín	Nf2-Prop-Place;	! China
+Siombáib	Nf2-Prop-Place;	! Zimbabwe
+Sionainn	Nf2-Prop-Place;	! Shannon
+Sionainn	Nf2-Prop-Place;	! !!!!Shannon (The )
+Siria	Nf4-Prop-Place;	! Syria
 !!!!Sléibhte Apaláiseacha	NP-PLACE-sg;	! !!!!Appalachian Mountains
 !!!!Sléibhte Atlais	NP-PLACE-sg;	! !!!!Atlas Mountains
 !!!!Sléibhte Cairp	NP-PLACE-sg;	! !!!!Carpathian Mountains
 !!!!Sléibhte Creagacha	NP-PLACE-sg;	! !!!!RockyMountains (The)
 !!!!Sléibhte Cugais	NP-PLACE-sg;	! !!!!Caucasus Mountains
 !!!!Sléibhte na hÚraile	NP-PLACE-sg;	! !!!!Ural Mountains (The)
-Slóivéin	Nf2-Prop;	! Slovenia
+Slóivéin	Nf2-Prop-Place;	! Slovenia
+Slóvaic	Nf2-Prop-Place;	! Slovakia
 Sóifia	NP-PLACE-sg;	! Sophia
-Somáil	Nf2-Prop;	! Somalie
-Spáinn	Nf2-Prop;	! Spain
+Somáil	Nf2-Prop-Place;	! Somalie
+Spáinn	Nf2-Prop-Place;	! Spain
 !!!!Srí Lanca	NP-PLACE-sg;	! !!!!Sri Lanka
 !!!!Sruth na Maoíle	NP-PLACE-sg;	! !!!!North Channel
 !!!!Sruth na Maoile	NP-PLACE-sg;	! !!!!North Channel (The)
@@ -4694,61 +4710,62 @@ Spáinn	Nf2-Prop;	! Spain
 !!!!Stát Chathair na Vatacáine	NP-PLACE-sg;	! !!!!Vatican City State
 Stócólm	NP-PLACE-sg;	! Stockholm
 Suais	NP-PLACE-sg;	! Duez
-Sualainn	Nf2-Prop;	! Sweden
+Sualainn	Nf2-Prop-Place;	! Sweden
 Suasalainn	NP-PLACE-sg;	! Swaziland
-Súdáin	Nf2-Prop;	! Sudan
+Súdáin	Nf2-Prop-Place;	! Sudan
 Súlúlainn	NP-PLACE-sg;	! Zululand
 Táidsíceastáin	NP-PLACE-sg;	! Tajikistan
 !!!!Aigéan
-Aigéan 	Nm1-Prop;	! !!!!Antarctic Ocean
-Antartach	AdjM-Prop;	! !!!!Antarctic Ocean
-Artach		AdjM-Prop;	! !!!!Arctic Ocean
-Atlantach	AdjM-Prop;	! !!!!Atlantic Ocean
-Ciúin		AdjM-Prop;	! !!!!Pacific Ocean
-Indiach		AdjM-Prop;	! !!!!Indian Ocean
+Aigéan 	Nm1-Prop-Place;	! !!!!Antarctic Ocean
+Antartach	AdjM-Prop-Place;	! !!!!Antarctic Ocean
+Artach		AdjM-Prop-Place;	! !!!!Arctic Ocean
+Atlantach	AdjM-Prop-Place;	! !!!!Atlantic Ocean
+Ciúin		AdjM-Prop-Place;	! !!!!Pacific Ocean
+Indiach		AdjM-Prop-Place;	! !!!!Indian Ocean
 Taihítí	NP-PLACE-sg;	! Tahiti
 !!!!Talamh an Éisc	NP-PLACE-sg;	! Newfoundland
-!!!!Talamh Naofa	Nm1-Prop;	! !!!!Holy Land
+!!!!Talamh Naofa	Nm1-Prop-Place;	! !!!!Holy Land
 Tamais	NP-PLACE-sg;	! Thames
-Tansáin	Nf2-Prop;	! Tanzania
-Antartach	Nm1-Prop;	! Antarctic
-Artach	Nm1-Prop;	! Arctic
+Tansáin	Nf2-Prop-Place;	! Tanzania
+Antartach	Nm1-Prop-Place;	! Antarctic
+Artach	Nm1-Prop-Place;	! Arctic
 Tartair	NP-PLACE-sg;	! Tartary
-Tasmáin	Nf2-Prop;	! Tasmania
-Atlantach	Nm1-Prop;	! !!!!Atlantic Ocean
-Téalainn	Nf2-Prop;	! Thailand
+Tasmáin	Nf2-Prop-Place;	! Tasmania
+Atlantach	Nm1-Prop-Place;	! !!!!Atlantic Ocean
+Téalainn	Nf2-Prop-Place;	! Thailand
+Teasáil	Nf2-Prop-Place;	! Thessaly
 Téaváin	NP-PLACE-sg;	! Taiwan
-Tibéid	Nf2-Prop;	! Tibet
-Tibir	Nf2-Prop;	! Tiber
+Tibéid	Nf2-Prop-Place;	! Tibet
+Tibir	Nf2-Prop-Place;	! Tiber
 Tígris	NP-PLACE-sg;	! Tigris
 Tíomór	NP-PLACE-sg;	! Timor
 !!!!Tíomór Thoir	NP-PLACE-sg;	! !!!!East Timor
 Tioról	NP-PLACE-sg;	! Tyrol
 !!!!Tíortha faoi Thoinn	NP-PLACE-sg;	! !!!!Low Countries (The)
-!!!!Tír Bheannaithe	Nf2-Prop;	! !!!!Holy Land
+!!!!Tír Bheannaithe	Nf2-Prop-Place;	! !!!!Holy Land
 Tobága	NP-PLACE-sg;	! Tobago
 Tógo	NP-PLACE-sg;	! Togo
 Tóiceo	NP-PLACE-sg;	! Tokyo
 Tonga	NP-PLACE-sg;	! Tonga
 Traí	NP-PLACE-sg;	! Troy
 Tripilí	NP-PLACE-sg;	! Tripoli
-Túinéis	Nf2-Prop;	! Tunisia
-Túinis	NP-PLACE-sg;	! Tunis
-Tuirc	Nf2-Prop;	! Turkey
-Turcastáin	NP-PLACE-sg;	! Turkenstan
-Tuscáin	NP-PLACE-sg;	! Tuscany
-Úcráin	NP-PLACE-sg;	! Ukraine
-Udmairt	NP-PLACE-sg;	! Udmust
-Uganda	NP-PLACE-sg;	! Uganda
-Úisbéiceastáin	NP-PLACE-sg;	! Uzbekistan
-Ungáir	Nf2-Prop;	! Hungary
-Uragua	NP-PLACE-sg;	! Uruguay
-Úrail	NP-PLACE-sg;	! !!!!Ural (The River)
-Vársá	NP-PLACE-sg;	! Warsaw
-Veinéis	Nf2-Prop;	! Venice
-Veiniséala	NP-PLACE-sg;	! Venezuela
-Vín	NP-PLACE-sg;	! Vienna
-Vítneam	NP-PLACE-sg;	! Vietnam
+Túinéis	Nf2-Prop-Place;	! Tunisia
+Túinis	Nf4-Prop-Place;	! Tunis
+Tuirc	Nf2-Prop-Place;	! Turkey
+Turcastáin	Nf2-Prop-Place;	! Turkenstan
+Tuscáin	Nf2-Prop-Place;	! Tuscany
+Úcráin	Nf2-Prop-Place;	! Ukraine
+Udmairt	Nf4-Prop-Place;	! Udmurt
+Uganda	Nm4-Prop-Place;	! Uganda
+Úisbéiceastáin	Nf2-Prop-Place;	! Uzbekistan
+Ungáir	Nf2-Prop-Place;	! Hungary
+Uragua	Nm4-Prop-Place;	! Uruguay
+Úrail	Nf2-Prop-Place;	! !!!!Ural (The River)
+Vársá	Nm4-Prop-Place;	! Warsaw
+Veinéis	Nf2-Prop-Place;	! Venice
+Veiniséala	Nm4-Prop-Place;	! Venezuela
+Vín	Nf4-Prop-Place;	! Vienna
+Vítneam	Nm4-Prop-Place;	! Vietnam
 Vítneam	NP-PLACE-sg;	! Viet-Nam
 Volga	NP-PLACE-sg;	! Volga
 Volta	NP-PLACE-sg;	! !!!!Volta River (The)
@@ -4902,7 +4919,7 @@ Aboy	NP-FAM-EN;
 Abraham	NP-FAM-EN;
 Acton	NP-FAM-EN;
 Adair	NP-FAM-EN;
-Adam	NP-FAM-EN;
+!!! Adam	NP-FAM-EN;
 Adams	NP-FAM-EN;
 Adamson	NP-FAM-EN;
 Adarra	NP-FAM-EN;
@@ -6783,7 +6800,7 @@ Entee	NP-FAM-EN;
 Enteer	NP-FAM-EN;
 Entire	NP-FAM-EN;
 Entosh	NP-FAM-EN;
-Eoin	NP-FAM-EN;
+!Eoin	NP-FAM-EN;
 Erchar	NP-FAM-EN;
 Ercke	NP-FAM-EN;
 Erksine	NP-FAM-EN;
@@ -9179,7 +9196,7 @@ Manus	NP-FAM-EN;
 Many	NP-FAM-EN;
 Mape	NP-FAM-EN;
 Maqueen	NP-FAM-EN;
-Mara	NP-FAM-EN;
+!!! Mara	NP-FAM-EN;  !!! more common as genitive of Muir? e.g. Óstán an Mara
 Maragan	NP-FAM-EN;
 Maree	NP-FAM-EN;
 Marey	NP-FAM-EN;
@@ -10975,7 +10992,7 @@ Yourell	NP-FAM-EN;
 Zorkin	NP-FAM-EN;
 Zouche	NP-FAM-EN;
 LEXICON NP-LEX-PERS-EN
-Abaham	NP-PERS-EN;
+Abraham	NP-PERS-EN;
 Abban	NP-PERS-EN;
 Abbie	NP-PERS-EN-fem;
 Abigail	NP-PERS-EN-fem;
@@ -10992,7 +11009,6 @@ Agnes	NP-PERS-EN-fem;
 Aidan	NP-PERS-EN;
 Aideen	NP-PERS-EN-fem;
 Aileen	NP-PERS-EN-fem;
-Aisling	NP-PERS-EN-fem;
 Alan	NP-PERS-EN;
 Alastrina	NP-PERS-EN-fem;
 Alban	NP-PERS-EN;
@@ -11073,7 +11089,6 @@ Bessy	NP-PERS-EN-fem;
 Blanaid	NP-PERS-EN-fem;
 Boetius	NP-PERS-EN;
 Bonaventure	NP-PERS-EN;
-Bowes	NP-PERS-EN;
 Bran	NP-PERS-EN;
 Brasil	NP-PERS-EN;
 Breege	NP-PERS-EN-fem;
@@ -11084,7 +11099,6 @@ Buagh	NP-PERS-EN;
 Caffar	NP-PERS-EN;
 Cahal	NP-PERS-EN;
 Cahir	NP-PERS-EN;
-Callaghan	NP-PERS-EN;
 Cain	NP-PERS-EN;
 Calvach	NP-PERS-EN;
 Canice	NP-PERS-EN;
@@ -11093,7 +11107,6 @@ Carbry	NP-PERS-EN;
 Carmel	NP-PERS-EN-fem;
 Carol	NP-PERS-EN-fem;
 Caroline	NP-PERS-EN-fem;
-Carroll	NP-PERS-EN;
 Cartagh	NP-PERS-EN;
 Catherine	NP-PERS-EN-fem;
 Catriona	NP-PERS-EN-fem;
@@ -11205,7 +11218,7 @@ Enda	NP-PERS-EN;
 Eneas	NP-PERS-EN;
 Eny	NP-PERS-EN;
 Eoghan	NP-PERS-EN;
-Eoin	NP-PERS-EN;
+!Eoin	NP-PERS-EN;
 Ercan	NP-PERS-EN;
 Erevan	NP-PERS-EN;
 Ernan	NP-PERS-EN;
@@ -11652,7 +11665,7 @@ Karl	NP-PERS-EN;
 Kyle	NP-PERS-EN;
 Lee	NP-PERS-EN;
 Leon	NP-PERS-EN;
-Liam	NP-PERS-EN;
+!Liam	NP-PERS-EN;
 Nathan	NP-PERS-EN;
 Neil	NP-PERS-EN;
 Padraig	NP-PERS-EN;
@@ -11678,7 +11691,7 @@ Ava	NP-PERS-EN-fem;
 Caitlin	NP-PERS-EN-fem;
 Chelsea	NP-PERS-EN-fem;
 Chloe	NP-PERS-EN-fem;
-Ciara	NP-PERS-EN-fem;
+!Ciara	NP-PERS-EN-fem;
 Claire	NP-PERS-EN-fem;
 Clodagh	NP-PERS-EN-fem;
 Courtney	NP-PERS-EN-fem;
@@ -11734,132 +11747,132 @@ Victoria	NP-PERS-EN-fem;
 Zoe	NP-PERS-EN-fem;
 
 LEXICON NP-LEX-TIR-EN
-!!!!El Salvador	Nf2-Prop;	! tSalvadóir
-!!!!Hague, the	Nf2-Prop;	! Háig
-!!!!Holy Land	Nf2-Prop;	! !!!!Tír Bheannaithe
-!!!!New Zealand	Nf2-Prop;	! Nua-Shéalainn
-!!!!Saudi Arabia	Nf2-Prop;	! !!!!Araib Shádach
-!!!!South Africa	Nf2-Prop;	! !!!!Afraic Theas
-Afghanistan	Nf2-Prop;	! Afganastáin
-Africa	Nf2-Prop;	! Afraic
-Albania	Nf2-Prop;	! Albáin
-Algeria	Nf2-Prop;	! Ailgéir
-Amazon	Nf2-Prop;	! Amasóin
-Argentina	Nf2-Prop;	! Airgintín
-Australia	Nf2-Prop;	! Astráil
-Austria	Nf2-Prop;	! Ostair
-Bangladesh	Nf2-Prop;	! Bhanglaidéis
-Belgium	Nf2-Prop;	! Bheilg
-Bethlehem	Nf2-Prop;	! Bheithil
-Bolivia	Nf2-Prop;	! Bholaiv
-Brazil	Nf2-Prop;	! Bhrasaíl
-Britain	Nf2-Prop;	! !!!!Bhreatain Mhór
-Brittany	Nf2-Prop;	! Bhriotáin
-Brussels	Nf2-Prop;	! Bhruiséil
-Bulgaria	Nf2-Prop;	! Bhulgáir
-Byzantium	Nf2-Prop;	! Bhiosáint
-Catalonia	Nf2-Prop;	! Chatalóin
-China	Nf2-Prop;	! tSín
-Columbia	Nf2-Prop;	! Cholóim
-Corsica	Nf2-Prop;	! Chorsaic
-Crete	Nf2-Prop;	! Chréit
-Cyprus	Nf2-Prop;	! Chipir
-Czechoslovakia	Nf2-Prop;	! tSeicslóvaic
-Danube	Nf2-Prop;	! Danóib
-Denmark	Nf2-Prop;	! Danmhairg
-Egypt	Nf2-Prop;	! Éigipt
-Ethiopia	Nf2-Prop;	! Aetóip
-Finland	Nf2-Prop;	! Fhionlainn
-France	Nf2-Prop;	! Fhrainc
-Galway	Nf2-Prop;	! Gaillimh
-Ganges	Nf2-Prop;	! Ghainséis
-Gaul	Nf2-Prop;	! Ghaill
-Geneva	Nf2-Prop;	! Ghinéiv
-Germany	Nf2-Prop;	! Ghearmáin
-Greece	Nf2-Prop;	! Ghréig
-Greenland	Nf2-Prop;	! Ghraonlainn
-Guyana	Nf2-Prop;	! Ghuáin
-Hungary	Nf2-Prop;	! Ungáir
-Iceland	Nf2-Prop;	! Íoslann
-Indonesia	Nf2-Prop;	! Indinéis
-Iraq	Nf2-Prop;	! laráic
-Italy	Nf2-Prop;	! Iodáil
-Japan	Nf2-Prop;	! tSeapáin
-Jerusalem	Nf2-Prop;	! Iarúsailéim
-Jordan	Nf2-Prop;	! Iordáin
-Lebanon	Nf2-Prop;	! Liobáin
-Lisbon	Nf2-Prop;	! Liospóin
-Iran	Nf2-Prop;	! Iaráin
-Mongolia	Nf2-Prop;	! Mhongóil
-Mozambique	Nf2-Prop;	! Mósaimbíc
-Netherlands	Nf2-Prop;	! Isiltír
-Niger	Nf2-Prop;	! !!!!Abhainn na Nígire
-Niger	Nf2-Prop;	! Nígir
-Nigeria	Nf2-Prop;	! Nigéir
-Nile	Nf2-Prop;	! Níl
-Pakistan	Nf2-Prop;	! Phacastáín
-Palestine	Nf2-Prop;	! Phalaistín
-Poland	Nf2-Prop;	! Pholainn
-Portugal	Nf2-Prop;	! Phortaingéíl
-Rhine	Nf2-Prop;	! Réin
-Romania	Nf2-Prop;	! Rómáin
-Rome	Nf2-Prop;	! Róimh
-Russia	Nf2-Prop;	! Rúis
-Sardinia	Nf2-Prop;	! tSairdín
-Shannon	Nf2-Prop;	! tSionainn
-Siberia	Nf2-Prop;	! tSibéir
-Spain	Nf2-Prop;	! Spáinn
-Sudan	Nf2-Prop;	! tSúdáin
-Sweden	Nf2-Prop;	! tSualainn
-Switzerland	Nf2-Prop;	! Eilvéis
-Tanzania	Nf2-Prop;	! Tansáin
-Tasmania	Nf2-Prop;	! Tasmáin
-Thailand	Nf2-Prop;	! Téalainn
-Tiber	Nf2-Prop;	! Tibir
-Tibet	Nf2-Prop;	! Tibéid
-Tunisia	Nf2-Prop;	! Túinéis
-Turkey	Nf2-Prop;	! Tuirc
-Venice	Nf2-Prop;	! Veinéis
-Wales	Nf2-Prop;	! !!!!Bhreatain Bheag
-Yugoslavia	Nf2-Prop;	! Iúgslaiv
-Zaire	Nf2-Prop;	! tSáír
-Zimbabwe	Nf2-Prop;	! tSiombáib
-!!!!Black Sea	Nf3-Prop;	! !!!!Mhuir Dhubh
-!!!!Celtic Sea	Nf3-Prop;	! !!!!Mhuir Cheilteach
-!!!!Dead Sea	Nf3-Prop;	! !!!!Mhuir Mharbh
-!!!!Mediterranean Sea	Nf3-Prop;	! Mheánmhuir
-!!!!North Sea	Nf3-Prop;	! !!!!Mhuir Thuaidh
-!!!!Red Sea	Nf3-Prop;	! !!!!Mhuir Rua
-!!!!United Kingdom	Nf3-Prop;	! !!!!Riocht Aontaithe
-!!!!New Guinea	Nf4-Prop;	! Nua-Ghuíne
-Asia	Nf4-Prop;	! Aíse
-Chile	Nf4-Prop;	! tSile
-Guinea	Nf4-Prop;	! Ghuine
-India	Nf4-Prop;	! India
-Kenya	Nf4-Prop;	! Chéinia
-Korea	Nf4-Prop;	! Chóiré
-Lee	Nf4-Prop;	! Laoi
-Libya	Nf4-Prop;	! Libia
-Liffey	Nf4-Prop;	! Life
-Malaysia	Nf4-Prop;	! Mhalaeisia
-Norway	Nf4-Prop;	! Iorua
-Syria	Nf4-Prop;	! tSiria
-Zambia	Nf4-Prop;	! tSaimbia
-!!!!Antarctic Ocean	Nm1-Prop;	! !!!!tAigéan Antartach
-!!!!Arctic Ocean	Nm1-Prop;	! !!!!tAigéan Artach
-!!!!Atlantic Ocean	Nm1-Prop;	! !!!!tAigéan Atlantach
-!!!!Atlantic Ocean	Nm1-Prop;	! tAtlantach
-!!!!Holy Land	Nm1-Prop;	! !!!!Talamh Naofa
-!!!!Indian Ocean	Nm1-Prop;	! !!!!tAigéan Indiach
-!!!!Man, Isle of	Nm1-Prop;	! !!!!Oileán Mhanann
-!!!!Pacific Ocean	Nm1-Prop;	! !!!!tAigéan Ciúin
-Antarctic	Nm1-Prop;	! tAntartach
-Cameroon	Nm1-Prop;	! Camarún
-Limerick	Nm1-Prop;	! Luimneach
-Liverpool	Nm1-Prop;	! Learpholl
-!!!!Latin America	Nm4-Prop;	! !!!!Meiriceá Laidineach
-Congo	Nm4-Prop;	! Congó
-Sahara	Nm4-Prop;	! Sahára
+!!!!El Salvador	Nf2-Prop-Place;	! tSalvadóir
+!!!!Hague, the	Nf2-Prop-Place;	! Háig
+!!!!Holy Land	Nf2-Prop-Place;	! !!!!Tír Bheannaithe
+!!!!New Zealand	Nf2-Prop-Place;	! Nua-Shéalainn
+!!!!Saudi Arabia	Nf2-Prop-Place;	! !!!!Araib Shádach
+!!!!South Africa	Nf2-Prop-Place;	! !!!!Afraic Theas
+Afghanistan	Nf2-Prop-Place;	! Afganastáin
+Africa	Nf2-Prop-Place;	! Afraic
+Albania	Nf2-Prop-Place;	! Albáin
+Algeria	Nf2-Prop-Place;	! Ailgéir
+Amazon	Nf2-Prop-Place;	! Amasóin
+Argentina	Nf2-Prop-Place;	! Airgintín
+Australia	Nf2-Prop-Place;	! Astráil
+Austria	Nf2-Prop-Place;	! Ostair
+Bangladesh	Nf2-Prop-Place;	! Bhanglaidéis
+Belgium	Nf2-Prop-Place;	! Bheilg
+Bethlehem	Nf2-Prop-Place;	! Bheithil
+Bolivia	Nf2-Prop-Place;	! Bholaiv
+Brazil	Nf2-Prop-Place;	! Bhrasaíl
+Britain	Nf2-Prop-Place;	! !!!!Bhreatain Mhór
+Brittany	Nf2-Prop-Place;	! Bhriotáin
+Brussels	Nf2-Prop-Place;	! Bhruiséil
+Bulgaria	Nf2-Prop-Place;	! Bhulgáir
+Byzantium	Nf2-Prop-Place;	! Bhiosáint
+Catalonia	Nf2-Prop-Place;	! Chatalóin
+China	Nf2-Prop-Place;	! tSín
+Columbia	Nf2-Prop-Place;	! Cholóim
+Corsica	Nf2-Prop-Place;	! Chorsaic
+Crete	Nf2-Prop-Place;	! Chréit
+Cyprus	Nf2-Prop-Place;	! Chipir
+Czechoslovakia	Nf2-Prop-Place;	! tSeicslóvaic
+Danube	Nf2-Prop-Place;	! Danóib
+Denmark	Nf2-Prop-Place;	! Danmhairg
+Egypt	Nf2-Prop-Place;	! Éigipt
+Ethiopia	Nf2-Prop-Place;	! Aetóip
+Finland	Nf2-Prop-Place;	! Fhionlainn
+France	Nf2-Prop-Place;	! Fhrainc
+Galway	Nf2-Prop-Place;	! Gaillimh
+Ganges	Nf2-Prop-Place;	! Ghainséis
+Gaul	Nf2-Prop-Place;	! Ghaill
+Geneva	Nf2-Prop-Place;	! Ghinéiv
+Germany	Nf2-Prop-Place;	! Ghearmáin
+Greece	Nf2-Prop-Place;	! Ghréig
+Greenland	Nf2-Prop-Place;	! Ghraonlainn
+Guyana	Nf2-Prop-Place;	! Ghuáin
+Hungary	Nf2-Prop-Place;	! Ungáir
+Iceland	Nf2-Prop-Place;	! Íoslann
+Indonesia	Nf2-Prop-Place;	! Indinéis
+Iraq	Nf2-Prop-Place;	! laráic
+Italy	Nf2-Prop-Place;	! Iodáil
+Japan	Nf2-Prop-Place;	! tSeapáin
+Jerusalem	Nf2-Prop-Place;	! Iarúsailéim
+Jordan	Nf2-Prop-Place;	! Iordáin
+Lebanon	Nf2-Prop-Place;	! Liobáin
+Lisbon	Nf2-Prop-Place;	! Liospóin
+Iran	Nf2-Prop-Place;	! Iaráin
+Mongolia	Nf2-Prop-Place;	! Mhongóil
+Mozambique	Nf2-Prop-Place;	! Mósaimbíc
+Netherlands	Nf2-Prop-Place;	! Isiltír
+Niger	Nf2-Prop-Place;	! !!!!Abhainn na Nígire
+Niger	Nf2-Prop-Place;	! Nígir
+Nigeria	Nf2-Prop-Place;	! Nigéir
+Nile	Nf2-Prop-Place;	! Níl
+Pakistan	Nf2-Prop-Place;	! Phacastáín
+Palestine	Nf2-Prop-Place;	! Phalaistín
+Poland	Nf2-Prop-Place;	! Pholainn
+Portugal	Nf2-Prop-Place;	! Phortaingéíl
+Rhine	Nf2-Prop-Place;	! Réin
+Romania	Nf2-Prop-Place;	! Rómáin
+Rome	Nf2-Prop-Place;	! Róimh
+Russia	Nf2-Prop-Place;	! Rúis
+Sardinia	Nf2-Prop-Place;	! tSairdín
+Shannon	Nf2-Prop-Place;	! tSionainn
+Siberia	Nf2-Prop-Place;	! tSibéir
+Spain	Nf2-Prop-Place;	! Spáinn
+Sudan	Nf2-Prop-Place;	! tSúdáin
+Sweden	Nf2-Prop-Place;	! tSualainn
+Switzerland	Nf2-Prop-Place;	! Eilvéis
+Tanzania	Nf2-Prop-Place;	! Tansáin
+Tasmania	Nf2-Prop-Place;	! Tasmáin
+Thailand	Nf2-Prop-Place;	! Téalainn
+Tiber	Nf2-Prop-Place;	! Tibir
+Tibet	Nf2-Prop-Place;	! Tibéid
+Tunisia	Nf2-Prop-Place;	! Túinéis
+Turkey	Nf2-Prop-Place;	! Tuirc
+Venice	Nf2-Prop-Place;	! Veinéis
+Wales	Nf2-Prop-Place;	! !!!!Bhreatain Bheag
+Yugoslavia	Nf2-Prop-Place;	! Iúgslaiv
+Zaire	Nf2-Prop-Place;	! tSáír
+Zimbabwe	Nf2-Prop-Place;	! tSiombáib
+!!!!Black Sea	Nf3-Prop-Place;	! !!!!Mhuir Dhubh
+!!!!Celtic Sea	Nf3-Prop-Place;	! !!!!Mhuir Cheilteach
+!!!!Dead Sea	Nf3-Prop-Place;	! !!!!Mhuir Mharbh
+!!!!Mediterranean Sea	Nf3-Prop-Place;	! Mheánmhuir
+!!!!North Sea	Nf3-Prop-Place;	! !!!!Mhuir Thuaidh
+!!!!Red Sea	Nf3-Prop-Place;	! !!!!Mhuir Rua
+!!!!United Kingdom	Nf3-Prop-Place;	! !!!!Riocht Aontaithe
+!!!!New Guinea	Nf4-Prop-Place;	! Nua-Ghuíne
+Asia	Nf4-Prop-Place;	! Aíse
+Chile	Nf4-Prop-Place;	! tSile
+Guinea	Nf4-Prop-Place;	! Ghuine
+India	Nf4-Prop-Place;	! India
+Kenya	Nf4-Prop-Place;	! Chéinia
+Korea	Nf4-Prop-Place;	! Chóiré
+Lee	Nf4-Prop-Place;	! Laoi
+Libya	Nf4-Prop-Place;	! Libia
+Liffey	Nf4-Prop-Place;	! Life
+Malaysia	Nf4-Prop-Place;	! Mhalaeisia
+Norway	Nf4-Prop-Place;	! Iorua
+Syria	Nf4-Prop-Place;	! tSiria
+Zambia	Nf4-Prop-Place;	! tSaimbia
+!!!!Antarctic Ocean	Nm1-Prop-Place;	! !!!!tAigéan Antartach
+!!!!Arctic Ocean	Nm1-Prop-Place;	! !!!!tAigéan Artach
+!!!!Atlantic Ocean	Nm1-Prop-Place;	! !!!!tAigéan Atlantach
+!!!!Atlantic Ocean	Nm1-Prop-Place;	! tAtlantach
+!!!!Holy Land	Nm1-Prop-Place;	! !!!!Talamh Naofa
+!!!!Indian Ocean	Nm1-Prop-Place;	! !!!!tAigéan Indiach
+!!!!Man, Isle of	Nm1-Prop-Place;	! !!!!Oileán Mhanann
+!!!!Pacific Ocean	Nm1-Prop-Place;	! !!!!tAigéan Ciúin
+Antarctic	Nm1-Prop-Place;	! tAntartach
+Cameroon	Nm1-Prop-Place;	! Camarún
+Limerick	Nm1-Prop-Place;	! Luimneach
+Liverpool	Nm1-Prop-Place;	! Learpholl
+!!!!Latin America	Nm4-Prop-Place;	! !!!!Meiriceá Laidineach
+Congo	Nm4-Prop-Place;	! Congó
+Sahara	Nm4-Prop-Place;	! Sahára
 !!!!Canary Islands	NP-PLACE-pl;	! !!!!hOileáin Chanáracha
 !!!!East Indies	NP-PLACE-pl;	! !!!!hIndiacha Thoir
 !!!!West Indies	NP-PLACE-pl;	! !!!!hlndiacha Thiar
@@ -12112,7 +12125,7 @@ Helsinki	NP-PLACE-sg;	! Heilsincí
 Himalayas	NP-PLACE-sg;	! Himiléithe
 Holland	NP-PLACE-sg;	! Ollainn
 Honduras	NP-PLACE-sg;	! Hondúras
-Iberia	Nf4-Prop;	! Ibéir
+Iberia	Nf4-Prop-Place;	! Ibéir
 Indo-China	NP-PLACE-sg;	! Ind-Sín
 Indus	NP-PLACE-sg;	! Iondúis
 Iran	NP-PLACE-sg;	! Iaráin
@@ -12301,19 +12314,18 @@ LEXICON NPI-Gaeilge
 +Prop+Noun+Fem+Com+Sg+DefArt:Ghaeilge		#;
 +Prop+Noun+Fem+Gen+Sg:Gaeilge		#;
 +Prop+Noun+Fem+Gen+Sg+DefArt:Gaeilge		#;
-+Prop+Noun+Fem+Voc+Sg:Ghaeilge			#;
++Prop+Noun+Fem+Voc+Sg+Len:Ghaeilge			#;
 
 LEXICON NPI-Gaelainn
 +CM+Prop+Noun+Fem+Com+Sg:Gaelainn	InitMut;
 +CM+Prop+Noun+Fem+Com+Sg+DefArt:Ghaelainn	#;
 +CM+Prop+Noun+Fem+Gen+Sg:Gaelainne	#;
 +CM+Prop+Noun+Fem+Gen+Sg+DefArt:Gaelainne	#;
-+CM+Prop+Noun+Fem+Voc+Sg:Ghaelainn		#;
++CM+Prop+Noun+Fem+Voc+Sg+Len:Ghaelainn		#;
 
 
 LEXICON NPI-Éire
 +Prop+Noun+Fem+Com+Sg:Éire			InitMut;
-+Prop+Noun+Fem+Com+Sg+DefArt:hÉire	#;
 +Prop+Noun+Fem+Gen+Sg:Éireann	#;
 +Prop+Noun+Fem+Gen+Sg+DefArt:hÉireann	#;
 +Prop+Noun+Fem+Dat+Sg:Éirinn		#;
@@ -12327,13 +12339,13 @@ LEXICON NPI-Londain
 
 LEXICON NPI-Meiriceá
 +Prop+Noun+Fem+Com+Sg:Meiriceá		InitMut;
-+Prop+Noun+Fem+Gen+Sg:Mheiriceá	#;
-+Prop+Noun+Fem+Voc+Sg:Mheiriceá	#;
++Prop+Noun+Fem+Gen+Sg+Len:Mheiriceá	#;
++Prop+Noun+Fem+Voc+Sg+Len:Mheiriceá	#;
 
 LEXICON NPI-Sasana
 +Prop+Noun+Fem+Com+Sg:Sasana			InitMut;
 +Prop+Noun+Fem+Gen+Sg+DefArt:Shasana	#;
-+Prop+Noun+Fem+Voc+Sg:Shasana		#;
++Prop+Noun+Fem+Voc+Sg+Len:Shasana		#;
 
 LEXICON NPI-Eoraip
 +Prop+Noun+Fem+Com+Sg:Eoraip	InitMut;
@@ -12343,7 +12355,7 @@ LEXICON NPI-Eoraip
 LEXICON NPI-Breatain
 +Prop+Noun+Fem+Com+Sg:Breatain		InitMut;
 +Prop+Noun+Fem+Gen+Sg:Breataine	#;
-+Prop+Noun+Fem+Voc+Sg:Bhreatain	#;
++Prop+Noun+Fem+Voc+Sg+Len:Bhreatain	#;
 
 LEXICON NPI-Life
 +Prop+Noun+Fem+Com+Sg:Life		InitMut;
@@ -12375,7 +12387,7 @@ LEXICON NPI-Eorpach
 LEXICON NPI-Conall
 +Prop+Noun+Masc+Com+Sg:Conall		InitMut;
 +Prop+Noun+Masc+Gen+Sg+DefArt:Chonaill	#;
-+Prop+Noun+Masc+Voc+Sg:Chonall	#;
++Prop+Noun+Masc+Voc+Sg+Len:Chonall	#;
 
 LEXICON NPI-Feirste
 +Prop+Noun+Masc+Gen+Sg:Feirste	#;
@@ -12386,18 +12398,13 @@ LEXICON NPI-Uladh
 
 
 !----------------------------------------------------------------------------
-
+! this Class only used by irregular proper nouns above (NPI lexicons)
 LEXICON InitMut
 #;
 +Len:^IM^Sé		#;
 +Ecl:^IM^Urú	#;
-!**************************************************************************
-! Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
-!**************************************************************************
-! E. Uí Dhonnchadha 
-!************************************************************************* 
- 
-LEXICON NP-LEX-DCU
+!----------------------------------------------------------------------------
+LEXICON NP-LEX-LOGAINM
 Airgidín		NP-PLACE;	! ID: 1372017; English: Argideen
 Airglinn		NP-PLACE;	! ID: 129407; English: Araglin
 Boirneán		NP-PLACE;	! ID: 30601; English: Morenane
@@ -12421,3 +12428,822 @@ Abhóca+Prop+Noun+Masc+Gen+Sg:Abhóca		#;	! ID: 55230; English: Avoca; Base: Abh
 Bacastún+Prop+Noun+Masc+Gen+Sg+Len:Bhacastúin	#;	! ID: 17111; English: Backstown; Base: Bacastún {Bhacastúin}
 Bachaill+Prop+Noun+Masc+Gen+Sg+Len:Bhacaille	#;	! ID: 40151; English: Boughill; Base: Bachaill {Bhacaille}
 Baicstiall+Prop+Noun+Masc+Gen+Sg+Len:Bhaicstéille #;	! ID: 42205; English: Backsteel; Base: Baicstiall {Bhaicstéille}
+LEXICON NP-LEX-RIACORPAS1
+Corbmaic+Prop+Noun:Corbmaic	   #;
+Burc+Prop+Noun:Burc	   #;
+Dunghal+Prop+Noun:Dunghal	   #;
+Duinecha+Prop+Noun:Duinecha	   #;
+Ruadhan+Prop+Noun:Ruadhan	   #;
+Donnchadh+Prop+Noun:Donnchadh	   #;
+Concobhair+Prop+Noun:Concobhair	   #;
+Ruaidhrí+Prop+Noun:Ruaidhrí	   #;
+Iúdah+Prop+Noun:Iúdah	   #;
+Cuinn+Prop+Noun:Cuinn	   #;
+Ierusalem+Prop+Noun:Ierusalem	   #;
+Froinsias+Prop+Noun:Froinsias	   #;
+Laighean+Prop+Noun:Laighean	   #;
+Conchobhair+Prop+Noun:Conchobhair	   #;
+Domhnaill+Prop+Noun+Len:Dhomhnaill	   #;
+Cuinn+Prop+Noun+Len:Chuinn	   #;
+Maóise+Prop+Noun:Maóise	   #;
+Conchubhar+Prop+Noun:Conchubhar	   #;
+Fódla+Prop+Noun:Fódla	   #;
+Mochuda+Prop+Noun:Mochuda	   #;
+Eóin+Prop+Noun:Eóin	   #;
+Toirrdhealbhach+Prop+Noun:Toirrdhealbhach	   #;
+Toirrdhealbhaigh+Prop+Noun:Toirrdhealbhaigh	   #;
+Séamus+Prop+Noun:Séamus	   #;
+Brenainn+Prop+Noun:Brenainn	   #;
+Lochlann+Prop+Noun:Lochlann	   #;
+Murchadha+Prop+Noun:Murchadha	   #;
+Danann+Prop+Noun:Danann	   #;
+Mathghamhna+Prop+Noun:Mathghamhna	   #;
+Iácob+Prop+Noun:Iácob	   #;
+Iósaf+Prop+Noun:Iósaf	   #;
+Corbmac+Prop+Noun:Corbmac	   #;
+Égipte+Prop+Noun+hPref:hÉgipte	   #;
+Diarmata+Prop+Noun:Diarmata	   #;
+Pilip+Prop+Noun:Pilip	   #;
+Seain+Prop+Noun:Seain	   #;
+Maodhócc+Prop+Noun:Maodhócc	   #;
+Brighid+Prop+Noun:Brighid	   #;
+Mumhain+Prop+Noun:Mumhain	   #;
+Aedha+Prop+Noun:Aedha	   #;
+Aáron+Prop+Noun:Aáron	   #;
+Éamonn+Prop+Noun:Éamonn	   #;
+Maghnus+Prop+Noun:Maghnus	   #;
+Muirchertach+Prop+Noun:Muirchertach	   #;
+Cúchulainn+Prop+Noun:Cúchulainn	   #;
+Iób+Prop+Noun:Iób	   #;
+Diarmait+Prop+Noun:Diarmait	   #;
+Búrc+Prop+Noun:Búrc	   #;
+Fearghus+Prop+Noun:Fearghus	   #;
+Breifne+Prop+Noun:Breifne	   #;
+Éilias+Prop+Noun:Éilias	   #;
+Lugh+Prop+Noun:Lugh	   #;
+Donnchadha+Prop+Noun:Donnchadha	   #;
+Égipt+Prop+Noun+Ecl:nÉgipt	   #;
+Iosua+Prop+Noun:Iosua	   #;
+Erinn+Prop+Noun:Erinn	   #;
+Saxan+Prop+Noun:Saxan	   #;
+Connacht+Prop+Noun:Connachta	   #;
+Oillioll+Prop+Noun:Oillioll	   #;
+Mumhain+Prop+Noun+Len:Mhumhain	   #;
+Éireamhóin+Prop+Noun:Éireamhóin	   #;
+Rudhraighe+Prop+Noun:Rudhraighe	   #;
+Esau+Prop+Noun:Esau	   #;
+Osraí+Prop+Noun:Osraí	   #;
+Lughach+Prop+Noun:Lughach	   #;
+Iacób+Prop+Noun:Iacób	   #;
+Maghnusa+Prop+Noun:Maghnusa	   #;
+Luirc+Prop+Noun:Luirc	   #;
+Deirdre+Prop+Noun:Deirdre	   #;
+Erinn+Prop+Noun:Erinn	   #;
+Oilill+Prop+Noun:Oilill	   #;
+Maolmhodhaigh+Prop+Noun:Maolmhodhaigh	   #;
+Emainn+Prop+Noun:Emainn	   #;
+Cconaill+Prop+Noun:Cconaill	   #;
+Duach+Prop+Noun:Duach	   #;
+Muircheartach+Prop+Noun:Muircheartach	   #;
+Aodh+Prop+Noun+hPref:hAodh	   #;
+Berach+Prop+Noun:Berach	   #;
+Banba+Prop+Noun:Banba	   #;
+Conchobhair+Prop+Noun+Len:Chonchobhair	   #;
+Conchubhair+Prop+Noun:Conchubhair	   #;
+Babilóine+Prop+Noun:Babilóine	   #;
+Phárao+Prop+Noun+Len:Phárao	   #;
+Concobhar+Prop+Noun:Concobhar	   #;
+Brighde+Prop+Noun:Brighde	   #;
+Dáibhídh+Prop+Noun:Dáibhídh	   #;
+Aedh+Prop+Noun:Aedh	   #;
+Raghnaill+Prop+Noun:Raghnaill	   #;
+Oiliolla+Prop+Noun:Oiliolla	   #;
+Ephraim+Prop+Noun:Ephraim	   #;
+Pharao+Prop+Noun:Pharao	   #;
+Patraicc+Prop+Noun:Patraicc	   #;
+Mórna+Prop+Noun:Mórna	   #;
+Culann+Prop+Noun+Masc+Gen+Len:Chulainn	   #;
+Culann+Prop+Noun+Masc+Com+Len:Chulann	   #;
+Culann+Prop+Noun+Masc+Com:Culann	   #;
+Ultaibh+Prop+Noun:Ultaibh	   #;
+Erenn+Prop+Noun:Erenn	   #;
+Dubhda+Prop+Noun:Dubhda	   #;
+Iudaighibh+Prop+Noun:Iudaighibh	   #;
+Éirne+Prop+Noun:Éirne	   #;
+Bóinne+Prop+Noun:Bóinne	   #;
+Muireadhaigh+Prop+Noun:Muireadhaigh	   #;
+Luighdheach+Prop+Noun:Luighdheach	   #;
+Iollann+Prop+Noun:Iollann	   #;
+Bregh+Prop+Noun:Bregh	   #;
+Léivíteach+Prop+Noun:Léivíteach	   #;
+Maóise+Prop+Noun+Len:Mhaóise	   #;
+Iordan+Prop+Noun:Iordan	   #;
+Breatan+Prop+Noun:Breatan	   #;
+Pádruig+Prop+Noun:Pádruig	   #;
+Carthaigh+Prop+Noun:Carthaigh	   #;
+Generodes+Prop+Noun:Generodes	   #;
+Garaidh+Prop+Noun:Garaidh	   #;
+Luighne+Prop+Noun:Luighne	   #;
+Caoimhgin+Prop+Noun:Caoimhgin	   #;
+Aongus+Prop+Noun:Aongus	   #;
+Luircc+Prop+Noun:Luircc	   #;
+Domnaill+Prop+Noun:Domnaill	   #;
+Áodh+Prop+Noun:Áodh	   #;
+Seaan+Prop+Noun:Seaan	   #;
+Maolmhodhaigh+Prop+Noun+Len:Mhaolmhodhaigh	   #;
+Ioseph+Prop+Noun:Ioseph	   #;
+Brénainn+Prop+Noun:Brénainn	   #;
+Sauil+Prop+Noun+Len:Shauil	   #;
+Israel+Prop+Noun:Is-Rael	   #;
+Donnchadh+Prop+Noun+Len:Dhonnchadh	   #;
+Connacht+Prop+Noun+Len:Chonnachta	   #;
+Sionna+Prop+Noun:Sionna	   #;
+Seón+Prop+Noun:Seón	   #;
+Callain+Prop+Noun:Callain	   #;
+Cairpre+Prop+Noun:Cairpre	   #;
+Emann+Prop+Noun:Emann	   #;
+Caoílte+Prop+Noun:Caoílte	   #;
+Caesar+Prop+Noun:Caesar	   #;
+Adhamh+Prop+Noun:Adhamh	   #;
+Muiredhaigh+Prop+Noun:Muiredhaigh	   #;
+Raighilligh+Prop+Noun:Raighilligh	   #;
+Ieremiah+Prop+Noun:Ieremiah	   #;
+Isaias+Prop+Noun:Isaias	   #;
+Fódhla+Prop+Noun:Fódhla	   #;
+Oirghiall+Prop+Noun:Oirghiall	   #;
+Conchubhair+Prop+Noun+Len:Chonchubhair	   #;
+Bóinn+Prop+Noun:Bóinn	   #;
+Muircertaigh+Prop+Noun:Muircertaigh	   #;
+Ferghail+Prop+Noun:Ferghail	   #;
+Dealbhna+Prop+Noun:Dealbhna	   #;
+Cobhthaigh+Prop+Noun:Cobhthaigh	   #;
+Eliseus+Prop+Noun:Eliseus	   #;
+Síoghra+Prop+Noun:Síoghra	   #;
+Semus+Prop+Noun:Semus	   #;
+Muiredhach+Prop+Noun:Muiredhach	   #;
+Ieroboam+Prop+Noun:Ieroboam	   #;
+Cconcobhair+Prop+Noun:Cconcobhair	   #;
+Seon+Prop+Noun:Seon	   #;
+Ammon+Prop+Noun:Ammon	   #;
+Uisneach+Prop+Noun:Uisneach	   #;
+Lochlonnaibh+Prop+Noun:Lochlonnaibh	   #;
+Enri+Prop+Noun:Enri	   #;
+Albain+Prop+Noun+Ecl:nAlbain	   #;
+Maoilechlainn+Prop+Noun:Maoilechlainn	   #;
+Heseciah+Prop+Noun:Heseciah	   #;
+Duinn+Prop+Noun:Duinn	   #;
+Cconnachtaibh+Prop+Noun:Cconnachtaibh	   #;
+Concobair+Prop+Noun:Concobair	   #;
+Desmumhan+Prop+Noun:Desmumhan	   #;
+Conuill+Prop+Noun:Conuill	   #;
+Scitia+Prop+Noun:Scitia	   #;
+Caoimhghin+Prop+Noun:Caoimhghin	   #;
+Tuadhmumhan+Prop+Noun:Tuadhmumhan	   #;
+Brighde+Prop+Noun+Len:Bhrighde	   #;
+Seaán+Prop+Noun:Seaán	   #;
+Muirchertaigh+Prop+Noun:Muirchertaigh	   #;
+Nuadhat+Prop+Noun:Nuadhat	   #;
+Diarmaitt+Prop+Noun:Diarmaitt	   #;
+Calmar+Prop+Noun:Calmar	   #;
+Pattraicc+Prop+Noun:Pattraicc	   #;
+Diarmatta+Prop+Noun:Diarmatta	   #;
+Sliccigh+Prop+Noun:Sliccigh	   #;
+Saxoibh+Prop+Noun:Saxoibh	   #;
+Phoenix+Prop+Noun:Phoenix	   #;
+Philistinigh+Prop+Noun:Philistinigh	   #;
+Manasseh+Prop+Noun:Manasseh	   #;
+Ieróm+Prop+Noun:Ieróm	   #;
+Fiond+Prop+Noun:Fiond	   #;
+Dániel+Prop+Noun:Dániel	   #;
+Cíaran+Prop+Noun:Cíaran	   #;
+Tuadhmhumhan+Prop+Noun:Tuadhmhumhan	   #;
+Múmhan+Prop+Noun:Múmhan	   #;
+Búrcaigh+Prop+Noun:Búrcaigh	   #;
+Moab+Prop+Noun:Moab	   #;
+Mis+Prop+Noun:Mis	   #;
+Míleadh+Prop+Noun+Len:Mhíleadh	   #;
+Iú-Dah+Prop+Noun:Iú-Dah	   #;
+Ferghail+Prop+Noun+Len:Fherghail	   #;
+Fergusa+Prop+Noun:Fergusa	   #;
+Domhnuill+Prop+Noun:Domhnuill	   #;
+Colmain+Prop+Noun:Colmain	   #;
+Ciarain+Prop+Noun:Ciarain	   #;
+Beniamin+Prop+Noun:Beniamin	   #;
+Artur+Prop+Noun:Artur	   #;
+Aibhisttín+Prop+Noun:Aibhisttín	   #;
+Chríostt+Prop+Noun+Len:Chríostt	   #;
+Cailbhín+Prop+Noun:Cailbhín	   #;
+Blathmac+Prop+Noun:Blathmac	   #;
+Ardmacha+Prop+Noun:Ardmacha	   #;
+Froinsías+Prop+Noun:Froinsías	   #;
+Fogartach+Prop+Noun:Fogartach	   #;
+Eusebius+Prop+Noun:Eusebius	   #;
+Eógain+Prop+Noun:Eógain	   #;
+Éighipti+Prop+Noun:Éighipti	   #;
+Eden+Prop+Noun:Eden	   #;
+Cromuil+Prop+Noun:Cromuil	   #;
+Croibdeirg+Prop+Noun:Croibdeirg	   #;
+Criomhthain+Prop+Noun:Criomhthain	   #;
+Liffe+Prop+Noun:Liffe	   #;
+Otway+Prop+Noun:Otway	   #;
+Osnaburg+Prop+Noun:Osnaburg	   #;
+Neasa+Prop+Noun:Neasa	   #;
+Chon+Prop+Noun:Chon	   #;
+Érenn+Prop+Noun:Érenn	   #;
+Gráinne+Prop+Noun:Gráinne	   #;
+Lén+Prop+Noun:Lén	   #;
+Edom+Prop+Noun:Edom	   #;
+Ferccus+Prop+Noun:Ferccus	   #;
+Lucifer+Prop+Noun:Lucifer	   #;
+Ionatan+Prop+Noun:Ionatan	   #;
+Cearbhall+Prop+Noun:Cearbhall	   #;
+Muireadhach+Prop+Noun:Muireadhach	   #;
+Mathgamhna+Prop+Noun:Mathgamhna	   #;
+Balbhuaidh+Prop+Noun:Balbhuaidh	   #;
+Orlando+Prop+Noun:Orlando	   #;
+Maoilseachlainn+Prop+Noun:Maoilseachlainn	   #;
+Moeog+Prop+Noun:Moeog	   #;
+Eochadha+Prop+Noun:Eochadha	   #;
+Cerbhaill+Prop+Noun:Cerbhaill	   #;
+Risderd+Prop+Noun:Risderd	   #;
+Cconchobhair+Prop+Noun:Cconchobhair	   #;
+Urmumhan+Prop+Noun:Urmumhan	   #;
+Meguidhir+Prop+Noun:Meguidhir	   #;
+Baoighill+Prop+Noun:Baoighill	   #;
+Pháraó+Prop+Noun:Pháraó	   #;
+Eorpa+Prop+Noun:Eorpa	   #;
+Luther+Prop+Noun:Luther	   #;
+Ferghal+Prop+Noun:Ferghal	   #;
+Fedhlimidh+Prop+Noun:Fedhlimidh	   #;
+Éadair+Prop+Noun:Éadair	   #;
+Muircheartaigh+Prop+Noun:Muircheartaigh	   #;
+Ahab+Prop+Noun:Ahab	   #;
+Rossa+Prop+Noun:Rossa	   #;
+Clíodhna+Prop+Noun:Clíodhna	   #;
+Bóinn+Prop+Noun+Len:Bhóinn	   #;
+Mocuda+Prop+Noun:Mocuda	   #;
+Coluim+Prop+Noun:Coluim	   #;
+Seaain+Prop+Noun:Seaain	   #;
+Phoebus+Prop+Noun:Phoebus	   #;
+Ierusalem+Prop+Noun+hPref:hIerusalem	   #;
+Coluim+Prop+Noun+Len:Choluim	   #;
+Hassíria+Prop+Noun:Hassíria	   #;
+Albain+Prop+Noun+hPref:hAlbain	   #;
+Eocchain+Prop+Noun:Eocchain	   #;
+Enrí+Prop+Noun:Enrí	   #;
+Amhalgaidh+Prop+Noun:Amhalgaidh	   #;
+Séamuis+Prop+Noun+Len:Shéamuis	   #;
+Abrahám+Prop+Noun:Abrahám	   #;
+Déisí+Prop+Noun:Déisí	   #;
+Callainn+Prop+Noun:Callainn	   #;
+Cumhall+Prop+Noun:Cumhall	   #;
+Alban+Prop+Noun+hPref:hAlban	   #;
+Seaáin+Prop+Noun:Seaáin	   #;
+Bhénus+Prop+Noun:Bhénus	   #;
+Achab+Prop+Noun:Achab	   #;
+Abner+Prop+Noun:Abner	   #;
+Banba+Prop+Noun+Len:Bhanba	   #;
+Líach+Prop+Noun:Líach	   #;
+Úi+Prop+Noun:Úi	   #;
+Uí+Prop+Noun+hPref:hUí	   #;
+Abram+Prop+Noun:Abram	   #;
+Absolon+Prop+Noun:Absolon	   #;
+Coirpre+Prop+Noun:Coirpre	   #;
+Uillicc+Prop+Noun:Uillicc	   #;
+Uíbh+Prop+Noun:Uíbh	   #;
+Seathan+Prop+Noun:Seathan	   #;
+Muircertach+Prop+Noun:Muircertach	   #;
+Iehu+Prop+Noun:Iehu	   #;
+Énrí+Prop+Noun:Énrí	   #;
+Uisnigh+Prop+Noun:Uisnigh	   #;
+Fearghusa+Prop+Noun:Fearghusa	   #;
+Iob+Prop+Noun:Iob	   #;
+Conchobair+Prop+Noun:Conchobair	   #;
+Séamus+Prop+Noun+Len:Shéamus	   #;
+Scuit+Prop+Noun:Scuit	   #;
+Hector+Prop+Noun:Hector	   #;
+Urmhumhan+Prop+Noun:Urmhumhan	   #;
+Pattraicc+Prop+Noun:Pattraicc	   #;
+Patraic+Prop+Noun:Patraic	   #;
+Noe+Prop+Noun:Noe	   #;
+Failghe+Prop+Noun:Failghe	   #;
+Carolus+Prop+Noun:Carolus	   #;
+Sodom+Prop+Noun:Sodom	   #;
+Saxaibh+Prop+Noun:Saxaibh	   #;
+Moab+Prop+Noun+Len:Mhoab	   #;
+Hopcins+Prop+Noun:Hopcins	   #;
+Eirne+Prop+Noun:Eirne	   #;
+Dubhthach+Prop+Noun:Dubhthach	   #;
+Róisi+Prop+Noun:Róisi	   #;
+Raghnall+Prop+Noun:Raghnall	   #;
+Égypt+Prop+Noun:Égypt	   #;
+Conchobhar+Prop+Noun:Conchobhar	   #;
+Breoghain+Prop+Noun:Breoghain	   #;
+Muirceartaigh+Prop+Noun:Muirceartaigh	   #;
+Feargus+Prop+Noun:Feargus	   #;
+Caoílte+Prop+Noun+Len:Chaoílte	   #;
+Beniamin+Prop+Noun+Len:Bheniamin	   #;
+Eamhna+Prop+Noun+hPref:hEamhna	   #;
+Eamhna+Prop+Noun:Eamhna	   #;
+Nérinn+Prop+Noun:Nérinn	   #;
+Muaidhe+Prop+Noun:Muaidhe	   #;
+Iosue+Prop+Noun:Iosue	   #;
+Teamhra+Prop+Noun:Teamhra	   #;
+Semais+Prop+Noun:Semais	   #;
+Diarmatta+Prop+Noun:Diarmatta	   #;
+Moighe+Prop+Noun:Moighe	   #;
+Midhe+Prop+Noun:Midhe	   #;
+Maolmuire+Prop+Noun:Maolmuire	   #;
+Maóisi+Prop+Noun:Maóisi	   #;
+Ieremias+Prop+Noun:Ieremias	   #;
+Diarmut+Prop+Noun:Diarmut	   #;
+Dathi+Prop+Noun:Dathi	   #;
+Ccallain+Prop+Noun:Ccallain	   #;
+Sémus+Prop+Noun:Sémus	   #;
+Seaghain+Prop+Noun:Seaghain	   #;
+Samária+Prop+Noun:Samária	   #;
+Naói+Prop+Noun:Naói	   #;
+Manannán+Prop+Noun:Manannán	   #;
+Flaithbhertach+Prop+Noun:Flaithbhertach	   #;
+Éamuinn+Prop+Noun:Éamuinn	   #;
+Aindrias+Prop+Noun:Aindrias	   #;
+Abimelech+Prop+Noun:Abimelech	   #;
+Abel+Prop+Noun:Abel	   #;
+Naoighiallaigh+Prop+Noun:Naoighiallaigh	   #;
+Iehosaphat+Prop+Noun:Iehosaphat	   #;
+Hereann+Prop+Noun:Hereann	   #;
+Connacht+Prop+Noun+Ecl:gConnachta	   #;
+Gaoidhealaibh+Prop+Noun:Gaoidhealaibh	   #;
+Iudás+Prop+Noun:Iudás	   #;
+Donchadh+Prop+Noun:Donchadh	   #;
+Antoin+Prop+Noun:Antoin	   #;
+Temhrach+Prop+Noun:Temhrach	   #;
+Teathbha+Prop+Noun:Teathbha	   #;
+Síria+Prop+Noun:Síria	   #;
+Babilóin+Prop+Noun+Len:Bhabilóin	   #;
+Séadna+Prop+Noun:Séadna	   #;
+Sacsaibh+Prop+Noun:Sacsaibh	   #;
+Róigh+Prop+Noun:Róigh	   #;
+Maoíleachlainn+Prop+Noun:Maoíleachlainn	   #;
+Maodocc+Prop+Noun:Maodocc	   #;
+Lébhi+Prop+Noun:Lébhi	   #;
+Eirenn+Prop+Noun:Eirenn	   #;
+Éireamhón+Prop+Noun:Éireamhón	   #;
+Dábhídh+Prop+Noun:Dábhídh	   #;
+Criomhthann+Prop+Noun:Criomhthann	   #;
+Padruig+Prop+Noun:Padruig	   #;
+Maolsechlainn+Prop+Noun:Maolsechlainn	   #;
+Ismael+Prop+Noun:Ismael	   #;
+Draoidheantóir+Prop+Noun:Draoidheantóir	   #;
+Conmaicne+Prop+Noun:Conmaicne	   #;
+Aimhirgin+Prop+Noun:Aimhirgin	   #;
+Siosoile+Prop+Noun:Siosoile	   #;
+Muman+Prop+Noun:Muman	   #;
+Manasseh+Prop+Noun+Len:Mhanasseh	   #;
+Mananáin+Prop+Noun:Mananáin	   #;
+Iericho+Prop+Noun:Iericho	   #;
+Eirinne+Prop+Noun+hPref:hEirinne	   #;
+Fearmanach+Prop+Noun+Len:Fhearmanach	   #;
+Ferna+Prop+Noun:Ferna	   #;
+Égipt+Prop+Noun:Égipt	   #;
+Seanainn+Prop+Noun+DefArt:tSeanainn	   #;
+Ioas+Prop+Noun:Ioas	   #;
+Hélen+Prop+Noun:Hélen	   #;
+Dáibhídh+Prop+Noun+Len:Dháibhídh	   #;
+Cumaill+Prop+Noun:Cumaill	   #;
+Philistíneach+Prop+Noun+Ecl:bPhilistíneach	   #;
+Augustine+Prop+Noun:Augustine	   #;
+Siúire+Prop+Noun:Siúire	   #;
+Eachdhach+Prop+Noun:Eachdhach	   #;
+Bríain+Prop+Noun:Bríain	   #;
+Lochlonn+Prop+Noun:Lochlonn	   #;
+Lazarus+Prop+Noun:Lazarus	   #;
+Eogain+Prop+Noun:Eogain	   #;
+Dealgan+Prop+Noun:Dealgan	   #;
+Suileabhan+Prop+Noun:Suileabhan	   #;
+Oiligh+Prop+Noun:Oiligh	   #;
+Néid+Prop+Noun:Néid	   #;
+Sgiath-Leathan+Prop+Noun:Sgiath-Leathan	   #;
+Moigh+Prop+Noun:Moigh	   #;
+Lában+Prop+Noun:Lában	   #;
+Dubhthaigh+Prop+Noun:Dubhthaigh	   #;
+Bearbha+Prop+Noun:Bearbha	   #;
+Failge+Prop+Noun:Failge	   #;
+Sliccigh+Prop+Noun:Sliccigh	   #;
+Saxoibh+Prop+Noun:Saxoibh	   #;
+Phoenix+Prop+Noun:Phoenix	   #;
+Philistinigh+Prop+Noun:Philistinigh	   #;
+Manasseh+Prop+Noun:Manasseh	   #;
+Lebhítibh+Prop+Noun:Lebhítibh	   #;
+Ieróm+Prop+Noun:Ieróm	   #;
+Fiond+Prop+Noun:Fiond	   #;
+Dániel+Prop+Noun:Dániel	   #;
+Cíaran+Prop+Noun:Cíaran	   #;
+Tuadhmhumhan+Prop+Noun:Tuadhmhumhan	   #;
+Múmhan+Prop+Noun:Múmhan	   #;
+Ui+Prop+Noun:Ui	   #;
+Búrcaigh+Prop+Noun:Búrcaigh	   #;
+Moab+Prop+Noun:Moab	   #;
+Mis+Prop+Noun:Mis	   #;
+Míleadh+Prop+Noun+Len:Mhíleadh	   #;
+Iú-Dah+Prop+Noun:Iú-Dah	   #;
+Ferghail+Prop+Noun:Fherghail	   #;
+Fergusa+Prop+Noun:Fergusa	   #;
+Domhnuill+Prop+Noun:Domhnuill	   #;
+Colmain+Prop+Noun:Colmain	   #;
+Ciarain+Prop+Noun:Ciarain	   #;
+Beniamin+Prop+Noun:Beniamin	   #;
+Artur+Prop+Noun:Artur	   #;
+Raoi+Prop+Noun:Raoi	   #;
+Maodócc+Prop+Noun:Maodócc	   #;
+Éilge+Prop+Noun:Éilge	   #;
+Cairioll+Prop+Noun:Cairioll	   #;
+Tethbha+Prop+Noun:Tethbha	   #;
+Ronáin+Prop+Noun:Ronáin	   #;
+Ioab+Prop+Noun:Ioab	   #;
+Béarra+Prop+Noun:Béarra	   #;
+Ardmhach+Prop+Noun:Ardmhach	   #;
+Árdmacha+Prop+Noun:Árdmacha	   #;
+Úa+Prop+Noun:Úa	   #;
+Tadg+Prop+Noun:Tadg	   #;
+Saighre+Prop+Noun:Saighre	   #;
+Rathain+Prop+Noun:Rathain	   #;
+Breifne+Prop+Noun+Ecl:mBreifne	   #;
+Égypte+Prop+Noun:Égypte	   #;
+Clemens+Prop+Noun:Clemens	   #;
+Cailbhin+Prop+Noun+Len:Chailbhin	   #;
+Aintíochas+Prop+Noun:Aintíochas	   #;
+Tighearnáin+Prop+Noun:Tighearnáin	   #;
+Raoí+Prop+Noun:Raoí	   #;
+Gofraidh+Prop+Noun:Gofraidh	   #;
+Gideon+Prop+Noun:Gideon	   #;
+Domnall+Prop+Noun:Domnall	   #;
+Donnchadha+Prop+Noun+Len:Dhonnchadha	   #;
+Deaghaidh+Prop+Noun:Deaghaidh	   #;
+Bretan+Prop+Noun:Bretan	   #;
+Deirdre+Prop+Noun+Len:Dheirdre	   #;
+Conaille+Prop+Noun:Conaille	   #;
+Clarínas+Prop+Noun:Clarínas	   #;
+Bálaam+Prop+Noun:Bálaam	   #;
+Ailill+Prop+Noun:Ailill	   #;
+Muaidh+Prop+Noun:Muaidh	   #;
+Hébron+Prop+Noun:Hébron	   #;
+Genesi+Prop+Noun:Genesi	   #;
+Cubhaill+Prop+Noun:Cubhaill	   #;
+Cruachain+Prop+Noun:Cruachain	   #;
+Ciannachta+Prop+Noun:Ciannachta	   #;
+Congculainn+Prop+Noun+Len:Chongculainn	   #;
+Ceneoil+Prop+Noun:Ceneoil	   #;
+Béarra+Prop+Noun+Len:Bhéarra	   #;
+Reuben+Prop+Noun:Reuben	   #;
+Moling+Prop+Noun:Moling	   #;
+Milésius+Prop+Noun+Len:Mhilésius	   #;
+Éirne+Prop+Noun+hPref:hÉirne	   #;
+Háman+Prop+Noun:Háman	   #;
+Elisa+Prop+Noun:Elisa	   #;
+Boirche+Prop+Noun:Boirche	   #;
+Alexaindria+Prop+Noun:Alexaindria	   #;
+Aibhisttín+Prop+Noun:Aibhisttín	   #;
+Tighernán+Prop+Noun:Tighernán	   #;
+Roisdeart+Prop+Noun:Roisdeart	   #;
+Niúl+Prop+Noun:Niúl	   #;
+Meadhbh+Prop+Noun:Meadhbh	   #;
+Maoileachloinn+Prop+Noun:Maoileachloinn	   #;
+Maodhocc+Prop+Noun:Maodhocc	   #;
+Iosiah+Prop+Noun:Iosiah	   #;
+Ébha+Prop+Noun:Ébha	   #;
+Conghalaigh+Prop+Noun:Conghalaigh	   #;
+Coitir+Prop+Noun:Coitir	   #;
+Philistineach+Prop+Noun:bhPhilistineach	   #;
+Baal+Prop+Noun+Len:Bhaal	   #;
+Sem+Prop+Noun:Sem	   #;
+Mádor+Prop+Noun:Mádor	   #;
+Iughoine+Prop+Noun:Iughoine	   #;
+Daghdha+Prop+Noun:Daghdha	   #;
+Cyrus+Prop+Noun:Cyrus	   #;
+Críostt+Prop+Noun+Len:Chríostt	   #;
+Asaph+Prop+Noun:Asaph	   #;
+Aodhagáin+Prop+Noun:Aodhagáin	   #;
+Tir-Eoghan+Prop+Noun:Thir-Eoghan	   #;
+Seoseph+Prop+Noun:Seoseph	   #;
+Remainn+Prop+Noun:Remainn	   #;
+Óluim+Prop+Noun:Óluim	   #;
+Nebuchadnessar+Prop+Noun:Nebuchadnessar	   #;
+Iesse+Prop+Noun:Iesse	   #;
+Eoghan+Prop+Noun+hPref:hEoghan	   #;
+Heli+Prop+Noun:Heli	   #;
+Fearadhaigh+Prop+Noun:Fearadhaigh	   #;
+Darius+Prop+Noun:Darius	   #;
+Crist+Prop+Noun:Crist	   #;
+Conchabhair+Prop+Noun:Conchabhair	   #;
+Cairill+Prop+Noun:Cairill	   #;
+Bulga+Prop+Noun:Bulga	   #;
+Baoisgne+Prop+Noun:Baoisgne	   #;
+Sep+Prop+Noun:Sep	   #;
+Pháro+Prop+Noun:Pháro	   #;
+Anmchadha+Prop+Noun+Ecl:nAnmchadha	   #;
+Iehoiada+Prop+Noun:Iehoiada	   #;
+Égipte+Prop+Noun+hPref:hÉgipte	   #;
+Generodeis+Prop+Noun+Len:Ghenerodeis	   #;
+Flaithbhertaigh+Prop+Noun:Flaithbhertaigh	   #;
+Fergail+Prop+Noun:Fergail	   #;
+Uidhilín+Prop+Noun:Uidhilín	   #;
+Pluirens+Prop+Noun:Pluirens	   #;
+Pádruic+Prop+Noun:Pádruic	   #;
+Maolseachlainn+Prop+Noun:Maolseachlainn	   #;
+Lasarus+Prop+Noun:Lasarus	   #;
+Ultaibh+Prop+Noun+hPref:hUltaibh	   #;
+Áisia+Prop+Noun+hPref:hÁisia	   #;
+Fionnchadh+Prop+Noun:Fionnchadh	   #;
+Féidhlim+Prop+Noun:Féidhlim	   #;
+Cuailgne+Prop+Noun:Cuailgne	   #;
+Cormuic+Prop+Noun+Len:Chormuic	   #;
+Ananias+Prop+Noun:Ananias	   #;
+Ughaine+Prop+Noun:Ughaine	   #;
+Mochua+Prop+Noun:Mochua	   #;
+Meliór+Prop+Noun:Meliór	   #;
+Máoise+Prop+Noun:Máoise	   #;
+Lothra+Prop+Noun:Lothra	   #;
+Aáron+Prop+Noun+hPref:hAáron	   #;
+Gulban+Prop+Noun:Gulban	   #;
+Giollacriost+Prop+Noun:Giollacriost	   #;
+Feabhail+Prop+Noun:Feabhail	   #;
+Eoccain+Prop+Noun:Eoccain	   #;
+Domhnoill+Prop+Noun:Domhnoill	   #;
+Duibne+Prop+Noun+Len:Dhuibne	   #;
+Cairteáin+Prop+Noun:Cairteáin	   #;
+Briúin+Prop+Noun:Briúin	   #;
+Iollan+Prop+Noun:Iollan	   #;
+Iohn+Prop+Noun:Iohn	   #;
+Giollu+Prop+Noun:Giollu	   #;
+Flaithbheartaigh+Prop+Noun:Flaithbheartaigh	   #;
+Failbhe+Prop+Noun:Failbhe	   #;
+Cualann+Prop+Noun:Cualann	   #;
+Aith-Cliath+Prop+Noun:Aith-Cliath	   #;
+Slicceach+Prop+Noun:Slicceach	   #;
+Símeon+Prop+Noun:Símeon	   #;
+Nuadhad+Prop+Noun:Nuadhad	   #;
+Naphtali+Prop+Noun:Naphtali	   #;
+Maoilsechlainn+Prop+Noun:Maoilsechlainn	   #;
+Íosa+Prop+Noun:Íosa	   #;
+Ioraird+Prop+Noun:Ioraird	   #;
+Gaillmhe+Prop+Noun:Gaillmhe	   #;
+Féidhlim+Prop+Noun:Fhéidhlim	   #;
+Dunchadha+Prop+Noun:Dunchadha	   #;
+Dunchadh+Prop+Noun:Dunchadh	   #;
+Duinn+Prop+Noun+Len:Dhuinn	   #;
+Dáth+Prop+Noun:Dáth	   #;
+Dábhí+Prop+Noun:Dábhí	   #;
+Connocht+Prop+Noun:Connocht	   #;
+Cánaain+Prop+Noun+Len:Chánaain	   #;
+Birn+Prop+Noun:Birn	   #;
+Babilóin+Prop+Noun:Babilóin	   #;
+Soluimh+Prop+Noun:Sholuimh	   #;
+Remann+Prop+Noun:Remann	   #;
+Eathach+Prop+Noun+Ecl:nEathach	   #;
+Narsinga+Prop+Noun:Narsinga	   #;
+Muscraighe+Prop+Noun:Muscraighe	   #;
+Muirtheimhne+Prop+Noun:Muirtheimhne	   #;
+Lede+Prop+Noun:Lede	   #;
+Iuda+Prop+Noun:Iuda	   #;
+Iarusalem+Prop+Noun:Iarusalem	   #;
+Greagóir+Prop+Noun:Greagóir	   #;
+Finghin+Prop+Noun:Finghin	   #;
+Éamoinn+Prop+Noun:Éamoinn	   #;
+Choingculainn+Prop+Noun+Len:Choingculainn	   #;
+Cailbhin+Prop+Noun:Cailbhin	   #;
+Briuin+Prop+Noun:Briuin	   #;
+Augustín+Prop+Noun:Augustín	   #;
+Asariah+Prop+Noun:Asariah	   #;
+Abhaistín+Prop+Noun:Abhaistín	   #;
+Slaine+Prop+Noun:Slaine	   #;
+Rudhruighe+Prop+Noun:Rudhruighe	   #;
+Ruarc+Prop+Noun:Ruarc	   #;
+Risdeird+Prop+Noun:Risdeird	   #;
+Móirne+Prop+Noun:Móirne	   #;
+Murchadha+Prop+Noun+Len:Mhurchadha	   #;
+Maoisi+Prop+Noun:Maoisi	   #;
+Maoilruanaidh+Prop+Noun:Maoilruanaidh	   #;
+Maoiledúin+Prop+Noun:Maoiledúin	   #;
+Farsaidh+Prop+Noun:Farsaidh	   #;
+Eachdach+Prop+Noun:Eachdach	   #;
+Déirdre+Prop+Noun:Déirdre	   #;
+Declain+Prop+Noun:Declain	   #;
+Deasmhumhan+Prop+Noun:Deasmhumhan	   #;
+Bricne+Prop+Noun:Bricne	   #;
+Síoghra+Prop+Noun+Len:Shíoghra	   #;
+Naaman+Prop+Noun:Naaman	   #;
+Gaileng+Prop+Noun:Gaileng	   #;
+Eleásar+Prop+Noun:Eleásar	   #;
+Baoiscne+Prop+Noun:Baoiscne	   #;
+Scotia+Prop+Noun:Scotia	   #;
+Ruadhain+Prop+Noun:Ruadhain	   #;
+Mordecai+Prop+Noun:Mordecai	   #;
+Muircheartaigh+Prop+Noun+Len:Mhuircheartaigh	   #;
+Briuin+Prop+Noun+Ecl:mBriuin	   #;
+Máguidhir+Prop+Noun:Máguidhir	   #;
+Maghnais+Prop+Noun:Maghnais	   #;
+Laighne+Prop+Noun:Laighne	   #;
+Antuaithe+Prop+Noun+hPref:hAntuaithe	   #;
+Guibhir+Prop+Noun:Guibhir	   #;
+Dunlaing+Prop+Noun:Dunlaing	   #;
+Dauid+Prop+Noun:Dauid	   #;
+Conuill+Prop+Noun+Len:Chonuill	   #;
+Boirne+Prop+Noun:Boirne	   #;
+Treoin+Prop+Noun:Treoin	   #;
+Stiabhna+Prop+Noun:Stiabhna	   #;
+Sedeciah+Prop+Noun:Sedeciah	   #;
+Roraigh+Prop+Noun:Roraigh	   #;
+Domnaill+Prop+Noun+Ecl:nDomnaill	   #;
+Nátan+Prop+Noun:Nátan	   #;
+Briúin+Prop+Noun+Ecl:mBriúin	   #;
+Máoisi+Prop+Noun:Máoisi	   #;
+Hesbon+Prop+Noun:Hesbon	   #;
+Domnaill+Prop+Noun+Len:Dhomnaill	   #;
+Comhghaill+Prop+Noun:Comhghaill	   #;
+Críoist+Prop+Noun+Len:Chríoist	   #;
+Ború+Prop+Noun:Ború	   #;
+Aongusa+Prop+Noun:Aongusa	   #;
+Tir-Chonall+Prop+Noun+Len:Thir-Chonall	   #;
+Simeon+Prop+Noun:Simeon	   #;
+Rehoboam+Prop+Noun:Rehoboam	   #;
+Pilate+Prop+Noun:Pilate	   #;
+Magnusa+Prop+Noun:Magnusa	   #;
+Maghnas+Prop+Noun:Maghnas	   #;
+Iodáilleach+Prop+Noun:Iodáilleach	   #;
+Enrí+Prop+Noun+hPref:hEnrí	   #;
+Giollapatraicc+Prop+Noun:Giollapatraicc	   #;
+Farbhlaidh+Prop+Noun:Farbhlaidh	   #;
+Ciabhán+Prop+Noun:Ciabhán	   #;
+Benaiah+Prop+Noun:Benaiah	   #;
+Barabas+Prop+Noun:Barabas	   #;
+Bálac+Prop+Noun:Bálac	   #;
+Bairri+Prop+Noun:Bairri	   #;
+Auguistín+Prop+Noun:Auguistín	   #;
+Aser+Prop+Noun:Aser	   #;
+Almhain+Prop+Noun:Almhain	   #;
+Ahasiah+Prop+Noun:Ahasiah	   #;
+Seain+Prop+Noun+DefArt:tSeain	   #;
+Temhraigh+Prop+Noun:Temhraigh	   #;
+Suca+Prop+Noun:Suca	   #;
+Séam+Prop+Noun:Séam	   #;
+Pádruic+Prop+Noun+Len:Phádruic	   #;
+Petrus+Prop+Noun:Petrus	   #;
+Patruicc+Prop+Noun:Patruicc	   #;
+Muirceartach+Prop+Noun:Muirceartach	   #;
+Géidghe+Prop+Noun:Géidghe	   #;
+Frangc+Prop+Noun:Frangc	   #;
+Ferccusa+Prop+Noun:Ferccusa	   #;
+Eaghra+Prop+Noun:Eaghra	   #;
+Dauidh+Prop+Noun:Dauidh	   #;
+Dághdha+Prop+Noun:Dághdha	   #;
+Cumhoill+Prop+Noun:Cumhoill	   #;
+Conrach+Prop+Noun:Conrach	   #;
+Conlaoch+Prop+Noun:Conlaoch	   #;
+Amon+Prop+Noun:Amon	   #;
+Amhairgin+Prop+Noun:Amhairgin	   #;
+Babilón+Prop+Noun:Babilón	   #;
+Amasiah+Prop+Noun:Amasiah	   #;
+Uillecc+Prop+Noun:Uillecc	   #;
+Sláinghe+Prop+Noun:Sláinghe	   #;
+Rudhraidhe+Prop+Noun:Rudhraidhe	   #;
+Maolmordha+Prop+Noun:Maolmordha	   #;
+Léah+Prop+Noun:Léah	   #;
+Laban+Prop+Noun:Laban	   #;
+Ioraird+Prop+Noun+hPref:hIoraird	   #;
+Herod+Prop+Noun:Herod	   #;
+Heghra+Prop+Noun:Heghra	   #;
+Gairmleadhaigh+Prop+Noun:Gairmleadhaigh	   #;
+Fínghin+Prop+Noun:Fínghin	   #;
+Fearghus+Prop+Noun+Len:Fhearghus	   #;
+Éithne+Prop+Noun:Éithne	   #;
+Díorraing+Prop+Noun:Díorraing	   #;
+Déclan+Prop+Noun:Déclan	   #;
+Curaire+Prop+Noun:Curaire	   #;
+Cruachna+Prop+Noun:Cruachna	   #;
+Croibhdeirg+Prop+Noun:Croibhdeirg	   #;
+Cliach+Prop+Noun:Cliach	   #;
+Ciprus+Prop+Noun:Ciprus	   #;
+Cailbhín+Prop+Noun+Len:Chailbhín	   #;
+Ceithearnnach+Prop+Noun:Ceithearnnach	   #;
+Canannáin+Prop+Noun:Canannáin	   #;
+Babiloin+Prop+Noun:Babiloin	   #;
+Teasáille+Prop+Noun:Teasáille	   #;
+Stíobhart+Prop+Noun:Stíobhart	   #;
+Séamuis+Prop+Noun:Séamuis	   #;
+Ólom+Prop+Noun:Ólom	   #;
+Melóra+Prop+Noun:Melóra	   #;
+Méguidhir+Prop+Noun:Méguidhir	   #;
+Mathghamhun+Prop+Noun:Mathghamhun	   #;
+Ierusalem+Prop+Noun:Ierusalem	   #;
+Fearghusa+Prop+Noun+Len:Fhearghusa	   #;
+Feradhaigh+Prop+Noun:Feradhaigh	   #;
+Eóchaill+Prop+Noun:Eóchaill	   #;
+Éabh+Prop+Noun:Éabh	   #;
+Domhnuill+Prop+Noun+Len:Dhomhnuill	   #;
+Domhnoill+Prop+Noun+Len:Dhomhnoill	   #;
+Cúndún+Prop+Noun:Cúndún	   #;
+Conconnacht+Prop+Noun:Conconnacht	   #;
+Commáin+Prop+Noun:Commáin	   #;
+Samária+Prop+Noun+Len:Shamária	   #;
+Senaigh+Prop+Noun:Senaigh	   #;
+Samhradháin+Prop+Noun:Samhradháin	   #;
+Ráchel+Prop+Noun:Ráchel	   #;
+Páttraicc+Prop+Noun+Len:Pháttraicc	   #;
+Oilealla+Prop+Noun:Oilealla	   #;
+Mountjoy+Prop+Noun:Mountjoy	   #;
+Móab+Prop+Noun:Mhóab	   #;
+Maodog+Prop+Noun:Maodog	   #;
+Maghnasa+Prop+Noun:Maghnasa	   #;
+Lochluinn+Prop+Noun:Lochluinn	   #;
+Labhradha+Prop+Noun:Labhradha	   #;
+Iupiter+Prop+Noun:Iupiter	   #;
+Iudea+Prop+Noun:Iudea	   #;
+Iúdaigheach+Prop+Noun:Iúdaigheach	   #;
+Iudaigh+Prop+Noun:Iudaigh	   #;
+Iudah+Prop+Noun:Iudah	   #;
+Ierusa-Lem+Prop+Noun:Ierusa-Lem	   #;
+Iarusalém+Prop+Noun+hPref:hIarusalém	   #;
+Hercules+Prop+Noun:Hercules	   #;
+Háisint+Prop+Noun:Háisint	   #;
+Aedh+Prop+Noun+hPref:hAedh	   #;
+Ferghus+Prop+Noun:Ferghus	   #;
+Easpáinne+Prop+Noun:Easpáinne	   #;
+Eachroim+Prop+Noun:Eachroim	   #;
+Drobhaois+Prop+Noun:Drobhaois	   #;
+Dániel+Prop+Noun+Len:Dhániel	   #;
+Dauit+Prop+Noun:Dauit	   #;
+Dartraighe+Prop+Noun:Dartraighe	   #;
+Cláro+Prop+Noun:Cláro	   #;
+Cionaedh+Prop+Noun:Cionaedh	   #;
+Ceiting+Prop+Noun:Ceiting	   #;
+Bresail+Prop+Noun:Bresail	   #;
+Artuir+Prop+Noun:Artuir	   #;
+Ampírius+Prop+Noun:Ampírius	   #;
+Toirrdhealbhach+Prop+Noun+Len:Thoirrdhealbhach	   #;
+Spainne+Prop+Noun:Spainne	   #;
+Sobhairce+Prop+Noun:Sobhairce	   #;
+Sihon+Prop+Noun:Sihon	   #;
+Sgeithía+Prop+Noun:Sgeithía	   #;
+Saxanaigh+Prop+Noun:Saxanaigh	   #;
+Sárah+Prop+Noun:Sárah	   #;
+Ór-Armach+Prop+Noun:Ór-Armach	   #;
+Maicniadh+Prop+Noun:Maicniadh	   #;
+Loreto+Prop+Noun:Loreto	   #;
+Iudith+Prop+Noun:Iudith	   #;
+Iesreel+Prop+Noun:Iesreel	   #;
+Ierusalém+Prop+Noun:Ierusalém	   #;
+Aith-Cliath+Prop+Noun+hPref:hAith-Cliath	   #;
+Glanluadh+Prop+Noun:Glanluadh	   #;
+Fearghuis+Prop+Noun+Len:Fhearghuis	   #;
+Féinius+Prop+Noun:Féinius	   #;
+Ezechias+Prop+Noun:Ezechias	   #;
+Eocchan+Prop+Noun:Eocchan	   #;
+Ecclo+Prop+Noun:Ecclo	   #;
+Eccles+Prop+Noun:Eccles	   #;
+Dábhídh+Prop+Noun+Len:Dhábhídh	   #;
+Dáiví+Prop+Noun:Dáiví	   #;
+Cailbhín+Prop+Noun:Cailbhín	   #;
+Blathmac+Prop+Noun:Blathmac	   #;
+Bendchair+Prop+Noun:Bendchair	   #;
+Ardmacha+Prop+Noun:Ardmacha	   #;
+Amnon+Prop+Noun:Amnon	   #;
+Vénus+Prop+Noun:Vénus	   #;
+Tighernáin+Prop+Noun:Tighernáin	   #;
+Temhra+Prop+Noun:Temhra	   #;
+Sádoc+Prop+Noun:Sádoc	   #;
+Roibeart+Prop+Noun:Roibeart	   #;
+Partholón+Prop+Noun:Partholón	   #;
+Manannáin+Prop+Noun+Len:Mhanannáin	   #;
+Meadhbha+Prop+Noun:Meadhbha	   #;
+Banba+Prop+Noun+Ecl:mBanba	   #;
+Mághnus+Prop+Noun:Mághnus	   #;
+Macraith+Prop+Noun:Macraith	   #;
+Jonas+Prop+Noun:Jonas	   #;
+Israhél+Prop+Noun:Israhél	   #;
+Ionathas+Prop+Noun:Ionathas	   #;
+Ioannes+Prop+Noun:Ioannes	   #;
+Iehoiacim+Prop+Noun:Iehoiacim	   #;
+Flannaccáin+Prop+Noun:Flannaccáin	   #;
+Fernmhaighe+Prop+Noun:Fernmhaighe	   #;
+Ezechiel+Prop+Noun:Ezechiel	   #;
+Enoch+Prop+Noun:Enoch	   #;
+Dubhaltach+Prop+Noun:Dubhaltach	   #;
+Disrael+Prop+Noun:Disrael	   #;
+Cúchulainn+Prop+Noun+Len:Chúchulainn	   #;
+Baoighill+Prop+Noun+Len:Bhaoighill	   #;
+Ainmhireach+Prop+Noun:Ainmhireach	   #;
+Ussiah+Prop+Noun:Ussiah	   #;
+Uriah+Prop+Noun:Uriah	   #;
+Umhaill+Prop+Noun:Umhaill	   #;
+Tir-Eoghan+Prop+Noun:Tir-Eoghan	   #;
+Sitim+Prop+Noun:Sitim	   #;
+Símeón+Prop+Noun:Símeón	   #;
+Róistigh+Prop+Noun:Róistigh	   #;
+Risteárd+Prop+Noun:Risteárd	   #;
+Reighilligh+Prop+Noun:Reighilligh	   #;
+Rebecah+Prop+Noun:Rebecah	   #;
+Oissín+Prop+Noun:Oissín	   #;
+Oilioll+Prop+Noun:Oilioll	   #;
+Amhalgaidh+Prop+Noun+Ecl:nAmhalgaidh	   #;
+

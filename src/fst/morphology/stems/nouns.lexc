@@ -38011,11 +38011,11 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < d ú s c a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < d ú s c a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a c h t r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a c h t r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a c h t r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a d a r s h u d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a d a r s h u d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a d a r s h u d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a d a r s h u t h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a d a r s h u t h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a d a r s h u t h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < é a d t u a l a n g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < é a d t u a l a n g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38023,15 +38023,15 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < e a l a d h a %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e a l a d h a %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a l l s c a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a l l s c a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a l l s c a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < é a l ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- é a l ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- é a l ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a l ú %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e a l ú %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a s a r g a i n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a s a r g a i n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a s a r g a i n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a s c r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a s c r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a s c r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a s c ú %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e a s c ú %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < é i g h m h e %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38039,15 +38039,15 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < é i m e a c h t a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < é i m e a c h t a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < é i m e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- é i m e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- é i m e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i n g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e i n g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i r f i r t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e i r f i r t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e i r f i r t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i s c %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e i s c %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i s i r %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e i s i r %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e i s i r %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i t e a l l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e i t e a l l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i t e a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38198,9 +38198,9 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < h a r l a c a i n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < h a r l a c a i n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i a %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i a %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i a %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i n d l i g h e %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i n d l i g h e %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i n d l i g h e %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i n g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < i n g %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i n g h e a n r a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38212,29 +38212,29 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < i n n e a m h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < i n n e a m h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < í o b l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- í o b l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- í o b l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < í o d h b r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- í o d h b r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- í o d h b r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o m a d r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o m a d r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o m a d r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o m a r d a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o m a r d a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o m a r d a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o m l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o m l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o m l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o m p ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o m p ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o m p ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o n b h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o n b h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o n b h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o n b h a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < i o n b h a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o n t ó d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o n t ó d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o n t ó d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o p a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o p a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o p a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o r r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o r r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o r r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i u c h r a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < i u c h r a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < l a b h r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
@@ -38326,19 +38326,19 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < n i g h e %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < n i g h e %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o c h t m h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- o c h t m h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- o c h t m h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o i b r e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- o i b r e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- o i b r e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < ó i g h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < ó i g h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o i r d n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- o i r d n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- o i r d n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o i r n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < o i r n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o s c a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- o s c a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- o s c a l %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o s c l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- o s c l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- o s c l a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < p á g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < p á g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < p á i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38590,7 +38590,7 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < u r l a n n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < u r l a n n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < u r r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- u r r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- u r r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < u s a i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < u s a i d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < v e a s t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
@@ -38600,7 +38600,7 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < á i r g h e %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < á i r g h e %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < a o r t h a n n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- a o r t h a n n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- a o r t h a n n %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < f e o r a i n n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < f 0:h e o r a i n n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < b a l a i t h e %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
@@ -38678,7 +38678,7 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < e a s b h a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e a s b h a i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i r i t i c %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e i r i t i c %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e i r i t i c %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i t e a l a c h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < e i t e a l a c h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e i t e a l l a c h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38720,11 +38720,11 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < i n g i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < i n g i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o m p ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o m p ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o m p ó %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o n g a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < i o n g a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o n n f h u a r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o n n f h u a r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o n n f h u a r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < l a m h a c h t a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < l a m h a c h t a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < l e a d a i r t %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38752,7 +38752,7 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < o l a i n n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < o l a i n n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o s l a g a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- o s l a g a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- o s l a g a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < p a i d e a r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < p 0:h a i d e a r %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < p l á i g h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38782,11 +38782,11 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < s i o r t h a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < s i o r t h a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s l á n a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- s l á n a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- s l á n a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s l ó g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- s l ó g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- s l ó g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s l ó g h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- s l ó g h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- s l ó g h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s m u a i n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < s m u a i n e a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s n e a d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38820,9 +38820,9 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < s ú g a i r t %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < s ú g a i r t %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s ú s t a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- s ú s t a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- s ú s t a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < s ú s t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- s ú s t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- s ú s t %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < t a i d h s e %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < t 0:h a i d h s e %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < t a l m h a i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
@@ -38866,7 +38866,7 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < a l t a n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < a n r ó i t í %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : a n r ó i t e a c h t  (f )
 < a t h b h e o s %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : a t h b h e o c h t  (f )
-< 0:t 0:- a t h b h e o s %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- a t h b h e o s %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < b a c l a %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : b a c l a i n n  (f )
 < b 0:h a c l a %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < b á i g %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : b a i g e  (m )
@@ -38890,7 +38890,7 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < d e o r a i d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : d e o r a í  (m ); Su b v a r i a n t : (Va r : d e o r a (i )d h  m )
 < d e o r a i d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;	
 < e i n e a c h l ó g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : e i n e a c h l a n n  (f )
-< 0:t 0:- e i n e a c h l ó g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e i n e a c h l ó g h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < f e a r s a d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : f e a r s a i d  (f )
 < f 0:h e a r s a d %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < f o r c h o n g a r %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;	! He a d w o r d : f o r c h o n g r a  (m )
@@ -38940,9 +38940,9 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < d r e a m %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < d 0:h r e a m %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < e a d r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- e a d r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- e a d r a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o m r á d h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
-< 0:t 0:- i o m r á d h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< 0:t 0:%- i o m r á d h a d h %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < l i o d á i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < l i o d á i n %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < o i d h e a d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;	! This variant either masculine or feminine

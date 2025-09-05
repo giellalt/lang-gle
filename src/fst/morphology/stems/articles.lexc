@@ -1,5 +1,5 @@
 !****************************************************************************
-!! Common Functional Words
+!! Common Functional Words - Articles
 !
 !  E. Uí Dhonnchadha
 ! (c)2001
@@ -19,9 +19,9 @@
 LEXICON Articles
 
 an+Art+Sg+Def:an		#;
-an+Art+Sg+Def:a'		#;
-an+Art+Sg+Def:'n		#;
-an+Art+Sg+Def:a			#;
+an+Art+Sg+Def+NG:a'		#;
+an+Art+Sg+Def+NG:'n		#;
+an+Art+Sg+Def+NG:a		#;
 
 na+Art+Pl+Def:na		#;
 na+Art+Gen+Sg+Def+Fem:na	#;

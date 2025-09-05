@@ -1,4 +1,18 @@
-! First Conjugation Verb Stems
+!****************************************************************************
+! Briathra Gaeilge - Irregular
+! E. Uí Dhonnchadha
+! 14/10/96
+! (1) New Irish Grammar by The Christian Brothers  
+! (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
+! (3) Foclóir Póca - An Gúm
+! (4) Nuachúrsa Gaeilge na mBráithre Críostaí
+! (5) Ó Dónaill Irish-English Dictionary
+!
+! oct 2004 - removed PastSubj
+! may 2012 - added +Suf, +Var, +Typo and tidied many things
+! dec 2019 - added non-std fuair for bardic
+!****************************************************************************
+!! First Conjugation Verb Stems
 !------------------------------------------------------------------------
 ! V1-BR: 	one syllable (broad vowel - gutha leathan)
 !------------------------------------------------------------------------
@@ -66,7 +80,7 @@ bain+Verb+VTI:bain	V1-SL;
 úsáid+Verb+VT+Vow:úsáid	V1-SL;	
 lig+Verb+VTI:lig	V1-SL;	
 mair+Verb+VTI:mair	V1-SL;	! live, last
-siúil+Verb+VTI:siúil	V1-SL;	! walk
+siúil+Verb+VTI:siúil	V1-SL-BR;	! walk
 tit+Verb+VI:tit	V1-SL;	! fall
 tuig+Verb+VTI:tuig	V1-SL;	! understand
 cráigh+Verb+VT:cráigh	V1-BR-LV;	! Broad,Long Vowel
@@ -88,12 +102,14 @@ luigh+Verb+VI:luigh	V1-SV;
 nigh+Verb+VTI:nigh	V1-SV;	
 suigh+Verb+VTI:suigh	V1-SV;	
 taispeáin+Verb+VT:taispeáin	V1-SL-BR;	! was V1-SL-X;	
-gearáin+Verb+VTI:gearáin	V1-SL-BR;		! was V1-SL-X;	
+gearáin+Verb+VTI:gearáin	V1-SL-BR;	! was V1-SL-X;	
 tionóil+Verb+VTI:tionóil	V1-SL-BR;	! was V1-SL-X;	
 tíolaic+Verb+VTI:tíolaic	V1-SL-BR;	! was V1-SL-X;	
 sábháil+Verb+VTI:sábháil	V1-SL-LC;	
 foráil+Verb+VTI:foráil		V1-SL-LC;	! command, urge
-! Second Conjugation Verb Stems
+reáchtáil+Verb+VTI:reáchtáil	V1-SL-LC;	! added 13-06-2023
+
+!! Second Conjugation Verb Stems
 
 LEXICON VerbsC2A
 
@@ -166,19 +182,6 @@ eitil+Verb+VI+Vow:eitil	V2-SL-sync;
 imir+Verb+VTI+Vow:imir	V2-SL-sync;	
 inis+Verb+VTI+Vow:inis	V2-SL-sync;	
 taitin+Verb+VTI:taitin	V2-SL-sync;	
-!****************************************************************************
-! Briathra Gaeilge - Irregular
-! E. Uí Dhonnchadha
-! 14/10/96
-! (1) New Irish Grammar by The Christian Brothers  
-! (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
-! (3) Foclóir Póca - An Gúm
-! (4) Nuachúrsa Gaeilge na mBráithre Críostaí
-! (5) Ó Dónaill Irish-English Dictionary
-!
-! oct 2004 - removed PastSubj
-! may 2012 - added +Suf, +Var, +Typo and tidied many things
-!****************************************************************************
 
 
 LEXICON Verbs
@@ -254,7 +257,8 @@ bí+Verb+VI:0		VI11;	! be
 is:0			VI12;	! copula
 
 !**************************************************************************
- 
+!! Irregular Verbs
+!************************************************************************** 
 LEXICON VI1	! ABAIR (Irregular)
 
 !*** Modh Táscach - Indicative Mood
@@ -280,15 +284,15 @@ LEXICON VI1	! ABAIR (Irregular)
 
 
 LEXICON VI1-PresImp		! Present Tense Habitual - Aimsir Gnáth Láithreach
-0:deireann		SufNegQ;		! deireann 3rd person sing only
+0:deireann		V3SufNegQ;		! deireann 3rd person sing only
 
 LEXICON VI1-PresInd		! Present Tense - Aimsir Láithreach
-0:deir		NegQ;
-+1P+Sg:deirim	NegQ;
-+1P+Sg+Emph:deirimse	NegQ;
-+1P+Pl:deirimid	NegQ;
-+1P+Pl+Emph:deirimidne	NegQ;
-+Auto:deirtear	NegQ;		! +Auto = Autonomous - saor briathar
+0:deir		V3NegQ;
++1P+Sg:deirim	V3NegQ;
++1P+Sg+Emph:deirimse	V3NegQ;
++1P+Pl:deirimid	V3NegQ;
++1P+Pl+Emph:deirimidne	V3NegQ;
++Auto:deirtear	V3NegQ;		! +Auto = Autonomous - saor briathar
 +Rel+Len:dheireas	#;		! +Auto = Autonomous - saor briathar
 
 +Rel:adeir			#;		! variation (rel?) on deir (above)
@@ -300,38 +304,41 @@ LEXICON VI1-PresInd		! Present Tense - Aimsir Láithreach
 
 LEXICON VI1-PastInd		! Past Tense - Aimsir Chaite
 
-0:dúirt		NegQIrreg;		
-+1P+Sg:duart	NegQIrreg;
-+1P+Sg+Emph:duartsa	NegQIrreg;
-+2P+Sg:dúraís	NegQIrreg;
-+2P+Sg+Emph:dúraís-se	NegQIrreg;
-+1P+Pl:dúramar	NegQIrreg;
-+1P+Pl+Emph:dúramarna	NegQIrreg;
-+2P+Pl:dúrabhair	NegQIrreg;
-+2P+Pl+Emph:dúrabhairne	NegQIrreg;
-+3P+Pl:dúradar	NegQIrreg;
-+3P+Pl+Emph:dúradarsan	NegQIrreg;
-+Auto:dúradh	NegQIrreg;		
+0:dúirt		V3NegQIrreg;		
++Rel:adúirt		V3NegQIrreg;	! like adeir ???
++1P+Sg:duart	V3NegQIrreg;
++1P+Sg+Emph:duartsa	V3NegQIrreg;
++2P+Sg:dúraís	V3NegQIrreg;
++2P+Sg+Emph:dúraís-se	V3NegQIrreg;
++1P+Pl:dúramar	V3NegQIrreg;
++1P+Pl+Emph:dúramarna	V3NegQIrreg;
++2P+Pl:dúrabhair	V3NegQIrreg;
++2P+Pl+Emph:dúrabhairne	V3NegQIrreg;
++3P+Pl:dúradar	V3NegQIrreg;
++3P+Pl+Emph:dúradarsan	V3NegQIrreg;
++Auto:dúradh	V3NegQIrreg;		
++Auto:adúradh	V3NegQIrreg;		! like adeir ???
+
 
 LEXICON VI1-FutInd		! Future Tense - Aimsir Fháistineach
-0:déarfaidh		NegQ;
-+1P+Pl:déarfaimid	NegQ;
-+1P+Pl+Emph:déarfaimidne	NegQ;
-+Auto:déarfar		NegQ;		
+0:déarfaidh		V3NegQ;
++1P+Pl:déarfaimid	V3NegQ;
++1P+Pl+Emph:déarfaimidne	V3NegQ;
++Auto:déarfar		V3NegQ;		
 +Rel+Len:dhéarfas		#;		
 
 LEXICON VI1-PastImp/PastSubj	! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:deireadh		NegQIrreg;
-+1P+Sg:deirinn		NegQIrreg;	! Past Subj. - Aimsir Foshuiteach Caite
-+1P+Sg+Emph:deirinnse		NegQIrreg;	! Past Subj. - Aimsir Foshuiteach Caite
-+2P+Sg:deirteá		NegQIrreg;
-+2P+Sg+Emph:deirteása		NegQIrreg;
-!!!!+3P+Sg:deireadh		NegQIrreg;
-+1P+Pl:deirimis		NegQIrreg;
-+1P+Pl+Emph:deirimisne		NegQIrreg;
-!!!+2P+Pl:deireadh		NegQIrreg;
-+3P+Pl:deiridís		NegQIrreg;
-+Auto:deirtí 		NegQIrreg;		
+0:deireadh		V3NegQIrreg;
++1P+Sg:deirinn		V3NegQIrreg;	! Past Subj. - Aimsir Foshuiteach Caite
++1P+Sg+Emph:deirinnse		V3NegQIrreg;	! Past Subj. - Aimsir Foshuiteach Caite
++2P+Sg:deirteá		V3NegQIrreg;
++2P+Sg+Emph:deirteása		V3NegQIrreg;
+!!!!+3P+Sg:deireadh		V3NegQIrreg;
++1P+Pl:deirimis		V3NegQIrreg;
++1P+Pl+Emph:deirimisne		V3NegQIrreg;
+!!!+2P+Pl:deireadh		V3NegQIrreg;
++3P+Pl:deiridís		V3NegQIrreg;
++Auto:deirtí 		V3NegQIrreg;		
 
 +Rel:adeireadh			#;
 +1P+Sg+Rel:adeirinn		#;	! Past Imperfect/Subj. (Relative?) - Aimsir Gnáth/Foshuiteach Caite
@@ -345,37 +352,37 @@ LEXICON VI1-PastImp/PastSubj	! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
 +Auto+Rel:deirtí 		#;		
 
 LEXICON VI1-Cond		! Conditional Mood - Modh Coinníollach
-0:déarfadh		NegQIrreg;
-+1P+Sg:déarfainn	NegQIrreg;
-+1P+Sg+Emph:déarfainnse	NegQIrreg;
-+2P+Sg:déarfá		NegQIrreg;
-+2P+Sg+Emph:déarfása		NegQIrreg;
-!!+3P+Sg:déarfadh		NegQIrreg;
-+1P+Pl:déarfaimis	NegQIrreg;
-+1P+Pl+Emph:déarfaimisne	NegQIrreg;
-!!+2P+Pl:déarfadh		NegQIrreg;
-+3P+Pl:déarfaidís	NegQIrreg;
-+Auto:déarfaí 		NegQIrreg;		
+0:déarfadh		V3NegQIrreg;
++1P+Sg:déarfainn	V3NegQIrreg;
++1P+Sg+Emph:déarfainnse	V3NegQIrreg;
++2P+Sg:déarfá		V3NegQIrreg;
++2P+Sg+Emph:déarfása		V3NegQIrreg;
+!!+3P+Sg:déarfadh		V3NegQIrreg;
++1P+Pl:déarfaimis	V3NegQIrreg;
++1P+Pl+Emph:déarfaimisne	V3NegQIrreg;
+!!+2P+Pl:déarfadh		V3NegQIrreg;
++3P+Pl:déarfaidís	V3NegQIrreg;
++Auto:déarfaí 		V3NegQIrreg;		
 
 
 LEXICON VI1-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:deire			NegSubj;
-+1P+Pl:deirimid		NegSubj;
-+1P+Pl+Emph:deirimidne		NegSubj;
-+Auto:deirtear		NegSubj;		
+0:deire			V3NegSubj;
++1P+Pl:deirimid		V3NegSubj;
++1P+Pl+Emph:deirimidne		V3NegSubj;
++Auto:deirtear		V3NegSubj;		
 
 
 LEXICON VI1-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:abraim	NegImper;
-+1P+Sg+Emph:abraimse	NegImper;
-+2P+Sg:abair	NegImper;
-+3P+Sg:abradh	NegImper;
-+1P+Pl:abraimis	NegImper;
-+1P+Pl+Emph:abraimisne	NegImper;
-+2P+Pl:abraigí	NegImper;
-+3P+Pl:abraidís	NegImper;
-+Auto:abairtear NegImper;
++1P+Sg:abraim	V3NegImper;
++1P+Sg+Emph:abraimse	V3NegImper;
++2P+Sg:abair	V3NegImper;
++3P+Sg:abradh	V3NegImper;
++1P+Pl:abraimis	V3NegImper;
++1P+Pl+Emph:abraimisne	V3NegImper;
++2P+Pl:abraigí	V3NegImper;
++3P+Pl:abraidís	V3NegImper;
++Auto:abairtear V3NegImper;
 
 
 
@@ -402,90 +409,90 @@ LEXICON VI2	! BEIR (Irregular)
 
 
 LEXICON VI2-PresInd		! Present Tense - Aimsir Láithreach
-0:beireann	SufNegQ;
-!!0:beireanns	NegQ;
-+1P+Sg:beirim	NegQ;
-+1P+Sg+Emph:beirimse	NegQ;
-+1P+Pl:beirimid	NegQ;
-+1P+Pl+Emph:beirimidne	NegQ;
-+Auto:beirtear	NegQ;		! +Auto = Autonomous - saor briathar
+0:beireann	V3SufNegQ;
+!!0:beireanns	V3NegQ;
++1P+Sg:beirim	V3NegQ;
++1P+Sg+Emph:beirimse	V3NegQ;
++1P+Pl:beirimid	V3NegQ;
++1P+Pl+Emph:beirimidne	V3NegQ;
++Auto:beirtear	V3NegQ;		! +Auto = Autonomous - saor briathar
 +Rel+Len:bheireas	#;
 
 LEXICON VI2-PastInd		! Past Tense - Aimsir Chaite
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!changed from NegQ to NegQ2 may 2012 (eud) 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!changed from V3NegQ to V3NegQ2 may 2012 (eud) 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!this assumes that rug is lenited in past tense like reg. verbs rith etc.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!therefore there will not be 2 forms generated (with and without +Len)
-0:rug		NegQ2;		
-+1P+Sg:rugas	NegQ2;
-+1P+Sg+Emph:rugas-sa	NegQ2;
-+2P+Sg:rugais	NegQ2;
-+2P+Sg+Emph:rugais-se	NegQ2;
-+1P+Pl:rugamar	NegQ2;
-+1P+Pl+Emph:rugamarna	NegQ2;
-+3P+Pl:rugadar	NegQ2;
-+3P+Pl+Emph:rugadarsan	NegQ2;
-+Auto:rugadh	NegQIrreg;		!!! auto does not lenite
+0:rug		V3NegQ2;		
++1P+Sg:rugas	V3NegQ2;
++1P+Sg+Emph:rugas-sa	V3NegQ2;
++2P+Sg:rugais	V3NegQ2;
++2P+Sg+Emph:rugais-se	V3NegQ2;
++1P+Pl:rugamar	V3NegQ2;
++1P+Pl+Emph:rugamarna	V3NegQ2;
++3P+Pl:rugadar	V3NegQ2;
++3P+Pl+Emph:rugadarsan	V3NegQ2;
++Auto:rugadh	V3NegQIrreg;		!!! auto does not lenite
 
 LEXICON VI2-FutInd		! Future Tense - Aimsir Fháistineach
-0:béarfaidh		NegQ;
-+1P+Pl:béarfaimid	NegQ;
-+1P+Pl+Emph:béarfaimidne	NegQ;
-+Auto:béarfar		NegQ;		
+0:béarfaidh		V3NegQ;
++1P+Pl:béarfaimid	V3NegQ;
++1P+Pl+Emph:béarfaimidne	V3NegQ;
++Auto:béarfar		V3NegQ;		
 +Rel+Len:bhéarfas		#;		
 
 LEXICON VI2-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:beireadh	NegQ2;
-+1P+Sg:beirinn		NegQ2;
-+1P+Sg+Emph:beirinnse		NegQ2;
-+2P+Sg:beirteá		NegQ2;
-!!!+3P+Sg:beireadh	NegQ2;
-+1P+Pl:beirimis	NegQ2;
-+1P+Pl+Emph:beirimisne	NegQ2;
-!!!+2P+Pl:beireadh	NegQ2;
-+3P+Pl:beiridís	NegQ2;
-+Auto:beirtí 		NegQ2;		
+0:beireadh	V3NegQ2;
++1P+Sg:beirinn		V3NegQ2;
++1P+Sg+Emph:beirinnse		V3NegQ2;
++2P+Sg:beirteá		V3NegQ2;
+!!!+3P+Sg:beireadh	V3NegQ2;
++1P+Pl:beirimis	V3NegQ2;
++1P+Pl+Emph:beirimisne	V3NegQ2;
+!!!+2P+Pl:beireadh	V3NegQ2;
++3P+Pl:beiridís	V3NegQ2;
++Auto:beirtí 		V3NegQ2;		
 
 LEXICON VI2-Cond		! Conditional Mood - Modh Coinníollach
 
-0:béarfadh	NegQ2;
-+1P+Sg:béarfainn	NegQ2;
-+2P+Sg:béarfá		NegQ2;
-+2P+Sg+Emph:béarfása		NegQ2;
-!!+3P+Sg:béarfadh	NegQ2;
-+1P+Pl:béarfaimis	NegQ2;
-+1P+Pl+Emph:béarfaimisne	NegQ2;
-!!+2P+Pl:béarfadh	NegQ2;
-+3P+Pl:béarfaidís	NegQ2;
-+Auto:béarfaí 		NegQ2;		
+0:béarfadh	V3NegQ2;
++1P+Sg:béarfainn	V3NegQ2;
++2P+Sg:béarfá		V3NegQ2;
++2P+Sg+Emph:béarfása		V3NegQ2;
+!!+3P+Sg:béarfadh	V3NegQ2;
++1P+Pl:béarfaimis	V3NegQ2;
++1P+Pl+Emph:béarfaimisne	V3NegQ2;
+!!+2P+Pl:béarfadh	V3NegQ2;
++3P+Pl:béarfaidís	V3NegQ2;
++Auto:béarfaí 		V3NegQ2;		
 
 
 LEXICON VI2-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:beire			NegSubj;
-+1P+Pl:beirimid		NegSubj;
-+1P+Pl+Emph:beirimidne		NegSubj;
-+Auto:beirtear		NegSubj;		
+0:beire			V3NegSubj;
++1P+Pl:beirimid		V3NegSubj;
++1P+Pl+Emph:beirimidne		V3NegSubj;
++Auto:beirtear		V3NegSubj;		
 
 LEXICON VI2-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:beirinn	NegQ;
-+2P+Sg:beirteá	NegQ;
-+2P+Sg+Emph:beirteása	NegQ;
-+3P+Sg:beireadh	NegQ;
-+1P+Pl:beirimis	NegQ;
-+1P+Pl+Emph:beirimisne	NegQ;
-+2P+Pl:beireadh	NegQ;
-+3P+Pl:beiridís	NegQ;
-+Auto:beirtí 	NegQ;		
++1P+Sg:beirinn	V3NegQ;
++2P+Sg:beirteá	V3NegQ;
++2P+Sg+Emph:beirteása	V3NegQ;
++3P+Sg:beireadh	V3NegQ;
++1P+Pl:beirimis	V3NegQ;
++1P+Pl+Emph:beirimisne	V3NegQ;
++2P+Pl:beireadh	V3NegQ;
++3P+Pl:beiridís	V3NegQ;
++Auto:beirtí 	V3NegQ;		
 
 
 LEXICON VI2-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:beirim	NegImper;
-+2P+Sg:beir	NegImper;
-+3P+Sg:beireadh	NegImper;
-+1P+Pl:beirimis	NegImper;
-+2P+Pl:beirigí	NegImper;
-+3P+Pl:beiridís	NegImper;
-+Auto:beirtear 	NegImper;
++1P+Sg:beirim	V3NegImper;
++2P+Sg:beir	V3NegImper;
++3P+Sg:beireadh	V3NegImper;
++1P+Pl:beirimis	V3NegImper;
++2P+Pl:beirigí	V3NegImper;
++3P+Pl:beiridís	V3NegImper;
++Auto:beirtear 	V3NegImper;
 
 
 !**************************************************************************
@@ -508,13 +515,13 @@ LEXICON VI3	! CLOIS (Irregular)
 
 
 LEXICON VI3-PresInd		! Present Tense - Aimsir Láithreach
-0:cloiseann		SufNegQ;
-!!0:cloiseanns		NegQ;
-+1P+Sg:cloisim		NegQ;
-+1P+Sg+Emph:cloisimse		NegQ;
-+1P+Pl:cloisimid	NegQ;
-+1P+Pl+Emph:cloisimidne	NegQ;
-+Auto:cloistear		NegQ; ! +Auto = Autonomous - saor briathar
+0:cloiseann		V3SufNegQ;
+!!0:cloiseanns		V3NegQ;
++1P+Sg:cloisim		V3NegQ;
++1P+Sg+Emph:cloisimse		V3NegQ;
++1P+Pl:cloisimid	V3NegQ;
++1P+Pl+Emph:cloisimidne	V3NegQ;
++Auto:cloistear		V3NegQ; ! +Auto = Autonomous - saor briathar
 +Rel+Len:chloiseas		#; 
 
 LEXICON VI3-PastInd		! Past Tense - Aimsir Chaite
@@ -539,63 +546,63 @@ LEXICON VI3-PastInd		! Past Tense - Aimsir Chaite
 +Auto+Ecl:gcualathas	#;		
 
 LEXICON VI3-FutInd		! Future Tense - Aimsir Fháistineach
-0:cloisfidh		NegQ;
-+1P+Pl:cloisfimid	NegQ;
-+1P+Pl+Emph:cloisfimidne	NegQ;
-+Auto:cloisfear		NegQ;		
+0:cloisfidh		V3NegQ;
++1P+Pl:cloisfimid	V3NegQ;
++1P+Pl+Emph:cloisfimidne	V3NegQ;
++Auto:cloisfear		V3NegQ;		
 +Rel+Len:chloisfeas		#;		
 
 LEXICON VI3-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:cloiseadh	NegQ2;
-+1P+Sg:cloisinn	NegQ2;
-+2P+Sg:cloisteá	NegQ2;
-!!!+3P+Sg:cloiseadh	NegQ2;
-+1P+Pl:cloisimis	NegQ2;
-+1P+Pl+Emph:cloisimisne	NegQ2;
-!!!+2P+Pl:cloiseadh	NegQ2;
-+3P+Pl:cloisidís	NegQ2;
-+Auto:cloistí 		NegQ2;		
+0:cloiseadh	V3NegQ2;
++1P+Sg:cloisinn	V3NegQ2;
++2P+Sg:cloisteá	V3NegQ2;
+!!!+3P+Sg:cloiseadh	V3NegQ2;
++1P+Pl:cloisimis	V3NegQ2;
++1P+Pl+Emph:cloisimisne	V3NegQ2;
+!!!+2P+Pl:cloiseadh	V3NegQ2;
++3P+Pl:cloisidís	V3NegQ2;
++Auto:cloistí 		V3NegQ2;		
 
 LEXICON VI3-Cond		! Conditional Mood - Modh Coinníollach
 
-0:cloisfeadh	NegQ2;
-+1P+Sg:cloisfinn	NegQ2;
-+2P+Sg:cloisfeá	NegQ2;
-+2P+Sg+Emph:cloisfeása	NegQ2;
-!!+3P+Sg:cloisfeadh	NegQ2;
-+1P+Pl:cloisfimis	NegQ2;
-!!+2P+Pl:cloisfeadh	NegQ2;
-+3P+Pl:cloisfidís	NegQ2;
-+Auto:cloisfí 		NegQ2;		
+0:cloisfeadh	V3NegQ2;
++1P+Sg:cloisfinn	V3NegQ2;
++2P+Sg:cloisfeá	V3NegQ2;
++2P+Sg+Emph:cloisfeása	V3NegQ2;
+!!+3P+Sg:cloisfeadh	V3NegQ2;
++1P+Pl:cloisfimis	V3NegQ2;
+!!+2P+Pl:cloisfeadh	V3NegQ2;
++3P+Pl:cloisfidís	V3NegQ2;
++Auto:cloisfí 		V3NegQ2;		
 
 
 LEXICON VI3-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:cloise		NegSubj;
-+1P+Pl:cloisimid	NegSubj;
-+1P+Pl+Emph:cloisimidne	NegSubj;
-+Auto:cloistear 	NegSubj;		
+0:cloise		V3NegSubj;
++1P+Pl:cloisimid	V3NegSubj;
++1P+Pl+Emph:cloisimidne	V3NegSubj;
++Auto:cloistear 	V3NegSubj;		
 
 LEXICON VI3-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-0:cloiseadh NegQ;
-+1P+Sg:cloisinn	 NegQ;
-+1P+Sg+Emph:cloisinnse	 NegQ;
-+2P+Sg:cloisteá	 NegQ;
-!!+3P+Sg:cloiseadh NegQ;
-+1P+Pl:cloisimis NegQ;
-!!+2P+Pl:cloiseadh NegQ;
-+3P+Pl:cloisidís NegQ;
-+Auto:cloistí    NegQ;		
+0:cloiseadh V3NegQ;
++1P+Sg:cloisinn	 V3NegQ;
++1P+Sg+Emph:cloisinnse	 V3NegQ;
++2P+Sg:cloisteá	 V3NegQ;
+!!+3P+Sg:cloiseadh V3NegQ;
++1P+Pl:cloisimis V3NegQ;
+!!+2P+Pl:cloiseadh V3NegQ;
++3P+Pl:cloisidís V3NegQ;
++Auto:cloistí    V3NegQ;		
 
 
 LEXICON VI3-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:cloisim	 NegImper;
-+2P+Sg:clois	 NegImper;
-+3P+Sg:cloiseadh NegImper;
-+1P+Pl:cloisimis NegImper;
-+2P+Pl:cloisigí	 NegImper;
-+3P+Pl:cloisidís NegImper;
-+Auto:cloistear  NegImper;
++1P+Sg:cloisim	 V3NegImper;
++2P+Sg:clois	 V3NegImper;
++3P+Sg:cloiseadh V3NegImper;
++1P+Pl:cloisimis V3NegImper;
++2P+Pl:cloisigí	 V3NegImper;
++3P+Pl:cloisidís V3NegImper;
++Auto:cloistear  V3NegImper;
 
 
 
@@ -619,83 +626,83 @@ LEXICON VI4	! ITH (Irregular)
 
 
 LEXICON VI4-PresInd		! Present Tense - Aimsir Láithreach
-0:itheann	SufNegQ;
-!!0:itheanns	NegQ;
-+1P+Sg:ithim	NegQ;
-+1P+Sg+Emph:ithimse	NegQ;
-+1P+Pl:ithimid	NegQ;
-+1P+Pl+Emph:ithimidne	NegQ;
-+Auto:itear	NegQ;	! +Auto = Autonomous - saor briathar
+0:itheann	V3SufNegQ;
+!!0:itheanns	V3NegQ;
++1P+Sg:ithim	V3NegQ;
++1P+Sg+Emph:ithimse	V3NegQ;
++1P+Pl:ithimid	V3NegQ;
++1P+Pl+Emph:ithimidne	V3NegQ;
++Auto:itear	V3NegQ;	! +Auto = Autonomous - saor briathar
 +Rel:itheas	#;	
 
 LEXICON VI4-PastInd		! Past Tense - Aimsir Chaite
 
-0:ith		NegQ2;	!	
-+1P+Sg:itheas	NegQ2;	!
-+1P+Sg+Emph:itheas-sa	NegQ2;	!
-+2P+Sg:ithis	NegQ2;	!
-+1P+Pl:itheamar	NegQ2;	!
-+1P+Pl+Emph:itheamarna	NegQ2;	!
-+3P+Pl:itheadar	NegQ2;	!
-+3P+Pl+Emph:itheadarsan	NegQ2;	!
-+Auto:itheadh		NegQ2;		!XXXXXXXXXXXXXXXXXXXXX
+0:ith		V3NegQ2;	!	
++1P+Sg:itheas	V3NegQ2;	!
++1P+Sg+Emph:itheas-sa	V3NegQ2;	!
++2P+Sg:ithis	V3NegQ2;	!
++1P+Pl:itheamar	V3NegQ2;	!
++1P+Pl+Emph:itheamarna	V3NegQ2;	!
++3P+Pl:itheadar	V3NegQ2;	!
++3P+Pl+Emph:itheadarsan	V3NegQ2;	!
++Auto:itheadh		V3NegQ2;		!XXXXXXXXXXXXXXXXXXXXX
 
 LEXICON VI4-FutInd		! Future Tense - Aimsir Fháistineach
-0:íosfaidh		NegQ;
-+1P+Pl:íosfaimid	NegQ;
-+1P+Pl+Emph:íosfaimidne	NegQ;
-+Auto:íosfar		NegQ;		
+0:íosfaidh		V3NegQ;
++1P+Pl:íosfaimid	V3NegQ;
++1P+Pl+Emph:íosfaimidne	V3NegQ;
++Auto:íosfar		V3NegQ;		
 +Rel:íosfas		#;		
 
 LEXICON VI4-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:itheadh	NegQ2;
-+1P+Sg:ithinn		NegQ2; ! inserted 2 21/3/05 ????
-+2P+Sg:iteá		NegQ2;
-!!!!+3P+Sg:itheadh	NegQ2;
-+1P+Pl:ithimis	NegQ2;
-!!!!+2P+Pl:itheadh	NegQ2;
-+3P+Pl:ithidís	NegQ2;
-+Auto:ití 		NegQ2;		
+0:itheadh	V3NegQ2;
++1P+Sg:ithinn		V3NegQ2; ! inserted 2 21/3/05 ????
++2P+Sg:iteá		V3NegQ2;
+!!!!+3P+Sg:itheadh	V3NegQ2;
++1P+Pl:ithimis	V3NegQ2;
+!!!!+2P+Pl:itheadh	V3NegQ2;
++3P+Pl:ithidís	V3NegQ2;
++Auto:ití 		V3NegQ2;		
 
 LEXICON VI4-Cond		! Conditional Mood - Modh Coinníollach
 
-0:íosfadh	NegQ2;
-+1P+Sg:íosfainn	NegQ2;
-+2P+Sg:íosfá		NegQ2;
-+2P+Sg+Emph:íosfása		NegQ2;
-!!!!!+3P+Sg:íosfadh	NegQ2;
-+1P+Pl:íosfaimis	NegQ2;
-!!!!!+2P+Pl:íosfadh	NegQ2;
-+3P+Pl:íosfaidís	NegQ2;
-+Auto:íosfaí 		NegQ2;		
+0:íosfadh	V3NegQ2;
++1P+Sg:íosfainn	V3NegQ2;
++2P+Sg:íosfá		V3NegQ2;
++2P+Sg+Emph:íosfása		V3NegQ2;
+!!!!!+3P+Sg:íosfadh	V3NegQ2;
++1P+Pl:íosfaimis	V3NegQ2;
+!!!!!+2P+Pl:íosfadh	V3NegQ2;
++3P+Pl:íosfaidís	V3NegQ2;
++Auto:íosfaí 		V3NegQ2;		
 
 
 LEXICON VI4-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:ithe		NegSubj;
-+1P+Pl:ithimid	NegSubj;
-+1P+Pl+Emph:ithimidne	NegSubj;
-+Auto:itear 	NegSubj;		
+0:ithe		V3NegSubj;
++1P+Pl:ithimid	V3NegSubj;
++1P+Pl+Emph:ithimidne	V3NegSubj;
++Auto:itear 	V3NegSubj;		
 
 LEXICON VI4-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:ithinn	NegQ;
-+2P+Sg:iteá	NegQ;
-+3P+Sg:itheadh	NegQ;
-+1P+Pl:ithimis	NegQ;
-+2P+Pl:itheadh	NegQ;
-+3P+Pl:ithidís	NegQ;
-+Auto:ití	NegQ;		
++1P+Sg:ithinn	V3NegQ;
++2P+Sg:iteá	V3NegQ;
++3P+Sg:itheadh	V3NegQ;
++1P+Pl:ithimis	V3NegQ;
++2P+Pl:itheadh	V3NegQ;
++3P+Pl:ithidís	V3NegQ;
++Auto:ití	V3NegQ;		
 
 
 
 LEXICON VI4-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:ithim	 NegImper;
-+2P+Sg:ith	 NegImper;
-+3P+Sg:itheadh NegImper;
-+1P+Pl:ithimis NegImper;
-+2P+Pl:ithigí	 NegImper;
-+3P+Pl:ithidís NegImper;
-+Auto:itear  NegImper;
++1P+Sg:ithim	 V3NegImper;
++2P+Sg:ith	 V3NegImper;
++3P+Sg:itheadh V3NegImper;
++1P+Pl:ithimis V3NegImper;
++2P+Pl:ithigí	 V3NegImper;
++3P+Pl:ithidís V3NegImper;
++Auto:itear  V3NegImper;
 
 
 
@@ -719,84 +726,85 @@ LEXICON VI5	! TABHAIR (Irregular)
 
 
 LEXICON VI5-PresInd		! Present Tense - Aimsir Láithreach
-0:tugann	SufNegQ;
-!!0:tuganns	NegQ;
-+1P+Sg:tugaim	NegQ;
-+1P+Sg+Emph:tugaimse	NegQ;
-+1P+Pl:tugaimid	NegQ;
-+1P+Pl+Emph:tugaimidne	NegQ;
-+Auto:tugtar	NegQ; ! +Auto = Autonomous - saor briathar
+0:tugann	V3SufNegQ;
+!!0:tuganns	V3NegQ;
++1P+Sg:tugaim	V3NegQ;
++1P+Sg+Emph:tugaimse	V3NegQ;
++1P+Pl:tugaimid	V3NegQ;
++1P+Pl+Emph:tugaimidne	V3NegQ;
++Auto:tugtar	V3NegQ; ! +Auto = Autonomous - saor briathar
 +Rel+Len:thugas	#;
 
 LEXICON VI5-PastInd		! Past Tense - Aimsir Chaite
 
-0:tug		NegQ2;		
-+1P+Sg:tugas	NegQ2;
-+1P+Sg+Emph:tugas-sa	NegQ2;
-+2P+Sg:tugais	NegQ2;
-+1P+Pl:tugamar	NegQ2;
-+1P+Pl+Emph:tugamarna	NegQ2;
-+3P+Pl:tugadar	NegQ2;
-+3P+Pl+Emph:tugadarsan	NegQ2;
-+Auto:tugadh	NegQIrreg;		!! auto does not lenite
+0:tug		V3NegQ2;		
++1P+Sg:tugas	V3NegQ2;
++1P+Sg+Emph:tugas-sa	V3NegQ2;
++2P+Sg:tugais	V3NegQ2;
++1P+Pl:tugamar	V3NegQ2;
++1P+Pl+Emph:tugamarna	V3NegQ2;
++3P+Pl:tugadar	V3NegQ2;
++3P+Pl+Emph:tugadarsan	V3NegQ2;
++Auto:tugadh	V3NegQIrreg;		!! auto does not lenite
 
 LEXICON VI5-FutInd		! Future Tense - Aimsir Fháistineach
-0:tabharfaidh		NegQ;
-+1P+Pl:tabharfaimid	NegQ;
-+1P+Pl+Emph:tabharfaimidne	NegQ;
-+Auto:tabharfar		NegQ;		
+0:tabharfaidh		V3NegQ;
++1P+Sg:tiubhrad		V3NegQ;			!!!!!!!!!!!!!!!!!!!!!!!! RIA Corpas 
++1P+Pl:tabharfaimid	V3NegQ;
++1P+Pl+Emph:tabharfaimidne	V3NegQ;
++Auto:tabharfar		V3NegQ;		
 +Rel+Len:thabharfas		#;		
 
 LEXICON VI5-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:tugadh		NegQ2;
-+1P+Sg:tugainn		NegQ2;
-+2P+Sg:tugtá		NegQ2;
-!!!+3P+Sg:tugadh		NegQ2;
-+1P+Pl:tugaimis	NegQ2;
-!!!+2P+Pl:tugadh		NegQ2;
-+3P+Pl:tugaidís	NegQ2;
-+Auto:tugtaí 		NegQ2;		
+0:tugadh		V3NegQ2;
++1P+Sg:tugainn		V3NegQ2;
++2P+Sg:tugtá		V3NegQ2;
+!!!+3P+Sg:tugadh		V3NegQ2;
++1P+Pl:tugaimis	V3NegQ2;
+!!!+2P+Pl:tugadh		V3NegQ2;
++3P+Pl:tugaidís	V3NegQ2;
++Auto:tugtaí 		V3NegQ2;		
 
 LEXICON VI5-Cond		! Conditional Mood - Modh Coinníollach
 
-0:tabharfadh		NegQ2;
-+1P+Sg:tabharfainn		NegQ2;
-+1P+Sg+Emph:tabharfainnse		NegQ2;
-+2P+Sg:tabharfá		NegQ2;
-+2P+Sg+Emph:tabharfása		NegQ2;
-!!!+3P+Sg:tabharfadh		NegQ2;
-+1P+Pl:tabharfaimis	NegQ2;
-+1P+Pl+Emph:tabharfaimisne	NegQ2;
-!!!+2P+Pl:tabharfadh		NegQ2;
-+3P+Pl:tabharfaidís	NegQ2;
-+Auto:tabharfaí		NegQ2;		
+0:tabharfadh		V3NegQ2;
++1P+Sg:tabharfainn		V3NegQ2;
++1P+Sg+Emph:tabharfainnse		V3NegQ2;
++2P+Sg:tabharfá		V3NegQ2;
++2P+Sg+Emph:tabharfása		V3NegQ2;
+!!!+3P+Sg:tabharfadh		V3NegQ2;
++1P+Pl:tabharfaimis	V3NegQ2;
++1P+Pl+Emph:tabharfaimisne	V3NegQ2;
+!!!+2P+Pl:tabharfadh		V3NegQ2;
++3P+Pl:tabharfaidís	V3NegQ2;
++Auto:tabharfaí		V3NegQ2;		
 
 
 LEXICON VI5-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:tuga		NegQ;
-+1P+Pl:tugaimid	NegQ;
-+1P+Pl+Emph:tugaimidne	NegQ;
-+Auto:tugtar 	NegQ;		
+0:tuga		V3NegQ;
++1P+Pl:tugaimid	V3NegQ;
++1P+Pl+Emph:tugaimidne	V3NegQ;
++Auto:tugtar 	V3NegQ;		
 
 LEXICON VI5-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:tugainn	NegQ;
-+2P+Sg:tugtá	NegQ;
-+3P+Sg:tugadh 	NegQ;
-+1P+Pl:tugaimis	NegQ;
-+2P+Pl:tugadh	NegQ;
-+3P+Pl:tugaidís NegQ;
-+Auto:tugtaí    NegQ;		
++1P+Sg:tugainn	V3NegQ;
++2P+Sg:tugtá	V3NegQ;
++3P+Sg:tugadh 	V3NegQ;
++1P+Pl:tugaimis	V3NegQ;
++2P+Pl:tugadh	V3NegQ;
++3P+Pl:tugaidís V3NegQ;
++Auto:tugtaí    V3NegQ;		
 
 
 LEXICON VI5-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:tugaim	NegImper;
-+2P+Sg:tabhair	NegImper;
-+3P+Sg:tugadh	NegImper;
-+1P+Pl:tugaimis NegImper;
-+2P+Pl:tugaigí	NegImper;
-+3P+Pl:tugaidís	NegImper;
-+Auto:tugtar	NegImper;
++1P+Sg:tugaim	V3NegImper;
++2P+Sg:tabhair	V3NegImper;
++3P+Sg:tugadh	V3NegImper;
++1P+Pl:tugaimis V3NegImper;
++2P+Pl:tugaigí	V3NegImper;
++3P+Pl:tugaidís	V3NegImper;
++Auto:tugtar	V3NegImper;
 
 
 
@@ -821,89 +829,91 @@ LEXICON VI6	! TAR (Irregular)
 
 
 LEXICON VI6-PresInd		! Present Tense - Aimsir Láithreach
-0:tig	NegQ;		! irregular
-0:tagann	SufNegQ;
-!!0:taganns	NegQ;
-+1P+Sg:tagaim	NegQ;
-+1P+Sg+Emph:tagaimse	NegQ;
-+1P+Pl:tagaimid	NegQ;
-+1P+Pl+Emph:tagaimidne	NegQ;
-+Auto:tagtar	NegQ; ! +Auto = Autonomous - saor briathar
++NG:tig	V3NegQ;		! irregular
++NG:tuig	V3NegQ;		! historical
+0:tagann	V3SufNegQ;
+!!0:taganns	V3NegQ;
++1P+Sg:tagaim	V3NegQ;
++1P+Sg+Emph:tagaimse	V3NegQ;
++1P+Pl:tagaimid	V3NegQ;
++1P+Pl+Emph:tagaimidne	V3NegQ;
++Auto:tagtar	V3NegQ; ! +Auto = Autonomous - saor briathar
 +Rel+Len:thagas	#; 
 
 LEXICON VI6-PastInd		! Past Tense - Aimsir Chaite
 
-0:táinig		NegQ2;		
-0:ráinig		NegQ2;		! irregular/defective
-+1P+Sg:tánag	NegQ2;
-+1P+Sg:tángas	NegQ2;		! variant
-+1P+Sg+Emph:tángas-sa	NegQ2;		! variant
-+2P+Sg:tánaís	NegQ2;
-+2P+Sg:tángaís	NegQ2;		! variant
-+2P+Sg+Emph:tánaís-se	NegQ2;
-+1P+Pl:tángamar	NegQ2;
-+1P+Pl+Emph:tángamarna	NegQ2;
-+3P+Pl:tángadar	NegQ2;
-+3P+Pl+Emph:tángadarsan	NegQ2;
-+Auto:tánathas	NegQ2;		! variant
-+Auto:tángthas	NegQ2;		
+0:táinig		V3NegQ2;		
++NG:ráinig		V3NegQ2;		! irregular/defective
++1P+Sg:tánag	V3NegQ2;
++1P+Sg:tángas	V3NegQ2;		! variant
++1P+Sg+Emph:tángas-sa	V3NegQ2;		! variant
++2P+Sg:tánaís	V3NegQ2;
++2P+Sg:tángaís	V3NegQ2;		! variant
++2P+Sg+Emph:tánaís-se	V3NegQ2;
++1P+Pl:tángamar	V3NegQ2;
++1P+Pl+Emph:tángamarna	V3NegQ2;
++3P+Pl:tángadar	V3NegQ2;
++3P+Pl+Emph:tángadarsan	V3NegQ2;
++Auto:tánathas	V3NegQ2;		! variant
++Auto:tángthas	V3NegQ2;		
 
 LEXICON VI6-FutInd		! Future Tense - Aimsir Fháistineach
-0:tiocfaidh		NegQ;
-+1P+Pl:tiocfaimid	NegQ;
-+1P+Pl+Emph:tiocfaimidne	NegQ;
-+Auto:tiocfar		NegQ;		
+0:tiocfaidh		V3NegQ;
++1P+Pl:tiocfaimid	V3NegQ;
++1P+Pl+Emph:tiocfaimidne	V3NegQ;
++Auto:tiocfar		V3NegQ;		
 +Rel+Len:thiocfas		#;		
 
 LEXICON VI6-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:tagadh		NegQ2;
-+1P+Sg:tagainn		NegQ2;
-+2P+Sg:tagtá		NegQ2;
-!!!+3P+Sg:tagadh		NegQ2;
-+1P+Pl:tagaimis		NegQ2;
-!!!+2P+Pl:tagadh		NegQ2;
-+3P+Pl:tagaidís		NegQ2;
-+Auto:tagtaí 		NegQ2;		
+0:tagadh		V3NegQ2;
++1P+Sg:tagainn		V3NegQ2;
++2P+Sg:tagtá		V3NegQ2;
+!!!+3P+Sg:tagadh		V3NegQ2;
++1P+Pl:tagaimis		V3NegQ2;
+!!!+2P+Pl:tagadh		V3NegQ2;
++3P+Pl:tagaidís		V3NegQ2;
++Auto:tagtaí 		V3NegQ2;
 
 LEXICON VI6-Cond		! Conditional Mood - Modh Coinníollach
 
-0:tiocfadh	NegQ2;
-+1P+Sg:tiocfainn	NegQ2;
-+2P+Sg:tiocfá		NegQ2;
-+2P+Sg+Emph:tiocfása		NegQ2;
-!!!+3P+Sg:tiocfadh	NegQ2;
-+1P+Pl:tiocfaimis	NegQ2;
-+1P+Pl+Emph:tiocfaimisne	NegQ2;
-!!!+2P+Pl:tiocfadh	NegQ2;
-+3P+Pl:tiocfaidís	NegQ2;
-+Auto:tiocfaí		NegQ2;		
+0:tiocfadh	V3NegQ2;
++1P+Sg:tiocfainn	V3NegQ2;
++2P+Sg:tiocfá		V3NegQ2;
++2P+Sg+Emph:tiocfása		V3NegQ2;
+!!!+3P+Sg:tiocfadh	V3NegQ2;
++1P+Pl:tiocfaimis	V3NegQ2;
++1P+Pl+Emph:tiocfaimisne	V3NegQ2;
+!!!+2P+Pl:tiocfadh	V3NegQ2;
++3P+Pl:tiocfaidís	V3NegQ2;
++Auto:tiocfaí		V3NegQ2;		
 
 
 LEXICON VI6-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:taga		NegSubj;
-+1P+Pl:tagaimid	NegSubj;
-+1P+Pl+Emph:tagaimidne	NegSubj;
-+Auto:tagtar 	NegSubj;		
++Ecl:dtí	#;		! go dtí 
+0:taga		V3NegSubj;
++1P+Pl:tagaimid	V3NegSubj;
++1P+Pl+Emph:tagaimidne	V3NegSubj;
++Auto:tagtar 	V3NegSubj;		
 
 LEXICON VI6-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:tagainn	NegQ;
-+2P+Sg:tagtá	NegQ;
-+3P+Sg:tagadh 	NegQ;
-+1P+Pl:tagaimis	NegQ;
-+2P+Pl:tagadh	NegQ;
-+3P+Pl:tagaidís NegQ;
-+Auto:tagtaí    NegQ;		
++1P+Sg:tagainn	V3NegQ;
++2P+Sg:tagtá	V3NegQ;
++3P+Sg:tagadh 	V3NegQ;
++1P+Pl:tagaimis	V3NegQ;
++2P+Pl:tagadh	V3NegQ;
++3P+Pl:tagaidís V3NegQ;
++Auto:tagtaí    V3NegQ;		
 
 
 LEXICON VI6-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:tagaim	NegImper;
-+2P+Sg:tar	NegImper;
-+3P+Sg:tagadh	NegImper;
-+1P+Pl:tagaimis NegImper;
-+2P+Pl:tagaigí	NegImper;
-+3P+Pl:tagaidís	NegImper;
-+Auto:tagtar	NegImper;
++1P+Sg:tagaim	V3NegImper;
++2P+Sg:tar	V3NegImper;
++3P+Sg:tagadh	V3NegImper;
++1P+Pl:tagaimis V3NegImper;
++2P+Pl:tagaigí	V3NegImper;
++3P+Pl:tagaidís	V3NegImper;
++Auto:tagtar	V3NegImper;
 
 
 
@@ -931,13 +941,13 @@ LEXICON VI7	! TÉIGH (Irregular)
 
 LEXICON VI7-PresInd		! Present Tense - Aimsir Láithreach
 !!! PresInd is already available from regular téigh (to heat) 
-!!0:téann			SufNegQ;
-+Suf:téanns		NegQ;
-!!!+1P+Sg:téim		NegQ;
-!!!+1P+Sg+Emph:téimse		NegQ;
-!!!+1P+Pl:téimid		NegQ;
-!!!+1P+Pl+Emph:téimidne		NegQ;
-!!!+Auto:téitear		NegQ; ! +Auto = Autonomous - saor briathar
+!!0:téann			V3SufNegQ;
++Suf:téanns		V3NegQ;
+!!!+1P+Sg:téim		V3NegQ;
+!!!+1P+Sg+Emph:téimse		V3NegQ;
+!!!+1P+Pl:téimid		V3NegQ;
+!!!+1P+Pl+Emph:téimidne		V3NegQ;
+!!!+Auto:téitear		V3NegQ; ! +Auto = Autonomous - saor briathar
 !!!+Rel+Len:théas		#; 
 
 LEXICON VI7-PastInd		! Past Tense - Aimsir Chaite
@@ -951,17 +961,18 @@ LEXICON VI7-PastInd		! Past Tense - Aimsir Chaite
 +3P+Pl+Len:chuadar	#;
 +3P+Pl+Emph+Len:chuadarsan	#;
 +Auto+Len:chuathas	#;		
++Len:chuaidh	#;		! historic form - often do-chuaidh
 
 LEXICON VI7-PastIndDep		! Past Tense - Aimsir Chaite
 
 !!!:deachaigh			#;		
-+Dep:deachaigh			NegQDep;		
-+Dep+Var:deachaidh		NegQDep;	! variant spelling ?
-+Dep+1P+Pl:deachamar	NegQDep;
-+Dep+1P+Pl+Emph:deachamarna	NegQDep;
-+Dep+3P+Pl:deachadar	NegQDep;
-+Dep+3P+Pl+Emph:deachadarsan	NegQDep;
-+Dep+Auto:deachthas		NegQDep;		
++Dep:deachaigh			V3NegQDep;		
++Dep+Var:deachaidh		V3NegQDep;	! variant spelling ?
++Dep+1P+Pl:deachamar	V3NegQDep;
++Dep+1P+Pl+Emph:deachamarna	V3NegQDep;
++Dep+3P+Pl:deachadar	V3NegQDep;
++Dep+3P+Pl+Emph:deachadarsan	V3NegQDep;
++Dep+Auto:deachthas		V3NegQDep;		
 
 LEXICON VI7-FutInd		! Future Tense - Aimsir Fháistineach
 0:rachaidh		#;
@@ -972,59 +983,59 @@ LEXICON VI7-FutInd		! Future Tense - Aimsir Fháistineach
 
 !!!LEXICON VI7-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
 !!! PastImp is already available from regular téigh (to heat) 
-!!!0:téadh	NegQ2;
-!!!+1P+Sg:téinn	NegQ2;
-!!!+2P+Sg:téiteá	NegQ2;
-!!!!!!+3P+Sg:téadh	NegQ2;
-!!!+1P+Pl:téimis	NegQ2;
-!!!!!!+2P+Pl:téadh	NegQ2;
-!!!+3P+Pl:téidís	NegQ2;
-!!!+Auto:téití	NegQ2;		
+!!!0:téadh	V3NegQ2;
+!!!+1P+Sg:téinn	V3NegQ2;
+!!!+2P+Sg:téiteá	V3NegQ2;
+!!!!!!+3P+Sg:téadh	V3NegQ2;
+!!!+1P+Pl:téimis	V3NegQ2;
+!!!!!!+2P+Pl:téadh	V3NegQ2;
+!!!+3P+Pl:téidís	V3NegQ2;
+!!!+Auto:téití	V3NegQ2;		
 
 LEXICON VI7-Cond		! Conditional Mood - Modh Coinníollach
 
-0:rachadh		NegQ2;
-+1P+Sg:rachainn		NegQ2;
-+1P+Sg+Emph:rachainnse		NegQ2;
-+2P+Sg:rachfá		NegQ2;
-+2P+Sg+Emph:rachfása		NegQ2;
-!!!!+3P+Sg:rachadh		NegQ2;
-+1P+Pl:rachaimis	NegQ2;
-+1P+Pl+Emph:rachaimisne	NegQ2;
-!!!+2P+Pl:rachadh		NegQ2;
-+3P+Pl:rachaidís	NegQ2;
-+Auto:rachfaí 		NegQIrreg;		
+0:rachadh		V3NegQ2;
++1P+Sg:rachainn		V3NegQ2;
++1P+Sg+Emph:rachainnse		V3NegQ2;
++2P+Sg:rachfá		V3NegQ2;
++2P+Sg+Emph:rachfása		V3NegQ2;
+!!!!+3P+Sg:rachadh		V3NegQ2;
++1P+Pl:rachaimis	V3NegQ2;
++1P+Pl+Emph:rachaimisne	V3NegQ2;
+!!!+2P+Pl:rachadh		V3NegQ2;
++3P+Pl:rachaidís	V3NegQ2;
++Auto:rachfaí 		V3NegQIrreg;		
 
 
 !!!LEXICON VI7-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 !!! PresSubj is already available from regular téigh (to heat) 
-!!!0:té		NegSubj;
-!!!+1P+Pl:téimid	NegSubj;
-!!!+1P+Pl+Emph:téimidne	NegSubj;
-!!!+Auto:téitear 	NegSubj;		
+!!!0:té		V3NegSubj;
+!!!+1P+Pl:téimid	V3NegSubj;
+!!!+1P+Pl+Emph:téimidne	V3NegSubj;
+!!!+Auto:téitear 	V3NegSubj;		
 
 LEXICON VI7-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
 !!! PastSubj is already available from regular téigh (to heat) 
 
-0:téadh	NegQ;
-+1P+Sg:téinn	NegQ;
-+2P+Sg:téiteá	NegQ;
-!!+3P+Sg:téadh	NegQ;
-+1P+Pl:téimis	NegQ;
-!!+2P+Pl:téadh	NegQ;
-+3P+Pl:téidís	NegQ;
-+Auto:téití	NegQ;		
+0:téadh	V3NegQ;
++1P+Sg:téinn	V3NegQ;
++2P+Sg:téiteá	V3NegQ;
+!!+3P+Sg:téadh	V3NegQ;
++1P+Pl:téimis	V3NegQ;
+!!+2P+Pl:téadh	V3NegQ;
++3P+Pl:téidís	V3NegQ;
++Auto:téití	V3NegQ;		
 
 !!!LEXICON VI7-Imper		! Imperative Mood - Modh Ordaitheach
 !!! Imper is already available from regular téigh (to heat) 
 
-!!!+1P+Sg:téim	NegImper;
-!!!+2P+Sg:téigh	NegImper;
-!!!+3P+Sg:téadh	NegImper;
-!!!+1P+Pl:téimis	NegImper;
-!!!+2P+Pl:téígí	NegImper;
-!!!+3P+Pl:téidís	NegImper;
-!!!+Auto:téitear	NegImper; ! +Auto = Autonomous - saor briathar
+!!!+1P+Sg:téim	V3NegImper;
+!!!+2P+Sg:téigh	V3NegImper;
+!!!+3P+Sg:téadh	V3NegImper;
+!!!+1P+Pl:téimis	V3NegImper;
+!!!+2P+Pl:téígí	V3NegImper;
+!!!+3P+Pl:téidís	V3NegImper;
+!!!+Auto:téitear	V3NegImper; ! +Auto = Autonomous - saor briathar
 
 
 
@@ -1040,46 +1051,46 @@ LEXICON VI8a	! CHÍ (Irregular - Munster variation)
 +PastImp:0	VI8a-PastImp;
 
 LEXICON VI8a-PresInd		! Present Tense - Aimsir Láithreach
-0:cíonn		NegQ2;
-+Suf:cíonns	NegQ2;
-0:cí		NegQ2;
-+1P+Sg:cím	NegQ2;
-+1P+Sg+Emph:címse	NegQ2;
-+1P+Pl:címid	NegQ2;
-+Auto:cítear	NegQ2;	! +Auto = Autonomous - saor briathar
+0:cíonn		V3NegQ2;
++Suf:cíonns	V3NegQ2;
+0:cí		V3NegQ2;
++1P+Sg:cím	V3NegQ2;
++1P+Sg+Emph:címse	V3NegQ2;
++1P+Pl:címid	V3NegQ2;
++Auto:cítear	V3NegQ2;	! +Auto = Autonomous - saor briathar
 +Rel+Len:chíos	#;
 
 LEXICON VI8a-FutInd		! Future Tense - Aimsir Fháistineach
-0:cífidh	NegQ2;
-+1P+Sg:cífead	NegQ2;
-+2P+Sg:cífir	NegQ2;
-+1P+Pl:cífimid	NegQ2;
-+Auto:cífear	NegQ2;		
+0:cífidh	V3NegQ2;
++1P+Sg:cífead	V3NegQ2;
++2P+Sg:cífir	V3NegQ2;
++1P+Pl:cífimid	V3NegQ2;
++Auto:cífear	V3NegQ2;		
 +Rel+Len:chífeas	#;
 
 LEXICON VI8a-Cond
-0:cífeadh	NegQ2;
-+1P+Sg:cífinn	NegQ2;
-+1P+Sg+Emph:cífinnse	NegQ2;
-+2P+Sg:cífeá	NegQ2;
-+2P+Sg+Emph:cífeása	NegQ2;
-+1P+Pl:cífimis	NegQ2;
-+3P+Pl:cífidís	NegQ2;
-+Auto:cífí	NegQ2;		
+0:cífeadh	V3NegQ2;
++1P+Sg:cífinn	V3NegQ2;
++1P+Sg+Emph:cífinnse	V3NegQ2;
++2P+Sg:cífeá	V3NegQ2;
++2P+Sg+Emph:cífeása	V3NegQ2;
++1P+Pl:cífimis	V3NegQ2;
++3P+Pl:cífidís	V3NegQ2;
++Auto:cífí	V3NegQ2;		
 +Rel+Len:chífeas	#;
 
 LEXICON VI8a-PastImp		! Past Imperfect - Aimsir Ghnáthchaite
 
-0:cíodh	NegQ2;
-+1P+Sg:cínn	NegQ2;
-+1P+Sg+Emph:cínnse	NegQ2;
-+2P+Sg:cítheá	NegQ2;
-+2P+Sg+Emph:cítheása	NegQ2;
-+1P+Pl:címis	NegQ2;
-+1P+Pl+Emph:címisne	NegQ2;
-+3P+Pl:cídís	NegQ2;
-+3P+Pl+Emph:cídís-sean	NegQ2;
-+Auto:cítí	NegQ2;
+0:cíodh	V3NegQ2;
++1P+Sg:cínn	V3NegQ2;
++1P+Sg+Emph:cínnse	V3NegQ2;
++2P+Sg:cítheá	V3NegQ2;
++2P+Sg+Emph:cítheása	V3NegQ2;
++1P+Pl:címis	V3NegQ2;
++1P+Pl+Emph:címisne	V3NegQ2;
++3P+Pl:cídís	V3NegQ2;
++3P+Pl+Emph:cídís-sean	V3NegQ2;
++Auto:cítí	V3NegQ2;
 +Rel+Len:chíos	#;			! relative: a chíos
 !**************************************************************************
 
@@ -1154,13 +1165,13 @@ LEXICON VI8	! FEIC (Irregular)
 
 
 LEXICON VI8-PresInd		! Present Tense - Aimsir Láithreach
-0:feiceann	SufNegQ;
-!!0:feiceanns	NegQ;
-+1P+Sg:feicim	NegQ;
-+1P+Sg+Emph:feicimse	NegQ;
-+1P+Pl:feicimid	NegQ;
-+1P+Pl+Emph:feicimidne	NegQ;
-+Auto:feictear	NegQ;	! +Auto = Autonomous - saor briathar
+0:feiceann	V3SufNegQ;
+!!0:feiceanns	V3NegQ;
++1P+Sg:feicim	V3NegQ;
++1P+Sg+Emph:feicimse	V3NegQ;
++1P+Pl:feicimid	V3NegQ;
++1P+Pl+Emph:feicimidne	V3NegQ;
++Auto:feictear	V3NegQ;	! +Auto = Autonomous - saor briathar
 +Rel+Len:fheiceas	#;	! 
 
 LEXICON VI8-PastInd		! Past Tense - Aimsir Chaite
@@ -1183,72 +1194,72 @@ LEXICON VI8-PastInd		! Past Tense - Aimsir Chaite
 
 LEXICON VI8-PastIndDep		! Past Tense - Aimsir Chaite Spléach
 
-+Dep:faca		NegQDep;		
-+Dep+2P+Sg:facaís	NegQDep;
-+Dep+2P+Sg+Emph:facaíse	NegQDep;
-+Dep+1P+Pl:facamar	NegQDep;
-+Dep+1P+Pl+Emph:facamarna	NegQDep;
-+Dep+3P+Pl:facadar	NegQDep;
-+Dep+3P+Pl+Emph:facadarsan NegQDep;
-+Dep+Auto:facthas	NegQDep;		
++Dep:faca		V3NegQDep;		
++Dep+2P+Sg:facaís	V3NegQDep;
++Dep+2P+Sg+Emph:facaíse	V3NegQDep;
++Dep+1P+Pl:facamar	V3NegQDep;
++Dep+1P+Pl+Emph:facamarna	V3NegQDep;
++Dep+3P+Pl:facadar	V3NegQDep;
++Dep+3P+Pl+Emph:facadarsan V3NegQDep;
++Dep+Auto:facthas	V3NegQDep;		
 
 LEXICON VI8-FutInd		! Future Tense - Aimsir Fháistineach
-0:feicfidh	NegQ;
-+1P+Pl:feicfimid	NegQ;
-+1P+Pl+Emph:feicfimidne	NegQ;
-+Auto:feicfear	NegQ;		
+0:feicfidh	V3NegQ;
++1P+Pl:feicfimid	V3NegQ;
++1P+Pl+Emph:feicfimidne	V3NegQ;
++Auto:feicfear	V3NegQ;		
 +Rel+Len:fheicfeas	#;		
 
 LEXICON VI8-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:feiceadh	NegQ2;
-+1P+Sg:feicinn	NegQ2;
-+2P+Sg:feicteá	NegQ2;
-+2P+Sg+Emph:feicteása	NegQ2;
-!!!+3P+Sg:feiceadh	NegQ2;
-+1P+Pl:feicimis	NegQ2;
-!!!+2P+Pl:feiceadh	NegQ2;
-+3P+Pl:feicidís	NegQ2;
-+Auto:feictí 	NegQ2;		
+0:feiceadh	V3NegQ2;
++1P+Sg:feicinn	V3NegQ2;
++2P+Sg:feicteá	V3NegQ2;
++2P+Sg+Emph:feicteása	V3NegQ2;
+!!!+3P+Sg:feiceadh	V3NegQ2;
++1P+Pl:feicimis	V3NegQ2;
+!!!+2P+Pl:feiceadh	V3NegQ2;
++3P+Pl:feicidís	V3NegQ2;
++Auto:feictí 	V3NegQ2;		
 
 LEXICON VI8-Cond		! Conditional Mood - Modh Coinníollach
 
-0:feicfeadh	NegQ2;
-+1P+Sg:feicfinn	NegQ2;
-+1P+Sg+Emph:feicfinnse	NegQ2;
-+2P+Sg:feicfeá	NegQ2;
-+2P+Sg+Emph:feicfeása	NegQ2;
-!!!!+3P+Sg:feicfeadh	NegQ2;
-+1P+Pl:feicfimis	NegQ2;
-!!!!+2P+Pl:feicfeadh	NegQ2;
-+3P+Pl:feicfidís	NegQ2;
-+Auto:feicfí 	NegQ2;		
+0:feicfeadh	V3NegQ2;
++1P+Sg:feicfinn	V3NegQ2;
++1P+Sg+Emph:feicfinnse	V3NegQ2;
++2P+Sg:feicfeá	V3NegQ2;
++2P+Sg+Emph:feicfeása	V3NegQ2;
+!!!!+3P+Sg:feicfeadh	V3NegQ2;
++1P+Pl:feicfimis	V3NegQ2;
+!!!!+2P+Pl:feicfeadh	V3NegQ2;
++3P+Pl:feicfidís	V3NegQ2;
++Auto:feicfí 	V3NegQ2;		
 
 
 LEXICON VI8-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láithreach
-0:feice		NegSubj;
-+1P+Pl:feicimid	NegSubj;
-+Auto:feictear 	NegSubj;		
+0:feice		V3NegSubj;
++1P+Pl:feicimid	V3NegSubj;
++Auto:feictear 	V3NegSubj;		
 
 LEXICON VI8-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:feicinn	NegQ;
-+2P+Sg:feicteá	NegQ;
-+3P+Sg:feiceadh	NegQ;
-+1P+Pl:feicimis	NegQ;
-+2P+Pl:feiceadh	NegQ;
-+3P+Pl:feicidís	NegQ;
-+Auto:feictí	NegQ;		
++1P+Sg:feicinn	V3NegQ;
++2P+Sg:feicteá	V3NegQ;
++3P+Sg:feiceadh	V3NegQ;
++1P+Pl:feicimis	V3NegQ;
++2P+Pl:feiceadh	V3NegQ;
++3P+Pl:feicidís	V3NegQ;
++Auto:feictí	V3NegQ;		
 
 
 
 LEXICON VI8-Imper		! Imperative Mood - Modh Ordafeiceach
 
-+1P+Sg:feicim	NegImper;
-+2P+Sg:feic	NegImper;
-+3P+Sg:feiceadh NegImper;
-+1P+Pl:feicimis NegImper;
-+2P+Pl:feicigí	NegImper;
-+3P+Pl:feicidís NegImper;
-+Auto:feictear  NegImper;
++1P+Sg:feicim	V3NegImper;
++2P+Sg:feic	V3NegImper;
++3P+Sg:feiceadh V3NegImper;
++1P+Pl:feicimis V3NegImper;
++2P+Pl:feicigí	V3NegImper;
++3P+Pl:feicidís V3NegImper;
++Auto:feictear  V3NegImper;
 
 
 
@@ -1263,13 +1274,13 @@ LEXICON VI9a	! DEIN (Irregular)
 +PresSubj:0	VI9a-PresSubj;	!*** Modh Foshuiteach - Subjunctive Mood
 
 LEXICON VI9a-PresInd		! Present Tense - Aimsir Láithreach
-0:deineann		SufNegQ;
-!!0:deineanns		NegQ;
-+1P+Sg:deinim		NegQ;
-+1P+Sg+Emph:deinimse	NegQ;
-+2P+Sg:deinir		NegQ;
-+1P+Pl:deinimid	NegQ;
-+Auto:deintear		NegQ;	! +Auto = Autonomous - saor briathar
+0:deineann		V3SufNegQ;
+!!0:deineanns		V3NegQ;
++1P+Sg:deinim		V3NegQ;
++1P+Sg+Emph:deinimse	V3NegQ;
++2P+Sg:deinir		V3NegQ;
++1P+Pl:deinimid	V3NegQ;
++Auto:deintear		V3NegQ;	! +Auto = Autonomous - saor briathar
 +Rel+Len:dheineas		#; 	! 
 
 
@@ -1284,33 +1295,33 @@ LEXICON VI9a-PastInd		! Past Tense - Aimsir Chaite
 +Auto:deineadh		#;		! varient !!!!
 
 LEXICON VI9a-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:deineadh		NegQ2;			!! varient
-+1P+Sg:deininn		NegQ2;			!! varient
-+1P+Sg+Emph:deininnse	NegQ2;			!! varient
-+2P+Sg:deinteá		NegQ2;			!! varient
-+2P+Sg+Emph:deinteása	NegQ2;			!! varient
-+1P+Pl:deinimis		NegQ2;			!! varient
-+3P+Pl:deinidís		NegQ2;			!! varient
-+Auto:deintí 		NegQ2;			!! varient	
+0:deineadh		V3NegQ2;			!! varient
++1P+Sg:deininn		V3NegQ2;			!! varient
++1P+Sg+Emph:deininnse	V3NegQ2;			!! varient
++2P+Sg:deinteá		V3NegQ2;			!! varient
++2P+Sg+Emph:deinteása	V3NegQ2;			!! varient
++1P+Pl:deinimis		V3NegQ2;			!! varient
++3P+Pl:deinidís		V3NegQ2;			!! varient
++Auto:deintí 		V3NegQ2;			!! varient	
 
 
 LEXICON VI9a-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:deinim		NegImper;
-+2P+Sg:dein		NegImper;
-+3P+Sg:deineadh		NegImper;
-+1P+Pl:deinimis 	NegImper;
-+2P+Pl:deinigí		NegImper;
-+3P+Pl:deinidís	NegImper;
-+Auto:deintear		NegImper;
++1P+Sg:deinim		V3NegImper;
++2P+Sg:dein		V3NegImper;
++3P+Sg:deineadh		V3NegImper;
++1P+Pl:deinimis 	V3NegImper;
++2P+Pl:deinigí		V3NegImper;
++3P+Pl:deinidís	V3NegImper;
++Auto:deintear		V3NegImper;
 
 LEXICON VI9a-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:deine			NegQ;
-+1P+Sg:deinead		NegQ;
-+2P+Sg:deinir		NegQ;
-+1P+Pl:deinimid		NegQ;
-+3P+Pl:deinid		NegQ;
-+Auto:deintear 		NegQ;		
+0:deine			V3NegQ;
++1P+Sg:deinead		V3NegQ;
++2P+Sg:deinir		V3NegQ;
++1P+Pl:deinimid		V3NegQ;
++3P+Pl:deinid		V3NegQ;
++Auto:deintear 		V3NegQ;		
 !**************************************************************************
 
 LEXICON VI9	! DÉAN (Irregular)
@@ -1330,13 +1341,13 @@ LEXICON VI9	! DÉAN (Irregular)
 
 
 LEXICON VI9-PresInd		! Present Tense - Aimsir Láithreach
-0:déanann		SufNegQ; ! include -s suffix here eud may 2012
-!!0:déananns		NegQ;
-+1P+Sg:déanaim		NegQ;
-+1P+Sg+Emph:déanaimse	NegQ;
-+1P+Pl:déanaimid	NegQ;
-+1P+Pl+Emph:déanaimidne	NegQ;
-+Auto:déantar		NegQ;	! +Auto = Autonomous - saor briathar
+0:déanann		V3SufNegQ; ! include -s suffix here eud may 2012
+!!0:déananns		V3NegQ;
++1P+Sg:déanaim		V3NegQ;
++1P+Sg+Emph:déanaimse	V3NegQ;
++1P+Pl:déanaimid	V3NegQ;
++1P+Pl+Emph:déanaimidne	V3NegQ;
++Auto:déantar		V3NegQ;	! +Auto = Autonomous - saor briathar
 +Rel+Len:dhéanas		#; 	! 
 
 LEXICON VI9-PastInd		! Past Tense - Aimsir Chaite
@@ -1354,67 +1365,67 @@ LEXICON VI9-PastInd		! Past Tense - Aimsir Chaite
 
 LEXICON VI9-PastIndDep		! Past Tense - Aimsir Chaite Spléach
 
-+Dep:dearna		NegQDep;		
-+Dep+1P+Pl:dearnamar	NegQDep;
-+Dep+1P+Pl+Emph:dearnamarna	NegQDep;
-+Dep+Auto:dearnadh		NegQDep;		
++Dep:dearna		V3NegQDep;		
++Dep+1P+Pl:dearnamar	V3NegQDep;
++Dep+1P+Pl+Emph:dearnamarna	V3NegQDep;
++Dep+Auto:dearnadh		V3NegQDep;		
 
 LEXICON VI9-FutInd		! Future Tense - Aimsir Fháistineach
-0:déanfaidh		NegQ;
-+1P+Pl:déanfaimid	NegQ;
-+1P+Pl+Emph:déanfaimidne	NegQ;
-+Auto:déanfar		NegQ;		
+0:déanfaidh		V3NegQ;
++1P+Pl:déanfaimid	V3NegQ;
++1P+Pl+Emph:déanfaimidne	V3NegQ;
++Auto:déanfar		V3NegQ;		
 +Rel+Len:dhéanfas		#;		
 
 LEXICON VI9-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:déanadh		NegQ2;
-+1P+Sg:déanainn		NegQ2;
-+2P+Sg:déantá		NegQ2;
-!!!!+3P+Sg:déanadh		NegQ2;
-+1P+Pl:déanaimis	NegQ2;
-!!!!+2P+Pl:déanadh		NegQ2;
-+3P+Pl:déanaidís	NegQ2;
-+Auto:déantaí 		NegQ2;		
+0:déanadh		V3NegQ2;
++1P+Sg:déanainn		V3NegQ2;
++2P+Sg:déantá		V3NegQ2;
+!!!!+3P+Sg:déanadh		V3NegQ2;
++1P+Pl:déanaimis	V3NegQ2;
+!!!!+2P+Pl:déanadh		V3NegQ2;
++3P+Pl:déanaidís	V3NegQ2;
++Auto:déantaí 		V3NegQ2;		
 
 LEXICON VI9-Cond		! Conditional Mood - Modh Coinníollach
 
-0:déanfadh	NegQ2;
-+1P+Sg:déanfainn	NegQ2;
-+1P+Sg+Emph:déanfainnse	NegQ2;
-+2P+Sg:déanfá		NegQ2;
-+2P+Sg+Emph:déanfása		NegQ2;
-!!!!!+3P+Sg:déanfadh	NegQ2;
-+1P+Pl:déanfaimis	NegQ2;
-!!!!!+2P+Pl:déanfadh	NegQ2;
-+3P+Pl:déanfaidís	NegQ2;
-+Auto:déanfaí		NegQ2;		
+0:déanfadh	V3NegQ2;
++1P+Sg:déanfainn	V3NegQ2;
++1P+Sg+Emph:déanfainnse	V3NegQ2;
++2P+Sg:déanfá		V3NegQ2;
++2P+Sg+Emph:déanfása		V3NegQ2;
+!!!!!+3P+Sg:déanfadh	V3NegQ2;
++1P+Pl:déanfaimis	V3NegQ2;
+!!!!!+2P+Pl:déanfadh	V3NegQ2;
++3P+Pl:déanfaidís	V3NegQ2;
++Auto:déanfaí		V3NegQ2;		
 
 
 LEXICON VI9-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:déana			NegQ;
-+1P+Pl:déanaimid	NegQ;
-+Auto:déantar 		NegQ;		
+0:déana			V3NegQ;
++1P+Pl:déanaimid	V3NegQ;
++Auto:déantar 		V3NegQ;		
 
 LEXICON VI9-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-0:déanadh 		NegQ;
-+1P+Sg:déanainn		NegQ;
-+2P+Sg:déantá		NegQ;
-!!!!!!+3P+Sg:déanadh 		NegQ;
-+1P+Pl:déanaimis	NegQ;
-!!!!!+2P+Pl:déanadh		NegQ;
-+3P+Pl:déanaidís 	NegQ;
-+Auto:déantaí    	NegQ;		
+0:déanadh 		V3NegQ;
++1P+Sg:déanainn		V3NegQ;
++2P+Sg:déantá		V3NegQ;
+!!!!!!+3P+Sg:déanadh 		V3NegQ;
++1P+Pl:déanaimis	V3NegQ;
+!!!!!+2P+Pl:déanadh		V3NegQ;
++3P+Pl:déanaidís 	V3NegQ;
++Auto:déantaí    	V3NegQ;		
 
 
 LEXICON VI9-Imper		! Imperative Mood - Modh Ordaitheach
 
-+1P+Sg:déanaim		NegImper;
-+2P+Sg:déan		NegImper;
-+3P+Sg:déanadh		NegImper;
-+1P+Pl:déanaimis 	NegImper;
-+2P+Pl:déanaigí		NegImper;
-+3P+Pl:déanaidís	NegImper;
-+Auto:déantar		NegImper;
++1P+Sg:déanaim		V3NegImper;
++2P+Sg:déan		V3NegImper;
++3P+Sg:déanadh		V3NegImper;
++1P+Pl:déanaimis 	V3NegImper;
++2P+Pl:déanaigí		V3NegImper;
++3P+Pl:déanaidís	V3NegImper;
++Auto:déantar		V3NegImper;
 
 
 !**************************************************************************
@@ -1439,27 +1450,47 @@ LEXICON VI10	! FAIGH (Irregular)
 
 
 LEXICON VI10-PresInd		! Present Tense - Aimsir Láithreach
-0:faigheann		SufNegQ;
-!!0:faigheanns		NegQ;
-+1P+Sg:faighim		NegQ;
-+1P+Sg+Emph:faighimse		NegQ;
-+1P+Pl:faighimid	NegQ;
-+1P+Pl+Emph:faighimidne	NegQ;
-+Auto:faightear		NegQ; ! +Auto = Autonomous - saor briathar
+0:faigheann		V3SufNegQ;
+!!0:faigheanns		V3NegQ;
++1P+Sg:faighim		V3NegQ;
++1P+Sg+Emph:faighimse		V3NegQ;
++1P+Pl:faighimid	V3NegQ;
++1P+Pl+Emph:faighimidne	V3NegQ;
++Auto:faightear		V3NegQ; ! +Auto = Autonomous - saor briathar
 +Rel+Len:fhaigheas		#; 
 
 LEXICON VI10-PastInd		! Past Tense - Aimsir Chaite
 
-0:fuair			NegQIrreg;		
-+1P+Sg:fuaireas		NegQIrreg;
-+1P+Sg+Emph:fuaireas-sa		NegQIrreg;
-+2P+Sg:fuairis		NegQIrreg;
-+2P+Sg+Emph:fuairis-se		NegQIrreg;
-+1P+Pl:fuaireamar	NegQIrreg;
-+1P+Pl+Emph:fuaireamarna	NegQIrreg;
-+3P+Pl:fuaireadar	NegQIrreg;
-+3P+Pl+Emph:fuaireadarsan	NegQIrreg;
-+Auto:fuarthas	  	NegQIrreg;		
+0:fuair			V3NegQIrreg;		
++1P+Sg:fuaireas		V3NegQIrreg;
++1P+Sg+Emph:fuaireas-sa		V3NegQIrreg;
++2P+Sg:fuairis		V3NegQIrreg;
++2P+Sg+Emph:fuairis-se		V3NegQIrreg;
++1P+Pl:fuaireamar	V3NegQIrreg;
++1P+Pl+Emph:fuaireamarna	V3NegQIrreg;
++3P+Pl:fuaireadar	V3NegQIrreg;
++3P+Pl+Emph:fuaireadarsan	V3NegQIrreg;
++Auto:fuarthas	  	V3NegQIrreg;		
+
+!! Bardic - historical nonstandard spellings
++NG:fuar			V3NegQIrreg;		
++NG:fúair			V3NegQIrreg;		
++NG:fuair-si			V3NegQIrreg;		
++1P+Sg+NG:fuaras		V3NegQIrreg;
++1P+Sg+NG:fuarais		V3NegQIrreg;
++1P+Sg+NG:fuaruis		V3NegQIrreg;
++1P+Sg+NG:fuarois		V3NegQIrreg;
++1P+Sg+NG:fuarus		V3NegQIrreg;
++1P+Sg+Emph+NG:fuareas-sa		V3NegQIrreg;
++2P+Sg+NG:fuaris		V3NegQIrreg;
++2P+Sg+Emph+NG:fuars-se		V3NegQIrreg;
++1P+Pl+NG:fuaramair	V3NegQIrreg;
++1P+Pl+NG:fuaramur	V3NegQIrreg;
++1P+Pl+NG:furamur	V3NegQIrreg;
++1P+Pl+Emph+NG:fuareamarna	V3NegQIrreg;
++3P+Pl+NG:fuaradur	V3NegQIrreg;
++3P+Pl+NG:fuarodair	V3NegQIrreg;
++3P+Pl+Emph+NG:fuaradarsan	V3NegQIrreg;
 
 LEXICON VI10-FutInd		! Future Tense - Aimsir Fháistineach
 0:gheobhaidh		#;
@@ -1470,20 +1501,20 @@ LEXICON VI10-FutInd		! Future Tense - Aimsir Fháistineach
 
 LEXICON VI10-FutIndDep		! Past Tense - Aimsir  Spléach
 
-+Dep:faighidh			NegQDep;		
-+Dep+1P+Pl:faighimid	NegQDep;
-+Dep+1P+Pl+Emph:faighimidne	NegQDep;
-+Dep+Auto:faighfear		NegQDep;		
++Dep:faighidh			V3NegQDep;		
++Dep+1P+Pl:faighimid	V3NegQDep;
++Dep+1P+Pl+Emph:faighimidne	V3NegQDep;
++Dep+Auto:faighfear		V3NegQDep;		
 
 LEXICON VI10-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:faigheadh	NegQ2;
-+1P+Sg:faighinn	NegQ2;
-+2P+Sg:faighteá	NegQ2;
-!!!!+3P+Sg:faigheadh	NegQ2;
-+1P+Pl:faighimis	NegQ2;
-!!!!+2P+Pl:faigheadh	NegQ2;
-+3P+Pl:faighidís	NegQ2;
-+Auto:faightí 	NegQ2;		
+0:faigheadh	V3NegQ2;
++1P+Sg:faighinn	V3NegQ2;
++2P+Sg:faighteá	V3NegQ2;
+!!!!+3P+Sg:faigheadh	V3NegQ2;
++1P+Pl:faighimis	V3NegQ2;
+!!!!+2P+Pl:faigheadh	V3NegQ2;
++3P+Pl:faighidís	V3NegQ2;
++Auto:faightí 	V3NegQ2;		
 
 LEXICON VI10-Cond		! Conditional Mood - Modh Coinníollach
 
@@ -1500,43 +1531,43 @@ LEXICON VI10-Cond		! Conditional Mood - Modh Coinníollach
 
 LEXICON VI10-CondDep		! Conditional Mood - Modh Coinníollach
 
-+Dep:faigheadh	NegQDep;
-+Dep+1P+Sg:faighinn		NegQDep;
-+Dep+1P+Sg+Emph:faighinnse		NegQDep;
-+Dep+2P+Sg:faighfeá		NegQDep;
-+Dep+2P+Sg+Emph:faighfeása		NegQDep;
-!!!!+Dep+3P+Sg:faigheadh	NegQDep;
-+Dep+1P+Pl:faighimis	NegQDep;
-!!!!+Dep+2P+Pl:faigheadh	NegQDep;
-+Dep+3P+Pl:faighidís	NegQDep;
-+Dep+Auto:faighfí 		NegQDep;		
++Dep:faigheadh	V3NegQDep;
++Dep+1P+Sg:faighinn		V3NegQDep;
++Dep+1P+Sg+Emph:faighinnse		V3NegQDep;
++Dep+2P+Sg:faighfeá		V3NegQDep;
++Dep+2P+Sg+Emph:faighfeása		V3NegQDep;
+!!!!+Dep+3P+Sg:faigheadh	V3NegQDep;
++Dep+1P+Pl:faighimis	V3NegQDep;
+!!!!+Dep+2P+Pl:faigheadh	V3NegQDep;
++Dep+3P+Pl:faighidís	V3NegQDep;
++Dep+Auto:faighfí 		V3NegQDep;		
 
 
 LEXICON VI10-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láfaigh.
-0:faighe		NegSubj;
-+1P+Pl:faighimid	NegSubj;
-+Auto:faightear 	NegSubj;		
+0:faighe		V3NegSubj;
++1P+Pl:faighimid	V3NegSubj;
++Auto:faightear 	V3NegSubj;		
 
 LEXICON VI10-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:faighinn		NegQ;
-+2P+Sg:faighteá		NegQ;
-+3P+Sg:faigheadh	NegQ;
-+1P+Pl:faighimis	NegQ;
-+2P+Pl:faigheadh	NegQ;
-+3P+Pl:faighidís	NegQ;
-+Auto:faightí		NegQ;		
++1P+Sg:faighinn		V3NegQ;
++2P+Sg:faighteá		V3NegQ;
++3P+Sg:faigheadh	V3NegQ;
++1P+Pl:faighimis	V3NegQ;
++2P+Pl:faigheadh	V3NegQ;
++3P+Pl:faighidís	V3NegQ;
++Auto:faightí		V3NegQ;		
 
 
 
 LEXICON VI10-Imper		! Imperative Mood - Modh Ordafaigheach
 
-+1P+Sg:faighim	 NegImper;
-+2P+Sg:faigh	 NegImper;
-+3P+Sg:faigheadh NegImper;
-+1P+Pl:faighimis NegImper;
-+2P+Pl:faighigí	 NegImper;
-+3P+Pl:faighidís NegImper;
-+Auto:faightear  NegImper;
++1P+Sg:faighim	 V3NegImper;
++2P+Sg:faigh	 V3NegImper;
++3P+Sg:faigheadh V3NegImper;
++1P+Pl:faighimis V3NegImper;
++2P+Pl:faighigí	 V3NegImper;
++3P+Pl:faighidís V3NegImper;
++Auto:faightear  V3NegImper;
 
 
 !**************************************************************************
@@ -1546,22 +1577,22 @@ LEXICON VI10a	! GEIBH (Irregular)
 +PastImp:0	VI10a-PastImp;
 
 LEXICON VI10a-PresInd		! Present Tense - Aimsir Láithreach
-0:geibheann		SufNegQ;
-!!0:geibheanns		NegQ;
-+1P+Sg:geibhim		NegQ;
-+1P+Sg+Emph:geibhimse		NegQ;
-+1P+Pl+Emph:geibhimidne	NegQ;
-+Auto:geibhtear		NegQ; ! +Auto = Autonomous - saor briathar
+0:geibheann		V3SufNegQ;
+!!0:geibheanns		V3NegQ;
++1P+Sg:geibhim		V3NegQ;
++1P+Sg+Emph:geibhimse		V3NegQ;
++1P+Pl+Emph:geibhimidne	V3NegQ;
++Auto:geibhtear		V3NegQ; ! +Auto = Autonomous - saor briathar
 +Rel+Len:gheibheas		#; 
 
 
 LEXICON VI10a-PastImp		! Imperfect  - Aimsir Ghnáthchaite ( past hab.)
-0:geibheadh	NegQ2;
-+1P+Sg:geibhinn	NegQ2;
-+2P+Sg:geibhteá	NegQ2;
-+1P+Pl:geibhimis	NegQ2;
-+3P+Pl:geibhidís	NegQ2;
-+Auto:geibhtí 	NegQ2;		
+0:geibheadh	V3NegQ2;
++1P+Sg:geibhinn	V3NegQ2;
++2P+Sg:geibhteá	V3NegQ2;
++1P+Pl:geibhimis	V3NegQ2;
++3P+Pl:geibhidís	V3NegQ2;
++Auto:geibhtí 	V3NegQ2;		
 
 !**************************************************************************
 
@@ -1622,7 +1653,7 @@ LEXICON VI11-PresIndRel		! Present Relative  - Láithreach Coibhneasta
 
 LEXICON VI11-PresIndDepNeg	! Present Dependant Neg. - Láith. Spléach (ní)
 +Neg:níl		#;
-+Neg:níleann+CM		#;
++Neg+CM:níleann		#;
 +1P+Sg+Neg:nílim	#;
 +1P+Sg+Neg+Emph:nílimse	#;
 +2P+Sg+Neg+CM:nílir	#;
@@ -1677,29 +1708,28 @@ LEXICON VI11-PresIndDep		! Present Dependant non Neg. - Láith. Spléach
 +Dep+Auto+NegQ+Ecl:bhfuiltear	#;
 
  LEXICON VI11-PresImp	! Present Imperfect  - GhnáthLáithreach
-0:bíonn		SufNegQ;
-!+Len:bhíonn		SufNegQ; ! Trond: bhíonn, out due to change in affixes/verbs.lexc
-!!0:bíonns		NegQ;
-+1P+Sg:bím	NegQ;
-+1P+Sg+Emph:bímse	NegQ;
-+1P+Pl:bímid	NegQ;
-+1P+Pl+Emph:bímidne	NegQ;
-+Auto:bítear 	NegQ;		
+0:bíonn		V3SufNegQ;
+!!0:bíonns		V3NegQ;
++1P+Sg:bím	V3NegQ;
++1P+Sg+Emph:bímse	V3NegQ;
++1P+Pl:bímid	V3NegQ;
++1P+Pl+Emph:bímidne	V3NegQ;
++Auto:bítear 	V3NegQ;		
 +Rel+Len:bhíos	#;
 
 LEXICON VI11-PastIndDep		! Past Tense - Aimsir Chaite
 
-+Dep:raibh		NegQDep;
-+Dep+Var:rabh		NegQDep;	! (Added CW 09/08)
-+Dep+1P+Sg:rabhas	NegQDep;
-+Dep+1P+Sg+Emph:rabhas-sa	NegQDep;
-+Dep+2P+Sg:rabhais	NegQDep;
-+Dep+2P+Sg+Emph:rabhais-se	NegQDep;
-+Dep+1P+Pl:rabhamar	NegQDep;
-+Dep+1P+Pl+Emph:rabhamarna	NegQDep;
-+Dep+3P+Pl:rabhadar	NegQDep;
-+Dep+3P+Pl+Emph:rabhadarsan	NegQDep;
-+Dep+Auto:rabhthas  NegQDep;		
++Dep:raibh		V3NegQDep;
++Dep+Var:rabh		V3NegQDep;	! (Added CW 09/08)
++Dep+1P+Sg:rabhas	V3NegQDep;
++Dep+1P+Sg+Emph:rabhas-sa	V3NegQDep;
++Dep+2P+Sg:rabhais	V3NegQDep;
++Dep+2P+Sg+Emph:rabhais-se	V3NegQDep;
++Dep+1P+Pl:rabhamar	V3NegQDep;
++Dep+1P+Pl+Emph:rabhamarna	V3NegQDep;
++Dep+3P+Pl:rabhadar	V3NegQDep;
++Dep+3P+Pl+Emph:rabhadarsan	V3NegQDep;
++Dep+Auto:rabhthas  V3NegQDep;		
 
 LEXICON VI11-PastInd		! Past Tense - Aimsir Chaite - Spleách
 
@@ -1716,78 +1746,78 @@ LEXICON VI11-PastInd		! Past Tense - Aimsir Chaite - Spleách
 +Auto+Len:bhíothas	#;		
 
 LEXICON VI11-FutInd			! Future Tense - Aimsir Fháistineach
-0:beidh		NegQ;
-+1P+Sg+CM:bead	NegQ;
-+1P+Sg+Emph+CM:beadsa	NegQ;
-+2P+Sg+CM:beir	NegQ;
-+2P+Sg+Emph+CM:beirse	NegQ;
-+1P+Pl:beimid	NegQ;
-+1P+Pl+Emph:beimidne	NegQ;
-+3P+Pl+CM:beid	NegQ;
-+3P+Pl+Emph+CM:beidse	NegQ;
-+Auto:beifear	NegQ;		
+0:beidh		V3NegQ;
++1P+Sg+CM:bead	V3NegQ;
++1P+Sg+Emph+CM:beadsa	V3NegQ;
++2P+Sg+CM:beir	V3NegQ;
++2P+Sg+Emph+CM:beirse	V3NegQ;
++1P+Pl:beimid	V3NegQ;
++1P+Pl+Emph:beimidne	V3NegQ;
++3P+Pl+CM:beid	V3NegQ;
++3P+Pl+Emph+CM:beidse	V3NegQ;
++Auto:beifear	V3NegQ;		
 +Rel+Len:bheas	#;			! relative: a bheas
 
 LEXICON VI11-PastImp		! Past Imperfect - Aimsir Ghnáthchaite
 
-0:bíodh	NegQ2;
-+1P+Sg:bínn	NegQ2;
-+1P+Sg+Emph:bínnse	NegQ2;
-+2P+Sg:bíteá	NegQ2;
-+2P+Sg+Emph:bíteása	NegQ2;
-+1P+Pl:bímis	NegQ2;
-+1P+Pl+Emph:bímisne	NegQ2;
-+3P+Pl:bídís	NegQ2;
-+3P+Pl+Emph:bídís-sean	NegQ2;
-+Auto:bítí	NegQ2;
+0:bíodh	V3NegQ2;
++1P+Sg:bínn	V3NegQ2;
++1P+Sg+Emph:bínnse	V3NegQ2;
++2P+Sg:bíteá	V3NegQ2;
++2P+Sg+Emph:bíteása	V3NegQ2;
++1P+Pl:bímis	V3NegQ2;
++1P+Pl+Emph:bímisne	V3NegQ2;
++3P+Pl:bídís	V3NegQ2;
++3P+Pl+Emph:bídís-sean	V3NegQ2;
++Auto:bítí	V3NegQ2;
 +Rel+Len:bhíos	#;			! relative: a bhíos
 
 LEXICON VI11-Cond		! Conditional Mood - Modh Coinníollach
 
 +CM:beadh	#;		! e.g. ná beadh
-0:beadh	NegQ2;
-+1P+Sg:beinn	NegQ2;
-+1P+Sg+Emph:beinnse	NegQ2;
-+2P+Sg:beifeá	NegQ2;
-+2P+Sg+Emph:beifeása	NegQ2;
-+1P+Pl:beimis	NegQ2;
-+1P+Pl+Emph:beimisne	NegQ2;
-+3P+Pl:beidís	NegQ2;
-+3P+Pl+Emph:beidís-sean	NegQ2;
-+Auto:beifí 	NegQ2;		
+0:beadh	V3NegQ2;
++1P+Sg:beinn	V3NegQ2;
++1P+Sg+Emph:beinnse	V3NegQ2;
++2P+Sg:beifeá	V3NegQ2;
++2P+Sg+Emph:beifeása	V3NegQ2;
++1P+Pl:beimis	V3NegQ2;
++1P+Pl+Emph:beimisne	V3NegQ2;
++3P+Pl:beidís	V3NegQ2;
++3P+Pl+Emph:beidís-sean	V3NegQ2;
++Auto:beifí 	V3NegQ2;		
 
 LEXICON VI11-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
-0:raibh			NegSubj;
-+Var:rabh			NegSubj;	! (Added CW 09/08)
-+1P+Pl:rabhaimid	NegSubj;
-+1P+Pl+Emph:rabhaimidne	NegSubj;
-+Auto:rabhthar	 	NegSubj;		
+0:raibh			V3NegSubj;
++Var:rabh			V3NegSubj;	! (Added CW 09/08)
++1P+Pl:rabhaimid	V3NegSubj;
++1P+Pl+Emph:rabhaimidne	V3NegSubj;
++Auto:rabhthar	 	V3NegSubj;		
 
 LEXICON VI11-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:beinn	NegQ;
-+1P+Sg+Emph:beinnse	NegQ;
-+2P+Sg:beifeá	NegQ;
-+2P+Sg+Emph:beifeása	NegQ;
-+3P+Sg:beadh	NegQ;
-+1P+Pl:beimis	NegQ;
-+1P+Pl+Emph:beimisne	NegQ;
-+2P+Pl:beadh	NegQ;
-+3P+Pl:beidís	NegQ;
-+3P+Pl+Emph:beidís-sean	NegQ;
-+Auto:beití	NegQ;		
++1P+Sg:beinn	V3NegQ;
++1P+Sg+Emph:beinnse	V3NegQ;
++2P+Sg:beifeá	V3NegQ;
++2P+Sg+Emph:beifeása	V3NegQ;
++3P+Sg:beadh	V3NegQ;
++1P+Pl:beimis	V3NegQ;
++1P+Pl+Emph:beimisne	V3NegQ;
++2P+Pl:beadh	V3NegQ;
++3P+Pl:beidís	V3NegQ;
++3P+Pl+Emph:beidís-sean	V3NegQ;
++Auto:beití	V3NegQ;		
 
 LEXICON VI11-Imper		! Imperative Mood - Modh Ordatáeach
 
-+1P+Sg:bím	NegImper;
++1P+Sg:bím	V3NegImper;
 +1P+Sg+Emph:bímse	#;
-+2P+Sg:bí	NegImper;
-+3P+Sg:bíodh	NegImper;
-+1P+Pl:bímis	NegImper;
++2P+Sg:bí	V3NegImper;
++3P+Sg:bíodh	V3NegImper;
++1P+Pl:bímis	V3NegImper;
 +1P+Pl+Emph:bímisne	#;
-+2P+Pl:bígí	NegImper;
-+3P+Pl:bídís	NegImper;
++2P+Pl:bígí	V3NegImper;
++3P+Pl:bídís	V3NegImper;
 +3P+Pl+Emph:bídís-sean	#;
-+Auto:bítear	NegImper;
++Auto:bítear	V3NegImper;
 
 !**************************************************************************
 
@@ -1801,10 +1831,11 @@ LEXICON VI12	! IS (Copula)
 +Cop+Pres+Pron:sea			#;	! is ea
 +Cop+Pres+Pron:seadh			#;	! is ea
 +Cop+Pres+Pron+Pers+3P+Sg+Masc:sé	#;	! is é
-+Cop+Pres+Pron+Pers+3P+Sg+Masc+Art+Sg+Def:sén	#;	! is é an (Hartmann) 
++Cop+Pres+Pron+Pers+3P+Sg+Masc:Sé	#;	! Is é
++Cop+Pres+Pron+Pers+3P+Sg+Masc+Art+Sg+Def:Sén	#;	! = is é an (Hartmann) 
 +Cop+Pres+Pron+Pers+3P+Sg+Masc+Art+Sg+Def+Subst+Noun+Sg:séard	#;	! is é an rud (Hartmann) 
-+Cop+Pres+Pron+Pers+3P+Sg+Fem:sí	#;	! is í
-+Cop+Pres+Pron+Pers+3P+Pl:siad		#;	! is iad
++Cop+Pres+Pron+Pers+3P+Sg+Fem:Sí	#;	! Sí = is í
++Cop+Pres+Pron+Pers+3P+Pl:Siad		#;	! Siad = is iad
 +Cop+Pres+Neg:ní			#;
 +Cop+Pres+Neg:Ní			#;	! needed to compete with Part Pat and Part Vb Neg
 +Cop+Pres+Q:an				#;
@@ -1850,6 +1881,7 @@ LEXICON VI12	! IS (Copula)
 +Cop+Cond+Ecl+VF:mb'			#;
 +Cop+Past+Neg:níor			#;
 +Cop+Past+Neg+VF:níorbh		#;
++Cop+Pres+Q+Pron:abea			#;	! ab ea? Bardic abeadh -> abea
 +Cop+Past+Q:ar				#;
 +Cop+Past+Q+VF:arbh			#;
 +Cop+Past+NegQ:nár			#;
@@ -1878,8 +1910,55 @@ LEXICON VI12	! IS (Copula)
 +Cop+Past+RelInd+Neg+VF:nárbh	#;
 
 !************************************************************************************
-!**************************************************************************
-! Mixed Verb Stems
+! THE FOLLOWING LOCAL VERSIONS OF CONTINUATION CLASSES (previously in V3-LEX-STEMS.TXT)
+! HAVE BEEN PREFIXED WITH V3 TO AVOID CONFUSION WITH CCS IN /affixes/verbs.lexc 
+! (formerly V12-LEX-CC.TXT)
+!************************************************************************************
+LEXICON		V3SufNegQ
+V3NegQ;
++Suf:s	V3NegQ;			!!! e.g. a bhíonns (may 2012 eud)
+
+LEXICON		V3NegQ
++Len:^Verb^Sé		#; ! e.g. a bhíonn
++Neg+Len:^Verb^Sé	#; ! e.g. ní bhíonn
++Q+Ecl:^Verb^Urú	#; ! e.g. an mbíonn
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05  e.g. nach mbíonn
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+#;			   ! e.g. bíonn
+
+LEXICON		V3NegQ2
+!! 
++Len:^Verb^Sé		#;
++Neg+Len:^Verb^Sé	#;
++Q+Ecl:^Verb^Urú	#;
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+
+LEXICON		V3NegQIrreg
+!! FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
+!!+Len:^Verb^Sé		#; ! e.g. dhúirt must be neg/V3NegQ etc unlike rug which is positive and uses V3NegQ2 
++Neg+Len:^Verb^Sé	#;
++Q+Ecl:^Verb^Urú	#;
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+#;			   ! e.g. dúirt
+
+LEXICON		V3NegQDep
++Neg+Len:^Verb^Sé	#;
++Q+Ecl:^Verb^Urú	#;
++NegQ+Ecl:^Verb^Urú	#; ! added 9-2-05
++Ecl:^Verb^Urú		#; ! added 21-3-05 e.g. a mbíonn
+
+LEXICON		V3NegSubj
++Neg+Len:^Verb^Sé	#;
++Ecl:^Verb^Urú	#;
+
+LEXICON 	V3NegImper
+#;
++Neg:^Verb^hv	#;
+
+
+!! Mixed Verb Stems
  
 LEXICON VerbsB
 fliuch+Verb+VTI:fliuch	V1-BR;	! gsm ~ wet; rainy
@@ -1912,6 +1991,7 @@ taifigh+Verb:taifigh		V2-SL;
 táinsigh+Verb:táinsigh	V2-SL;
 tairngrir+Verb:tairngr	V2-SL-sync; 	! NEED TO ADD CC or FIX
 tochsail+Verb:tochsl	V2-BR-sync;	! "
+
 LEXICON VerbsC
 saobh+Verb+VT:saobh	V1-BR;	! slanted, twisted; askew; capricious;
 táir+Verb+VT:táir	V1-SL;	! mean, vile, wretched vt
@@ -2071,7 +2151,7 @@ robáil+Verb+VTI:robáil	V1-SL-LC;	! robbery vt & i
 sóinseáil+Verb+VTI:sóinseáil	V1-SL-LC;	! & vt & i
 spáráil+Verb+VTI:spáráil	V1-SL-LC;	! sparing, economy vt &
 stócáil+Verb+VTI:stócáil	V1-SL-LC;	! preparation(s) vt & i
-stuáil+Verb+VTI:stuáil	V1-SL-LV;	! stowage; stuffing, padding; stor
+stuáil+Verb+VTI:stuáil	V1-SL-LC;	! stowage; stuffing, padding; stor
 súisteáil+Verb+VTI:súisteáil	V1-SL-LC;	! flailing, threshing; beating vt
 liostáil+Verb+VTI:liostáil	V1-SL-LC;	! enlistment vt & i
 troid+Verb+VTI:troid	V1-SL;	! & vt & i
@@ -2219,7 +2299,7 @@ roll+Verb+VTI:roll	V1-BR;	! roll
 snap+Verb+VTI:snap	V1-BR;	! pl ~anna snap; catch;
 luisnigh+Verb+VI:luisnigh	V2-SL;	! blush, glow
 scinn+Verb+VI:scinn	V1-SL;	! start, spring; dart; gush
-sciáil+Verb+VI:sciáil	V1-SL-LV;	! ski;
+sciáil+Verb+VI:sciáil	V1-SL-LC;	! ski;
 sciorr+Verb+VI:sciorr	V1-BR;	! slip, slide, skid
 scátáil+Verb+VI:scátáil	V1-SL-LC;	! skate;
 liúigh+Verb+VI:liúigh	V1-BR-LV;	! yell, shout
@@ -2380,7 +2460,7 @@ díchuir+Verb+VT:díchuir	V1-SL;	! vn -ur expel; disperse,
 díchnámhaigh+Verb+VT:díchnámhaigh	V2-BR;	! bone, fillet
 dícheann+Verb+VT:dícheann	V1-BR;	! behead; cut off, destroy
 dícháiligh+Verb+VT:dícháiligh	V2-SL;	! disqualify;
-gleadhair+Verb+VT:gleadhair	V2-BR-sync;	! pres -dhrann beat noisily,
+gleadhair+Verb+VT:gleadhair	V1-BR-sync;	! pres -dhrann beat noisily,
 deisigh+Verb+VT:deisigh	V2-SL;	! mend, repair
 díláraigh+Verb+VT:díláraigh	V2-BR;	! decentralize;
 deighil+Verb+VT:deighil	V2-SL-sync;	! pres -ghleann part, separate,
@@ -2502,7 +2582,7 @@ athghlaoigh+Verb+VT+Vow:athghlaoigh	V1-SL;	! vn -aoch recall
 athghabh+Verb+VT+Vow:athghabh	V1-BR;	! vn ~áil recapture; recover
 athchum+Verb+VT+Vow:athchum	V1-BR;	! reconstruct; distort;
 athchuir+Verb+VT+Vow:athchuir	V1-SL;	! vn -chur replant; remand;
-athchomhair+Verb+VT+Vow:athchomhair	V2-BR-sync;	! vn ~eamh re-count, recalculate
+athchomhair+Verb+VT+Vow:athchomhair	V1-SL;	! vn ~eamh re-count, recalculate
 athchóirigh+Verb+VT+Vow:athchóirigh	V2-SL;	! rearrange; restore, renovate
 athscinn+Verb+VT+Vow:athscinn	V1-SL;	! spring back; recoil;
 comhdaigh+Verb+VT:comhdaigh	V2-BR;	! file (document, etc.)
@@ -2541,7 +2621,7 @@ aisghair+Verb+VT+Vow:aisghair	V1-SL;	! abrogate; repeal;
 adhmhol+Verb+VT+Vow:adhmhol	V1-BR;	! extol, eulogize
 adhlaic+Verb+VT+Vow:adhlaic	V1-SL-BR;	! was V1-SL-X;	! pres -acann bury
 adharcáil+Verb+VT+Vow:adharcáil	V1-SL-LC;	! horn, gore
-adhair+Verb+VT+Vow:adhair	V2-BR-sync;	! pres adhrann vn adhradh
+adhair+Verb+VT+Vow:adhair	V1-BR-sync;	! pres adhrann vn adhradh
 adamhaigh+Verb+VT+Vow:adamhaigh	V2-BR;	! atomize;
 achtaigh+Verb+VT+Vow:achtaigh	V2-BR;	! enact;
 achoimrigh+Verb+VT+Vow:achoimrigh	V2-SL;	! summarize, recapitulate
@@ -2754,7 +2834,7 @@ timpeallghearr+Verb+VT:timpeallghearr	V1-BR;	! circumcise;
 tréaslaigh+Verb+VT:tréaslaigh	V2-BR;	! rud a thréaslú do
 tíor+Verb+VT:tíor	V1-BR;	! dry up, parch; scorch,
 tnáith+Verb+VT:tnáith	V1-SL;	! wear down, exhaust
-toghair+Verb+VT:toghair	V2-BR-sync;	! summon; invoke;
+toghair+Verb+VT:toghair	V2-SL;	! summon; invoke;
 toibhigh+Verb+VT:toibhigh	V2-SL;	! vn tobhach levy, exact
 toirchigh+Verb+VT:toirchigh	V2-SL;	! fertilize, impregnate
 toitrigh+Verb+VT:toitrigh	V2-SL;	! smoke, fumigate
@@ -2956,7 +3036,6 @@ lódáil+Verb+VTI:lódáil	V1-SL-LC;	! load;
 mallaigh+Verb+VTI:mallaigh	V2-BR;	! curse;
 maolaigh+Verb+VTI:maolaigh	V2-BR;	! make, become, bare or
 maothaigh+Verb+VTI:maothaigh	V2-BR;	! soften; moisten; steep, saturate
-maraigh+Verb+VTI:maraigh	V2-BR;	! kill;
 marcaigh+Verb+VTI:marcaigh	V2-BR;	! ride;
 meabhraigh+Verb+VTI:meabhraigh	V2-BR;	! memorize, remember; remind; meditate;
 maígh+Verb+VTI:maígh	V1-SL;	! vn -íomh state, claim;
@@ -3115,7 +3194,7 @@ tadhaill+Verb+VTI:tadhaill	V2-BR-sync;	! pres -dhlaíonn touch, contact
 tagair+Verb+VTI:tagair	V2-BR-sync;	! pres -graíonn refer, allude
 taibhrigh+Verb+VTI:taibhrigh	V2-SL;	! dream; manifest;
 suanbhruith+Verb+VTI:suanbhruith	V1-SL;	! vn ~ simmer
-spraeáil+Verb+VTI:spraeáil	V1-SL-LV;	! spray;
+spraeáil+Verb+VTI:spraeáil	V1-SL-LC;	! spray;
 séan+Verb+VTI:séan	V1-BR;	! deny, repudiate; (with ar)
 soláthair+Verb+VTI:soláthair	V2-BR-sync;	! pres -thraíonn gather, procure;
 sonraigh+Verb+VTI:sonraigh	V2-BR;	! particularize; specify, define; perceive,
@@ -3150,7 +3229,7 @@ coisc+Verb+VTI:coisc	V1-SL;	! vn cosc check, stop;
 dorchaigh+Verb+VTI:dorchaigh	V2-BR;	! darken; become secretive, reserved,
 cnámhaigh+Verb+VTI:cnámhaigh	V2-BR;	! ossify;
 cinntigh+Verb+VTI:cinntigh	V2-SL;	! make certain; confirm, assure
-ceiliúir+Verb+VTI:ceiliúir	V1-SL;	! pres -úrann warble, sing;
+ceiliúir+Verb+VTI:ceiliúir	V1-SL-BR;	! pres -úrann warble, sing;
 céimnigh+Verb+VTI:céimnigh	V2-SL;	! step; grade, graduation; structure
 ceistigh+Verb+VTI:ceistigh	V2-SL;	! question, interrogate
 ciceáil+Verb+VTI:ciceáil	V1-SL-LC;	! kick
@@ -3166,7 +3245,7 @@ cláraigh+Verb+VTI:cláraigh	V2-BR;	! tabulate; register, flatten; lay
 clasaigh+Verb+VTI:clasaigh	V2-BR;	! channel; trench; gash, groove;
 cinn+Verb+VTI:cinn	V1-SL;	! (with ar) surpass, overcome;
 crúbáil+Verb+VTI:crúbáil	V1-SL-LC;	! claw, paw
-comhair+Verb+VTI:comhair	V2-BR-sync;	! count, calculate
+comhair+Verb+VTI:comhair	V1-BR-sync;	! count, calculate
 creim+Verb+VTI:creim	V1-SL;	! gnaw; corrode, erode
 críochnaigh+Verb+VTI:críochnaigh	V2-BR;	! finish; complete, accomplish
 criostalaigh+Verb+VTI:criostalaigh	V2-BR;	! crystallize;
@@ -3210,9 +3289,9 @@ beoigh+Verb+VTI:beoigh	V1-SV;	! animate, enliven; (of wind)
 bioraigh+Verb+VTI:bioraigh	V2-BR;	! point, sharpen, bhioraigh sé
 bisigh+Verb+VTI:bisigh	V2-SL;	! improve, recover; increase, prosper
 aistrigh+Verb+VTI+Vow:aistrigh	V2-SL;	! move, transfer; translate
-achair+Verb+VTI+Vow:achair	V2-BR-sync;	! pres achrann vn ~t
+achair+Verb+VTI+Vow:achair	V1-BR-sync;	! pres achrann vn ~t
 aclaigh+Verb+VTI+Vow:aclaigh	V2-BR;	! limber; exercise; flex;
-adhain+Verb+VTI+Vow:adhain	V2-BR-sync;	! pres adhnann kindle; inflame;
+adhain+Verb+VTI+Vow:adhain	V1-BR-sync;	! pres adhnann kindle; inflame;
 admhaigh+Verb+VTI+Vow:admhaigh	V2-BR;	! acknowledge, admit, confess
 athlíon+Verb+VTI+Vow:athlíon	V1-BR;	! refill, replenish
 aibigh+Verb+VTI+Vow:aibigh	V2-SL;	! ripen, mature
@@ -3249,8 +3328,8 @@ breáthaigh+Verb+VTI:breáthaigh	V2-BR;	! beautify; become beautiful;
 buamáil+Verb+VTI:buamáil	V1-SL-LC;	! bomb;
 breoigh+Verb+VTI:breoigh	V1-SV;	! glow; heat; sear; sicken;
 brostaigh+Verb+VTI:brostaigh	V2-BR;	! hasten, urge; hurry
-blais+Verb+VTI:blais	V1-SL;	! taste; partake of;
-braith+Verb+VTI:braith	V1-SL;	! vn -ath perceive, feel;
+!!! USE VT in v-lex-fgb2.txt   blais+Verb+VTI:blais	V1-SL;	! taste; partake of;
+!!! USE VT in v-lex-fgb2.txt   braith+Verb+VTI:braith	V1-SL;	! vn -ath perceive, feel;
 géill+Verb+VTI:géill	V1-SL;	! yield, surrender, ~eadh do
 gair+Verb+VTI:gair	V1-SL;	! vn ~m call, an
 galaigh+Verb+VTI:galaigh	V2-BR;	! vaporize; evaporate; steam;
@@ -3374,8 +3453,152 @@ eitrigh+Verb+VTI+Vow:eitrigh	V2-SL;	! furrow, groove
 dreideáil+Verb+VTI:dreideáil	V1-SL-LC;	! dredge;
 éagaoin+Verb+VTI+Vow:éagaoin	V1-SL;	! moan, lament, complain
 picil+Verb+VT:picil	V2-SL-sync;	! pickle
+
+LEXICON VerbsD
+slim-mhaisigh+Verb+VT:slim-mhaisigh	V2-SL;	! finish
+struchtúraigh+Verb+VT:struchtúraigh	V2-BR;	! structure
+veinírigh+Verb+VT:veinírigh	V2-SL;	! veneer
+vearnaiseáil+Verb+VT:vearnaiseáil	V1-SL-LC;	! varnish
+aerthriomaigh+Verb+VTI:aerthriomaigh	V2-BR;	! air-dry
+aisdúichigh+Verb+VT:aisdúichigh	V2-SL;	! extradite
+amaigh+Verb+VT:amaigh	V2-BR;	! time
+asaltaigh+Verb+VTI:asaltaigh	V2-BR;	! dislocate
+asamhlaigh+Verb+VTI:asamhlaigh	V2-BR;	! assimilate
+athbhreoslaigh+Verb+VT:athbhreoslaigh	V2-BR;	! refuel
+athchistigh+Verb+VTI:athchistigh	V2-SL;	! refund
+athchuimhnigh+Verb+VTI:athchuimhnigh	V2-SL;	! recall
+athlonnaigh+Verb+VTI:athlonnaigh	V2-BR;	! relocate, resettle
+atreoraigh+Verb+VTI:atreoraigh	V2-BR;	! refer, redirect
+bainistigh+Verb+VTI:bainistigh	V2-SL;	! manage
+barrfheabhsaigh+Verb+VTI:barrfheabhsaigh	V2-BR;	! optimise
+brataigh+Verb+VTI:brataigh	V2-BR;	! coat
+broidearnaigh+Verb+VTI:broidearnaigh	V2-BR;	! effervesce
+bréifnigh+Verb+VTI:bréifnigh	V2-SL;	! perforate
+cascáidigh+Verb+VTI:cascáidigh	V2-SL;	! cascade
+catagóirigh+Verb+VT:catagóirigh	V2-SL;	! categorise
+catalógaigh+Verb+VT:catalógaigh	V2-BR;	! catalogue
+coimisiúnaigh+Verb+VT:coimisiúnaigh	V2-BR;	! commission
+cumraigh+Verb+VT:cumraigh	V2-BR;	! configure
+cuíchóirigh+Verb+VTI:cuíchóirigh	V2-SL;	! rationalise
+damáistigh+Verb+VTI:damáistigh	V2-SL;	! damage
+digitigh+Verb+VT:digitigh	V2-SL;	! digitise
+díchoimisiúnaigh+Verb+VT:díchoimisiúnaigh	V2-BR;	! decommission
+dídhlúthaigh+Verb+VTI:dídhlúthaigh	V2-BR;	! 
+dífhabhtaigh+Verb+VTI:dífhabhtaigh	V2-BR;	! debug, disinfect
+dúshaothraigh+Verb+VTI:dúshaothraigh	V2-BR;	! exploit
+formáidigh+Verb+VT:formáidigh	V2-SL;	! format
+fáithimigh+Verb+VT:fáithimigh	V2-SL;	! hem
+incrimintigh+Verb+VTI:incrimintigh	V2-SL;	! increment
+ionchódaigh+Verb+VT:ionchódaigh	V2-BR;	! encode
+ionfhabhtaigh+Verb+VT:ionfhabhtaigh	V2-BR;	! infect
+ionphlandaigh+Verb+VTI:ionphlandaigh	V2-BR;	! implant
+lipéadaigh+Verb+VTI:lipéadaigh	V2-BR;	! label
+luachmhéadaigh+Verb+VTI:luachmhéadaigh	V2-BR;	! appreciate
+meamhlaigh+Verb+VI:meamhlaigh	V2-BR;	! miaow, meow
+nuachóirigh+Verb+VTI:nuachóirigh	V2-SL;	! modernise
+nuashonraigh+Verb+VTI:nuashonraigh	V2-BR;	! update
+optamaigh+Verb+VTI:optamaigh	V2-BR;	! optimise
+prognóisigh+Verb+VTI:prognóisigh	V2-SL;	! prognose
+príobháidigh+Verb+VTI:príobháidigh	V2-SL;	! privatise
+riospráidigh+Verb+VI:riospráidigh	V2-SL;	! respire
+ríomhairigh+Verb+VTI:ríomhairigh	V2-SL;	! computerise
+ríomhchláraigh+Verb+VTI:ríomhchláraigh	V2-BR;	! program
+scrollaigh+Verb+VTI:scrollaigh	V2-BR;	! scroll
+spriongaigh+Verb+VTI:spriongaigh	V2-BR;	! spring
+sruthlínigh+Verb+VTI:sruthlínigh	V2-SL;	! streamline
+stocthiomsaigh+Verb+VTI:stocthiomsaigh	V2-BR;	! stocktake, take stock
+suirigh+Verb+VTI:suirigh	V2-SL;	! court
+sóiligh+Verb+VTI:sóiligh	V2-SL;	! season
+teisiligh+Verb+VTI:teisiligh	V2-SL;	! tessellate
+tollánaigh+Verb+VTI:tollánaigh	V2-BR;	! tunnel
+trasfhoirmigh+Verb+VTI:trasfhoirmigh	V2-SL;	! transform
+tírdhreachtaigh+Verb+VTI:tírdhreachtaigh	V2-BR;	! landscape
+uasghrádaigh+Verb+VT:uasghrádaigh	V2-BR;	! upgrade
+uasmhéadaigh+Verb+VTI:uasmhéadaigh	V2-BR;	! maximise
+áscaigh+Verb+VT:áscaigh	V2-BR;	! instantiate
+íoslaghdaigh+Verb+VTI:íoslaghdaigh	V2-BR;	! minimise
+íosmhéadaigh+Verb+VTI:íosmhéadaigh	V2-BR;	! minimise
+comhadaigh+Verb+VT:comhadaigh	V2-BR;	! file
+feisigh+Verb+VT:feisigh	V2-SL;	! fuck, fit?
+idirnáisiúntaigh+Verb+VTI:idirnáisiúntaigh	V2-BR;	! internationalise
+rochtaigh+Verb+VTI:rochtaigh	V2-BR;	! access
+sainchóirigh+Verb+VTI:sainchóirigh	V2-SL;	! customise
+trasbhéarlaigh+Verb+VTI:trasbhéarlaigh	V2-BR;	! translate
+uisce-sciáil+Verb+VI:uisce-sciáil	V1-SL-LC;	! water ski
+sótáil+Verb+VT:sótáil	V1-SL-LC;	! sauté
+scuabáil+Verb+VTI:scuabáil	V1-SL-LC;	! shuffle
+scrobláil+Verb+VTI:scrobláil	V1-SL-LC;	! scavenge
+scriúáil+Verb+VTI:scriúáil	V1-SL-LC;	! screw
+anótáil+Verb+VT:anótáil	V1-SL-LC;	! annotate
+athbhútáil+Verb+VTI:athbhútáil	V1-SL-LC;	! reboot
+bútáil+Verb+VTI:bútáil	V1-SL-LC;	! boot
+athchúrsáil+Verb+VTI:athchúrsáil	V1-SL-LC;	! recycle, recirculate
+athphlandáil+Verb+VTI:athphlandáil	V1-SL-LC;	! transplant
+billeáil+Verb+VTI:billeáil	V1-SL-LC;	! bill
+bitseáil+Verb+VI:bitseáil	V1-SL-LC;	! bitch
+brabhsáil+Verb+VI:brabhsáil	V1-SL-LC;	! browse
+canbhásáil+Verb+VTI:canbhásáil	V1-SL-LC;	! canvas
+cácáil+Verb+VTI:cácáil	V1-SL-LC;	! caulk
+códáil+Verb+VTI:códáil	V1-SL-LC;	! code
+focáil+Verb+VTI:focáil	V1-SL-LC;	! fuck
+clogáil+Verb+VTI:clogáil	V1-SL-LC;	! clock
+caibeáil+Verb+VTI:caibeáil	V1-SL-LC;	! plant, bury
+facsáil+Verb+VTI:facsáil	V1-SL-LC;	! fax
+fótachóipeáil+Verb+VTI:fótachóipeáil	V1-SL-LC;	! photocopy
+clónáil+Verb+VT:clónáil	V1-SL-LC;	! clone
+corrsheiceáil+Verb+VTI:corrsheiceáil	V1-SL-LC;	! spot-check
+cótáil+Verb+VT:cótáil	V1-SL-LC;	! coat
+díghlasáil+Verb+VTI:díghlasáil	V1-SL-LC;	! unlock
+díphlugáil+Verb+VTI:díphlugáil	V1-SL-LC;	! unplug
+fónáil+Verb+VTI:fónáil	V1-SL-LC;	! phone
+giaráil+Verb+VTI:giaráil	V1-SL-LC;	! leverage
+déchliceáil+Verb+VTI:déchliceáil	V1-SL-LC;	! double-click
+gliogáil+Verb+VTI:gliogáil	V1-SL-LC;	! click
+greanáil+Verb+VTI:greanáil	V1-SL-LC;	! sand
+landáil+Verb+VTI:landáil	V1-SL-LC;	! land
+lámhnaigh+Verb+VTI:lámhnaigh	V2-BR;	! sire (make children)
+muilleáil+Verb+VTI:muilleáil	V1-SL-LC;	! mill
+plugáil+Verb+VTI:plugáil	V1-SL-LC;	! plug
+téipeáil+Verb+VTI:téipeáil	V1-SL-LC;	! tape
+íoslódáil+Verb+VTI:íoslódáil	V1-SL-LC;	! download
+súmáil+Verb+VTI:súmáil	V1-SL-LC;	!>! zoom
+zúmáil+Verb+VTI:zúmáil	V1-SL-LC;	! zoom
+tvuíteáil+Verb+VTI:tvuíteáil	V1-SL-LC;	! tweet
+scuaideáil+Verb+VT:scuaideáil	V1-SL-LC;	! bedabble, bespatter
+fíordheimhnigh+Verb+VTI:fíordheimhnigh	V2-SL;	! authenticate
+forordaigh+Verb+VT:forordaigh	V2-BR;	! pre-ordain
+athchorcáil+Verb+VT:athchorcáil	V1-SL-LC;	! recork
+scartáil+Verb+VT:scartáil	V1-SL-LC;	! scrap
+atheaspórtáil+Verb+VTI:atheaspórtáil	V1-SL-LC;	! re-export
+athfhuáil+Verb+VTI:athfhuáil	V1-SL-LC;	! restitch
+athiompórtáil+Verb+VTI:athiompórtáil	V1-SL-LC;	! reimport
+athshuncáil+Verb+VTI:athshuncáil	V1-SL-LC;	! reinvest
+athvearnaiseáil+Verb+VTI:athvearnaiseáil	V1-SL-LC;	! revarnish
+babáil+Verb+VTI:babáil	V1-SL-LC;	! bob
+clifeáil+Verb+VTI:clifeáil	V1-SL-LC;	! pilfer
+cruanphéinteáil+Verb+VTI:cruanphéinteáil	V1-SL-LC;	! enamel
+cuasphlánáil+Verb+VTI:cuasphlánáil	V1-SL-LC;	! rout out
+cóimhiotáil+Verb+VTI:cóimhiotáil	V1-SL-LC;	! alloy
+forphéinteáil+Verb+VTI:forphéinteáil	V1-SL-LC;	! over-paint
+fásáil+Verb+VTI:fásáil	V1-SL-LC;	! face off
+garbhphlástráil+Verb+VTI:garbhphlástráil	V1-SL-LC;	! parget
+gliondáil+Verb+VTI:gliondáil	V1-SL-LC;	! roll up
+lindireáil+Verb+VTI:lindireáil	V1-SL-LC;	! render
+praeitseáil+Verb+VTI:praeitseáil	V1-SL-LC;	! preachify
+priosláil+Verb+VTI:priosláil	V1-SL-LC;	! slaver
+scafláil+Verb+VTI:scafláil	V1-SL-LC;	! scaffold
+scriobláil+Verb+VTI:scriobláil	V1-SL-LC;	! scribble
+smugláil+Verb+VTI:smugláil	V1-SL-LC;	! smuggle
+splaghsáil+Verb+VTI:splaghsáil	V1-SL-LC;	! splice
+stropáil+Verb+VTI:stropáil	V1-SL-LC;	! strop
+tiáil+Verb+VTI:tiáil	V1-SL-LV;	! tee
+trangláil+Verb+VTI:trangláil	V1-SL-LC;	! lumber
+trasnáil+Verb+VTI:trasnáil	V1-SL-LC;	! filibuster
+ubhchruthaigh+Verb+VTI:ubhchruthaigh	V2-BR;	! ovalise !!EIDism
+éitearaigh+Verb+VTI:éitearaigh	V2-BR;	! etherise
+tras-scríobh+Verb+VTI:tras-scríobh      V1-BR;  ! transcribe
 !! NEEDS FURTHER TESTING OF -X WORDS
-!! and TEST
+!! FIND ALL !!!!! and TEST
 
 LEXICON Verbs-FGB1
 
@@ -3434,8 +3657,8 @@ creimseáil+Verb+VTI:creimseáil		V1-SL-LC;
 cuilteáil+Verb+VTI:cuilteáil		V1-SL-LC;
 cúinneáil+Verb+VT:cúinneáil		V1-SL-LC;
 cúláil+Verb+VT:cúláil		V1-SL-LC;	! analyzed as compound: cúl+áil
-damhain+Verb+VT:damhain		V1-SL-BR;	! (pres -mhnann; vn -mhnadh m, gs ~te)
-!!!!!deachair+Verb+VT:deachair		V2-BR-sync;	! (pres -chraíonn, vn -chrú)
+damhain+Verb+VT:damhain		V1-BR-sync;	! (pres -mhnann; vn -mhnadh m, gs ~te)
+deachair+Verb+VT:deachair		V2-BR-sync;	! (pres -chraíonn, vn -chrú)
 difreáil+Verb+VTI:difreáil		V1-SL-LC;
 díoghail+Verb+VT:díoghail		V1-SL-BR;	! (pres -ghlann); analyzed as compound: dí+oghail
 díoscarnaigh+Verb+VI:díoscarnaigh		V2-BR;	! analyzed as compound: dí+oscarnaigh
@@ -3596,20 +3819,20 @@ rúnscríobh+Verb+VT:rúnscríobh		V1-BR; ! (vn ~ m, gs & pp -ofa)
 saorghlan+Verb+VT:saorghlan		V1-BR;
 tairis+Verb+VI:tairis		V2-SL; ! (vn ~eamh)
 tomhaidhm+Verb+VI:tomhaidhm		V1-SL; ! Lit: (Of water)
-!!! NEEDS FURTHER TESTING OF -X WORDS
-!!! FIND ALL !!!! and TEST
-!!! E Uí D Jun 2011
+!=! NEEDS FURTHER TESTING OF -X WORDS
+!=! FIND ALL !!!! and TEST
+!=! E Uí D Jun 2011
+
 LEXICON Verbs-FGB2
 
 achainigh+Verb+VT:achainigh		V2-SL;
-achair+Verb+VT:achair		V1-SL-BR-sync;	! (pres achrann, vn ~t)
 achtáil+Verb+VT:achtáil		V1-SL-LC;
 aclaigh+Verb+VT:aclaigh		V2-BR;
 adhfhuathaigh+Verb+VT:adhfhuathaigh		V2-BR;	! analyzed as compound: adh+fhuathaigh
 adhmhill+Verb+VT:adhmhill		V1-SL;	! analyzed as compound: adh+mhill
 adhnáirigh+Verb+VT:adhnáirigh		V2-SL;	! analyzed as compound: adh+náirigh
 agaigh+Verb+VT:agaigh		V2-BR;
-agaill+Verb+VT:agaill		V1-SL-BR-sync;	! (pres -allann, vn -allamh)
+agaill+Verb+VT:agaill		V1-BR-sync;	! (pres -allann, vn -allamh)
 aibhligh+Verb+VI:aibhligh		V2-SL;
 áibhligh+Verb+VT:áibhligh		V2-SL;
 aibhsigh+Verb+VT:aibhsigh		V2-SL;
@@ -3656,7 +3879,7 @@ atarraing+Verb+VT:atarraing		V2-SL;
 atáthaigh+Verb+VTI:atáthaigh		V2-BR;
 atéigh+Verb+VT:atéigh		V1-SL;	!	***
 athachtaigh+Verb+VT:athachtaigh		V2-BR;	! analyzed as compound: ath+achtaigh
-athadhain+Verb+VT:athadhain		V1-SL-BR;	! (pres -dhnann, fut -anfaidh; vn ~t f, gs~te); analyzed as compound: ath+adhain
+athadhain+Verb+VT:athadhain		V1-BR-sync;	! (pres -dhnann, fut -anfaidh; vn ~t f, gs~te); analyzed as compound: ath+adhain
 athadhlaic+Verb+VT:athadhlaic		V1-SL-BR;	! (pres -acann, vn -acadh); analyzed as compound: ath+adhlaic
 athaimsigh+Verb+VT:athaimsigh		V2-SL;	! analyzed as compound: ath+aimsigh
 athainmnigh+Verb+VT:athainmnigh		V2-SL;	! analyzed as compound: ath+ainmnigh
@@ -3774,7 +3997,8 @@ atogh+Verb+VT:atogh		V1-BR;
 atrácht+Verb+VT:atrácht		V1-BR;
 atreabh+Verb+VT:atreabh		V1-BR;
 bacaigh+Verb+VT:bacaigh		V2-BR;
-!!!!!bailc+Verb+VT:bailc		V1-SL-BRX;	! (pres balcann, vn balcadh, pp balctha)	*** New kind!
+!!!!!bailc+Verb+VT:bailc		V1-SL-BR;	! (pres balcann, vn balcadh, pp balctha)	*** New kind!
+bailc+Verb+VT:bailc		V1-SL-BR;	! (pres balcann, vn balcadh, pp balctha)	*** New kind!
 balbhaigh+Verb+VT:balbhaigh		V2-BR;
 ballastaigh+Verb+VT:ballastaigh		V2-BR;
 ballbhasc+Verb+VT:ballbhasc		V1-BR;
@@ -3784,12 +4008,12 @@ barr+Verb+VT:barr		V1-BR;
 barr+Verb+VT:barr		V1-BR;
 barrdhóigh+Verb+VT:barrdhóigh		V1-BR-LV;	! analyzed as compound: barr+dhóigh
 barriompaigh+Verb+VTI:barriompaigh		V2-BR;	! analyzed as compound: barr+iompaigh
-barúil+Verb+VI:barúil		V1-SL-BR;	! (pres -úlann)	*** ??? V1-SL-LC		CHECKED
+barúil+Verb+VI:barúil		V1-SL-BR;	! (pres -úlann)	*** ??? V1-SL-LCCECKED
 batáil+Verb+VT:batáil		V1-SL-LC;
 beagaigh+Verb+VT:beagaigh		V2-BR;
 béalraigh+Verb+VT:béalraigh		V2-BR;
 beangaigh+Verb+VT:beangaigh		V2-BR;
-beartaigh+Verb+VT:beartaigh		V2-BR;
+!!beartaigh+Verb+VT:beartaigh		V2-BR; ! already in v
 beathaigh+Verb+VT:beathaigh		V2-BR;
 beoghearr+Verb+VT:beoghearr		V1-BR;	! analyzed as compound: beo+ghearr
 bior-róst+Verb+VTI:bior-róst		V1-BR;	! analyzed as compound: bior-+róst
@@ -3936,7 +4160,7 @@ comhthiomsaigh+Verb+VT:comhthiomsaigh		V2-BR;	! analyzed as compound: comh+thiom
 comhthit+Verb+VI:comhthit		V1-SL;	! analyzed as compound: comh+thit
 !!!!!comhthiúin+Verb+VT:comhthiúin		V1-SL-BRX;	! (pres -únann; vn -únadh m, gs-únta); analyzed as compound: comh+thiúin	*** New kind!
 comthaigh+Verb+VI:comthaigh		V2-BR;
-cónaisc+Verb+VT:cónaisc		V1-SL;	! analyzed as compound: có+naisc	** cf. nasc -> V1-BR
+cónaisc+Verb+VT:cónaisc		V1-SL-BR;	! analyzed as compound: có+naisc	** cf. nasc -> V1-BR
 conclúidigh+Verb+VI:conclúidigh		V2-SL;
 connaigh+Verb+VTI:connaigh		V2-BR;
 conraigh+Verb+VI:conraigh		V2-BR;
@@ -4151,7 +4375,7 @@ fadaigh+Verb+VI:fadaigh		V2-BR;
 fáiltigh+Verb+VTI:fáiltigh		V2-SL;
 fáistinigh+Verb+VTI:fáistinigh		V2-SL;
 fallaingigh+Verb+VT:fallaingigh		V2-SL;
-fan+Verb+VTI:fan		V1-BR;
+!!!!fan+Verb+VTI:fan		V1-BR;	! already in v1-lex-stems.txt
 fannaigh+Verb+VTI:fannaigh		V2-BR;
 faon+Verb+VT:faon		V1-BR;
 fásaigh+Verb+VT:fásaigh		V2-BR;
@@ -4403,7 +4627,7 @@ ineirgigh+Verb+VT:ineirgigh		V2-SL;
 infeirigh+Verb+VT:infeirigh		V2-SL;
 inghreim+Verb+VT:inghreim		V1-SL;	!	***
 ingnigh+Verb+VT:ingnigh		V2-SL;
-inis+Verb+VT:inis		V2-SL-sync;	! (pres insíonn, vn insint, pp inste)
+!!!!inis+Verb+VT:inis		V2-SL-sync;	! (pres insíonn, vn insint, pp inste)
 inísligh+Verb+VT:inísligh		V2-SL;
 inleag+Verb+VT:inleag		V1-BR;
 inneallghrean+Verb+VT:inneallghrean		V1-BR;	! analyzed as compound: inneall+ghrean
@@ -4546,7 +4770,7 @@ mionscrúdaigh+Verb+VT:mionscrúdaigh		V2-BR;	! analyzed as compound: mion+scrú
 miotalaigh+Verb+VT:miotalaigh		V2-BR;
 mírialaigh+Verb+VT:mírialaigh		V2-BR;	! analyzed as compound: mí+rialaigh
 míriar+Verb+VT:míriar		V1-BR;	! analyzed as compound: mí+riar
-mírigh+Verb+VT:mírigh		V2-SL;	! mis-analyzed as compound: mí+righ *** ??? Or no compound at all -> V2-SL	CHECKED
+mírigh+Verb+VT:mírigh		V2-SL;	! mis-analyzed as compound: mí+righ *** ??? Or no compound at all -> V2-SL	CHECKED
 míshásaigh+Verb+VT:míshásaigh		V2-BR;	! analyzed as compound: mí+shásaigh
 mísheol+Verb+VT:mísheol		V1-BR;	! analyzed as compound: mí+sheol
 mítéararaigh+Verb+VTI:mítéararaigh		V2-BR;	! analyzed as compound: mí+téararaigh
@@ -4890,6 +5114,7 @@ grodloisc+Verb+VTI:grodloisc		V1-SL; ! (vn -oscadh, pp ~the)
 !!!!!imdheighil+Verb+VT:imdheighil		V1-SL-sync; ! OR V1-SL-BRX ???	; ! (pres -ghleann; vn ~t, gs ~te)	CHECK NEW
 inchreach+Verb+VT:inchreach		V1-BR; !
 !!!!!iniaigh+Verb+VT:iniaigh		V1-SL-BRX; ! (pres -ann, fut -afaidh, vn -amh, pp-ata)	! New kind
+iniaigh+Verb+VT:iniaigh		V1-SL-BR; ! (pres -ann, fut -afaidh, vn -amh, pp-ata)	! New kind
 inphléasc+Verb+VI:inphléasc		V1-BR; !
 insamhail+Verb+VT:insamhail		V2-BR-sync	; ! (vn -mhladh m, gs -alta)
 inscríobh+Verb+VT:inscríobh		V1-SL	; ! (vn ~ m, gs & pp -ofa)
@@ -4905,7 +5130,7 @@ scáthcheil+Verb+VT:scáthcheil		V1-SL	; ! (vn ~t f, gs ~te)
 siabhair+Verb+VT:siabhair		V2-BR-sync	; ! (vn -bhradh m, gs & pp -artha)
 sil-leag+Verb+VT:sil-leag		V1-BR	; ! (vn ~an, pp ~tha)
 síolchuir+Verb+VTI:síolchuir		V1-SL	; ! (vn -ur, pp -urtha)
-!!!!!spadhar+Verb+VT:spadhar		V1-BR-sync; ! (vn -dhradh m, gs & pp ~tha) *** ??? Prob. with sycopation	CHECK NEW
+spadhar+Verb+VT:spadhar		V1-BR-sync; ! (vn -dhradh m, gs & pp ~tha) *** ??? Prob. with sycopation	CHECK NEW
 !!!!!sroighill+Verb+VT:sroighill	V1-SL-sync; ! OR V1-SL-BRX ???; ! (vn -ghleadh)    	NOTE: sync ghill -> ghl CHECK NEW
 tacair+Verb+VT:tacair		V2-BR-sync	; ! (vn -ar, pp -artha)
 !!!!!tafainn+Verb+VT:tafainn		V1-BR-SL; ! (pres taifneann, vn -ann)	*** ??? V1 + BR + Syncopation + Slen 	CHECK NEW
@@ -4917,13 +5142,12 @@ toghluais+Verb+VT:toghluais		V1-SL; !
 tonach+Verb+VT:tonach		V1-BR; !
 tríroinn+Verb+VT:tríroinn		V1-SL	; ! (vn ~t)
 ubhsceith+Verb+VI:ubhsceith		V1-SL; !
+
 !***********************************************************
 ! VARIANT VERBS (=) in O Dónaill
 ! Christoph Wendler
 ! November 2008
 !***********************************************************
-!
-!!----> VERBS
 !
 LEXICON VerbsEqualVariants
 adhuathaigh+Verb+VT:adhuathaigh		V2-BR;	! Entry: adhuath, ~aigh = adhfhuath, -aigh. TO VERBS
@@ -5575,7 +5799,6 @@ LEXICON Verb-Variants
 ! TEST words marked with ???.
 ! guidh-guidheann etc may need a new CC?
 
-! VERBS
 adhaintigh+Verb+VTI:adhaintigh		V2-SL;	! Headword: adhain (v.t. & i. ); (Var: ~tigh)
 aithris+Verb+VTI+PresInd:aithriseann	#;	! Headword: aithris (v.t. & i. ); (Var: pres. ~eann)
 aolaigh+Verb+VTI:aolaigh		V2-BR;	! Headword: aol (v.t. & i. ); (Var: ~aigh)
@@ -5773,4 +5996,4 @@ trochail+Verb+VTI:trochail		V2-BR-sync;	! Headword: trochlaigh (v.t. & i. ); (Va
 tuirlic+Verb+VI:tuirlic		V2-SL;	! Headword: tuirling (v.i. ); (Var: tuirlic, tuirlig) ***
 tuirlig+Verb+VI:tuirlig		V2-SL;	! Headword: tuirling (v.i. ); (Var: tuirlic, tuirlig)
 urbhearn+Verb+VT:urbhearn		V1-BR;	! Headword: urbhearnaigh (v.t. ); (Var: urbhearn)
-urmhaisnigh+Verb+VT:urmhaisnigh		V2-SL;	! Headword: urmhais (v.t. ); (Var: vn. ~in f; ~nigh)!****************************************************************************
+urmhaisnigh+Verb+VT:urmhaisnigh		V2-SL;	! Headword: urmhais (v.t. ); (Var: vn. ~in f; ~nigh)

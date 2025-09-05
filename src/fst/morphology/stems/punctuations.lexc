@@ -1,11 +1,15 @@
 !****************************************************************************
-!! Abbreviations
+!! Punctuation
 !
 !  E. Uí Dhonnchadha
 ! 
 ! May 2004 : +Quo instead of +St & +End for quotation marks
+! Feb 2023 : +Curr for currency symbols
 !****************************************************************************
 
+
+!LEXICON Root
+!	Punctuation;
 
 LEXICON Punctuation
 %.	Final;
@@ -26,6 +30,13 @@ LEXICON Punctuation
 %,	Internal;
 %;	Internal;
 %:	Internal;
+!!new
+%’	Quote;
+%”	Quote;
+%“	Quote;
+%‑	Bar;
+%…	Internal;
+!!end new
 
 %-	Bar;
 %-%-	Bar;
@@ -42,8 +53,12 @@ LEXICON Punctuation
 %&lt%;	Br_Start;
 %&gt%;	Br_End;
 
-agus+Conj+Coord:%&	#;
-agus+Conj+Coord:%&amp%;	#;
+%€	Currency;			! added 4-2-2023
+%$	Currency;
+%£	Currency;
+
+agus+Conj+Coord+Punct:%&	#;
+agus+Conj+Coord+Punct:%&amp%;	#;
 
 LEXICON Punct 
 +Punct:		#;
@@ -70,3 +85,5 @@ LEXICON Quote
 LEXICON Bar 
 +Punct+Bar:		#;
 
+LEXICON Currency 		! added 8-2-2023 for sem tagger
++Punct+Curr:		#;

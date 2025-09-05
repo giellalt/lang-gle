@@ -12,6 +12,9 @@
 
 LEXICON XMLTags
 
+!!!</lb>
+%<%/lb%>+XMLTag:%<%/lb%>	#;
+
 !!!<p>
 %<p%>+XMLTag:%<p%>	#;
 !!!</p>
@@ -28,6 +31,12 @@ LEXICON XMLTags
 !!!</speaker_turn>
 %<%/speaker_turn%>+XMLTag:%<%/speaker_turn%>	#;
 
+!!!</lesson>
+%<%/lesson%>+XMLTag:%<%/lesson%>	#;
+
+!!!</direction>
+%<%/direction%>+XMLTag:%<%/direction%>	#;
+
 !!!<caption>
 %<caption%>+XMLTag:%<caption%>	#;
 !!!</caption>
@@ -37,6 +46,37 @@ LEXICON XMLTags
 %<head%>+XMLTag:%<head%>	#;
 !!!</head>
 %<%/head%>+XMLTag:%<%/head%>	#;
+
+!!!<body>
+%<body%>+XMLTag:%<body%>	#;
+!!!</body>
+%<%/body%>+XMLTag:%<%/body%>	#;
+
+!!!<span>
+%<span%>+XMLTag:%<span%>	#;
+!!!</span>
+%<%/span%>+XMLTag:%<%/span%>	#;
+
+!!!<text>
+%<text%>+XMLTag:%<text%>	#;
+!!!</text>
+%<%/text%>+XMLTag:%<%/text%>	#;
+
+!!!<doc>
+%<doc%>+XMLTag:%<doc%>	#;
+!!!</doc>
+%<%/doc%>+XMLTag:%<%/doc%>	#;
+
+!!!<corr>
+%<text%>+XMLTag+Corr+Start:%<corr%>	#;
+!!!</text>
+%<%/corr%>+XMLTag+Corr+End:%<%/corr%>	#;
+
+!!!<err>
+%<err%>+XMLTag+Error+Start:%<err%>	#;
+!!!</err>
+%<%/err%>+XMLTag+Error+End:%<%/err%>	#;
+%=%=%=NONE%=%=%=+Error:%=%=%=NONE%=%=%=	#;
 
 %<s%>+XMLTag:%<s%>	#;
 %<%/s%>+XMLTag:%<%/s%>	#;
@@ -65,3 +105,32 @@ LEXICON XMLTags
 
 %<l%>+XMLTag:%<l%>	#;
 %<%/l%>+XMLTag:%<%/l%>	#;
+
+
+
+!!!<TEI>
+%<TEI%>+XMLTag:%<TEI%>	#;
+!!!</TEI>
+%<%/TEI%>+XMLTag:%<%/TEI%>	#;
+
+!!!<teiHeader>
+%<teiHeader%>+XMLTag:%<teiHeader%>	#;
+!!!</TEI>
+%<%/teiHeader%>+XMLTag:%<%/teiHeader%>	#;
+
+!!!<Topics>
+%<Topics%>+XMLTag:%<Topics%>	#;
+!!!</Topics>
+%<%/Topics%>+XMLTag:%<%/Topics%>	#;
+
+!!!<Speakers>
+%<Speakers%>+XMLTag:%<Speakers%>	#;
+!!!</Speakers>
+%<%/Speakers%>+XMLTag:%<%/Speakers%>	#;
+
+!!!</Episode>
+%<%/Episode%>+XMLTag:%<%/Episode%>	#;
+
+!!!</Section>
+%<%/Section%>+XMLTag:%<%/Section%>	#;
+
