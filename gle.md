@@ -1518,6 +1518,8 @@ IRISH  G R A M M A R   C H E C K E R
 
 # DELIMITERS
 
+* DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; 
+
 # TAGS AND SETS
 
 ## Tags
@@ -1646,6 +1648,8 @@ Sup
 Actio
 VAbess
 
+* SET NUMBER = Sg OR Pl ;  
+
 Err/Orth
 
 ### Semantic tags
@@ -1687,12 +1691,24 @@ TIME-N-SET
 ### Sets for prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
+* LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; 
 
 These prepositions want an additonal consonant in front of its complement in order to cause ECL:
+* LIST ART-PREP-ECL = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; 
+
+* LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  
 
 Noun errors (Ecl vs. not Ecl) after prepositions
 
+* LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; 
+* LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; 
+* LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; 
+* LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; 
+
 ### Lookalikes
+
+* LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; 
+* LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 
 
 ###  Syntactic tags
 
@@ -1772,11 +1788,17 @@ See the sourcefile itself to inspect the sets, what follows here is an overview 
 
 ### Sets for Single-word sets
 
+* LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  
+*         "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           
+*         "á" ;  INITIAL
+
 ### Sets for word or not
 
 WORD
 any word
-NOT-COMMA !!= * @NO CODE@
+* SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR 
+* SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA 
+= * SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA 
 
 ### Case sets
 
@@ -1814,9 +1836,13 @@ PL3-V
 
 Set for your, my and his
 
+* LIST PLPOSS = (Poss Pl)  ;  
+
 Note that imperative verbs are not included in these sets!
 
 Some subsets of the VFIN sets
+* SET SG-V = SG1-V OR SG2-V OR SG3-V ;  
+* SET PL-V = PL1-V OR PL2-V OR PL3-V ; 
 
 ### Pronoun sets
 
