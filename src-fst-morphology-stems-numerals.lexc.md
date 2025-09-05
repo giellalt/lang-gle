@@ -1,7 +1,12 @@
-NUMERALS
-Cardinal numbers are described seperately here rather than with other
-Adjectives
+NUMBERS
+E. Uí Dhonnchadha
 For Personal Numerals (duine, beirt, triúr) SEE NOUNS
+
+CARDINAL Numbers
+
+ORDINAL Numbers
+
+Number  Operators
 
 * * *
 

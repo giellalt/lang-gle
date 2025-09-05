@@ -1,5 +1,7 @@
 Adverbs
 
+word for word, i.e. literally (2019)
+
 MOVED TO ADJ annamh+Adv+Gn:annamh	#;
 what about chomh mór/hálainn etc. etc. 
 

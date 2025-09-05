@@ -1,13 +1,36 @@
-+Idf is no longer used with base form .. just +DefArt after article ...
-## Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 
 FEMININE NOUN continuation classes
 Weak Plurals : 
 Broad singular is made slender; plural already broad
 
+beithir - beithre (gs) Sync + e
+
 Weak Plurals : Broaden 
 
 Singular already slender; plural is made broad
+
+Weak Plurals : 
+
+Weak Plurals : 
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+Gen Sg = Sync + Slen + e
+STRONG PLURALS
+
+3rd Declension
+Strong Plurals : +aí
+
+an bheannacht -> na beannachtaí
 
 gamhain - gamhna (gs), midheamhain - midheamhna (gs)
 
@@ -17,6 +40,13 @@ tóin -> tóineanna
 scoth -> scothanna
 EXCEPTION: an chuid -> na codanna see FIX file
 EXCEPTION: an raith -> na rathanna see FIX file
+
+Strong Plurals :  Broaden +anna
+
+an chuid -> na codanna see FIX file
+an raith -> na rathanna
+an laith -> na lathanna
+an luaith -> na luathanna
 
 Strong Plurals : +í
 
@@ -30,24 +60,29 @@ an táille -> na táillí (fees)
 
 Strong Plurals : 
 
-various ending in vowel  ! plurals +nna
+various ending in vowel	! plurals +nna
 
 Strong Plurals : Leathnú  +acha
 
 an bheoir -> na beoracha (beers)
 
 Gen Sg : Coim + ach
+Strong Plurals : Coimriú +eacha
 
 an chathaoir -> na cathaoireacha (chairs) (Note long vowel aoi is not sync.
 an cathair -> na cathracha
 
 Gen Sg : Coim + a
+Strong Plurals : Coimriú +(e)acha
 samhail -> samhla
 anacair -> anacra
 
 Gen Sg : Coim + Slen + e
+Strong Plurals : Coimriú +(e)acha
 crithir - critre
 fothair - foithre
+
+tarraingt - tarraingthe - tarraingtí
 
 MASCULINE NOUN continuation classes
 
@@ -91,6 +126,8 @@ eg. an cith -> na ceathanna
 and this is done using ^Ath (change)
 pl also broadened cith -> ceathanna
 
+sliocht - sleachta gs & pl
+
 Strong Plurals : +í
 
 (A) nouns ending in -ín (a diminutive)
@@ -101,17 +138,26 @@ eg. an báidín -> na báidíní (small boats)
 (B) nouns ending in -a
 eg. an balla -> na ballaí (walls)
 
+01/04/08
+
 Strong Plurals : +idí
 an fiche -> na fichidí (the twenties) eidí needs correcting
 an caoga -> na caogaidí (the fifties)
 
+GS +the
+
+GS +te
+
+GS +tha
+PL +thaí
+bascadh - basctha - bascthaí
+
+GS +ta
+
+moladh / gs = molta / pl = moltaí
+
 INITIAL MUTATIONS
 NOMINATIVE SINGULAR 
-definite article eg. an cat (m) (p38 NIG)
-an t-éan(m) - the bird (p39 NIG) 
-an bhróg(f) - the shoe
-initial mutation for other reasons
-e.g. comp. preps. ar an gcnoc, poss. mo chat
 
 ^IM = initial mutation e.g. with prepositions, and possession
 Singular:
@@ -121,27 +167,18 @@ Plural:
 e.g. ar bhoscaí, i mboscaí
 possessive e.g. ár n-aithreacha - our fathers (^C)
 
-indefinite => no initial mutation
-appending the +Len & +Ecl rather than creating seperate forms ...
 adds ^h to vowel-initial words ...  but adds the +hPref to all words ... see fix file
-just vowel-initial e.g. doras, fiú etc.
-although no initial mutation takes place 
 
 GENITIVE SINGULAR 
 
-eg. tábhacht a n-oidhreachta
-eg. bia cait, bia sagairt, bia stóir, 
-bia rúin, pobail  
-siopa grósaera - a grocer's shop
-eg. bia an chait,an íl, bia an stóir 
-bia an éin (the bird's food)
-eg. bia an tsagairt (overgenerates 
-tshagairt, h will be removed,
-eg. bia an rúin, an phobail
-eg. siopa an ghrósaera - the grocer's shop
 VOCATIVE SINGULAR 
 Since this is trivial (always ^Sé) it is included with Final Mutations
 in Voc-sg-0 and Voc-sg-1.
+
+ALL PLURALS
+Note: Vocative Plural does not require Def & Idf but it is easier to generate 
+them and remove all Voc Pl Idfs at the end (the Def form is correct 
+although the Def marker is unnecessary)
 
 FINAL MUTATIONS
 NOMINATIVE SINGULAR
@@ -151,6 +188,25 @@ GENITIVE SINGULAR
 VOCATIVE SINGULAR 
 
 ALL PLURALS
+
+when it is a place name
+as well as the usual inflections for propernouns  (4 classes)
+we want to generate an adjectival form e.g. Beilg - Beilgeach
+
+new 5-6-2024
+Place and Personal name files both use Nf1-Prop and Nm1-Prop etc.
+
+masc nouns - slenderise
+
+fem nouns - slenderise and add e
+
+fem nouns - broaden and add a
+
+fem nouns - no change
+
+masc nouns - no change
+
+fem nouns - Albain/na hAlban
 
 * * *
 

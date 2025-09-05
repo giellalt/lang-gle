@@ -4,7 +4,6 @@
     * `fst/`
         * `morphology/`
             * `affixes/`
-                * [adjectives.lexc](src-fst-morphology-affixes-adjectives.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/adjectives.lexc))
                 * [nouns.lexc](src-fst-morphology-affixes-nouns.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/nouns.lexc))
                 * [prefixes.lexc](src-fst-morphology-affixes-prefixes.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/prefixes.lexc))
                 * [propernouns.lexc](src-fst-morphology-affixes-propernouns.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/propernouns.lexc))
@@ -27,7 +26,6 @@
                 * [conjunctions.lexc](src-fst-morphology-stems-conjunctions.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/conjunctions.lexc))
                 * [determiners.lexc](src-fst-morphology-stems-determiners.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/determiners.lexc))
                 * [interjections.lexc](src-fst-morphology-stems-interjections.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/interjections.lexc))
-                * [nouns.lexc](src-fst-morphology-stems-nouns.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/nouns.lexc))
                 * [numerals.lexc](src-fst-morphology-stems-numerals.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/numerals.lexc))
                 * [particles.lexc](src-fst-morphology-stems-particles.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/particles.lexc))
                 * [pronouns.lexc](src-fst-morphology-stems-pronouns.lexc.html) ([src](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/pronouns.lexc))

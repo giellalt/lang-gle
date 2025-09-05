@@ -179,39 +179,41 @@ These were the set types.
 
 ---
 
-# src-fst-morphology-affixes-adjectives.lexc.md 
-
-JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
-: May have implications for CG3
-Na hAidiactaí Tuairisciúla - Descriptive Adjectives
-C O N T I N U A T I O N     C L A S S E S
-E. Uí Dhonnchadha
-(c)2001
-
-adj following a fem. noun is always lenited (^Sé) regardless of whether 
-the preceding noun is lenited or eclipsed (neither ??)
-as is the vocative after vocative particle "a"
-
-SAME FORM IS USED FOR COMPARATIVE AND FEM GEN SG
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/morphology/affixes/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/adjectives.lexc)</small>
-
----
-
 # src-fst-morphology-affixes-nouns.lexc.md 
 
-+Idf is no longer used with base form .. just +DefArt after article ...
-## Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 
 FEMININE NOUN continuation classes
 Weak Plurals : 
 Broad singular is made slender; plural already broad
 
+beithir - beithre (gs) Sync + e
+
 Weak Plurals : Broaden 
 
 Singular already slender; plural is made broad
+
+Weak Plurals : 
+
+Weak Plurals : 
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+STRONG PLURALS
+
+Gen Sg = Sync + Slen + e
+STRONG PLURALS
+
+3rd Declension
+Strong Plurals : +aí
+
+an bheannacht -> na beannachtaí
 
 gamhain - gamhna (gs), midheamhain - midheamhna (gs)
 
@@ -221,6 +223,13 @@ tóin -> tóineanna
 scoth -> scothanna
 EXCEPTION: an chuid -> na codanna see FIX file
 EXCEPTION: an raith -> na rathanna see FIX file
+
+Strong Plurals :  Broaden +anna
+
+an chuid -> na codanna see FIX file
+an raith -> na rathanna
+an laith -> na lathanna
+an luaith -> na luathanna
 
 Strong Plurals : +í
 
@@ -234,24 +243,29 @@ an táille -> na táillí (fees)
 
 Strong Plurals : 
 
-various ending in vowel  ! plurals +nna
+various ending in vowel	! plurals +nna
 
 Strong Plurals : Leathnú  +acha
 
 an bheoir -> na beoracha (beers)
 
 Gen Sg : Coim + ach
+Strong Plurals : Coimriú +eacha
 
 an chathaoir -> na cathaoireacha (chairs) (Note long vowel aoi is not sync.
 an cathair -> na cathracha
 
 Gen Sg : Coim + a
+Strong Plurals : Coimriú +(e)acha
 samhail -> samhla
 anacair -> anacra
 
 Gen Sg : Coim + Slen + e
+Strong Plurals : Coimriú +(e)acha
 crithir - critre
 fothair - foithre
+
+tarraingt - tarraingthe - tarraingtí
 
 MASCULINE NOUN continuation classes
 
@@ -295,6 +309,8 @@ eg. an cith -> na ceathanna
 and this is done using ^Ath (change)
 pl also broadened cith -> ceathanna
 
+sliocht - sleachta gs & pl
+
 Strong Plurals : +í
 
 (A) nouns ending in -ín (a diminutive)
@@ -305,17 +321,26 @@ eg. an báidín -> na báidíní (small boats)
 (B) nouns ending in -a
 eg. an balla -> na ballaí (walls)
 
+01/04/08
+
 Strong Plurals : +idí
 an fiche -> na fichidí (the twenties) eidí needs correcting
 an caoga -> na caogaidí (the fifties)
 
+GS +the
+
+GS +te
+
+GS +tha
+PL +thaí
+bascadh - basctha - bascthaí
+
+GS +ta
+
+moladh / gs = molta / pl = moltaí
+
 INITIAL MUTATIONS
 NOMINATIVE SINGULAR 
-definite article eg. an cat (m) (p38 NIG)
-an t-éan(m) - the bird (p39 NIG) 
-an bhróg(f) - the shoe
-initial mutation for other reasons
-e.g. comp. preps. ar an gcnoc, poss. mo chat
 
 ^IM = initial mutation e.g. with prepositions, and possession
 Singular:
@@ -325,27 +350,18 @@ Plural:
 e.g. ar bhoscaí, i mboscaí
 possessive e.g. ár n-aithreacha - our fathers (^C)
 
-indefinite => no initial mutation
-appending the +Len & +Ecl rather than creating seperate forms ...
 adds ^h to vowel-initial words ...  but adds the +hPref to all words ... see fix file
-just vowel-initial e.g. doras, fiú etc.
-although no initial mutation takes place 
 
 GENITIVE SINGULAR 
 
-eg. tábhacht a n-oidhreachta
-eg. bia cait, bia sagairt, bia stóir, 
-bia rúin, pobail  
-siopa grósaera - a grocer's shop
-eg. bia an chait,an íl, bia an stóir 
-bia an éin (the bird's food)
-eg. bia an tsagairt (overgenerates 
-tshagairt, h will be removed,
-eg. bia an rúin, an phobail
-eg. siopa an ghrósaera - the grocer's shop
 VOCATIVE SINGULAR 
 Since this is trivial (always ^Sé) it is included with Final Mutations
 in Voc-sg-0 and Voc-sg-1.
+
+ALL PLURALS
+Note: Vocative Plural does not require Def & Idf but it is easier to generate 
+them and remove all Voc Pl Idfs at the end (the Def form is correct 
+although the Def marker is unnecessary)
 
 FINAL MUTATIONS
 NOMINATIVE SINGULAR
@@ -355,6 +371,25 @@ GENITIVE SINGULAR
 VOCATIVE SINGULAR 
 
 ALL PLURALS
+
+when it is a place name
+as well as the usual inflections for propernouns  (4 classes)
+we want to generate an adjectival form e.g. Beilg - Beilgeach
+
+new 5-6-2024
+Place and Personal name files both use Nf1-Prop and Nm1-Prop etc.
+
+masc nouns - slenderise
+
+fem nouns - slenderise and add e
+
+fem nouns - broaden and add a
+
+fem nouns - no change
+
+masc nouns - no change
+
+fem nouns - Albain/na hAlban
 
 * * *
 
@@ -402,11 +437,6 @@ nouns, but with a colon (':') as separator.
 
 inserted +Len +Uru to distinguish between a bhíonn & a mbíonn Dir/Indir
 Rel clauses Dec 2004
-inserted ^Verb (x5) in NegQ (EUD 14-10-2017)
-
-FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
-
-áil -> Gen ála
 
 * * *
 
@@ -550,96 +580,104 @@ INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 ## Analysis symbols
 The morphological analyses of wordforms for the Irish
 language are presented in this system in terms of the following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
 
-- **+1P      ** = first, sceond or third person
-- **+2P      ** = first, sceond or third person
-- **+3P     ** = first, sceond or third person
-- **+A    ** = XXX check
-- **+ABBR ** = 
-- **+ACR ** = 
-- **+Ad			** = Adverbial particle "go"
-- **+Adj	** = +Adj+Base+DeNom are used for adjectives drived from proper nouns
+- **+1P		** = first person inflection
+- **+2P		** = second person inflection
+- **+3P		** = third person inflection
+- **+A		** = XXX check
+- **+ABBR	** = 
+- **+ACR	** = 
+- **+Abr		** = "Abbreviation"
+- **+Ad			** = Adverbial particle: go
+- **+Adj		** = Adjective
 - **+Adv		** = Adverb
-- **+Arab ** = 
-- **+Art		** = - copula+pron+art - sén
-- **+Attr ** = 
-- **+Auto		** = Autonomous 
+- **+Anon		** = Anonymisation in transcribed speech
+- **+Arab		** = 
+- **+Art		** = Article determiner (an/na)
+- **+Attr		** = 
+- **+Auto		** = Autonomous verb form
 - **+Bar		** = hyphen, underscore, dash etc.
-- **+Base	** = = e.g. Spáinneach, positive / base form (changed from +Pos to +Base 10/09/03)
+- **+Bare		** = bare number form used after number particle "a"
+- **+Base		** = Base form of adjective (changed from +Pos to +Base 10/09/03)
 - **+Brack		** = round, square and curly brackets
-- **+CC		** = Canúint Chonnachta
-- **+CLBfinal ** = 
-- **+CM	** = canúint na Mumhan, Munster dialect
-- **+CU		** = canúint Uladh
-- **+Card		** = Cardinal (one two three ...)
-- **+Cmc		** =  Communicator (yeah, y'know)
-- **+CmpNP/First ** = 
-- **+CmpNP/None ** = 
-- **+Cmpd		** = Compound
-- **+CmpdNoGen ** = 
-- **+Cmpl		** = complementizer
-- **+Com	** = nominative case 
-- **+Comp		** = Comparative degree (c)
-- **+Cond		** = 
-- **+Conj		** = conjunction
-- **+Coord		** = co-ordinate
+- **+CC			** = Canúint Chonnachta, Connaught dialect
+- **+CLBfinal	** = 
+- **+CM			** = Canúint na Mumhan, Munster dialect
+- **+CU			** = Canúint Uladh, Ulster dialect 
+- **+Card		** = Cardinal number(one two three ...)
+- **+Cmc		** =  Communicator (yeah, y'know) in transcribed speech
+- **+CmpNP/First	** = 
+- **+CmpNP/None	** = 
+- **+Cmpd		** = Compound prepostion
+- **+CmpdNoGen	** = 
+- **+Cmpl		** = Complementizer: go, gur, nach, nár
+- **+Com		** = Common case (nominative/accusative/dative case)
+- **+Comp		** = Comparative adjective (c)
+- **+Conj		** = Conjunction
+- **+Cond		** = Conditional mood
+- **+Coord		** = Coordinating conjunction
 - **+Cop		** = Copula
-- **+Cp		** = cop rel part
-- **+Dat	** = dative (e.g. teach)
-- **+DeNom ** = 
-- **+Def		** = - copula+pron+art - sén = Definite
-- **+DefArt	** = noun preceeded by definite article (an)
+- **+Curr		** = Currency symbols
+- **+Dat		** = Dative case (e.g. chois) fossilised forms
+- **+DeNom		** = Adjectives drived from proper nouns, e.g. Albanach (Scottish adjective), not the same as Albanais (Scottish language noun)
+- **+Def		** = Definite article
+- **+DefArt		** = noun/number form that follows a definite article (an)
 - **+Deg		** = degree particle with Adj/Abstract Noun (so loud, so sharp etc..
-- **+Dem		** = Demonstrative
-- **+Dep		** = dependant forms
-- **+Det		** = Determiner, e.g. mo, do
-- **+Dir		** = Directional
-- **+Direct 	** = 
-- **+Ecl	** = (+Urú) e.g.  after compound prep eg ar an gcat
-- **+Emph		** = Emphatic (Contrastive) form of personal pronoun = - **+Emph		** = emphasised - ár dteachsa, do theachsa, a teachsa
+- **+Dem		** = Demonstrative determiner (also combined with copula, e.g. Seo
+- **+Dep		** = Dependant forms of verbs
+- **+Det		** = Determiner, e.g. possessive determiner: mo, do
+- **+Dir		** = Directional adverb
+- **+Direct 	** = Direct relative particle
+- **+Ecl		** = Eclipsis (+Urú) initial mutation, e.g. ar an gcat
+- **+Emph		** = Emphatic (Contrastive) form of personal pronoun e.g. ár dteachsa, do theachsa, a teachsa
 - **+End		** = end bracket, quote etc
-- **+Err/Hyph ** = 
-- **+Err/Lex ** = 
+- **+English	** = English language words
+- **+Err/Hyph	** = 
+- **+Err/Lex	** = 
 - **+Err/MissingSpace ** = 
 - **+Err/Orth ** = Orthografical error
 - **+Err/SpaceCmp ** = Compound space error
-- **+Event		** =  Simple Event (laugh, sneeze etc.)
-- **+Fam	** = Family Name
-- **+Fem		** =  feminine gender
-- **+Filler		** =  Filled Pause (eh, em,
-- **+Fin		** = sentence final
-- **+Fut	** = 
-- **+FutInd		** = Future Indicative
-- **+Gen	** = genitive case 
-- **+Gen 	** = - 
-- **+Gn		** = General
-- **+Guess	** = 
-- **+Idf	** = noun without article (there is no indefinite article)
-- **+Ill	** = 
-- **+Imp		** = imperative
-- **+Imper		** = 
-- **+Indirect	** = 
-- **+Inf		** = Infinitive (i)
-- **+Int		** = sentence internal
-- **+Itj		** =  Interjection
-- **+Its		** = intensifiers e.g. sách, ró- etc.
-- **+Len	** = (+Sé) lenite after simple prep. eg ar chat
-- **+Loc		** = Locative
-- **+MWE ** = Multi word expression
-- **+Masc		** =  masculine gender
-- **+N 	** =
-- **+NStem	** = de-nominal verbal (action) noun
-- **+Neg		** = Negative (n)
-- **+NegQ		** = 
+- **+Event		** = Simple Event (laugh, sneeze etc.) in transcribed speech
+- **+Fam		** = Family Name - proper noun
+- **+Fem		** = Feminine gender
+- **+Filler		** = Filled Pause (eh, em, etc.) in transcribed speech 
+- **+Fin		** = sentence final punctuation
+- **+Foreign	** = words from other languages, mainly English, some Latin
+- **+Fut		** = Future tense verbal particle
+- **+FutInd		** = Future Indicative verb
+- **+Gen		** = Genitive case 
+- **+Gn			** = General adverb
+- **+Guess		** = Morphological guesser
+- **+hPref 		** = h prefixed to a vowel-initial word 
+- **+Idf		** = Indefinite quantifier/pronoun e.g. aon (any), cibé (whoever), ceachtar/neachtar (either/neither) etc.
+- **+Ill		** = n/a
+- **+Imp		** = Imperative particle (negative)
+- **+Imper		** = Imperative mood
+- **+Indirect	** = Indirect relative particle
+- **+Inf		** = Infinitival particle
+- **+Int		** = Sentence internal punctuation
+- **+Itj		** = Interjection
+- **+Its		** = Intensifier of adjective e.g. sách, ró- etc.
+- **+End		** = end bracket, quote etc
+- **+Latin		** = Latin language words
+- **+Loc		** = Locative adverb
+- **+MWE		** = Multi word expression
+- **+Masc		** = Masculine gender
+- **+N 			** = n/a (Noun is used)
+- **+NER		** = Named Entity Recognition
+- **+NG			** = Don't generate non-standard form
+- **+NStem		** = De-nominal verbal noun
+- **+Neg		** = Negative particle (n)
 - **+NegQ		** = Negative interrogative verbal particle(q)
-- **+Nm		** = Numeral (m)
-- **+Nom 	** =
-- **+Noun		** = - copula+pron+art+noun - séard (is é an rud)
+- **+Nm			** = Number particle (m)
+- **+Nom 		** =
+- **+NotSlen	** = Adj qualifies pl noun with non-slender ending
+- **+Noun		** = Noun (common, proper, verbal, substantive)
 - **+Num		** = Numeral
-- **+OLang/ENG	** = - 
+- **+OLang/ENG	** = - English language words
 - **+OLang/FIN	** = - 
 - **+OLang/HUN	** = - 
+- **+OLang/LAT	** = - Latin language words
 - **+OLang/NNO	** = - 
 - **+OLang/NOB	** = - 
 - **+OLang/RUS	** = - 
@@ -648,36 +686,39 @@ language are presented in this system in terms of the following symbols.
 - **+OLang/SMJ	** = - 
 - **+OLang/SWE	** = - 
 - **+OLang/UND	** = - 
-- **+Obj		** = á = "do a" when obj of VN
-- **+Op	** = - 
+- **+Obj		** = Object e.g. á = "do a" when obj of VN
+- **+Op			** = Number Operators, e.g. +,-,*,/ etc.
 - **+Ord		** = Ordinal (first, second, third..) i.e.  mo dhá lámh, an chéad dhá theach 
+- **+Orgn		** = Organisation - subset of proper noun
 - **+Part		** = Particle (not +Vb) (U)
-- **+Past		** = past tense verbal particle
-- **+PastImp	** = Gháthchaite Past Habitual (Imperfect Indicative)
-- **+PastInd	** = Past Indicative
-- **+PastSubj	** = Past Subjunctive
-- **+Pat		** = Patronym (p) (e.g. Ó, Ní, Uí, le, de ..)
-- **+Pers		** = Personal
-- **+Pl		** = plural
-- **+Place	** = Place name
-- **+Poss	** = possessive e.g. haois, n-aoiseanna 
-- **+Prep		** = Prepositional pronoun
-- **+Pres		** = copula present & future
-- **+PresImp	** = Gháthláithreach Pres Habitual (Verb bí only - and deireann (abair)
+- **+Past		** = Past tense verbal particle
+- **+PastImp	** = Past Habitual - Gháthchaite (Imperfect Indicative)
+- **+PastInd	** = Past Indicative tense
+- **+PastSubj	** = Past Subjunctive tense
+- **+Pat		** = Patronymic particle (p) (e.g. Ó, Ní, Uí, le, de ..)
+- **+Pers		** = Personal pronoun
+- **+PersName	** = Personal name - proper noun
+- **+Pl			** = Plural number
+- **+Place		** = Place name - proper noun
+- **+Poss		** = Possessive pronoun (can be attached to a prep, e.g. im', dá, faoina)
+- **+Pref		** = Prefix; seperated prefixes in historical texts
+- **+Prep		** = Preposition
+- **+Pres		** = Copula present & future tense
+- **+PresImp	** =  Pres Habitual - Gháthláithreach(Verb bí only - and deireann (abair)
 - **+PresInd	** = Present Indicative
 - **+PresSubj	** = Present Subjunctive
-- **+Pro		** = Pronoun with Copula
-- **+Pron		** = - copula+pron - sea
-- **+Prop	** = proper
+- **+Pro		** = Pronoun with copula or relative particle
+- **+Pron		** = Pronoun
+- **+Prop		** = Proper noun
 - **+Punct		** = Abbreviation
-- **+Q			** = Interrogative verbal particle(q)
+- **+Q			** = Interrogative particle(q)
 - **+Qty		** = Quantifier
 - **+Quo		** = all quotation marks double, single etc.
-- **+Ref		** = Reflexive
-- **+Rel		** = relative forms - direct
+- **+Ref		** = Reflexive particle
+- **+Rel		** = Relative particle
 - **+RelInd		** = rel. indirect
 - **+Rom 	** =
-- **+Sbj	** =  sí, sé and siad are used only when pron follows predicate verb in  subject position eg Chuaigh SÍ amach (She went out), but Téigh gan Í (Go without her)
+- **+Sbj	** =  Subject pronouns: sí, sé and siad are used only when pron follows predicate verb in  subject position, otherwise í, é and iad are used.
 - **+Sem/Amount		    	** =
 - **+Sem/Build		    	** =
 - **+Sem/Build-room	    	** =
@@ -720,70 +761,79 @@ language are presented in this system in terms of the following symbols.
 - **+Sem/Txt		    	** =
 - **+Sem/Veh		    	** =
 - **+Sem/Year		    	** =
-- **+Sg	** = singular
-- **+Short		** = Short determiner, e.g. m', d'
-- **+Simp		** = Simple
-- **+Span 	** =
-- **+St		** = start bracket, quote etc
-- **+Strong	** = same for all cases) the adj will also have the same form in all cases  BUT when the adj. is qualifying  a weak plural noun,in the gen.case, it    is not inflected i.e. the base form of the adjective is used.   Nom and Voc plurals are inflecte as for strong plural nouns
-- **+Subj		** = subjunctive
-- **+Subord		** = subordinate
-- **+Subst	** = substantive - functions like a noun, but lack noun inflections
-- **+Suf 		** = -s suffix e.g. a bhíonns
-- **+Sup		** = Superlative degree (s)
+- **+Sg						** = Singular
+- **+Short					** = Short determiner, e.g. m', d'
+- **+Simp					** = Simple preposition
+- **+Slender				** = Adj qualifies a plural noun ending in a slender consonant
+- **+Span 					** =
+- **+St						** = start bracket, quote etc
+- **+Strong					** = same plural form for all cases
+- **+Subj			** = Subjunctive mood/particle
+- **+Subord			** = Subordinating conjunction
+- **+Subst			** = substantive noun, functions like a noun, but lacks full inflectional pardigm
+- **+Suf 			** = -s vern suffix e.g. a bhíonns
+- **+Sup			** = Superlative particle (s), e.g. is
 * +Symbol = independent symbols in the text stream, like £, €, ©
-- **+Temp		** = Temporal e.g. inniu, amárach etc.
-- **+Typo 		** = ta/ata  instead of tá/atá
-- **+Use/-GC	** = 
-- **+Use/-PLX	** = 
+- **+Temp			** = Temporal e.g. inniu, amárach etc.
+- **+Typo 			** = Typos, e.g. ta/ata  instead of tá/atá
+- **+Use/-GC		** = 
+- **+Use/-PLX		** = 
 - **+Use/-PMatch	** = 
-- **+Use/-Spell	** = 
-- **+Use/-TTS	** = 
-- **+Use/Circ	** = 
-- **+Use/GC	** = 
-- **+Use/NG	** = 
-- **+Use/PMatch	** = 
+- **+Use/-Spell		** = 
+- **+Use/-TTS		** = 
+- **+Use/Circ		** = 
+- **+Use/GC			** = 
+- **+Use/NG			** = 
+- **+Use/PMatch		** = 
 - **+Use/SpellNoSugg	** = 
-- **+Use/TTS	** = 
-- **+V	** = XXX
-- **+VD		** = ditransitive
-- **+VF		** = - form used before a word starting with a vowel or f+vowel 
-- **+VI		** = intransitive
-- **+VT		** = transitive
-- **+VTI		** = transitive & intransitive
-- **+Var 		** = variant spelling e.g. rabh instead of raibh or dheachaidh
-- **+Vb			** = Verbal (Q)
-- **+Voc	** = vocative case 
-- **+Vow		** = vowel-initial : used to allow past-tense Len e.g. d´ith
-- **+Weak	** = weak plural, when an adj is qualifying a strong plural noun
-- **+XMLTag		** = 
-- **+Xxx		** =  Indecipherable speech	
-- **+hPref 	** = h before vowel 
+- **+Use/TTS		** = 
+- **+V				** = n/a (Verb is used)
+- **+VD				** = ditransitive verb
+- **+VF				** = - form used before a word starting with a vowel or f+vowel 
+- **+VI				** = intransitive verb
+- **+VT				** = transitive verb
+- **+VTI			** = transitive & intransitive verb
+- **+Var 			** = variant spelling e.g. rabh instead of raibh or dheachaidh
+- **+Vb				** = Verbal particle (Q)
+- **+Verb			** = Verb
+- **+Verbal			** = Verbal noun
+- **+Voc			** = Vocative case 
+- **+Vc				** = Vocative particle
+- **+Vow			** = Vowel-initial : used to allow past-tense Len e.g. d´ith
+- **+Weak			** = Weak plural (noun)
+- **+XMLTag			** =  XML tags in the text, e.g. <p>, <title> etc.
+- **+Xxx			** =  Indecipherable speech (in transcribed speech)
+
+- **+v1				** = n/a
+- **+v2				** = n/a
 - **^Adj	** = Adjective- used in initial mutations
 - **^Ath	** = Athrú (Change) - in certain plurals the ending changes : "e" -> "í",  "each" -> "í" and "ach" changes to "aí" etc.eg gealach -> gealaí (of the moon)
-- **^C 	** = nominative, genitive & vocative : initial mutations of plural nouns 
-- **^CB	** = compound boundary
-- **^Caol	** = Caolú (slenderise)- Attenuation : ie slenderise the end of word 	! Usually by adding an "i" after  the last broad vowel 	! aouáóú are broad vowels; ieíé are slender vowels  	! eg "an cat" (the cat) in nom. pl. becomes "na cait" (the cats) 
+- **^C		** = nominative, genitive & vocative : initial mutations of plural nouns 
+- **^CB		** = compound boundary
+- **^Caol	** = Caolú (slenderise)- Attenuation : ie slenderise the end of word 	! Usually by adding an "i" after  the last broad vowel 
 - **^Coim	** = Coimriú - Syncopation - the last unstressed vowel is dropped	! eg saghas (type) ->saghs +anna, solas->soils+e (light) - with attenation also
 - **^Def	** = dntls rule after definite article
-- **^Do		** = d' before Past Past Imperfect (gnáthchaite0 and conditional
+- **^Do		** = d' before Past Imperfect (gnáthchaite) and conditional
 - **^Emph	** = emphatic forms
-- **^F	** = whether the noun is masculine or feminine
+- **^F		** = feminine: initial mutations of singular nouns depend on whether the noun is masculine or feminine
 - **^Fr		** = Fréamh (root) use root - i.e.don't syncopate in these cases 
-- **^G 	** = depend on the case
-- **^IM	** = general initial mutation e.g. mo chat, ar an mballa
-- **^LC		** = leathan/Caol: Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
+- **^G		** = genitive case
+- **^GUESSNOUN	** = n/a - superseded by guesser FSTs
+- **^IM		** = initial mutation marker e.g. mo chat, ar an mballa
+- **^LC		** = Leathan/Caol: (broad/slender) Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
 - **^Lea	** = Leathnú - Broadening eg an "i" is removed 	! súil (eye); radharc na súl (eyesight)
-- **^LeaS		** = Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
-- **^M 	** = masculine & feminine : initial mutations of singular nouns depend on 
-- **^Sé	** = Séimhiú (softening) Lenition - h added after certain initial consonants (bcdfgmpst)
-- **^Urú	** = Eclipsis - a letter placed before word initial letter  (bcdfgpt)	! eg  "g" before "c" - "an cat" in gen. pl. becomes "bia na gcat" 	! (the cats' food) 
-- **^VH	** = Maintains vowel harmony of broad and slender vowels  Motto : "leathan le leathan agus caol le caol" (slender with slender and   broad with broad)
+- **^LeaS	** = Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
+- **^M 		** = masculine: initial mutations of singular nouns depend on whether the noun is masculine or feminine
+- **^Sé		** = Lenition (Séimhiú - softening)- h added after certain initial consonants (bcdfgmpst)
+- **^Urú	** = Eclipsis (Urú)- a letter placed before word initial letter  (bcdfgpt), e.g.  "g" before "c" - "an cat" in gen. pl. becomes "bia na gcat", (the cats' food) 
+- **^V		** = Verb root
+- **^VH		** = Maintains vowel harmony of broad and slender vowels  Motto : "leathan le leathan agus caol le caol" (slender with slender and   broad with broad)
 - **^VN		** = verbal noun
-- **^aigh 		** = remove -aigh ending
-- **^igh 		** = remove -igh ending
-- **^ts	** = "t" before "s"   eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
-- **^tv	** = "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
+- **^aigh 	** = remove -aigh ending
+- **^hv		** = "h" before a vowel (eg éan : Nom. Pl. Masc. na héin - the birds) 
+- **^igh 	** = remove -igh ending
+- **^ts		** = "t" before "s"   eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
+- **^tv		** = "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
 
 ## Flag diacritics
 
@@ -818,26 +868,31 @@ given the proper use of these flags.
 
 # The Root lexicon etc.
 
-- **LEXICON Root			    	** = 
-- **	Abbrev;				    	** = 
-- **	Adverb;				    	** = 
-- **        Articles;		    	** = 
-- **	Conjunctions;		    	** = 
-- **	Determiners;		    	** = 
-- **	Interjections;		    	** = 
-- **	Fillers;			    	** = 
-- **	Communicators;		    	** = 
-- **	Events;				    	** = 
-- **	Numerals;			    	** = 
-- **		Prepositions;	    	** = 
-- **        Personal_Pronouns;  	** = 
+- **LEXICON Root			** = 
+- **	Abbrev;				** = 
+- **	Prepositions;		** = Adpositions = Prepositions in 
+- **	Adverb;				** = 
+- **	Articles;			** = 
+- **	Conjunctions;		** = 
+- **	Determiners;		** = 
+- **	Interjections;		** = 
+- **	Fillers;			** = 
+- **	Communicators;		** = 
+- **	Events;				** = 
+- **	Anonymous;			** = 
+- **	Numerals;			** = 
+- **	Particles;			** = 
+- **	Personal_Pronouns;	** = 
 
-- **	Punctuation ;	** = 
-- **    Symbols     ; 	** = 
+- **	Englishlex;				** = English lexicon including all parts of speech
+- **	Communicators-English;	** = English multi word communicator d'ya know
+- **	Bardiclex;				** = classical Irish lexicon from TCD Bardic corpus - 
+- **	Latinlex;				** = Latin lexicom from RIA historical corpus
+- **	!Tobar;					** = omitting this (non-standard forms)
 
-- **	XMLTags; 	** = 
-
-- **        Tobar;	** = 
+- **	Punctuation ;		** = 
+- **	Symbols;			** = 
+- **	XMLTags; 			** = XML tags e.g. <p>, <title> etc.
 
 - **	AdjA;				** = ORIGINAL TEST LEXICON
 - **	AdjIrregular;			** = ORIGINAL TEST LEXICON
@@ -851,8 +906,10 @@ given the proper use of these flags.
 - **	Adj-FGB2;			** = Foclóir Gaeilge Béarla Uí Dhónaill
 - **	AdjVariants;			** = Adj Variants in FGB
 - **	AdjEqualVariants;		** = Adj Variants with Equal Sign in FGB
+- **	AdjF;				** = Nationalities
+- **	AdjG;				** = additions from gaois.ie bitex
 
-- **        Nouns; 			** = ORIGINAL TEST LEXICON
+- **	Nouns; 			** = ORIGINAL TEST LEXICON
 - **	Dative;			** = ORIGINAL TEST LEXICON
 - **	Other;			** = ORIGINAL TEST LEXICON
 - **	NounsB;			** = nouns
@@ -860,40 +917,46 @@ given the proper use of these flags.
 - **	NounsD;			** = FP nouns (manual Decl 1-3)
 - **	NounsE;			** = FP nouns (manual Decs 4-5)
 - **	NounsF;			** = FP nouns (manual Irregular)
-- **	NounsIrregular; 	** = 
+- **	NounsG;			** = Proper Nouns - SHOULD BE MOVED TO Proper Nouns Lexicons
+- **	NounsH;			** = Various from corpora
+- **	NounsIrregular;	** = 
 - **	Substantive;  	** = 
 - **	NounsFGB1;		** = FGB (O Donaill) automatic (in NCI corpus) 
 - **	NounsFGB2;		** = FGB (O Donaill) automatic (additional)
 - **	NounsVariants;		** = Variants extracted from FGB
 - **	NounsEqualVariants;	** = Variants extracted from FGB (2011 EUD)
 
-- **	NP-Irregular;		** = ORIGINAL TEST LEXICON
-- **	NP-LEX-FAM;	    	** = 
-- **	NP-LEX-FAM-EN;  	** = 
-- **	NP-LEX-PERS;    	** = 
-- **	NP-LEX-PERS-EN; 	** = 
-- **	NP-LEX-EIRE;    	** = 
-- **	NP-LEX-EIRE-EN; 	** = 
-- **	NP-LEX-TIR;	    	** = 
-- **	NP-LEX-TIR-EN;  	** = 
-- **	NP-LEX-ORG;	    	** = 
-- **	NP-LEX-DCU;	    	** = 
+- **	NP-LEX-FAM;			** = Family Names (Irish)
+- **	NP-LEX-FAM-EN;		** = Family Names (English)
+- **	NP-LEX-PERS;		** = Personal Names (Irish)
+- **	NP-LEX-PERS-EN;		** = Family Names (English)
+- **	NP-LEX-EIRE;		** = Ireland - Counties, Cities and Towns (Irish)
+- **	NP-LEX-EIRE-EN; 	** = Ireland - Counties, Cities and Towns (English)
+- **	NP-LEX-TIR;			** = Countries (Irish)
+- **	NP-LEX-TIR-EN;		** = Countries (English)
+- **	NP-Irregular;		** = Various Irregular Proper Nouns
+- **	NP-LEX-ORG;			** = Organisations
+- **	NP-LEX-LOGAINM;		** = Placenames - sample from logainm.ie
+- **	NP-LEX-RIACORPAS1;	** = Various Proper nouns from RIA Historical Corpus of Irish
 
-- **        VerbsC1A;		** = ORIGINAL TEST LEXICON
-- **        VerbsC2A;		** = ORIGINAL TEST LEXICON
-- **	VerbsB;			** = verbs
-- **	VerbsC;			** = FP verbs
-- **	Verbs-FGB1;		** = FGB verbs
-- **	Verbs-FGB2;		** = FGB verbs
+- **	VerbalNounsV;		** = Verbal nouns derived from verb roots
+- **	VerbalNounsN;		** = Verbal nouns derived from nouns
+- **	VerbalAdjs;			** = Verbal adjectives derived from verb roots
+- **	VerbalNounsGenV;	** = Verbal nouns (genitive ase) derived from verb roots
+- **	VerbalNounsGenN;	** = Verbal nouns (genitive ase) derived from nouns
+- **	VN-Variants;		** = FGB VN variants (VN, VNG & VA included)
+- **	VNEqualVariants; 	** = FGB VN = variants (VN, VNG & VA included)
+
+- **	Verbs;				** = Irregular verbs (11)
+- **	VerbsC1A;			** = ORIGINAL TEST LEXICON
+- **	VerbsC2A;			** = ORIGINAL TEST LEXICON
+- **	VerbsB;				** = verbs
+- **	VerbsC;				** = FP verbs
+- **	VerbsD;				** = FP verbs
+- **	Verbs-FGB1;			** = FGB verbs
+- **	Verbs-FGB2;			** = FGB verbs
 - **	Verb-Variants;		** = FGB verb variants
 - **	VerbsEqualVariants;	** = FGB verb = variants
-
-- **	VerbalNouns;		** = Version 3 VNs in TEST Lex & Foclóir Póca
-- **	VerbalAdjs;		** = Version 3 VAs in TEST Lex & Foclóir Póca
-- **	VerbalNounsGen;		** = Version 4 VNs in TEST Lex & Foclóir Póca
-- **	VNVA-FGB1;		** = Foclóir Gaeilge Béarla Ó Dónaill
-- **	VN-Variants;		** = FGB VN variants (VN, VNG & VA included)
-- **	VNEqualVariants; 	** = 
 
 * * *
 
@@ -904,7 +967,6 @@ given the proper use of these flags.
 # src-fst-morphology-stems-abbreviations.lexc.md 
 
 Abbreviations 
-and a few English words
 
 * * *
 
@@ -914,7 +976,7 @@ and a few English words
 
 # src-fst-morphology-stems-adjectives.lexc.md 
 
-Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+
 
 SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
 
@@ -933,18 +995,26 @@ Have moved to Demonstrative Determiners
 # src-fst-morphology-stems-adpositions.lexc.md 
 
 Prepositions: 
-Simple: le, ag, ar, etc.
-Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
-Emphatic Compound eg agamsa, uaimse, ...
 
+SIMPLE PREPOSITIONS
 theses are not preps only copula or conj
 this "is" looks like "agus" to me ... removing the prep reading ...
 should be subst except in Prep Cmpd - see below : maidir+Prep+Simp:maidir			#;
 should be subst:  maille+Prep+Simp:maille			#; ! maille le = along with
 
+COMPOUNDS: PREP + ARTICLE (an/na)
+
 le does not combine with art: but becomes leis before "an"
 
 trí does not combine with art: but becomes tríd before "an"
+
+Hisrorical forms (bardic)
+
+COMPOUNDS: PREP + POSS PRON (a/ár)
+
+COMPOUNDS: PREP + REL. PART. (a/ar)
+
+COMPOUND PREPOSITIONS: PREP + NOUN
 
 * * *
 
@@ -955,6 +1025,8 @@ trí does not combine with art: but becomes tríd before "an"
 # src-fst-morphology-stems-adverbs.lexc.md 
 
 Adverbs
+
+word for word, i.e. literally (2019)
 
 MOVED TO ADJ annamh+Adv+Gn:annamh	#;
 what about chomh mór/hálainn etc. etc. 
@@ -969,7 +1041,7 @@ see PART-LEX.TXT (etc.) for following
 
 # src-fst-morphology-stems-articles.lexc.md 
 
-Common Functional Words
+Common Functional Words - Articles
 
 * * *
 
@@ -979,30 +1051,22 @@ Common Functional Words
 
 # src-fst-morphology-stems-conjunctions.lexc.md 
 
-## CONJUNCTIONS
-
+CONJUNCTIONS
+E. Uí Dhonnchadha
+New Irish Grammar by The Christian Brothers, etc.
 removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
-e.g. `go/gur`, `a/ar`, `nach/nár`
+e.g. go/gur a/ar nach/nár 
 and which often follow (or attach to) a conjunction
-e.g. `cé go`, `nuair nach`.
-Remaining subordinating conjunctions can be followed by verb or copula:
-`go mb'fhusa an obair ...`, `go dtógfadh sé`
-e.g. `má bhíonn`, `más`.
-Some still have tense marking as they are combined forms
-e.g. `sula`, `sular`, `murar` etc.
+e.g. cé go, nuair nach, 
+remaining subordinating conjunctions can be followed by verb or copula 
+go mb'fhusa an obair ..., go dtógfadh sé
+e.g. má bhíonn, más
+some still have tense marking as they are combined forms
+e.g. sula, sular, murar etc.
 
 ### LEXICON Conjunctions
 
-- **agus**
-- **agus**
-- **agus**
-- **agus**
-- **ná**, cf ní ... ná
-- **ná**
-- **nó**
-- **nó**
-
-`gur` (=NOT?) moved to Verb Part as it a) is always precede a verb b) have tense c) is preceded by conjs like `nuair`, `cé`.
+gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé - SHOULD BE REMOVED I THINK ???? NO NEED FOT CONJ AS WELL AS SUBORD COP AND SUBORD VERB PART ...
 
 * * *
 
@@ -1012,20 +1076,14 @@ e.g. `sula`, `sular`, `murar` etc.
 
 # src-fst-morphology-stems-determiners.lexc.md 
 
-# DETERMINERS
+DETERMINERS
+E. Uí Dhonnchadha
 
-this information is on the noun as initial mutation
-use corresponding +Len / +Ecl to deternine whether sing/pl, masc/fem
+Determiners: Possessives
 
-SEE PRON-LEX cad_chuige+Det+Q:tuige				#;	! what
-SEE PRON-LEX cad+Det+Q:cad				#;	! what
-SEE PRON-LEX céard+Det+Q:céard			#;	! what
-SEE PRON-LEX cé+Det+Q:cé				#;	! who
-SEE ADV cá+Det+Q:cá					#;	! where
+Determiners: INTERROGATIVES
 
-the following always come at the end of the noun/pron/adj and cannot 
-be intermingled with other adjectives 
-contextual tagged as demonstrative for now at least ...
+(definite & indefinite amounts)
 
 * * *
 
@@ -1037,39 +1095,34 @@ contextual tagged as demonstrative for now at least ...
 
 INTERJECTIONS
 
+Interjections
+
+FILLED PAUSES
+Fillers in speech
+
+Communicators in speech
+
+Events in speech transcripts, e.g. cough, sneeze etc.
+
+Anonymisation in transcripts/exam scripts
+
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/interjections.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/interjections.lexc)</small>
 
 ---
 
-# src-fst-morphology-stems-nouns.lexc.md 
-
-
-
-new category 28/03/08
-
-SEE N-LEX-IRREG muineál	 Nm1-1;	 ! gs & npl -níl
-
-Automatically assigned CCs
-
-Manually assigned CCs
-see n-lex-stems.txt ceathracha	Nm5-1;	! gs ~d pl ~idí
-
-CONTINUATION CLASSES MASCULINE
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/morphology/stems/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/nouns.lexc)</small>
-
----
-
 # src-fst-morphology-stems-numerals.lexc.md 
 
-NUMERALS
-Cardinal numbers are described seperately here rather than with other
-Adjectives
+NUMBERS
+E. Uí Dhonnchadha
 For Personal Numerals (duine, beirt, triúr) SEE NOUNS
+
+CARDINAL Numbers
+
+ORDINAL Numbers
+
+Number  Operators
 
 * * *
 
@@ -1079,17 +1132,19 @@ For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 
 # src-fst-morphology-stems-particles.lexc.md 
 
-
 PARTICLES
+E. Uí Dhonnchadha
 Preverbal
 Unique Membership classes
 
 tense distiction is unnecessary
 
-relative if can be translated as "who/which/whose" (or "that")
+relative if can be translated as "who/which/whose/to,on,of etc. whom etc." or "that"
 
-not relative if can't be translated as "who/which/whose" ???
+not relative if can't be translated as "who/which/whose/to,on,of etc. whom etc." ???
 i.e. complementiser "that" ...
+
+Reflexive (or emphatic) 'féin' moved from pronouns file
 
 * * *
 
@@ -1103,8 +1158,20 @@ Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
 Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
 Pronominals - words which act like pronouns
 
+Personal Pronouns
+
+Emphatic/Contrastive Pronouns
+
+this is not an independent pronoun - it accompanies an pronoun or noun
+
+Indefinite Pronouns
+Interrogative Pronouns (added Feb 05) 
 removed Pro from cén as noun complement is needed unlike cé
 also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
+
+Copular DEMONSTRATIVE  See also Determiners
+
+PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 
 * * *
 
@@ -1114,7 +1181,7 @@ also include Det Art Sg in det-lex for "a shonrú cén dáta" = which
 
 # src-fst-morphology-stems-propernouns.lexc.md 
 
-
+Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 
 South Africa
 Mar 2012
@@ -1133,7 +1200,7 @@ Female
 
 # src-fst-morphology-stems-punctuations.lexc.md 
 
-Abbreviations
+Punctuation
 
 * * *
 
@@ -1173,10 +1240,6 @@ PLACENAMES
 
 
 
-Foclóir Póca etc.
-April 2008: Regenerated from verb stems by Christoph Wendler 
-(v=sceamh) CHECKED
-
 NOTE: 'druideadh' is commented out since it was not found as a verbal noun
 in the corpus, yet chances are that it would get mixed up with 'druideadh'
 as independed form of 'druid', i.e. 'ó druideadh an scoil'
@@ -1189,13 +1252,17 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 
 # src-fst-morphology-stems-verbs.lexc.md 
 
+First Conjugation Verb Stems
 
+Second Conjugation Verb Stems
 
 DEFECTIVE VERBS
 
 SOME COMMON COMPOUNDS
 leave out _fios from lemma as it prevents some bí CG rules applying
 IRREGULAR VERBS
+
+Irregular Verbs
 
 auto does not lenite
 
@@ -1209,6 +1276,12 @@ varient
 varient	
 
 auto does not lenite
+
+Bardic - historical nonstandard spellings
+
+FORMS NOT LENITED IN POSITIVE PAST TENSE incl IMPERFECT
+
+Mixed Verb Stems
 
 NEEDS FURTHER TESTING OF -X WORDS
 and TEST

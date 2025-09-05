@@ -1,4 +1,4 @@
-Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+
 
 SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
 
