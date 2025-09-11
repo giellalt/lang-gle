@@ -4,33 +4,40 @@ INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 # Definitions for Multichar_Symbols
 
-## Analysis symbols
+## Tag symbols for analysis
 The morphological analyses of wordforms for the Irish
 language are presented in this system in terms of the following symbols.
+
+- **+Corr  ** =
+- **+Error ** =
+- **+Start ** =
+
+Tag list:
 
 - **+1P		** = first person inflection
 - **+2P		** = second person inflection
 - **+3P		** = third person inflection
 - **+A		** = XXX check
-- **+ABBR	** = 
-- **+ACR	** = 
+- **+ABBR		** = Abbreviation
+- **+ACR	      	** = Acronym
 - **+Abr		** = "Abbreviation"
-- **+Ad			** = Adverbial particle: go
+- **+Ad		** = Adverbial particle: go
 - **+Adj		** = Adjective
 - **+Adv		** = Adverb
 - **+Anon		** = Anonymisation in transcribed speech
-- **+Arab		** = 
+- **+Arab		** = Arabic numerals (1, 2, ...) 
 - **+Art		** = Article determiner (an/na)
-- **+Attr		** = 
+- **+Attr		** = Attribute, element preceeding head
 - **+Auto		** = Autonomous verb form
 - **+Bar		** = hyphen, underscore, dash etc.
 - **+Bare		** = bare number form used after number particle "a"
 - **+Base		** = Base form of adjective (changed from +Pos to +Base 10/09/03)
 - **+Brack		** = round, square and curly brackets
-- **+CC			** = Canúint Chonnachta, Connaught dialect
-- **+CLBfinal	** = 
-- **+CM			** = Canúint na Mumhan, Munster dialect
-- **+CU			** = Canúint Uladh, Ulster dialect 
+- **+CC		** = Canúint Chonnachta, Connaught dialect
+- **+CLB            ** = Clause boundary
+- **+CLBfinal	** = Final clause boundary
+- **+CM		** = Canúint na Mumhan, Munster dialect
+- **+CU		** = Canúint Uladh, Ulster dialect 
 - **+Card		** = Cardinal number(one two three ...)
 - **+Cmc		** =  Communicator (yeah, y'know) in transcribed speech
 - **+CmpNP/First	** = 
@@ -62,20 +69,20 @@ language are presented in this system in terms of the following symbols.
 - **+Err/Hyph	** = 
 - **+Err/Lex	** = 
 - **+Err/MissingSpace ** = 
-- **+Err/Orth ** = Orthografical error
-- **+Err/SpaceCmp ** = Compound space error
-- **+Event		** = Simple Event (laugh, sneeze etc.) in transcribed speech
-- **+Fam		** = Family Name - proper noun
-- **+Fem		** = Feminine gender
-- **+Filler		** = Filled Pause (eh, em, etc.) in transcribed speech 
-- **+Fin		** = sentence final punctuation
-- **+Foreign	** = words from other languages, mainly English, some Latin
-- **+Fut		** = Future tense verbal particle
-- **+FutInd		** = Future Indicative verb
-- **+Gen		** = Genitive case 
-- **+Gn			** = General adverb
-- **+Guess		** = Morphological guesser
-- **+hPref 		** = h prefixed to a vowel-initial word 
+- **+Err/Orth 	  ** = Orthografical error
+- **+Err/SpaceCmp 	  ** = Compound space error
+- **+Event		  ** = Simple Event (laugh, sneeze etc.) in transcribed speech
+- **+Fam		  ** = Family Name - proper noun
+- **+Fem		  ** = Feminine gender
+- **+Filler		  ** = Filled Pause (eh, em, etc.) in transcribed speech 
+- **+Fin		  ** = sentence final punctuation
+- **+Foreign	  ** = words from other languages, mainly English, some Latin
+- **+Fut		  ** = Future tense verbal particle
+- **+FutInd		  ** = Future Indicative verb
+- **+Gen		  ** = Genitive case 
+- **+Gn		  ** = General adverb
+- **+Guess		  ** = Morphological guesser
+- **+hPref 		  ** = h prefixed to a vowel-initial word 
 - **+Idf		** = Indefinite quantifier/pronoun e.g. aon (any), cibé (whoever), ceachtar/neachtar (either/neither) etc.
 - **+Ill		** = n/a
 - **+Imp		** = Imperative particle (negative)
@@ -87,10 +94,13 @@ language are presented in this system in terms of the following symbols.
 - **+Its		** = Intensifier of adjective e.g. sách, ró- etc.
 - **+End		** = end bracket, quote etc
 - **+Latin		** = Latin language words
+- **+LEFT		** = Left side of parwise symbol (parenthesis or quotation mark)
+- **+Len		** = Lenited forms
 - **+Loc		** = Locative adverb
+- **+MIDDLE		** = Middle punctuation
 - **+MWE		** = Multi word expression
 - **+Masc		** = Masculine gender
-- **+N 			** = n/a (Noun is used)
+- **+N 		** = n/a (Noun is used) -- The +N tag is in use, TODO: change it
 - **+NER		** = Named Entity Recognition
 - **+NG			** = Don't generate non-standard form
 - **+NStem		** = De-nominal verbal noun
@@ -138,12 +148,14 @@ language are presented in this system in terms of the following symbols.
 - **+Pron		** = Pronoun
 - **+Prop		** = Proper noun
 - **+Punct		** = Abbreviation
+- **+PUNCT		** = Abbreviation (it seems several languages have two tags :-/
 - **+Q			** = Interrogative particle(q)
 - **+Qty		** = Quantifier
 - **+Quo		** = all quotation marks double, single etc.
 - **+Ref		** = Reflexive particle
 - **+Rel		** = Relative particle
 - **+RelInd		** = rel. indirect
+- **+RIGHT		** = Right side of parwise symbol (parenthesis or quotation mark)
 - **+Rom 	** =
 - **+Sbj	** =  Subject pronouns: sí, sé and siad are used only when pron follows predicate verb in  subject position, otherwise í, é and iad are used.
 - **+Sem/Amount		    	** =
@@ -184,6 +196,7 @@ language are presented in this system in terms of the following symbols.
 - **+Sem/Sur		    	** =
 - **+Sem/Time		    	** =
 - **+Sem/Time-clock	    	** =
+- **+Sem/Title		    	** =
 - **+Sem/Tool-it	    	** =
 - **+Sem/Txt		    	** =
 - **+Sem/Veh		    	** =

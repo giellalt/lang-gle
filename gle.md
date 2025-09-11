@@ -4,7 +4,7 @@ All doc-comment documentation in one large file.
 
 ---
 
-# src-cg3-functions.cg3.md 
+## src-cg3-functions.cg3.md 
 
 
 
@@ -43,7 +43,7 @@ part of the noun phrase of that noun (i.e., "scan to the next NP head")
 
 These were the set types.
 
-## HABITIVE MAPPING
+### HABITIVE MAPPING
 
 * **hab1** 
 
@@ -162,16 +162,16 @@ These were the set types.
 
 * **<opredAAcc** (@<OPRED) for A Acc; if an other accusative to the left, and a transtive verb to the left of it. OR: if a transitive verb to the left, and an accusative to the left of it.
 
-### sma object
+#### sma object
 
 * **<advlEss** (@<ADVL) for ESS-ADVL if; FMAINV to the left
 * **<spredEss** (@<SPRED) for N Ess if; FMAINV to the left is intransitive or bargat
 
-## SUBJ MAPPING - leftovers
+### SUBJ MAPPING - leftovers
 
-## OBJ MAPPING - leftovers
+### OBJ MAPPING - leftovers
 
-## HNOUN MAPPING
+### HNOUN MAPPING
 
 * * *
 
@@ -179,7 +179,7 @@ These were the set types.
 
 ---
 
-# src-fst-morphology-affixes-nouns.lexc.md 
+## src-fst-morphology-affixes-nouns.lexc.md 
 
 Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 
@@ -397,7 +397,7 @@ fem nouns - Albain/na hAlban
 
 ---
 
-# src-fst-morphology-affixes-prefixes.lexc.md 
+## src-fst-morphology-affixes-prefixes.lexc.md 
 
 Prefixes
 Prefixes in the Irish language are bound to beginning of other words.
@@ -408,7 +408,7 @@ Prefixes in the Irish language are bound to beginning of other words.
 
 ---
 
-# src-fst-morphology-affixes-propernouns.lexc.md 
+## src-fst-morphology-affixes-propernouns.lexc.md 
 
 Proper noun inflection
 The Irish language proper nouns inflect in the same cases as regular
@@ -420,10 +420,10 @@ nouns, but with a colon (':') as separator.
 
 ---
 
-# src-fst-morphology-affixes-symbols.lexc.md 
+## src-fst-morphology-affixes-symbols.lexc.md 
 
 
-# Symbol affixes
+## Symbol affixes
 
 * * *
 
@@ -431,7 +431,7 @@ nouns, but with a colon (':') as separator.
 
 ---
 
-# src-fst-morphology-affixes-verbs.lexc.md 
+## src-fst-morphology-affixes-verbs.lexc.md 
 
 
 
@@ -444,7 +444,7 @@ Rel clauses Dec 2004
 
 ---
 
-# src-fst-morphology-phonology.nounadj.xfscript.md 
+## src-fst-morphology-phonology.nounadj.xfscript.md 
 
 
 
@@ -456,7 +456,7 @@ a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
 
 ---
 
-# src-fst-morphology-phonology.twolc.md 
+## src-fst-morphology-phonology.twolc.md 
 
 =================================== !
 The Irish morphophonological/twolc rules file !
@@ -479,7 +479,7 @@ The Irish morphophonological/twolc rules file !
 
 ---
 
-# src-fst-morphology-phonology.verb.xfscript.md 
+## src-fst-morphology-phonology.verb.xfscript.md 
 
 Verbal Noun Gen
 
@@ -489,14 +489,14 @@ Verbal Noun Gen
 
 ---
 
-# src-fst-morphology-root-adj.lexc.md 
+## src-fst-morphology-root-adj.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
-# Multichar_Symbols definitions
+## Multichar_Symbols definitions
 
-## Analysis symbols
+### Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
@@ -509,14 +509,14 @@ Subj is used for subjunctive
 
 ---
 
-# src-fst-morphology-root-noun-all.lexc.md 
+## src-fst-morphology-root-noun-all.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
-# Multichar_Symbols definitions
+## Multichar_Symbols definitions
 
-## Analysis symbols
+### Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
@@ -529,14 +529,14 @@ Subj is used for subjunctive
 
 ---
 
-# src-fst-morphology-root-others.lexc.md 
+## src-fst-morphology-root-others.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
-# Multichar_Symbols definitions
+## Multichar_Symbols definitions
 
-## Analysis symbols
+### Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
@@ -549,14 +549,14 @@ Subj is used for subjunctive
 
 ---
 
-# src-fst-morphology-root-verb-all.lexc.md 
+## src-fst-morphology-root-verb-all.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
-# Multichar_Symbols definitions
+## Multichar_Symbols definitions
 
-## Analysis symbols
+### Analysis symbols
 The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
@@ -569,41 +569,48 @@ Subj is used for subjunctive
 
 ---
 
-# src-fst-morphology-root.lexc.md 
+## src-fst-morphology-root.lexc.md 
 
 
-# Irish morphological analyser                      !
+## Irish morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
-# Definitions for Multichar_Symbols
+## Definitions for Multichar_Symbols
 
-## Analysis symbols
+### Tag symbols for analysis
 The morphological analyses of wordforms for the Irish
 language are presented in this system in terms of the following symbols.
+
+- **+Corr  ** =
+- **+Error ** =
+- **+Start ** =
+
+Tag list:
 
 - **+1P		** = first person inflection
 - **+2P		** = second person inflection
 - **+3P		** = third person inflection
 - **+A		** = XXX check
-- **+ABBR	** = 
-- **+ACR	** = 
+- **+ABBR		** = Abbreviation
+- **+ACR	      	** = Acronym
 - **+Abr		** = "Abbreviation"
-- **+Ad			** = Adverbial particle: go
+- **+Ad		** = Adverbial particle: go
 - **+Adj		** = Adjective
 - **+Adv		** = Adverb
 - **+Anon		** = Anonymisation in transcribed speech
-- **+Arab		** = 
+- **+Arab		** = Arabic numerals (1, 2, ...) 
 - **+Art		** = Article determiner (an/na)
-- **+Attr		** = 
+- **+Attr		** = Attribute, element preceeding head
 - **+Auto		** = Autonomous verb form
 - **+Bar		** = hyphen, underscore, dash etc.
 - **+Bare		** = bare number form used after number particle "a"
 - **+Base		** = Base form of adjective (changed from +Pos to +Base 10/09/03)
 - **+Brack		** = round, square and curly brackets
-- **+CC			** = Canúint Chonnachta, Connaught dialect
-- **+CLBfinal	** = 
-- **+CM			** = Canúint na Mumhan, Munster dialect
-- **+CU			** = Canúint Uladh, Ulster dialect 
+- **+CC		** = Canúint Chonnachta, Connaught dialect
+- **+CLB            ** = Clause boundary
+- **+CLBfinal	** = Final clause boundary
+- **+CM		** = Canúint na Mumhan, Munster dialect
+- **+CU		** = Canúint Uladh, Ulster dialect 
 - **+Card		** = Cardinal number(one two three ...)
 - **+Cmc		** =  Communicator (yeah, y'know) in transcribed speech
 - **+CmpNP/First	** = 
@@ -635,20 +642,20 @@ language are presented in this system in terms of the following symbols.
 - **+Err/Hyph	** = 
 - **+Err/Lex	** = 
 - **+Err/MissingSpace ** = 
-- **+Err/Orth ** = Orthografical error
-- **+Err/SpaceCmp ** = Compound space error
-- **+Event		** = Simple Event (laugh, sneeze etc.) in transcribed speech
-- **+Fam		** = Family Name - proper noun
-- **+Fem		** = Feminine gender
-- **+Filler		** = Filled Pause (eh, em, etc.) in transcribed speech 
-- **+Fin		** = sentence final punctuation
-- **+Foreign	** = words from other languages, mainly English, some Latin
-- **+Fut		** = Future tense verbal particle
-- **+FutInd		** = Future Indicative verb
-- **+Gen		** = Genitive case 
-- **+Gn			** = General adverb
-- **+Guess		** = Morphological guesser
-- **+hPref 		** = h prefixed to a vowel-initial word 
+- **+Err/Orth 	  ** = Orthografical error
+- **+Err/SpaceCmp 	  ** = Compound space error
+- **+Event		  ** = Simple Event (laugh, sneeze etc.) in transcribed speech
+- **+Fam		  ** = Family Name - proper noun
+- **+Fem		  ** = Feminine gender
+- **+Filler		  ** = Filled Pause (eh, em, etc.) in transcribed speech 
+- **+Fin		  ** = sentence final punctuation
+- **+Foreign	  ** = words from other languages, mainly English, some Latin
+- **+Fut		  ** = Future tense verbal particle
+- **+FutInd		  ** = Future Indicative verb
+- **+Gen		  ** = Genitive case 
+- **+Gn		  ** = General adverb
+- **+Guess		  ** = Morphological guesser
+- **+hPref 		  ** = h prefixed to a vowel-initial word 
 - **+Idf		** = Indefinite quantifier/pronoun e.g. aon (any), cibé (whoever), ceachtar/neachtar (either/neither) etc.
 - **+Ill		** = n/a
 - **+Imp		** = Imperative particle (negative)
@@ -660,10 +667,13 @@ language are presented in this system in terms of the following symbols.
 - **+Its		** = Intensifier of adjective e.g. sách, ró- etc.
 - **+End		** = end bracket, quote etc
 - **+Latin		** = Latin language words
+- **+LEFT		** = Left side of parwise symbol (parenthesis or quotation mark)
+- **+Len		** = Lenited forms
 - **+Loc		** = Locative adverb
+- **+MIDDLE		** = Middle punctuation
 - **+MWE		** = Multi word expression
 - **+Masc		** = Masculine gender
-- **+N 			** = n/a (Noun is used)
+- **+N 		** = n/a (Noun is used) -- The +N tag is in use, TODO: change it
 - **+NER		** = Named Entity Recognition
 - **+NG			** = Don't generate non-standard form
 - **+NStem		** = De-nominal verbal noun
@@ -711,12 +721,14 @@ language are presented in this system in terms of the following symbols.
 - **+Pron		** = Pronoun
 - **+Prop		** = Proper noun
 - **+Punct		** = Abbreviation
+- **+PUNCT		** = Abbreviation (it seems several languages have two tags :-/
 - **+Q			** = Interrogative particle(q)
 - **+Qty		** = Quantifier
 - **+Quo		** = all quotation marks double, single etc.
 - **+Ref		** = Reflexive particle
 - **+Rel		** = Relative particle
 - **+RelInd		** = rel. indirect
+- **+RIGHT		** = Right side of parwise symbol (parenthesis or quotation mark)
 - **+Rom 	** =
 - **+Sbj	** =  Subject pronouns: sí, sé and siad are used only when pron follows predicate verb in  subject position, otherwise í, é and iad are used.
 - **+Sem/Amount		    	** =
@@ -757,6 +769,7 @@ language are presented in this system in terms of the following symbols.
 - **+Sem/Sur		    	** =
 - **+Sem/Time		    	** =
 - **+Sem/Time-clock	    	** =
+- **+Sem/Title		    	** =
 - **+Sem/Tool-it	    	** =
 - **+Sem/Txt		    	** =
 - **+Sem/Veh		    	** =
@@ -835,7 +848,7 @@ language are presented in this system in terms of the following symbols.
 - **^ts		** = "t" before "s"   eg sagart : Gen Sg.Masc. teach an tsagairt - the priest's house
 - **^tv		** = "t-" before a vowel (eg éan : Nom. Sg. Masc. an t-éan - the bird) 
 
-## Flag diacritics
+### Flag diacritics
 
 - **@P.Pmatch.Loc 	** = XXX
 
@@ -866,7 +879,7 @@ given the proper use of these flags.
 |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
 |  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
 
-# The Root lexicon etc.
+## The Root lexicon etc.
 
 - **LEXICON Root			** = 
 - **	Abbrev;				** = 
@@ -964,7 +977,7 @@ given the proper use of these flags.
 
 ---
 
-# src-fst-morphology-stems-abbreviations.lexc.md 
+## src-fst-morphology-stems-abbreviations.lexc.md 
 
 Abbreviations 
 
@@ -974,7 +987,7 @@ Abbreviations
 
 ---
 
-# src-fst-morphology-stems-adjectives.lexc.md 
+## src-fst-morphology-stems-adjectives.lexc.md 
 
 
 
@@ -992,7 +1005,7 @@ Have moved to Demonstrative Determiners
 
 ---
 
-# src-fst-morphology-stems-adpositions.lexc.md 
+## src-fst-morphology-stems-adpositions.lexc.md 
 
 Prepositions: 
 
@@ -1022,7 +1035,7 @@ COMPOUND PREPOSITIONS: PREP + NOUN
 
 ---
 
-# src-fst-morphology-stems-adverbs.lexc.md 
+## src-fst-morphology-stems-adverbs.lexc.md 
 
 Adverbs
 
@@ -1039,7 +1052,7 @@ see PART-LEX.TXT (etc.) for following
 
 ---
 
-# src-fst-morphology-stems-articles.lexc.md 
+## src-fst-morphology-stems-articles.lexc.md 
 
 Common Functional Words - Articles
 
@@ -1049,7 +1062,7 @@ Common Functional Words - Articles
 
 ---
 
-# src-fst-morphology-stems-conjunctions.lexc.md 
+## src-fst-morphology-stems-conjunctions.lexc.md 
 
 CONJUNCTIONS
 E. Uí Dhonnchadha
@@ -1064,7 +1077,7 @@ e.g. má bhíonn, más
 some still have tense marking as they are combined forms
 e.g. sula, sular, murar etc.
 
-### LEXICON Conjunctions
+#### LEXICON Conjunctions
 
 gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé - SHOULD BE REMOVED I THINK ???? NO NEED FOT CONJ AS WELL AS SUBORD COP AND SUBORD VERB PART ...
 
@@ -1074,7 +1087,7 @@ gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded 
 
 ---
 
-# src-fst-morphology-stems-determiners.lexc.md 
+## src-fst-morphology-stems-determiners.lexc.md 
 
 DETERMINERS
 E. Uí Dhonnchadha
@@ -1091,7 +1104,7 @@ Determiners: INTERROGATIVES
 
 ---
 
-# src-fst-morphology-stems-interjections.lexc.md 
+## src-fst-morphology-stems-interjections.lexc.md 
 
 INTERJECTIONS
 
@@ -1112,7 +1125,7 @@ Anonymisation in transcripts/exam scripts
 
 ---
 
-# src-fst-morphology-stems-numerals.lexc.md 
+## src-fst-morphology-stems-numerals.lexc.md 
 
 NUMBERS
 E. Uí Dhonnchadha
@@ -1130,7 +1143,7 @@ Number  Operators
 
 ---
 
-# src-fst-morphology-stems-particles.lexc.md 
+## src-fst-morphology-stems-particles.lexc.md 
 
 PARTICLES
 E. Uí Dhonnchadha
@@ -1152,7 +1165,7 @@ Reflexive (or emphatic) 'féin' moved from pronouns file
 
 ---
 
-# src-fst-morphology-stems-pronouns.lexc.md 
+## src-fst-morphology-stems-pronouns.lexc.md 
 
 Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
 Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
@@ -1179,7 +1192,7 @@ PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 
 ---
 
-# src-fst-morphology-stems-propernouns.lexc.md 
+## src-fst-morphology-stems-propernouns.lexc.md 
 
 Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 
@@ -1198,7 +1211,7 @@ Female
 
 ---
 
-# src-fst-morphology-stems-punctuations.lexc.md 
+## src-fst-morphology-stems-punctuations.lexc.md 
 
 Punctuation
 
@@ -1208,7 +1221,7 @@ Punctuation
 
 ---
 
-# src-fst-morphology-stems-tags.lexc.md 
+## src-fst-morphology-stems-tags.lexc.md 
 
 
 Multichar_Symbols
@@ -1224,7 +1237,7 @@ LEXICON Root
 
 ---
 
-# src-fst-morphology-stems-tobar.lexc.md 
+## src-fst-morphology-stems-tobar.lexc.md 
 
 Tobar - ac Grianna
 
@@ -1236,7 +1249,7 @@ PLACENAMES
 
 ---
 
-# src-fst-morphology-stems-verbalnouns.lexc.md 
+## src-fst-morphology-stems-verbalnouns.lexc.md 
 
 
 
@@ -1250,7 +1263,7 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 
 ---
 
-# src-fst-morphology-stems-verbs.lexc.md 
+## src-fst-morphology-stems-verbs.lexc.md 
 
 First Conjugation Verb Stems
 
@@ -1292,7 +1305,7 @@ and TEST
 
 ---
 
-# src-fst-orthography-urucaps.xfscript.md 
+## src-fst-orthography-urucaps.xfscript.md 
 
 
 
@@ -1304,7 +1317,7 @@ NOW COMPOSED IN LOOKUP.SCRIPT
 
 ---
 
-# src-fst-phonetics-txt2ipa.xfscript.md 
+## src-fst-phonetics-txt2ipa.xfscript.md 
 
 
 
@@ -1473,7 +1486,7 @@ retracted tongue root			_q
 
 ---
 
-# src-fst-transcriptions-transcriptor-abbrevs2text.lexc.md 
+## src-fst-transcriptions-transcriptor-abbrevs2text.lexc.md 
 
 
 
@@ -1495,7 +1508,7 @@ For example:
 
 ---
 
-# src-fst-transcriptions-transcriptor-numbers-digit2text.lexc.md 
+## src-fst-transcriptions-transcriptor-numbers-digit2text.lexc.md 
 
 
 
@@ -1511,28 +1524,28 @@ For example:
 
 ---
 
-# tools-grammarcheckers-grammarchecker.cg3.md 
+## tools-grammarcheckers-grammarchecker.cg3.md 
 
 
 IRISH  G R A M M A R   C H E C K E R
 
-# DELIMITERS
+## DELIMITERS
 
 * DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; 
 
-# TAGS AND SETS
+## TAGS AND SETS
 
-## Tags
+### Tags
 
 This section lists all the tags inherited from the fst, and used as tags
 in the syntactic analysis. The next section, **Sets**, contains sets defined
 on the basis of the tags listed here, those set names are not visible in the output.
 
-### Beginning and end of sentence
+#### Beginning and end of sentence
 BOS
 EOS
 
-### Parts of speech tags
+#### Parts of speech tags
 
 Art
 Noun
@@ -1566,7 +1579,7 @@ PUNCT
 COMMA
 ¶
 
-### Tags for POS sub-categories
+#### Tags for POS sub-categories
 
 Simp
 Sbj
@@ -1585,7 +1598,7 @@ Allegro
 Arab
 Romertall
 
-### Tags for morphosyntactic properties
+#### Tags for morphosyntactic properties
 
 DefArt
 Art
@@ -1652,7 +1665,7 @@ VAbess
 
 Err/Orth
 
-### Semantic tags
+#### Semantic tags
 
 Sem/Act
 Sem/Ani
@@ -1688,7 +1701,7 @@ PROP-SUR
 
 TIME-N-SET
 
-### Sets for prepositions
+#### Sets for prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
 * LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; 
@@ -1705,12 +1718,12 @@ Noun errors (Ecl vs. not Ecl) after prepositions
 * LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; 
 * LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; 
 
-### Lookalikes
+#### Lookalikes
 
 * LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; 
 * LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 
 
-###  Syntactic tags
+####  Syntactic tags
 
 `@+FAUXV     `
 `@+FMAINV    `
@@ -1780,19 +1793,19 @@ OBJ
 SYN-V
 @X
 
-## Sets containing sets of lists and tags
+### Sets containing sets of lists and tags
 
 This part of the file lists a large number of sets based partly upon the tags defined above, and
 partly upon lexemes drawn from the lexicon.
 See the sourcefile itself to inspect the sets, what follows here is an overview of the set types.
 
-### Sets for Single-word sets
+#### Sets for Single-word sets
 
 * LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  
 *         "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           
 *         "á" ;  INITIAL
 
-### Sets for word or not
+#### Sets for word or not
 
 WORD
 any word
@@ -1800,7 +1813,7 @@ any word
 * SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA 
 = * SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA 
 
-### Case sets
+#### Case sets
 
 ADLVCASE
 
@@ -1811,13 +1824,13 @@ NOT-NOM
 NOT-GEN
 NOT-ACC
 
-### Verb sets
+#### Verb sets
 
-#### Verbs and their complements
+##### Verbs and their complements
 
 NOT-V
 
-### Sets for finiteness and mood
+#### Sets for finiteness and mood
 
 REAL-NEG
 
@@ -1825,7 +1838,7 @@ MOOD-V
 
 NOT-PRFPRC
 
-### Sets for person
+#### Sets for person
 
 SG1-V
 SG2-V
@@ -1844,27 +1857,27 @@ Some subsets of the VFIN sets
 * SET SG-V = SG1-V OR SG2-V OR SG3-V ;  
 * SET PL-V = PL1-V OR PL2-V OR PL3-V ; 
 
-### Pronoun sets
+#### Pronoun sets
 
-### Adjectival sets and their complements
+#### Adjectival sets and their complements
 
-### Adverbial sets and their complements
+#### Adverbial sets and their complements
 
-### Sets of elements with common syntactic behaviour
+#### Sets of elements with common syntactic behaviour
 
-### NP sets defined according to their morphosyntactic features
+#### NP sets defined according to their morphosyntactic features
 
-### The PRE-NP-HEAD family of sets
+#### The PRE-NP-HEAD family of sets
 
 These sets model noun phrases (NPs). The idea is to first define whatever can
 occur in front of the head of the NP, and thereafter negate that with the
 expression **WORD - premodifiers**.
 
-### Border sets and their complements
+#### Border sets and their complements
 
-### Morphoponological sets
+#### Morphoponological sets
 
-### Grammarchecker sets
+#### Grammarchecker sets
 
 * LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
 * LIST ADDED = ADDED ;   tag ensuring ... hmm
@@ -1915,14 +1928,14 @@ expression **WORD - premodifiers**.
 
 Here ends the list and set section
 
-# BEFORE-SECTIONS       
+## BEFORE-SECTIONS       
 
 * LIST <fixedcase> = <fixedcase>;        
 * ADD:fixedcase-np <fixedcase> TARGET Prop ;      ,  Never change case of proper nouns
 
-# SECTION       
+## SECTION       
 
-## spellchecking
+### spellchecking
 
 * ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;       = add rule marking typos
 
@@ -1930,11 +1943,11 @@ Here ends the list and set section
 
 * **RULE: lex-tá-is ** to change *tá* to *is*
 
-## Gender errors in adjectives
+### Gender errors in adjectives
 
 **RULE: msyn-adj-gender** to change Masc adjective to Fem if it modifies a feminine noun
 
-## Noun errors (Len vs. not Len) after prepositions
+### Noun errors (Len vs. not Len) after prepositions
 
 * LIST LEN-PREP = "ag" "ar" "i" "thar" "de" "do" "faoi" "gan" "idir" "ó" "roimh" "thar" "trí" "um" ;      
 These prepositions want an lenited version, adding an h after the initial letter
@@ -1942,7 +1955,7 @@ These prepositions want an lenited version, adding an h after the initial letter
 * LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;      
 This is what ???
 
-## Prepositions
+### Prepositions
 
 **ADD:msyn-prep-pron** rule complex that turns a simple preposition into a person-inflected preposition
 
@@ -1960,7 +1973,7 @@ This is what ???
 
 **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
-### Rules for lenition
+#### Rules for lenition
 
 More rules here forthcoming
 
@@ -1982,7 +1995,7 @@ More rules here forthcoming
 
 **ADD:msyn-gen-case-nouns** ...
 
-## Definiteness errors in nouns
+### Definiteness errors in nouns
 
 **ADD:msyn-noun-defart** ..
 
@@ -2010,9 +2023,9 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 
 ---
 
-# tools-tokenisers-tokeniser-disamb-gt-desc.pmscript.md 
+## tools-tokenisers-tokeniser-disamb-gt-desc.pmscript.md 
 
-# Tokeniser for gle
+## Tokeniser for gle
 
 Usage:
 ```
@@ -2056,7 +2069,7 @@ ASCII digits
 so far:
 * U+F0B7 for "x in box"
 
-## Unknown handling
+### Unknown handling
 Unknowns are tagged ?? and treated specially with `hfst-tokenise`
 hfst-tokenise --giella-cg will treat such empty analyses as unknowns, and
 remove empty analyses from other readings. Empty readings are also
@@ -2075,9 +2088,9 @@ Finally we mark as a token any sequence making up a:
 
 ---
 
-# tools-tokenisers-tokeniser-gramcheck-gt-desc.pmscript.md 
+## tools-tokenisers-tokeniser-gramcheck-gt-desc.pmscript.md 
 
-# Grammar checker tokenisation for gle
+## Grammar checker tokenisation for gle
 
 Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
 Then just:
@@ -2140,9 +2153,9 @@ Finally we mark as a token any sequence making up a:
 
 ---
 
-# tools-tokenisers-tokeniser-tts-cggt-desc.pmscript.md 
+## tools-tokenisers-tokeniser-tts-cggt-desc.pmscript.md 
 
-# TTS tokenisation for smj
+## TTS tokenisation for smj
 
 Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
 Then just:
