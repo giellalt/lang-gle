@@ -126,7 +126,6 @@ Tag list:
 - **+Obj		** = Object e.g. á = "do a" when obj of VN
 - **+Op			** = Number Operators, e.g. +,-,*,/ etc.
 - **+Ord		** = Ordinal (first, second, third..) i.e.  mo dhá lámh, an chéad dhá theach 
-- **+Orgn		** = Organisation - subset of proper noun
 - **+Part		** = Particle (not +Vb) (U)
 - **+Past		** = Past tense verbal particle
 - **+PastImp	** = Past Habitual - Gháthchaite (Imperfect Indicative)
