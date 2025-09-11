@@ -145,7 +145,6 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Obj		!!= - **@CODE@** = Object e.g. á = "do a" when obj of VN
 +Op			!!= - **@CODE@** = Number Operators, e.g. +,-,*,/ etc.
 +Ord		!!= - **@CODE@** = Ordinal (first, second, third..) i.e.  mo dhá lámh, an chéad dhá theach 
-+Orgn		!!= - **@CODE@** = Organisation - subset of proper noun
 +Part		!!= - **@CODE@** = Particle (not +Vb) (U)
 +Past		!!= - **@CODE@** = Past tense verbal particle
 +PastImp	!!= - **@CODE@** = Past Habitual - Gháthchaite (Imperfect Indicative)
