@@ -5,7 +5,7 @@
 !**************************************************************************
 ! E. Uí Dhonnchadha 
 ! 2003
-! 2024 Updated for +Org, +PersName, etc for Semantic tagging and NER
+! 2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER
 !**************************************************************************
 LEXICON NP-LEX-EIRE
 
@@ -3686,14 +3686,14 @@ Valera	NP-Fam-V;
 ! E. Uí Dhonnchadha 
 ! 2023
 ! Organisations
-! 2024 added +Orgn for semantic tagging NER (named entity recognition)
+! 2024 added +Sem/Orgn for semantic tagging NER (named entity recognition)
 !**************************************************************************
 LEXICON NP-LEX-ORG
-<S i n n %  F é i n %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<F i a n n a %  F á i l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<F i n e %  G a e l %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<L u c h t %  O i b r e  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
-<O n e %  D i r e c t i o n  %+Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<S i n n %  F é i n %+Sem/Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<F i a n n a %  F á i l %+Sem/Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<F i n e %  G a e l %+Sem/Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<L u c h t %  O i b r e  %+Sem/Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
+<O n e %  D i r e c t i o n  %+Sem/Orgn:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0>	#; !! 
 
 anois+Prop+Noun+Masc+Com+Sg:Anois      #; 
 anois+Prop+Noun+Masc+Com+Sg:ANOIS      #; 
@@ -3702,16 +3702,16 @@ U2+Prop+Noun+Masc+Com+Sg:U2      #;
 Childline+Prop+Noun+Masc+Com+Sg:Childline      #; 
 McDonalds+Prop+Noun+Masc+Com+Sg:McDonalds      #; 
 
-Google+Org+Prop+Noun+Masc+Com+Sg:Google      #; 
-eBay+Org+Prop+Noun+Masc+Com+Sg:eBay      #; 
-Twitter+Org+Prop+Noun+Masc+Com+Sg:Twitter      #; 
-Facebook+Org+Prop+Noun+Masc+Com+Sg:Facebook      #; 
+Google+Sem/Org+Prop+Noun+Masc+Com+Sg:Google      #; 
+eBay+Sem/Org+Prop+Noun+Masc+Com+Sg:eBay      #; 
+Twitter+Sem/Org+Prop+Noun+Masc+Com+Sg:Twitter      #; 
+Facebook+Sem/Org+Prop+Noun+Masc+Com+Sg:Facebook      #; 
 Skype+Prop+Noun+Masc+Com+Sg:Skype      #; 
 Moodle+Prop+Noun+Masc+Com+Sg:Moodle      #; 
-Instagram+Org+Prop+Noun+Masc+Com+Sg:Instagram      #; 
-Snapchat+Org+Prop+Noun+Masc+Com+Sg:Snapchat      #; 
-Netflix+Org+Prop+Noun+Masc+Com+Sg:Netflix      #; 
-YouTube+Org+Prop+Noun+Masc+Com+Sg:YouTube      #; 
+Instagram+Sem/Org+Prop+Noun+Masc+Com+Sg:Instagram      #; 
+Snapchat+Sem/Org+Prop+Noun+Masc+Com+Sg:Snapchat      #; 
+Netflix+Sem/Org+Prop+Noun+Masc+Com+Sg:Netflix      #; 
+YouTube+Sem/Org+Prop+Noun+Masc+Com+Sg:YouTube      #; 
 iPad+Prop+Noun+Masc+Com+Sg:iPad      #; 
 iPhone+Prop+Noun+Masc+Com+Sg:iPhone      #; 
 

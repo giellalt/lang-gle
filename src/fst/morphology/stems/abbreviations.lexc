@@ -9,10 +9,10 @@ LEXICON Abbrev
 ! Abbreviations with full stop(s)
 ! MUST BE INCLUDED IN TOKENIZER ALSO
 
-Dochtúir+Abr+Title:Dr.	#;
-Miss+Abr+Title:Ms.	#;
-Missus+Abr+Title:Mrs.	#;
-Mister+Abr+Title:Mr.	#;
+Dochtúir+Abr+Sem/Title:Dr.	#;
+Miss+Abr+Sem/Title:Ms.	#;
+Missus+Abr+Sem/Title:Mrs.	#;
+Mister+Abr+Sem/Title:Mr.	#;
 
 leathanach:lch.		Abr-tag;
 leathanaigh:lgh.	Abr-tag;

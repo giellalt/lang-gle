@@ -20,34 +20,43 @@
 
 Multichar_Symbols  !!≈ # Definitions for @CODE@
 
-!! ## Analysis symbols
+!! ## Tag symbols for analysis
 !  ----------------
 !! The morphological analyses of wordforms for the Irish
 !! language are presented in this system in terms of the following symbols.
+
+! TODO: Documet these tags:
+
++Corr  !!= - **@CODE@** =
++Error !!= - **@CODE@** =
++Start !!= - **@CODE@** =
+
+!! Tag list:
 
 +1P		!!= - **@CODE@** = first person inflection
 +2P		!!= - **@CODE@** = second person inflection
 +3P		!!= - **@CODE@** = third person inflection
 +A		!!= - **@CODE@** = XXX check
-+ABBR	!!= - **@CODE@** = 
-+ACR	!!= - **@CODE@** = 
++ABBR		!!= - **@CODE@** = Abbreviation
++ACR	      	!!= - **@CODE@** = Acronym
 +Abr		!!= - **@CODE@** = "Abbreviation"
-+Ad			!!= - **@CODE@** = Adverbial particle: go
++Ad		!!= - **@CODE@** = Adverbial particle: go
 +Adj		!!= - **@CODE@** = Adjective
 +Adv		!!= - **@CODE@** = Adverb
 +Anon		!!= - **@CODE@** = Anonymisation in transcribed speech
-+Arab		!!= - **@CODE@** = 
++Arab		!!= - **@CODE@** = Arabic numerals (1, 2, ...) 
 +Art		!!= - **@CODE@** = Article determiner (an/na)
-+Attr		!!= - **@CODE@** = 
++Attr		!!= - **@CODE@** = Attribute, element preceeding head
 +Auto		!!= - **@CODE@** = Autonomous verb form
 +Bar		!!= - **@CODE@** = hyphen, underscore, dash etc.
 +Bare		!!= - **@CODE@** = bare number form used after number particle "a"
 +Base		!!= - **@CODE@** = Base form of adjective (changed from +Pos to +Base 10/09/03)
 +Brack		!!= - **@CODE@** = round, square and curly brackets
-+CC			!!= - **@CODE@** = Canúint Chonnachta, Connaught dialect
-+CLBfinal	!!= - **@CODE@** = 
-+CM			!!= - **@CODE@** = Canúint na Mumhan, Munster dialect
-+CU			!!= - **@CODE@** = Canúint Uladh, Ulster dialect 
++CC		!!= - **@CODE@** = Canúint Chonnachta, Connaught dialect
++CLB            !!= - **@CODE@** = Clause boundary
++CLBfinal	!!= - **@CODE@** = Final clause boundary
++CM		!!= - **@CODE@** = Canúint na Mumhan, Munster dialect
++CU		!!= - **@CODE@** = Canúint Uladh, Ulster dialect 
 +Card		!!= - **@CODE@** = Cardinal number(one two three ...)
 +Cmc		!!= - **@CODE@** =  Communicator (yeah, y'know) in transcribed speech
 +CmpNP/First	!!= - **@CODE@** = 
@@ -79,20 +88,20 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Err/Hyph	!!= - **@CODE@** = 
 +Err/Lex	!!= - **@CODE@** = 
 +Err/MissingSpace !!= - **@CODE@** = 
-+Err/Orth !!= - **@CODE@** = Orthografical error
-+Err/SpaceCmp !!= - **@CODE@** = Compound space error
-+Event		!!= - **@CODE@** = Simple Event (laugh, sneeze etc.) in transcribed speech
-+Fam		!!= - **@CODE@** = Family Name - proper noun
-+Fem		!!= - **@CODE@** = Feminine gender
-+Filler		!!= - **@CODE@** = Filled Pause (eh, em, etc.) in transcribed speech 
-+Fin		!!= - **@CODE@** = sentence final punctuation
-+Foreign	!!= - **@CODE@** = words from other languages, mainly English, some Latin
-+Fut		!!= - **@CODE@** = Future tense verbal particle
-+FutInd		!!= - **@CODE@** = Future Indicative verb
-+Gen		!!= - **@CODE@** = Genitive case 
-+Gn			!!= - **@CODE@** = General adverb
-+Guess		!!= - **@CODE@** = Morphological guesser
-+hPref 		!!= - **@CODE@** = h prefixed to a vowel-initial word 
++Err/Orth 	  !!= - **@CODE@** = Orthografical error
++Err/SpaceCmp 	  !!= - **@CODE@** = Compound space error
++Event		  !!= - **@CODE@** = Simple Event (laugh, sneeze etc.) in transcribed speech
++Fam		  !!= - **@CODE@** = Family Name - proper noun
++Fem		  !!= - **@CODE@** = Feminine gender
++Filler		  !!= - **@CODE@** = Filled Pause (eh, em, etc.) in transcribed speech 
++Fin		  !!= - **@CODE@** = sentence final punctuation
++Foreign	  !!= - **@CODE@** = words from other languages, mainly English, some Latin
++Fut		  !!= - **@CODE@** = Future tense verbal particle
++FutInd		  !!= - **@CODE@** = Future Indicative verb
++Gen		  !!= - **@CODE@** = Genitive case 
++Gn		  !!= - **@CODE@** = General adverb
++Guess		  !!= - **@CODE@** = Morphological guesser
++hPref 		  !!= - **@CODE@** = h prefixed to a vowel-initial word 
 +Idf		!!= - **@CODE@** = Indefinite quantifier/pronoun e.g. aon (any), cibé (whoever), ceachtar/neachtar (either/neither) etc.
 +Ill		!!= - **@CODE@** = n/a
 +Imp		!!= - **@CODE@** = Imperative particle (negative)
@@ -104,10 +113,13 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Its		!!= - **@CODE@** = Intensifier of adjective e.g. sách, ró- etc.
 +End		!!= - **@CODE@** = end bracket, quote etc
 +Latin		!!= - **@CODE@** = Latin language words
++LEFT		!!= - **@CODE@** = Left side of parwise symbol (parenthesis or quotation mark)
++Len		!!= - **@CODE@** = Lenited forms
 +Loc		!!= - **@CODE@** = Locative adverb
++MIDDLE		!!= - **@CODE@** = Middle punctuation
 +MWE		!!= - **@CODE@** = Multi word expression
 +Masc		!!= - **@CODE@** = Masculine gender
-+N 			!!= - **@CODE@** = n/a (Noun is used)
++N 		!!= - **@CODE@** = n/a (Noun is used) -- The +N tag is in use, TODO: change it
 +NER		!!= - **@CODE@** = Named Entity Recognition
 +NG			!!= - **@CODE@** = Don't generate non-standard form
 +NStem		!!= - **@CODE@** = De-nominal verbal noun
@@ -155,12 +167,14 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Pron		!!= - **@CODE@** = Pronoun
 +Prop		!!= - **@CODE@** = Proper noun
 +Punct		!!= - **@CODE@** = Abbreviation
++PUNCT		!!= - **@CODE@** = Abbreviation (it seems several languages have two tags :-/
 +Q			!!= - **@CODE@** = Interrogative particle(q)
 +Qty		!!= - **@CODE@** = Quantifier
 +Quo		!!= - **@CODE@** = all quotation marks double, single etc.
 +Ref		!!= - **@CODE@** = Reflexive particle
 +Rel		!!= - **@CODE@** = Relative particle
 +RelInd		!!= - **@CODE@** = rel. indirect
++RIGHT		!!= - **@CODE@** = Right side of parwise symbol (parenthesis or quotation mark)
 +Rom 	!!= - **@CODE@** =
 +Sbj	!!= - **@CODE@** =  Subject pronouns: sí, sé and siad are used only when pron follows predicate verb in  subject position, otherwise í, é and iad are used.
 +Sem/Amount		    	!!= - **@CODE@** =
@@ -201,6 +215,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Sem/Sur		    	!!= - **@CODE@** =
 +Sem/Time		    	!!= - **@CODE@** =
 +Sem/Time-clock	    	!!= - **@CODE@** =
++Sem/Title		    	!!= - **@CODE@** =
 +Sem/Tool-it	    	!!= - **@CODE@** =
 +Sem/Txt		    	!!= - **@CODE@** =
 +Sem/Veh		    	!!= - **@CODE@** =
