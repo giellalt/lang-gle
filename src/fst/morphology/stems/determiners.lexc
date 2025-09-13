@@ -15,7 +15,7 @@ mo+Det+Poss+1P+Sg:mo		#;	! my
 mo+Det+Poss+1P+Sg+Short:m'		#;	! my  - changed +NG to +Short (as per Trond) for m' before a vowel
 do+Det+Poss+2P+Sg:do		#;	! your
 !do+Det+Poss+2P+Sg+NG:d'		#;	! your
-do+Det+Poss+2+Sg+Short:d'		#;	! your - changed +NG to +Short (as per Trond for m' for d' before a vowel
+do+Det+Poss+2P+Sg+Short:d'		#;	! your - changed +NG to +Short (as per Trond for m' for d' before a vowel
 do+Det+Poss+2P+Sg+NG:t'		#;	! your Bardic Apr 2019
 do+Det+Poss+2P+Sg+NG:th'		#;	! your Bardic Apr 2019
 ár+Det+Poss+1P+Pl:ár			#;	! our

@@ -60,7 +60,7 @@
 #!! # DELIMITERS
 # =============== #
 
-DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; !!= * @CODE@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; #!!= * @CODE@
 
 # ================== #
 #!! # TAGS AND SETS
@@ -214,7 +214,7 @@ LIST Sup = Sup ;			   #!! Sup
 LIST Actio = Actio ;		   #!! Actio
 LIST VAbess = VAbess ;		   #!! VAbess
 
-SET NUMBER = Sg OR Pl ;  !!= * @CODE@
+SET NUMBER = Sg OR Pl ;  #!!= * @CODE@
 
 LIST Err/Orth = Err/Orth Err/Orth-a/á Err/Orth-nom/gen Err/Orth-nom/acc Err/DerSub Err/CmpSub Err/UnspaceCmp Err/HyphSub Err/SpaceCmp Err/Spellrelax err_orth_mt ; #!! Err/Orth
 
@@ -264,25 +264,25 @@ SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
 #!! ### Sets for prepositions
 	
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; !!= * @CODE@
+LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; #!!= * @CODE@
 
 #!! These prepositions want an additonal consonant in front of its complement in order to cause ECL:
-LIST ART-PREP-ECL = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; !!= * @CODE@
+LIST ART-PREP-ECL = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; #!!= * @CODE@
 
-LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  !!= * @CODE@
+LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  #!!= * @CODE@
 
 #!! Noun errors (Ecl vs. not Ecl) after prepositions
 
-LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; !!= * @CODE@
-LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; !!= * @CODE@
-LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; !!= * @CODE@
-LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; !!= * @CODE@
+LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; #!!= * @CODE@
+LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; #!!= * @CODE@
+LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; #!!= * @CODE@
+LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; #!!= * @CODE@
 
 
 #!! ### Lookalikes
 
-LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; !!= * @CODE@
-LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; !!= * @CODE@
+LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; #!!= * @CODE@
+LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; #!!= * @CODE@
 
 #!! ###  Syntactic tags
 
@@ -375,9 +375,9 @@ LIST @X = @X ;    #!! @X
 
 #!! ### Sets for Single-word sets
 
-LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  !!= * @CODE@
-        "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           !!= * @CODE@
-        "á" ;  !!= * @CODE@INITIAL
+LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  #!!= * @CODE@
+        "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           #!!= * @CODE@
+        "á" ;  #!!= * @CODE@INITIAL
 
 
 #!! ### Sets for word or not
@@ -385,8 +385,8 @@ LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  !!= * @CODE@
 LIST WORD = N A Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR  \? ; #!! WORD
  #!! any word
 # SET REAL-WORD = WORD - Num - Ord ; #!! REAL-WORD
-SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR !!= * @CODE@
-SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA !!= * @CODE@
+SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR #!!= * @CODE@
+SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA #!!= * @CODE@
 
 
 #!! ### Case sets
@@ -431,14 +431,14 @@ LIST PL3-V = (V Pl3)  ;  #!! PL3-V
 
 LIST MODOA = (Poss 1P Sg) (Poss 2P Sg) (Poss 3P Sg Masc) ; #!! Set for your, my and his
 
-LIST PLPOSS = (Poss Pl)  ;  !!= * @CODE@
+LIST PLPOSS = (Poss Pl)  ;  #!!= * @CODE@
 
 #!! Note that imperative verbs are not included in these sets!
 
 #!! Some subsets of the VFIN sets
 # - - - - - - - - - - - - - - -
-SET SG-V = SG1-V OR SG2-V OR SG3-V ;  !!= * @CODE@
-SET PL-V = PL1-V OR PL2-V OR PL3-V ; !!= * @CODE@
+SET SG-V = SG1-V OR SG2-V OR SG3-V ;  #!!= * @CODE@
+SET PL-V = PL1-V OR PL2-V OR PL3-V ; #!!= * @CODE@
 
 
 #!! ### Pronoun sets
@@ -594,42 +594,32 @@ LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
 
 LIST SUGGEST = SUGGEST ;  #!!= * @CODE@ tag ensuring generation of a suggestion for an errouneous word
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
-LIST &err-agr = &err-agr ; #!!= * @CODE@ tags for error types (all must be declared)
-LIST &err-ext-agr = &err-ext-agr ;#!!= * @CODE@ ...
-LIST &err-ext-vagr = &err-ext-vagr ;      #!!= * @CODE@ 
-LIST &err-gen-po = &err-gen-po ;      #!!= * @CODE@ 
-LIST &err-no-conneg = &err-no-conneg ;      #!!= * @CODE@ 
-LIST &err-orrood-inf = &err-orrood-inf ;      #!!= * @CODE@ 
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@ 
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@ 
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@ 
-LIST &msyn-adj-gender2 = &msyn-adj-gender2 ; #!!= * @CODE@ 
 LIST &msyn-ar-a-haon-a-chlog = &msyn-ar-a-haon-a-chlog ; #!!= * @CODE@ 
 LIST &msyn-ar-an-aonach = &msyn-ar-an-aonach ; #!!= * @CODE@ 
 LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ; #!!= * @CODE@ 
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@ 
-LIST &msyn-ecl-after-prep2 = msyn-ecl-after-prep2 ;     #!!= * @CODE@ 
-LIST &fada-ó = &fada-ó ;    #!!= * @CODE@ 
+LIST &msyn-fada-ó = &msyn-fada-ó ;    #!!= * @CODE@ 
 LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-ie.i. = &msyn-&.i. ;    #!!= * @CODE@ 
 LIST &msyn-inis-de = &msyn-inis-de ;    #!!= * @CODE@ 
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
+LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@ 
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
-LIST &msyn-gen-case = &msyn-gen-case ;    #!!= * @CODE@ 
 LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;    #!!= * @CODE@ 
-LIST &msyn-gen-case-fem-sing = &msyn-gen-case-article-fem-sing ;    #!!= * @CODE@ 
-LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;    #!!= * @CODE@ 
-LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ;    #!!= * @CODE@ 
-LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;    #!!= * @CODE@ 
+#LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;    #!!= * @CODE@ 
+#LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ;    #!!= * @CODE@ 
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
 LIST &msyn-ar-an-tae = &msyn-ar-an-tae;    #!!= * @CODE@ 
 LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;    #!!= * @CODE@ 
 LIST &msyn-tóin-poill = &msyn-tóin-poill ;    #!!= * @CODE@ 
-LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@ 
+#LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@ 
 LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@ 
 LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@ 
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 

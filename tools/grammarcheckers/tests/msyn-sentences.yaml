@@ -1,0 +1,10 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Níl a fhios agam faoi rothaí {an grian}£{na gréine}."  
+  - "Níl a fhios {ag mé}£{agam} faoi rothaí na gréine."  
+  - "Níl a fhios {ag mé}£{agam} faoi rothaí {an grian}£{na gréine}."  
+  - "Tá an carr ag taisteal ar nós {an gaoth}£{na gaoithe}."
+  

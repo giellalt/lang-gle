@@ -38948,8 +38948,8 @@ tuigse		Nf4-SINGULAR;		! Entry: tuigse, f, ~ach = tuiscint, tuisceanach.
 < o i d h e a d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;	! This variant either masculine or feminine
 < b u a i l i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
 < b 0:h u a i l i d h %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
-< c a s l a i g h %+CU %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
-< c 0:h a s l a i g h %+CU %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
+< c a s l a i g h %+CU:0 %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
+< c 0:h a s l a i g h %+CU:0 %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < c o i s c é i m %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#;
 < c o i s c é i m %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 %+DefArt:0 >	#;
 < i o t h l a %+Noun:0 %+Fem:0 %+Com:0 %+Sg:0 >	#;
