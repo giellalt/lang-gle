@@ -86,17 +86,17 @@ LEXICON V1b-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:aimidne	NegSubj;
 +Auto:tar	NegSubj;		
 
-LEXICON V1b-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!LEXICON V1b-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
 
-+1P+Sg:ainn	NegQLen;
-+1P+Sg+Emph:ainnse	NegQLen;
-+2P+Sg:tá	NegQLen;
-+3P+Sg:adh	NegQLen;
-+1P+Pl:aimis	NegQLen;
-+1P+Pl+Emph:aimisne	NegQLen;
-+2P+Pl:adh	NegQLen;
-+3P+Pl:aidís	NegQLen;
-+Auto:taí 	NegQLen;		
+!+1P+Sg:ainn	NegQLen;
+!+1P+Sg+Emph:ainnse	NegQLen;
+!+2P+Sg:tá	NegQLen;
+!+3P+Sg:adh	NegQLen;
+!+1P+Pl:aimis	NegQLen;
+!+1P+Pl+Emph:aimisne	NegQLen;
+!+2P+Pl:adh	NegQLen;
+!+3P+Pl:aidís	NegQLen;
+!+Auto:taí 	NegQLen;		
 
 LEXICON V1b-Imper		! Imperative Mood - Modh Ordaitheach
 
@@ -173,16 +173,16 @@ LEXICON V1xa-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:imidne	NegSubj;
 +Auto:itear	NegSubj;		
 
-LEXICON V1xa-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:inn	NegQLen;
-+1P+Sg+Emph:innse	NegQLen;
-+2P+Sg:iteá	NegQLen;
-+3P+Sg:dh	NegQLen;
-+1P+Pl:imis	NegQLen;
-+1P+Pl+Emph:imisne	NegQLen;
-+2P+Pl:dh	NegQLen;
-+3P+Pl:idís	NegQLen;
-+Auto:ití 	NegQLen;		
+!LEXICON V1xa-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:inn	NegQLen;
+!+1P+Sg+Emph:innse	NegQLen;
+!+2P+Sg:iteá	NegQLen;
+!+3P+Sg:dh	NegQLen;
+!+1P+Pl:imis	NegQLen;
+!+1P+Pl+Emph:imisne	NegQLen;
+!+2P+Pl:dh	NegQLen;
+!+3P+Pl:idís	NegQLen;
+!+Auto:ití 	NegQLen;		
 		
 
 LEXICON V1xa-Imper		! Imperative Mood - Modh Ordaitheach
@@ -273,16 +273,16 @@ LEXICON V1xb-Cond		! Conditional Mood - Modh Coinníollach
 LEXICON V1xb-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
         V1xa-PresSubj;   	
 
-LEXICON V1xb-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:inn	NegQLen;
-+1P+Sg+Emph:innse	NegQLen;
-+2P+Sg:iteá	NegQLen;
-+3P+Sg:adh	NegQLen;
-+1P+Pl:imis	NegQLen;
-+1P+Pl+Emph:imisne	NegQLen;
-+2P+Pl:adh	NegQLen;
-+3P+Pl:idís	NegQLen;
-+Auto:ití 	NegQLen;
+!LEXICON V1xb-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:inn	NegQLen;
+!+1P+Sg+Emph:innse	NegQLen;
+!+2P+Sg:iteá	NegQLen;
+!+3P+Sg:adh	NegQLen;
+!+1P+Pl:imis	NegQLen;
+!+1P+Pl+Emph:imisne	NegQLen;
+!+2P+Pl:adh	NegQLen;
+!+3P+Pl:idís	NegQLen;
+!+Auto:ití 	NegQLen;
 
 LEXICON V1xb-Imper		! Imperative Mood - Modh Ordaitheach
 
@@ -375,16 +375,16 @@ LEXICON V1xc-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 
 
 
-LEXICON V1xc-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:ínn	NegQLen;
-+1P+Sg+Emph:ínnse	NegQLen;
-+2P+Sg:iteá	NegQLen;
-+3P+Sg:íodh	NegQLen;
-+1P+Pl:ímis	NegQLen;
-+1P+Pl+Emph:ímisne	NegQLen;
-+2P+Pl:íodh	NegQLen;
-+3P+Pl:ídís	NegQLen;
-+Auto:ití 	NegQLen;		
+!LEXICON V1xc-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:ínn	NegQLen;
+!+1P+Sg+Emph:ínnse	NegQLen;
+!+2P+Sg:iteá	NegQLen;
+!+3P+Sg:íodh	NegQLen;
+!+1P+Pl:ímis	NegQLen;
+!+1P+Pl+Emph:ímisne	NegQLen;
+!+2P+Pl:íodh	NegQLen;
+!+3P+Pl:ídís	NegQLen;
+!+Auto:ití 	NegQLen;		
 		
 
 LEXICON V1xc-Imper		! Imperative Mood - Modh Ordaitheach
@@ -565,17 +565,17 @@ LEXICON V2-BR-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:aímidne	NegSubj;
 +Auto:aítear	NegSubj;		
 
-LEXICON V2-BR-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-
-+1P+Sg:aínn	NegQLen;
-+1P+Sg+Emph:aínnse	NegQLen;
-+2P+Sg:aíteá	NegQLen;
-+3P+Sg:aíodh	NegQLen;
-+1P+Pl:aímis	NegQLen;
-+1P+Pl+Emph:aímisne	NegQLen;
-+2P+Pl:aíodh	NegQLen;
-+3P+Pl:aídís	NegQLen;
-+Auto:aítí 	NegQLen;		
+!LEXICON V2-BR-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!
+!+1P+Sg:aínn	NegQLen;
+!+1P+Sg+Emph:aínnse	NegQLen;
+!+2P+Sg:aíteá	NegQLen;
+!+3P+Sg:aíodh	NegQLen;
+!+1P+Pl:aímis	NegQLen;
+!+1P+Pl+Emph:aímisne	NegQLen;
+!+2P+Pl:aíodh	NegQLen;
+!+3P+Pl:aídís	NegQLen;
+!+Auto:aítí 	NegQLen;		
 
 LEXICON V2-BR-Imper		! Imperative Mood - Modh Ordaitheach
 

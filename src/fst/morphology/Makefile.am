@@ -20,7 +20,7 @@ SUBDIRS=. test
 
 # Add language-specific flags for hfst-lexc compilation here:
 if HAVE_SHARED_COMMON
-HFST_LEXC_LOCAL_FLAGS=  # --Werror # uncomment if lexc is good enough
+HFST_LEXC_LOCAL_FLAGS=  --Werror # uncomment if lexc is good enough
 else
 HFST_LEXC_LOCAL_FLAGS=  # No --Werror if deps are missing !
 endif
@@ -38,23 +38,23 @@ GT_LEXC_SRCS_L1_L2=\
 			affixes/symbols.lexc     \
 			affixes/verbs.lexc \
 			stems/abbreviations.lexc \
-			stems/tags.lexc \
 			stems/adjectives.lexc \
 			stems/adpositions.lexc \
 			stems/adverbs.lexc \
 			stems/articles.lexc \
+			stems/bardic.lexc \
 			stems/conjunctions.lexc \
 			stems/determiners.lexc \
+			stems/english.lexc \
 			stems/interjections.lexc \
+			stems/latin.lexc \
 			stems/nouns.lexc \
-			stems/verbs.lexc \
 			stems/numerals.lexc \
 			stems/particles.lexc \
 			stems/pronouns.lexc \
 			stems/propernouns.lexc \
-			stems/english.lexc \
-			stems/bardic.lexc \
-			stems/latin.lexc \
+			stems/punctuations.lexc \
+			stems/tags.lexc \
 			stems/verbalnouns.lexc \
 			stems/verbs.lexc
 
@@ -80,6 +80,7 @@ GT_OTHER_SRCS=\
 			stems/conjunctions.lexc \
 			stems/determiners.lexc \
 			stems/interjections.lexc \
+			stems/numerals.lexc \
 			stems/particles.lexc \
 			stems/pronouns.lexc \
 			stems/punctuations.lexc \

@@ -11,7 +11,7 @@
 !LEXICON Root
 !	Punctuation;
 
-LEXICON Punctuation
+LEXICON Punctuation_ga
 %.	Final;
 <%!>	Final;
 %.%.%.	Final;

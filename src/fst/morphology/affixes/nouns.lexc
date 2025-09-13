@@ -31,12 +31,12 @@ LEXICON Nf2a-SINGULAR
 +Noun+Fem+Gen:^F^G	Gen-sg-D2a;
 +Noun+Fem+Voc:^F^V	Voc-sg-0;
 
-!! beithir - beithre (gs) Sync + e
-LEXICON Nf2b-SINGULAR
-
-+Noun+Fem+Com:^F^C	Nom-sg; 
-+Noun+Fem+Gen:^F^G^Coim	Gen-sg-D2;
-+Noun+Fem+Voc:^F^V	Voc-sg-0;
+! not used
+! beithir - beithre (gs) Sync + e
+!LEXICON Nf2b-SINGULAR
+!+Noun+Fem+Com:^F^C	Nom-sg; 
+!+Noun+Fem+Gen:^F^G^Coim	Gen-sg-D2;
+!+Noun+Fem+Voc:^F^V	Voc-sg-0;
 
 LEXICON Nf2-1 
 Nf2-SINGULAR;
@@ -125,12 +125,14 @@ Nf2-SINGULAR;
 
 !! STRONG PLURALS
 
-LEXICON Nf2a-8
-!! Gen Sg = Sync + Slen + e
-Nf2b-SINGULAR;
-+Noun+Fem+Com:^C		PL-(E)ACHA;
-+Noun+Fem+Gen+Strong:^G		PL-(E)ACHA;
-+Noun+Fem+Voc:^V		PL-(E)ACHA;
+! not used
+!LEXICON Nf2a-8
+! Gen Sg = Sync + Slen + e
+!Nf2b-SINGULAR;
+!+Noun+Fem+Com:^C		PL-(E)ACHA;
+!+Noun+Fem+Gen+Strong:^G		PL-(E)ACHA;
+!+Noun+Fem+Voc:^V		PL-(E)ACHA;
+
 !! STRONG PLURALS
 
 LEXICON Nf2-9
@@ -1183,8 +1185,9 @@ LEXICON PL-OCHA					! ADD "OCHA"
 LEXICON NP-PLACE
 +Place+Prop+Noun+Masc:	NpSéUrú;
 
-LEXICON NP-PLACE-EN-fem
-+Place+Prop+Noun+Fem:		NpSéUrú-EN;
+! not necessary?
+!LEXICON NP-PLACE-EN-fem
+!+Place+Prop+Noun+Fem:		NpSéUrú-EN;
 
 LEXICON NP-PLACE-EN
 +Place+Prop+Noun+Masc:	NpSéUrú-EN;
@@ -1269,8 +1272,9 @@ LEXICON Nm1-Prop-Place
 !LEXICON Nm2-Prop-Place
 !+Place:		Nm2-Prop;
 
-LEXICON Nm3-Prop-Place
-+Place:		Nm3-Prop;
+! currently not used
+!LEXICON Nm3-Prop-Place
+!+Place:		Nm3-Prop;
 
 LEXICON Nm4-Prop-Place
 +Place:		Nm4-Prop;
@@ -1409,8 +1413,9 @@ LEXICON NpSéUrú-PL
 +Com+Pl+Len:^IM^Sé		#; 
 +Com+Pl+Ecl:^IM^Urú		#;
 
-LEXICON NP-X
-+Prop+Noun:	#;
+! not used
+!LEXICON NP-X
+!+Prop+Noun:	#;
 
 LEXICON NpSéUrú-TIR
 #;
@@ -1421,8 +1426,9 @@ LEXICON NpSéUrú-TIR
 LEXICON AdjF-Prop
 +Adj+Fem+Com+Sg+Len:	#;
 
-LEXICON AdjF-Prop-pl
-+Adj+Fem+Com+Pl:	#;
+! no plural feminine placenemes in lexicon file so far
+!LEXICON AdjF-Prop-pl
+!+Adj+Fem+Com+Pl:	#;
 
 LEXICON AdjM-Prop
 +Adj+Masc+Com+Sg:	#;

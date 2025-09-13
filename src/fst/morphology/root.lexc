@@ -340,7 +340,8 @@ LEXICON Root			!!= - **@CODE@** =
 	Latinlex;				!!= - **@CODE@** = Latin lexicom from RIA historical corpus
 	!Tobar;					!!= - **@CODE@** = omitting this (non-standard older forms)
 	
-	Punctuation ;		!!= - **@CODE@** = 
+	Punctuation;		!!= - **@CODE@** = 
+	Punctuation_ga;		!!= - **@CODE@** = 
 	Symbols;			!!= - **@CODE@** = 
 	XMLTags; 			!!= - **@CODE@** = XML tags e.g. <p>, <title> etc.
 
@@ -373,7 +374,6 @@ LEXICON Root			!!= - **@CODE@** =
 	NounsD;			!!= - **@CODE@** = FP nouns (manual Decl 1-3)
 	NounsE;			!!= - **@CODE@** = FP nouns (manual Decs 4-5)
 	NounsF;			!!= - **@CODE@** = FP nouns (manual Irregular)
-	NounsG;			!!= - **@CODE@** = Proper Nouns - SHOULD BE MOVED TO Proper Nouns Lexicons
 	NounsH;			!!= - **@CODE@** = Various from corpora
 	NounsIrregular;	!!= - **@CODE@** = 
 	Substantive;  	!!= - **@CODE@** = 
@@ -383,6 +383,7 @@ LEXICON Root			!!= - **@CODE@** =
 	NounsEqualVariants;	!!= - **@CODE@** = Variants extracted from FGB (2011 EUD)
 
 ! Proper Nouns
+	NounsG;			!!= - **@CODE@** = Proper Nouns - MOVED from Nouns TO Proper Nouns Lexicons
 	NP-LEX-FAM;			!!= - **@CODE@** = Family Names (Irish)
 	NP-LEX-FAM-EN;		!!= - **@CODE@** = Family Names (English)
 	NP-LEX-PERS;		!!= - **@CODE@** = Personal Names (Irish)

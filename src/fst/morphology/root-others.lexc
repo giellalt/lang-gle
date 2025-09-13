@@ -653,6 +653,9 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 +VTI
 +VD	! ditransitive - not at present
 +NStem	! de-nominal verbal (action) noun
++English
++OLang/ENG
++OLang/LAT
 
 ^IM	! initial mutation
 ^Sé
@@ -664,6 +667,7 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 LEXICON Root
 	Abbrev;
 	Adverb;
+	Anonymous;
         Articles;
 	Conjunctions;
 	Determiners;
@@ -672,12 +676,19 @@ LEXICON Root
 	Communicators;
 	Events;
 	Numerals;
-		Prepositions;
+	Particles;
         Personal_Pronouns;
- 
-!***************************************************************************
-	Punctuation;
+	Prepositions;
+	!Punctuation;
+	Punctuation_ga;
+	
+	Bardiclex;
+	Latinlex;
+	Communicators-English;
+	Englishlex;
 
+	Symbols;
 	XMLTags;
+!***************************************************************************
 
 ! vim: set ft=xfst-lexc:

@@ -436,11 +436,11 @@ LEXICON Fem_gen-D3_sg			! like Noun Declension 3
 !+Comp+Len:^Leaa^Sé	#;
 +Comp+Len:^Leaa^Sé	#;
 
-LEXICON Fem_gen-D4_sg			! like Noun Declension 4 (no change)
-+Fem+Gen+Sg:0	#;
-+Comp:0	#;
+! not in use
+!LEXICON Fem_gen-D4_sg			! like Noun Declension 4 (no change)
+!+Fem+Gen+Sg:0	#;
+!+Comp:0	#;
 !+Comp+Len:^Sé	#;
-+Comp+Len:^Sé	#;
 
 
 
@@ -499,9 +499,9 @@ LEXICON PL-E-SLENDER
 +Pl+Len:e^Sé	#;			! adj IS lenited after a noun ending in a 
 					! slender consonant
 
-LEXICON PL-SLENDER
-
-+Pl+Len:^Sé		#;			! adj IS lenited after a noun ending in a 
+! not used
+!LEXICON PL-SLENDER
+!+Pl+Len:^Sé	#;			! adj IS lenited after a noun ending in a 
 					! slender consonant
 
 LEXICON PL-TADA-ADJ							
@@ -516,9 +516,10 @@ LEXICON AdjBASE
 +Adj+Base+hPref:^IM^hv	#; 	! e.g. go hiontach
 +Adj+Base+Len:^IM^Sé	#; 	! e.g. ba bhreá, BÁC Thuaidh (adj)
 
-LEXICON AdjSéUrú
-#;
-+Len:^Adj^Sé	#;
-!:^Adj^Sé	#;
-+Ecl:^Adj^Urú	#;
-!:^Adj^Urú	#;
+! not in use
+!LEXICON AdjSéUrú
+!#;
+!+Len:^Adj^Sé	#;
+!=!:^Adj^Sé	#;
+!+Ecl:^Adj^Urú	#;
+!=!:^Adj^Urú	#;

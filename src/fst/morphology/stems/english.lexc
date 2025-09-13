@@ -49080,8 +49080,9 @@ Zulu	English-noun-prop-tag;
 Zurich	English-noun-prop-tag;
 
 
-LEXICON English-tag
-+OLang/ENG+Foreign+English:	#;
+! not in use
+!LEXICON English-tag
+!+OLang/ENG+Foreign+English:	#;
 
 LEXICON English-noun-place-tag
 +OLang/ENG+Foreign+English+Noun+Prop+Def:	#;

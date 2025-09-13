@@ -4771,6 +4771,7 @@ Vítneam	NP-PLACE-sg;	! Viet-Nam
 Volga	NP-PLACE-sg;	! Volga
 Volta	NP-PLACE-sg;	! !!!!Volta River (The)
 Vóvaidín	NP-PLACE-sg;	! Vojvodina
+
 LEXICON NP-LEX-EIRE-EN
 Antrim	NP-PLACE-EN;	!! Mar 2012
 Clare	NP-PLACE-EN;	!! Mar 2012
@@ -4913,6 +4914,7 @@ Waterford	NP-PLACE-EN;
 Westport	NP-PLACE-EN;
 Wexford	NP-PLACE-EN;
 Wicklow	NP-PLACE-EN;
+
 LEXICON NP-LEX-FAM-EN
 Abbott	NP-FAM-EN;
 Abee	NP-FAM-EN;
@@ -10992,6 +10994,7 @@ Young	NP-FAM-EN;
 Yourell	NP-FAM-EN;
 Zorkin	NP-FAM-EN;
 Zouche	NP-FAM-EN;
+
 LEXICON NP-LEX-PERS-EN
 Abraham	NP-PERS-EN;
 Abban	NP-PERS-EN;
@@ -12412,9 +12415,6 @@ Boirneán		NP-PLACE;	! ID: 30601; English: Morenane
 Boistimín		NP-PLACE;	! ID: 26267; English: Bushtameen
 Coilleachán		NP-PLACE;	! ID: 3872; English: Cuillaghan
 Coilligeán		NP-PLACE;	! ID: 2375; English: Colligan
-
-!!COMPOSED NAMES
-
 < A b h a %_:%  B h a i l e %_:%  a n %_:%  M h u i l i n n >	NP-PLACE;	! ID: 116434; English: Milltown
 < A b h a %_:%  B h a r r %_:%  D u í n s e >			NP-PLACE;	! ID: 1395062; English: Bardinch River
 < B á %_:%  n a %_:%  C u a i l l í >				NP-PLACE;	! ID: 1165490; English: Coulagh Bay
@@ -12429,6 +12429,7 @@ Abhóca+Prop+Noun+Masc+Gen+Sg:Abhóca		#;	! ID: 55230; English: Avoca; Base: Abh
 Bacastún+Prop+Noun+Masc+Gen+Sg+Len:Bhacastúin	#;	! ID: 17111; English: Backstown; Base: Bacastún {Bhacastúin}
 Bachaill+Prop+Noun+Masc+Gen+Sg+Len:Bhacaille	#;	! ID: 40151; English: Boughill; Base: Bachaill {Bhacaille}
 Baicstiall+Prop+Noun+Masc+Gen+Sg+Len:Bhaicstéille #;	! ID: 42205; English: Backsteel; Base: Baicstiall {Bhaicstéille}
+
 LEXICON NP-LEX-RIACORPAS1
 Corbmaic+Prop+Noun:Corbmaic	   #;
 Burc+Prop+Noun:Burc	   #;
@@ -13248,3 +13249,58 @@ Oissín+Prop+Noun:Oissín	   #;
 Oilioll+Prop+Noun:Oilioll	   #;
 Amhalgaidh+Prop+Noun+Ecl:nAmhalgaidh	   #;
 
+LEXICON NounsG
+Acaech	Nm1-1;	! Achaen
+Aegéach	Nm1-1;	! Aegean
+Aeólach	Nm1-1;	! Aeolian
+Afra-Mheiriceánach	Nm1-1;	! Afro-American
+Agragantach	Nm1-1;	! Agrigentian
+Ailbíseach	Nm1-1;	! Albigensian
+Airiasach      Nm1-1;  ! Arian
+Andalúiseach	Nm1-1;	! Andalusian
+Angla-Caitliceach	Nm1-1;	! Anglo-Catholic
+Angla-Indiach	Nm1-1;	! Anglo-Indian
+Angla-Éireannach	Nm1-1; ! Anglo-Irish
+Aontachtach	Nm1-1;	! Unionist
+Apaláiseach	Nm1-1;	! Appalachian
+Bailéarach	Nm1-1;	! Balearic
+Beirbeireach	Nm1-1;	! Berber
+Búrbónach	Nm1-1;	! Bourbon
+Canárach	Nm1-1;	! Canarian
+Coirdíneach	Nm1-1;	! Kurd
+Formósach	Nm1-1;	! Formosan
+Fíníneach	Nm1-1;	! Fenian
+Gael-Mheiriceánach	Nm1-1;	! Irish American
+Heiseánach	Nm1-1;	! Hessian
+Inceach	Nm1-1;	! Inca
+Indiach-Mheiriceánach	Nm1-1;	! Indian-American
+Iútlannach	Nm1-1;	! Jute
+Leiveantach	Nm1-1;	! Levantine
+Londanach	Nm1-1;	! Londoner
+Lúsatánach	Nm1-1;	! Lusitanian
+Madagascrach	Nm1-1;	! Madagascan
+Moldávach	Nm1-1;	! Moldovan
+Mícéanach	Nm1-1;	! Mycenaean
+Naipleach	Nm1-1;	! Neapolitan
+Nua-Chaladónach	Nm1-1;	! New Caledonian
+Pan-Mheiriceánach	Nm1-1;	! Pan-American
+Patagónach	Nm1-1;	! Patagonian
+Piréineach	Nm1-1;	! Pyrenean
+Ríceach	Nm1-1;	! Rican (Cósta Ríceach, Portó Ríceach)
+Sadúisíneach	Nm1-1;	! Sadducee
+Seineagálach	Nm1-1;	! Senegalese
+Siléiseach	Nm1-1;	! Silesian
+Somálach	Nm1-1;	! Somalian
+Sorbach	Nm1-1;	! Sorb
+Spartach	Nm1-1;	! Spartan
+Suiméarach	Nm1-1;	! Sumerian
+Suranamach	Nm1-1;	! Surinamese
+Sóróstarach	Nm1-1;	! Zoroastrian
+Tansánach	Nm1-1;	! Tanzanian
+Tasmánach	Nm1-1;	! Tasmanian
+Teasálach	Nm1-1;	! Thessalian
+Turcamánach	Nm1-1;	! Turkmen
+Téacrach	Nm1-1;	! Teucrian
+Tógalannach	Nm1-1;	! Togolese, Togolander
+Uraguach	Nm1-1;	! Uruguayan
+Éatrúscach	Nm1-1;	! Etruscan

@@ -472,16 +472,16 @@ LEXICON VI2-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:beirimidne		V3NegSubj;
 +Auto:beirtear		V3NegSubj;		
 
-LEXICON VI2-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:beirinn	V3NegQ;
-+2P+Sg:beirteá	V3NegQ;
-+2P+Sg+Emph:beirteása	V3NegQ;
-+3P+Sg:beireadh	V3NegQ;
-+1P+Pl:beirimis	V3NegQ;
-+1P+Pl+Emph:beirimisne	V3NegQ;
-+2P+Pl:beireadh	V3NegQ;
-+3P+Pl:beiridís	V3NegQ;
-+Auto:beirtí 	V3NegQ;		
+!!LEXICON VI2-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:beirinn	V3NegQ;
+!+2P+Sg:beirteá	V3NegQ;
+!+2P+Sg+Emph:beirteása	V3NegQ;
+!+3P+Sg:beireadh	V3NegQ;
+!+1P+Pl:beirimis	V3NegQ;
+!+1P+Pl+Emph:beirimisne	V3NegQ;
+!+2P+Pl:beireadh	V3NegQ;
+!+3P+Pl:beiridís	V3NegQ;
+!+Auto:beirtí 	V3NegQ;		
 
 
 LEXICON VI2-Imper		! Imperative Mood - Modh Ordaitheach
@@ -582,16 +582,16 @@ LEXICON VI3-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:cloisimidne	V3NegSubj;
 +Auto:cloistear 	V3NegSubj;		
 
-LEXICON VI3-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-0:cloiseadh V3NegQ;
-+1P+Sg:cloisinn	 V3NegQ;
-+1P+Sg+Emph:cloisinnse	 V3NegQ;
-+2P+Sg:cloisteá	 V3NegQ;
-!!+3P+Sg:cloiseadh V3NegQ;
-+1P+Pl:cloisimis V3NegQ;
-!!+2P+Pl:cloiseadh V3NegQ;
-+3P+Pl:cloisidís V3NegQ;
-+Auto:cloistí    V3NegQ;		
+!LEXICON VI3-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!0:cloiseadh V3NegQ;
+!+1P+Sg:cloisinn	 V3NegQ;
+!+1P+Sg+Emph:cloisinnse	 V3NegQ;
+!+2P+Sg:cloisteá	 V3NegQ;
+!=!+3P+Sg:cloiseadh V3NegQ;
+!+1P+Pl:cloisimis V3NegQ;
+!!!+2P+Pl:cloiseadh V3NegQ;
+!+3P+Pl:cloisidís V3NegQ;
+!+Auto:cloistí    V3NegQ;		
 
 
 LEXICON VI3-Imper		! Imperative Mood - Modh Ordaitheach
@@ -683,14 +683,14 @@ LEXICON VI4-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:ithimidne	V3NegSubj;
 +Auto:itear 	V3NegSubj;		
 
-LEXICON VI4-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:ithinn	V3NegQ;
-+2P+Sg:iteá	V3NegQ;
-+3P+Sg:itheadh	V3NegQ;
-+1P+Pl:ithimis	V3NegQ;
-+2P+Pl:itheadh	V3NegQ;
-+3P+Pl:ithidís	V3NegQ;
-+Auto:ití	V3NegQ;		
+!LEXICON VI4-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:ithinn	V3NegQ;
+!+2P+Sg:iteá	V3NegQ;
+!+3P+Sg:itheadh	V3NegQ;
+!+1P+Pl:ithimis	V3NegQ;
+!+2P+Pl:itheadh	V3NegQ;
+!+3P+Pl:ithidís	V3NegQ;
+!+Auto:ití	V3NegQ;		
 
 
 
@@ -786,14 +786,14 @@ LEXICON VI5-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:tugaimidne	V3NegQ;
 +Auto:tugtar 	V3NegQ;		
 
-LEXICON VI5-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:tugainn	V3NegQ;
-+2P+Sg:tugtá	V3NegQ;
-+3P+Sg:tugadh 	V3NegQ;
-+1P+Pl:tugaimis	V3NegQ;
-+2P+Pl:tugadh	V3NegQ;
-+3P+Pl:tugaidís V3NegQ;
-+Auto:tugtaí    V3NegQ;		
+!LEXICON VI5-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:tugainn	V3NegQ;
+!+2P+Sg:tugtá	V3NegQ;
+!+3P+Sg:tugadh 	V3NegQ;
+!+1P+Pl:tugaimis	V3NegQ;
+!+2P+Pl:tugadh	V3NegQ;
+!+3P+Pl:tugaidís V3NegQ;
+!+Auto:tugtaí    V3NegQ;		
 
 
 LEXICON VI5-Imper		! Imperative Mood - Modh Ordaitheach
@@ -895,14 +895,14 @@ LEXICON VI6-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:tagaimidne	V3NegSubj;
 +Auto:tagtar 	V3NegSubj;		
 
-LEXICON VI6-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:tagainn	V3NegQ;
-+2P+Sg:tagtá	V3NegQ;
-+3P+Sg:tagadh 	V3NegQ;
-+1P+Pl:tagaimis	V3NegQ;
-+2P+Pl:tagadh	V3NegQ;
-+3P+Pl:tagaidís V3NegQ;
-+Auto:tagtaí    V3NegQ;		
+!LEXICON VI6-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:tagainn	V3NegQ;
+!+2P+Sg:tagtá	V3NegQ;
+!+3P+Sg:tagadh 	V3NegQ;
+!+1P+Pl:tagaimis	V3NegQ;
+!+2P+Pl:tagadh	V3NegQ;
+!+3P+Pl:tagaidís V3NegQ;
+!+Auto:tagtaí    V3NegQ;		
 
 
 LEXICON VI6-Imper		! Imperative Mood - Modh Ordaitheach
@@ -1014,17 +1014,16 @@ LEXICON VI7-Cond		! Conditional Mood - Modh Coinníollach
 !!!+1P+Pl+Emph:téimidne	V3NegSubj;
 !!!+Auto:téitear 	V3NegSubj;		
 
-LEXICON VI7-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-!!! PastSubj is already available from regular téigh (to heat) 
-
-0:téadh	V3NegQ;
-+1P+Sg:téinn	V3NegQ;
-+2P+Sg:téiteá	V3NegQ;
-!!+3P+Sg:téadh	V3NegQ;
-+1P+Pl:téimis	V3NegQ;
-!!+2P+Pl:téadh	V3NegQ;
-+3P+Pl:téidís	V3NegQ;
-+Auto:téití	V3NegQ;		
+!LEXICON VI7-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!=! PastSubj is already available from regular téigh (to heat) 
+!0:téadh	V3NegQ;
+!+1P+Sg:téinn	V3NegQ;
+!+2P+Sg:téiteá	V3NegQ;
+!=!+3P+Sg:téadh	V3NegQ;
+!+1P+Pl:téimis	V3NegQ;
+!=!+2P+Pl:téadh	V3NegQ;
+!+3P+Pl:téidís	V3NegQ;
+!+Auto:téití	V3NegQ;		
 
 !!!LEXICON VI7-Imper		! Imperative Mood - Modh Ordaitheach
 !!! Imper is already available from regular téigh (to heat) 
@@ -1240,14 +1239,14 @@ LEXICON VI8-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láithreach
 +1P+Pl:feicimid	V3NegSubj;
 +Auto:feictear 	V3NegSubj;		
 
-LEXICON VI8-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:feicinn	V3NegQ;
-+2P+Sg:feicteá	V3NegQ;
-+3P+Sg:feiceadh	V3NegQ;
-+1P+Pl:feicimis	V3NegQ;
-+2P+Pl:feiceadh	V3NegQ;
-+3P+Pl:feicidís	V3NegQ;
-+Auto:feictí	V3NegQ;		
+!LEXICON VI8-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:feicinn	V3NegQ;
+!+2P+Sg:feicteá	V3NegQ;
+!+3P+Sg:feiceadh	V3NegQ;
+!+1P+Pl:feicimis	V3NegQ;
+!+2P+Pl:feiceadh	V3NegQ;
+!+3P+Pl:feicidís	V3NegQ;
+!+Auto:feictí	V3NegQ;		
 
 
 
@@ -1406,15 +1405,15 @@ LEXICON VI9-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl:déanaimid	V3NegQ;
 +Auto:déantar 		V3NegQ;		
 
-LEXICON VI9-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-0:déanadh 		V3NegQ;
-+1P+Sg:déanainn		V3NegQ;
-+2P+Sg:déantá		V3NegQ;
-!!!!!!+3P+Sg:déanadh 		V3NegQ;
-+1P+Pl:déanaimis	V3NegQ;
-!!!!!+2P+Pl:déanadh		V3NegQ;
-+3P+Pl:déanaidís 	V3NegQ;
-+Auto:déantaí    	V3NegQ;		
+!LEXICON VI9-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!0:déanadh 		V3NegQ;
+!+1P+Sg:déanainn		V3NegQ;
+!+2P+Sg:déantá		V3NegQ;
+!=!!!!!+3P+Sg:déanadh 		V3NegQ;
+!+1P+Pl:déanaimis	V3NegQ;
+!=!!!!+2P+Pl:déanadh		V3NegQ;
+!+3P+Pl:déanaidís 	V3NegQ;
+!+Auto:déantaí    	V3NegQ;		
 
 
 LEXICON VI9-Imper		! Imperative Mood - Modh Ordaitheach
@@ -1548,14 +1547,14 @@ LEXICON VI10-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láfaigh.
 +1P+Pl:faighimid	V3NegSubj;
 +Auto:faightear 	V3NegSubj;		
 
-LEXICON VI10-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:faighinn		V3NegQ;
-+2P+Sg:faighteá		V3NegQ;
-+3P+Sg:faigheadh	V3NegQ;
-+1P+Pl:faighimis	V3NegQ;
-+2P+Pl:faigheadh	V3NegQ;
-+3P+Pl:faighidís	V3NegQ;
-+Auto:faightí		V3NegQ;		
+!LEXICON VI10-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:faighinn		V3NegQ;
+!+2P+Sg:faighteá		V3NegQ;
+!+3P+Sg:faigheadh	V3NegQ;
+!+1P+Pl:faighimis	V3NegQ;
+!+2P+Pl:faigheadh	V3NegQ;
+!+3P+Pl:faighidís	V3NegQ;
+!+Auto:faightí		V3NegQ;		
 
 
 
@@ -1793,18 +1792,18 @@ LEXICON VI11-PresSubj		! Present Subj. Mood - Modh Foshuiteach Láith.
 +1P+Pl+Emph:rabhaimidne	V3NegSubj;
 +Auto:rabhthar	 	V3NegSubj;		
 
-LEXICON VI11-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
-+1P+Sg:beinn	V3NegQ;
-+1P+Sg+Emph:beinnse	V3NegQ;
-+2P+Sg:beifeá	V3NegQ;
-+2P+Sg+Emph:beifeása	V3NegQ;
-+3P+Sg:beadh	V3NegQ;
-+1P+Pl:beimis	V3NegQ;
-+1P+Pl+Emph:beimisne	V3NegQ;
-+2P+Pl:beadh	V3NegQ;
-+3P+Pl:beidís	V3NegQ;
-+3P+Pl+Emph:beidís-sean	V3NegQ;
-+Auto:beití	V3NegQ;		
+!LEXICON VI11-PastSubj		! Past Subjunctive Mood - Modh Foshuit. Caite
+!+1P+Sg:beinn	V3NegQ;
+!+1P+Sg+Emph:beinnse	V3NegQ;
+!+2P+Sg:beifeá	V3NegQ;
+!+2P+Sg+Emph:beifeása	V3NegQ;
+!+3P+Sg:beadh	V3NegQ;
+!+1P+Pl:beimis	V3NegQ;
+!+1P+Pl+Emph:beimisne	V3NegQ;
+!+2P+Pl:beadh	V3NegQ;
+!+3P+Pl:beidís	V3NegQ;
+!+3P+Pl+Emph:beidís-sean	V3NegQ;
+!+Auto:beití	V3NegQ;		
 
 LEXICON VI11-Imper		! Imperative Mood - Modh Ordatáeach
 
