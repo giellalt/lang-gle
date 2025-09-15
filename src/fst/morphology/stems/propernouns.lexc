@@ -3693,7 +3693,7 @@ LEXICON NP-LEX-ORG
 < F i a n n a %  F á i l %+Sem%/Org:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
 < F i n e %  G a e l %+Sem%/Org:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
 < L u c h t %  O i b r e  %+Sem%/Org:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
-< O n e %  D i r e c t i o n  %+Sem%/Group_Hum:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
+< O n e %  D i r e c t i o n  %+Sem%/Group%_Hum:0 %+Prop:0 %+Noun:0 %+Masc:0 %+Com:0 %+Sg:0 >	#; !! 
 
 anois+Prop+Noun+Masc+Com+Sg:Anois      #; 
 anois+Prop+Noun+Masc+Com+Sg:ANOIS      #; 
