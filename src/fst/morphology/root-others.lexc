@@ -631,6 +631,9 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 ^LeaS		! Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
 ^LC		! leathan/Caol: Leathnaítear an tús mura dtosnaíonn an foirceann le "t"
 
++Acc		  !!= - **@CODE@** = Accusative case
++Cp		  !!= - **@CODE@** = ?
++Wh		  !!= - **@CODE@** = wh word?
 
 
 ^igh 		! remove -igh ending
@@ -656,6 +659,8 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 +English
 +OLang/ENG
 +OLang/LAT
+
++Sem/Org
 
 ^IM	! initial mutation
 ^Sé

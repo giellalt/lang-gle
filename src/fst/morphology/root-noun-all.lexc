@@ -226,6 +226,9 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 
 +XMLTag		! 
 
++Acc		  !!= - **@CODE@** = Accusative case
++Cp		  !!= - **@CODE@** = ?
++Wh		  !!= - **@CODE@** = wh word?
 
 +Noun +Com +Gen +Dat +Sg +Pl +Masc +Fem +DefArt +Emph +Subst
 +Pron +Prep +Pers +Cmpd +Simp
@@ -306,6 +309,8 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 +Voc	! vocative case 
 +Sg	! singular
 +Pl	! plural
+
++Sem/Org
 
 +Weak	! when an adj is qualifying a strong plural noun(i.e. noun plural is the 
 +Strong	! same for all cases) the adj will also have the same form in all cases

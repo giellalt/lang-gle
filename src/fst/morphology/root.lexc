@@ -98,7 +98,10 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Foreign	  !!= - **@CODE@** = words from other languages, mainly English, some Latin
 +Fut		  !!= - **@CODE@** = Future tense verbal particle
 +FutInd		  !!= - **@CODE@** = Future Indicative verb
-+Gen		  !!= - **@CODE@** = Genitive case 
++Gen		  !!= - **@CODE@** = Genitive case
++Acc		  !!= - **@CODE@** = Accusative case
++Cp		  !!= - **@CODE@** = ?
++Wh		  !!= - **@CODE@** = wh word?
 +Gn		  !!= - **@CODE@** = General adverb
 +Guess		  !!= - **@CODE@** = Morphological guesser
 +hPref 		  !!= - **@CODE@** = h prefixed to a vowel-initial word 
