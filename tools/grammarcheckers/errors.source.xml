@@ -35,14 +35,14 @@
   <error id="fixedcase-np">
     <header>
       <title xml:lang="en">Proper noun capital letter</title>
-      <title xml:lang="ga">Litir mhór le hainmfhocal ceart</title>
+      <title xml:lang="ga">Litir mhór le hainmfhocal cinnte</title>
       <references> <ref n=""/></references>
     </header>
     <body>
       <description xml:lang="en">Never change the case of proper nouns</description>
-      <description xml:lang="ga">Ná hathraigh an cás le hainmfhocail cheart</description>
+      <description xml:lang="ga">Ná hathraigh cás ainmfhocail chinnte</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">An tUachtarán. Cumann na mBan.</ex>
     </examples>
     </body>
   </error>
@@ -61,43 +61,43 @@
   </error>
   <error id="msyn-ar-an-gcaife">
     <header>
-      <title xml:lang="en">"Ar" and not "i" in front of caife</title>
-      <title xml:lang="ga">"Ar" agus ní "i" os comhair caife</title>
+      <title xml:lang="en">"Ar" and not "i" with coffee</title>
+      <title xml:lang="ga">"Ar" agus ní "i" le caife</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">"ar" should be used instead of "i" in front of "caife"</description>
-      <description xml:lang="ga">Ba cheart "ar" a úsáid in ionad "i" os comhair "caife"</description>
+      <description xml:lang="en">Milk and sugar ar put on the coffee, not into coffee</description>
+      <description xml:lang="ga">Cuirtear bainne agus siúcra ar an gcaife, ní chuirtear isteach sa chaife iad.</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">An gcuireann tú siúcra ar do chaife? Tá bainne ar an gcaife.</ex>
     </examples>
     </body>
   </error>
   <error id="msyn-ar-an-tae">
     <header>
-      <title xml:lang="en">"Ar" and not "i" in front of "tae"</title>
-      <title xml:lang="ga">"Ar" agus ní "i" os comhair "tae"</title>
+      <title xml:lang="en">"Ar" and not "i" with "tae"</title>
+      <title xml:lang="ga">"Ar" agus ní "i" le "tae"</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">"ar" should be used instead of "i" in front of "tae"</description>
-      <description xml:lang="ga">Ba cheart "ar" a úsáid in ionad "i" os comhair "tae"</description>
+      <description xml:lang="en">Milk and sugar ar put on the tea, not into tea</description>
+      <description xml:lang="ga">Cuirtear bainne agus siúcra ar an tae, ní chuirtear isteach sa tae iad.</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">An gcuireann sé bainne ar an tae? Tá siúcra ar an tae.</ex>
     </examples>
     </body>
   </error>
   <error id="msyn-beag-is-fiú-de">
     <header>
-      <title xml:lang="en">"De", not "dom", after "is fiú"</title>
-      <title xml:lang="ga">"De", ní "dom", i ndiaidh "is fiú"</title>
+      <title xml:lang="en">"De", not "dom", after "beag is fiú"</title>
+      <title xml:lang="ga">"De", ní "dom", i ndiaidh "beag is fiú"</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">"De" should be used instead of "dom" after "is fiú"</description>
-      <description xml:lang="ga">Ba cheart "de" a úsáid in ionad "dom" i ndiaidh "is fiú"</description>
+      <description xml:lang="en">"De" should be used instead of "do" after "beag is fiú"</description>
+      <description xml:lang="ga">Ba cheart "de" a úsáid in ionad "do" i ndiaidh "beag is fiú"</description>
     <examples>
-      <ex xml:lang="ga">Ná déan beag is fiú dom.</ex>
+      <ex xml:lang="ga">Beag is fiú a dhéanamh de dhuine. Ná déan beag is fiú díom.</ex>
     </examples>
     </body>
   </error>
@@ -117,15 +117,15 @@
   </error>
   <error id="msyn-fada-ó">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">Fada buí and ó go together</title>
+      <title xml:lang="ga">Bíonn fada buí agus ó le chéile</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Add description</description>
-      <description xml:lang="ga">Cuir cur síos leis</description>
+      <description xml:lang="en">When using the phrase "fada buí", the preposition "ó" must be used.</description>
+      <description xml:lang="ga">Nuair atáthar ag tagairt do "fada buí", ní mór an réamhfhocal "ó" a bheith leis.</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">Is fada buí uaim é a chreidiúint.</ex>
     </examples>
     </body>
   </error>
@@ -173,15 +173,15 @@
   </error>
   <error id="msyn-tóin-poill">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">Tóin poill</title>
+      <title xml:lang="ga">Tóin poill</title>
       <references> <ref n=""/></references>
     </header>
     <body>
       <description xml:lang="en">Add description</description>
       <description xml:lang="ga">Cuir cur síos leis</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">Chuaigh an long go tóin poill.</ex>
     </examples>
     </body>
   </error>
@@ -215,15 +215,15 @@
   </error>
   <error id="syn-a-before-verb-relativephrase">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">"a" before verbs</title>
+      <title xml:lang="ga">"a" roimh bhriathair</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Add description</description>
-      <description xml:lang="ga">Cuir cur síos leis</description>
+      <description xml:lang="en">The particle "a" is required before verbs.</description>
+      <description xml:lang="ga">Is gá an mhír "a" a chur roimh bhriathair.</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">An méid a dhéanann an tÚdarás.</ex>
     </examples>
     </body>
   </error>
@@ -236,7 +236,7 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Má thagann an t-alt "$2" roimh an ainmfhocail, "$1" sa chás seo, ba cheart go mbeadh sé san fhoirm cinnte.</description>
+      <description xml:lang="ga">Má thagann an t-alt "$2" roimh an ainmfhocail, "$1" sa chás seo, ba cheart go mbeadh sé cinnte.</description>
       <description xml:lang="en">If the article "$2" precedes the noun, "$1" in this case, it should be in the definite form.</description>
     <examples>
       <ex xml:lang="ga">An t-uachtarán.</ex>
@@ -262,12 +262,12 @@
   <error id="msyn-ar-an-aonach">
     <header>
       <title xml:lang="ga">Ar an aonach</title>
-      <title xml:lang="en">At the fair</title>
+      <title xml:lang="en">On the fair</title>
       <references> <ref n=""/></references>
     </header>
     <body>
       <description xml:lang="ga">Bítear ar an aonach, ní ag an aonach.</description>
-      <description xml:lang="en">One is at the fair, not on the fair.</description>
+      <description xml:lang="en">One is on the fair, not at the fair.</description>
     <examples>
       <ex xml:lang="ga">Bhí slua mór ar an aonach inniu.</ex>
     </examples>
@@ -296,7 +296,7 @@
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Tá an séimhiú in easnamh.</description>
+      <description xml:lang="ga">Tá séimhiú in easnamh.</description>
       <description xml:lang="en">The lenition is missing.</description>
     <examples>
       <ex xml:lang="ga">Níor oscail mé an fhuinneog mhór.</ex>
@@ -319,30 +319,16 @@
     </body>
   </error>
 
-  <error id="msyn-inis-de">
-    <header>
-      <title xml:lang="ga">Inis agus de</title>
-      <title xml:lang="en">Inis and de</title>
-    </header>
-    <body>
-      <description xml:lang="ga">Nuair a bhíonn an briathar inis ann, is é DE an réamhfhocal a oireann dó.</description>
-      <description xml:lang="en">When the verb inis is used, DE is the appropriate preposition.</description>
-    <examples>
-      <ex xml:lang="ga">Inis dom céard a tharla. Ar inis tú di é? Inseofar duit ar ball.</ex>
-    </examples>
-    </body>
-  </error>
-
   <error id="msyn-inis-do">
     <header>
       <title xml:lang="en">Inis and do</title>
       <title xml:lang="ga">Inis agus do</title>
     </header>
     <body>
-      <description xml:lang="en">Not done.</description>
-      <description xml:lang="ga">Gan déanamh.</description>
+      <description xml:lang="en">"Do" not "de" is the correct preposition to use with the verb "inis".</description>
+      <description xml:lang="ga">Is é "do" seachas "de" an réamhfhocal ceart a théann leis an mbriathar "inis".</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">Inis don phríomhoide céard a tharla.</ex>
     </examples>
     </body>
   </error>
@@ -427,11 +413,11 @@
   <error id="use-ellipsis">
     <header>
       <title xml:lang="en">Ellipsis</title>
-      <title xml:lang="ga">Ellipse</title>
+      <title xml:lang="ga">Comhartha focalbhá</title>
     </header>
     <body>
       <description xml:lang="en">You have used three periods, "$1". Here an ellipsis would have been a better choice.</description>
-      <description xml:lang="ga">Tá tú tar éis trí ponc a úsáid, "$1". B'fhearr ellipsis a úsáid anseo.</description>
+      <description xml:lang="ga">Tá tú tar éis trí phonc a úsáid, "$1". B'fhearr comhartha focalbhá a úsáid anseo.</description>
     </body>
   </error>
   
