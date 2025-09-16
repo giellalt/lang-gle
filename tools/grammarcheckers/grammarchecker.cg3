@@ -665,7 +665,7 @@ COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gend
 
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
-LIST LEN-PREP = "thar" "de" "do" "faoi" "gan" "idir" "ó" "roimh" "thar" "trí" "um" ;     #!!= * @CODE@ 
+LIST LEN-PREP = ("de" Prep) "do" ("faoi" Prep) "gan" "idir" ("ó" Prep) "roimh" "thar" ("trí" Prep) "um" ;     #!!= * @CODE@ 
 # "ag" "ar" "i" do not cause lenition (séimhiú in Irish).
 #!! These prepositions want an lenited version, adding an h after the initial letter
 
@@ -717,7 +717,7 @@ COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-afte
 #ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 	
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len))(0 ("<[bcdfgmpst].*>"r)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 ##COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
