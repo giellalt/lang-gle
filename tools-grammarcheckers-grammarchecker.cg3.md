@@ -175,25 +175,21 @@ TIME-N-SET
 
 ## Noun errors (Len vs. not Len) after prepositions
 
-These prepositions want an lenited version, adding an h after the initial letter
-
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST LEN-PREP = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; 
+* LIST ECLIPSE-PREP = "<ar>" "<i>"  ; 
 
-These prepositions want an additonal consonant in front of its complement in order to cause eclipse ECL, urú in Irish.:
-* LIST ART-LEN-PREP = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; 
-
-* LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  
+These prepositions always cause the nouns after them to be lenited:
+* LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					
 
 Noun errors (Ecl vs. not Ecl) after prepositions
 
-* LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; 
+* LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; 		
 * LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; 
-* LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; 
+* LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; 	
 * LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; 
 
-* LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; 
-* LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 
+* LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; 	
+* LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 	
 
 ###  Syntactic tags
 
@@ -262,6 +258,7 @@ OBJ
 `OBJ>`
 `<OBJ-OTHERS`
 `OBJ>-OTHERS`
+
 SYN-V
 @X
 
@@ -273,8 +270,8 @@ See the sourcefile itself to inspect the sets, what follows here is an overview 
 
 ### Sets for Single-word sets
 
-* LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  
-*         "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           
+* LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  	
+*         "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           	
 *         "á" ;  INITIAL
 
 ### Sets for word or not
@@ -366,7 +363,7 @@ expression **WORD - premodifiers**.
 * LIST &msyn-ie.i. = &msyn-&.i. ;     
 * LIST &msyn-inis-de = &msyn-inis-de ;     
 * LIST &msyn-inis-do = &msyn-inis-do ;     
-* LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
+* LIST &GEmsyn-len-after-prep = &msyn-len-after-prep ;     
 * LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;     
 * LIST &msyn-noun-defart = &msyn-noun-defart ;     
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
@@ -393,32 +390,29 @@ Here ends the list and set section
 # BEFORE-SECTIONS       
 
 * LIST <fixedcase> = <fixedcase>;        
+* ADD:fixedcase-np <fixedcase> TARGET Prop ;     	 ,  Never change case of proper nouns
 
 # SECTION       
 
 ## spellchecking
 
-* LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;      (to be moved to other tags)
+* LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;    	 (to be moved to other tags)
 
-* **RULE: lex-tá-is ** to change *tá* to *is*
+* **RULE: lex-tá-is ** To change *TÁ* to *IS*
 
 ## Gender errors in adjectives
 
-**RULE: msyn-adj-gender** to change Masc adjective to Fem if it modifies a feminine noun *IT WORKS*
+**RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
 ## Prepositions
 
-**ADD:msyn-prep-pron** rule complex that turns a simple preposition into a person-inflected preposition
-
-**ADD:msyn-lenition-after-possessive-adjective**: rule to add lenition to nouns following a possessive adjective
+**ADD:msyn-prep-pron** RULE TO CHANGE A PREPOSITION AND A PRONOUN INTO A PREPOSITIONAL PRONOUN (e.g., AG MÉ = AGAM, ROIMH SIBH = ROMHAIBH) !!IT WORKS!!
 
 **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
-**ADD:msyn-len-after-prep**: A RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
+**ADD:msyn-len-after-prep**: 
 
 **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
-
-**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors with an intervening article !!!IT WORKS!!!
 
 **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!!
 
@@ -440,15 +434,11 @@ Here ends the list and set section
 
 **ADD:msyn-cúpla-plnoun-sgnoun** ..
 
-**ADD:msyn-gen-case-nouns**
-
 **ADD:msyn-gen-case-nouns** ...
 
 ## Definiteness errors in nouns
 
-**ADD:msyn-noun-defart** ..
-
-**ADD:msyn-possadj-nom-gen** ...
+A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
 
 **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
 
@@ -463,8 +453,6 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 **ADD:msyn-tóin-poill**
 
 **ADD:msyn-ie.i.** ...
-
-**ADD:syn-a-before-verb-relativephrase** ...
 
 * * *
 
