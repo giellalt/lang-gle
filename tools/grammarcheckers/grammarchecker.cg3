@@ -785,6 +785,9 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
         (NEGATE 0 Ecl);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+ADDRELATION:msyn-ecl-after-prep ($2) (Prep) FROM (2 Noun LINK 0 msyn-ecl-after-prep));
+# Model for Trond, smn:	 2673 ADDRELATION:msyn-adj-nom-acc ($2) () FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+
 ## Tá bainisteoir nua ar an banc. # wrong
 ## Tá bainisteoir nua thar an banc. # wrong
 ## Tá bainisteoir nua ar an mbanc. # ok
