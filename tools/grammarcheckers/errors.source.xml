@@ -103,15 +103,15 @@
   </error>
   <error id="msyn-ecl-after-prep-sfem">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">Eclipse after a preposition</title>
+      <title xml:lang="ga"> i ndiaidh réamhfhocail</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Add description</description>
-      <description xml:lang="ga">Cuir cur síos leis</description>
+      <description xml:lang="en">With certain prepositions, eclipsis occurs.</description>
+      <description xml:lang="ga">Nuair a bhíonn réamhfhocail áirithe ann, déantar urú ar an ainmfhocal ina lorg.</description>
     <examples>
-      <ex xml:lang="ga"></ex>
+      <ex xml:lang="ga">I mbarr, ar dtús, i gceannas</ex>
     </examples>
     </body>
   </error>
@@ -370,10 +370,10 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Nuair a bhíonn réamhfhocal "$2" agus an t-alt "an" le chéile, ní mór urú a bheith ar an bhfocal ina lorg, "$1" sa chás seo.</description>
-      <description xml:lang="en">When the preposition "$2" and the article "an" are together, eclipsis must be applied to the following word, "$1" in this case.</description>
+      <description xml:lang="ga">Nuair a bhíonn réamhfhocal roimh ainmfhocal, "$1" sa chás seo, ní mór urú a bheith ar $1.</description>
+      <description xml:lang="en">When a preposition comhes before a noun, "$1" in this case, the noun must be eclipsed.</description>
     <examples>
-      <ex xml:lang="ga">Ar an mbord, ag an bhfuinneog, chuig an gcomhairle.</ex>
+      <ex xml:lang="ga">I mbarr, i gceannas</ex>
     </examples>
     </body>
   </error>
