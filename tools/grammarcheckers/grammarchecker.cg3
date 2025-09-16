@@ -218,68 +218,67 @@ SET NUMBER = Sg OR Pl ;  #!!= * @CODE@
 
 LIST Err/Orth = Err/Orth Err/Orth-a/á Err/Orth-nom/gen Err/Orth-nom/acc Err/DerSub Err/CmpSub Err/UnspaceCmp Err/HyphSub Err/SpaceCmp Err/Spellrelax err_orth_mt ; #!! Err/Orth
 
-
-
 #!! ### Semantic tags
 
-LIST Sem/Act = Sem/Act ;				    #!! Sem/Act
-LIST Sem/Ani = Sem/Ani ;				    #!! Sem/Ani
-LIST Sem/Atr = Sem/Atr ;				    #!! Sem/Atr
-LIST Sem/Body = Sem/Body ;				    #!! Sem/Body
-LIST Sem/Clth = Sem/Clth ;				    #!! Sem/Clth
-LIST Sem/Domain = Sem/Domain ;			    #!! Sem/Domain
-LIST Sem/Feat-phys = Sem/Feat-phys ;	    #!! Sem/Feat-phys
-LIST Sem/Fem = Sem/Fem ;				    #!! Sem/Fem
-LIST Sem/Group = Sem/Group ;			    #!! Sem/Group
-LIST Sem/Lang = Sem/Lang ;				    #!! Sem/Lang
-LIST Sem/Mal = Sem/Mal ;				    #!! Sem/Mal
-LIST Sem/Measr = Sem/Measr ;			    #!! Sem/Measr
-LIST Sem/Money = Sem/Money ;			    #!! Sem/Money
-LIST Sem/Obj = Sem/Obj ;				    #!! Sem/Obj
-LIST Sem/Obj-el = Sem/Obj-el ;			    #!! Sem/Obj-el
-LIST Sem/Org = Sem/Org ;				    #!! Sem/Org
-LIST Sem/Perc-emo = Sem/Perc-emo ;		    #!! Sem/Perc-emo
-LIST Sem/Plc = Sem/Plc ;				    #!! Sem/Plc
-LIST Sem/Sign = Sem/Sign ;				    #!! Sem/Sign
-LIST Sem/State-sick = Sem/State-lang-sick ; #!! Sem/State-sick
-LIST Sem/Sur = Sem/Sur ;				    #!! Sem/Sur
-LIST Sem/Time = Sem/Time ;				    #!! Sem/Time
-LIST Sem/Txt = Sem/Txt ;				    #!! Sem/Txt
+LIST Sem/Act = Sem/Act ;				#!! Sem/Act
+LIST Sem/Ani = Sem/Ani ;				#!! Sem/Ani
+LIST Sem/Atr = Sem/Atr ;				#!! Sem/Atr
+LIST Sem/Body = Sem/Body ;				#!! Sem/Body
+LIST Sem/Clth = Sem/Clth ;				#!! Sem/Clth
+LIST Sem/Domain = Sem/Domain ;			    	#!! Sem/Domain
+LIST Sem/Feat-phys = Sem/Feat-phys ;	    		#!! Sem/Feat-phys
+LIST Sem/Fem = Sem/Fem ;				#!! Sem/Fem
+LIST Sem/Group = Sem/Group ;			    	#!! Sem/Group
+LIST Sem/Lang = Sem/Lang ;				#!! Sem/Lang
+LIST Sem/Mal = Sem/Mal ;				#!! Sem/Mal
+LIST Sem/Measr = Sem/Measr ;			   	#!! Sem/Measr
+LIST Sem/Money = Sem/Money ;			    	#!! Sem/Money
+LIST Sem/Obj = Sem/Obj ;				#!! Sem/Obj
+LIST Sem/Obj-el = Sem/Obj-el ;			    	#!! Sem/Obj-el
+LIST Sem/Org = Sem/Org ;				#!! Sem/Org
+LIST Sem/Perc-emo = Sem/Perc-emo ;		    	#!! Sem/Perc-emo
+LIST Sem/Plc = Sem/Plc ;				#!! Sem/Plc
+LIST Sem/Sign = Sem/Sign ;				#!! Sem/Sign
+LIST Sem/State-sick = Sem/State-lang-sick ; 		#!! Sem/State-sick
+LIST Sem/Sur = Sem/Sur ;				#!! Sem/Sur
+LIST Sem/Time = Sem/Time ;				#!! Sem/Time
+LIST Sem/Txt = Sem/Txt ;				#!! Sem/Txt
 
-LIST HUMAN = Sem/Fem Sem/Mal Sem/Sur ;	    #!! HUMAN
+LIST HUMAN = Sem/Fem Sem/Mal Sem/Sur ;	    		#!! HUMAN
 
 SET HAB-ACTOR = HUMAN ; #!! HAB-ACTOR
-SET HAB-ACTOR-NOT-HUMAN = Sem/Org ; #!! HAB-ACTOR-NOT-HUMAN
+SET HAB-ACTOR-NOT-HUMAN = Sem/Org ; 			#!! HAB-ACTOR-NOT-HUMAN
 
 
-LIST PROP-ATTR = Sem/Mal Sem/Sur Sem/Fem ; #!! PROP-ATTR
-LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; #!! PROP-SUR
+LIST PROP-ATTR = Sem/Mal Sem/Sur Sem/Fem ; 		#!! PROP-ATTR
+LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; 		#!! PROP-SUR
 
-SET TIME-N-SET = N + Sem/Time ;  #!! TIME-N-SET
+SET TIME-N-SET = N + Sem/Time ;  			#!! TIME-N-SET
 
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
-#LIST LEN-PREP = ("de" Prep) "do" ("faoi" Prep) "gan" "idir" ("ó" Prep) "roimh" "thar" ("trí" Prep) "um" ;     #!!= * @CODE@ 
-# "ag" "ar" "i" do not cause lenition (séimhiú in Irish).
-#!! These prepositions want an lenited version, adding an h after the initial letter
-	
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST LEN-PREP = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; #!!= * @CODE@
+LIST ECLIPSE-PREP = "<ar>" "<i>"  ; #!!= * @CODE@
+# "<chuig>" "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<trí>" "<um>"
 
-#!! These prepositions want an additonal consonant in front of its complement in order to cause eclipse ECL, urú in Irish.:
-LIST ART-LEN-PREP = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; #!!= * @CODE@
 
-LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  #!!= * @CODE@
+#!! These prepositions always cause the nouns after them to be lenited:
+LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					#!!= * @CODE@
+# Prepositions that do not lenite nouns: "<ag>" "<i>" "<le>" "<as>" "<chuig>" "<thar>" "<um>"
+
+
+#LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  	#!!= * @CODE@
+#LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
 
 #!! Noun errors (Ecl vs. not Ecl) after prepositions
 
-LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; #!!= * @CODE@
+LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; 		#!!= * @CODE@
 LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; #!!= * @CODE@
-LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; #!!= * @CODE@
+LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; 	#!!= * @CODE@
 LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; #!!= * @CODE@
 
-LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; #!!= * @CODE@
-LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; #!!= * @CODE@
+LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; 	#!!= * @CODE@
+LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 	#!!= * @CODE@
 
 #!! ###  Syntactic tags
 
@@ -290,69 +289,70 @@ LIST @-FMAINV = @-FMAINV ;	         #!! `@-FMAINV    `
 LIST @-FSUBJ> = @-FSUBJ> ;	         #!! `@-FSUBJ>    `
 LIST @-F<OBJ = @-F<OBJ ;	         #!! `@-F<OBJ     `
 LIST @-FOBJ> = @-FOBJ> ;	         #!! `@-FOBJ>     `
-LIST @SPRED<OBJ = @SPRED<OBJ ;       #!! `@-FSPRED<OBJ`
+LIST @SPRED<OBJ = @SPRED<OBJ ;       	 #!! `@-FSPRED<OBJ`
 LIST @-F<ADVL = @-F<ADVL ;	         #!! `@-F<ADVL    `
 LIST @-FADVL> = @-FADVL> ;	         #!! `@-FADVL>    `
-LIST @-F<SPRED = @-F<SPRED ;         #!! `@-F<SPRED   `
-LIST @-F<OPRED = @-F<OPRED ;         #!! `@-F<OPRED   `
-LIST @-FSPRED> = @-FSPRED> ;         #!! `@-FSPRED>   `
-LIST @-FOPRED> = @-FOPRED> ;         #!! `@-FOPRED>   `
+LIST @-F<SPRED = @-F<SPRED ;         	 #!! `@-F<SPRED   `
+LIST @-F<OPRED = @-F<OPRED ;         	 #!! `@-F<OPRED   `
+LIST @-FSPRED> = @-FSPRED> ;         	 #!! `@-FSPRED>   `
+LIST @-FOPRED> = @-FOPRED> ;         	 #!! `@-FOPRED>   `
 SET FOBJ = @-F<OBJ OR @-FOBJ> ;
 SET FMAINV = @-FMAINV OR @+FMAINV ;
 SET FAUXV = @-FAUXV OR @+FAUXV ;
-LIST @>ADVL = @>ADVL ;               #!! `@>ADVL`
-LIST @ADVL< = @ADVL< ;               #!! `@ADVL<`
-LIST @<ADVL = @<ADVL ;               #!! `@<ADVL`
-LIST @ADVL> = @ADVL> ;               #!! `@ADVL>`
+LIST @>ADVL = @>ADVL ;               	#!! `@>ADVL`
+LIST @ADVL< = @ADVL< ;               	#!! `@ADVL<`
+LIST @<ADVL = @<ADVL ;               	#!! `@<ADVL`
+LIST @ADVL> = @ADVL> ;               	#!! `@ADVL>`
 LIST ADVL = @ADVL @ADVL> @ADVL< @<ADVL @>ADVL @-F<ADVL @-FADVL> ;  #!! `@ADVL`
 LIST @HAB> = @HAB> ;                    #!! `@HAB>`
 LIST @<HAB = @<HAB ;                    #!! `@<HAB`
 SET @HAB = @<HAB OR @HAB> ;
-LIST @>N = @>N ;		      #!! `@>N`
-LIST @Interj = @Interj ;      #!! `@Interj  `
-LIST @N< = @N< ;		      #!! `@N<      `
-LIST @>A = @>A ;		      #!! `@>A      `
-LIST @P< = @P< ;		      #!! `@P<      `
-LIST @>P = @>P ;		      #!! `@>P      `
-LIST @HNOUN = @HNOUN ;	      #!! `@HNOUN   `
-LIST @INTERJ = @INTERJ ;      #!! `@INTERJ  `
-LIST @>Num = @>Num;		      #!! `@>Num    `
-LIST @Pron< = @Pron< ;	      #!! `@Pron<   `
-LIST @>Pron = @>Pron ;	      #!! `@>Pron   `
-LIST @Num< = @Num< ;	      #!! `@Num<    `
-LIST @OBJ = @OBJ ;			  #!! `@OBJ     `
-LIST @<OBJ = @<OBJ ;		  #!! `@<OBJ    `
-LIST @OBJ> = @OBJ> ;		  #!! `@OBJ>    `
-LIST @OPRED = @OPRED ;		  #!! `@OPRED   `
-LIST @<OPRED = @<OPRED ;	  #!! `@<OPRED  `
-LIST @OPRED> = @OPRED> ;	  #!! `@OPRED>  `
-LIST @PCLE = @PCLE ;		  #!! `@PCLE    `
-LIST @COMP-CS< = @COMP-CS< ;  #!! `@COMP-CS<`
-LIST @SPRED = @SPRED ;		  #!! `@SPRED   `
-LIST @<SPRED = @<SPRED ;	  #!! `@<SPRED  `
-LIST @SPRED> = @SPRED> ;	  #!! `@SPRED>  `
-LIST @SUBJ = @SUBJ ;		  #!! `@SUBJ    `
-LIST @<SUBJ = @<SUBJ ;		  #!! `@<SUBJ   `
-LIST @SUBJ> = @SUBJ> ;		  #!! `@SUBJ>   `
-SET SUBJ = @<SUBJ OR @SUBJ> OR @SUBJ ; #!! SUBJ
+LIST @>N = @>N ;		      	#!! `@>N`
+LIST @Interj = @Interj ;      		#!! `@Interj  `
+LIST @N< = @N< ;		      	#!! `@N<      `
+LIST @>A = @>A ;		      	#!! `@>A      `
+LIST @P< = @P< ;		      	#!! `@P<      `
+LIST @>P = @>P ;		      	#!! `@>P      `
+LIST @HNOUN = @HNOUN ;	      		#!! `@HNOUN   `
+LIST @INTERJ = @INTERJ ;      		#!! `@INTERJ  `
+LIST @>Num = @>Num;		      	#!! `@>Num    `
+LIST @Pron< = @Pron< ;	      		#!! `@Pron<   `
+LIST @>Pron = @>Pron ;	      		#!! `@>Pron   `
+LIST @Num< = @Num< ;	      		#!! `@Num<    `
+LIST @OBJ = @OBJ ;			#!! `@OBJ     `
+LIST @<OBJ = @<OBJ ;		  	#!! `@<OBJ    `
+LIST @OBJ> = @OBJ> ;		  	#!! `@OBJ>    `
+LIST @OPRED = @OPRED ;		  	#!! `@OPRED   `
+LIST @<OPRED = @<OPRED ;	  	#!! `@<OPRED  `
+LIST @OPRED> = @OPRED> ;	  	#!! `@OPRED>  `
+LIST @PCLE = @PCLE ;		  	#!! `@PCLE    `
+LIST @COMP-CS< = @COMP-CS< ;  		#!! `@COMP-CS<`
+LIST @SPRED = @SPRED ;		  	#!! `@SPRED   `
+LIST @<SPRED = @<SPRED ;	  	#!! `@<SPRED  `
+LIST @SPRED> = @SPRED> ;	  	#!! `@SPRED>  `
+LIST @SUBJ = @SUBJ ;		  	#!! `@SUBJ    `
+LIST @<SUBJ = @<SUBJ ;		  	#!! `@<SUBJ   `
+LIST @SUBJ> = @SUBJ> ;		  	#!! `@SUBJ>   `
+SET SUBJ = @<SUBJ OR @SUBJ> OR @SUBJ ; 	#!! SUBJ
 SET SPRED = @<SPRED OR @SPRED> OR @SPRED ; #!! SPRED
 SET OPRED = @<OPRED OR @OPRED> OR @OPRED ; #!! OPRED
 LIST @PPRED = @PPRED ;        #!! @PPRED
 LIST @APP = @APP ;			   #!! `@APP      `
-LIST @APP-N< = @APP-N< ;	   #!! `@APP-N<   `
-LIST @APP-Pron< = @APP-Pron< ; #!! `@APP-Pron<`
-LIST @APP>Pron = @APP>Pron ;   #!! `@APP>Pron `
-LIST @APP-Num< = @APP-Num< ;   #!! `@APP-Num< `
-LIST @APP-ADVL< = @APP-ADVL< ; #!! `@APP-ADVL<`
-LIST @VOC = @VOC ;			   #!! `@VOC      `
-LIST @CVP = @CVP ;			   #!! `@CVP      `
-LIST @CNP = @CNP ;			   #!! `@CNP      `
+LIST @APP-N< = @APP-N< ;	   	#!! `@APP-N<   `
+LIST @APP-Pron< = @APP-Pron< ; 		#!! `@APP-Pron<`
+LIST @APP>Pron = @APP>Pron ;   		#!! `@APP>Pron `
+LIST @APP-Num< = @APP-Num< ;   		#!! `@APP-Num< `
+LIST @APP-ADVL< = @APP-ADVL< ; 		#!! `@APP-ADVL<`
+LIST @VOC = @VOC ;			#!! `@VOC      `
+LIST @CVP = @CVP ;			#!! `@CVP      `
+LIST @CNP = @CNP ;			#!! `@CNP      `
 SET OBJ = (@<OBJ) OR (@OBJ>) OR (@OBJ) OR (@-F<OBJ) OR (@-FOBJ>) ; #!! OBJ
-LIST <OBJ = @-F<OBJ @<OBJ ;    #!! `<OBJ`
-LIST OBJ> = @OBJ> @-FOBJ> ;    #!! `OBJ>`
+LIST <OBJ = @-F<OBJ @<OBJ ;    		#!! `<OBJ`
+LIST OBJ> = @OBJ> @-FOBJ> ;    		#!! `OBJ>`
 SET <OBJ-OTHERS = <OBJ OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! `<OBJ-OTHERS`
 SET OBJ>-OTHERS = OBJ> OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! `OBJ>-OTHERS`
 SET NOT-FAUXV = FMAINV OR OBJ + V OR ADVL + V ;
+
 # Works after the mapping rules for verbs.
 SET SYN-V = FMAINV OR FAUXV OR V + SUBJ OR OBJ + V OR ADVL + V OR (V @>N) OR (V @N<) OR (V @A<) ; #!! SYN-V
 LIST @X = @X ;    #!! @X
@@ -368,12 +368,10 @@ LIST @X = @X ;    #!! @X
 #!! partly upon lexemes drawn from the lexicon.
 #!! See the sourcefile itself to inspect the sets, what follows here is an overview of the set types.
 
-
-
 #!! ### Sets for Single-word sets
 
-LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  #!!= * @CODE@
-        "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           #!!= * @CODE@
+LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  	#!!= * @CODE@
+        "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"           	#!!= * @CODE@
         "á" ;  #!!= * @CODE@INITIAL
 
 #!! ### Sets for word or not
@@ -390,8 +388,8 @@ SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA #!!= * @CODE@
 
 LIST ADVLCASE = Dat Com ; #!! ADLVCASE
 
-LIST CASE-AGREEMENT = Nom Acc Gen Dat Com ; #!! CASE-AGREEMENT
-LIST CASE = Nom Acc Gen Dat Com Voc ; #!! CASE
+LIST CASE-AGREEMENT = Nom Acc Gen Dat Com ; 	#!! CASE-AGREEMENT
+LIST CASE = Nom Acc Gen Dat Com Voc ; 		#!! CASE
 
 SET NOT-NOM = CASE - Nom ; #!! NOT-NOM
 SET NOT-GEN = CASE - Gen ; #!! NOT-GEN
@@ -440,18 +438,14 @@ SET PL-V = PL1-V OR PL2-V OR PL3-V ; #!!= * @CODE@
 #!! ### Pronoun sets
 # ------------
 
-
-
 LIST PPRON-GEN = (Sg1 Gen) (Sg2 Gen) (Sg3 Gen) 
 	(Pl1 Gen) (Pl2 Gen) (Pl3 Gen) (p1 sg gen) (p2 sg gen)
 	(p1 pl gen) (p2 pl gen) (p3 pl gen) ;
 
 SET PPRON-NOT-GEN = (Pron Pers) - PPRON-GEN ;
 
-
 LIST SG-PRON = (Pron Sg1) (Pron Sg2) (Pron Sg3) (Pron Sg) (pron p1 sg) (pron p2 sg) (pron p3 sg);
 LIST PL-PRON = (Pron Pl1) (Pron Pl2) (Pron Pl3) (Pron Pl) (pron p1 pl) (pron p2 pl) (pron p3 pl);
-
 
 
 #!! ### Adjectival sets and their complements
@@ -477,7 +471,7 @@ SET NOT-ADV-N          = NOT-ADV - N;
 SET NOT-ADV-PCLE       = NOT-ADV - Pcle ;
 SET NOT-ADV-INDEF      = NOT-ADV - Indef ;
 SET NOT-ADV-PCLE-ILL-LOC-COM = WORD - Adv - Pcle - Loc - Com;
-SET NOT-A-ADV-PCLE = WORD - Pcle - A - Adv ; #
+SET NOT-A-ADV-PCLE = WORD - Pcle - A - Adv ;
 
 
 
@@ -603,7 +597,7 @@ LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;    #!!= * @CODE@
 LIST &msyn-ie.i. = &msyn-&.i. ;    #!!= * @CODE@ 
 LIST &msyn-inis-de = &msyn-inis-de ;    #!!= * @CODE@ 
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
-LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
+LIST &GEmsyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
 LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@ 
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
@@ -630,19 +624,20 @@ MAPPING-PREFIX = & ;    #!!= * @CODE@
 BEFORE-SECTIONS      #!!= # @CODE@ 
 
 LIST <fixedcase> = <fixedcase>;       #!!= * @CODE@ 
-#ADD:fixedcase-np <fixedcase> TARGET Prop ;     #!!= * @CODE@ ,  Never change case of proper nouns
+ADD:fixedcase-np <fixedcase> TARGET Prop ;     	#!!= * @CODE@ ,  Never change case of proper nouns
 
 SECTION      #!!= # @CODE@ 
 
 #!! ## spellchecking
 
-#ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;      #!!= * @CODE@ = add rule marking typos
+#ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;      		#!!= * @CODE@ = add rule marking typos
 
 #!!! ## Copula errors tá vs. is
 
-LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;     #!!= * @CODE@ (to be moved to other tags)
+LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;    	#!!= * @CODE@ (to be moved to other tags)
 
-#!! * **RULE: lex-tá-is ** to change *tá* to *is*
+#!! * **RULE: lex-tá-is ** To change *TÁ* to *IS*
+
 ADD:lex-tá-is (&lex-tá-is) TARGET ("bí" Verb VI PresInd) IF (1 (Pron Pers 1P Sg) LINK 1 HUMAN-N) ;
 COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (&lex-tá-is);
 
@@ -657,7 +652,8 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 	
 #!! ## Gender errors in adjectives
 
-#!! **RULE: msyn-adj-gender** to change Masc adjective to Fem if it modifies a feminine noun *IT WORKS*
+#!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
+
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg)) ;
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
 	#An fhuinneog beag - INCORRECT
@@ -665,17 +661,21 @@ COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gend
 
 	#!! ## Prepositions
 
-#!! **ADD:msyn-prep-pron** rule complex that turns a simple preposition into a person-inflected preposition
-#ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
+#!! **ADD:msyn-prep-pron** RULE TO CHANGE A PREPOSITION AND A PRONOUN INTO A PREPOSITIONAL PRONOUN (e.g., AG MÉ = AGAM, ROIMH SIBH = ROMHAIBH) !!IT WORKS!!
 
-#ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
+ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
+ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
+ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron)) ;
+SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
+ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
 
-#ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron)) ;
-
-#SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
-
-#ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
-	# ordet som blir igjen starter relasjonen - the word that we want to keep starts the relation
+COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
+COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Masc)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Fem)) ;
+COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
+COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
+COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
 
 	## Tá an madra ag siúl le tú.
 	#$ Tá súil aige leis (correct)
@@ -683,39 +683,37 @@ COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gend
 	## Tá súil aige le sí (incorrect)
 	#$ Tá súil aige léi (correct)
 
+SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
 
-#COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
-#COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
-#COPY:msyn-prep-pron (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Masc)) ;
-#COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Sg Fem)) ;
-#COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
-#COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
-#COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
-
-#SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
-
-#MAP:LOCK_READING (SUGGEST) (SUGGEST);
+MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 
-#!! **ADD:msyn-lenition-after-possessive-adjective**: rule to add lenition to nouns following a possessive adjective
-#ADD:msyn-lenition-after-possessive-adjective (&msyn-lenition-after-possessive-adjective) TARGET (Noun Com) IF (-1 Det +  MODOA)(NOT 0 Len) ;
-#COPY:msyn-lenition-after-possessive-adjective (Len &SUGGEST) EXCEPT (&msyn-lenition-after-possessive-adjective) TARGET (&msyn-lenition-after-possessive-adjective) ;
-#ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+##  A RULE TO LENITE NOUNS FOLLOWING A POSSESSIVE ADJECTIVE (e.g., MO CHARR, DO THEACH, A MHADRA)
+
+ADD:msyn-lenition-after-possessive-adjective (&msyn-lenition-after-possessive-adjective) TARGET (Noun Com) IF (-1 Det +  MODOA)(NOT 0 Len) ;
+COPY:msyn-lenition-after-possessive-adjective (Len &SUGGEST) EXCEPT (&msyn-lenition-after-possessive-adjective) TARGET (&msyn-lenition-after-possessive-adjective) ;
+ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 
 #!! **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
-#ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
-#COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
-#ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+
+ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
+COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
+ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+
+
+## A RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 	
-#!! **ADD:msyn-len-after-prep**: A RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
-#ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len))(0 ("<[bcdfgmpst].*>"r)) ;
-#COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
-#ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
-#COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
+#!! **ADD:msyn-len-after-prep**: 
+
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 ART-LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len))(0 ("<[bcdfgmpst].*>"r)) ;
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
+ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
-#ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
-#COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
+
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
@@ -771,14 +769,14 @@ COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gend
 ##go: go hálainn
 ##le: le háthas, le heagla
 
-#!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors with an intervening article !!!IT WORKS!!!
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
-        (-2 ART-LEN-PREP + (Prep Simp)) # two words to the left of the noun you TARGET is the word in LIST/SET LEN-PREP and also has Prep and Simp tags
-        (-1 Art) # One to the left of the thing you TARGET is Art
-        (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
-        (NEGATE 0 Ecl);
-COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
-ADDRELATION:msyn-ecl-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-ecl-after-prep));
+## A rule to correct eclipse errors for nouns with the article !!!IT WORKS!!!
+
+#ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        #(-1 ART-LEN-PREP + (Prep Simp))       		# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
+        #(0 ("<[bcdfgmpst].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
+        #(NEGATE 0 Ecl);
+#COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep);
+#ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after-prep));
 
 # Model for Trond, smn:	 2673 ADDRELATION:msyn-adj-nom-acc ($2) () FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 
@@ -788,8 +786,9 @@ ADDRELATION:msyn-ecl-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-ecl-after
 
 
 #!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!!
+
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
-        (-1 LEN-PREP + (Prep Simp))
+        (-1 ECLIPSE-PREP + (Prep Simp))
         (0 ("<[bcdfgpstBCDFGPST].*>"r))
         (NEGATE 0 Ecl);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
@@ -797,7 +796,7 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 #ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
-        #(-2 LEN-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET LEN-PREP and also has Prep and Simp tags
+        #(-2 ECLIPSE-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET LEN-PREP and also has Prep and Simp tags
         #(-1 Art) # One to the left of the thing you TARGET is Art
         #(0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
         #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
@@ -818,10 +817,10 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
     	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
     	
 #ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
-	#(-1 LEN-PREP + (Prep Simp))
+	#(-1 ECLIPSE-PREP + (Prep Simp))
 	#(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 #COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
-#ADDRELATION:msyn-ecl-after-prep2 ($2) LEN-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
+#ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
 
 # Valency errors
 # "teastaigh" V + "ó"	
@@ -840,17 +839,17 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
 #COPY:msyn-inis-do ("do" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-inis-do) OR ("tú" Pers &msyn-inis-do) OR ("é" Pers &msyn-inis-do) OR ("í" Pers &msyn-inis-do) OR ("sinn" Pers &msyn-inis-do) OR ("muid" Pers &msyn-inis-do) OR ("sibh" Pers &msyn-inis-do) OR ("siad" Pers &msyn-inis-do) AFTER Pron TARGET (&msyn-inis-do) ;
 
 
-#ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
-#COPY:msyn-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
+ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
+COPY:msyn-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
 	## Ag an aonach. - incorrect ("ag" at)
 	#$ Ar an aonach. - correct ("ar" on)
 
 #!! **ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
 
-ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
-COPY:msyn-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&msyn-ar-an-aonach) ;
-ADDCOHORT:msyn-ar-an-aonach ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-aonach) AFTER &msyn-ar-an-aonach (NEGATE 0 ADDED);
-ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
+#ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
+#COPY:msyn-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&msyn-ar-an-aonach) ;
+#ADDCOHORT:msyn-ar-an-aonach ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-aonach) AFTER &msyn-ar-an-aonach (NEGATE 0 ADDED);
+#ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 #!! **ADD:msyn-ar-a-haon-a-chlog** ...
 #ADD:msyn-ar-a-haon-a-chlog (&msyn-ar-a-haon-a-chlog) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("a haon a chlog") BARRIER (*) - (Noun Com)) ;
@@ -882,6 +881,9 @@ ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEF
 	#$ Is fada ó bhí mise i mo mhac léinn.
 
 #!! **ADD:msyn-cúpla-plnoun-sgnoun** ..
+
+## A RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
+
 ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty)) ;
 COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnoun) TARGET (&msyn-cúpla-plnoun-sgnoun);
 	
@@ -892,69 +894,65 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 	# nouns in genitive after compound prepositions
 	
-#!! **ADD:msyn-gen-case-nouns**
-#ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
-#ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com)  BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
-#(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)
-#(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
+## RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!!
+
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
+(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)
+(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
 	#$ An múinteoir Ben
 	#$ Thug an rialtas airgead do é.
 
-#COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Com Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Com Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
 
-#COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-case-nouns) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-case-nouns)(NEGATE 0 DefArt);
+COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-case-nouns) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-case-nouns)(NEGATE 0 DefArt);
 	## Chuaigh na saighdiúirí isteach i mbialann na hoifigigh.
 	#$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
 	
 	# definite	
-#COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (DefArt Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (DefArt Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
 	## Parlaimint an Eoraip. (erroneous)
 	#$ Parlaimint na hEorpa. (correct)
 	
 	# indefinite
-#COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) - DefArt (NEGATE -1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) - DefArt (NEGATE -1 (Art Def));
 	## bosca bruscar.
 	#$ bosca bruscair.
 
-#COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	## Uachtarán an ollscoil. (erroneous)
 	#$ Uachtarán na hollscoile. (correct)
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
 	
-#COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
-#COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
-#COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) TARGET (Pl &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-case-nouns) BEFORE DefArt TARGET (Pl &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	## Cumann na Fear.
 	#$ Cumann na bhFear.
+	
+	
+	
 
 #!! **ADD:msyn-gen-case-nouns** ...
+
 #ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET ("an" Art Sg Def) IF (NEGATE 0 Gen)(1 (Noun &msyn-gen-case-nouns));
-
 #COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Fem));
-
 #COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
-
 #COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
-
 #ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
-
-#SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
-#MAP:LOCK_READING (SUGGEST) (SUGGEST);
-
+#SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 #ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
 #COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
 	
 #!! ## Definiteness errors in nouns
 
-#LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
+## A RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
 
-#!! **ADD:msyn-noun-defart** ..
-#ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 LEN-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
-
-#COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
-#ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECLIPSE-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
+COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
+ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
 	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
@@ -963,45 +961,11 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	## An bean. - incorrect
 	#$ An bhean. - correct
 
-# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive singular case.
+#!! A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
 
-#ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-#ADD:msyn-gen-case-article-fem-sing (&msyn-gen-case-article-fem-sing) TARGET ("an" Art Sg Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
-
-#COPY:msyn-gen-case-article-fem-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-sing) (Noun &msyn-gen-case-article-fem-sing) ;
-#COPY:msyn-gen-case-article-fem-sing ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-sing) TARGET (Art &msyn-gen-case-article-fem-sing) IF (1 (Noun Fem)) ;
-
-# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive singular case.
-
-#ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-#ADD:msyn-gen-case-article-masc-sing (&msyn-gen-case-article-masc) TARGET (Art Sg Def) IF (-1 (Noun Com));
-
-#COPY:msyn-gen-case-article-masc-sing (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-sing) (Noun &msyn-gen-case-article-masc-sing) ;
-#COPY:msyn-gen-case-article-masc-sing (Gen Sg Def SUGGEST) EXCEPT (Sg Def &msyn-gen-case-article-masc-sing) TARGET (Art &msyn-gen-case-article-masc-sing) ;
-
-# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the feminine genitive plural case.
-
-#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET (Noun Com DefArt) IF (*-1 (Noun Com) - (Art Def)) ;
-#ADD:msyn-gen-case-article-fem-plural (&msyn-gen-case-article-fem) TARGET ("na" Art Def) IF (-1 (Noun Com))(1 (Noun Fem)) ;
-
-#COPY:msyn-gen-case-article-fem-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-fem-plural) (Noun &msyn-gen-case-article-fem-plural) ;
-#COPY:msyn-gen-case-article-fem-plural ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-article-fem-plural) TARGET (Art Pl &msyn-gen-case-article-fem-plural) IF (1 (Noun Fem)) ;
-
-# A rule to target the article when two nouns with an article between them come together and the second noun has to be in the masculine genitive plural case.
-
-#ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET (Noun Com DefArt Pl) IF (*-1 (Noun Com) - (Art Def Pl)) ;
-#ADD:msyn-gen-case-article-masc-plural (&msyn-gen-case-article-masc-plural) TARGET ("an" Art Def) IF (-1 (Noun Com));
-
-#COPY:msyn-gen-case-article-masc-plural (Gen SUGGEST) EXCEPT (Com &msyn-gen-case-article-masc-plural) (Noun &msyn-gen-case-article-masc-plural) ;
-#COPY:msyn-gen-case-article-masc-plural ("na" Gen Pl Def SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-case-article-masc-plural) TARGET (Art Pl &msyn-gen-case-article-masc-plural) ;
-
-# A rule to indicate that when a noun comes before a possessor followed by a noun, the second noun has to be in the genitive case.
-
-
-#!! **ADD:msyn-possadj-nom-gen** ...
-#ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
-#COPY:msyn-possadj-nom-gen (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
-#ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
+ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
+COPY:msyn-possadj-nom-gen (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
+ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
 
 	## carr a athair
 	#$ carr a athar
@@ -1018,6 +982,7 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 #ADD:spell-conservatively (&typo SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 2 QMARK);
 
 # A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
+
 #ADD:err-agr (&err-agr) TARGET V IF (-1C Sg + Nom) (0 V) (NOT 0 Sg3);
 #ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Sg1 + Nom) (0 V) (NOT 0 Sg1);
 #ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Sg2 + Nom) (0 V) (NOT 0 Sg2);
@@ -1025,16 +990,19 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 #ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Pl2 + Nom) (0 V) (NOT 0 Pl2);
 
 # And one with a suggestion where we simply change the tag Sg into Attr:
+
 #ADD:attr-not-pred (&attr-not-pred) TARGET (A Sg) IF (NOT 0 Attr OR Gen) (1 CC LINK *1 COMMON-N) ;
 #COPY:attr-not-pred (Attr SUGGEST) EXCEPT (Sg) TARGET (&attr-not-pred) ;
 # The method is: Add SUGGEST to a copied reading to *generate* a suggestion form from that reading. The copy should contain the error tag too – &-prefixed error tags are ignored when generating, but used to create human-readable messages.
 
 #!! **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
+
 #ADD:use-guillemets (&guillemets) TARGET ("""); #"
 #COPY:left-guillemet ("«" SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 #COPY:right-guillemet ("»" SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 
 #!! **ADD:use-ellipsis** ...
+
 ADD:use-ellipsis (&ellipsis) TARGET ("...");
 COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 
@@ -1062,18 +1030,18 @@ COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 #ADDRELATION:msyn-ar-an-gcaife ($2 RIGHT) (V &msyn-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
 #ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
 	#(-1 Art)
-	#(-2 LEN-PREP + Prep + Simp)
+	#(-2 ECLIPSE-PREP + Prep + Simp)
 	#(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 #COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
-#ADDRELATION:msyn-ecl-after-prep ($2) LEN-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+#ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
 #!! **ADD:msyn-tóin-poill**
-#ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
-#Chuaigh an bád go tóin {poll}
 
-#COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
-#COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
+ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
+COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
+COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
 
+		#Chuaigh an bád go tóin {poll}
 
 #!! **ADD:msyn-ie.i.** ...
 #ADD:msyn-ie.i. (&msyn-&.i.) TARGET ("i.e." i.e.+Abr) ;
@@ -1084,9 +1052,11 @@ COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 
 	# syntax rules (word order, insertion, etc.)
 	
+##  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
-#!! **ADD:syn-a-before-verb-relativephrase** ...
-#ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
+ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
+ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED);
+ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
 	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
 	## An ceol sheinneann sé gach lá agus é i mbun oibre.
@@ -1094,7 +1064,3 @@ COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 	## Sin an cleas céanna d'imir sé orm.
 	## Tá sé ar intinn aici é sin {dhéanamh}.
 	## Sin an obair {chríochnófar} amárach
-
-#ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED);
-
-#ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;

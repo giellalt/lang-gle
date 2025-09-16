@@ -25,8 +25,8 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Má thagann an t-alt agus ainmfhocal ("$2") i lorg ainmfhocail eile ("$1"), ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
-      <description xml:lang="en">If the article and noun ("$2") follow another noun ("$1"), the second noun must be in the genitive case.</description>
+      <description xml:lang="ga">Má thagann an t-alt agus ainmfhocal ("$1") i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
+      <description xml:lang="en">If the article and noun ("$1") follow another noun, the second noun must be in the genitive case.</description>
     <examples>
       <ex xml:lang="ga">Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.</ex>
     </examples>
@@ -53,9 +53,9 @@
     </header>
     <body>
       <description xml:lang="en">When "tá" has a first person pronoun to the right, use "is" and not "tá".</description>
-      <description xml:lang="ga">Nuair a bhíonn "tá" le forainm den chéad phearsa ar dheis, bain úsáid as "is" agus ní "tá".</description>
+      <description xml:lang="ga">Nuair atáthar ag scríobh faoi rud atá buan, bain úsáid as an gcopail "is" .</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">Is bean láidir í. Is múinteoir é.</ex>
     </examples>
     </body>
   </error>
@@ -159,15 +159,15 @@
   </error>
   <error id="msyn-prep-pron">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">A rule to combine prepositions and pronounds</title>
+      <title xml:lang="ga">Riail chun réamhfhocail agus forainmneacha a chumasc</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Add description</description>
-      <description xml:lang="ga">Cuir cur síos leis</description>
+      <description xml:lang="en">When a preposition and a pronoun come together, they must be combined.</description>
+      <description xml:lang="ga">Nuair a thagann réamhfhocal agus forainm le chéile, is gá iad a chumasc.</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">Ag + mé = agam, ar + sí = uirthi.</ex>
     </examples>
     </body>
   </error>
@@ -291,13 +291,13 @@
 
   <error id="msyn-len-after-prep">
     <header>
-      <title xml:lang="ga">Consan séimhithe i lorg an réamhfhocail</title>
-      <title xml:lang="en">Lenited consonant following preposition</title>
+      <title xml:lang="ga">Ainmfhocal séimhithe i lorg an réamhfhocail</title>
+      <title xml:lang="en">Lenited noun following preposition</title>
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Nuair a bhíonn ainmfhocal, "$1", i lorg réamhfhocail a shéimhíonn, "$2" anseo, ba cheart é a shéimhiú.</description>
-      <description xml:lang="en">If a noun, here "$1", follows a preposition that requires lenition, here "$2", it should be lenited.</description>
+      <description xml:lang="ga">Nuair a bhíonn ainmfhocal, "$1", i lorg an réamhfhocail "$2", ba cheart é a shéimhiú.</description>
+      <description xml:lang="en">If a noun, here "$1", follows the preposition "$2", it should be lenited.</description>
     <examples>
       <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
     </examples>
@@ -401,14 +401,14 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Séimhiú i ndiaidh aidiachta sealbhaí.</description>
+      <description xml:lang="ga">Séimhítear an t-ainmfhocal i ndiaidh aidiacht shealbhach.</description>
       <description xml:lang="en">Lenition follows a possessive adjective.</description>
     <examples>
-      <ex xml:lang="ga">Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.</ex>
+      <ex xml:lang="ga">Mo theach, do mhadra, a charr.</ex>
     </examples>
     </body>
   </error>
-  
+ 
   
   <error id="use-ellipsis">
     <header>
@@ -420,7 +420,7 @@
       <description xml:lang="ga">Tá tú tar éis trí phonc a úsáid, "$1". B'fhearr comhartha focalbhá a úsáid anseo.</description>
     </body>
   </error>
-  
+ 
   
   <error id="use-guillemets">
     <header>
@@ -432,9 +432,7 @@
       <description xml:lang="ga">Úsáid comharthaí athfhriotail uillinne dúbailte</description>
     </body>
   </error>
-  
-
-  
+   
   <error id="typo">
     <header>
       <title xml:lang="en">Spelling error</title>
