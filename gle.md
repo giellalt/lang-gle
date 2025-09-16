@@ -187,8 +187,6 @@ FEMININE NOUN continuation classes
 Weak Plurals : 
 Broad singular is made slender; plural already broad
 
-beithir - beithre (gs) Sync + e
-
 Weak Plurals : Broaden 
 
 Singular already slender; plural is made broad
@@ -207,7 +205,6 @@ STRONG PLURALS
 
 STRONG PLURALS
 
-Gen Sg = Sync + Slen + e
 STRONG PLURALS
 
 3rd Declension
@@ -501,6 +498,10 @@ The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
 
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
+
 Subj is used for subjunctive
 
 * * *
@@ -523,6 +524,10 @@ in this system in terms of following symbols.
 
 Subj is used for subjunctive
 
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
+
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/root-noun-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-noun-all.lexc)</small>
@@ -543,6 +548,10 @@ in this system in terms of following symbols.
 
 Subj is used for subjunctive
 
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
+
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/root-others.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-others.lexc)</small>
@@ -560,6 +569,10 @@ INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
+
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
 
 Subj is used for subjunctive
 
@@ -652,7 +665,10 @@ Tag list:
 - **+Foreign	  ** = words from other languages, mainly English, some Latin
 - **+Fut		  ** = Future tense verbal particle
 - **+FutInd		  ** = Future Indicative verb
-- **+Gen		  ** = Genitive case 
+- **+Gen		  ** = Genitive case
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
 - **+Gn		  ** = General adverb
 - **+Guess		  ** = Morphological guesser
 - **+hPref 		  ** = h prefixed to a vowel-initial word 
@@ -897,12 +913,13 @@ given the proper use of these flags.
 - **	Personal_Pronouns;	** = 
 
 - **	Englishlex;				** = English lexicon including all parts of speech
-- **	Communicators-English;	** = English multi word communicator d'ya know
+- **	Communicators-English;	** = English multi word communicators, e.g. d'ya know
 - **	Bardiclex;				** = classical Irish lexicon from TCD Bardic corpus - 
 - **	Latinlex;				** = Latin lexicom from RIA historical corpus
-- **	!Tobar;					** = omitting this (non-standard forms)
+- **	!Tobar;					** = omitting this (non-standard older forms)
 
-- **	Punctuation ;		** = 
+- **	Punctuation;		** = 
+- **	Punctuation_ga;		** = 
 - **	Symbols;			** = 
 - **	XMLTags; 			** = XML tags e.g. <p>, <title> etc.
 
@@ -929,7 +946,6 @@ given the proper use of these flags.
 - **	NounsD;			** = FP nouns (manual Decl 1-3)
 - **	NounsE;			** = FP nouns (manual Decs 4-5)
 - **	NounsF;			** = FP nouns (manual Irregular)
-- **	NounsG;			** = Proper Nouns - SHOULD BE MOVED TO Proper Nouns Lexicons
 - **	NounsH;			** = Various from corpora
 - **	NounsIrregular;	** = 
 - **	Substantive;  	** = 
@@ -938,6 +954,7 @@ given the proper use of these flags.
 - **	NounsVariants;		** = Variants extracted from FGB
 - **	NounsEqualVariants;	** = Variants extracted from FGB (2011 EUD)
 
+- **	NounsG;			** = Proper Nouns - MOVED from Nouns TO Proper Nouns Lexicons
 - **	NP-LEX-FAM;			** = Family Names (Irish)
 - **	NP-LEX-FAM-EN;		** = Family Names (English)
 - **	NP-LEX-PERS;		** = Personal Names (Irish)
@@ -1061,6 +1078,16 @@ Common Functional Words - Articles
 
 ---
 
+## src-fst-morphology-stems-bardic.lexc.md 
+
+
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/bardic.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/bardic.lexc)</small>
+
+---
+
 ## src-fst-morphology-stems-conjunctions.lexc.md 
 
 CONJUNCTIONS
@@ -1100,6 +1127,20 @@ Determiners: INTERROGATIVES
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/determiners.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/determiners.lexc)</small>
+
+---
+
+## src-fst-morphology-stems-english.lexc.md 
+
+
+
+@dm discourse marker added to distinguish this from Irish so=seo=here
+
+as in Air France, Air India etc.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/english.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/english.lexc)</small>
 
 ---
 
@@ -1196,6 +1237,7 @@ PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 
 South Africa
+
 Mar 2012
 Mar 2012
 

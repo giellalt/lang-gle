@@ -4,8 +4,6 @@ FEMININE NOUN continuation classes
 Weak Plurals : 
 Broad singular is made slender; plural already broad
 
-beithir - beithre (gs) Sync + e
-
 Weak Plurals : Broaden 
 
 Singular already slender; plural is made broad
@@ -24,7 +22,6 @@ STRONG PLURALS
 
 STRONG PLURALS
 
-Gen Sg = Sync + Slen + e
 STRONG PLURALS
 
 3rd Declension

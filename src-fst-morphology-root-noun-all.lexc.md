@@ -10,6 +10,10 @@ in this system in terms of following symbols.
 
 Subj is used for subjunctive
 
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
+
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/root-noun-all.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/root-noun-all.lexc)</small>

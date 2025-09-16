@@ -79,7 +79,10 @@ Tag list:
 - **+Foreign	  ** = words from other languages, mainly English, some Latin
 - **+Fut		  ** = Future tense verbal particle
 - **+FutInd		  ** = Future Indicative verb
-- **+Gen		  ** = Genitive case 
+- **+Gen		  ** = Genitive case
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
 - **+Gn		  ** = General adverb
 - **+Guess		  ** = Morphological guesser
 - **+hPref 		  ** = h prefixed to a vowel-initial word 
@@ -324,12 +327,13 @@ given the proper use of these flags.
 - **	Personal_Pronouns;	** = 
 
 - **	Englishlex;				** = English lexicon including all parts of speech
-- **	Communicators-English;	** = English multi word communicator d'ya know
+- **	Communicators-English;	** = English multi word communicators, e.g. d'ya know
 - **	Bardiclex;				** = classical Irish lexicon from TCD Bardic corpus - 
 - **	Latinlex;				** = Latin lexicom from RIA historical corpus
-- **	!Tobar;					** = omitting this (non-standard forms)
+- **	!Tobar;					** = omitting this (non-standard older forms)
 
-- **	Punctuation ;		** = 
+- **	Punctuation;		** = 
+- **	Punctuation_ga;		** = 
 - **	Symbols;			** = 
 - **	XMLTags; 			** = XML tags e.g. <p>, <title> etc.
 
@@ -356,7 +360,6 @@ given the proper use of these flags.
 - **	NounsD;			** = FP nouns (manual Decl 1-3)
 - **	NounsE;			** = FP nouns (manual Decs 4-5)
 - **	NounsF;			** = FP nouns (manual Irregular)
-- **	NounsG;			** = Proper Nouns - SHOULD BE MOVED TO Proper Nouns Lexicons
 - **	NounsH;			** = Various from corpora
 - **	NounsIrregular;	** = 
 - **	Substantive;  	** = 
@@ -365,6 +368,7 @@ given the proper use of these flags.
 - **	NounsVariants;		** = Variants extracted from FGB
 - **	NounsEqualVariants;	** = Variants extracted from FGB (2011 EUD)
 
+- **	NounsG;			** = Proper Nouns - MOVED from Nouns TO Proper Nouns Lexicons
 - **	NP-LEX-FAM;			** = Family Names (Irish)
 - **	NP-LEX-FAM-EN;		** = Family Names (English)
 - **	NP-LEX-PERS;		** = Personal Names (Irish)

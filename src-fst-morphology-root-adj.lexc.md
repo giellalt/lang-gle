@@ -8,6 +8,10 @@ The morphological analyses of wordforms of UNDEFINED language are presented
 in this system in terms of following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
 
+- **+Acc		  ** = Accusative case
+- **+Cp		  ** = ?
+- **+Wh		  ** = wh word?
+
 Subj is used for subjunctive
 
 * * *
