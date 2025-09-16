@@ -173,13 +173,15 @@ PROP-SUR
 
 TIME-N-SET
 
-### Sets for prepositions
+## Noun errors (Len vs. not Len) after prepositions
+
+These prepositions want an lenited version, adding an h after the initial letter
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST PREP-ECL = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; 
+* LIST LEN-PREP = "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<trí>" "<um>" ; 
 
-These prepositions want an additonal consonant in front of its complement in order to cause ECL:
-* LIST ART-PREP-ECL = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; 
+These prepositions want an additonal consonant in front of its complement in order to cause eclipse ECL, urú in Irish.:
+* LIST ART-LEN-PREP = "<ag>" "<ar>" "<le>" "<as>" "<chuig>" "<de>" "<do>" "<faoi>" "<i>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ; 
 
 * LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  
 
@@ -189,8 +191,6 @@ Noun errors (Ecl vs. not Ecl) after prepositions
 * LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; 
 * LIST NUM-PL-ADJ = "<dhá>" "trí" "ceithre" "cúig" "sé" "seacht" "ocht" "naoi" "deich" "beirt" ; 
 * LIST ECL-NON-ECL-N = (".*ó"r) (".*án"r) ; 
-
-### Lookalikes
 
 * LIST COMMONWORD = ("carr" Noun Masc) ("athair" Noun Masc) ; 
 * LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 
@@ -372,10 +372,13 @@ expression **WORD - premodifiers**.
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
 * LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;     
+* LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;     
+* LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
 * LIST &msyn-ar-an-tae = &msyn-ar-an-tae;     
 * LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;     
 * LIST &msyn-tóin-poill = &msyn-tóin-poill ;     
+* LIST &msyn-fem-article = &msyn-fem-article ;     
 * LIST &spell-conservatively = spell-conservatively ;     
 * LIST &spell-it-all = spell-it-all ;     
 * LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;     
@@ -390,13 +393,10 @@ Here ends the list and set section
 # BEFORE-SECTIONS       
 
 * LIST <fixedcase> = <fixedcase>;        
-* ADD:fixedcase-np <fixedcase> TARGET Prop ;      ,  Never change case of proper nouns
 
 # SECTION       
 
 ## spellchecking
-
-* ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;       = add rule marking typos
 
 * LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;      (to be moved to other tags)
 
@@ -404,15 +404,7 @@ Here ends the list and set section
 
 ## Gender errors in adjectives
 
-**RULE: msyn-adj-gender** to change Masc adjective to Fem if it modifies a feminine noun
-
-## Noun errors (Len vs. not Len) after prepositions
-
-* LIST LEN-PREP = ("de" Prep) "do" ("faoi" Prep) "gan" "idir" ("ó" Prep) "roimh" "thar" ("trí" Prep) "um" ;      
-These prepositions want an lenited version, adding an h after the initial letter
-
-* LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;      
-This is what ???
+**RULE: msyn-adj-gender** to change Masc adjective to Fem if it modifies a feminine noun *IT WORKS*
 
 ## Prepositions
 
@@ -422,25 +414,23 @@ This is what ???
 
 **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
-**ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
+**ADD:msyn-len-after-prep**: A RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 
 **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
 
-**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors with an intervening article
+**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors with an intervening article !!!IT WORKS!!!
 
-**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article.
+**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!!
 
 **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
 ### Rules for lenition
 
-More rules here forthcoming
-
 **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
 
 **ADD:msyn-inis-do** ...	
 
-**ADD:msyn-ar-an-aonach**: ...	
+**ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
 
 **ADD:msyn-ar-a-haon-a-chlog** ...
 
