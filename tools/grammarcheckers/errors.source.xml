@@ -187,13 +187,13 @@
   </error>
   <error id="spell-conservatively">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">Only suggest spellings of words that are not inside "quotes"</title>
+      <title xml:lang="ga">Only suggest spellings of words that are not inside "quotes"</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Add description</description>
-      <description xml:lang="ga">Cuir cur síos leis</description>
+      <description xml:lang="en">Only suggest spellings of words that are not inside "quotes"</description>
+      <description xml:lang="ga">Only suggest spellings of words that are not inside "quotes"</description>
     <examples>
       <ex xml:lang="ga">...</ex>
     </examples>
@@ -291,15 +291,15 @@
 
   <error id="msyn-len-after-prep">
     <header>
-      <title xml:lang="ga">Consan séimhithe i lorg an réamhfhocail bhaininscnigh</title>
-      <title xml:lang="en">Lenited consonant following the feminine preposition</title>
+      <title xml:lang="ga">Consan séimhithe i lorg an réamhfhocail</title>
+      <title xml:lang="en">Lenited consonant following preposition</title>
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Tá séimhiú in easnamh.</description>
-      <description xml:lang="en">The lenition is missing.</description>
+      <description xml:lang="ga">Nuair a bhíonn ainmfhocal, "$1", i lorg réamhfhocail a shéimhíonn, "$2" anseo, ba cheart é a shéimhiú.</description>
+      <description xml:lang="en">If a noun, here "$1", follows a preposition that requires lenition, here "$2", it should be lenited.</description>
     <examples>
-      <ex xml:lang="ga">Níor oscail mé an fhuinneog mhór.</ex>
+      <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
     </examples>
     </body>
   </error>

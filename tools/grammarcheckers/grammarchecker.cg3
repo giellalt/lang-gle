@@ -665,7 +665,8 @@ COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gend
 
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
-LIST LEN-PREP = "ag" "ar" "i" "thar" "de" "do" "faoi" "gan" "idir" "ó" "roimh" "thar" "trí" "um" ;     #!!= * @CODE@ 
+LIST LEN-PREP = "thar" "de" "do" "faoi" "gan" "idir" "ó" "roimh" "thar" "trí" "um" ;     #!!= * @CODE@ 
+# "ag" "ar" "i" do not cause lenition (séimhiú in Irish).
 #!! These prepositions want an lenited version, adding an h after the initial letter
 
 LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;     #!!= * @CODE@ 
@@ -716,9 +717,10 @@ COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-afte
 #ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 	
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg Len) OR (Subst Noun Sg Len) IF (-1 (Prep Simp))(NEGATE 0 (Noun Fem Com Sg Len)) ;
-COPY:msyn-len-after-prep (SUGGEST) EXCEPT (Len &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
-COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len)) ;
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
+ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
+##COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 GEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
@@ -785,7 +787,7 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
         (NEGATE 0 Ecl);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
-ADDRELATION:msyn-ecl-after-prep ($2) (Prep) FROM (2 Noun LINK 0 msyn-ecl-after-prep));
+ADDRELATION:msyn-ecl-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-ecl-after-prep));
 # Model for Trond, smn:	 2673 ADDRELATION:msyn-adj-nom-acc ($2) () FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 
 ## Tá bainisteoir nua ar an banc. # wrong
