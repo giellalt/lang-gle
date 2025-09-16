@@ -1977,7 +1977,7 @@ Here ends the list and set section
 
 ### Noun errors (Len vs. not Len) after prepositions
 
-* LIST LEN-PREP = "thar" "de" "do" "faoi" "gan" "idir" "ó" "roimh" "thar" "trí" "um" ;      
+* LIST LEN-PREP = ("de" Prep) "do" ("faoi" Prep) "gan" "idir" ("ó" Prep) "roimh" "thar" ("trí" Prep) "um" ;      
 These prepositions want an lenited version, adding an h after the initial letter
 
 * LIST GEN-PREP = "ar_feadh" "i_rith" "le_linn" "thar" ;      
