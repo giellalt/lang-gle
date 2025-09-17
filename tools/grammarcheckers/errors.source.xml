@@ -288,6 +288,36 @@
     </examples>
     </body>
   </error>
+  
+  <error id="msyn-lenition-after-ní">
+    <header>
+      <title xml:lang="ga">Caithfear séimhiú a bheith ar bhriathar i lorg ní.</title>
+      <title xml:lang="en">The verb following ní has to be lenited.</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Ní mór briathar a bhíonn i lorg ní a shéimhiú.</description>
+      <description xml:lang="en">A verb following ní has to be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Ní cheannaím, ní bhrísfear, ní dhúnfar, ní theastaíonn.</ex>
+    </examples>
+    </body>
+  </error>
+  
+    <error id="msyn-lenition-after-níor">
+    <header>
+      <title xml:lang="ga">Caithfear séimhiú a bheith ar bhriathar san aimsir chaite i lorg níor.</title>
+      <title xml:lang="en">The verb in past tense following níor has to be lenited.</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Ní mór briathar a bhíonn i lorg níor a shéimhiú.</description>
+      <description xml:lang="en">A verb following níor has to be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Níor cheannaigh sé, níor bhríseadh, níor dhún sé, níor theastaigh uaithi.</ex>
+    </examples>
+    </body>
+  </error>
 
   <error id="msyn-len-after-prep">
     <header>
