@@ -423,7 +423,9 @@ LIST PL1-V = (V Pl1)  ;  #!! PL1-V
 LIST PL2-V = (V Pl2)  ;  #!! PL2-V
 LIST PL3-V = (V Pl3)  ;  #!! PL3-V
 
-LIST MODOA = (Poss 1P Sg) (Poss 2P Sg) (Poss 3P Sg Masc) ; #!! Set for your, my and his
+LIST MODOA = (Poss 1P Sg) (Poss 2P Sg) (Poss 3P Sg Masc) ; 	#!! Set for your, my and his
+
+
 
 LIST PLPOSS = (Poss Pl)  ;  #!!= * @CODE@
 
@@ -615,6 +617,8 @@ LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@ 
 LIST &use-guillemets = &use-guillemets ;    #!!= * @CODE@ 
+LIST &msyn-lenition-after-ní = &msyn-lenition-after-ní ;
+LIST &msyn-lenition-after-níor = &msyn-lenition-after-níor ;
 LIST SUGGEST = SUGGEST ;    #!!= * @CODE@ 
 
 MAPPING-PREFIX = & ;    #!!= * @CODE@ 
@@ -679,7 +683,8 @@ COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &m
 SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
-	## Tá an madra ag siúl le tú.
+	#$ Tá an madra ag siúl leat (correct)
+	## Tá an madra ag siúl le tú (incorrect)
 	#$ Tá súil aige leis (correct)
 	## Tá súil aige le sé (incorrect)
 	## Tá súil aige le sí (incorrect)
@@ -706,6 +711,19 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst No
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
+
+
+## A RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
+
+ADD:msyn-lenition-after-ní (&msyn-lenition-after-ní) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r));
+COPY:msyn-lenition-after-ní (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ní) TARGET (&msyn-lenition-after-ní) ;
+
+
+## A RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
+
+ADD:msyn-lenition-after-níor (&msyn-lenition-after-níor) TARGET (Verb VTI PastInd) IF (-1 (Part Vb Neg Past)) ; 
+COPY:msyn-lenition-after-níor (Verb VTI PastInd Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-níor) TARGET (&msyn-lenition-after-níor) ; 
+
 
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
 
