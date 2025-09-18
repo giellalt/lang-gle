@@ -20,12 +20,12 @@
         
   <error id="msyn-gen-case-nouns">
     <header>
-      <title xml:lang="ga">An tuiseal ginideach</title>
-      <title xml:lang="en">The genitive case</title>
+      <title xml:lang="ga">An tuiseal ginideach i ndiaidh an ailt</title>
+      <title xml:lang="en">The genitive case following the article</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Má thagann an t-alt agus ainmfhocal ("$1") i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
+      <description xml:lang="ga">Nuair a bhíonn an t-alt agus ainmfhocal ("$1") i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
       <description xml:lang="en">If the article and noun ("$1") follow another noun, the second noun must be in the genitive case.</description>
     <examples>
       <ex xml:lang="ga">Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.</ex>
@@ -104,7 +104,7 @@
   <error id="msyn-ecl-after-prep-sfem">
     <header>
       <title xml:lang="en">Eclipse after a preposition</title>
-      <title xml:lang="ga"> i ndiaidh réamhfhocail</title>
+      <title xml:lang="ga">Urú i ndiaidh réamhfhocail</title>
       <references> <ref n=""/></references>
     </header>
     <body>
@@ -145,15 +145,15 @@
   </error>
   <error id="msyn-ie.i.">
     <header>
-      <title xml:lang="en">Add title</title>
-      <title xml:lang="ga">Cuir teideal leis</title>
+      <title xml:lang="en">Irish i.e.</title>
+      <title xml:lang="ga">I.e. i nGaeilge</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="en">Add description</description>
-      <description xml:lang="ga">Cuir cur síos leis</description>
+      <description xml:lang="en">i.e. is .i. in Irish</description>
+      <description xml:lang="ga">An leagan Gaeilge de i.e., ná .i.</description>
     <examples>
-      <ex xml:lang="ga">...</ex>
+      <ex xml:lang="ga">.i.</ex>
     </examples>
     </body>
   </error>
@@ -231,13 +231,13 @@
 
   <error id="msyn-noun-defart">
     <header>
-      <title xml:lang="ga">Alt cinnte an ainmfhocail</title>
-      <title xml:lang="en">The definite article of the noun</title>
+      <title xml:lang="ga">Alt an ainmfhocail</title>
+      <title xml:lang="en">The article of the noun</title>
       <references> <ref n=""/></references>
     </header>
     <body>
       <description xml:lang="ga">Má thagann an t-alt "$2" roimh an ainmfhocail, "$1" sa chás seo, ba cheart go mbeadh sé cinnte.</description>
-      <description xml:lang="en">If the article "$2" precedes the noun, "$1" in this case, it should be in the definite form.</description>
+      <description xml:lang="en">If the article "$2" precedes the noun, "$1" in this case, it should be definite.</description>
     <examples>
       <ex xml:lang="ga">An t-uachtarán.</ex>
     </examples>
@@ -288,25 +288,23 @@
     </examples>
     </body>
   </error>
-  
-  <error id="msyn-lenition-after-ní">
+     <error id="msyn-lenition-after-ni">
     <header>
-      <title xml:lang="ga">Caithfear séimhiú a bheith ar bhriathar i lorg ní.</title>
+      <title xml:lang="ga">Séimhiú ar bhriathar i lorg ní.</title>
       <title xml:lang="en">The verb following ní has to be lenited.</title>
-      <references> <ref n=""/></references>
+      <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Ní mór briathar a bhíonn i lorg ní a shéimhiú.</description>
-      <description xml:lang="en">A verb following ní has to be lenited.</description>
+      <description xml:lang="ga">Má bhíonn briathar, "$1" anseo, i lorg "ní", ní mór é a shéimhiú.</description>
+      <description xml:lang="en">If a verb, here "$1", follows the particle "ní", it should be lenited.</description>
     <examples>
       <ex xml:lang="ga">Ní cheannaím, ní bhrísfear, ní dhúnfar, ní theastaíonn.</ex>
     </examples>
     </body>
-  </error>
-  
-    <error id="msyn-lenition-after-níor">
+  </error>  
+    <error id="msyn-lenition-after-nior">
     <header>
-      <title xml:lang="ga">Caithfear séimhiú a bheith ar bhriathar san aimsir chaite i lorg níor.</title>
+      <title xml:lang="ga">Séímhiú i lorg níor.</title>
       <title xml:lang="en">The verb in past tense following níor has to be lenited.</title>
       <references> <ref n=""/></references>
     </header>
@@ -332,25 +330,7 @@
       <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
     </examples>
     </body>
-  </error>
-
-    <error id="msyn-lenition-after-ni">
-    <header>
-      <title xml:lang="ga">Briathar srianaithe i ndiaidh ní</title>
-      <title xml:lang="en">Lenited verb following ní</title>
-      <references><ref n=""/></references>
-    </header>
-    <body>
-      <description xml:lang="ga">Má thagann briathar, anseo "$1", i ndiaidh an chuid "ní", ba chóir é a shíneadh.</description>
-      <description xml:lang="en">If a verb, here "$1", follows the particle "ní", it should be lenited.</description>
-    <examples>
-      <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
-    </examples>
-    </body>
-  </error>
-
-
-  
+  </error> 
   <error id="msyn-teastaigh-ó">
     <header>
       <title xml:lang="ga">teastaigh ó</title>
@@ -457,17 +437,31 @@
   </error>
  
   
-  <error id="use-ellipsis">
+  <error id="ellipsis">
     <header>
       <title xml:lang="en">Ellipsis</title>
       <title xml:lang="ga">Comhartha focalbhá</title>
     </header>
     <body>
-      <description xml:lang="en">You have used three periods, "$1". Here an ellipsis would have been a better choice.</description>
-      <description xml:lang="ga">Tá tú tar éis trí phonc a úsáid, "$1". B'fhearr comhartha focalbhá a úsáid anseo.</description>
+      <description xml:lang="en">You have used three periods "$1". Here an ellipsis "…" would have been a better choice.</description>
+      <description xml:lang="ga">Tá tú tar éis trí phonc "$1" a úsáid. B'fhearr comhartha focalbhá "…" anseo.</description>
     </body>
   </error>
- 
+
+
+   <error id="msyn-fem-article">
+    <header>
+      <title xml:lang="en">Correcting the article for feminine nouns</title>
+      <title xml:lang="ga">An leagan baininscneach den alt</title>
+    </header>
+    <body>
+      <description xml:lang="en">When a feminine noun is in the genitive case, it must have the feminine form of the article "na".</description>
+      <description xml:lang="ga">Nuair is ainmfhocal baininscneach sa ghinideach atá ann, ní mór an leagan baininscneach den alt "na" a bheith ann.</description>
+          <examples>
+      <ex xml:lang="ga">Tús na bliana, lár na páirce.</ex>
+    </examples>
+    </body>
+  </error>
   
   <error id="use-guillemets">
     <header>

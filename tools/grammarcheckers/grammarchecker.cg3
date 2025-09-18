@@ -715,16 +715,19 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 
 ## A RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
-ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
+ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
+
+#ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
+#COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
 
 ## Ní ceannaíonn sí caifé gach lá. # incorrect
 #$ Ní cheannaíonn sí caifé gach lá. # correct
 
 ## A RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
-ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb VTI PastInd) IF (-1 (Part Vb Neg Past)) ; 
-COPY:msyn-lenition-after-nior (Verb VTI PastInd Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
+ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
+COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
 
 
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
