@@ -334,6 +334,23 @@
     </body>
   </error>
 
+    <error id="msyn-lenition-after-ni">
+    <header>
+      <title xml:lang="ga">Briathar srianaithe i ndiaidh ní</title>
+      <title xml:lang="en">Lenited verb following ní</title>
+      <references><ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Má thagann briathar, anseo "$1", i ndiaidh an chuid "ní", ba chóir é a shíneadh.</description>
+      <description xml:lang="en">If a verb, here "$1", follows the particle "ní", it should be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
+    </examples>
+    </body>
+  </error>
+
+
+  
   <error id="msyn-teastaigh-ó">
     <header>
       <title xml:lang="ga">teastaigh ó</title>
