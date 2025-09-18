@@ -617,8 +617,8 @@ LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@ 
 LIST &use-guillemets = &use-guillemets ;    #!!= * @CODE@ 
-LIST &msyn-lenition-after-ní = &msyn-lenition-after-ní ;
-LIST &msyn-lenition-after-níor = &msyn-lenition-after-níor ;
+LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
+LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
 LIST SUGGEST = SUGGEST ;    #!!= * @CODE@ 
 
 MAPPING-PREFIX = & ;    #!!= * @CODE@ 
@@ -715,14 +715,16 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 
 ## A RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
-ADD:msyn-lenition-after-ní (&msyn-lenition-after-ní) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r));
-COPY:msyn-lenition-after-ní (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ní) TARGET (&msyn-lenition-after-ní) ;
+ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r));
+COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
 
+## Ní ceannaíonn sí caifé gach lá. # incorrect
+#$ Ní cheannaíonn sí caifé gach lá. # correct
 
 ## A RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
-ADD:msyn-lenition-after-níor (&msyn-lenition-after-níor) TARGET (Verb VTI PastInd) IF (-1 (Part Vb Neg Past)) ; 
-COPY:msyn-lenition-after-níor (Verb VTI PastInd Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-níor) TARGET (&msyn-lenition-after-níor) ; 
+ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb VTI PastInd) IF (-1 (Part Vb Neg Past)) ; 
+COPY:msyn-lenition-after-nior (Verb VTI PastInd Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
 
 
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
