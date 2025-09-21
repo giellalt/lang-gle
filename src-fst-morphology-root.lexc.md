@@ -8,9 +8,9 @@ INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 The morphological analyses of wordforms for the Irish
 language are presented in this system in terms of the following symbols.
 
-- **+Corr  ** =
-- **+Error ** =
-- **+Start ** =
+- **+Corr  ** = correction in Learner corpus
+- **+Error ** = error in Learner corpus
+- **+Start ** = start of error/correction
 
 Tag list:
 
@@ -43,7 +43,7 @@ Tag list:
 - **+CmpNP/First	** = 
 - **+CmpNP/None	** = 
 - **+Cmpd		** = Compound prepostion
-- **+CmpdNoGen	** = 
+- **+CmpdNoGen	** = Compound prepostion which does not require genitive case on object NP
 - **+Cmpl		** = Complementizer: go, gur, nach, nár
 - **+Com		** = Common case (nominative/accusative/dative case)
 - **+Comp		** = Comparative adjective (c)
@@ -368,7 +368,7 @@ given the proper use of these flags.
 - **	NounsVariants;		** = Variants extracted from FGB
 - **	NounsEqualVariants;	** = Variants extracted from FGB (2011 EUD)
 
-- **	NounsG;			** = Proper Nouns - MOVED from Nouns TO Proper Nouns Lexicons
+- **	NounsG;			** = Proper Nouns - MOVED from Nouns TO Proper Nouns
 - **	NP-LEX-FAM;			** = Family Names (Irish)
 - **	NP-LEX-FAM-EN;		** = Family Names (English)
 - **	NP-LEX-PERS;		** = Personal Names (Irish)
