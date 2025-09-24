@@ -27,9 +27,9 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 
 ! TODO: Documet these tags:
 
-+Corr  !!= - **@CODE@** =
-+Error !!= - **@CODE@** =
-+Start !!= - **@CODE@** =
++Corr  !!= - **@CODE@** = correction in Learner corpus
++Error !!= - **@CODE@** = error in Learner corpus
++Start !!= - **@CODE@** = start of error/correction
 
 !! Tag list:
 
@@ -62,7 +62,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +CmpNP/First	!!= - **@CODE@** = 
 +CmpNP/None	!!= - **@CODE@** = 
 +Cmpd		!!= - **@CODE@** = Compound prepostion
-+CmpdNoGen	!!= - **@CODE@** = 
++CmpdNoGen	!!= - **@CODE@** = Compound prepostion which does not require genitive case on object NP
 +Cmpl		!!= - **@CODE@** = Complementizer: go, gur, nach, nár
 +Com		!!= - **@CODE@** = Common case (nominative/accusative/dative case)
 +Comp		!!= - **@CODE@** = Comparative adjective (c)
@@ -400,7 +400,7 @@ LEXICON Root			!!= - **@CODE@** =
 	NounsEqualVariants;	!!= - **@CODE@** = Variants extracted from FGB (2011 EUD)
 
 ! Proper Nouns
-	NounsG;			!!= - **@CODE@** = Proper Nouns - MOVED from Nouns TO Proper Nouns Lexicons
+	NounsG;			!!= - **@CODE@** = Proper Nouns - MOVED from Nouns TO Proper Nouns
 	NP-LEX-FAM;			!!= - **@CODE@** = Family Names (Irish)
 	NP-LEX-FAM-EN;		!!= - **@CODE@** = Family Names (English)
 	NP-LEX-PERS;		!!= - **@CODE@** = Personal Names (Irish)
