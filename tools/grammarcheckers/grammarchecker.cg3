@@ -258,12 +258,13 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST ECLIPSE-PREP = "<ar>" "<i>"  ; #!!= * @CODE@
-# "<chuig>" "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<trí>" "<um>"
+LIST ECLIPSE-PREP = "<ar>" "<i>" "<chuig>" "<le>"; 			#!!= * @CODE@
+#  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<trí>" "<um>"
 
 
 #!! These prepositions always cause the nouns after them to be lenited:
 LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					#!!= * @CODE@
+
 # Prepositions that do not lenite nouns: "<ag>" "<i>" "<le>" "<as>" "<chuig>" "<thar>" "<um>"
 
 
@@ -707,7 +708,7 @@ ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&m
 	
 #!! **ADD:msyn-len-after-prep**: 
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 ART-LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len))(0 ("<[bcdfgmpst].*>"r)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 ART-LEN-PREP)(NEGATE 0 (Noun Fem Com Sg Len))(0 ("<[bcdfgmpstBCDFGMPST].*>"r)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
@@ -715,7 +716,7 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 
 ## A RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
-ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
+ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpstBCDFGMPST].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
 
 ## Ní ceannaíonn sí caifé gach lá. # incorrect
@@ -727,10 +728,10 @@ ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb PastInd) I
 COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
 
 
-#!! **ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
+#!! **ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
-COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
+#ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+#COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct
@@ -761,11 +762,11 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 ##os coinne sin - #$os a choinne sin.
 ##in ainneoin - #$d'ainneoin.
 
-##faoi: faoi bhord
-##de: de chapall
-##do: do Mháire
-##ó: ó Sheán
-##mar: mar dhuine
+##faoi: faoi bhord OIBRÍONN AN RIAIL
+##de: de chapall OIBRÍONN AN RIAIL
+##do: do Mháire OIBRÍONN AN RIAIL
+##ó: ó Sheán OIBRÍONN AN RIAIL
+##mar: mar dhuine 
 ##um: um thráthnóna
 ##trí: trí dhoras
 ##roimh: roimh mhaidin
@@ -777,6 +778,8 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 ##ag: ag duine
 ##ar: ar baile
 ##chuig: chuig dochtúir
+	## Chuig an Chomhairle. - incorrect
+	#$ Chuig an gComhairle. - correct
 ##go: go Ciarraí
 ##le: le fear
 ##idir: idir Corcaigh agus Baile Átha Cliath
@@ -786,11 +789,11 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 ##go: go hálainn
 ##le: le háthas, le heagla
 
-## A rule to correct eclipse errors for nouns with the article !!!IT WORKS!!!
+## A rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
 #ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
-        #(-1 ART-LEN-PREP + (Prep Simp))       		# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
-        #(0 ("<[bcdfgmpst].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
+        #(-1 ART-LEN-PREP + (Prep Simp))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
+        #(0 ("<[bcdfgmpstBCDFGMPST].*>"r)); 			# the thing you TARGET itself if starting with the letters bcdfgp
         #(NEGATE 0 Ecl);
 #COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 #ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after-prep));
@@ -812,37 +815,41 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
 
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
+
 #ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
-        #(-2 ECLIPSE-PREP + (Prep Simp)) # two words to the left of the thing you TARGET is the word in LIST/SET LEN-PREP and also has Prep and Simp tags
-        #(-1 Art) # One to the left of the thing you TARGET is Art
+        #(-2 ART-LEN-PREP + (Prep Simp)) 			# two words to the left of the thing you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
+        #(-1 Art) 						# One to the left of the thing you TARGET is Art
         #(0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
-        #(NOT 0 Ecl OR ECL-NON-ECL-N)  # The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
-        #(0 ("<[bcfgps].*>"r)) # the thing you TARGET itself if starting with the letters bcfgps
-        #(NEGATE 0 ("<[s].*>"r) + Masc) ; #The rule dosn't target a masculine word starting with the letter S.
+        #(NOT 0 Ecl OR ECL-NON-ECL-N)  				# The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        #(0 ("<[bcfgpsBCFGPS].*>"r)) 				# the thing you TARGET itself if starting with the letters bcfgps
+        #(NEGATE 0 ("<[s].*>"r) + Masc) ; 			# The rule dosn't target a masculine word starting with the letter S.
 
 #COPY:msyn-ecl-after-prep-sfem (DefArt SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
 
 #!! ### Rules for lenition
+
 #        (NEGATE 0 ("<[s].*>"r) + Masc)
 #        (NEGATE 0 ("<st.*>"r) + Fem)
 #        (NEGATE 0 ("<se.*>"r) + Fem)
 #        (NEGATE 0 ("<si.*>"r) + Fem)   
 #        (NEGATE 0 ("<sr.*>"r) + Fem) 
 
-
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
     	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
+    
     	
-#ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
-	#(-1 ECLIPSE-PREP + (Prep Simp))
-	#(NOT 0 Ecl OR ECL-NON-ECL-N) ;
-#COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
+ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
+	(-1 ECLIPSE-PREP + (Prep Simp))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
 #ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
+
 
 # Valency errors
 # "teastaigh" V + "ó"	
 
 #!! **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
+
 #ADD:msyn-teastaigh-ó (&msyn-teastaigh-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("teastaigh") BARRIER (*) - (Noun Com)) ;
 #COPY:msyn-teastaigh-ó ("ó" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("muid" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó) ;
 
@@ -851,24 +858,26 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
 	#$ Teastaíonn mála uaim.
 	## Teastaíonn mála mé.
 	
-#!! **ADD:msyn-inis-do** ...	
+#!! **ADD:msyn-inis-do** ...
+	
 #ADD:msyn-inis-do (&msyn-inis-do) TARGET (Prep Prep Rel) IF (NOT 0 ("do" Prep))(*-1 ("inis") BARRIER (*) - (Noun Com)) ;
 #COPY:msyn-inis-do ("do" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-inis-do) OR ("tú" Pers &msyn-inis-do) OR ("é" Pers &msyn-inis-do) OR ("í" Pers &msyn-inis-do) OR ("sinn" Pers &msyn-inis-do) OR ("muid" Pers &msyn-inis-do) OR ("sibh" Pers &msyn-inis-do) OR ("siad" Pers &msyn-inis-do) AFTER Pron TARGET (&msyn-inis-do) ;
 
 
-ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
-COPY:msyn-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
+#ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
+#COPY:msyn-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &msyn-ar-an-aonach) TARGET (&msyn-ar-an-aonach);	
 	## Ag an aonach. - incorrect ("ag" at)
 	#$ Ar an aonach. - correct ("ar" on)
 
 #!! **ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
 
-#ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
-#COPY:msyn-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&msyn-ar-an-aonach) ;
-#ADDCOHORT:msyn-ar-an-aonach ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-aonach) AFTER &msyn-ar-an-aonach (NEGATE 0 ADDED);
-#ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
+ADD:msyn-ar-an-aonach (&msyn-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
+COPY:msyn-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&msyn-ar-an-aonach) ;
+######ADDCOHORT:msyn-ar-an-aonach ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-aonach) AFTER &msyn-ar-an-aonach (NEGATE 0 ADDED); ####THIS CAUSES CHAOS AND STOPS THE TERMINAL!!!###
+ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 #!! **ADD:msyn-ar-a-haon-a-chlog** ...
+
 #ADD:msyn-ar-a-haon-a-chlog (&msyn-ar-a-haon-a-chlog) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("a haon a chlog") BARRIER (*) - (Noun Com)) ;
 #COPY:msynar-a-haon-a-chlog ("ar" SUGGEST) EXCEPT ("ag" &msynar-a-haon-a-chlog) TARGET (&msynar-a-haon-a-chlog);	
 	## Ag a haon a chlog. - incorrect ("ag" at)
@@ -911,13 +920,13 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 	# nouns in genitive after compound prepositions
 	
-## RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
+## A RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg))  (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
-(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)
-(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
-
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A);
+#(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)    ###WHEN THIS LINE IS OPERATING, IT BREAKS THE RULE FOR COMBINATIONS SUCH AS CEADÚNAS TIOMÁINT, CEADÚNAS IASCAIREACHT, ETC.!!!!
+#(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
+	
 
 	#$ An múinteoir Ben
 	#$ Thug an rialtas airgead dó.
@@ -937,10 +946,11 @@ COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) B
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Sg &msyn-gen-case-nouns) - DefArt (NEGATE -1 (Art Def));
 	## bosca bruscar.
 	#$ bosca bruscair.
+	#$ ceadúnas tiomána.
 
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
 	
-	## Uachtarán an ollscoil. (erroneous)
+	## Uachtarán an ollscoil. (incorrect)
 	#$ Uachtarán na hollscoile. (correct)
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
 	#$ Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
@@ -972,10 +982,7 @@ ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art S
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
-	## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
-	#$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
-	## Chuig an Chomhairle. - incorrect
-	#$ Chuig an gComhairle. - correct
+
 	## An bean. - incorrect
 	#$ An bhean. - correct
 
@@ -985,8 +992,8 @@ ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det P
 COPY:msyn-possadj-nom-gen (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
 ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
 
-	## carr a athair
-	#$ carr a athar
+	## carr a athair - incorrect
+	#$ carr a athar - correct
 	## eagla a chraiceann - incorrect
 	#$ eagla a chraicinn - correct
 	## doras mo theach - incorrect
@@ -1011,6 +1018,7 @@ ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Pl2 + Nom) (0 V) (NOT 0 Pl2);
 
 ADD:attr-not-pred (&attr-not-pred) TARGET (A Sg) IF (NOT 0 Attr OR Gen) (1 CC LINK *1 COMMON-N) ;
 COPY:attr-not-pred (Attr SUGGEST) EXCEPT (Sg) TARGET (&attr-not-pred) ;
+
 # The method is: Add SUGGEST to a copied reading to *generate* a suggestion form from that reading. The copy should contain the error tag too – &-prefixed error tags are ignored when generating, but used to create human-readable messages.
 
 #!! **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
@@ -1025,13 +1033,15 @@ ADD:use-ellipsis (&ellipsis) TARGET ("...");
 COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 
 #!! **ADD:msyn-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
-#ADD:msyn-ar-an-tae (&msyn-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 ("tae")) ;
 	#$Bainne a chur ar an tae.
 	#$Bainne a chur ar do chuid tae.
 	##Bainne a chur sa tae.
-#COPY:msyn-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&msyn-ar-an-tae) ;
+
+
+ADD:msyn-ar-an-tae (&msyn-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 ("tae")) ;
+COPY:msyn-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&msyn-ar-an-tae) ;
 #ADDCOHORT:msyn-ar-an-tae ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-tae) AFTER &msyn-ar-an-tae (NEGATE 0 ADDED);
-#ADDRELATION:msyn-ar-an-tae ($2 RIGHT) (V &msyn-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
+ADDRELATION:msyn-ar-an-tae ($2 RIGHT) (V &msyn-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
 #!! This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
@@ -1042,6 +1052,7 @@ COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 	##Bainne a chur sa chaife.
 
 #!! **ADD:msyn-ar-an-gcaife** ...
+
 #ADD:msyn-ar-an-gcaife (&msyn-ar-an-gcaife) TARGET ("i" Prep Art Sg) IF (1 ("caife" Noun Masc Gen Sg DefArt)) ;
 #OPY:msyn-ar-an-gcaife ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&msyn-ar-an-gcaife) ;
 #ADDCOHORT:msyn-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &msyn-ar-an-gcaife) AFTER &msyn-ar-an-gcaife (NEGATE 0 ADDED);
@@ -1053,20 +1064,13 @@ COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 #COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 #ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
-#!! **ADD:msyn-tóin-poill**
-
-ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
-COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
-COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
-
-		#Chuaigh an bád go tóin {poll}
-
 #!! **ADD:msyn-ie.i.** ...
 #ADD:msyn-ie.i. (&msyn-&.i.) TARGET ("i.e." i.e.+Abr) ;
 #COPY:msyn-ie.i. (".i." SUGGEST) TARGET (msyn-ie.i.) ;
 
-#LIST <fixedcase> = <fixedcase>;
-#ADD <fixedcase> TARGET ("<Eoraip>") ;
+LIST <fixedcase> = <fixedcase>;
+
+ADD <fixedcase> TARGET ("<Eoraip>") ;
 
 	# syntax rules (word order, insertion, etc.)
 	
