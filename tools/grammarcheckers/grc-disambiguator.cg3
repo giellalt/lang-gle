@@ -13,7 +13,7 @@
 #
 #FIND ====>>>>
 # distinguish between nach cop/verbpart by using +Ecl +Len
-# i.e copula doesnt cause initial mutations - verb parts do ...
+# i.e copula doesn't cause initial mutations - verb particles do ...
 #
 # Delimiters
 # Sets
@@ -371,7 +371,7 @@ SELECT (Verb NegQ) IF (-1C (Part NegQ));
 
 # it is not a neg. interog. form of verb if it is not preceded 
 # by a neg interog. verb part
-REMOVE (Verb NegQ) IF (NOT -1 (Part Vb NegQ));
+REMOVE (Verb NegQ) IF (NOT -1 (Part Vb NegQ) OR (Part Vb Neg)); 
 
 # it is not an  interog. form of verb if it is not preceded 
 # by a interog. verb part / interog. adv etc.

@@ -715,18 +715,15 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 
 ## A RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
-ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
+ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
-
-#ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpst].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
-#COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
 
 ## Ní ceannaíonn sí caifé gach lá. # incorrect
 #$ Ní cheannaíonn sí caifé gach lá. # correct
 
 ## A RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
-ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
+ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb PastInd) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
 COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
 
 
@@ -761,7 +758,7 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 
 ##de bharr sin - #$dá bharr sin,
 ##in ainneoin sin - #$ina ainneoin sin,
-##os coinne sin - #$os a choinn sin.
+##os coinne sin - #$os a choinne sin.
 ##in ainneoin - #$d'ainneoin.
 
 ##faoi: faoi bhord
@@ -914,12 +911,14 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 	# nouns in genitive after compound prepositions
 	
-## RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!!
+## RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg))  (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A)
 (NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)
 (NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
+
+
 	#$ An múinteoir Ben
 	#$ Thug an rialtas airgead dó.
 
@@ -940,6 +939,7 @@ COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) T
 	#$ bosca bruscair.
 
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (Sg &msyn-gen-case-nouns)(0 DefArt - SUGGEST)(-1 (Art Def));
+	
 	## Uachtarán an ollscoil. (erroneous)
 	#$ Uachtarán na hollscoile. (correct)
 	## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
@@ -958,7 +958,8 @@ COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
-SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);MAP:LOCK_READING (SUGGEST) (SUGGEST);
+SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
+MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
 COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
