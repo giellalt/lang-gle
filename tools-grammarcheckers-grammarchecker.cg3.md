@@ -176,7 +176,7 @@ TIME-N-SET
 ## Noun errors (Len vs. not Len) after prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST ECLIPSE-PREP = "<ar>" "<i>"  ; 
+* LIST ECLIPSE-PREP = "<ar>" "<i>" "<chuig>" "<le>"; 			
 
 These prepositions always cause the nouns after them to be lenited:
 * LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					
@@ -414,7 +414,7 @@ Here ends the list and set section
 
 **ADD:msyn-len-after-prep**: 
 
-**ADD:msyn-len-after-prep**: rule to add lenition to determiners following prepositions
+**ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
 
 **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!!
 
@@ -424,7 +424,7 @@ Here ends the list and set section
 
 **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
 
-**ADD:msyn-inis-do** ...	
+**ADD:msyn-inis-do** ...
 
 **ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
 
@@ -451,8 +451,6 @@ A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE
 This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
 
 **ADD:msyn-ar-an-gcaife** ...
-
-**ADD:msyn-tóin-poill**
 
 **ADD:msyn-ie.i.** ...
 
