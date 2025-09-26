@@ -99,8 +99,10 @@ LIST Prep = Prep ; #!! Prep
 
 LIST Subst = Subst ; #!! Subst Check what it is
 
-LIST N = N ;		    #!! N
-LIST A = A ;		    #!! A
+LIST N = N ;		    #!! N CHECK!!
+LIST A = A ;		    #!! A CHECK!!
+LIST Noun = Noun ;	    #!! Noun
+LIST Adj = Adj ;	    #!! Adjective
 LIST Adv = Adv ;	    #!! Adv
 LIST V = V ;		    #!! V
 LIST Pron = Pron ;	    #!! Pron
@@ -453,14 +455,14 @@ LIST PL-PRON = (Pron Pl1) (Pron Pl2) (Pron Pl3) (Pron Pl) (pron p1 pl) (pron p2 
 
 #!! ### Adjectival sets and their complements
 # -------------------------------------
-SET A-CASE = A - Attr - Adv ;
+SET A-CASE = Adj - Attr - Adv ;
 
 LIST A-CC = A CC ;
 
-SET NOT-A = WORD - A ; # This is former NOT-ADJ
-SET NOT-A-COMMA = WORD - A - COMMA ;
+SET NOT-A = WORD - Adj ; # This is former NOT-ADJ
+SET NOT-A-COMMA = WORD - Adj - COMMA ;
 SET NOT-Attr = WORD - Attr ;
-SET NOT-A-PCLE = WORD - A - Pcle ;
+SET NOT-A-PCLE = WORD - Adj - Pcle ;
 SET NOT-A-CC = WORD - A-CC ;
 
 
@@ -661,8 +663,9 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg)) ;
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
-	#An fhuinneog beag - INCORRECT
-	#An fhuinneog bheag - CORRECT
+ADDRELATION:msyn-adj-gender ($2) (Noun) FROM (1 Adj LINK 0 (&msyn-adj-gender));
+        ## An fhuinneog beag - INCORRECT
+	#$ An fhuinneog bheag - CORRECT
 
 	#!! ## Prepositions
 
@@ -695,16 +698,16 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 ADD:msyn-lenition-after-possessive-adjective (&msyn-lenition-after-possessive-adjective) TARGET (Noun Com) IF (-1 Det +  MODOA)(NOT 0 Len) ;
 COPY:msyn-lenition-after-possessive-adjective (Len &SUGGEST) EXCEPT (&msyn-lenition-after-possessive-adjective) TARGET (&msyn-lenition-after-possessive-adjective) ;
-ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (Noun) FROM (-1 Adj LINK 0 (&msyn-adj-nom-acc)) ;
 
 #!! **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
 ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
 COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
-ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (N) FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
+ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 0 (&msyn-adj-nom-acc)) ;
 
 
-## A RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
+#!! ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 	
 #!! **ADD:msyn-len-after-prep**: 
 
@@ -714,7 +717,7 @@ ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
 
-## A RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
+#!! ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
 ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpstBCDFGMPST].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
@@ -722,7 +725,7 @@ COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARG
 ## Ní ceannaíonn sí caifé gach lá. # incorrect
 #$ Ní cheannaíonn sí caifé gach lá. # correct
 
-## A RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
+#!! ### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
 ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb PastInd) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
 COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
@@ -789,7 +792,7 @@ COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni
 ##go: go hálainn
 ##le: le háthas, le heagla
 
-## A rule to correct lenition (séimhiú) errors for nouns after certain prepositions
+#!! ### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
 #ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         #(-1 ART-LEN-PREP + (Prep Simp))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
@@ -908,7 +911,7 @@ ADDRELATION:msyn-ar-an-aonach ($2 RIGHT) (V &msyn-ar-an-aonach) TO (1 (ADDED-BEF
 
 #!! **ADD:msyn-cúpla-plnoun-sgnoun** ..
 
-## A RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
+#!! ### RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
 
 ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty)) ;
 COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnoun) TARGET (&msyn-cúpla-plnoun-sgnoun);
@@ -920,7 +923,7 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 	# nouns in genitive after compound prepositions
 	
-## A RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
+#!! ### RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A);
@@ -973,10 +976,12 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
 COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
-	
+ADDRELATION:msyn-fem-article ($2) (Noun) FROM (1 ("an" Art Sg Def) LINK 0 (&msyn-fem-article));
+# Todo Trond: Fix this rule. The error msg asks for genitive, but the rule for comitative.
+
 #!! ## Definiteness errors in nouns
 
-## A RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
+#!! ### RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECLIPSE-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
@@ -986,7 +991,7 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	## An bean. - incorrect
 	#$ An bhean. - correct
 
-#!! A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
+#!! ### A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
 
 ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
 COPY:msyn-possadj-nom-gen (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
@@ -1006,7 +1011,7 @@ ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;
 # But perhaps you want to only suggest spellings of words that are not inside "quotes":
 ADD:spell-conservatively (&typo SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 2 QMARK);
 
-# A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
+#!! ### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
 
 ADD:err-agr (&err-agr) TARGET V IF (-1C Sg + Nom) (0 V) (NOT 0 Sg3);
 ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Sg1 + Nom) (0 V) (NOT 0 Sg1);
@@ -1074,7 +1079,7 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 
 	# syntax rules (word order, insertion, etc.)
 	
-##  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
+#!! ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
 ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
 ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED);
