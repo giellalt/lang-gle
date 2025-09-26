@@ -276,7 +276,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 
 +v1				!!= - **@CODE@** = n/a
 +v2				!!= - **@CODE@** = n/a
-@%%
+!@%%
 ^Adj	!!= - **@CODE@** = Adjective- used in initial mutations
 ^Ath	!!= - **@CODE@** = Athrú (Change) - in certain plurals the ending changes : "e" -> "í",  "each" -> "í" and "ach" changes to "aí" etc.eg gealach -> gealaí (of the moon)
 ^C		!!= - **@CODE@** = nominative, genitive & vocative : initial mutations of plural nouns 
