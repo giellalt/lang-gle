@@ -20,6 +20,107 @@
 
 Multichar_Symbols  !!≈ # @CODE@ definitions
 
+
+
+! =============================================
+! Debugging: remove already declared ones
+
+@P.Pmatch.Backtrack
+@P.Pmatch.Loc
++A
++ABBR
++ACR
++Arab
++Attr
++CLBfinal
++CmpNP/First
++CmpNP/None
++Err/Hyph
++Err/Lex
++Err/MissingSpace
++Err/Orth
++Err/SpaceCmp
++Gen
++Ill
++MWE
++N
++Nom
++OLang/FIN
++OLang/HUN
++OLang/NNO
++OLang/NOB
++OLang/RUS
++OLang/SMA
++OLang/SME
++OLang/SMJ
++OLang/SWE
++OLang/UND
++Prop
++Rom
++Sem/Amount
++Sem/Build
++Sem/Build-room
++Sem/Cat
++Sem/Curr
++Sem/Date
++Sem/Domain
++Sem/Domain_Hum
++Sem/Dummytag
++Sem/Edu_Hum
++Sem/Event
++Sem/Food-med
++Sem/Group_Hum
++Sem/Hum
++Sem/ID
++Sem/Lang
++Sem/Mal
++Sem/Mat
++Sem/Measr
++Sem/Money
++Sem/Obj
++Sem/Obj-el
++Sem/Obj-ling
++Sem/Org_Prod-audio
++Sem/Org_Prod-vis
++Sem/Part
++Sem/Plc
++Sem/Prod-vis
++Sem/Route
++Sem/Rule
++Sem/Sign
++Sem/State
++Sem/State-sick
++Sem/Substnc
++Sem/Sur
++Sem/Time
++Sem/Time-clock
++Sem/Tool-it
++Sem/Txt
++Sem/Veh
++Sem/Year
++Span
++Use/-GC
++Use/-PLX
++Use/-PMatch
++Use/-Spell
++Use/-TTS
++Use/-TTS–
++Use/-TTS-
++Use/Circ
++Use/GC
++Use/NG
++Use/PMatch
++Use/SpellNoSugg
++Use/TTS
++Use%/GC
++V
++v1
++v2
+
+
+! =============================================
+
+
 !! ## Analysis symbols
 !  ----------------
 !! The morphological analyses of wordforms of UNDEFINED language are presented

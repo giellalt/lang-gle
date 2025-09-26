@@ -20,6 +20,15 @@
 
 Multichar_Symbols  !!≈ # Definitions for @CODE@
 
+! =============================================
+! Debugging: remove already declared ones
+
+@P.Pmatch.Backtrack
++Use/-TTS–
++Use/-TTS-
++Use%/GC
+! =============================================
+ 
 !! ## Tag symbols for analysis
 !  ----------------
 !! The morphological analyses of wordforms for the Irish
