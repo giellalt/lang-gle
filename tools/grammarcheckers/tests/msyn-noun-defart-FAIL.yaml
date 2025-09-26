@@ -3,8 +3,6 @@ Config:
   Variant: glegram-dev
 
 Tests:
-  - "Tá an dochtúir ag seasamh ag an {fuinneog}£{fhuinneog}"
-  - "Tá an dochtúir ag seasamh ag an fhuinneog {mór}£{mhór}"
 
   ## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
   #S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
