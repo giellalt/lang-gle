@@ -414,8 +414,8 @@
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Séimhítear an t-ainmfhocal i ndiaidh aidiacht shealbhach.</description>
-      <description xml:lang="en">Lenition follows a possessive adjective.</description>
+      <description xml:lang="ga">Nuair a thagann cinntitheoir, anseo "($1)", roimh ainmfhocal, anseo "($2)", ba chóir an t-ainmfhocal a shíneadh.</description>
+      <description xml:lang="en">When a determiner, here "($1)", preceedes a noun, here "($2)", the noun should be lenited.</description>
     <examples>
       <ex xml:lang="ga">Mo theach, do mhadra, a charr.</ex>
     </examples>

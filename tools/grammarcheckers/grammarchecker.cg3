@@ -698,7 +698,7 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 ADD:msyn-lenition-after-possessive-adjective (&msyn-lenition-after-possessive-adjective) TARGET (Noun Com) IF (-1 Det +  MODOA)(NOT 0 Len) ;
 COPY:msyn-lenition-after-possessive-adjective (Len &SUGGEST) EXCEPT (&msyn-lenition-after-possessive-adjective) TARGET (&msyn-lenition-after-possessive-adjective) ;
-ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (Noun) FROM (-1 Adj LINK 0 (&msyn-adj-nom-acc)) ;
+ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (Det) FROM (1 Noun LINK 0 (&msyn-adj-nom-acc)) ;
 
 #!! **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
