@@ -310,8 +310,10 @@
       <references><ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Nuair a bhíonn ainmfhocal, "$1", ar lorg réamhfhocail, ba cheart é a shéimhiú.</description>
-      <description xml:lang="en">If a noun, here "$1", follows a preposition, it should be lenited.</description>
+      <description xml:lang="ga">Nuair a bhíonn ainmfhocal, "$1", ar
+      lorg réamhfhocail, "$2", ba cheart é a shéimhiú.</description>
+      <description xml:lang="en">If a noun, here "$1", follows a
+      preposition, such as "$2", it should be lenited.</description>
     <examples>
       <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
     </examples>
@@ -391,15 +393,23 @@
     </body>
   </error>
   
-  <error id="msyn-possadj-nom-gen">
+  <error id="msyn-possadj-nom-gen"><!-- fix this, add $1, $2, check
+					noun vs. adj in rule
+				   Also, the rules targets final noun
+				   in Noun.Com Det.Poss Noun.Com, thus
+				   the nouns do not come together, and
+				   there is no adjective here. -->
     <header>
       <title xml:lang="ga">An ginideach ar lorg na haidiachta sealbhaí</title>
       <title xml:lang="en">The genitive follows the possessive adjective</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-        <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach an ginideach ar ceal.</description>
-        <description xml:lang="en">When two nouns come together, the second noun is in the genitive. The possessive adjective does not cancel the genitive.</description>
+        <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le
+	chéile, "$2" agus "$1", bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach an ginideach ar ceal.</description>
+        <description xml:lang="en">When two nouns, here "$2" and "$1",
+	come together, the
+	second noun should be in the genitive. The possessive adjective does not cancel the genitive.</description>
     <examples>
       <ex xml:lang="ga">Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.</ex>
     </examples>
