@@ -25,8 +25,10 @@ Prep
 
 Subst Check what it is
 
-N
-A
+N CHECK!!
+A CHECK!!
+Noun
+Adjective
 Adv
 V
 Pron
@@ -412,9 +414,17 @@ Here ends the list and set section
 
 **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
+### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
+
 **ADD:msyn-len-after-prep**: 
 
+### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
+
+### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
+
 **ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
+
+### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
 **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!!
 
@@ -436,11 +446,19 @@ Here ends the list and set section
 
 **ADD:msyn-cúpla-plnoun-sgnoun** ..
 
+### RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
+
+### RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
+
 **ADD:msyn-gen-case-nouns** ...
 
 ## Definiteness errors in nouns
 
-A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
+### RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
+
+### A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
+
+### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
 
 **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
 
@@ -453,6 +471,8 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 **ADD:msyn-ar-an-gcaife** ...
 
 **ADD:msyn-ie.i.** ...
+
+###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
 * * *
 
