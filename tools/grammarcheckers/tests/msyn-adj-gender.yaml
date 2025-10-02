@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "An fhuinneog {beag}£{bheag}."
+
+
