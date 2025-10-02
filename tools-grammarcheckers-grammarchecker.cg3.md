@@ -361,7 +361,6 @@ expression **WORD - premodifiers**.
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
 * LIST &msyn-fada-ó = &msyn-fada-ó ;     
-* LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;     
 * LIST &msyn-ie.i. = &msyn-&.i. ;     
 * LIST &msyn-inis-de = &msyn-inis-de ;     
 * LIST &msyn-inis-do = &msyn-inis-do ;     
@@ -371,8 +370,6 @@ expression **WORD - premodifiers**.
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
 * LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;     
-* LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;     
-* LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
 * LIST &msyn-ar-an-tae = &msyn-ar-an-tae;     
 * LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;     
