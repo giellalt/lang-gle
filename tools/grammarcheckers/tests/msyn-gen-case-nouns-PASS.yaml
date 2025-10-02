@@ -10,4 +10,44 @@ Tests:
   - "Is é Áras an Uachtaráin an {tí}£{teach} is cáiliúla in Éirinn."
   - "Chuaigh na saighdiúirí isteach i mbialann na {hoifigigh}£{n-oifigeach}."
   - "Parlaimint {an Eoraip}£{na hEorpa}."
-  
+
+# 1. When two nouns come together, the second noun has to be in the genitive case.
+  - "turas {scoil}£{scoile}"
+  - "teach {cúirt}£{cúirte}"
+  - "stáisiún {traein}£{traenach}"
+  - "Dáil {Éire}£{Éireann}"
+  - "éadaí {fear}£{fir}"
+  - "aois {bean}£{mná}."
+#  This rule works most of the time. It requires some further refinement.
+ 
+# 2. When two nouns come together and there is the definite article between the nouns.
+  - "éadaí an {fear}£{fhir}"
+ #- "príomhoide an scoil > príomhoide na scoile, lár an pháirc > lár na páirce,
+  - "oifig an {post}£{phoist}"
+  - "Áras an {Uachtarán}£{Uachtaráin}"
+
+#  - "Cumann na {Mná}£{mBan}"
+#  - "Amhrán na {Fianna}£{bhFiann}"
+#  - "Parlaimint an Eoraip > Parlaimint na hEorpa.
+# Some of this rule works, but work needs to be done to get it to work for all situations,
+# including when there are uppercase letters and where there are a combination of lower and uppercase letters,
+# e.g., na mBan, an hEorpa, na nOifigeach (this is 100% correct and not an error).
+# The grammar checker should be able to work with the variation of "na mban" and "na mBan".
+ 
+# 3. When two nouns come together and there is a possessive adjective between the nouns,
+# the possessive adjective does not cancel the rule of the second noun being in the genitive case.
+  - "carr mo {mháthair}£{mháthar}"
+  - "barr mo {cheann}£{chinn}"
+  - "mála a {bhean}£{mhná}"
+  - "doras mo {theach}£{thí}."
+# This rule works.
+ 
+# 4. When adjectives come after nouns, the adjective must be rendered into the genitive case as well.
+#  - "éadaí an fear {mór > éadaí an fhir mhór,
+  - "leabhar an dalta {díograiseach}£{dhíograisigh}"
+#  - "fionnadh an stail mhear > fionnadh an staile mire.
+# This rule has not been written.
+ 
+# 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.
+#  - "ag scríobh an litir > ag scríobh na litreach,
+#  - "ag glanadh an {fhuinneog > ag glanadh na fuinneoige.
