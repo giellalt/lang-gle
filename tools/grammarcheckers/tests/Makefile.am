@@ -16,6 +16,7 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-ecl-after-prep-FAIL.yaml \
     msyn-fada-o-FAIL.yaml \
     msyn-fada-o-PASS.yaml \
+    msyn-gen-case-nouns-PASS.yaml \
     msyn-inis-do-FAIL.yaml \
     msyn-noun-defart-FAIL.yaml \
     msyn-noun-defart-PASS.yaml \
