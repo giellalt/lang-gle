@@ -67,3 +67,19 @@ Tests:
 # 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.
 #  - "ag scríobh an litir > ag scríobh na litreach,
 #  - "ag glanadh an {fhuinneog > ag glanadh na fuinneoige.
+  - "turas {scoil}£{scoile}"
+  - "teach {cúirt}£{cúirte}"
+  - "stáisiún {traein}£{traenach}"
+  - "Beidh turas {scoil}£{scoile} ann an tseachtain seo chugainn."
+  - "Tá teach {cúirt}£{cúirte} i lár {an baile}£{an bhaile}."
+  - "Tá teach cúirte i lár {an baile}£{an bhaile}."
+  - "éadaí {fear}£{fir}"
+  - "aois {bean}£{mná}."
+  - "éadaí {an fear}£{an fhir}"
+  - "Tá príomhoide {an scoil}£{na scoile} ag obair inniu."
+  - "oifig {an post}£{an phoist}"
+  - "Áras {an Uachtarán}£{an Uachtaráin}"
+  - "Osclóidh an chuideachta bialann nua."
+  - "carr mo {mháthair}£{mháthar}."
+  - "mála a {bhean}£{mhná}."
+  - "doras mo {theach}£{thí}."
