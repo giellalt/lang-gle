@@ -18,38 +18,50 @@ Tests:
   - "stáisiún {traein}£{traenach}"
   - "Bus {Éire}£{Éireann}"
   - "Beidh turas {scoil}£{scoile} ann an tseachtain seo chugainn."
-#  Tá teach cúirt i lár an baile.
+  - "Tá teach {cúirt}£{cúirte} i lár {an baile}£{an bhaile}."
+  - "Tá teach cúirte i lár {an baile}£{an bhaile}."
   - "éadaí {fear}£{fir}"
   - "aois {bean}£{mná}."
 #  This rule works most of the time. It requires some further refinement.
  
 # 2. When two nouns come together and there is the definite article between the nouns.
-  - "éadaí an {fear}£{fhir}"
- #- "príomhoide an scoil > príomhoide na scoile, lár an pháirc > lár na páirce,
-  - "Tá príomhoide {an}£{na} {scoil}£{scoile} ag obair inniu."
-  - "oifig an {post}£{phoist}"
-  - "Áras an {Uachtarán}£{Uachtaráin}"
+  - "éadaí {an fear}£{an fhir}"
+  - "príomhoide {an scoil}£{na scoile}, lár {an pháirc}£{na páirce},"
+  - "Tá príomhoide {an scoil}£{na scoile} ag obair inniu."
+  - "oifig {an post}£{an phoist}"
+  - "Áras {an Uachtarán}£{an Uachtaráin}"
 
-#  - "Cumann na {Mná}£{mBan}"
-#  - "Amhrán na {Fianna}£{bhFiann}"
-#  - "Parlaimint an Eoraip > Parlaimint na hEorpa.
+  - "Cumann {na Mná}£{na mBan}"
+  - "Amhrán {na Fianna}£{na bhFiann}"
+  - "Parlaimint {an Eoraip}£{na hEorpa}."
 # Some of this rule works, but work needs to be done to get it to work for all situations,
 # including when there are uppercase letters and where there are a combination of lower and uppercase letters,
 # e.g., na mBan, an hEorpa, na nOifigeach (this is 100% correct and not an error).
 # The grammar checker should be able to work with the variation of "na mban" and "na mBan".
- 
+
+  - "Osclóidh an chuideachta bialann nua." # will open The company  a new restaurant.
+  - "Inniu a bhuailfidh an Stoirm Amy talamh." # VSO counterexample
+  - "Inniu a bhuailfidh an Stoirm Amy talamh na hÉireann, an chéad stoirm an séasúr seo atá ainmnithe."
+  #  today will hit  the Stormy amy land , first storm season
+#  - "Inniu a bhuailfidh an Stoirm Amy {talamh} na hÉireann, an {chéad} stoirm an séasúr seo atá ainmnithe. >
+# Inniu a bhuailfidh an Stoirm Amy talún/talaimh na hÉireann, an chéad stoirm an séasúr seo atá ainmnithe."
+
 # 3. When two nouns come together and there is a possessive adjective between the nouns,
 # the possessive adjective does not cancel the rule of the second noun being in the genitive case.
-  - "carr mo {mháthair}£{mháthar}"
-  - "barr mo {cheann}£{chinn}"
-  - "mála a {bhean}£{mhná}"
+  - "carr mo {mháthair}£{mháthar}."
+  - "barr mo {cheann}£{chinn}."
+  - "mála a {bhean}£{mhná}."
   - "doras mo {theach}£{thí}."
 # This rule works.
  
 # 4. When adjectives come after nouns, the adjective must be rendered into the genitive case as well.
-#  - "éadaí an fear {mór > éadaí an fhir mhór,
+  - "éadaí {an fear}£{an fhir} {mór}£{mhóir},"
+  - "fad {an cosán}£{an chosáin} {gearr}£{ghearr}." # dromchla na gcosán gearr"
+  - "éadaí an fhir {mór}£{mhóir},"
   - "leabhar an dalta {díograiseach}£{dhíograisigh}"
-#  - "fionnadh an stail mhear > fionnadh an staile mire.
+  - "fionnadh {an stail}£{na staile} {mhear}£{mire}."
+  - "Tá éadaí {an fear}£{an fhir} {mór}£{mhóir} sa chistin."
+  - "Siúlfaidh mé fad {an cosán}£{an chosáin} {fada}£{fhada}."
 # This rule has not been written.
  
 # 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.

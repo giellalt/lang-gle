@@ -977,6 +977,35 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
 SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
+
+# --- # "this is the " This is jacket of.the boy tall > this is  jacket of.the boy.gen tall.genFem+Gen+Sg
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
+COPY:msyn-gen-case-nouns (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+
+# --- # "this is the " This is jacket of.the girl tall > this is  jacket of.the girl.gen tall.genFem+Gen+Sg
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-case-nouns));
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+
+# --- # "this is the " This is jacket of.the girl tall > this is  jacket of.the girl.gen tall.genFem+Gen+Sg
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Fem Com Sg Len) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
+COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+
+
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Base) IF (NEGATE 0 Gen)(-1 (Noun Masc Sg &msyn-gen-case-nouns));
+COPY:msyn-gen-case-nouns (Len SUGGEST) EXCEPT (&msyn-gen-case-nouns) TARGET (Adj Base &msyn-gen-case-nouns);
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+
+
+# --- # ... and the same in plura
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Com Pl) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
+COPY:msyn-gen-case-nouns (Gen Pl Len SUGGEST) EXCEPT (Com Pl Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+
+# --
+
 ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
 COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
 ADDRELATION:msyn-fem-article ($2) (Noun) FROM (1 ("an" Art Sg Def) LINK 0 (&msyn-fem-article));
