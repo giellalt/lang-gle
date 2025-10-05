@@ -26,7 +26,7 @@ Tests:
  
 # 2. When two nouns come together and there is the definite article between the nouns.
   - "éadaí {an fear}£{an fhir}"
-  - "príomhoide {an scoil}£{na scoile}, lár {an pháirc}£{na páirce},"
+  - "lár {an pháirc}£{na páirce}"
   - "Tá príomhoide {an scoil}£{na scoile} ag obair inniu."
   - "oifig {an post}£{an phoist}"
   - "Áras {an Uachtarán}£{an Uachtaráin}"
@@ -62,8 +62,7 @@ Tests:
   - "fionnadh {an stail}£{na staile} {mhear}£{mire}."
   - "Tá éadaí {an fear}£{an fhir} {mór}£{mhóir} sa chistin."
   - "Siúlfaidh mé fad {an cosán}£{an chosáin} {fada}£{fhada}."
-# This rule has not been written.
  
 # 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.
 #  - "ag scríobh an litir > ag scríobh na litreach,
-#  - "ag glanadh an {fhuinneog > ag glanadh na fuinneoige.
+#  - "ag glanadh an fhuinneog > ag glanadh na fuinneoige.

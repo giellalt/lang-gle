@@ -188,7 +188,8 @@ LIST Qst = Qst ;		   #!! Qst
 LIST IV = IV ; #!! IV
 LIST TV = TV ; #!! TV
 LIST VD = VD ; #!! VD
-LIST VTI = VTI ; #!! VTI
+LIST VTI = VTI ; #!!
+LIST Verbal = Verbal ; #!! Verbal
 LIST Prt = Prt;				   #!! Prt
 LIST Prs = Prs ;			   #!! Prs
 LIST Ind = Ind ;			   #!! Ind
@@ -622,6 +623,7 @@ LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@
 LIST &use-guillemets = &use-guillemets ;    #!!= * @CODE@ 
 LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
 LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
+LIST &msyn-com-case-nouns = &msyn-com-case-nouns ;
 LIST SUGGEST = SUGGEST ;    #!!= * @CODE@ 
 
 MAPPING-PREFIX = & ;    #!!= * @CODE@ 
@@ -894,7 +896,7 @@ SET NOT-SCALE-WORDS = WORD - SCALE-WORDS ;
 
 
 #!! **ADD:msyn-fada-ó** ...
-ADD:msyn-fada-ó (&msyn-fada-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada"  Adj)  BARRIER NOT-SCALE-WORDS LINK *-1 ("is")) ;
+ADD:msyn-fada-ó (&msyn-fada-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada" Adj) BARRIER NOT-SCALE-WORDS LINK *-1 ("is")) ;
 COPY:msyn-fada-ó ("ó" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers Sbj &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-fada-ó) IF (NEGATE 1 (Verb PastInd));
 
 	## Is fada buí mé. - incorrect
@@ -926,11 +928,16 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 	# nouns in genitive after compound prepositions
 	
+	
+ADD:msyn-com-case-nouns (&msyn-com-case-nouns) TARGET (Noun Gen) IF (-1 ("an" Art Sg Def));
+COPY:msyn-com-case-nouns (Com Sg DefArt SUGGEST) EXCEPT (Gen Sg DefArt &msyn-com-case-nouns) TARGET (&msyn-com-case-nouns);
+	
+	
 #!! ### RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
 
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - A);
-#(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD)    ###WHEN THIS LINE IS OPERATING, IT BREAKS THE RULE FOR COMBINATIONS SUCH AS CEADÚNAS TIOMÁINT, CEADÚNAS IASCAIREACHT, ETC.!!!!
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) OR (Verb Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj) (NEGATE -2 (Verb VTI));
+#(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD);    	###WHEN THIS LINE IS OPERATING, IT BREAKS THE RULE FOR COMBINATIONS SUCH AS CEADÚNAS TIOMÁINT, CEADÚNAS IASCAIREACHT, ETC.!!!!
 #(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
 	
 
@@ -978,12 +985,12 @@ SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 
-# --- # "this is the " This is jacket of.the boy tall > this is  jacket of.the boy.gen tall.genFem+Gen+Sg
+# --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
 COPY:msyn-gen-case-nouns (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
 
-# --- # "this is the " This is jacket of.the girl tall > this is  jacket of.the girl.gen tall.genFem+Gen+Sg
+# --- This is jacket of.the girl tall > this is  jacket of.the girl.gen tall.genFem+Gen+Sg
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-case-nouns));
 COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
@@ -999,7 +1006,7 @@ COPY:msyn-gen-case-nouns (Len SUGGEST) EXCEPT (&msyn-gen-case-nouns) TARGET (Adj
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
 
 
-# --- # ... and the same in plura
+# --- # ... and the same in plural
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Com Pl) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
 COPY:msyn-gen-case-nouns (Gen Pl Len SUGGEST) EXCEPT (Com Pl Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
@@ -1015,7 +1022,7 @@ ADDRELATION:msyn-fem-article ($2) (Noun) FROM (1 ("an" Art Sg Def) LINK 0 (&msyn
 
 #!! ### RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF (-1 ("an" Art Sg Def) LINK NEGATE -1 ECLIPSE-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF (-1 ("an" Art Sg Def)) (-2 (*) - ECLIPSE-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
