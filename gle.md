@@ -1676,7 +1676,7 @@ Qst
 IV
 TV
 VD
-VTI
+Verbal
 Prt
 Prs
 Ind
