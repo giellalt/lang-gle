@@ -17,15 +17,7 @@ Tests:
 #  This rule works most of the time. It requires some further refinement.
  
 # 2. When two nouns come together and there is the definite article between the nouns.
-<<<<<<< HEAD
-  - "éadaí {an fear}£{an fhir}"
-  - "lár {an pháirc}£{na páirce}"
-  - "Tá príomhoide {an scoil}£{na scoile} ag obair inniu."
-  - "oifig {an post}£{an phoist}"
-  - "Áras {an Uachtarán}£{an Uachtaráin}"
-=======
 #  - "príomhoide {an scoil}£{na scoile}, lár {an pháirc}£{na páirce},"
->>>>>>> f03442fe6aefccdf0a40068f1445dde5bbe2aaab
 
 #  - "Cumann {na Mná}£{na mBan}"
 #  - "Amhrán {na Fianna}£{na bhFiann}"
@@ -47,19 +39,6 @@ Tests:
 # This rule works.
  
 # 4. When adjectives come after nouns, the adjective must be rendered into the genitive case as well.
-<<<<<<< HEAD
-  - "éadaí {an fear}£{an fhir} {mór}£{mhóir},"
-  - "fad {an cosán}£{an chosáin} {gearr}£{ghearr}." # dromchla na gcosán gearr"
-  - "éadaí an fhir {mór}£{mhóir},"
-  - "leabhar an dalta {díograiseach}£{dhíograisigh}"
-  - "fionnadh {an stail}£{na staile} {mhear}£{mire}."
-  - "Tá éadaí {an fear}£{an fhir} {mór}£{mhóir} sa chistin."
-  - "Siúlfaidh mé fad {an cosán}£{an chosáin} {fada}£{fhada}."
- 
-# 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.
-#  - "ag scríobh an litir > ag scríobh na litreach,
-#  - "ag glanadh an fhuinneog > ag glanadh na fuinneoige.
-=======
 #  - "éadaí {an fear}£{an fhir} {mór}£{mhóir},"
 #  - "fad {an cosán}£{an chosáin} {gearr}£{ghearr}." # dromchla na gcosán gearr"
 #  - "éadaí an fhir {mór}£{mhóir},"
@@ -89,4 +68,3 @@ Tests:
   - "carr mo {mháthair}£{mháthar}."
   - "mála a {bhean}£{mhná}."
   - "doras mo {theach}£{thí}."
->>>>>>> f03442fe6aefccdf0a40068f1445dde5bbe2aaab
