@@ -588,6 +588,29 @@ LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
 
 #!! ### Grammarchecker sets
 
+#!! #### Genitive rules
+
+#!! 1. N N => N N.Gen (When two nouns come together, the second noun has to be in the genitive case.)
+LIST &msyn-gen-noun-noun =  &msyn-gen-noun-noun ;
+
+#!! 2. N DefArt N => N DefArt N.Gen (When two nouns come together and there is the definite article between the nouns.)
+LIST &msyn-gen-noun-defart-noun = &msyn-gen-noun-defart-noun ;
+
+#!! 3. N DetPoss N => N DetPoss N.Gen (When two nouns come together and there is a possessive adjective between the nouns, the possessive adjective does not cancel the rule of the second noun being in the genitive case.)
+LIST &msyn-gen-noun-detposs-noun = &msyn-gen-noun-detposs-noun ;
+
+#!! 4. N A => N A.Gen When adjectives come after nouns, the adjective must be rendered into the genitive case as well.)
+LIST &msyn-gen-noun-adj = &msyn-gen-noun-adj ;
+
+#!! 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
+LIST &msyn-gen-vn-noun = &msyn-gen-vn-noun ;
+
+#!! Other gen tags:
+LIST &msyn-gen-case-noun = &msyn-gen-case-noun ;   #!!= * @CODE@ is the old genrule tag we want to get rid of
+
+
+#!! ###  Other tags
+
 LIST SUGGEST = SUGGEST ;  #!!= * @CODE@ tag ensuring generation of a suggestion for an errouneous word
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@ 
@@ -608,9 +631,6 @@ LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
-LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;    #!!= * @CODE@ 
-# LIST &msyn-gen-case-article-masc-sing = &msyn-gen-case-article-masc-sing ;   not in use
-# LIST &msyn-gen-case-article-fem-plural = &msyn-gen-case-article-fem-plural ; not in use    #!= * @CODE@ 
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
 LIST &msyn-ar-an-tae = &msyn-ar-an-tae;    #!!= * @CODE@ 
 LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;    #!!= * @CODE@ 
@@ -935,23 +955,72 @@ COPY:msyn-com-case-nouns (Com Sg DefArt SUGGEST) EXCEPT (Gen Sg DefArt &msyn-com
 	
 #!! ### RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
 
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF (*-1 (Noun Com) OR (Verb Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))(NEGATE 0 (Gen Sg)) (NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj) (NEGATE -2 (Verb VTI));
+#!! #### Noun + Noun => Noun + Noun.Gen
+
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
+
+# backup of following 3 rules:
+#ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF
+#	(*-1 (Noun Com) OR (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+#	(NEGATE 0 (Gen Sg))
+#	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+#	(NEGATE -2 (Verb VTI));
+
+# oifig an post.
+# teach scoil > teach scoile // an teach Trond > an teach Trond.Gen
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
+	(-1 (Noun Com))
+	(NEGATE 0 (Gen Sg))
+#	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj) 
+	(NEGATE -2 (Verb VTI)); # VSO buys girl flower, opens man shop
+COPY:msyn-gen-noun-noun (Gen SUGGEST) EXCEPT (Com &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;;
+
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -3 (Verb VTI)); # VSO buys the girl the flower
+COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun) ;;
+
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -3 (Verb VTI)); # VSO buys the girl the flower
+COPY:msyn-gen-noun-defart-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun) ;;
+
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
+	(*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-noun-noun (Sg  SUGGEST) EXCEPT (Weak Pl  &msyn-gen-noun-noun) AFTER Masc TARGET (Masc Gen Weal Pl);
+
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+
 #(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD);    	###WHEN THIS LINE IS OPERATING, IT BREAKS THE RULE FOR COMBINATIONS SUCH AS CEADÚNAS TIOMÁINT, CEADÚNAS IASCAIREACHT, ETC.!!!!
 #(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
-	
-
 	#$ An múinteoir Ben
 	#$ Thug an rialtas airgead dó.
 
-COPY:msyn-gen-case-nouns (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Com Sg &msyn-gen-case-nouns) IF (-1 (Art Def))(NEGATE 0 DefArt);
+COPY:msyngen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyngen-noun-defart-noun) TARGET (Com Sg &msyngen-noun-defart-noun) IF (-1 (Art Def))(NEGATE 0 DefArt);
 
-COPY:msyn-gen-case-nouns (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-case-nouns) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-case-nouns)(NEGATE 0 DefArt);
+COPY:msyn-gen-noun-defart-noun (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-noun-defart-noun) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-noun-defart-noun)(NEGATE 0 DefArt);
 	## Chuaigh na saighdiúirí isteach i mbialann na hoifigigh.
-	#$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
-	
+        #$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
+
 	# definite	
-COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (DefArt Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
+#tr COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) BEFORE DefArt TARGET (DefArt Sg &msyn-gen-case-nouns)(NEGATE -1 (Art Def));
 	## Parlaimint an Eoraip. (erroneous)
 	#$ Parlaimint na hEorpa. (correct)
 	
@@ -974,15 +1043,19 @@ COPY:msyn-gen-case-nouns (Gen Weak Pl SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-cas
 	## Cumann na Fear.
 	#$ Cumann na bhFear.
 
-#!! **ADD:msyn-gen-case-nouns** ...
 
+#!! #### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct 
+
+# (forthcoming)
+
+#!! **ADD:msyn-gen-case-nouns** ...
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET ("an" Art Sg Def) IF (NEGATE 0 Gen)(1 (Noun &msyn-gen-case-nouns));
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Fem));
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
 SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
-MAP:LOCK_READING (SUGGEST) (SUGGEST);
+#Trond MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 
 # --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
@@ -1006,6 +1079,7 @@ COPY:msyn-gen-case-nouns (Len SUGGEST) EXCEPT (&msyn-gen-case-nouns) TARGET (Adj
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
 
 
+
 # --- # ... and the same in plural
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Com Pl) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
 COPY:msyn-gen-case-nouns (Gen Pl Len SUGGEST) EXCEPT (Com Pl Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
@@ -1022,7 +1096,11 @@ ADDRELATION:msyn-fem-article ($2) (Noun) FROM (1 ("an" Art Sg Def) LINK 0 (&msyn
 
 #!! ### RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF (-1 ("an" Art Sg Def)) (-2 (*) - ECLIPSE-PREP)(NEGATE 0 DefArt OR &msyn-gen-case-nouns)(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
+	(-1 ("an" Art Sg Def))
+	(-2 (*) - ECLIPSE-PREP)
+	(NEGATE 0 DefArt OR &msyn-gen-noun-defart-noun)
+	(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 

@@ -29,7 +29,7 @@ Tests:
 
 #  - "Inniu a bhuailfidh an Stoirm Amy talamh." # VSO counterexample
 #  - "Inniu a bhuailfidh an Stoirm Amy talamh na hÉireann, an chéad stoirm an séasúr seo atá ainmnithe."
-#  today will hit  the Stormy amy land , first storm season
+  #  today will hit  the Stormy amy land , first storm season
 #  - "Inniu a bhuailfidh an Stoirm Amy {talamh} na hÉireann, an {chéad} stoirm an séasúr seo atá ainmnithe. >
 # Inniu a bhuailfidh an Stoirm Amy talún/talaimh na hÉireann, an chéad stoirm an séasúr seo atá ainmnithe."
 
@@ -66,18 +66,7 @@ Tests:
   - "Áras {an Uachtarán}£{an Uachtaráin}."
   - "oifig an {post}£{phoist}"
   - "siopa an {fuinneog}£{fhuinneoig}."
+#  - "Osclóidh an chuideachta bialann nua."
   - "carr mo {mháthair}£{mháthar}."
   - "mála a {bhean}£{mhná}."
   - "doras mo {theach}£{thí}."
-
-# to be classified:
-  - "Tá muid ag cruinniú an {lón}£{lóin}."
-  - "Tá muid ag crúinniú na {lónta}£{lónta}."
-  
-  - "Tá muid ag cruinniú {an lón}£{an lóin}."
-  - "Tá muid ag cruinniú {lón}£{lóin}."
-  - "Tá muid ag crúinniú {na lónta}£{na lónta}."
-  
-  - "ag scríobh {an litir}£{na litreach}."
-  - "ag bailiú {airgead}£{airgid}."
-  - "Tá an eagraíocht ag bailiú {airgead}£{airgid}."

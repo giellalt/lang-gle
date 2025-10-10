@@ -1,0 +1,11 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+
+
+# 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.
+  - "ag scríobh an litir > ag scríobh na litreach,"
+  - "ag glanadh an {fhuinneog > ag glanadh na fuinneoige."
+
