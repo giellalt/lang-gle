@@ -966,14 +966,13 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmp
 #	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 #	(NEGATE -2 (Verb VTI));
 
-# oifig an post.
-# teach scoil > teach scoile // an teach Trond > an teach Trond.Gen
+# teach scoil > teach scoile 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com))
 	(NEGATE 0 (Gen Sg))
 #	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj) 
 	(NEGATE -2 (Verb VTI)); # VSO buys girl flower, opens man shop
-COPY:msyn-gen-noun-noun (Gen SUGGEST) EXCEPT (Com &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;;
+COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) IF
 	(-2 (Noun Com))
@@ -1000,7 +999,7 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Gen Weak Pl) - Ecl - D
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-noun-noun (Sg  SUGGEST) EXCEPT (Weak Pl  &msyn-gen-noun-noun) AFTER Masc TARGET (Masc Gen Weal Pl);
+COPY:msyn-gen-noun-noun (Sg  SUGGEST) EXCEPT (Weak Pl  &msyn-gen-noun-noun) AFTER Masc TARGET (Masc Gen Weak0. Pl);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
