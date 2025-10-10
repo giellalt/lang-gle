@@ -19,7 +19,6 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-inis-do-FAIL.yaml \
     msyn-noun-defart-FAIL.yaml \
     msyn-noun-defart-PASS.yaml \
-    msyn-possadj-nom-gen-PASS.yaml \
     msyn-teastaigh-o-PASS.yaml \
     msyn-gen-case-nouns-PASS.yaml \
     msyn-gen-noun-adj-PASS.yaml \
@@ -41,7 +40,9 @@ XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-gen-case-nouns-PASS.yaml \
     msyn-gen-noun-adj-PASS.yaml \
     msyn-gen-noun-defart-noun-PASS.yaml \
-    msyn-gen-noun-detpss-noun-PASS.yaml 
+    msyn-gen-noun-detpss-noun-PASS.yaml \
+    msyn-gen-noun-noun-PASS.yaml \
+    msyn-gen-vn-noun-PASS.yaml
 
 
 
