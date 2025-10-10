@@ -986,9 +986,9 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 
 # --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns) OR (Adj));
 COPY:msyn-gen-case-nouns (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns) OR (Adj));
 
 # --- This is jacket of.the girl tall > this is  jacket of.the girl.gen tall.genFem+Gen+Sg
 ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-case-nouns));
