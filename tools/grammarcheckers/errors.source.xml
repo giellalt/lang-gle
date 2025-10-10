@@ -18,7 +18,7 @@
     </default>
     </defaults>
         
-  <error id="msyn-gen-case-nouns">
+  <error id="msyn-gen-noun-noun">
     <header>
       <title xml:lang="ga">Ainmfhocail sa tuiseal ginideach</title>
       <title xml:lang="en">Nouns in the genitive case</title>
@@ -32,6 +32,24 @@
     </examples>
     </body>
   </error>
+  
+    <error id="msyn-gen-noun-defart-noun">
+    <header>
+      <title xml:lang="ga">Ainmfhocal cinnte sa tuiseal ginideach</title>
+      <title xml:lang="en">Defininte nouns in the genitive case</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a bhíonn dhá ainmfhocal le chéile agus an t-alt eatarthu, ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
+      <description xml:lang="en">When two nouns are together with the article between them, the second noun must be in the genitive case.</description>
+    <examples>
+      <ex xml:lang="ga">Teach na cúirte, príomhoide na scoile, baile an tsagairt, leabhar na mná.</ex>
+    </examples>
+    </body>
+  </error>
+  
+  
+  
   <error id="fixedcase-np">
     <header>
       <title xml:lang="en">Proper noun capital letter</title>
@@ -407,9 +425,7 @@
     <body>
         <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le
 	chéile, "$2" agus "$1", bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach an ginideach ar ceal.</description>
-        <description xml:lang="en">When two nouns, here "$2" and "$1",
-	come together, the
-	second noun should be in the genitive. The possessive adjective does not cancel the genitive.</description>
+        <description xml:lang="en">When two nouns, here "$2" and "$1", come together, the second noun should be in the genitive. The possessive adjective does not cancel the genitive.</description>
     <examples>
       <ex xml:lang="ga">Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.</ex>
     </examples>
