@@ -6,6 +6,18 @@ Tests:
 
 
 # 5. When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.
-  - "ag scríobh an litir > ag scríobh na litreach,"
-  - "ag glanadh an {fhuinneog > ag glanadh na fuinneoige."
+  - "ag glanadh {an fhuinneog}£{na fuinneoige}."
 
+  - "ag bailiú {airgead}£{airgid}."
+  - "Tá an eagraíocht ag bailiú {airgead}£{airgid}."
+
+  - "Tá muid ag cruinniú an {lón}£{lóin}."
+  - "Tá muid ag crúinniú na {lónta}£{lónta}."
+  
+  - "Tá muid ag cruinniú {an lón}£{an lóin}."
+  - "Tá muid ag cruinniú {lón}£{lóin}."
+  - "Tá muid ag crúinniú {na lónta}£{na lónta}."
+  
+  - "ag scríobh {an litir}£{na litreach}."
+
+  - "mála a {bhean}£{mhná}."

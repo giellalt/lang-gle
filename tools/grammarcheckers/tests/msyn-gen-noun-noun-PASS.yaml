@@ -6,9 +6,11 @@ Tests:
 # 1. When two nouns come together, the second noun has to be in the genitive case.
 #  - "Bus {Éire}£{Éireann}"
 #  This rule works most of the time. It requires some further refinement.
+
   - "turas {scoil}£{scoile}"
   - "teach {cúirt}£{cúirte}"
   - "stáisiún {traein}£{traenach}"
+  - "Beidh turas {scoil}£{scoile} ann an tseachtain seo chugainn."
   - "éadaí {fear}£{fir}"
   - "aois {bean}£{mná}."
 
