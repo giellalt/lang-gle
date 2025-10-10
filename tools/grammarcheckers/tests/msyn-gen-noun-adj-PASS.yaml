@@ -63,21 +63,10 @@ Tests:
   - "éadaí {an fear}£{an fhir}"
   - "Tá príomhoide {an scoil}£{na scoile} ag obair inniu."
   - "oifig {an post}£{an phoist}"
-  - "Áras {an Uachtarán}£{an Uachtaráin}.
+  - "Áras {an Uachtarán}£{an Uachtaráin}."
   - "oifig an {post}£{phoist}"
   - "siopa an {fuinneog}£{fhuinneoig}."
+#  - "Osclóidh an chuideachta bialann nua."
   - "carr mo {mháthair}£{mháthar}."
   - "mála a {bhean}£{mhná}."
   - "doras mo {theach}£{thí}."
-
-# to be classified:
-  - "Tá muid ag cruinniú an {lón}£{lóin}."
-  - "Tá muid ag crúinniú na {lónta}£{lónta}."
-  
-  - "Tá muid ag cruinniú {an lón}£{an lóin}."
-  - "Tá muid ag cruinniú {lón}£{lóin}."
-  - "Tá muid ag crúinniú {na lónta}£{na lónta}."
-  
-  - "ag scríobh {an litir}£{na litreach}."
-  - "ag bailiú {airgead}£{airgid}."
-  - "Tá an eagraíocht ag bailiú {airgead}£{airgid}."

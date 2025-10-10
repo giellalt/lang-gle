@@ -8,7 +8,6 @@ Tests:
   ## éadaí an fear. - incorrect: Com
   #$ éadaí an fhir. - correct: Gen
   # Rewritten as a test:
-  - "éadaí an {fear}£{fhir}."
 
   ## Cúig bhliana. - incorrect: Len
   #$ Cúig bliana. - correct: X

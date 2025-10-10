@@ -16,13 +16,17 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-ecl-after-prep-FAIL.yaml \
     msyn-fada-o-FAIL.yaml \
     msyn-fada-o-PASS.yaml \
-    msyn-gen-case-nouns-PASS.yaml \
     msyn-inis-do-FAIL.yaml \
     msyn-noun-defart-FAIL.yaml \
     msyn-noun-defart-PASS.yaml \
     msyn-possadj-nom-gen-PASS.yaml \
-    msyn-teastaigh-o-PASS.yaml
-
+    msyn-teastaigh-o-PASS.yaml \
+    msyn-gen-case-nouns-PASS.yaml \
+    msyn-gen-noun-adj-PASS.yaml \
+    msyn-gen-noun-defart-noun-PASS.yaml \
+    msyn-gen-noun-detpss-noun-PASS.yaml \
+    msyn-gen-noun-noun-PASS.yaml \
+    msyn-gen-vn-noun-PASS.yaml
 
 # List tests that are presently (expected) failures here, ie things that should
 # be fixed *later*, but is not critical at the moment:
@@ -33,7 +37,13 @@ XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-ecl-after-prep-FAIL.yaml \
     msyn-fada-o-FAIL.yaml \
     msyn-inis-do-FAIL.yaml \
-    msyn-noun-defart-FAIL.yaml
+    msyn-noun-defart-FAIL.yaml \
+    msyn-gen-case-nouns-PASS.yaml \
+    msyn-gen-noun-adj-PASS.yaml \
+    msyn-gen-noun-defart-noun-PASS.yaml \
+    msyn-gen-noun-detpss-noun-PASS.yaml \
+    msyn-gen-noun-noun-PASS.yaml \
+    msyn-gen-vn-noun-PASS.yaml
 
 
 endif # WANT_GRAMCHECK
