@@ -14,3 +14,10 @@ Tests:
   ## doras mo theach - incorrect
   #$ doras mo thí - correct
   - "doras mo {theach}£{thí}"
+
+  - "carr mo {mháthair}£{mháthar}."
+  - "doras mo {theach}£{thí}."
+  - "folt mo {cheann}£{chinn}."
+
+  - "barr mo {cheann}£{chinn}."
+# This rule fails, since barr is imperative TODO: fix grc-disambiguator

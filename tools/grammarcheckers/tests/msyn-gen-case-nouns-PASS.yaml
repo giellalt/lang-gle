@@ -1,4 +1,4 @@
-Config:
+zxConfig:
   Spec: ../pipespec.xml
   Variant: glegram-dev
 
