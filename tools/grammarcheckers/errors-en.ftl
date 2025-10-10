@@ -5,6 +5,14 @@
 grammatical-error = Grammatical error
     .desc = The word {$1} is in the dictionary, but it has a different meaning in this context.
 
+
+#msyn-gen-case-noun = 
+#msyn-gen-noun-adj = 
+#msyn-gen-noun-defart-noun = 
+#msyn-gen-noun-detposs-noun = 
+#msyn-gen-noun-noun = 
+#msyn-gen-vn-noun = 
+
 msyn-gen-case-nouns = The genitive case following the article
     .desc = If the article and noun ({$1}) follow another noun, the second noun must be in the genitive case.
     .ref-1 = 
