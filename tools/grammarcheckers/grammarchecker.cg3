@@ -955,7 +955,7 @@ COPY:msyn-com-case-nouns (Com Sg DefArt SUGGEST) EXCEPT (Gen Sg DefArt &msyn-com
 	
 #!! ### RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
 
-#!! #### Noun + Noun => Noun + Noun.Gen
+#!! #### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
 
@@ -966,13 +966,18 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmp
 #	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 #	(NEGATE -2 (Verb VTI));
 
-# teach scoil > teach scoile 
+# teach scoil > teach scoile
+
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com))
 	(NEGATE 0 (Gen Sg))
 #	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj) 
 	(NEGATE -2 (Verb VTI)); # VSO buys girl flower, opens man shop
+
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
+COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
+
+#!! #### Genitive rule 2. N NefArt N
 
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) IF
 	(-2 (Noun Com))
@@ -987,6 +992,31 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com) IF
 	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Verb VTI)); # VSO buys the girl the flower
 COPY:msyn-gen-noun-defart-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun) ;;
+
+
+#!! #### Genitive rule 3. N DetPoss N
+
+#!! A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
+#!! Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final noun.
+
+ADD:msyn-gen-noun-detpss-noun (&msyn-gen-noun-detpss-noun) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
+COPY:msyn-gen-noun-detpss-noun (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-detpss-noun) OR (Com Sg Len &msyn-gen-noun-detpss-noun) TARGET (&msyn-gen-noun-detpss-noun);
+ADDRELATION:msyn-gen-noun-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
+
+	## carr a athair - incorrect
+	#$ carr a athar - correct
+	## eagla a chraiceann - incorrect
+	#$ eagla a chraicinn - correct
+	## doras mo theach - incorrect
+	#$ doras mo thí - correct
+
+#!! #### Genitive rule 4 N A
+
+# to be added here
+
+
+#!! #### Genitive rule 5. Vermbal noun + noun
+
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
@@ -1107,18 +1137,6 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	## An bean. - incorrect
 	#$ An bhean. - correct
 
-#!! ### A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
-# Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final noun. Where is the adjective?
-ADD:msyn-possadj-nom-gen (&msyn-possadj-nom-gen) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
-COPY:msyn-possadj-nom-gen (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-possadj-nom-gen) OR (Com Sg Len &msyn-possadj-nom-gen) TARGET (&msyn-possadj-nom-gen);
-ADDRELATION:msyn-possadj-nom-gen ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
-
-	## carr a athair - incorrect
-	#$ carr a athar - correct
-	## eagla a chraiceann - incorrect
-	#$ eagla a chraicinn - correct
-	## doras mo theach - incorrect
-	#$ doras mo thí - correct
 	
 # Speller suggestions rule – add SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
