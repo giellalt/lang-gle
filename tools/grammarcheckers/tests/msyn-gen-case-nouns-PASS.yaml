@@ -29,7 +29,7 @@ Tests:
 
 #  - "Inniu a bhuailfidh an Stoirm Amy talamh." # VSO counterexample
 #  - "Inniu a bhuailfidh an Stoirm Amy talamh na hÉireann, an chéad stoirm an séasúr seo atá ainmnithe."
-  #  today will hit  the Stormy amy land , first storm season
+#  today will hit  the Stormy amy land , first storm season
 #  - "Inniu a bhuailfidh an Stoirm Amy {talamh} na hÉireann, an {chéad} stoirm an séasúr seo atá ainmnithe. >
 # Inniu a bhuailfidh an Stoirm Amy talún/talaimh na hÉireann, an chéad stoirm an séasúr seo atá ainmnithe."
 
@@ -63,7 +63,7 @@ Tests:
   - "éadaí {an fear}£{an fhir}"
   - "Tá príomhoide {an scoil}£{na scoile} ag obair inniu."
   - "oifig {an post}£{an phoist}"
-  - "Áras {an Uachtarán}£{an Uachtaráin}.
+  - "Áras {an Uachtarán}£{an Uachtaráin}."
   - "oifig an {post}£{phoist}"
   - "siopa an {fuinneog}£{fhuinneoig}."
   - "carr mo {mháthair}£{mháthar}."
