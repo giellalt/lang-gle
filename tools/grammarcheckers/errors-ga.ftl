@@ -5,6 +5,20 @@
 grammatical-error = Botún gramadaí
     .desc = Tá an focal {$1} san fhoclóir, ach tá brí eile leis sa chomhthéacs seo.
 
+
+#msyn-gen-case-noun = 
+#msyn-gen-noun-adj = 
+
+msyn-gen-noun-defart-nouns = An tuiseal ginideach i ndiaidh an ailt
+    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.
+    .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
+    .ref-1 = 
+
+#msyn-gen-noun-detposs-noun = 
+#msyn-gen-noun-noun = 
+#msyn-gen-vn-noun = 
+
+
 msyn-gen-case-nouns = An tuiseal ginideach i ndiaidh an ailt
     .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
