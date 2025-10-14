@@ -978,6 +978,34 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg D
 	(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg Def) IF
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-noun-defart-noun));
+
+COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Fem));
+COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
+
+ADDRELATION ($2 LEFT) (&msyn-gen-noun-defart-noun) TO (-1 (Art &msyn-gen-noun-defart-noun));
+SUBSTITUTE (&msyn-gen-noun-defart-noun) (co&msyn-gen-noun-defart-noun) TARGET (SUGGEST);
+
+## Tá barr an fhuinneog ar oscailt.  # Art N in Com
+#$ Tá barr na fuinneoige ar oscailt. # Art N in Gen
+
+
+#$ Tá doras an teach ar oscailt.
+## Tá doras an thí ar oscailt. ### NB! Elaine! should be teach+Noun+Masc+Gen+Sg+DefArt	thí > tí
+
+#$ Tá doirse na tithe ar oscailt.
+
+
+
+# Disregard these (homonym Com - Gen) for the moment
+## Tá doras an carr ar oscailt.   # (incorrect)
+#$ Tá doras an chairr ar oscailt. # (correct)
+## Tá dorais na gcarr ar oscailt. # (incorrect)
+#$ Tá dorais na gcarranna ar oscailt. # (correct)
+
+# Old rule (rule with old tag)
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com) IF
 	(-2 (Noun Com))
 	(-1 (Art Def))
@@ -1025,7 +1053,7 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Gen Weak Pl) - Ecl - D
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-noun-noun) AFTER Masc TARGET (Masc Gen Weak Pl);
+COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-noun-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-noun-noun);
 
 
 
@@ -1071,6 +1099,8 @@ COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msy
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
 SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
 #Trond MAP:LOCK_READING (SUGGEST) (SUGGEST);
+# N Art*  N*
+#   1073  
 
 
 # --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
@@ -1167,8 +1197,8 @@ ADDRELATION:msyn-ar-an-tae ($2 RIGHT) (V &msyn-ar-an-tae) TO (1 (ADDED-BEFORE-BL
 
 
 #!! This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
-
-	#$Bainne a chur ar an gcaife.
+	
+#$Bainne a chur ar an gcaife.
 	#$Cuir bainne ar an gcaife.
 	#$Bainne a chur ar do chaife.
 	##Bainne a chur sa chaife.
