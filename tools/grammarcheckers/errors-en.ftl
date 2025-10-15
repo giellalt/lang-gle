@@ -10,7 +10,7 @@ grammatical-error = Grammatical error
 #msyn-gen-noun-adj = 
 
 msyn-gen-noun-defart-noun = The genitive case following the article
-    .desc = If the article and noun ({$1}) follow another noun, the second noun must be in the genitive case.
+    .desc = If the article and noun ({$1}) follow another noun ({$2}), the second noun must be in the genitive case.
     .ref-1 =
     
 #msyn-gen-noun-detposs-noun = 

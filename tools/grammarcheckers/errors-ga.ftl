@@ -10,7 +10,7 @@ grammatical-error = Botún gramadaí
 #msyn-gen-noun-adj = 
 
 msyn-gen-noun-defart-nouns = An tuiseal ginideach i ndiaidh an ailt
-    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.
+    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile ({$2}), ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
     .ref-1 = 
 
