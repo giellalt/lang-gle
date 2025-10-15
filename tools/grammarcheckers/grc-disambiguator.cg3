@@ -1264,7 +1264,8 @@ REMOVE (Verbal Noun) IF (-1 ("<aon>") OR ("<t-aon>"));
 # Ní mór dúinn - mór is not a verb here as preceded by Ní/Cop
 # Ní fear aon leabhar a bhí ann ...
 #NOTE Níor rith, Níor glacadh
-SELECT (Verb) IF (NOT *-1 (Verb)) (NOT *-1 (Cop)) (NOT *1 (Verb));
+# Trond for headlines
+#SELECT (Verb) IF (NOT *-1 (Verb)) (NOT *-1 (Cop)) (NOT *1 (Verb));
 
 #====>>>> TEST THIS
 # ná beadh, etc.
