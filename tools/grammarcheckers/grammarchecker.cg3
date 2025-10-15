@@ -1204,18 +1204,21 @@ COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&
 ADDRELATION:msyn-fem-article ($2) (Noun) FROM (1 ("an" Art Sg Def) LINK 0 (&msyn-fem-article));
 # Todo Trond: Fix this rule. The error msg asks for genitive, but the rule for comitative.
 
-#!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean.
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
-	(-1 ("an" Art Sg Def))
-	(-2 (*) - ECLIPSE-PREP)
+#!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
+
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF (-1 ("an" Art))
 	(NEGATE 0 DefArt OR &msyn-gen-noun-defart-noun)
 	(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
-COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) OR (Len &msyn-noun-defart) TARGET (&msyn-noun-defart);
+COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
 	## An bean. - incorrect
 	#$ An bhean. - correct
+	## An sráid. - incorrect
+	#$ An tsráid. - correct
+	## an asal. - incorrect
+	#$ an t-asal. - correct
 
 	
 # Speller suggestions rule – add SUGGESTWF to any spelling suggestion
