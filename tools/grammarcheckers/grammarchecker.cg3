@@ -599,7 +599,7 @@ LIST &msyn-gen-noun-defart-noun = &msyn-gen-noun-defart-noun ;
 #!! 3. N DetPoss N => N DetPoss N.Gen (When two nouns come together and there is a possessive adjective between the nouns, the possessive adjective does not cancel the rule of the second noun being in the genitive case.)
 LIST &msyn-gen-noun-detposs-noun = &msyn-gen-noun-detposs-noun ;
 
-#!! 4. N A => N A.Gen When adjectives come after nouns, the adjective must be rendered into the genitive case as well.)
+#!! 4. N A => N A.Gen When adjectives come after nouns in the genitive, the adjective must be rendered into the genitive case as well.)
 LIST &msyn-gen-noun-adj = &msyn-gen-noun-adj ;
 
 #!! 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
@@ -683,7 +683,7 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 
 #!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
-ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg)) ;
+ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg))(NOT 0 Fem) ;
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
 ADDRELATION:msyn-adj-gender ($2) (Noun) FROM (1 Adj LINK 0 (&msyn-adj-gender));
         ## An fhuinneog beag - INCORRECT
@@ -972,8 +972,9 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 #!! #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
 #        =========================================================
 
+# Singular N.com Art.com N.sg.com ==> N.com Art.gen N.sg.gen
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) IF
-	(-2 (Noun Com))
+	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Verb VTI));
@@ -984,33 +985,78 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg D
 COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Fem));
 COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
 
-ADDRELATION ($2 LEFT) (&msyn-gen-noun-defart-noun) TO (-1 (Art &msyn-gen-noun-defart-noun));
-SUBSTITUTE (&msyn-gen-noun-defart-noun) (co&msyn-gen-noun-defart-noun) TARGET (SUGGEST);
-
 ## Tá barr an fhuinneog ar oscailt.  # Art N in Com
 #$ Tá barr na fuinneoige ar oscailt. # Art N in Gen
-
-
 #$ Tá doras an teach ar oscailt.
 ## Tá doras an thí ar oscailt. ### NB! Elaine! should be teach+Noun+Masc+Gen+Sg+DefArt	thí > tí
+#$ Tá doirse na tithe ar oscailt.
+#$ Seomra an fear  # man.sg.com room 
+## Seomra an fhir # man.sg.gen room where sg.ecl is gramtrad for pl.gen
+
+# Plural:  N.com Art.com N.pl.com ==> N.com Art.gen N.pl.gen # Noun Masc Com Pl DefArt 
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Com Pl DefArt) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Pl))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-noun-defart-noun (Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Masc Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
+# The fia rule (fianna is lookalike for pl com fiann and pl gen fia)
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("fia" Noun Masc Gen Strong Pl) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-noun-defart-noun ("fiann" Noun Fem Gen Weak Pl DefArt SUGGEST) EXCEPT ("fia" Noun Masc Gen Strong Pl DefArt &msyn-gen-noun-defart-noun) TARGET ("fia" &msyn-gen-noun-defart-noun);
+
+
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com Pl DefArt) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Pl))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-noun-defart-noun (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
+
+# Tha article
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Pl Def) IF
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-noun-defart-noun));
+COPY:msyn-gen-noun-defart-noun ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Fem));
+COPY:msyn-gen-noun-defart-noun ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
+
+
+
+#$ Seomra na fir  # men.pl.com room 
+## Seomra na bhfear # men.sg.ecl room where sg.ecl is gramtrad for pl.gen
+#$ Seomra na mná  # women.pl.com room 
+## Seomra na mban # women.sg.ecl room where sg.ecl is gramtrad for pl.gen
+
+#$ Tá doirse na teach ar oscailt.
+## Tá doirse na dteach ar oscailt. # teach+Noun+Masc+Com+Sg+Ecl
 
 #$ Tá doirse na tithe ar oscailt.
 
 
+# Addrelation for singular and plural
+ADDRELATION ($2 LEFT) (&msyn-gen-noun-defart-noun) TO (-1 (Art &msyn-gen-noun-defart-noun));
+SUBSTITUTE (&msyn-gen-noun-defart-noun) (co&msyn-gen-noun-defart-noun) TARGET (SUGGEST);
+
+
+
 
 # Disregard these (homonym Com - Gen) for the moment
-## Tá doras an carr ar oscailt.   # (incorrect)
+#$ Tá doras an carr ar oscailt.   # (incorrect)
 #$ Tá doras an chairr ar oscailt. # (correct)
 ## Tá dorais na gcarr ar oscailt. # (incorrect)
 #$ Tá dorais na gcarranna ar oscailt. # (correct)
 
 # Old rule (rule with old tag)
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com) IF
-	(-2 (Noun Com))
-	(-1 (Art Def))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE -3 (Verb VTI));
-COPY:msyn-gen-noun-defart-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun) ;
+#ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com) IF
+#	(-2 (Noun Com))
+#	(-1 (Art Def))
+#	(NEGATE 0 (Gen Sg))
+#	(NEGATE -3 (Verb VTI));
+#COPY:msyn-gen-noun-defart-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun) ;
 
 #!! #### Genitive rule 3. Noun DetPoss Noun
 
@@ -1030,7 +1076,58 @@ ADDRELATION:msyn-gen-noun-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-
 
 #!! #### Genitive rule 4 N A
 
+ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Com Sg DefArt) IF
+	(-1 (Noun Com))
+	(-2 (Art Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -4 (Verb VTI));
+COPY:msyn-gen-noun-adj (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-adj) TARGET (&msyn-gen-noun-adj);
+
+#$  Príomhoide an scoil beag.  # msyn-gen-noun-defart-noun-adj
+
+#$ Príomhoide na scoile beag.
+## Príomhoide na scoile bige
+
 # to be added here
+
+# --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
+ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-noun-defart-noun) OR (Adj));
+COPY:msyn-gen-noun-adj (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
+ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun) OR (Adj)); # but the tags should be identical
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-noun-defart-noun) OR (Adj)); # but the tags should be identical
+
+# --- This is jacket of.the girl tall > this is jacket of.the girl.gen tall.genFem+Gen+Sg
+ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-defart-noun));
+COPY:msyn-gen-noun-adj (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
+ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-case-nouns));
+
+# --- # This is jacket of the girl tall > this is jacket of.the girl.gen tall.genFem+Gen+Sg
+ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Fem Com Sg Len) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-defart-noun));
+COPY:msyn-gen-noun-adj (Gen Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
+ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-case-nouns));
+
+
+ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Base) IF (NEGATE 0 Gen)(-1 (Noun Masc Sg &msyn-gen-defart-noun));
+COPY:msyn-gen-noun-adj (Len SUGGEST) EXCEPT (&msyn-gen-noun-adj) TARGET (Adj Base &msyn-gen-noun-adj);
+ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-case-nouns));
+
+
+
+# --- # ... and the same in plural
+ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Com Pl) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
+COPY:msyn-gen-case-nouns (Gen Pl Len SUGGEST) EXCEPT (Com Pl Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
+ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
+
+# --
+
+
+
+
+
+
 
 
 #!! #### Genitive rule 5. Verbal noun + noun
@@ -1101,35 +1198,6 @@ SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
 # N Art*  N*
 #   1073  
 
-
-# --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns) OR (Adj));
-COPY:msyn-gen-case-nouns (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns) OR (Adj));
-
-# --- This is jacket of.the girl tall > this is jacket of.the girl.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-case-nouns));
-COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
-
-# --- # This is jacket of the girl tall > this is jacket of.the girl.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Fem Com Sg Len) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
-COPY:msyn-gen-case-nouns (Gen Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
-
-
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Base) IF (NEGATE 0 Gen)(-1 (Noun Masc Sg &msyn-gen-case-nouns));
-COPY:msyn-gen-case-nouns (Len SUGGEST) EXCEPT (&msyn-gen-case-nouns) TARGET (Adj Base &msyn-gen-case-nouns);
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
-
-
-
-# --- # ... and the same in plural
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Com Pl) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-case-nouns));
-COPY:msyn-gen-case-nouns (Gen Pl Len SUGGEST) EXCEPT (Com Pl Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
-
-# --
 
 ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
 COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
