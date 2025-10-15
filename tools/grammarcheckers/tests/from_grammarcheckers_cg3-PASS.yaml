@@ -10,4 +10,7 @@ Tests:
   ## Cúpla focail. - incorrect
   #$ Cúpla focal. - correct
   - "Cúpla {focail}£{focal}."
-  - "éadaí an {fear}£{fhir}."
+  - "éadaí {an fear}£{an fhir}."
+  - "doras mo {charr}£{chairr}."
+  - "Tá doras mo {charr}£{chairr} ar oscailt."
+  
