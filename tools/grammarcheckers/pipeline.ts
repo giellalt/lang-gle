@@ -12,7 +12,7 @@ export default function gleGramRelease(entry: StringEntry): Command {
     acc_model_path: "acceptor.default.hfst",
     err_model_path: "errmodel.default.hfst",
   });
-  x = cg3.vislcg3("disamb", x, { model_path: "disambiguator.bin" });
+  x = cg3.vislcg3("disamb", x, { model_path: "grc-disambiguator.bin" });
   x = cg3.vislcg3("spell-sugg-filtering", x, { model_path: "spellchecker.bin" });
   x = cg3.vislcg3("gramcheck", x, { model_path: "grammarchecker.bin" });
   return divvun.suggest("suggestions", x, { model_path: "generator-gramcheck-gt-norm.hfstol" });
@@ -30,7 +30,7 @@ export function localTest_dev(entry: StringEntry): Command {
     acc_model_path: "@./acceptor.default.hfst",
     err_model_path: "@./errmodel.default.hfst",
   });
-  x = cg3.vislcg3("disamb", x, { model_path: "@../../src/cg3/disambiguator.cg3" });
+  x = cg3.vislcg3("disamb", x, { model_path: "@./grc-disambiguator.cg3" });
   x = cg3.vislcg3("spell-sugg-filtering", x, { model_path: "@./spellchecker.cg3" });
   x = cg3.vislcg3("gramcheck", x, { model_path: "@./grammarchecker.cg3" });
   return divvun.suggest("suggestions", x, { model_path: "@./generator-gramcheck-gt-norm.hfstol" });
