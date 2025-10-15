@@ -1265,7 +1265,8 @@ REMOVE (Verbal Noun) IF (-1 ("<aon>") OR ("<t-aon>"));
 # Ní fear aon leabhar a bhí ann ...
 #NOTE Níor rith, Níor glacadh
 # Trond for headlines
-#SELECT (Verb) IF (NOT *-1 (Verb)) (NOT *-1 (Cop)) (NOT *1 (Verb));
+#
+SELECT (Verb) IF (NOT *-1 (Verb)) (NOT *-1 (Cop)) (NOT *1 (Verb));
 
 #====>>>> TEST THIS
 # ná beadh, etc.
@@ -1619,7 +1620,8 @@ SELECT (Noun Gen) IF (-1 (Art Def)) (-2 (Prep Cmpd));
 
 # cá bhfios don arm bocht ... dont want to include the Art in "don"
 # BUT not "An fíor an ráiteas... "Léiríonn an pictiúir an méid ...
-SELECT (Noun Gen) IF (-1C (Art Def) ) (-2C (Noun)) (NOT -3 (Art Def));
+SELECT (Noun Gen Sg) IF (-1C (Art Sg Def) ) (-2C (Noun)) (NOT -3 (Art Def));
+SELECT (Noun Gen Pl) IF (-1C (Art Pl Def) ) (-2C (Noun)) (NOT -3 (Art Def));
 
 # it is a noun (not verbal) if preceded by a numeral
 # BUT exclude sé which is commonly a pronoun (he/it)
