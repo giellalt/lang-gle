@@ -946,11 +946,10 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	
 	# nouns in genitive after compound prepositions
 	
-	
-ADD:msyn-com-case-nouns (&msyn-com-case-nouns) TARGET (Noun Gen) IF (-1 ("an" Art Sg Def));
-COPY:msyn-com-case-nouns (Com Sg DefArt SUGGEST) EXCEPT (Gen Sg DefArt &msyn-com-case-nouns) TARGET (&msyn-com-case-nouns);
-	
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
+# We cannot do gen > com on an "Art Noun" string, since "Noun Art Noun" wants Gen for the 2nd noun.	
+#ADD:msyn-com-case-nouns (&msyn-com-case-nouns) TARGET (Noun Gen) IF (-1 ("an" Art Sg Def));
+#COPY:msyn-com-case-nouns (Com Sg DefArt SUGGEST) EXCEPT (Gen Sg DefArt &msyn-com-case-nouns) TARGET (&msyn-com-case-nouns);
+#ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmpd) BARRIER (*) - Art)(NEGATE 0 (Gen Sg))(NEGATE 0 WORD-BEGIN-NO-LEN - Fem LINK -1 WORD-END-NO-LEN);
 
 #ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) OR (Noun Gen Weak Pl) - Ecl - DefArt OR (Noun Masc Gen Sg hPref) IF
 #	(*-1 (Noun Com) OR (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
@@ -960,16 +959,18 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (*-1 (Prep Cmp
 
 	
 #!! #### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
-	
+#        ===============================================
+
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Noun Com));
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 	## teach scoil > #$teach scoile
 	## bosca bruscar > #$ bosca bruscair.
-	## ceadúnas tiomáin > #$ ceadúnas tiomána.
+	## ceadúnas tiomáint > #$ ceadúnas tiomána.
 
 #!! #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
+#        =========================================================
 
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) IF
 	(-2 (Noun Com))
@@ -977,11 +978,9 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg D
 	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
-
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg Def) IF
 	(NEGATE 0 Gen)
 	(1 (Noun &msyn-gen-noun-defart-noun));
-
 COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Fem));
 COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
 
