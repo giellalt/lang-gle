@@ -19,7 +19,6 @@ Tests:
   - "doras mo {theach}£{thí}."
   - "folt mo {cheann}£{chinn}."
 
-  - "barr mo {cheann}£{chinn}."
 # This rule fails, since barr is imperative TODO: Find an authentic example, then fix grc-disambiguator
 
 

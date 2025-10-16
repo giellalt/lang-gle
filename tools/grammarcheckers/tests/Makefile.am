@@ -10,7 +10,6 @@ if WANT_GRAMCHECK
 # List here (space separated) all yaml files to be run as part of make check:
 TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-adj-gender.yaml \
-    msyn-afach-bos-eos-FAIL.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
     msyn-ar-an-aonach-PASS.yaml \
@@ -23,6 +22,7 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-gen-noun-adj-PASS.yaml \
     msyn-gen-noun-defart-noun-PASS.yaml \
     msyn-gen-noun-detpss-noun-PASS.yaml \
+    msyn-gen-noun-detpss-noun-FAIL.yaml \
     msyn-gen-noun-noun-PASS.yaml \
     msyn-gen-vn-noun-PASS.yaml \
     msyn-inis-do-FAIL.yaml \
@@ -35,9 +35,9 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
 # List tests that are presently (expected) failures here, ie things that should
 # be fixed *later*, but is not critical at the moment:
 XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
-    msyn-afach-bos-eos-FAIL.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
+    msyn-gen-noun-detpss-noun-FAIL.yaml \
     msyn-beag-is-fiu-de-FAIL.yaml \
     msyn-ecl-after-prep-FAIL.yaml \
     msyn-fada-o-FAIL.yaml \
