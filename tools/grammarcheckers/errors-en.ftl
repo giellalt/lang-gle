@@ -15,7 +15,10 @@ msyn-gen-noun-defart-noun = The genitive case following the article
     
 #msyn-gen-noun-detposs-noun = 
 #msyn-gen-noun-noun = 
-#msyn-gen-vn-noun = 
+
+msyn-gen-vn-noun = Genitive case after verbal noun + article
+    .desc = If a noun, here ({$1}) follows a verbal noun, it should be in the genitive case."
+    .ref-1 =
 
 msyn-gen-case-nouns = The genitive case following the article
     .desc = If the article and noun ({$1}) follow another noun, the second noun must be in the genitive case.

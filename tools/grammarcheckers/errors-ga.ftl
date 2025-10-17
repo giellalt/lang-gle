@@ -16,7 +16,11 @@ msyn-gen-noun-defart-nouns = An tuiseal ginideach i ndiaidh an ailt
 
 #msyn-gen-noun-detposs-noun = 
 #msyn-gen-noun-noun = 
-#msyn-gen-vn-noun = 
+
+msyn-gen-vn-noun = Tuiseal ginideach i ndiaidh ainmfhocail bhriathartha an ailt
+    .desc = Más ainmfhocal, anseo ({$1}) a thagann i ndiaidh ainm bhriathartha, ba chóir é a bheith sa tuiseal ginideach.
+    .ref-1 =
+
 
 
 msyn-gen-case-nouns = An tuiseal ginideach i ndiaidh an ailt
