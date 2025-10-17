@@ -1132,7 +1132,14 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun) TARGET (Com &msyn-gen-vn-noun);
-	
+
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl &msyn-gen-vn-noun);
+
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
