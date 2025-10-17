@@ -1124,32 +1124,30 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 # --
 
 
+#!! #### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
 
-
-
-
-
-
-#!! #### Genitive rule 5. Verbal noun + noun
+## ag glanadh an an t-urlár > ag glanadh an urláir (the floor). ag glanadh na fuinneoige (cleaning the window).
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verbal VTI));
+COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 	
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verbal VTI));
+COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
 	(*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-noun-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-noun-noun);
+COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
 
 
@@ -1199,17 +1197,11 @@ SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
 #   1073  
 
 
-ADD:msyn-fem-article (&msyn-fem-article) TARGET ("an" Art Sg Def) IF (0 ("na" Art Def Fem))(*1 (Noun Com))(-1 (Noun Com));
-COPY:msyn-fem-article (Art Gen Sg Def Fem SUGGEST) EXCEPT (Art Sg Def) TARGET (&msyn-fem-article) ;
-ADDRELATION:msyn-fem-article ($2) (Noun) FROM (1 ("an" Art Sg Def) LINK 0 (&msyn-fem-article));
-# Todo Trond: Fix this rule. The error msg asks for genitive, but the rule for comitative.
-
-
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF (-1 ("an" Art))
-	(NEGATE 0 DefArt OR &msyn-gen-noun-defart-noun)
-	(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN) ;
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF 
+	(-1 ("an" Art))(NEGATE 0 DefArt)
+	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
@@ -1219,7 +1211,6 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	#$ An tsráid. - correct
 	## an asal. - incorrect
 	#$ an t-asal. - correct
-
 	
 # Speller suggestions rule – add SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
