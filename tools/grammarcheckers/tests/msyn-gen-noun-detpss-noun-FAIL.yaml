@@ -3,4 +3,5 @@ Config:
   Variant: glegram-dev
 
 Tests:
-  - "Ar an tsráid."
+  - "barr mo {cheann}£{chinn}."
+  
