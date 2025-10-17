@@ -1448,7 +1448,7 @@ SELECT (Art Sg) IF (1 ("céanna"));
 # Single out genitive in phrases like "ag déanamh iontais"
 # But: If followed by an adjective, it is not genitive, i.e.
 # "ag déanamh rud maith" (Could be moved up)
-SELECT (Noun Gen) IF (-1 (Verbal Noun)) (-2 ("<ag>")) (NOT 1 (Adj));
+# SELECT (Noun Gen) IF (-1 (Verbal Noun)) (-2 ("<ag>")) (NOT 1 (Adj));
 
 # "féan" vs "féin"
 # To avoid that the pronoun "féin" is invariably recognized as

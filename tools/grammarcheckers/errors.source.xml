@@ -48,6 +48,21 @@
     </body>
   </error>
   
+    <error id="msyn-gen-vn-noun">
+    <header>
+      <title xml:lang="en">A genitive noun after a verbal noun</title>
+      <title xml:lang="ga">Ainmfhocal ginideach ar lorg ainmfhocal briathartha</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">The noun that follows a verbal noun must be in the genitive case.</description>
+      <description xml:lang="ga">Ní mór d'ainmfhocal a bheith sa ghinideach ar lorg ainmfhocal briathartha</description>
+    <examples>
+      <ex xml:lang="ga">Ag glanadh na fuinneoige. Ag scríobh an leabhair.</ex>
+    </examples>
+    </body>
+  </error>
+  
   
   
   <error id="fixedcase-np">

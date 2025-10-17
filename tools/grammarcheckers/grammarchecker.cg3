@@ -632,7 +632,7 @@ LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
 LIST &msyn-ar-an-tae = &msyn-ar-an-tae;    #!!= * @CODE@ 
 LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;    #!!= * @CODE@ 
-LIST &msyn-tóin-poill = &msyn-tóin-poill ;    #!!= * @CODE@ 
+LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
 LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@ 
 LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@ 
 LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@ 
@@ -1119,13 +1119,19 @@ ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET (Adj Com Pl) IF (NEGATE 0 
 COPY:msyn-gen-case-nouns (Gen Pl Len SUGGEST) EXCEPT (Com Pl Len &msyn-gen-case-nouns) TARGET (Adj &msyn-gen-case-nouns);
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns));
 
-# --
-
-
 #!! #### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
 
-## ag glanadh an an t-urlár > ag glanadh an urláir (the floor). ag glanadh na fuinneoige (cleaning the window).
+## ag glanadh an t-urlár > ag glanadh an urláir (the floor). ag glanadh na fuinneoige (cleaning the window).
 
+## with article "ag scríobh na litreach".
+ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art)) 			#LINK NEGATE -1 (Art Sg Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-vn-noun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
+
+## without article "ag scríobh litreach".
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
@@ -1144,7 +1150,7 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
-	(NEGATE -2 (Verbal VTI));
+	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
@@ -1153,13 +1159,6 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefAr
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
-
-
-
-#(NEGATE -1 Noun LINK NOT 2 Noun LINK *-1 VTI OR VD);    	###WHEN THIS LINE IS OPERATING, IT BREAKS THE RULE FOR COMBINATIONS SUCH AS CEADÚNAS TIOMÁINT, CEADÚNAS IASCAIREACHT, ETC.!!!!
-#(NEGATE 0 WORD-BEGIN-NO-LEN LINK -1 WORD-END-NO-LEN);
-	#$ An múinteoir Ben
-	#$ Thug an rialtas airgead dó.
 
 COPY:msyngen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyngen-noun-defart-noun) TARGET (Com Sg &msyngen-noun-defart-noun) IF (-1 (Art Def))(NEGATE 0 DefArt);
 

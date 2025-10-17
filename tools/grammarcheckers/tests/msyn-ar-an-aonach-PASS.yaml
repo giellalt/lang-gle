@@ -4,3 +4,4 @@ Config:
 
 Tests:
   - "Ar an tsráid."
+  - "Ar an {sráid}£{tsráid}."
