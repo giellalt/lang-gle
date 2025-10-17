@@ -14,7 +14,7 @@
 # giellatekno@uit.no or divvun@uit.no
 
 # ==================================================================== #
-#!!       IRISH  G R A M M A R   C H E C K E R
+#!! #      I R I S H  G R A M M A R   C H E C K E R
 # ==================================================================== #
 # ====================================================================
 
@@ -24,9 +24,9 @@
 #   Development setup:   #
 # ---------------------- #
 #
-# cd $GTHOME/langs/??? # replace ??? with your language code
+# cd $GTLANGS/lang-xxx # replace xxx with your language code
 # ./autogen.sh
-# ./configure --enable-apertium --with-hfst --enable-syntax --enable-grammarchecker --enable-tokenisers --enable-alignment --enable-reversed-intersect
+# ./configure --enable-grammarchecker --enable-tokenisers --enable-alignment --enable-reversed-intersect
 # make
 # cd tools/grammarcheckers
 # make dev
@@ -57,13 +57,13 @@
       # Grammar checking rules
 
 # =============== #
-#!! # DELIMITERS
+#!! ## DELIMITERS
 # =============== #
 
 DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; #!!= * @CODE@
 
 # ================== #
-#!! # TAGS AND SETS
+#!! ## TAGS AND SETS
 # ================== #
 
 SETS
@@ -93,170 +93,170 @@ LIST EOS = (<<<) (</s>) ; #!! EOS
 #!! ### Parts of speech tags
 
 
-LIST Art = Art ; #!! Art
-LIST Noun = Noun ; #!! Noun
-LIST Prep = Prep ; #!! Prep
+LIST Art = Art ; #!! * Art
+LIST Noun = Noun ; #!! * Noun
+LIST Prep = Prep ; #!! * Prep
 
-LIST Subst = Subst ; #!! Subst Check what it is
+LIST Subst = Subst ; #!! * Subst Check what it is
 
-LIST N = N ;		    #!! N CHECK!!
-LIST A = A ;		    #!! A CHECK!!
-LIST Noun = Noun ;	    #!! Noun
-LIST Adj = Adj ;	    #!! Adjective
-LIST Adv = Adv ;	    #!! Adv
-LIST V = V ;		    #!! V
-LIST Pron = Pron ;	    #!! Pron
-LIST CS = CS ;		    #!! CS
-LIST CC = CC ;		    #!! CC
-SET CC-CS = CC OR CS ;  #!! CC-CS
-LIST Po = Po ;		    #!! Po
-LIST Pr = Pr ;		    #!! Pr
-LIST Pcle = Pcle ;	    #!! Pcle
+LIST N = N ;		    #!! * N CHECK!!
+LIST A = A ;		    #!! * A CHECK!!
+LIST Noun = Noun ;	    #!! * Noun
+LIST Adj = Adj ;	    #!! * Adjective
+LIST Adv = Adv ;	    #!! * Adv
+LIST V = V ;		    #!! * V
+LIST Pron = Pron ;	    #!! * Pron
+LIST CS = CS ;		    #!! * CS
+LIST CC = CC ;		    #!! * CC
+SET CC-CS = CC OR CS ;  #!! * CC-CS
+LIST Po = Po ;		    #!! * Po
+LIST Pr = Pr ;		    #!! * Pr
+LIST Pcle = Pcle ;	    #!! * Pcle
 LIST Num = Num ;	    #!! Num
-LIST Interj = Interj ;  #!! Interj
-LIST ABBR = ABBR ;	    #!! ABBR
-LIST ACR = ACR ;	    #!! ACR
-LIST CLB = CLB ;	    #!! CLB
-LIST LEFT = LEFT ;	    #!! LEFT
-LIST RIGHT = RIGHT ;    #!! RIGHT
-LIST WEB = WEB ;	    #!! WEB
-LIST QMARK = """ ; # "  #!! QMARK
-LIST PPUNCT = PUNCT ;   #!! PPUNCT
-LIST Det = Det ; #!! Det
-SET PUNCT = PPUNCT - QMARK ;  #!! PUNCT
+LIST Interj = Interj ;  #!! * Interj
+LIST ABBR = ABBR ;	    #!! * ABBR
+LIST ACR = ACR ;	    #!! * ACR
+LIST CLB = CLB ;	    #!! * CLB
+LIST LEFT = LEFT ;	    #!! * LEFT
+LIST RIGHT = RIGHT ;    #!! * RIGHT
+LIST WEB = WEB ;	    #!! * WEB
+LIST QMARK = """ ; # "  #!! * QMARK
+LIST PPUNCT = PUNCT ;   #!! * PPUNCT
+LIST Det = Det ; #!! * Det
+SET PUNCT = PPUNCT - QMARK ;  #!! * PUNCT
 
-LIST COMMA = "," ;  #!! COMMA
-LIST ¶ = ¶;   #!! ¶
+LIST COMMA = "," ;  #!! * COMMA
+LIST ¶ = ¶;   #!! * ¶
 
 
 
 #!! ### Tags for POS sub-categories
 
-LIST Simp = Simp ; #!! Simp
-LIST Sbj = Sbj ; #!! Sbj
+LIST Simp = Simp ; #!! * Simp
+LIST Sbj = Sbj ; #!! * Sbj
 
-LIST Pers = Pers ;	    #!! Pers
-LIST Dem = Dem ;	    #!! Dem
-LIST Interr = Interr ;  #!! Interr
-LIST Indef = Indef ;    #!! Indef
-LIST Recipr = Recipr ;  #!! Recipr
-LIST Refl = Refl ;	    #!! Refl
-LIST Rel = Rel ;	    #!! Rel
-LIST Coll = Coll ;	    #!! Coll
-LIST NomAg = NomAg ;    #!! NomAg
-LIST Prop = Prop ;	    #!! Prop
-LIST Allegro = Allegro ; #!! Allegro
-LIST Arab = Arab ; #!! Arab
-LIST Rom = Rom ; #!! Romertall
+LIST Pers = Pers ;	    #!! * Pers
+LIST Dem = Dem ;	    #!! * Dem
+LIST Interr = Interr ;  #!! * Interr
+LIST Indef = Indef ;    #!! * Indef
+LIST Recipr = Recipr ;  #!! * Recipr
+LIST Refl = Refl ;	    #!! * Refl
+LIST Rel = Rel ;	    #!! * Rel
+LIST Coll = Coll ;	    #!! * Coll
+LIST NomAg = NomAg ;    #!! * NomAg
+LIST Prop = Prop ;	    #!! * Prop
+LIST Allegro = Allegro ; #!! * Allegro
+LIST Arab = Arab ; #!! * Arab
+LIST Rom = Rom ; #!! * Romertall
 
 
 #!! ### Tags for morphosyntactic properties
 
-LIST DefArt = DefArt ; #!! DefArt
-LIST Art = Art ; #!! Art
-LIST Def = Def ; #!! Def
-LIST Fem = Fem ; #!! Fem
-LIST Masc = Masc ; #!! Masc
-LIST Len = Len ; #!! Len
-LIST hPref = hPref ; #!! hPref, for h prefixation
-LIST Ecl = Ecl ; #!! Ecl
-LIST Poss = Poss ; #!! Poss, possessive
+LIST DefArt = DefArt ; #!! * DefArt
+LIST Art = Art ; #!! * Art
+LIST Def = Def ; #!! * Def
+LIST Fem = Fem ; #!! * Fem
+LIST Masc = Masc ; #!! * Masc
+LIST Len = Len ; #!! * Len
+LIST hPref = hPref ; #!! * hPref, for h prefixation
+LIST Ecl = Ecl ; #!! * Ecl
+LIST Poss = Poss ; #!! * Poss, possessive
 LIST 1P = 1P ;
 LIST 2P = 2P ;
 LIST 3P = 3P ;
 
-LIST Nom = Nom ; #!! Nom
-LIST Acc = Acc ; #!! Acc
-LIST Gen = Gen ; #!! Gen
-LIST Dat = Dat ; #!! Dat
-LIST Loc = Loc ; #!! Loc
-LIST Com = Com ; #!! Com
-LIST Ess = Ess ; #!! Ess
-LIST Par = Par ; #!! Par
-LIST Voc = Voc ; #!! Voc
-LIST Sg = Sg ;   #!! Sg
-LIST Pl = Pl ;   #!! Pl
-LIST Cmp/SplitR = Cmp/SplitR ;	   #!! Cmp/SplitR
-LIST Cmp/SgNom = Cmp/SgNom ; #!! Cmp/SgNom Cmp/SgGen
-LIST Cmp/SgGen = Cmp/SgGen ; #!! Cmp/SgGen
+LIST Nom = Nom ; #!! * Nom
+LIST Acc = Acc ; #!! * Acc
+LIST Gen = Gen ; #!! * Gen
+LIST Dat = Dat ; #!! * Dat
+LIST Loc = Loc ; #!! * Loc
+LIST Com = Com ; #!! * Com
+LIST Ess = Ess ; #!! * Ess
+LIST Par = Par ; #!! * Par
+LIST Voc = Voc ; #!! * Voc
+LIST Sg = Sg ;   #!! * Sg
+LIST Pl = Pl ;   #!! * Pl
+LIST Cmp/SplitR = Cmp/SplitR ;	   #!! * Cmp/SplitR
+LIST Cmp/SgNom = Cmp/SgNom ; #!! * Cmp/SgNom Cmp/SgGen
+LIST Cmp/SgGen = Cmp/SgGen ; #!! * Cmp/SgGen
 
-LIST Comp = Comp ;		   #!! Comp
-LIST Superl = Superl ;	   #!! Superl
-LIST Attr = Attr ;		   #!! Attr
-LIST Ord = Ord ;		   #!! Ord
-LIST Qst = Qst ;		   #!! Qst
-LIST IV = IV ; #!! IV
-LIST TV = TV ; #!! TV
-LIST VD = VD ; #!! VD
+LIST Comp = Comp ;		   #!! * Comp
+LIST Superl = Superl ;	   #!! * Superl
+LIST Attr = Attr ;		   #!! * Attr
+LIST Ord = Ord ;		   #!! * Ord
+LIST Qst = Qst ;		   #!! * Qst
+LIST IV = IV ; #!! * IV
+LIST TV = TV ; #!! * TV
+LIST VD = VD ; #!! * VD
 LIST VTI = VTI ; #!!
-LIST Verbal = Verbal ; #!! Verbal
-LIST Prt = Prt;				   #!! Prt
-LIST Prs = Prs ;			   #!! Prs
-LIST Ind = Ind ;			   #!! Ind
-LIST Pot = Pot ;			   #!! Pot
-LIST Cond = Cond ;			   #!! Cond
-LIST Imprt = Imprt ;		   #!! Imprt
-LIST ImprtII = ImprtII ;	   #!! ImprtII
-LIST Sg1 = Sg1 (p1 sg) ;			   #!! Sg1
-LIST Sg2 = Sg2 (p2 sg) ;			   #!! Sg2
-LIST Sg3 = Sg3 (p3 sg) ;			   #!! Sg3
-LIST Du1 = Du1 (p1 du) ;			   #!! Du1
-LIST Du2 = Du2 (p2 du) ;			   #!! Du2
-LIST Du3 = Du3 (p3 du) ;			   #!! Du3
-LIST Pl1 = Pl1 (p1 pl) ;			   #!! Pl1
-LIST Pl2 = Pl2 (p2 pl);			   #!! Pl2
-LIST Pl3 = Pl3 (p3 pl);			   #!! Pl3
-LIST Inf = Inf ;			   #!! Inf
-LIST ConNeg = ConNeg ;		   #!! ConNeg
-LIST Neg = Neg ;			   #!! Neg
-LIST PrfPrc = PrfPrc ;		   #!! PrfPrc
-LIST VGen = VGen ;			   #!! VGen
-LIST PrsPrc = PrsPrc ;		   #!! PrsPrc
-LIST Ger = Ger ;			   #!! Ger
-LIST Sup = Sup ;			   #!! Sup
-LIST Actio = Actio ;		   #!! Actio
-LIST VAbess = VAbess ;		   #!! VAbess
+LIST Verbal = Verbal ; #!! * Verbal
+LIST Prt = Prt;				   #!! * Prt
+LIST Prs = Prs ;			   #!! * Prs
+LIST Ind = Ind ;			   #!! * Ind
+LIST Pot = Pot ;			   #!! * Pot
+LIST Cond = Cond ;			   #!! * Cond
+LIST Imprt = Imprt ;		   #!! * Imprt
+LIST ImprtII = ImprtII ;	   #!! * ImprtII
+LIST Sg1 = Sg1 (p1 sg) ;			   #!! * Sg1
+LIST Sg2 = Sg2 (p2 sg) ;			   #!! * Sg2
+LIST Sg3 = Sg3 (p3 sg) ;			   #!! * Sg3
+LIST Du1 = Du1 (p1 du) ;			   #!! * Du1
+LIST Du2 = Du2 (p2 du) ;			   #!! * Du2
+LIST Du3 = Du3 (p3 du) ;			   #!! * Du3
+LIST Pl1 = Pl1 (p1 pl) ;			   #!! * Pl1
+LIST Pl2 = Pl2 (p2 pl);			   #!! * Pl2
+LIST Pl3 = Pl3 (p3 pl);			   #!! * Pl3
+LIST Inf = Inf ;			   #!! * Inf
+LIST ConNeg = ConNeg ;		   #!! * ConNeg
+LIST Neg = Neg ;			   #!! * Neg
+LIST PrfPrc = PrfPrc ;		   #!! * PrfPrc
+LIST VGen = VGen ;			   #!! * VGen
+LIST PrsPrc = PrsPrc ;		   #!! * PrsPrc
+LIST Ger = Ger ;			   #!! * Ger
+LIST Sup = Sup ;			   #!! * Sup
+LIST Actio = Actio ;		   #!! * Actio
+LIST VAbess = VAbess ;		   #!! * VAbess
 
 SET NUMBER = Sg OR Pl ;  #!!= * @CODE@
 
-LIST Err/Orth = Err/Orth Err/Orth-a/á Err/Orth-nom/gen Err/Orth-nom/acc Err/DerSub Err/CmpSub Err/UnspaceCmp Err/HyphSub Err/SpaceCmp Err/Spellrelax err_orth_mt ; #!! Err/Orth
+LIST Err/Orth = Err/Orth Err/Orth-a/á Err/Orth-nom/gen Err/Orth-nom/acc Err/DerSub Err/CmpSub Err/UnspaceCmp Err/HyphSub Err/SpaceCmp Err/Spellrelax err_orth_mt ; #!! * Err/Orth
 
-#!! ### Semantic tags
+#!! * ### Semantic tags
 
-LIST Sem/Act = Sem/Act ;				#!! Sem/Act
-LIST Sem/Ani = Sem/Ani ;				#!! Sem/Ani
-LIST Sem/Atr = Sem/Atr ;				#!! Sem/Atr
-LIST Sem/Body = Sem/Body ;				#!! Sem/Body
-LIST Sem/Clth = Sem/Clth ;				#!! Sem/Clth
-LIST Sem/Domain = Sem/Domain ;			    	#!! Sem/Domain
-LIST Sem/Feat-phys = Sem/Feat-phys ;	    		#!! Sem/Feat-phys
-LIST Sem/Fem = Sem/Fem ;				#!! Sem/Fem
-LIST Sem/Group = Sem/Group ;			    	#!! Sem/Group
-LIST Sem/Lang = Sem/Lang ;				#!! Sem/Lang
-LIST Sem/Mal = Sem/Mal ;				#!! Sem/Mal
-LIST Sem/Measr = Sem/Measr ;			   	#!! Sem/Measr
-LIST Sem/Money = Sem/Money ;			    	#!! Sem/Money
-LIST Sem/Obj = Sem/Obj ;				#!! Sem/Obj
-LIST Sem/Obj-el = Sem/Obj-el ;			    	#!! Sem/Obj-el
-LIST Sem/Org = Sem/Org ;				#!! Sem/Org
-LIST Sem/Perc-emo = Sem/Perc-emo ;		    	#!! Sem/Perc-emo
-LIST Sem/Plc = Sem/Plc ;				#!! Sem/Plc
-LIST Sem/Sign = Sem/Sign ;				#!! Sem/Sign
-LIST Sem/State-sick = Sem/State-lang-sick ; 		#!! Sem/State-sick
-LIST Sem/Sur = Sem/Sur ;				#!! Sem/Sur
-LIST Sem/Time = Sem/Time ;				#!! Sem/Time
-LIST Sem/Txt = Sem/Txt ;				#!! Sem/Txt
+LIST Sem/Act = Sem/Act ;				#!! * Sem/Act
+LIST Sem/Ani = Sem/Ani ;				#!! * Sem/Ani
+LIST Sem/Atr = Sem/Atr ;				#!! * Sem/Atr
+LIST Sem/Body = Sem/Body ;				#!! * Sem/Body
+LIST Sem/Clth = Sem/Clth ;				#!! * Sem/Clth
+LIST Sem/Domain = Sem/Domain ;			    	#!! * Sem/Domain
+LIST Sem/Feat-phys = Sem/Feat-phys ;	    		#!! * Sem/Feat-phys
+LIST Sem/Fem = Sem/Fem ;				#!! * Sem/Fem
+LIST Sem/Group = Sem/Group ;			    	#!! * Sem/Group
+LIST Sem/Lang = Sem/Lang ;				#!! * Sem/Lang
+LIST Sem/Mal = Sem/Mal ;				#!! * Sem/Mal
+LIST Sem/Measr = Sem/Measr ;			   	#!! * Sem/Measr
+LIST Sem/Money = Sem/Money ;			    	#!! * Sem/Money
+LIST Sem/Obj = Sem/Obj ;				#!! * Sem/Obj
+LIST Sem/Obj-el = Sem/Obj-el ;			    	#!! * Sem/Obj-el
+LIST Sem/Org = Sem/Org ;				#!! * Sem/Org
+LIST Sem/Perc-emo = Sem/Perc-emo ;		    	#!! * Sem/Perc-emo
+LIST Sem/Plc = Sem/Plc ;				#!! * Sem/Plc
+LIST Sem/Sign = Sem/Sign ;				#!! * Sem/Sign
+LIST Sem/State-sick = Sem/State-lang-sick ; 		#!! * Sem/State-sick
+LIST Sem/Sur = Sem/Sur ;				#!! * Sem/Sur
+LIST Sem/Time = Sem/Time ;				#!! * Sem/Time
+LIST Sem/Txt = Sem/Txt ;				#!! * Sem/Txt
 
-LIST HUMAN = Sem/Fem Sem/Mal Sem/Sur ;	    		#!! HUMAN
+LIST HUMAN = Sem/Fem Sem/Mal Sem/Sur ;	    		#!! * HUMAN
 
-SET HAB-ACTOR = HUMAN ; #!! HAB-ACTOR
-SET HAB-ACTOR-NOT-HUMAN = Sem/Org ; 			#!! HAB-ACTOR-NOT-HUMAN
+SET HAB-ACTOR = HUMAN ; #!! * HAB-ACTOR
+SET HAB-ACTOR-NOT-HUMAN = Sem/Org ; 			#!! * HAB-ACTOR-NOT-HUMAN
 
 
-LIST PROP-ATTR = Sem/Mal Sem/Sur Sem/Fem ; 		#!! PROP-ATTR
-LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; 		#!! PROP-SUR
+LIST PROP-ATTR = Sem/Mal Sem/Sur Sem/Fem ; 		#!! * PROP-ATTR
+LIST PROP-SUR = Sem/Sur Sem/Mal Sem/Fem ; 		#!! * PROP-SUR
 
-SET TIME-N-SET = N + Sem/Time ;  			#!! TIME-N-SET
+SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
@@ -286,80 +286,80 @@ LIST RAREWORD = ("carr" Noun Fem) ("athair" Noun Fem) ; 	#!!= * @CODE@
 
 #!! ###  Syntactic tags
 
-LIST @+FAUXV = @+FAUXV ;	         #!! `@+FAUXV     `
-LIST @+FMAINV = @+FMAINV ;	         #!! `@+FMAINV    `
-LIST @-FAUXV = @-FAUXV ;	         #!! `@-FAUXV     `
-LIST @-FMAINV = @-FMAINV ;	         #!! `@-FMAINV    `
-LIST @-FSUBJ> = @-FSUBJ> ;	         #!! `@-FSUBJ>    `
-LIST @-F<OBJ = @-F<OBJ ;	         #!! `@-F<OBJ     `
-LIST @-FOBJ> = @-FOBJ> ;	         #!! `@-FOBJ>     `
-LIST @SPRED<OBJ = @SPRED<OBJ ;       	 #!! `@-FSPRED<OBJ`
-LIST @-F<ADVL = @-F<ADVL ;	         #!! `@-F<ADVL    `
-LIST @-FADVL> = @-FADVL> ;	         #!! `@-FADVL>    `
-LIST @-F<SPRED = @-F<SPRED ;         	 #!! `@-F<SPRED   `
-LIST @-F<OPRED = @-F<OPRED ;         	 #!! `@-F<OPRED   `
-LIST @-FSPRED> = @-FSPRED> ;         	 #!! `@-FSPRED>   `
-LIST @-FOPRED> = @-FOPRED> ;         	 #!! `@-FOPRED>   `
+LIST @+FAUXV = @+FAUXV ;	         #!! * `@+FAUXV     `
+LIST @+FMAINV = @+FMAINV ;	         #!! * `@+FMAINV    `
+LIST @-FAUXV = @-FAUXV ;	         #!! * `@-FAUXV     `
+LIST @-FMAINV = @-FMAINV ;	         #!! * `@-FMAINV    `
+LIST @-FSUBJ> = @-FSUBJ> ;	         #!! * `@-FSUBJ>    `
+LIST @-F<OBJ = @-F<OBJ ;	         #!! * `@-F<OBJ     `
+LIST @-FOBJ> = @-FOBJ> ;	         #!! * `@-FOBJ>     `
+LIST @SPRED<OBJ = @SPRED<OBJ ;       	 #!! * `@-FSPRED<OBJ`
+LIST @-F<ADVL = @-F<ADVL ;	         #!! * `@-F<ADVL    `
+LIST @-FADVL> = @-FADVL> ;	         #!! * `@-FADVL>    `
+LIST @-F<SPRED = @-F<SPRED ;         	 #!! * `@-F<SPRED   `
+LIST @-F<OPRED = @-F<OPRED ;         	 #!! * `@-F<OPRED   `
+LIST @-FSPRED> = @-FSPRED> ;         	 #!! * `@-FSPRED>   `
+LIST @-FOPRED> = @-FOPRED> ;         	 #!! * `@-FOPRED>   `
 SET FOBJ = @-F<OBJ OR @-FOBJ> ;
 SET FMAINV = @-FMAINV OR @+FMAINV ;
 SET FAUXV = @-FAUXV OR @+FAUXV ;
-LIST @>ADVL = @>ADVL ;               	#!! `@>ADVL`
-LIST @ADVL< = @ADVL< ;               	#!! `@ADVL<`
-LIST @<ADVL = @<ADVL ;               	#!! `@<ADVL`
-LIST @ADVL> = @ADVL> ;               	#!! `@ADVL>`
-LIST ADVL = @ADVL @ADVL> @ADVL< @<ADVL @>ADVL @-F<ADVL @-FADVL> ;  #!! `@ADVL`
-LIST @HAB> = @HAB> ;                    #!! `@HAB>`
-LIST @<HAB = @<HAB ;                    #!! `@<HAB`
+LIST @>ADVL = @>ADVL ;               	#!! * `@>ADVL`
+LIST @ADVL< = @ADVL< ;               	#!! * `@ADVL<`
+LIST @<ADVL = @<ADVL ;               	#!! * `@<ADVL`
+LIST @ADVL> = @ADVL> ;               	#!! * `@ADVL>`
+LIST ADVL = @ADVL @ADVL> @ADVL< @<ADVL @>ADVL @-F<ADVL @-FADVL> ;  #!! * `@ADVL`
+LIST @HAB> = @HAB> ;                    #!! * `@HAB>`
+LIST @<HAB = @<HAB ;                    #!! * `@<HAB`
 SET @HAB = @<HAB OR @HAB> ;
-LIST @>N = @>N ;		      	#!! `@>N`
-LIST @Interj = @Interj ;      		#!! `@Interj  `
-LIST @N< = @N< ;		      	#!! `@N<      `
-LIST @>A = @>A ;		      	#!! `@>A      `
-LIST @P< = @P< ;		      	#!! `@P<      `
-LIST @>P = @>P ;		      	#!! `@>P      `
-LIST @HNOUN = @HNOUN ;	      		#!! `@HNOUN   `
-LIST @INTERJ = @INTERJ ;      		#!! `@INTERJ  `
-LIST @>Num = @>Num;		      	#!! `@>Num    `
-LIST @Pron< = @Pron< ;	      		#!! `@Pron<   `
-LIST @>Pron = @>Pron ;	      		#!! `@>Pron   `
-LIST @Num< = @Num< ;	      		#!! `@Num<    `
-LIST @OBJ = @OBJ ;			#!! `@OBJ     `
-LIST @<OBJ = @<OBJ ;		  	#!! `@<OBJ    `
-LIST @OBJ> = @OBJ> ;		  	#!! `@OBJ>    `
-LIST @OPRED = @OPRED ;		  	#!! `@OPRED   `
-LIST @<OPRED = @<OPRED ;	  	#!! `@<OPRED  `
-LIST @OPRED> = @OPRED> ;	  	#!! `@OPRED>  `
-LIST @PCLE = @PCLE ;		  	#!! `@PCLE    `
-LIST @COMP-CS< = @COMP-CS< ;  		#!! `@COMP-CS<`
-LIST @SPRED = @SPRED ;		  	#!! `@SPRED   `
-LIST @<SPRED = @<SPRED ;	  	#!! `@<SPRED  `
-LIST @SPRED> = @SPRED> ;	  	#!! `@SPRED>  `
-LIST @SUBJ = @SUBJ ;		  	#!! `@SUBJ    `
-LIST @<SUBJ = @<SUBJ ;		  	#!! `@<SUBJ   `
-LIST @SUBJ> = @SUBJ> ;		  	#!! `@SUBJ>   `
-SET SUBJ = @<SUBJ OR @SUBJ> OR @SUBJ ; 	#!! SUBJ
-SET SPRED = @<SPRED OR @SPRED> OR @SPRED ; #!! SPRED
-SET OPRED = @<OPRED OR @OPRED> OR @OPRED ; #!! OPRED
-LIST @PPRED = @PPRED ;        #!! @PPRED
-LIST @APP = @APP ;			   #!! `@APP      `
-LIST @APP-N< = @APP-N< ;	   	#!! `@APP-N<   `
-LIST @APP-Pron< = @APP-Pron< ; 		#!! `@APP-Pron<`
-LIST @APP>Pron = @APP>Pron ;   		#!! `@APP>Pron `
-LIST @APP-Num< = @APP-Num< ;   		#!! `@APP-Num< `
-LIST @APP-ADVL< = @APP-ADVL< ; 		#!! `@APP-ADVL<`
-LIST @VOC = @VOC ;			#!! `@VOC      `
-LIST @CVP = @CVP ;			#!! `@CVP      `
-LIST @CNP = @CNP ;			#!! `@CNP      `
-SET OBJ = (@<OBJ) OR (@OBJ>) OR (@OBJ) OR (@-F<OBJ) OR (@-FOBJ>) ; #!! OBJ
-LIST <OBJ = @-F<OBJ @<OBJ ;    		#!! `<OBJ`
-LIST OBJ> = @OBJ> @-FOBJ> ;    		#!! `OBJ>`
-SET <OBJ-OTHERS = <OBJ OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! `<OBJ-OTHERS`
-SET OBJ>-OTHERS = OBJ> OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! `OBJ>-OTHERS`
+LIST @>N = @>N ;		      	#!! * `@>N`
+LIST @Interj = @Interj ;      		#!! * `@Interj  `
+LIST @N< = @N< ;		      	#!! * `@N<      `
+LIST @>A = @>A ;		      	#!! * `@>A      `
+LIST @P< = @P< ;		      	#!! * `@P<      `
+LIST @>P = @>P ;		      	#!! * `@>P      `
+LIST @HNOUN = @HNOUN ;	      		#!! * `@HNOUN   `
+LIST @INTERJ = @INTERJ ;      		#!! * `@INTERJ  `
+LIST @>Num = @>Num;		      	#!! * `@>Num    `
+LIST @Pron< = @Pron< ;	      		#!! * `@Pron<   `
+LIST @>Pron = @>Pron ;	      		#!! * `@>Pron   `
+LIST @Num< = @Num< ;	      		#!! * `@Num<    `
+LIST @OBJ = @OBJ ;			#!! * `@OBJ     `
+LIST @<OBJ = @<OBJ ;		  	#!! * `@<OBJ    `
+LIST @OBJ> = @OBJ> ;		  	#!! * `@OBJ>    `
+LIST @OPRED = @OPRED ;		  	#!! * `@OPRED   `
+LIST @<OPRED = @<OPRED ;	  	#!! * `@<OPRED  `
+LIST @OPRED> = @OPRED> ;	  	#!! * `@OPRED>  `
+LIST @PCLE = @PCLE ;		  	#!! * `@PCLE    `
+LIST @COMP-CS< = @COMP-CS< ;  		#!! * `@COMP-CS<`
+LIST @SPRED = @SPRED ;		  	#!! * `@SPRED   `
+LIST @<SPRED = @<SPRED ;	  	#!! * `@<SPRED  `
+LIST @SPRED> = @SPRED> ;	  	#!! * `@SPRED>  `
+LIST @SUBJ = @SUBJ ;		  	#!! * `@SUBJ    `
+LIST @<SUBJ = @<SUBJ ;		  	#!! * `@<SUBJ   `
+LIST @SUBJ> = @SUBJ> ;		  	#!! * `@SUBJ>   `
+SET SUBJ = @<SUBJ OR @SUBJ> OR @SUBJ ; 	#!! * SUBJ
+SET SPRED = @<SPRED OR @SPRED> OR @SPRED ; #!! * SPRED
+SET OPRED = @<OPRED OR @OPRED> OR @OPRED ; #!! * OPRED
+LIST @PPRED = @PPRED ;        #!! * @PPRED
+LIST @APP = @APP ;			   #!! * `@APP      `
+LIST @APP-N< = @APP-N< ;	   	#!! * `@APP-N<   `
+LIST @APP-Pron< = @APP-Pron< ; 		#!! * `@APP-Pron<`
+LIST @APP>Pron = @APP>Pron ;   		#!! * `@APP>Pron `
+LIST @APP-Num< = @APP-Num< ;   		#!! * `@APP-Num< `
+LIST @APP-ADVL< = @APP-ADVL< ; 		#!! * `@APP-ADVL<`
+LIST @VOC = @VOC ;			#!! * `@VOC      `
+LIST @CVP = @CVP ;			#!! * `@CVP      `
+LIST @CNP = @CNP ;			#!! * `@CNP      `
+SET OBJ = (@<OBJ) OR (@OBJ>) OR (@OBJ) OR (@-F<OBJ) OR (@-FOBJ>) ; #!! * OBJ
+LIST <OBJ = @-F<OBJ @<OBJ ;    		#!! * `<OBJ`
+LIST OBJ> = @OBJ> @-FOBJ> ;    		#!! * `OBJ>`
+SET <OBJ-OTHERS = <OBJ OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! * `<OBJ-OTHERS`
+SET OBJ>-OTHERS = OBJ> OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! * `OBJ>-OTHERS`
 SET NOT-FAUXV = FMAINV OR OBJ + V OR ADVL + V ;
 
 # Works after the mapping rules for verbs.
-SET SYN-V = FMAINV OR FAUXV OR V + SUBJ OR OBJ + V OR ADVL + V OR (V @>N) OR (V @N<) OR (V @A<) ; #!! SYN-V
-LIST @X = @X ;    #!! @X
+SET SYN-V = FMAINV OR FAUXV OR V + SUBJ OR OBJ + V OR ADVL + V OR (V @>N) OR (V @N<) OR (V @A<) ; #!! * SYN-V
+LIST @X = @X ;    #!! * @X
 
 # ========
   SETS
@@ -390,14 +390,14 @@ SET NOT-COMMA = WORD - COMMA ;  #!! NOT-COMMA #!!= * @CODE@
 #!! ### Case sets
 # ---------
 
-LIST ADVLCASE = Dat Com ; #!! ADLVCASE
+LIST ADVLCASE = Dat Com ; #!! * ADLVCASE
 
-LIST CASE-AGREEMENT = Nom Acc Gen Dat Com ; 	#!! CASE-AGREEMENT
-LIST CASE = Nom Acc Gen Dat Com Voc ; 		#!! CASE
+LIST CASE-AGREEMENT = Nom Acc Gen Dat Com ; 	#!! * CASE-AGREEMENT
+LIST CASE = Nom Acc Gen Dat Com Voc ; 		#!! * CASE
 
-SET NOT-NOM = CASE - Nom ; #!! NOT-NOM
-SET NOT-GEN = CASE - Gen ; #!! NOT-GEN
-SET NOT-ACC = CASE - Acc ; #!! NOT-ACC
+SET NOT-NOM = CASE - Nom ; #!! * NOT-NOM
+SET NOT-GEN = CASE - Gen ; #!! * NOT-GEN
+SET NOT-ACC = CASE - Acc ; #!! * NOT-ACC
 
 #!! ### Verb sets
 # ---------
@@ -405,15 +405,13 @@ SET NOT-ACC = CASE - Acc ; #!! NOT-ACC
 #!! #### Verbs and their complements
 # - - - - - - - - - - - - - -
 
-SET NOT-V = WORD - V ; #!! NOT-V
+SET NOT-V = WORD - V ; #!! * NOT-V
 
 #!! ### Sets for finiteness and mood
 # - - - - - - - - - -
 
-SET REAL-NEG = Neg - Sup ; #!! REAL-NEG
-
+SET REAL-NEG = Neg - Sup ; #!! * REAL-NEG
 SET MOOD-V = Ind OR Pot OR Imprt OR ImprtII OR Cond OR (Neg Sup) ; #!! MOOD-V
-
 SET NOT-PRFPRC = WORD - PrfPrc ; #!! NOT-PRFPRC
 
 
