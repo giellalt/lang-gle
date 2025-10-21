@@ -1,11 +1,11 @@
 
-IRISH  G R A M M A R   C H E C K E R
+#      I R I S H  G R A M M A R   C H E C K E R
 
-# DELIMITERS
+## DELIMITERS
 
 * DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" sent ; 
 
-# TAGS AND SETS
+## TAGS AND SETS
 
 ## Tags
 
@@ -19,161 +19,161 @@ EOS
 
 ### Parts of speech tags
 
-Art
-Noun
-Prep
+* Art
+* Noun
+* Prep
 
-Subst Check what it is
+* Subst Check what it is
 
-N CHECK!!
-A CHECK!!
-Noun
-Adjective
-Adv
-V
-Pron
-CS
-CC
-CC-CS
-Po
-Pr
-Pcle
+* N CHECK!!
+* A CHECK!!
+* Noun
+* Adjective
+* Adv
+* V
+* Pron
+* CS
+* CC
+* CC-CS
+* Po
+* Pr
+* Pcle
 Num
-Interj
-ABBR
-ACR
-CLB
-LEFT
-RIGHT
-WEB
-PPUNCT
-Det
-PUNCT
+* Interj
+* ABBR
+* ACR
+* CLB
+* LEFT
+* RIGHT
+* WEB
+* PPUNCT
+* Det
+* PUNCT
 
-COMMA
-¶
+* COMMA
+* ¶
 
 ### Tags for POS sub-categories
 
-Simp
-Sbj
+* Simp
+* Sbj
 
-Pers
-Dem
-Interr
-Indef
-Recipr
-Refl
-Rel
-Coll
-NomAg
-Prop
-Allegro
-Arab
-Romertall
+* Pers
+* Dem
+* Interr
+* Indef
+* Recipr
+* Refl
+* Rel
+* Coll
+* NomAg
+* Prop
+* Allegro
+* Arab
+* Romertall
 
 ### Tags for morphosyntactic properties
 
-DefArt
-Art
-Def
-Fem
-Masc
-Len
-hPref, for h prefixation
-Ecl
-Poss, possessive
+* DefArt
+* Art
+* Def
+* Fem
+* Masc
+* Len
+* hPref, for h prefixation
+* Ecl
+* Poss, possessive
 
-Nom
-Acc
-Gen
-Dat
-Loc
-Com
-Ess
-Par
-Voc
-Sg
-Pl
-Cmp/SplitR
-Cmp/SgNom Cmp/SgGen
-Cmp/SgGen
+* Nom
+* Acc
+* Gen
+* Dat
+* Loc
+* Com
+* Ess
+* Par
+* Voc
+* Sg
+* Pl
+* Cmp/SplitR
+* Cmp/SgNom Cmp/SgGen
+* Cmp/SgGen
 
-Comp
-Superl
-Attr
-Ord
-Qst
-IV
-TV
-VD
-Verbal
-Prt
-Prs
-Ind
-Pot
-Cond
-Imprt
-ImprtII
-Sg1
-Sg2
-Sg3
-Du1
-Du2
-Du3
-Pl1
-Pl2
-Pl3
-Inf
-ConNeg
-Neg
-PrfPrc
-VGen
-PrsPrc
-Ger
-Sup
-Actio
-VAbess
+* Comp
+* Superl
+* Attr
+* Ord
+* Qst
+* IV
+* TV
+* VD
+* Verbal
+* Prt
+* Prs
+* Ind
+* Pot
+* Cond
+* Imprt
+* ImprtII
+* Sg1
+* Sg2
+* Sg3
+* Du1
+* Du2
+* Du3
+* Pl1
+* Pl2
+* Pl3
+* Inf
+* ConNeg
+* Neg
+* PrfPrc
+* VGen
+* PrsPrc
+* Ger
+* Sup
+* Actio
+* VAbess
 
 * SET NUMBER = Sg OR Pl ;  
 
-Err/Orth
+* Err/Orth
 
-### Semantic tags
+* ### Semantic tags
 
-Sem/Act
-Sem/Ani
-Sem/Atr
-Sem/Body
-Sem/Clth
-Sem/Domain
-Sem/Feat-phys
-Sem/Fem
-Sem/Group
-Sem/Lang
-Sem/Mal
-Sem/Measr
-Sem/Money
-Sem/Obj
-Sem/Obj-el
-Sem/Org
-Sem/Perc-emo
-Sem/Plc
-Sem/Sign
-Sem/State-sick
-Sem/Sur
-Sem/Time
-Sem/Txt
+* Sem/Act
+* Sem/Ani
+* Sem/Atr
+* Sem/Body
+* Sem/Clth
+* Sem/Domain
+* Sem/Feat-phys
+* Sem/Fem
+* Sem/Group
+* Sem/Lang
+* Sem/Mal
+* Sem/Measr
+* Sem/Money
+* Sem/Obj
+* Sem/Obj-el
+* Sem/Org
+* Sem/Perc-emo
+* Sem/Plc
+* Sem/Sign
+* Sem/State-sick
+* Sem/Sur
+* Sem/Time
+* Sem/Txt
 
-HUMAN
+* HUMAN
 
-HAB-ACTOR
-HAB-ACTOR-NOT-HUMAN
+* HAB-ACTOR
+* HAB-ACTOR-NOT-HUMAN
 
-PROP-ATTR
-PROP-SUR
+* PROP-ATTR
+* PROP-SUR
 
-TIME-N-SET
+* TIME-N-SET
 
 ## Noun errors (Len vs. not Len) after prepositions
 
@@ -195,74 +195,74 @@ Noun errors (Ecl vs. not Ecl) after prepositions
 
 ###  Syntactic tags
 
-`@+FAUXV     `
-`@+FMAINV    `
-`@-FAUXV     `
-`@-FMAINV    `
-`@-FSUBJ>    `
-`@-F<OBJ     `
-`@-FOBJ>     `
-`@-FSPRED<OBJ`
-`@-F<ADVL    `
-`@-FADVL>    `
-`@-F<SPRED   `
-`@-F<OPRED   `
-`@-FSPRED>   `
-`@-FOPRED>   `
-`@>ADVL`
-`@ADVL<`
-`@<ADVL`
-`@ADVL>`
-`@ADVL`
-`@HAB>`
-`@<HAB`
-`@>N`
-`@Interj  `
-`@N<      `
-`@>A      `
-`@P<      `
-`@>P      `
-`@HNOUN   `
-`@INTERJ  `
-`@>Num    `
-`@Pron<   `
-`@>Pron   `
-`@Num<    `
-`@OBJ     `
-`@<OBJ    `
-`@OBJ>    `
-`@OPRED   `
-`@<OPRED  `
-`@OPRED>  `
-`@PCLE    `
-`@COMP-CS<`
-`@SPRED   `
-`@<SPRED  `
-`@SPRED>  `
-`@SUBJ    `
-`@<SUBJ   `
-`@SUBJ>   `
-SUBJ
-SPRED
-OPRED
-@PPRED
-`@APP      `
-`@APP-N<   `
-`@APP-Pron<`
-`@APP>Pron `
-`@APP-Num< `
-`@APP-ADVL<`
-`@VOC      `
-`@CVP      `
-`@CNP      `
-OBJ
-`<OBJ`
-`OBJ>`
-`<OBJ-OTHERS`
-`OBJ>-OTHERS`
+* `@+FAUXV     `
+* `@+FMAINV    `
+* `@-FAUXV     `
+* `@-FMAINV    `
+* `@-FSUBJ>    `
+* `@-F<OBJ     `
+* `@-FOBJ>     `
+* `@-FSPRED<OBJ`
+* `@-F<ADVL    `
+* `@-FADVL>    `
+* `@-F<SPRED   `
+* `@-F<OPRED   `
+* `@-FSPRED>   `
+* `@-FOPRED>   `
+* `@>ADVL`
+* `@ADVL<`
+* `@<ADVL`
+* `@ADVL>`
+* `@ADVL`
+* `@HAB>`
+* `@<HAB`
+* `@>N`
+* `@Interj  `
+* `@N<      `
+* `@>A      `
+* `@P<      `
+* `@>P      `
+* `@HNOUN   `
+* `@INTERJ  `
+* `@>Num    `
+* `@Pron<   `
+* `@>Pron   `
+* `@Num<    `
+* `@OBJ     `
+* `@<OBJ    `
+* `@OBJ>    `
+* `@OPRED   `
+* `@<OPRED  `
+* `@OPRED>  `
+* `@PCLE    `
+* `@COMP-CS<`
+* `@SPRED   `
+* `@<SPRED  `
+* `@SPRED>  `
+* `@SUBJ    `
+* `@<SUBJ   `
+* `@SUBJ>   `
+* SUBJ
+* SPRED
+* OPRED
+* @PPRED
+* `@APP      `
+* `@APP-N<   `
+* `@APP-Pron<`
+* `@APP>Pron `
+* `@APP-Num< `
+* `@APP-ADVL<`
+* `@VOC      `
+* `@CVP      `
+* `@CNP      `
+* OBJ
+* `<OBJ`
+* `OBJ>`
+* `<OBJ-OTHERS`
+* `OBJ>-OTHERS`
 
-SYN-V
-@X
+* SYN-V
+* @X
 
 ## Sets containing sets of lists and tags
 
@@ -286,27 +286,25 @@ any word
 
 ### Case sets
 
-ADLVCASE
+* ADLVCASE
 
-CASE-AGREEMENT
-CASE
+* CASE-AGREEMENT
+* CASE
 
-NOT-NOM
-NOT-GEN
-NOT-ACC
+* NOT-NOM
+* NOT-GEN
+* NOT-ACC
 
 ### Verb sets
 
 #### Verbs and their complements
 
-NOT-V
+* NOT-V
 
 ### Sets for finiteness and mood
 
-REAL-NEG
-
+* REAL-NEG
 MOOD-V
-
 NOT-PRFPRC
 
 ### Sets for person
@@ -350,6 +348,23 @@ expression **WORD - premodifiers**.
 
 ### Grammarchecker sets
 
+#### Genitive rules
+
+1. N N => N N.Gen (When two nouns come together, the second noun has to be in the genitive case.)
+
+2. N DefArt N => N DefArt N.Gen (When two nouns come together and there is the definite article between the nouns.)
+
+3. N DetPoss N => N DetPoss N.Gen (When two nouns come together and there is a possessive adjective between the nouns, the possessive adjective does not cancel the rule of the second noun being in the genitive case.)
+
+4. N A => N A.Gen When adjectives come after nouns in the genitive, the adjective must be rendered into the genitive case as well.)
+
+5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
+
+Other gen tags:
+* LIST &msyn-gen-case-noun = &msyn-gen-case-noun ;    is the old genrule tag we want to get rid of
+
+###  Other tags
+
 * LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
 * LIST ADDED = ADDED ;   tag ensuring ... hmm
 * LIST &lex-tá-is = &lex-tá-is ;       
@@ -369,11 +384,10 @@ expression **WORD - premodifiers**.
 * LIST &msyn-noun-defart = &msyn-noun-defart ;     
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
-* LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
 * LIST &msyn-ar-an-tae = &msyn-ar-an-tae;     
 * LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;     
-* LIST &msyn-tóin-poill = &msyn-tóin-poill ;     
+* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
 * LIST &msyn-fem-article = &msyn-fem-article ;     
 * LIST &spell-conservatively = spell-conservatively ;     
 * LIST &spell-it-all = spell-it-all ;     
@@ -413,8 +427,6 @@ Here ends the list and set section
 
 ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 
-**ADD:msyn-len-after-prep**: 
-
 ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
 ### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
@@ -433,27 +445,32 @@ Here ends the list and set section
 
 **ADD:msyn-inis-do** ...
 
-**ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
-
-**ADD:msyn-ar-a-haon-a-chlog** ...
-
 **ADD:msyn-fada-ó** ...
 
-**ADD:msyn-beag-is-fiú-de** "beag is fiú de" A + "de"	
+**ADD:msyn-beag-is-fiú-de** "beag is fiú de" A + "de"
 
 **ADD:msyn-cúpla-plnoun-sgnoun** ..
 
 ### RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
 
-### RULE TO ENSURE THAT NOUNS APPEAR IN THE GENITIVE CASE. !!IT WORKS!! 
+#### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
+
+#### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
+
+#### Genitive rule 3. Noun DetPoss Noun
+
+A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE.
+Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final noun.
+
+#### Genitive rule 4 N A
+
+#### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
+
+#### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct 
 
 **ADD:msyn-gen-case-nouns** ...
 
-## Definiteness errors in nouns
-
-### RULE TO CORRECT THE GENDER OF NOUNS IF THEY ARE DEFINITE FEMININE NOUNS. !!IT WORKS!!
-
-### A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE. !!IT WORKS!!
+## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
 ### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
 
@@ -461,15 +478,19 @@ Here ends the list and set section
 
 **ADD:use-ellipsis** ...
 
+**ADD:msyn-ie.i.** ...
+
+###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
+
+**ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
+
+**ADD:msyn-ar-a-haon-a-chlog** ...
+
 **ADD:msyn-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
 
 This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
 
 **ADD:msyn-ar-an-gcaife** ...
-
-**ADD:msyn-ie.i.** ...
-
-###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
 * * *
 
