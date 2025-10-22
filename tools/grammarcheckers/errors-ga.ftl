@@ -36,12 +36,12 @@ lex-tá-is = Úsáid "is", ní "tá"
     .desc = Nuair atáthar ag scríobh faoi rud atá buan, bain úsáid as an gcopail "is" .
     .example-1 = Is bean láidir í. Is múinteoir é.
 
-msyn-ar-an-gcaife = "Ar" agus ní "i" le caife
+lex-ar-an-gcaife = "Ar" agus ní "i" le caife
     .desc = Cuirtear bainne agus siúcra ar an gcaife, ní chuirtear isteach sa chaife iad.
     .example-1 = An gcuireann tú siúcra ar do chaife? Tá bainne ar an gcaife.
     .ref-1 = 
 
-msyn-ar-an-tae = "Ar" agus ní "i" le "tae"
+lex-ar-an-tae = "Ar" agus ní "i" le "tae"
     .desc = Cuirtear bainne agus siúcra ar an tae, ní chuirtear isteach sa tae iad.
     .example-1 = An gcuireann sé bainne ar an tae? Tá siúcra ar an tae.
     .ref-1 = 
@@ -101,12 +101,12 @@ msyn-noun-defart = Alt an ainmfhocail
     .example-1 = An t-uachtarán.
     .ref-1 = 
 
-msyn-ar-a-haon-a-chlog = Ar agus an t-am
+lex-ar-a-haon-a-chlog = Ar agus an t-am
     .desc = Is ceart an réamhfhocal AR a úsáid nuair atáthar ag caint faoin am ar an gclog.
     .example-1 = Ithfear an dinnéar ar a seacht a chlog.
     .ref-1 = 
 
-msyn-ar-an-aonach = Ar an aonach
+lex-ar-an-aonach = Ar an aonach
     .desc = Bítear ar an aonach, ní ag an aonach.
     .example-1 = Bhí slua mór ar an aonach inniu.
     .ref-1 = 
