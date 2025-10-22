@@ -257,7 +257,7 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST ECLIPSE-PREP = "<ar>" "<i>" "<chuig>" "<le>"; 			#!!= * @CODE@
+LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<i>" "<chuig>" "<le>"; 			#!!= * @CODE@
 #  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<trí>" "<um>"
 
 #!! These prepositions always cause the nouns after them to be lenited:
@@ -1450,15 +1450,13 @@ LIST CAIFE = "caife" "tae" ;
 
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Art Sg) IF (*1 CAIFE BARRIER (*) - (Det Poss)) ;
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 (Det Poss) LINK *1 CAIFE BARRIER (*) - (Det Poss)) ;
-
-COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&lex-ar-an-tae) ;
-
-ADDCOHORT:lex-ar-an-tae ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-tae) AFTER &lex-ar-an-tae (NEGATE 0 ADDED);
-ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
-
+COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (Art Sg &lex-ar-an-tae) ;
 
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Simp) IF (*1 CAIFE BARRIER (*) - (Det Poss)) ;
-COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Simp) TARGET (&lex-ar-an-tae) ;
+COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Simp &lex-ar-an-tae) ;
+
+ADDCOHORT:lex-ar-an-tae ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-tae) AFTER &lex-ar-an-tae (NEGATE 0 ADDED) (NEGATE 1 (Det Poss));
+ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
 #!! This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
