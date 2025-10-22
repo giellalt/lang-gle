@@ -31,11 +31,11 @@ fixedcase-np = Proper noun capital letter
 lex-tá-is = Use "is", not "tá"
     .desc = When "tá" has a first person pronoun to the right, use "is" and not "tá".
 
-msyn-ar-an-gcaife = "Ar" and not "i" with coffee
+lex-ar-an-gcaife = "Ar" and not "i" with coffee
     .desc = Milk and sugar ar put on the coffee, not into coffee
     .ref-1 = 
 
-msyn-ar-an-tae = "Ar" and not "i" with "tae"
+lex-ar-an-tae = "Ar" and not "i" with "tae"
     .desc = Milk and sugar ar put on the tea, not into tea
     .ref-1 = 
 
@@ -83,11 +83,11 @@ msyn-noun-defart = The article of the noun
     .desc = If the article {$2} precedes the noun, {$1} in this case, it should be definite.
     .ref-1 = 
 
-msyn-ar-a-haon-a-chlog = Ar and the time
+lex-ar-a-haon-a-chlog = Ar and the time
     .desc = The preposition AR should be used when talking about the time on the clock.
     .ref-1 = 
 
-msyn-ar-an-aonach = On the fair
+lex-ar-an-aonach = On the fair
     .desc = One is on the fair, not at the fair.
     .ref-1 = 
 
