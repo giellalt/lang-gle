@@ -693,7 +693,7 @@ COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &m
 COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
 COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
 SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
-#MAP:LOCK_READING (SUGGEST) (SUGGEST);
+MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 	#$ Tá an madra ag siúl leat (correct)
 	## Tá an madra ag siúl le tú (incorrect)
@@ -1203,6 +1203,8 @@ ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 ##In references of a general nature it does not normally affect initial letter of following noun, e.g.
 ##ar muir, ar cíos, ar cosa in airde, on sea, rented, galloping.
 
+##
+
 ##In qualified or particularized references it lenites, e.g.
 ##ar mhuir na beatha, ar chíos mór, on the sea of life, at a high rent.
 
@@ -1287,8 +1289,14 @@ ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 ##Ar feadh m’eolais, as far as I know. CORRECT
 ##Ar fHeadh m’eolais, as far as I know. INCORRECT
 
+#$Beidh slagmhargadh ann ar feadh na míosa. CORRECT
+##Beidh sladmhargadh ann ar fheadh na míosa. INCORRECT
+
 ##Ar fud na tíre, throughout the country. CORRECT
 ##Ar fHud na tíre, throughout the country. INCORRECT
+
+##Tá an dlí sin i bhfeidhm ar fud na hEorpa. CORRECT
+##Tá an dlí sin i bhfeidhm ar fhud na hEorpa. INCORRECT
 
 ##7.
 ##(a)
@@ -1296,11 +1304,17 @@ ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 ##Ar meisce, ar seachrán, drunk, astray. CORRECT
 ##Ar mHeisce, ar sHeachrán, drunk, astray. INCORRECT
 
+#$Bhí mo mháthair ar meisce aréir. CORRECT
+##Bhí mo mháthair ar mheisce aréir. INCORRECT
+
 ##Ar deil, in proper working order. CORRECT
 ##Ar dHeil, in proper working order. INCORRECT
 
 ##Ar (a) fheabhas, excellent. CORRECT
 ##Ar (a) feabhas, excellent. INCORRECT
+
+#$Tá an bia sa bhialann sin ar fheabhas. CORRECT
+##Tá an bia sa bhialann sin ar feabhas. INCORRECT.
 
 ##(b) (Dependence)
 ##(Beo) ar arán, (living) on bread. CORRECT
@@ -1391,8 +1405,8 @@ ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 ##Ar crith, ar crochadh, ar foluain, trembling, hanging, hovering. CORRECT
 ##Ar cHrith, ar cHrochadh, ar fHoluain, trembling, hanging, hovering. INCORRECT
 
-##Ar díol, on sale.
-##Ar dHíol, on sale.
+#$Tá an teach ar díol, on sale. CORRECT
+##Tá an teach ar dHíol, on sale. INCORRECT
 
 ##(b) (Action)
 ##Ar éirí dom, when I get, got, up. CORRECT
