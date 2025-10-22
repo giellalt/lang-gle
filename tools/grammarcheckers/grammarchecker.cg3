@@ -1310,6 +1310,9 @@ ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 ##Ar deil, in proper working order. CORRECT
 ##Ar dHeil, in proper working order. INCORRECT
 
+##Bhí gach ní ar deil acu. CORRECT
+##Bhí gach ní ar deil acu. INCORRECT
+
 ##Ar (a) fheabhas, excellent. CORRECT
 ##Ar (a) feabhas, excellent. INCORRECT
 
