@@ -257,18 +257,19 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<i>" "<chuig>" "<le>"; 			#!!= * @CODE@
+LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<i>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" ("le" Prep Simp SUGGEST); #!!= * @CODE@
 #  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<trí>" "<um>"
 
 #!! These prepositions always cause the nouns after them to be lenited:
 LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					#!!= * @CODE@
 
+#!! Noun errors (Ecl vs. not Ecl) after prepositions
 # Prepositions that do not lenite nouns: "<ag>" "<i>" "<le>" "<as>" "<chuig>" "<thar>" "<um>"
 
 #LIST PREP-LEN = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<ó>" "<roimh>" "<thar>" "<trí>" "<um>" ;  	#!!= * @CODE@
 #LIST-PREP = "ag" "ar" "as" "chuig" "de" "do" "faoi" "i" "le" "ó" "roimh" "thar" "trí" "um";
 
-#!! Noun errors (Ecl vs. not Ecl) after prepositions
+
 
 LIST NUM-LEN = "aon" "<chéad>" "<dhá>" "trí" "<ceithre>" "cúig" "sé" "beirt" "uile"; 		#!!= * @CODE@
 LIST NUM-ECL = "seacht" "ocht" "naoi" "deich" ; #!!= * @CODE@
@@ -803,24 +804,37 @@ ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after
 
 #!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!!
 
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
+	(-1 Art)
+	(-2 ECLIPSE-PREP + Prep + Simp)
+	(0 ("<[bcdfgpsBCDFGPS].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECLIPSE-PREP + (Prep Simp))
-        (0 ("<[bcdfgpstBCDFGPST].*>"r))
+        (0 ("<[bcdfgpsBCDFGPS].*>"r))
+        (NEGATE 0 Ecl);
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 ECLIPSE-PREP + (Prep Simp))
+        (0 ("<[bcdfgpsBCDFGPS].*>"r))
         (NEGATE 0 Ecl);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
-#ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
-        #(-2 ART-LEN-PREP + (Prep Simp)) 			# two words to the left of the thing you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
-        #(-1 Art) 						# One to the left of the thing you TARGET is Art
-        #(0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
-        #(NOT 0 Ecl OR ECL-NON-ECL-N)  				# The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
-        #(0 ("<[bcfgpsBCFGPS].*>"r)) 				# the thing you TARGET itself if starting with the letters bcfgps
-        #(NEGATE 0 ("<[s].*>"r) + Masc) ; 			# The rule dosn't target a masculine word starting with the letter S.
-
-#COPY:msyn-ecl-after-prep-sfem (DefArt SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
+ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
+        (-2 ART-LEN-PREP + (Prep Simp)) 			# two words to the left of the thing you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
+        (-1 Art) 						# One to the left of the thing you TARGET is Art
+        (0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
+        (NOT 0 Ecl OR ECL-NON-ECL-N)  				# The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgpsBCFGPS].*>"r)) 				# the thing you TARGET itself if starting with the letters bcfgps
+        (NEGATE 0 ("<[s].*>"r) + Masc) ; 			# The rule dosn't target a masculine word starting with the letter S.
+COPY:msyn-ecl-after-prep-sfem (DefArt SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
 
 #!! ### Rules for lenition
 
@@ -836,6 +850,7 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
     	
 ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
 	(-1 ECLIPSE-PREP + (Prep Simp))
+	(0 ("<[bcdfgpsBCDFGPS].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
 #ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
@@ -1447,7 +1462,7 @@ COPY:lex-a-haon-a-chlog ("ar" SUGGEST) EXCEPT ("ag" &lex-a-haon-a-chlog) TARGET 
 	## Ar mhaith leat bainne i dtae do mhic? - Would you like milk in your son's tea?
 	##  INCORRECT
 
-LIST CAIFE = "caife" "tae" ;
+LIST CAIFE = "caife" "tae" "gcaife" "chaife" "dtae";
 
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Art Sg) IF (*1 CAIFE BARRIER (*) - (Det Poss)) ;
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 (Det Poss) LINK *1 CAIFE BARRIER (*) - (Det Poss)) ;
@@ -1475,12 +1490,9 @@ COPY:lex-ar-an-gcaife ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (
 ADDCOHORT:lex-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-gcaife) AFTER &lex-ar-an-gcaife (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
 ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
 
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
-	(-1 Art)
-	(-2 ECLIPSE-PREP + Prep + Simp)
-	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
-COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
-ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+
+##Tá an múinteoir ar bhuile linn. INCORRECT
+#$Tá an múinteoir ar buile linn.  CORRECT
 
 	## Ar bhuile. - incorrect
 	#$ Ar buile. - correct

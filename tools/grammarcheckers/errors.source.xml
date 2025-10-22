@@ -450,12 +450,12 @@
 
   <error id="msyn-lenition-after-possessive-adjective">
     <header>
-        <title xml:lang="ga">Séimhiú i ndiaidh aidiachta sealbhaí</title>
+        <title xml:lang="ga">Séimhiú ar lorg aidiachta sealbhaí</title>
         <title xml:lang="en">Lenition after possessive adjective</title>
       <references> <ref n=""/></references>
     </header>
     <body>
-      <description xml:lang="ga">Nuair a thagann cinntitheoir, anseo "($1)", roimh ainmfhocal, anseo "($2)", ba chóir an t-ainmfhocal a shíneadh.</description>
+      <description xml:lang="ga">Nuair a bhíonn aidiacht shealbhach (mo/do/a fireann) roimh ainmfhocal, "$1" sa chás seo, ba chóir an t-ainmfhocal a shéimhiú.</description>
       <description xml:lang="en">When a determiner, here "($1)", preceedes a noun, here "($2)", the noun should be lenited.</description>
     <examples>
       <ex xml:lang="ga">Mo theach, do mhadra, a charr.</ex>
