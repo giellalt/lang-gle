@@ -1936,6 +1936,7 @@ Other gen tags:
 
 * LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
 * LIST ADDED = ADDED ;   tag ensuring ... hmm
+* LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;   tag ensuring ... hmm
 * LIST &lex-tá-is = &lex-tá-is ;       
 * LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
 * LIST &msyn-adj-gender = &msyn-adj-gender ;       
