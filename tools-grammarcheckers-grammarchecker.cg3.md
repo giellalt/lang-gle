@@ -370,8 +370,8 @@ Other gen tags:
 * LIST &lex-tá-is = &lex-tá-is ;       
 * LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
 * LIST &msyn-adj-gender = &msyn-adj-gender ;       
-* LIST &msyn-ar-a-haon-a-chlog = &msyn-ar-a-haon-a-chlog ;  
-* LIST &msyn-ar-an-aonach = &msyn-ar-an-aonach ;  
+* LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ;  
+* LIST &lex-ar-an-aonach = &lex-ar-an-aonach ;  
 * LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
@@ -385,8 +385,8 @@ Other gen tags:
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
-* LIST &msyn-ar-an-tae = &msyn-ar-an-tae;     
-* LIST &msyn-ar-an-gcaife = &msyn-ar-an-gcaife;     
+* LIST &lex-ar-an-tae = &lex-ar-an-tae;     
+* LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
 * LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
 * LIST &msyn-fem-article = &msyn-fem-article ;     
 * LIST &spell-conservatively = spell-conservatively ;     
@@ -482,15 +482,15 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 
 ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
-**ADD:msyn-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
+**ADD:lex-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
 
-**ADD:msyn-ar-a-haon-a-chlog** ...
+**ADD:lex-ar-a-haon-a-chlog** ...
 
-**ADD:msyn-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
+**ADD:lex-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
 
 This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
 
-**ADD:msyn-ar-an-gcaife** ...
+**ADD:lex-ar-an-gcaife** ...
 
 * * *
 
