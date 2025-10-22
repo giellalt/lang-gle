@@ -1747,7 +1747,7 @@ Num
 ### Noun errors (Len vs. not Len) after prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST ECLIPSE-PREP = "<ar>" "<i>" "<chuig>" "<le>"; 			
+* LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<i>" "<chuig>" "<le>"; 			
 
 These prepositions always cause the nouns after them to be lenited:
 * LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					
