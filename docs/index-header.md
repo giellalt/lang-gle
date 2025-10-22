@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/github/license/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-gle)](https://github.com/giellalt/lang-gle/issues)
 [![Build Status](https://builds.giellalt.org/api/badge/lang-gle?label=CI)](https://builds.giellalt.org/pipelines/lang-gle/builds/latest)
-[![Glottolog](https://img.shields.io/badge/Glottolog-green)](https://glottolog.org/resource/languoid/id/__GLOTTOLOG_ID__)
 
 This page documents the work on the [Irish language model](http://github.com/giellalt/lang-gle). 
 
