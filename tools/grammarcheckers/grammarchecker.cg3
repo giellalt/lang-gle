@@ -599,6 +599,7 @@ LIST &msyn-gen-case-noun = &msyn-gen-case-noun ;   #!!= * @CODE@ is the old genr
 
 LIST SUGGEST = SUGGEST ;  #!!= * @CODE@ tag ensuring generation of a suggestion for an errouneous word
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
+LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@ 
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@ 
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@ 
@@ -1187,7 +1188,7 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 #!! ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
 ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
-ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED);
+ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
 ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
 	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
@@ -1426,7 +1427,7 @@ COPY:lex-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &lex-ar-an-aonach) TARGET (&le
 
 ADD:lex-ar-an-aonach (&lex-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
 COPY:lex-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&lex-ar-an-aonach) ;
-ADDCOHORT:lex-ar-an-aonach ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-aonach) AFTER &lex-ar-an-aonach (NEGATE 0 ADDED); ####THIS CAUSES CHAOS AND STOPS THE TERMINAL!!!###
+ADDCOHORT:lex-ar-an-aonach ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-aonach) AFTER &lex-ar-an-aonach (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK); ####THIS CAUSES CHAOS AND STOPS THE TERMINAL!!!###
 ADDRELATION:lex-ar-an-aonach ($2 RIGHT) (V &lex-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 #!! **ADD:lex-ar-a-haon-a-chlog** ...
@@ -1455,7 +1456,7 @@ COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (Art
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Simp) IF (*1 CAIFE BARRIER (*) - (Det Poss)) ;
 COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Simp &lex-ar-an-tae) ;
 
-ADDCOHORT:lex-ar-an-tae ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-tae) AFTER &lex-ar-an-tae (NEGATE 0 ADDED) (NEGATE 1 (Det Poss));
+ADDCOHORT:lex-ar-an-tae ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-tae) AFTER &lex-ar-an-tae (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK) (NEGATE 1 (Det Poss));
 ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
@@ -1471,14 +1472,14 @@ ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLAN
 
 ADD:lex-ar-an-gcaife (&lex-ar-an-gcaife) TARGET ("i" Prep Art Sg) IF (1 CAIFE + (Noun Masc Gen Sg DefArt)) ;
 COPY:lex-ar-an-gcaife ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&lex-ar-an-gcaife) ;
-ADDCOHORT:lex-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-gcaife) AFTER &lex-ar-an-gcaife (NEGATE 0 ADDED);
+ADDCOHORT:lex-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-gcaife) AFTER &lex-ar-an-gcaife (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
 ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
 	(-1 Art)
 	(-2 ECLIPSE-PREP + Prep + Simp)
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
-COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
 	## Ar bhuile. - incorrect
