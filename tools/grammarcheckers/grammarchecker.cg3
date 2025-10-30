@@ -805,7 +805,7 @@ ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after
 
 #!! ### rule to take away lenition for nouns after certain prepositions
 
-LIST NO-LEN-AFTER-AR-N = "meitheal" "meisce" "tosach" "sála" "corr" "fiar" "teaghrán" "srian" "fad" "fud" "doimhneacht" "tiús" "feadh" "seachrán" "deil" "cairde" "malairt" "tuarastal" "deis" "clé" "sodar" "marcaíocht" "cuairt" "teachtaireacht" "maidin" "crith" "crochadh" "díol" "muir" "cnoc" "machaire" "cúl" ;
+LIST NO-LEN-AFTER-AR-N = "barr" "béal maidine" "bith" "bogadh" "buile" "cairde" "clé" "cnoc" "colbha" "corr" "cois" "cosa" "crith" "crochadh" "cuairt" "cúl" "deil" "deireadh" "deis" "díol" "doimhne" "doimhneacht" "fad" "fáil" "fán" "feadh" "fiar" "fiuchadh" "forbhás" "fónamh" "fuaidreamh" "fud" "gor" "machaire" "maidin" "malairt" "maos" "marcaíocht" "meitheal" "meisce" "muir" "sála" "seachrán" "sodar" "son" "srian" "tarraingt" "teachtaireacht" "teaghrán" "tí" "tír" "tiús" "tosach" "triomú" "tuarastal";
 
 ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art)	(NEGATE *1 (Noun Gen) BARRIER (*) - Art)(NEGATE 0 ("cúl") LINK -1 ("ar"));
 
