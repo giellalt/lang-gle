@@ -1930,41 +1930,32 @@ expression **WORD - premodifiers**.
 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
 
 Other gen tags:
-* LIST &msyn-gen-case-noun = &msyn-gen-case-noun ;    is the old genrule tag we want to get rid of
+* LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;    is the old genrule tag we want to get rid of
 
 ####  Other tags
 
-* LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
-* LIST ADDED = ADDED ;   tag ensuring ... hmm
-* LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;   tag ensuring ... hmm
-* LIST &lex-tá-is = &lex-tá-is ;       
-* LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
-* LIST &msyn-adj-gender = &msyn-adj-gender ;       
 * LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ;  
 * LIST &lex-ar-an-aonach = &lex-ar-an-aonach ;  
+* LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
+* LIST &lex-ar-an-tae = &lex-ar-an-tae;     
+* LIST &lex-tá-is = &lex-tá-is ;       
+* LIST &msyn-adj-gender = &msyn-adj-gender ;       
 * LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
 * LIST &msyn-fada-ó = &msyn-fada-ó ;     
-* LIST &msyn-ie.i. = &msyn-&.i. ;     
-* LIST &msyn-inis-de = &msyn-inis-de ;     
+* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
 * LIST &msyn-inis-do = &msyn-inis-do ;     
-* LIST &GEmsyn-len-after-prep = &msyn-len-after-prep ;     
-* LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;     
+* LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
+* LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
 * LIST &msyn-noun-defart = &msyn-noun-defart ;     
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
-* LIST &lex-ar-an-tae = &lex-ar-an-tae;     
-* LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
-* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
-* LIST &msyn-fem-article = &msyn-fem-article ;     
-* LIST &spell-conservatively = spell-conservatively ;     
-* LIST &spell-it-all = spell-it-all ;     
 * LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;     
-* LIST &use-ellipsis = &use-ellipsis ;     
-* LIST &use-guillemets = &use-guillemets ;     
-* LIST SUGGEST = SUGGEST ;     
+* LIST ADDED = ADDED ;   tag ensuring ... hmm
+* LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;   tag ensuring ... hmm
+* LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
 
 * MAPPING-PREFIX = & ;     
 
