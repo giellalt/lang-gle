@@ -1,0 +1,6 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Tá mé ag scuabadh na {ghruaig}£{gruaige}."

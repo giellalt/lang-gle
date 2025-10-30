@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+#  - "Tá mé ag scuabadh {an ghruaig}£{na gruaige}." # "I am brushing the hair"
+
