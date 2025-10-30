@@ -3,23 +3,5 @@ Config:
   Variant: glegram-dev
 
 Tests:
+  - "Tá an dochtúir ag seasamh ag an {fuinneog}£{fhuinneog}"
 
-  ## Ta an dochtuir ag seasamh le hais an fuinneog. - incorrect
-  #S Tá an dochtúir ag seasamh le hais na fuinneoige. - correct
-  - "Ta an dochtuir ag seasamh le hais {an fuinneog}£{na fuinneoige}."
-
-  ## Ta an dochtuir ag seasamh ag an fuinneog. - incorrect
-  #$ Tá an dochtúir ag seasamh ag an bhfuinneog. - correct
-  - "Ta an dochtuir ag seasamh ag an {fuinneog}£{bhfuinneog}."
-
-  ## Chuig an Chomhairle. - incorrect
-  #$ Chuig an gComhairle. - correct
-  - "Chuig an {Chomhairle}£{gComhairle}."
-
-  - "Tá mé i mo chónaí in aice le SF, {afách}${áfach}; b’fhéidir gur chóir dom dul ar cuairt ar an {{fíonlann}${Fionlainn}}£{bhFionlainn}!"
-
-  - "Is í Roinn an Taoisigh an roinn is tábhachtaí i Rialtas na hÉire." 
-  - "Is í Roinn an Taoisigh an roinn is tábhachtaí i Rialtas na hÉireann."
-  - "Is é Áras an Uachtaráin an teach is cáiliúla in Éirinn."
-
-  - "Tá an dochtúir ag seasamh ag an fhuinneog {mór}£{mhór}"

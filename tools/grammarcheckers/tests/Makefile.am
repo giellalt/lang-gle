@@ -20,9 +20,11 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-fada-o-PASS.yaml \
     msyn-gen-case-nouns-FAIL.yaml \
     msyn-gen-noun-adj-PASS.yaml \
+    msyn-gen-noun-defart-noun-FAIL.yaml \
     msyn-gen-noun-defart-noun-PASS.yaml \
     msyn-gen-noun-detpss-noun-PASS.yaml \
     msyn-gen-noun-detpss-noun-FAIL.yaml \
+    msyn-gen-noun-noun-FAIL.yaml \
     msyn-gen-noun-noun-PASS.yaml \
     msyn-gen-vn-noun-PASS.yaml \
     msyn-inis-do-FAIL.yaml \
@@ -43,7 +45,8 @@ XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-fada-o-FAIL.yaml \
     msyn-gen-case-nouns-FAIL.yaml \
     msyn-gen-noun-adj-PASS.yaml \
-    msyn-gen-noun-defart-noun-PASS.yaml \
+    msyn-gen-noun-defart-noun-FAIL.yaml \
+    msyn-gen-noun-noun-FAIL.yaml \
     msyn-gen-vn-noun-PASS.yaml \
     msyn-inis-do-FAIL.yaml \
     msyn-noun-defart-FAIL.yaml \
