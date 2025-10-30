@@ -75,6 +75,10 @@ msyn-gen-vn-noun = An tuiseal ginideach ar lorg ainm briathartha
     .desc = Más thagann ainmfhocal, ({$1}) sa chás seo, ar lorg ainm briathartha, ba chóir é a bheith sa tuiseal ginideach.
     .example-1 = Ag glanadh na fuinneoige. Ag scríobh an leabhair.
 
+msyn-gen-vn-noun-with-article = An tuiseal ginideach ar lorg ainm briathartha
+    .desc = Más thagann ainmfhocal, ({$1}) sa chás seo, ar lorg ainm briathartha, ba chóir é a bheith sa tuiseal ginideach.
+    .example-1 = Ag glanadh na fuinneoige. Ag scríobh an leabhair.
+
 msyn-h-after-fem-possessive-adjective = Cuir teideal leis
     .desc = Cuir cur síos leis
     .example-1 = ...
