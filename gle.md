@@ -2005,6 +2005,8 @@ Here ends the list and set section
 
 #### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
+#### rule to take away lenition for nouns after certain prepositions
+
 #### Rules for lenition
 
 **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
