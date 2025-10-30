@@ -1,0 +1,15 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+
+
+  - "Áras {an Uachtarán}£{an Uachtaráin}."
+  - "oifig an {post}£{phoist}"
+  - "siopa an {fuinneog}£{fhuinneoig}."
+  - "Tá doirse {na teach}£{na dteach} ar oscailt."
+  - "Tá doirse {na tithe}£{na dteach} ar oscailt."
+  - "Seomra {na fir}£{na bhfear}." 
+  - "Seomra na {mná}£{mban}." # Problem: sg gen = pl com which is a problem
+  

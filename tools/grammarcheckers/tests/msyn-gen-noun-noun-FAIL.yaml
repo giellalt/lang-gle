@@ -1,0 +1,13 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+# 1. When two nouns come together, the second noun has to be in the genitive case.
+#  - "Bus {Éire}£{Éireann}"
+#  This rule works most of the time. It requires some further refinement.
+
+  - "éadaí {fear}£{fir}"
+
+
+
