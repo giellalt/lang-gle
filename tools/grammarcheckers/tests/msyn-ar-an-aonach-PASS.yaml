@@ -5,3 +5,5 @@ Config:
 Tests:
   - "Ar an tsráid."
   - "Ar an {sráid}£{tsráid}."
+  - "Ar {an}£{on{ aonach."
+  - "chuig an {cailín}£{gcailín}."

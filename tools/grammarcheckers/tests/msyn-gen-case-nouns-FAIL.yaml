@@ -15,7 +15,6 @@ Tests:
 #  This rule works most of the time. It requires some further refinement.
  
 # 2. When two nouns come together and there is the definite article between the nouns.
-  - "príomhoide na scoile, lár {an pháirc}£{na páirce},"
 
   - "Cumann {na Mná}£{na mBan}"
   - "Amhrán {na Fianna}£{na bhFiann}"

@@ -4,7 +4,6 @@ Config:
 
 Tests:
   - "Ag {an}£{at} aonach." # - incorrect ("ag" at)
-  - "Ar {an}£{on{ aonach." # - correct ("ar" on)
   - "Ar an {sráideánach}£{tsráideánach}." 
   - "Beidh an fear ag an aonach." 
   - "Tá comhráite ar siúl inniu idir Aer Lingus agus Chumann Phíolótaí Aerlínte na hÉireann maidir le haighneas pá a bhféadfadh stailc a bheith mar thoradh air."
@@ -18,7 +17,6 @@ Tests:
   - "Tá an moladh sin i bhfad ón marc, ámh, ós ardú pá 23.8% atá na píolótaí a éileamh."
   - "Dar leis na píolótaí nach bhfuil na tairiscintí ar ardú pá a tugadh dóibh go dtí seo, nach bhfuil siad ag teacht le ráta an bhoilscithe ná leis an {brabach}£{mbrabach} mór atá Aer Lingus a dhéanamh, agus nach {cuirtear}£{gcuirtear} san áireamh iontu na sochair ar fad a lig siad uathu ar son an chomhlachta aimsir na paindéime Covid-19."
   - "Dúirt Príomhoifigeach Gnóthaí Corparáideacha Aer Lingus, Donal Moriarty, áfach, go raibh éileamh na bpíolótaí as compás agus dochurtha i gcrích."
-  - "chuig an {cailín}£{gcailín}."
   - "{Ag}£{Ar} an aonach."
   - "Beidh an fear ar an aonach."
   - "ar an asal."
