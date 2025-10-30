@@ -1119,10 +1119,12 @@ COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
 ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
-SUBSTITUTE (&msyn-gen-case-nouns) (co&msyn-gen-case-nouns) TARGET (SUGGEST);
-#Trond MAP:LOCK_READING (SUGGEST) (SUGGEST);
-# N Art*  N*
-#   1073  
+SUBSTITUTE (&msyn-gen-case-nouns) (&msyn-gen-case-nouns) TARGET (SUGGEST);
+
+ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET ("an" Art Sg Def) IF (NEGATE 0 Gen)(1 (Noun &msyn-gen-vn-noun-with-article));
+COPY:msyn-gen-vn-noun-with-article ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-vn-noun-with-article) TARGET (Art &msyn-gen-vn-noun-with-article) IF (1 (Noun Fem));
+ADDRELATION ($2 LEFT) (&msyn-gen-vn-noun-with-article) TO (-1 (Art &msyn-gen-vn-noun-with-article));
+SUBSTITUTE (&msyn-gen-vn-noun-with-article) (&msyn-gen-noun-with-article) TARGET (SUGGEST);
 
 
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
