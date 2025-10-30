@@ -792,7 +792,7 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (0 ("<[bcdfgmpstBCDFGMPST].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
         (NEGATE 0 Ecl);
-COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep);
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) OR (Ecl &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after-prep));
 
 # Model for Trond, smn:	 2673 ADDRELATION:msyn-adj-nom-acc ($2) () FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
@@ -804,14 +804,15 @@ ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after
 
 #!! ### rule to take away lenition for nouns after certain prepositions
 
-LIST NO-LEN-AFTER-AR-N = "meitheal" "meisce" "tosach" "sála" "corr" "fiar" "teaghrán" "srian" "fad" "fud" "doimhneacht" "tiús" "feadh" "seachrán" "deil" "cairde" "malairt" "tuarastal" "deis" "clé" "sodar" "marcaíocht" "cuairt" "teachtaireacht" "maidin" "crith" "crochadh" "díol" ;
+LIST NO-LEN-AFTER-AR-N = "meitheal" "meisce" "tosach" "sála" "corr" "fiar" "teaghrán" "srian" "fad" "fud" "doimhneacht" "tiús" "feadh" "seachrán" "deil" "cairde" "malairt" "tuarastal" "deis" "clé" "sodar" "marcaíocht" "cuairt" "teachtaireacht" "maidin" "crith" "crochadh" "díol" "muir" "cnoc" "machaire" "cúl" ;
 
-ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) ;
+ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art)	(NEGATE *1 (Noun Gen) BARRIER (*) - Art)(NEGATE 0 ("cúl") LINK -1 ("ar"));
 
 COPY:msyn-no-len-after-prep (SUGGEST) EXCEPT (Len &msyn-no-len-after-prep) TARGET (&msyn-no-len-after-prep);
 ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len-after-prep));
 	## Tá fiche duine ar mheitheal.
 	## Tá mo chara ar mheisce.
+	#$ Ar muhui na beatha.
 
 
 #!! ### Rules for lenition
@@ -829,7 +830,9 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
 	(-1 ECLIPSE-PREP + (Prep Simp))
 	(0 ("<[bcdfgpsBCDFGPS].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+	(NOT 0 Ecl OR ECL-NON-ECL-N)
+	(NEGATE *1 (Noun Gen) BARRIER (*) - Art) 
+	(NEGATE 0 ("cúl") LINK -1 ("ar"));
 COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
 #ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
 
@@ -1509,13 +1512,15 @@ ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECLIPSE-PREP + (Prep Simp))
         (0 ("<[bcdfgpsBCDFGPS].*>"r))
-        (NEGATE 0 Ecl);
-COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+        (NEGATE 0 Ecl)
+        (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECLIPSE-PREP + (Prep Simp))
         (0 ("<[bcdfgpsBCDFGPS].*>"r))
-        (NEGATE 0 Ecl);
+        (NEGATE 0 Ecl)
+        (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
 
