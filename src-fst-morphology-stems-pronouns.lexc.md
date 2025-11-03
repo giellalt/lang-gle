@@ -1,4 +1,4 @@
-Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
+# Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
 Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
 E. Uí Dhonnchadha
 

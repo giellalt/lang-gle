@@ -1,6 +1,6 @@
-PARTICLES
+# PARTICLES
 E. Uí Dhonnchadha
-Preverbal
+- Preverbal
 Unique Membership classes
 -  **LEXICON Particles** 
 

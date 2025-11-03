@@ -1,6 +1,10 @@
 JUN 2016
-LATIN LEX (RIACORPAS 1)
+# LATIN LEX (RIACORPAS 1)
 AUG 2025 added +OLang/LAT for Giellalt integration
+
+**LEXICON Latinlex**
+vobis+OLang/LAT+Foreign+Latin:vobis #;
+nivus+OLang/LAT+Foreign+Latin:nivus #;
 
 * * *
 

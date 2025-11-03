@@ -1,4 +1,7 @@
+# Bardic - Classical Irish
+E. Uí Dhonnchadha
 
+**LEXICON Bardiclex**
 
 * * *
 

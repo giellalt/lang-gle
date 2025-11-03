@@ -1,4 +1,5 @@
 Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+#		PROPER NOUNS
 E. Uí Dhonnchadha 
 2003
 2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER

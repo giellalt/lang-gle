@@ -995,7 +995,12 @@ given the proper use of these flags.
 
 ## src-fst-morphology-stems-abbreviations.lexc.md 
 
-Abbreviations 
+## Abbreviations 
+
+**LEXICON Abbrev**
+
+Dochtúir+Abr+Sem/Title:Dr. #;
+Miss+Abr+Sem/Title:Ms. #;
 
 * * *
 
@@ -1005,7 +1010,35 @@ Abbreviations
 
 ## src-fst-morphology-stems-adjectives.lexc.md 
 
-
+## Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+(c)2001
+(1) New Irish Grammar by The Christian Brothers  
+(2) Réchúrsa Gramadaí, Brian Mac Giolla Phádraig
+(3) Graméir Gaeilge na mBráithre Críostaí
+(4) Nuachúrsa Gaeilge na mBráithre Críostaí
+(5) A Handbook of Irish Vol 2.An Outline of Modern Irish Grammar,
+Alfred Bammesberger
+(6) Ó Dónaill Irish-English Dictionary
+(7) Gléacht - Ó Dónaill Online Dictionary 
+Descriptive adjectives can be used in two ways (REF P59 NIG)
+a) predicatively - quailifies a noun/pronoun *indirectly* as a predicate 
+or part of a predicate
+E.G. Is BREÁ an lá é (It is a LOVELY day, lit. it is lovely that the day is (approx!)
+E.G. Tá mé TUIRSEACH (I am TIRED)
+E.G. Tá sé FUAR (It is COLD)
+E.G. Tá an fhuinneog GLAN (The window is CLEAN) !    Used in this way the base form IS NOT INFLECTED to agree with case/number/gender
+of the noun - except in a few cases ... see p 59 s4 NIG
+The base form (positive degree) is used
+b) attributively - qualifies a noun *directly*
+E.G. Tá an páiste ÓG ar scoil (The YOUNG child is a at school
+E.G. Níl pingin RUA agam (I haven't a RED penny)
+E.G. Chonaic mé an fhuinneog GHLAN (I saw the CLEAN window)
+Used in this form the adjective IS INFLECTED to agree with case/number/gender of the noun
+The adjective usually follows the noun though some forms can be prefixed
+to the noun e.g. SEANfhear (old man) LAGmhisneach ((in) low spirits),
+ARDeagalis (cathedral - lit. high church) 
+					L E X I C O N
+**LEXICON AdjA**
 
 SEE PREP/NUM etc dá	Adj3-1;	 ! do or de +
 
@@ -1023,7 +1056,19 @@ Have moved to Demonstrative Determiners
 
 ## src-fst-morphology-stems-adpositions.lexc.md 
 
-Prepositions: 
+## Prepositions: 
+Simple: le, ag, ar, etc.
+Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
+Emphatic Compound eg agamsa, uaimse, ...
+E. Uí Dhonnchadha
+
+- (1) New Irish Grammar by The Christian Brothers  
+- (2) Gramadach na Gaeilge agus Litríocht na Gaeilge - An Caighdeán Oifigiúil
+- (3) Foclóir Póca - An Gúm
+- (4) Nuachúrsa Gaeilge na mBráithre Críostaí
+- (5) Ó Dónaill Irish-English Dictionary
+
+**LEXICON Prepositions**
 
 SIMPLE PREPOSITIONS
 theses are not preps only copula or conj
@@ -1053,11 +1098,13 @@ COMPOUND PREPOSITIONS: PREP + NOUN
 
 ## src-fst-morphology-stems-adverbs.lexc.md 
 
-Adverbs
+## Adverbs
 - E. Uí Dhonnchadha
 - REMOVED FEB 2004: +Phr
 ADDED FEB 2004: +Temp 
 CHANGED +Gen to +Gn to avoid confusion with +Gen = genitive
+
+**LEXICON Adverb**
 
 word for word, i.e. literally (2019)
 
@@ -1075,6 +1122,16 @@ see PART-LEX.TXT (etc.) for following
 ## src-fst-morphology-stems-articles.lexc.md 
 
 ## Common Functional Words - Articles
+E. Uí Dhonnchadha
+(c)2001
+- (1) New Irish Grammar by The Christian Brothers  
+- (2) Réchúrsa Gramadaí, Brian Mac Giolla Phádraig
+- (3) Graméir Gaeilge na mBráithre Críostaí
+- (4) Nuachúrsa Gaeilge na mBráithre Críostaí
+- (5) A Handbook of Irish Vol 2.An Outline of Modern Irish Grammar,
+-     Alfred Bammesberger
+- (6) Ó Dónaill Irish-English Dictionary
+- (7) Gléacht - Ó Dónaill Online Dictionary 
 
 * * *
 
@@ -1084,7 +1141,10 @@ see PART-LEX.TXT (etc.) for following
 
 ## src-fst-morphology-stems-bardic.lexc.md 
 
+## Bardic - Classical Irish
+E. Uí Dhonnchadha
 
+**LEXICON Bardiclex**
 
 * * *
 
@@ -1094,9 +1154,9 @@ see PART-LEX.TXT (etc.) for following
 
 ## src-fst-morphology-stems-conjunctions.lexc.md 
 
-CONJUNCTIONS
+## CONJUNCTIONS
 E. Uí Dhonnchadha
-New Irish Grammar by The Christian Brothers, etc.
+- New Irish Grammar by The Christian Brothers, etc.
 removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
 e.g. go/gur a/ar nach/nár 
 and which often follow (or attach to) a conjunction
@@ -1106,7 +1166,6 @@ go mb'fhusa an obair ..., go dtógfadh sé
 e.g. má bhíonn, más
 some still have tense marking as they are combined forms
 e.g. sula, sular, murar etc.
-
 #### LEXICON Conjunctions
 
 gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded by conjs like nuair, cé - SHOULD BE REMOVED I THINK ???? NO NEED FOT CONJ AS WELL AS SUBORD COP AND SUBORD VERB PART ...
@@ -1141,6 +1200,8 @@ JULY 2013
 ENGLISH LEX & COMMUNICATORS (CHILDES term)
 AUG 2025 added +OLang/ENG for Giellalt integration
 
+**LEXICON Communicators-English**
+
 @dm discourse marker added to distinguish this from Irish so=seo=here
 
 as in Air France, Air India etc.
@@ -1153,13 +1214,23 @@ as in Air France, Air India etc.
 
 ## src-fst-morphology-stems-interjections.lexc.md 
 
-INTERJECTIONS
+## INTERJECTIONS
+& SPOKEN TAGS (Irish Only)
+For English Communicators see english-lex.txt
+EUD 2011
+FILLED PAUSES (CHILDES term)
+COMMUNICATORS (CHILDES term)
+SIMPLE EVENTS (CHILDES term)
+Unknown/unintelligible/inaudible
 
+**LEXICON Interjections**
 Interjections
 
 FILLED PAUSES
+**LEXICON Fillers**
 Fillers in speech
 
+**LEXICON Communicators**
 Communicators in speech
 
 Events in speech transcripts, e.g. cough, sneeze etc.
@@ -1175,8 +1246,12 @@ Anonymisation in transcripts/exam scripts
 ## src-fst-morphology-stems-latin.lexc.md 
 
 JUN 2016
-LATIN LEX (RIACORPAS 1)
+## LATIN LEX (RIACORPAS 1)
 AUG 2025 added +OLang/LAT for Giellalt integration
+
+**LEXICON Latinlex**
+vobis+OLang/LAT+Foreign+Latin:vobis #;
+nivus+OLang/LAT+Foreign+Latin:nivus #;
 
 * * *
 
@@ -1379,9 +1454,9 @@ Number  Operators
 
 ## src-fst-morphology-stems-particles.lexc.md 
 
-PARTICLES
+## PARTICLES
 E. Uí Dhonnchadha
-Preverbal
+- Preverbal
 Unique Membership classes
 -  **LEXICON Particles** 
 
@@ -1413,7 +1488,7 @@ Reflexive (or emphatic) 'féin' moved from pronouns file
 
 ## src-fst-morphology-stems-pronouns.lexc.md 
 
-Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
+## Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
 Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
 E. Uí Dhonnchadha
 
@@ -1464,6 +1539,7 @@ PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 ## src-fst-morphology-stems-propernouns.lexc.md 
 
 Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+##		PROPER NOUNS
 E. Uí Dhonnchadha 
 2003
 2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER
@@ -1496,7 +1572,7 @@ Female
 
 ## src-fst-morphology-stems-punctuations.lexc.md 
 
-Punctuation
+## Punctuation
 E. Uí Dhonnchadha
 
 May 2004 : +Quo instead of +St & +End for quotation marks
@@ -1519,15 +1595,10 @@ Feb 2023 : +Curr for currency symbols
 
 ## src-fst-morphology-stems-tags.lexc.md 
 
-XML Tags
+## XML Tags
 E Uí Dhonnchadha
 
-Multichar_Symbols
-
-+XMLTag		! 
-
-LEXICON Root
-	XMLTags;
+**LEXICON XMLTags**
 
 * * *
 
@@ -1537,16 +1608,17 @@ LEXICON Root
 
 ## src-fst-morphology-stems-tobar.lexc.md 
 
+## Tobar
 Tobar - ac Grianna
-E. Uí Dhonnchadha
+- E. Uí Dhonnchadha
 Jan 2009
 
--  **LEXICON Tobar** 
+**LEXICON Tobar** 
 
--  **abair+Verb+VTI+Vow+PastImp:adeireadh #;** 
+-  abair+Verb+VTI+Vow+PastImp:adeireadh #; 
 
--  **is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea #;**  is ea
--  **is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard #;** is éard
+-  is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea #;  is ea
+-  is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard #; is éard
 
 PLACENAMES
 
@@ -1558,25 +1630,45 @@ PLACENAMES
 
 ## src-fst-morphology-stems-verbalnouns.lexc.md 
 
-Ainm Briathra & Aidiacht Briathra
+## Verbal nouns
+Ainm Briathra & Aidiacht Briathra - 
 Verbal Nouns & Verbal Adjectives
-E Uí Dhonnchadha
+- E Uí Dhonnchadha
 2003 
-Nov 2005 version 3 
+- Nov 2005 version 3 
 Updated May 2008
-verbal nouns have vn lemma rather than verb lemma
+- verbal nouns have vn lemma rather than verb lemma
 verbal noun gen is same as verbal adj except for new vns ending in -áil
 and some other e.g. úsáide, úsáidte 
 CW manually checked Foclóir Póca entries and added FGB entries
-Updated Dec 2018: reorganised and verbal nouns have verb lemma again
+- Updated Dec 2018: reorganised and verbal nouns have verb lemma again
 
 -  **LEXICON VerbalNounsV** 
--  **ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT;** 
--  **achainigh+Verbal+Noun+VTI:achainí VN-INIT;** 
+-  ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT;
+-  achainigh+Verbal+Noun+VTI:achainí VN-INIT;
+-  achair+Verbal+Noun+VTI:achairt VN-INIT;
+-  achoimrigh+Verbal+Noun+VT:achoimriú VN-INIT;
+-  achtáil+Verbal+Noun+VT:achtáil VN-INIT;
+-  achtaigh+Verbal+Noun+VT:achtú VN-INIT;
+-  aclaigh+Verbal+Noun+VTI:aclú VN-INIT;
+-  adamhaigh+Verbal+Noun+VT:adamhú VN-INIT;
+-  adhain+Verbal+Noun+VTI:adhaint VN-INIT;
+etc... appro 7400 stems
 
 NOTE: 'druideadh' is commented out since it was not found as a verbal noun
 in the corpus, yet chances are that it would get mixed up with 'druideadh'
 as independed form of 'druid', i.e. 'ó druideadh an scoil'
+
+INCLUDED HERE AS THEY ARE NOT SHARED WITH ANY OTHER POS
+**LEXICON VN-INIT**
+- #;
+- +Len:^IM^Sé #;
+- +Ecl:^IM^Urú #;
+- +hPref:^IM^hv #;
+
+**LEXICON VA-INIT**
+- #;
+- +Len:^IM^Sé #;
 
 * * *
 
@@ -1586,10 +1678,11 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 
 ## src-fst-morphology-stems-verbs.lexc.md 
 
+## Verb stems
 Briathra Gaeilge - Irregular
 E. Uí Dhonnchadha
 14/10/96
-(1) New Irish Grammar by The Christian Brothers  
+- (1) New Irish Grammar by The Christian Brothers  
 - (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
 - (3) Foclóir Póca - An Gúm
 - (4) Nuachúrsa Gaeilge na mBráithre Críostaí
@@ -1631,9 +1724,9 @@ V1-SL-LC:	ends in áil
 ```
 -  **LEXICON VerbsC1A** 
 
--  **mol+Verb+VTI:mol V1-BR;** 
--  **glac+Verb+VT:glac V1-BR;**  ta -. tha (glactha)
--  **lúb+Verb+VTI:lúb V1-BR;** 
+-  mol+Verb+VTI:mol V1-BR; 
+-  glac+Verb+VT:glac V1-BR;  ta -. tha (glactha)
+-  lúb+Verb+VTI:lúb V1-BR; 
 
 Second Conjugation Verb Stems
 

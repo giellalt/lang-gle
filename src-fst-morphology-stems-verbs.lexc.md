@@ -1,7 +1,8 @@
+# Verb stems
 Briathra Gaeilge - Irregular
 E. Uí Dhonnchadha
 14/10/96
-(1) New Irish Grammar by The Christian Brothers  
+- (1) New Irish Grammar by The Christian Brothers  
 - (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
 - (3) Foclóir Póca - An Gúm
 - (4) Nuachúrsa Gaeilge na mBráithre Críostaí
@@ -43,9 +44,9 @@ V1-SL-LC:	ends in áil
 ```
 -  **LEXICON VerbsC1A** 
 
--  **mol+Verb+VTI:mol V1-BR;** 
--  **glac+Verb+VT:glac V1-BR;**  ta -. tha (glactha)
--  **lúb+Verb+VTI:lúb V1-BR;** 
+-  mol+Verb+VTI:mol V1-BR; 
+-  glac+Verb+VT:glac V1-BR;  ta -. tha (glactha)
+-  lúb+Verb+VTI:lúb V1-BR; 
 
 Second Conjugation Verb Stems
 

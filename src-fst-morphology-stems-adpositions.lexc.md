@@ -1,4 +1,16 @@
-Prepositions: 
+# Prepositions: 
+Simple: le, ag, ar, etc.
+Compound (Na Forainmneacha Réamhfhoclacha) Prepositional Pronouns (agam, agat...)
+Emphatic Compound eg agamsa, uaimse, ...
+E. Uí Dhonnchadha
+
+- (1) New Irish Grammar by The Christian Brothers  
+- (2) Gramadach na Gaeilge agus Litríocht na Gaeilge - An Caighdeán Oifigiúil
+- (3) Foclóir Póca - An Gúm
+- (4) Nuachúrsa Gaeilge na mBráithre Críostaí
+- (5) Ó Dónaill Irish-English Dictionary
+
+**LEXICON Prepositions**
 
 SIMPLE PREPOSITIONS
 theses are not preps only copula or conj

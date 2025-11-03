@@ -1,12 +1,7 @@
-XML Tags
+# XML Tags
 E Uí Dhonnchadha
 
-Multichar_Symbols
-
-+XMLTag		! 
-
-LEXICON Root
-	XMLTags;
+**LEXICON XMLTags**
 
 * * *
 
