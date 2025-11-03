@@ -1,24 +1,24 @@
 !****************************************************************************
 !! Punctuation
 !
-!  E. Uí Dhonnchadha
-! 
-! May 2004 : +Quo instead of +St & +End for quotation marks
-! Feb 2023 : +Curr for currency symbols
+!!  E. Uí Dhonnchadha
+!! 
+!! May 2004 : +Quo instead of +St & +End for quotation marks
+!! Feb 2023 : +Curr for currency symbols
 !****************************************************************************
 
 
 !LEXICON Root
 !	Punctuation;
 
-LEXICON Punctuation_ga
-%.	Final;
-<%!>	Final;
-%.%.%.	Final;
-%.%.	Final;
-%?	FinalQ;
+LEXICON Punctuation_ga  !!= **@CODE@** 
+%.	Final; !!= **@CODE@** 
+<%!>	Final; !!= **@CODE@** 
+%.%.%.	Final; !!= **@CODE@** 
+%.%.	Final; !!= **@CODE@** 
+%?	FinalQ; !!= **@CODE@** 
 
-%"	Quote;
+%"	Quote; !!= **@CODE@** 
 %"	Quote;
 %`	Quote;
 %'%'	Quote;

@@ -1,131 +1,131 @@
 !**************************************************************************
-! Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+!! # Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 !**************************************************************************
-! E. Uí Dhonnchadha 
-! January 2001 
-! April 2003:  ^IM general initial mutation flag
+!! E. Uí Dhonnchadha 
+!! January 2001 
+!! April 2003:  ^IM general initial mutation flag
 !
-! REFERENCES 
-! (1) New Irish Grammar by The Christian Brothers   
-! (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil 
-! (3) Foclóir Póca - An Gúm 
-! (4) Nuachúrsa Gaeilge na mBráithre Críostaí 
-! (5) Gléacht & Ó Dónaill Irish-English Dictionary 
+!! REFERENCES 
+!! - (1) New Irish Grammar by The Christian Brothers   
+!! - (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil 
+!! - (3) Foclóir Póca - An Gúm 
+!! - (4) Nuachúrsa Gaeilge na mBráithre Críostaí 
+!! - (5) Gléacht & Ó Dónaill Irish-English Dictionary 
 ! 
-! GENERAL NOTES
-! 0.	Alphabet : a b c d e f g h i l m n o p r s t u + á é í ó ú.
-!		 : j k q v w x y z originally were not used though some of them 
-!		 : now exist in loan words (jíp=jeep, quinín=quinine, veilbhit=
-!		 : velvet, xileafón=xylophone, zú=zoo)  
-! 1.	There are three principal cases : Nominative, Genitive and Vocative
-! 2.	Nouns are inflected for number, gender and case. They can be inflected at 
-!	both start and the end of the word depending on whether the noun is:
-!	- Masculine or Feminine
-!	- has Broad (aouáóú)or Slender vowels (ieíé)
-!	- has One syllable or More than one syllable
-!	- has Long (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr]) 
-!	  or Short vowels (aeiou) (this influences syncopation)
-!	- is preceeded by an article or not (or posessive pronouns etc.)
-! 2.1	Gender.
-!	There are standard differences in the handling of nouns (in the singular) which 
-!	start with a vowel, an "s" or another consonant, depending on whether they are
-!	masculine or feminine.
-!	- In the Nominative singular:
-! 	After the definite article "an" 
-!	(a) Feminine nouns will have "h" inserted after the initial consonant
-!	    if possible - not all consonants are suitable. (^Sé Séimhiú)
-!           In the case of an initial "s", a "t" will be placed before it 
-!	    rather than "h" after it. (^ts)
-!	    A word starting wil a vowel will be unchanged.
-! 	(b) Masculine nouns will have "t-" inserted before an initial vowel.
-!	    (^tv)
-!	    All other words will be unchanged.
-!	- In the Genitive Singular ....:
-!		an/na etc...
-!	- In the Vocative singular  ....
-! 2.2	Vowel Harmony must be maintained within words ie a word must be Broad or Slender 
-!	aouáóú are broad vowels; ieíé are slender vowels
-! 3.	Number.
-!	Nouns are traditionally divided into 5 grammatical classes called declensions,
-!	which are based on the way in which the Genitive Singular is formed:
-! 	1st. Declension - All Masculine - nouns all end in broad consonant
-!		Gen. Sg : word end is made slender
-!				  or -each/-ach is converted to -í/-aí
-! 	2nd. Declension - All Feminine -  nouns end in broad or slender consonant
-!		Gen. Sg : word end is made slender (if necessary) and an "e" is appended
-!				  or -each/-ach is converted to -í/-aí
-! 	3rd. Declension - Feminine & Masculine - nouns end in a broad or slender consonant.
-!		Gen. Sg : word end is made broad (if necessary) and an "a" is appended
-! 	4th. Declension - Feminine & Masculine - all end in a vowel or "ín"
-!		Gen. Sg : no change
-!	5th. Declension - Feminine & few Masc. - all end in -il, -in, -ir and -is? or a vowel
-!		Gen. Sg : word ends in a broad consonant : Make broad if necessary
-!				  and append "n" or "d" if root ends in a vowel.
-!				  If the word has more than one syllable and the last 
-!				  syllable is unstressed then the unstressed vowel is 
-!				  removed (syncopation).
-!
-!	Plural:
-!	Initial Mutations : Nominative plural - if vowel then prefix "h"
-!		 Gen plural - if preceeded by article (na) then eclipse (prefix "urú")
-!	
-!	Final Mutations : 
-!	Within each of the five declensions there are a variety of ways of performing
-!	the inflections.
-!	eg.	Add a syllable or letter to the base form, 
-!		or change the vowels in the last syllable.
-!		In a few cases there are also consonant changes. (^Ath Athru)
-!
-!
-!	Note: I have maintained these five grammatical categories in this lexicon 
-!	in order to  re-use information contained in dictionaries and grammar books 
-!	and particularly dictionaries in electronic format.
+!! GENERAL NOTES
+!! 0.	Alphabet : a b c d e f g h i l m n o p r s t u + á é í ó ú.
+!!		 : j k q v w x y z originally were not used though some of them 
+!!		 : now exist in loan words (jíp=jeep, quinín=quinine, veilbhit=
+!!		 : velvet, xileafón=xylophone, zú=zoo)  
+!! 1.	There are three principal cases : Nominative, Genitive and Vocative
+!! 2.	Nouns are inflected for number, gender and case. They can be inflected at 
+!!	both start and the end of the word depending on whether the noun is:
+!!	- Masculine or Feminine
+!!	- has Broad (aouáóú)or Slender vowels (ieíé)
+!!	- has One syllable or More than one syllable
+!!	- has Long (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr]) 
+!!	  or Short vowels (aeiou) (this influences syncopation)
+!!	- is preceeded by an article or not (or posessive pronouns etc.)
+!! 2.1	Gender.
+!!	There are standard differences in the handling of nouns (in the singular) which 
+!!	start with a vowel, an "s" or another consonant, depending on whether they are
+!!	masculine or feminine.
+!!	- In the Nominative singular:
+!! 	After the definite article "an" 
+!!	(a) Feminine nouns will have "h" inserted after the initial consonant
+!!	    if possible - not all consonants are suitable. (^Sé Séimhiú)
+!!           In the case of an initial "s", a "t" will be placed before it 
+!!	    rather than "h" after it. (^ts)
+!!	    A word starting wil a vowel will be unchanged.
+!! 	(b) Masculine nouns will have "t-" inserted before an initial vowel.
+!!	    (^tv)
+!!	    All other words will be unchanged.
+!!	- In the Genitive Singular ....:
+!!		an/na etc...
+!!	- In the Vocative singular  ....
+!! 2.2	Vowel Harmony must be maintained within words ie a word must be Broad or Slender 
+!!	aouáóú are broad vowels; ieíé are slender vowels
+!! 3.	Number.
+!!	Nouns are traditionally divided into 5 grammatical classes called declensions,
+!!	which are based on the way in which the Genitive Singular is formed:
+!! 	1st. Declension - All Masculine - nouns all end in broad consonant
+!!		Gen. Sg : word end is made slender
+!!				  or -each/-ach is converted to -í/-aí
+!! 	2nd. Declension - All Feminine -  nouns end in broad or slender consonant
+!!		Gen. Sg : word end is made slender (if necessary) and an "e" is appended
+!!				  or -each/-ach is converted to -í/-aí
+!! 	3rd. Declension - Feminine & Masculine - nouns end in a broad or slender consonant.
+!!		Gen. Sg : word end is made broad (if necessary) and an "a" is appended
+!! 	4th. Declension - Feminine & Masculine - all end in a vowel or "ín"
+!!		Gen. Sg : no change
+!!	5th. Declension - Feminine & few Masc. - all end in -il, -in, -ir and -is? or a vowel
+!!		Gen. Sg : word ends in a broad consonant : Make broad if necessary
+!!				  and append "n" or "d" if root ends in a vowel.
+!!				  If the word has more than one syllable and the last 
+!!				  syllable is unstressed then the unstressed vowel is 
+!!				  removed (syncopation).
+!!
+!!	Plural:
+!!	Initial Mutations : Nominative plural - if vowel then prefix "h"
+!!		 Gen plural - if preceeded by article (na) then eclipse (prefix "urú")
+!!	
+!!	Final Mutations : 
+!!	Within each of the five declensions there are a variety of ways of performing
+!!	the inflections.
+!!	eg.	Add a syllable or letter to the base form, 
+!!		or change the vowels in the last syllable.
+!!		In a few cases there are also consonant changes. (^Ath Athru)
+!!
+!!
+!!	Note: I have maintained these five grammatical categories in this lexicon 
+!!	in order to  re-use information contained in dictionaries and grammar books 
+!!	and particularly dictionaries in electronic format.
 !**************************************************************************
-LEXICON Nouns 
+LEXICON Nouns !!= **@CODE@** 
 !**************************************************************************
-!					1st DECLENSION 
+!! ##					1st DECLENSION 
 !************************************************************************** 
-!	ALL MASCULINE NOUNS 
+!!	ALL MASCULINE NOUNS 
 !************************************************************************** 
-!	NOMINATIVE SINGULAR:	all end in a broad consonant
-!	GENITIVE SINGULAR:		FORMED BY SLENDERISING (ATTENUATION)
-!						or -each/-ach is converted to -í/-aí
-!	VOCATIVE SINGULAR:		same as genitive sg. with a few exceptions
+!!	NOMINATIVE SINGULAR:	all end in a broad consonant
+!!	GENITIVE SINGULAR:		FORMED BY SLENDERISING (ATTENUATION)
+!!						or -each/-ach is converted to -í/-aí
+!!	VOCATIVE SINGULAR:		same as genitive sg. with a few exceptions
 !************************************************************************** 
-!	PLURALS:	10 MASC. CATEGORIES: 2 WEAK AND 8 STRONG
-!			weak plural = > Nom, Gen & Voc plurals are not the same
+!!	PLURALS:	10 MASC. CATEGORIES: 2 WEAK AND 8 STRONG
+!!			weak plural = > Nom, Gen & Voc plurals are not the same
 !**************************************************************************  
 ! 
-! (1) WEAK PLURALS 
+!! (1) WEAK PLURALS 
 ! 	
-!	Nom Pl : Caolú (Slenderise)
-!	Gen Pl : Tada (No change)
-!	Voc Pl : Append "a"
-!
-!
-!	Sg:				 			Pl: 
-! Nom												
-! 	an cat (the cat)				na cait	(the cats)		}
-!	an t-éan (the bird)				na héin	(the birds)		} slenderised	
-! 	an suipéar (the supper)			na suipéir (the suppers)}
-!
-! Gen
-!	bia an chait (the cat's food)	bia na gcat (the cats' food)	
-! 	ceol an éin (the birds's song)	ceol na n-éan (the birds' song)	
-! 	am an suipéir (the supper's time) an na suipéar (the suppers' time)
-!					(the suppertime)				(the suppertimes)
-! Voc
-!	a chait (O Cat)					a chata (O Cats)
-!	a éin (O Bird)					a éana (O Birds)
-!	a suipéir (O Supper)			a suipéara (O Suppers)
-! 	
+!!	Nom Pl : Caolú (Slenderise)
+!!	Gen Pl : Tada (No change)
+!!	Voc Pl : Append "a"
+!!
+!!
+!!	Sg:				 			Pl: 
+!! Nom												
+!! 	an cat (the cat)				na cait	(the cats)		}
+!!	an t-éan (the bird)				na héin	(the birds)		} slenderised	
+!! 	an suipéar (the supper)			na suipéir (the suppers)}
+!!
+!! Gen
+!!	bia an chait (the cat's food)	bia na gcat (the cats' food)	
+!! 	ceol an éin (the birds's song)	ceol na n-éan (the birds' song)	
+!! 	am an suipéir (the supper's time) an na suipéar (the suppers' time)
+!!					(the suppertime)				(the suppertimes)
+!! Voc
+!!	a chait (O Cat)					a chata (O Cats)
+!!	a éin (O Bird)					a éana (O Birds)
+!!	a suipéir (O Supper)			a suipéara (O Suppers)
+!! 	
 !
 
-airgeadas	Nm1-SINGULAR;
-áireamh		Nm1-SINGULAR;
-amhras		Nm1-SINGULAR;
-aonar		Nm1-SINGULAR;
-ár		Nm1-SINGULAR;
+airgeadas	Nm1-SINGULAR; !!= **@CODE@** 
+áireamh		Nm1-SINGULAR; !!= **@CODE@** 
+amhras		Nm1-SINGULAR; !!= **@CODE@** 
+aonar		Nm1-SINGULAR; !!= **@CODE@** 
+ár		Nm1-SINGULAR; !! etc. 
 brath		Nm1-SINGULAR;
 caitheamh	Nm1-SINGULAR;
 ceannas		Nm1-SINGULAR; ! authority, headship
@@ -258,53 +258,53 @@ uachtarán	Nm1-1;	!
 údarás		Nm1-1;	!
 
 !--------------------------------------------------------------------------
-! (2) WEAK PLURALS
-!	Nom Pl : Append "a"		(PL-)
-!	Gen Pl : No change		(PL-)
-!	Voc Pl : Append "a"		(PL-)
-!
-! EXAMPLE:
-!	Sg:				 			Pl:
-! Nom	
-!	an cleas(the trick)				na cleasa (the tricks)
-!	an t-úll (the apple)			na húlla (the apples)			
-!	an sábh (the saw)????
-!
-! Gen	
-!	fear an chlis (the trick's man)	fear na gcleas (the tricks' man)
-!	croí an úill (the apple core)	croí na n-úll (the apples' core)
-!
-!
-! Voc	
-!	a Chleas (O trick)				a Chleasa (O tricks)
-!	a úll 							a úlla
-! 	
-!
+!! (2) WEAK PLURALS
+!!	Nom Pl : Append "a"		(PL-)
+!!	Gen Pl : No change		(PL-)
+!!	Voc Pl : Append "a"		(PL-)
+!!
+!! EXAMPLE:
+!!	Sg:				 			Pl:
+!! Nom	
+!!	an cleas(the trick)				na cleasa (the tricks)
+!!	an t-úll (the apple)			na húlla (the apples)			
+!!	an sábh (the saw)????
+!!
+!! Gen	
+!!	fear an chlis (the trick's man)	fear na gcleas (the tricks' man)
+!!	croí an úill (the apple core)	croí na n-úll (the apples' core)
+!!
+!!
+!! Voc	
+!!	a Chleas (O trick)				a Chleasa (O tricks)
+!!	a úll 							a úlla
+!! 	
+!!
 
-bruas		Nm1-2;	! (thick) lip 
-cág		Nm1-2;	! jackdaw 
-ceart		Nm1-2;	! right
-cor		Nm1-2;	!
+bruas		Nm1-2;	 !!= **@CODE@**  (thick) lip 
+cág		Nm1-2;	!!= **@CODE@**  jackdaw 
+ceart		Nm1-2;	 !!= **@CODE@**  right
+cor		Nm1-2;	 !!= **@CODE@** 
 !dearg		Nm1-2;	! GS ea - > i BUT deirg not dirg SEE N-LEX-IRREG.TXT
-fionn		Nm1-2;	! fair, white
-gnáth		Nm1-2;	!
-íol		Nm1-2;	! idol 
-más		Nm1-2;	!
+fionn		Nm1-2;	 !!= **@CODE@**  fair, white
+gnáth		Nm1-2;	 !!= **@CODE@** 
+íol		Nm1-2;	 !!= **@CODE@**  idol 
+más		Nm1-2;	! etc.
 óg		Nm1-2;	!
 slán		Nm1-2;
 úll		Nm1-2;	! apple
 
 !--------------------------------------------------------------------------
-! (3) STRONG PLURALS - ADD "TA"
-!	ONE SYLLABLE
-! 	LONG VOWEL (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr])
-!	OR DIPHTHONG (ua, ia)
+!! (3) STRONG PLURALS - ADD "TA"
+!!	ONE SYLLABLE
+!! 	LONG VOWEL (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr])
+!!	OR DIPHTHONG (ua, ia)
 
 ! EXAMPLE
 
-ál		Nm1-3;	! clutch, brood
-aon		Nm1-3;	! one, ace 
-céad		Nm1-3;	!
+ál		Nm1-3;	 !!= **@CODE@**  clutch, brood
+aon		Nm1-3;	 !!= **@CODE@**  one, ace 
+céad		Nm1-3;	!! etc.
 ceol		Nm1-3;	!
 dán		Nm1-3;	!
 dún		Nm1-3;	!
@@ -318,21 +318,21 @@ seol		Nm1-3;	! sail
 síol		Nm1-3;	! seed
 
 !--------------------------------------------------------------------------
-! (4) STRONG PLURALS - ADD "THA"
+!! (4) STRONG PLURALS - ADD "THA"
 !
-glór		Nm1-4;	! voice
-múr		Nm1-4;	! wall, shower
+glór		Nm1-4;	 !!= **@CODE@**  voice
+múr		Nm1-4;	 !!= **@CODE@**  wall, shower
 scór		Nm1-4;	! twenty
 stór		Nm1-4;	! store, treasure 	** irreg voc.sg. - see xfst-fix.script
 
 !--------------------------------------------------------------------------
-! (5) STRONG PLURALS - ADD (A)Í
+!! (5) STRONG PLURALS - ADD (A)Í
 !			   AND ENDING CHANGES 
 
-bealach		Nm1-5;	! way, road
-cogadh		Nm1-5;	!
-Domhnach	Nm1-5;	! Sunday
-deireadh	Nm1-5;	!
+bealach		Nm1-5;	 !!= **@CODE@**  way, road
+cogadh		Nm1-5;	 !!= **@CODE@** 
+Domhnach	Nm1-5;	 !!= **@CODE@**  Sunday
+deireadh	Nm1-5;	!! etc
 éadach		Nm1-5;	! cloth
 geimhreadh	Nm1-5;	! winter
 leanbh		Nm1-5;	! child	
@@ -344,9 +344,9 @@ toradh		Nm1-5;	! fruit, result 	** irreg pl - see xfst-fix.script
 
 
 !--------------------------------------------------------------------------
-! (6) STRONG PLURALS - ADD  "ANNA"
+!! (6) STRONG PLURALS - ADD  "ANNA"
 
-bás		Nm1-6;	!
+bás		Nm1-6;	 !!= **@CODE@** 
 bun		Nm1-6;	! 
 cás		Nm1-6;	! 
 carr		Nm1-6;	! car
@@ -356,21 +356,21 @@ spás		Nm1-6;	! space
 taobh		Nm1-6;	!
 
 !--------------------------------------------------------------------------
-! (7) STRONG PLURALS - ADD "Í"
+!! (7) STRONG PLURALS - ADD "Í"
 
 
 cúram		Nm1-7;	! care, responsibility   ???????????????check this out
 réamhcúram	Nm1-7;	! precaution
 
 !--------------------------------------------------------------------------
-! (8) STRONG PLURALS - SYNCOPATE + ADD "ANNA"
+!! (8) STRONG PLURALS - SYNCOPATE + ADD "ANNA"
 !
 ! syncopation : "a" from last syllable will be removed
 praghas		Nm1-8;	! price
 saghas		Nm1-8;	! type, kind	
 
 !--------------------------------------------------------------------------
-! (9) STRONG PLURALS - SYNCOPATE, ATTENUATE + ADD "E"
+!! (9) STRONG PLURALS - SYNCOPATE, ATTENUATE + ADD "E"
 
 bóthar		Nm1-9;	! road
 doras		Nm1-9;	! door
@@ -378,7 +378,7 @@ solas 		Nm1-9;	! light
 uasal		Nm1-9;	! noble person
 
 !--------------------------------------------------------------------------
-! (10) STRONG PLURALS - SYNCOPATE + ADD "EACHA"
+!! (10) STRONG PLURALS - SYNCOPATE + ADD "EACHA"
 
 tobar		Nm1-10;	! well
 
@@ -388,48 +388,48 @@ tobar		Nm1-10;	! well
 cineál		Nm1-11;	! type, kind, species (NOT SYNCOPATED)
 leagan		Nm1-11;	! version
 !************************************************************************** 
-!					2nd DECLENSION 
+!!	##				2nd DECLENSION 
 !************************************************************************** 
-!	ALL FEMININE NOUNS 
-!	except 3 which are masc.: im (butter) sliabh (mountain) teach (house)
+!!	ALL FEMININE NOUNS 
+!!	except 3 which are masc.: im (butter) sliabh (mountain) teach (house)
 !************************************************************************** 
-!	NOMINATIVE SINGULAR:	all end in a broad/slender consonant
-!
-!	GENITIVE SINGULAR:		FORMED BY SLENDERISING (IF NECESSARY) + ADDING "E"
-!						or -each/-ach is converted to -í/-aí
-!
-!	VOCATIVE SINGULAR:		same as nominative sg. 
+!!	NOMINATIVE SINGULAR:	all end in a broad/slender consonant
+!!
+!!	GENITIVE SINGULAR:		FORMED BY SLENDERISING (IF NECESSARY) + ADDING "E"
+!!						or -each/-ach is converted to -í/-aí
+!!
+!!	VOCATIVE SINGULAR:		same as nominative sg. 
 !************************************************************************** 
 !
-!	PLURALS:	11 FEM. CATEGORIES:	4 WEAK AND 7 STRONG
-! 			1 MASC.
-!			
-! 		list the categories here ......
+!!	PLURALS:	11 FEM. CATEGORIES:	4 WEAK AND 7 STRONG
+!! 			1 MASC.
+!!			
+!! 		list the categories here ......
 !**************************************************************************  
 
 
-baint		Nf2-SINGULAR;
-réir		Nf2-SINGULAR;
-spéis		Nf2-SINGULAR;
-teilifís	Nf2-SINGULAR;
-titim		Nf2-SINGULAR;
+baint		Nf2-SINGULAR;   !!= **@CODE@** 
+réir		Nf2-SINGULAR; !!= **@CODE@** 
+spéis		Nf2-SINGULAR;  !!= **@CODE@** 
+teilifís	Nf2-SINGULAR;  !!= **@CODE@** 
+titim		Nf2-SINGULAR;  !!= **@CODE@** 
 
 
 !--------------------------------------------------------------------------
-! (1) WEAK PLURALS (no longer used)
+!! (1) WEAK PLURALS (no longer used)
 !
 !--------------------------------------------------------------------------
 !
-! (2) WEAK PLURALS (ie Nom, Gen & Voc plurals are not the same)
-! ONE SYLLABLE - Broad/Slender
+!! (2) WEAK PLURALS (ie Nom, Gen & Voc plurals are not the same)
+!! ONE SYLLABLE - Broad/Slender
 ! 	
-!	Nom Pl : Append "a"			(PL-3)
-!	Gen Pl : Broaden if nec.	(PL-2)
-!	Voc Pl : Append "a"			(PL-3)
+!!	- Nom Pl : Append "a"			(PL-3)
+!!	- Gen Pl : Broaden if nec.	(PL-2)
+!!	- Voc Pl : Append "a"			(PL-3)
 !
-binn		Nf2-2;	! peak		
-cliath		Nf2-2;	!
-deoir		Nf2-2;	! tear
+binn		Nf2-2;	 !!= **@CODE@**  peak		
+cliath		Nf2-2;	 !!= **@CODE@** 
+deoir		Nf2-2;	 !!= **@CODE@**  tear
 
 ! FROM 2-1
 adharc		Nf2-2;	! horn
@@ -443,11 +443,11 @@ long		Nf2-2;	! ship
 
 
 !--------------------------------------------------------------------------
-! (3) WEAK PLURALS 
+!! (3) WEAK PLURALS 
 ! 	
-!	Nom Pl : Slenderise if nec. + add "e"	(PL-8)
-!	Gen Pl : Broaden						(PL-2)
-!	Voc Pl : Slenderise if nec. + add "e"	(PL-8)
+!!	- Nom Pl : Slenderise if nec. + add "e"	(PL-8)
+!!	- Gen Pl : Broaden						(PL-2)
+!!	- Voc Pl : Slenderise if nec. + add "e"	(PL-8)
 !
 dúil		Nf2-3;	! desire
 glúin		Nf2-3;	! knee or generation
@@ -455,13 +455,13 @@ súil		Nf2-3;	! eye
 
 
 !--------------------------------------------------------------------------
-! (4) WEAK PLURALS 
-! 	MORE THAN ONE SYLLABLE, 
-!	ENDS IN (E)ACH WHICH CHANGES TO (A)Í IN GEN. SG. (USES ^ATH TAG & D4)
-! 	
-!	Nom Pl : Append "a"		(PL-3)
-!	Gen Pl : No change		(PL-0)
-!	Voc Pl : Append "a"		(PL-3)
+!! - (4) WEAK PLURALS 
+!! - 	MORE THAN ONE SYLLABLE, 
+!! - 	ENDS IN (E)ACH WHICH CHANGES TO (A)Í IN GEN. SG. (USES ^ATH TAG & D4)
+!! - 	
+!! - 	Nom Pl : Append "a"		(PL-3)
+!! - 	Gen Pl : No change		(PL-0)
+!! - 	Voc Pl : Append "a"		(PL-3)
 !
 
 
@@ -474,7 +474,7 @@ girseach	Nf2-4;	! child
 !
 !--------------------------------------------------------------------------
 !
-! (5) STRONG PLURALS - ADD "TE"
+!! (5) STRONG PLURALS - ADD "TE"
 
 coill		Nf2-5;	! wood
 scrín		Nf2-5;	! shrine
@@ -512,8 +512,8 @@ suim		Nf2-6;	!
 aip		Nf2-6;	! 04052019
 
 !--------------------------------------------------------------------------
-! (7) STRONG PLURALS - ADD "Í"
-!  more than one syllable - SLENDER
+!! (7) STRONG PLURALS - ADD "Í"
+!!  more than one syllable - SLENDER
 
 aimsir		Nf2-7;	! weather	
 beairic		Nf2-7;	! barrack
@@ -533,8 +533,8 @@ tuairisc	Nf2-7;	! an account
 úsáid		Nf2-7;	!
 
 !--------------------------------------------------------------------------
-! ! BROAD & SLENDER
-! (8) STRONG PLURALS - ADD -(E)ACHA
+!! BROAD & SLENDER
+!! (8) STRONG PLURALS - ADD -(E)ACHA
 
 
 carraig		Nf2-8;	! a rock			! 
@@ -551,8 +551,8 @@ splanc		Nf2-8;	! spark
 stoirm		Nf2-8;	! storm
 ubh		Nf2-8;	! egg	
 !--------------------------------------------------------------------------
-!) STRONG PLURALS - ADD "THA"
-! 
+!! ) STRONG PLURALS - ADD "THA"
+!! 
 
 aoir		Nf2-9;	! satire
 gáir		Nf2-9;	! a shout
@@ -581,7 +581,7 @@ uair		Nf2-11;	! hour, time
 toisc		Nf2-12;	! purpose, etc..
 
 !--------------------------------------------------------------------------
-! 3 Masculine words in 2nd Declension 
+!!  3 Masculine words in 2nd Declension 
 
 !=im		Nm2-1;	! butter		! no pl. see xfst-remove.script
 im		Nm2-SINGULAR;	! butter	! no pl. 
@@ -589,29 +589,29 @@ sliabh		Nm2-1; 	! mountain
 
 
 !************************************************************************** 
-!					3rd DECLENSION 
+!! ##					3rd DECLENSION 
 !************************************************************************** 
-!	BOTH FEMININE & MASCULINE NOUNS 
+!!	BOTH FEMININE & MASCULINE NOUNS 
 !************************************************************************** 
-!	NOMINATIVE SINGULAR:	all end in ?????
-!
-!	GENITIVE SINGULAR:		FORMED BY BROADENING (IF NECESSARY) + ADDING "A"
-!
-!	VOCATIVE SINGULAR:		same as ????
+!!	NOMINATIVE SINGULAR:	all end in ?????
+!!
+!!	GENITIVE SINGULAR:		FORMED BY BROADENING (IF NECESSARY) + ADDING "A"
+!!
+!!	VOCATIVE SINGULAR:		same as ????
 !************************************************************************** 
-!
-!	PLURALS:	4 FEM. CATEGORIES: ALL STRONG
-!			7 MASC.CATEGORIES: ALL STRONG
+!!
+!!	PLURALS:	4 FEM. CATEGORIES: ALL STRONG
+!!			7 MASC.CATEGORIES: ALL STRONG
 !**************************************************************************  
 ! 
 
 !************************************************************************** 
-!                    3rd declension FEMININE NOUNS 
+!!                    3rd declension FEMININE NOUNS 
 !************************************************************************** 
 !
-coinneáil	Nf3-SINGULAR;	!
-éisteacht	Nf3-SINGULAR;	!
-imirt		Nf3-4;		! -SINGULAR;
+coinneáil	Nf3-SINGULAR;	 !!= **@CODE@** 
+éisteacht	Nf3-SINGULAR;	 !!= **@CODE@** 
+imirt		Nf3-4;		 !!= **@CODE@**  -SINGULAR;
 labhairt	Nf3-SINGULAR;	!
 tuiscint	Nf3-SINGULAR;	!
 díbirt		Nf3-SINGULAR;
@@ -673,7 +673,7 @@ cuid		Nf3-8;	! a share, part
 
 
 !************************************************************************** 
-!                  3rd declension MASCULINE NOUNS 
+!!                  3rd declension MASCULINE NOUNS 
 !************************************************************************** 
 !
 ! (13) STRONG PLURALS -  ADD "Í"
@@ -764,7 +764,7 @@ gleann		Nm3-7;	! glen
 !=======================end of 3rd declension=============================!
 
 !************************************************************************** 
-!					4th DECLENSION 
+!! ##					4th DECLENSION 
 !************************************************************************** 
 !	BOTH FEMININE & MASCULINE NOUNS 
 !************************************************************************** 
@@ -1074,7 +1074,7 @@ Iúil		Nm4-SINGULAR;	! July
 !=======================end of 4th declension=============================!
 
 !************************************************************************** 
-!					5th DECLENSION 
+!! ##					5th DECLENSION 
 !************************************************************************** 
 !	BOTH FEMININE & MASCULINE NOUNS 
 !************************************************************************** 
@@ -1147,7 +1147,7 @@ Nollaig		Nf5-4;  ! Christmas MOVED FROM Nf3-4; EUD Apr 2017
 !--------------------------------------------------------------------------
 
 !************************************************************************** 
-!                   5th Declension MASCULINE NOUNS 
+!! ###                   5th Declension MASCULINE NOUNS 
 !************************************************************************** 
 
 
@@ -1182,8 +1182,9 @@ méadú			Nm5-3;	! increase			SLENDER GEN SG
 sleamhnú		Nm5-3;	! slide				SLENDER GEN SG NO PL.
 tarlú			Nm5-3;	! happen			SLENDER GEN SG
 cónaí			Nm5-3;	! home				SLENDER GEN SG
-!=======================end of 5th declension==========================!
-LEXICON NounsB
+!! =======================end of 5th declension==========================!
+
+LEXICON NounsB   !!= **@CODE@** 
 
 béim	 	Nf2-6;	 ! pl ~eanna blow; notch;
 agóid	 	Nf2-7;	 ! objection, protest, lucht ~e
@@ -1332,7 +1333,7 @@ méid	 Nf2-6;	 ! size, magnitude, dul i
 != Automatically assigned CCs
 != *** = manual fix
 !=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!
-LEXICON NounsC
+LEXICON NounsC  !!= **@CODE@** 
 ainmhian	Nf2-10;	! gs -mhéine pl ~ta
 glóirmhian	Nf2-10;	! gs -mhéine pl ~ta
 uaillmhian	Nf2-10;	! gs -mhéine pl ~ta

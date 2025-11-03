@@ -7,23 +7,23 @@
 !! Preverbal
 !! Unique Membership classes
 !****************************************************************************
-LEXICON Particles
+LEXICON Particles  !!= **@CODE@** 
 
 t-+Part:t-		#;	! initial mutations are not split from a word; 
 n-+Part:n-		#;	! but sometimes therey are already split in a text ...
 
-!!a+Part+Voc:a			#;	! a Shíle
-a+Part+Vc+Voc:a			#;	! a Shíle  Vc 12/03/2022
+!!a+Part+Voc:a			#;	! !!= **@CODE@**  a Shíle
+a+Part+Vc+Voc:a			#;	! !!= **@CODE@**  a Shíle  Vc 12/03/2022
 !!!!!!a+Part+Voc:A			#;	! A Shíle
-a+Part+Nm:a			#;	! a haon, a dó
-a+Part+Inf:a			#;	! uisce a ól (in vn phrase) 
+a+Part+Nm:a			#;	 !!= **@CODE@**  a haon, a dó
+a+Part+Inf:a			#;	 !!= **@CODE@**  uisce a ól (in vn phrase) 
 a+Part+Deg:a			#;	! a géire a labhair sé
 a+Part+Cp+Rel:a			#;	! that: a ba mheasa
 
-go+Part+Ad:go			#;	! go maith
-ro+Part+Ad:ro			#;	! ro lag (Historical)
+go+Part+Ad:go			#;	 !!= **@CODE@**  go maith
+ro+Part+Ad:ro			#;	 !!= **@CODE@**  ro lag (Historical)
 
-Ní+Part+Pat:Ní			#;	! Ní Ghráda
+Ní+Part+Pat:Ní			#;	 !!= **@CODE@**  Ní Ghráda
 Nic+Part+Pat:Nic		#;	! Nic Dhonncha
 Uí+Part+Pat:uí			#;	! Uí Ghráda
 Ua+Part+Pat:ua			#;	! Ua Mhaoileoin
@@ -56,7 +56,7 @@ is+Part+Sup+Vow:ab				#;
 !Also Past and Vowel initial forms: rud ab fhusa, an rud ba mheasa ...
 
 !-------------------------------------------------------------------
-! VERBAL PARTICLES
+!! VERBAL PARTICLES
 !
 do+Part+Vb+Short:d'	#;	! d'fhéach (after Trond)
 do+Part+Vb+NG:dh'	#;	! dh'fhéachamar

@@ -1,18 +1,18 @@
 !***********************************************************************
 !! NUMBERS
 !! E. Uí Dhonnchadha
-! Cardinal numbers are described seperately here rather than with other
-! Adjectives
+!! Cardinal numbers are described seperately here rather than with other
+!! Adjectives
 !! For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 !***********************************************************************
 
-LEXICON Numerals
+LEXICON Numerals  !!= **@CODE@** 
 
 !! CARDINAL Numbers
-aon+Num+Card:aon			NumSéUrú;
-aon+Num+Card+hPref:haon		#;	! le haon cheann de na ...
-aon+Num+Card+Bare:haon		#;	! a haon
-aon+Num+Card+DefArt:t-aon	#;	! the one; the ace
+aon+Num+Card:aon			NumSéUrú;   !!= **@CODE@** 
+aon+Num+Card+hPref:haon		#;	 !!= **@CODE@**  le haon cheann de na ...
+aon+Num+Card+Bare:haon		#;	 !!= **@CODE@**  a haon
+aon+Num+Card+DefArt:t-aon	#;	 !!= **@CODE@**  the one; the ace
 dó+Num+Card+Bare:dó			NumSéUrú; ! a dó (two)
 dó+Num+Card:dhá				#; ! with a noun: dhá chapall (two horses)
 dó+Num+Card+DefArt:dá		#;
@@ -21,9 +21,9 @@ ceathair+Num+Card+Bare:ceathair	#; ! a ceathair (four)
 ceathair+Num+Card:ceithre	NumSéUrú; ! ceithre chapall (four horses)
 cúig+Num+Card:cúig			NumSéUrú;
 sé+Num+Card:sé				NumSéUrú;
-seacht+Num+Card:seacht		NumSéUrú;
-ocht+Num+Card:ocht			NumSéUrú;
-naoi+Num+Card:naoi			NumSéUrú;
+seacht+Num+Card:seacht		NumSéUrú; !!= **@CODE@** 
+ocht+Num+Card:ocht			NumSéUrú; !!= **@CODE@** 
+naoi+Num+Card:naoi			NumSéUrú; !!= **@CODE@** 
 deich+Num+Card:deich		NumSéUrú;
 fiche+Num+Card:fiche		NumSéUrú;
 tríocha+Num+Card:tríocha	NumSéUrú;
@@ -38,12 +38,12 @@ céad+Num+Card:céad			NumSéUrú; ! hundred
 míle+Num+Card:míle			NumSéUrú;
 milliún+Num+Card:milliún	NumSéUrú;
 
-!! ORDINAL Numbers
+!! ORDINAL Numbers  !!= **@CODE@** 
 
-céad+Num+Ord:céad			NumSéUrú; ! first
-!céad+Num+Ord+Def:chéad	#;
-aon+Num+Ord:aonú			NumSéUrú;
-aon+Num+Ord+Def:t-aonú		#;
+céad+Num+Ord:céad			NumSéUrú;  !!= **@CODE@**  first
+!céad+Num+Ord+Def:chéad	#; 
+aon+Num+Ord:aonú			NumSéUrú;  !!= **@CODE@** 
+aon+Num+Ord+Def:t-aonú		#;  !!= **@CODE@** 
 dara+Num+Ord:dara			NumSéUrú;
 dó+Num+Ord:dóú				NumSéUrú;
 treas+Num+Ord:treas			NumSéUrú;
@@ -58,15 +58,15 @@ naoi+Num+Ord:naoú			NumSéUrú;
 deich+Num+Ord:deichiú		NumSéUrú;
 
 !! Number  Operators
-++Num+Op:+	#;
--+Num+Op:-	#;
+++Num+Op:+	#;  !!= **@CODE@** 
+-+Num+Op:-	#; !!= **@CODE@** 
 *+Num+Op:*	#;
 =+Num+Op:=	#;
 /+Num+Op:/	#;
 ÷+Num+Op:÷	#;
 
-LEXICON NumSéUrú
-#;
-+Len:^IM^Sé^tv		#;
+LEXICON NumSéUrú !!= **@CODE@** 
+#; !!= **@CODE@** 
++Len:^IM^Sé^tv		#; !!= **@CODE@** 
 +Ecl:^IM^Urú		#;
 +hPref:^IM^hv^ts	#;
