@@ -1,19 +1,19 @@
 !***********************************************************************
-!! XML Tags
+!! # XML Tags
 !! E Uí Dhonnchadha
 !***********************************************************************
 
-!! Multichar_Symbols
-!! 
-!! +XMLTag		! 
-!! 
-!! LEXICON Root
-!! 	XMLTags;
+! Multichar_Symbols
+! 
+! +XMLTag		! 
+! 
+! LEXICON Root
+! 	XMLTags;
 
-LEXICON XMLTags
+LEXICON XMLTags !!≈ **@CODE@**
 
 !!!</lb>
-%<%/lb%>+XMLTag:%<%/lb%>	#;
+%<%/lb%>+XMLTag:%<%/lb%>	#; 
 
 !!!<p>
 %<p%>+XMLTag:%<p%>	#;

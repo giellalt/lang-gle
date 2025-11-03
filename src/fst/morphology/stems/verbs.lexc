@@ -1,8 +1,9 @@
+!! # Verb stems
 !****************************************************************************
 !!  Briathra Gaeilge - Irregular
 !!  E. Uí Dhonnchadha
 !!  14/10/96
-!!  (1) New Irish Grammar by The Christian Brothers  
+!! - (1) New Irish Grammar by The Christian Brothers  
 !! - (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
 !! - (3) Foclóir Póca - An Gúm
 !! - (4) Nuachúrsa Gaeilge na mBráithre Críostaí
@@ -45,9 +46,9 @@
 !------------------------------------------------------------------------
 LEXICON VerbsC1A !!≈ -  **@CODE@** 
 
-mol+Verb+VTI:mol	V1-BR;	 !!≈ -  **@CODE@** 
-glac+Verb+VT:glac	V1-BR;	 !!≈ -  **@CODE@**  ta -. tha (glactha)
-lúb+Verb+VTI:lúb	V1-BR;	 !!≈ -  **@CODE@** 
+mol+Verb+VTI:mol	V1-BR;	 !!≈ -  @CODE@ 
+glac+Verb+VT:glac	V1-BR;	 !!≈ -  @CODE@  ta -. tha (glactha)
+lúb+Verb+VTI:lúb	V1-BR;	 !!≈ -  @CODE@ 
 gabh+Verb+VTI:gabh	V1-BR;	! bha - fa (gafa)
 gearr+Verb+VTI:gearr	V1-BR;	! cut
 scríobh+Verb+VTI:scríobh	V1-BR;	

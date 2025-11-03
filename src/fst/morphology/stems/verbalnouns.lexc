@@ -1,29 +1,31 @@
+!! # Verbal nouns
 !==============================================================================
-!! Ainm Briathra & Aidiacht Briathra
+!! Ainm Briathra & Aidiacht Briathra - 
 !! Verbal Nouns & Verbal Adjectives
-!! E Uí Dhonnchadha
+!! - E Uí Dhonnchadha
 !! 2003 
-!! Nov 2005 version 3 
+!! - Nov 2005 version 3 
 !! Updated May 2008
-!! verbal nouns have vn lemma rather than verb lemma
+!!
+!! - verbal nouns have vn lemma rather than verb lemma
 !! verbal noun gen is same as verbal adj except for new vns ending in -áil
 !! and some other e.g. úsáide, úsáidte 
 !! CW manually checked Foclóir Póca entries and added FGB entries
-!! Updated Dec 2018: reorganised and verbal nouns have verb lemma again
+!! - Updated Dec 2018: reorganised and verbal nouns have verb lemma again
 
 !==============================================================================
 
 LEXICON VerbalNounsV !!≈ -  **@CODE@** 
-ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; !!≈ -  **@CODE@** 
-achainigh+Verbal+Noun+VTI:achainí VN-INIT; !!≈ -  **@CODE@** 
-achair+Verbal+Noun+VTI:achairt VN-INIT;
-achoimrigh+Verbal+Noun+VT:achoimriú VN-INIT;
-achtáil+Verbal+Noun+VT:achtáil VN-INIT;
-achtaigh+Verbal+Noun+VT:achtú VN-INIT;
-aclaigh+Verbal+Noun+VTI:aclú VN-INIT;
-adamhaigh+Verbal+Noun+VT:adamhú VN-INIT;
-adhain+Verbal+Noun+VTI:adhaint VN-INIT;
-adhaltranaigh+Verbal+Noun+VT:adhaltranú VN-INIT;
+ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; !!≈ -  @CODE@
+achainigh+Verbal+Noun+VTI:achainí VN-INIT; !!≈ -  @CODE@
+achair+Verbal+Noun+VTI:achairt VN-INIT; !!≈ -  @CODE@
+achoimrigh+Verbal+Noun+VT:achoimriú VN-INIT; !!≈ -  @CODE@
+achtáil+Verbal+Noun+VT:achtáil VN-INIT; !!≈ -  @CODE@
+achtaigh+Verbal+Noun+VT:achtú VN-INIT; !!≈ -  @CODE@
+aclaigh+Verbal+Noun+VTI:aclú VN-INIT; !!≈ -  @CODE@
+adamhaigh+Verbal+Noun+VT:adamhú VN-INIT; !!≈ -  @CODE@
+adhain+Verbal+Noun+VTI:adhaint VN-INIT; !!≈ -  @CODE@
+adhaltranaigh+Verbal+Noun+VT:adhaltranú VN-INIT; !! etc... appro 7400 stems
 adharcáil+Verbal+Noun+VT:adharcáil VN-INIT;
 adhlaic+Verbal+Noun+VT:adhlacadh VN-INIT;
 adhmhol+Verbal+Noun+VT:adhmholadh VN-INIT;
@@ -7479,17 +7481,18 @@ téalachan+Verbal+Noun+VI:téalachan		VN-INIT;
 treaghadh+Verbal+Noun+VT:treaghadh		VN-INIT;
 urlaic+Verbal+Noun+VTI:urlaic		VN-INIT;
 
+!! 
 !***********************************************************************
-!					CONTINUATION CLASSES 
-!   INCLUDED HERE AS THEY ARE NOT SHARED WITH ANY OTHER POS
+!!					CONTINUATION CLASSES 
+!!   INCLUDED HERE AS THEY ARE NOT SHARED WITH ANY OTHER POS
 !***********************************************************************
-LEXICON	VN-INIT
-#;
-+Len:^IM^Sé	#;
-+Ecl:^IM^Urú	#;
-+hPref:^IM^hv	#;
+LEXICON	VN-INIT !!≈ **@CODE@**
+#; !!≈ - @CODE@
++Len:^IM^Sé	#; !!≈ - @CODE@
++Ecl:^IM^Urú	#; !!≈ - @CODE@
++hPref:^IM^hv	#; !!≈ - @CODE@
 
-LEXICON	VA-INIT
-#;
-+Len:^IM^Sé	#;
+LEXICON	VA-INIT !!≈ **@CODE@**
+#; !!≈ - @CODE@
++Len:^IM^Sé	#; !!≈ - @CODE@
 !***********************************************************************

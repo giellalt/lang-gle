@@ -1,13 +1,13 @@
-!! INTERJECTIONS
-! & SPOKEN TAGS (Irish Only)
-! For English Communicators see english-lex.txt
-! EUD 2011
-! FILLED PAUSES (CHILDES term)
-! COMMUNICATORS (CHILDES term)
-! SIMPLE EVENTS (CHILDES term)
-! Unknown/unintelligible/inaudible
+!! # INTERJECTIONS
+!! & SPOKEN TAGS (Irish Only)
+!! For English Communicators see english-lex.txt
+!! EUD 2011
+!! FILLED PAUSES (CHILDES term)
+!! COMMUNICATORS (CHILDES term)
+!! SIMPLE EVENTS (CHILDES term)
+!! Unknown/unintelligible/inaudible
 
-LEXICON Interjections
+LEXICON Interjections !!≈ **@CODE@**
 !! Interjections
 Á+Itj:Á				#;  !!! converted á to Á 1-feb-2022
 áh+Itj:áh			#;  !!! Hartmann
@@ -22,7 +22,7 @@ heileo+Itj:Heileo	#;
 haló+Itj:Haló		#;
 
 !! FILLED PAUSES
-LEXICON Fillers
+LEXICON Fillers !!≈ **@CODE@**
 !! Fillers in speech
 xxx+Xxx:xxx				#;	!!! Indecipherable speech
 						!!! FILLERS
@@ -39,7 +39,7 @@ uhuh+Filler:uhuh		#;	!!!  COMHRÁ spoken corpas
 uhoh+Filler:uhoh		#;	!!!  COMHRÁ spoken corpas
 uh+Filler:uh			#;	!!!  COMHRÁ spoken corpas
 
-LEXICON Communicators
+LEXICON Communicators !!≈ **@CODE@**
 !! Communicators in speech
 áiméan+Cmc:áiméan		#;
 ambaiste+Cmc:ambaiste	#;
