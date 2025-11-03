@@ -24,7 +24,7 @@
 #   Development setup:   #
 # ---------------------- #
 #
-# cd $GTLANGS/lang-xxx # replace xxx with your language code
+# cd $GTLANGS/lang-gle
 # ./autogen.sh
 # ./configure --enable-grammarchecker --enable-tokenisers --enable-alignment --enable-reversed-intersect
 # make
@@ -602,7 +602,7 @@ LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old ge
 #LIST &msyn-com-case-nouns = &msyn-com-case-nouns ;
 #LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@ 
 #LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;   not in use
-#LIST &msyn-ie.i. = &msyn-&.i. ;    #!!= * @CODE@ 
+#LIST &use-ie.i. = &use-ie.i. ;    #!!= * @CODE@ 
 #LIST &msyn-inis-de = &msyn-inis-de ;    #!!= * @CODE@ 
 #LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@ 
 #LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@ 
@@ -624,6 +624,10 @@ LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
 LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
 LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
+LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 #!!= * @CODE@ 
+LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 #!!= * @CODE@ 
+LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@ 
+LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@ 
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@ 
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
@@ -811,6 +815,7 @@ ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF
 
 COPY:msyn-no-len-after-prep (SUGGEST) EXCEPT (Len &msyn-no-len-after-prep) TARGET (&msyn-no-len-after-prep);
 ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len-after-prep));
+	
 	## Tá fiche duine ar mheitheal.
 	## Tá mo chara ar mheisce.
 	#$ Ar muhui na beatha.
@@ -825,8 +830,38 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 #        (NEGATE 0 ("<sr.*>"r) + Fem) 
 
 	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
-    	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór.
-    
+    	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór. Verb VI FutInd Ecl  NACH NegQ Ecl
+ 
+ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Verb Cond CM) IF
+	(-1 (Conj Subord))
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-ecl-after-da (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-da) TARGET (&msyn-ecl-after-da); 
+ 
+ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) IF
+	(-1 ("go") or ("Go"))
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-ecl-after-go (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-go) TARGET (&msyn-ecl-after-go);
+    	
+ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) IF
+	(-1 ("mura") OR ("Mura"))
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-ecl-after-mura (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET (&msyn-ecl-after-mura);
+
+ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresImp) IF
+	(-1 ("mura") OR ("Mura"))
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-ecl-after-mura (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET (&msyn-ecl-after-mura);
+
+ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb VI Cond CM) IF
+	(-1 ("mura") OR ("Mura"))
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-ecl-after-mura (Cond CM SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET (&msyn-ecl-after-mura);
+
+ADD:msyn-ecl-after-nach (&msyn-ecl-after-nach) TARGET (Verb) IF
+	(-1 ("nach") OR ("Nach"))
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-ecl-after-nach (NegQ Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach); 
+
     	
 ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
 	(-1 ECLIPSE-PREP + (Prep Simp))
@@ -919,7 +954,6 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 	## teach scoil > #$teach scoile
 	## bosca bruscar > #$ bosca bruscair.
 	## ceadúnas tiomáint > #$ ceadúnas tiomána.
-	#$ Tá fiche duine ar meitheal.
 
 #!! #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
 #        =========================================================
@@ -1176,9 +1210,10 @@ COPY:right-guillemet ("»" SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
 ADD:use-ellipsis (&ellipsis) TARGET ("...");
 COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
 
-#!! **ADD:msyn-ie.i.** ...
-#ADD:msyn-ie.i. (&msyn-&.i.) TARGET ("i.e." i.e.+Abr) ;
-#COPY:msyn-ie.i. (".i." SUGGEST) TARGET (msyn-ie.i.) ;
+#!! **ADD:use-ie.i.** ...
+
+ADD:use-ie.i. (&ie.i.) TARGET ("i.e.");
+COPY:use-ie.i. (".i." A"br" SUGGEST) EXCEPT ("i.e.") TARGET (&ie.i.) ;
 
 LIST <fixedcase> = <fixedcase>;
 
