@@ -2,16 +2,16 @@ PARTICLES
 E. Uí Dhonnchadha
 Preverbal
 Unique Membership classes
-**LEXICON Particles  ** 
+-  **LEXICON Particles** 
 
-**a+Part+Vc+Voc:a			#;	! **  a Shíle  Vc 12/03/2022
-**a+Part+Nm:a			#;	 **  a haon, a dó
-**a+Part+Inf:a			#;	 **  uisce a ól (in vn phrase) 
+-  **a+Part+Vc+Voc:a #; !**  a Shíle  Vc 12/03/2022
+-  **a+Part+Nm:a #;**  a haon, a dó
+-  **a+Part+Inf:a #;**  uisce a ól (in vn phrase) 
 
-**go+Part+Ad:go			#;	 **  go maith
-**ro+Part+Ad:ro			#;	 **  ro lag (Historical)
+-  **go+Part+Ad:go #;**  go maith
+-  **ro+Part+Ad:ro #;**  ro lag (Historical)
 
-**Ní+Part+Pat:Ní			#;	 **  Ní Ghráda
+-  **Ní+Part+Pat:Ní #;**  Ní Ghráda
 
 VERBAL PARTICLES
 

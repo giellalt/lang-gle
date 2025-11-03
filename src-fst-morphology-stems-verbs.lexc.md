@@ -41,11 +41,11 @@ V1-SL-X:	eisceachtaí do V1-SL; leathnaítear iad ;
 ------------------------------------------------------------------------
 V1-SL-LC:	ends in áil
 ```
-**LEXICON VerbsC1A ** 
+-  **LEXICON VerbsC1A** 
 
-**mol+Verb+VTI:mol	V1-BR;	 ** 
-**glac+Verb+VT:glac	V1-BR;	 **  ta -. tha (glactha)
-**lúb+Verb+VTI:lúb	V1-BR;	 ** 
+-  **mol+Verb+VTI:mol V1-BR;** 
+-  **glac+Verb+VT:glac V1-BR;**  ta -. tha (glactha)
+-  **lúb+Verb+VTI:lúb V1-BR;** 
 
 Second Conjugation Verb Stems
 

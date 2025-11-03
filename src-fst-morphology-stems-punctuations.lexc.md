@@ -4,14 +4,14 @@ E. Uí Dhonnchadha
 May 2004 : +Quo instead of +St & +End for quotation marks
 Feb 2023 : +Curr for currency symbols
 
-**LEXICON Punctuation_ga  ** 
-**%.	Final; ** 
-**<%!>	Final; ** 
-**%.%.%.	Final; ** 
-**%.%.	Final; ** 
-**%?	FinalQ; ** 
+-  **LEXICON Punctuation_ga** 
+-  **%. Final;** 
+-  **<%!> Final;** 
+-  **%.%.%. Final;** 
+-  **%.%. Final;** 
+-  **%? FinalQ;** 
 
-**%"	Quote; ** 
+-  **%" Quote;** 
 
 * * *
 

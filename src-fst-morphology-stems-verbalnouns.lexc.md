@@ -10,9 +10,9 @@ and some other e.g. úsáide, úsáidte
 CW manually checked Foclóir Póca entries and added FGB entries
 Updated Dec 2018: reorganised and verbal nouns have verb lemma again
 
-**LEXICON VerbalNounsV ** 
-**ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; ** 
-**achainigh+Verbal+Noun+VTI:achainí VN-INIT; ** 
+-  **LEXICON VerbalNounsV** 
+-  **ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT;** 
+-  **achainigh+Verbal+Noun+VTI:achainí VN-INIT;** 
 
 NOTE: 'druideadh' is commented out since it was not found as a verbal noun
 in the corpus, yet chances are that it would get mixed up with 'druideadh'

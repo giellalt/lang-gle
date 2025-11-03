@@ -1,4 +1,8 @@
 Adverbs
+- E. Uí Dhonnchadha
+- REMOVED FEB 2004: +Phr
+ADDED FEB 2004: +Temp 
+CHANGED +Gen to +Gn to avoid confusion with +Gen = genitive
 
 word for word, i.e. literally (2019)
 

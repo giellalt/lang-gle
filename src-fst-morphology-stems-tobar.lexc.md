@@ -2,12 +2,12 @@ Tobar - ac Grianna
 E. Uí Dhonnchadha
 Jan 2009
 
-**LEXICON Tobar  ** 
+-  **LEXICON Tobar** 
 
-**abair+Verb+VTI+Vow+PastImp:adeireadh		#; ** 
+-  **abair+Verb+VTI+Vow+PastImp:adeireadh #;** 
 
-**is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea	#;	 **  is ea
-**is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard	 #;	 ** is éard
+-  **is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea #;**  is ea
+-  **is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard #;** is éard
 
 PLACENAMES
 

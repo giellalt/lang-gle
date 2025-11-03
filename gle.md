@@ -1054,6 +1054,10 @@ COMPOUND PREPOSITIONS: PREP + NOUN
 ## src-fst-morphology-stems-adverbs.lexc.md 
 
 Adverbs
+- E. Uí Dhonnchadha
+- REMOVED FEB 2004: +Phr
+ADDED FEB 2004: +Temp 
+CHANGED +Gen to +Gn to avoid confusion with +Gen = genitive
 
 word for word, i.e. literally (2019)
 
@@ -1070,7 +1074,7 @@ see PART-LEX.TXT (etc.) for following
 
 ## src-fst-morphology-stems-articles.lexc.md 
 
-Common Functional Words - Articles
+## Common Functional Words - Articles
 
 * * *
 
@@ -1115,7 +1119,7 @@ gur NOT moved to Verb Part as a)always precede a verb b) have tense c) preceded 
 
 ## src-fst-morphology-stems-determiners.lexc.md 
 
-DETERMINERS
+## DETERMINERS
 E. Uí Dhonnchadha
 
 Determiners: Possessives
@@ -1132,7 +1136,10 @@ Determiners: INTERROGATIVES
 
 ## src-fst-morphology-stems-english.lexc.md 
 
-
+E. Uí Dhonnchadha
+JULY 2013
+ENGLISH LEX & COMMUNICATORS (CHILDES term)
+AUG 2025 added +OLang/ENG for Giellalt integration
 
 @dm discourse marker added to distinguish this from Irish so=seo=here
 
@@ -1165,6 +1172,18 @@ Anonymisation in transcripts/exam scripts
 
 ---
 
+## src-fst-morphology-stems-latin.lexc.md 
+
+JUN 2016
+LATIN LEX (RIACORPAS 1)
+AUG 2025 added +OLang/LAT for Giellalt integration
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/latin.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/latin.lexc)</small>
+
+---
+
 ## src-fst-morphology-stems-nouns.lexc.md 
 
 ## Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
@@ -1191,7 +1210,7 @@ In the case of an initial "s", a "t" will be placed before it
 	2nd. Declension - All Feminine -  nouns end in broad or slender consonant
 	3rd. Declension - Feminine & Masculine - nouns end in a broad or slender consonant.
 	4th. Declension - Feminine & Masculine - all end in a vowel or "ín"
-**LEXICON Nouns ** 
+-  **LEXICON Nouns** 
 ###					1st DECLENSION 
 (1) WEAK PLURALS 
 Nom												
@@ -1203,10 +1222,10 @@ Gen
 Voc
 	
 
-**airgeadas	Nm1-SINGULAR; ** 
-**áireamh		Nm1-SINGULAR; ** 
-**amhras		Nm1-SINGULAR; ** 
-**aonar		Nm1-SINGULAR; ** 
+-  **airgeadas Nm1-SINGULAR;** 
+-  **áireamh Nm1-SINGULAR;** 
+-  **amhras Nm1-SINGULAR;** 
+-  **aonar Nm1-SINGULAR;** 
 etc. 
 
 (2) WEAK PLURALS
@@ -1216,35 +1235,35 @@ Gen
 Voc	
 	
 
-**bruas		Nm1-2;	 **  (thick) lip 
-**cág		Nm1-2;	**  jackdaw 
-**ceart		Nm1-2;	 **  right
-**cor		Nm1-2;	 ** 
-**fionn		Nm1-2;	 **  fair, white
-**gnáth		Nm1-2;	 ** 
-**íol		Nm1-2;	 **  idol 
+-  **bruas Nm1-2;**  (thick) lip 
+-  **cág Nm1-2;**  jackdaw 
+-  **ceart Nm1-2;**  right
+-  **cor Nm1-2;** 
+-  **fionn Nm1-2;**  fair, white
+-  **gnáth Nm1-2;** 
+-  **íol Nm1-2;**  idol 
 
 (3) STRONG PLURALS - ADD "TA"
 	LONG VOWEL (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr])
 
-**ál		Nm1-3;	 **  clutch, brood
-**aon		Nm1-3;	 **  one, ace 
+-  **ál Nm1-3;**  clutch, brood
+-  **aon Nm1-3;**  one, ace 
 etc.
 
 (4) STRONG PLURALS - ADD "THA"
-**glór		Nm1-4;	 **  voice
-**múr		Nm1-4;	 **  wall, shower
+-  **glór Nm1-4;**  voice
+-  **múr Nm1-4;**  wall, shower
 
 (5) STRONG PLURALS - ADD (A)Í
 
-**bealach		Nm1-5;	 **  way, road
-**cogadh		Nm1-5;	 ** 
-**Domhnach	Nm1-5;	 **  Sunday
+-  **bealach Nm1-5;**  way, road
+-  **cogadh Nm1-5;** 
+-  **Domhnach Nm1-5;**  Sunday
 etc
 
 (6) STRONG PLURALS - ADD  "ANNA"
 
-**bás		Nm1-6;	 ** 
+-  **bás Nm1-6;** 
 
 (7) STRONG PLURALS - ADD "Í"
 
@@ -1257,18 +1276,18 @@ etc
 			1 MASC.
 		list the categories here ......
 
-**baint		Nf2-SINGULAR;   ** 
-**réir		Nf2-SINGULAR; ** 
-**spéis		Nf2-SINGULAR;  ** 
-**teilifís	Nf2-SINGULAR;  ** 
-**titim		Nf2-SINGULAR;  ** 
+-  **baint Nf2-SINGULAR;** 
+-  **réir Nf2-SINGULAR;** 
+-  **spéis Nf2-SINGULAR;** 
+-  **teilifís Nf2-SINGULAR;** 
+-  **titim Nf2-SINGULAR;** 
 
 (1) WEAK PLURALS (no longer used)
 (2) WEAK PLURALS (ie Nom, Gen & Voc plurals are not the same)
 ONE SYLLABLE - Broad/Slender
-**binn		Nf2-2;	 **  peak		
-**cliath		Nf2-2;	 ** 
-**deoir		Nf2-2;	 **  tear
+-  **binn Nf2-2;**  peak		
+-  **cliath Nf2-2;** 
+-  **deoir Nf2-2;**  tear
 
 (3) WEAK PLURALS 
 
@@ -1295,9 +1314,9 @@ BROAD & SLENDER
 ###					3rd DECLENSION 
 
 3rd declension FEMININE NOUNS 
-**coinneáil	Nf3-SINGULAR;	 ** 
-**éisteacht	Nf3-SINGULAR;	 ** 
-**imirt		Nf3-4;		 **  -SINGULAR;
+-  **coinneáil Nf3-SINGULAR;** 
+-  **éisteacht Nf3-SINGULAR;** 
+-  **imirt Nf3-4;**  -SINGULAR;
 
 3rd declension MASCULINE NOUNS 
 
@@ -1309,9 +1328,9 @@ BROAD & SLENDER
 
 =======================end of 5th declension==========================!
 
-**LEXICON NounsB   ** 
+-  **LEXICON NounsB** 
 
-**LEXICON NounsC  ** 
+-  **LEXICON NounsC** 
 
 * * *
 
@@ -1321,36 +1340,36 @@ BROAD & SLENDER
 
 ## src-fst-morphology-stems-numerals.lexc.md 
 
-NUMBERS
+## NUMBERS
 E. Uí Dhonnchadha
 Cardinal numbers are described seperately here rather than with other
 Adjectives
 For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 
-**LEXICON Numerals  ** 
+-  **LEXICON Numerals** 
 
 CARDINAL Numbers
-**aon+Num+Card:aon			NumSéUrú;   ** 
-**aon+Num+Card+hPref:haon		#;	 **  le haon cheann de na ...
-**aon+Num+Card+Bare:haon		#;	 **  a haon
-**aon+Num+Card+DefArt:t-aon	#;	 **  the one; the ace
-**seacht+Num+Card:seacht		NumSéUrú; ** 
-**ocht+Num+Card:ocht			NumSéUrú; ** 
-**naoi+Num+Card:naoi			NumSéUrú; ** 
+-  **aon+Num+Card:aon NumSéUrú;** 
+-  **aon+Num+Card+hPref:haon #;**  le haon cheann de na ...
+-  **aon+Num+Card+Bare:haon #;**  a haon
+-  **aon+Num+Card+DefArt:t-aon #;**  the one; the ace
+-  **seacht+Num+Card:seacht NumSéUrú;** 
+-  **ocht+Num+Card:ocht NumSéUrú;** 
+-  **naoi+Num+Card:naoi NumSéUrú;** 
 
-= **naoi+Num+Card:naoi			NumSéUrú; ** 
+≈ -  **naoi+Num+Card:naoi NumSéUrú;** 
 
-**céad+Num+Ord:céad			NumSéUrú;  **  first
-**aon+Num+Ord:aonú			NumSéUrú;  ** 
-**aon+Num+Ord+Def:t-aonú		#;  ** 
+-  **céad+Num+Ord:céad NumSéUrú;**  first
+-  **aon+Num+Ord:aonú NumSéUrú;** 
+-  **aon+Num+Ord+Def:t-aonú #;** 
 
 Number  Operators
-**++Num+Op:+	#;  ** 
-**-+Num+Op:-	#; ** 
+-  **++Num+Op:+ #;** 
+-  **-+Num+Op:- #;** 
 
-**LEXICON NumSéUrú ** 
-**#; ** 
-**+Len:^IM^Sé^tv		#; ** 
+-  **LEXICON NumSéUrú** 
+-  **#;** 
+-  **+Len:^IM^Sé^tv #;** 
 
 * * *
 
@@ -1364,16 +1383,16 @@ PARTICLES
 E. Uí Dhonnchadha
 Preverbal
 Unique Membership classes
-**LEXICON Particles  ** 
+-  **LEXICON Particles** 
 
-**a+Part+Vc+Voc:a			#;	! **  a Shíle  Vc 12/03/2022
-**a+Part+Nm:a			#;	 **  a haon, a dó
-**a+Part+Inf:a			#;	 **  uisce a ól (in vn phrase) 
+-  **a+Part+Vc+Voc:a #; !**  a Shíle  Vc 12/03/2022
+-  **a+Part+Nm:a #;**  a haon, a dó
+-  **a+Part+Inf:a #;**  uisce a ól (in vn phrase) 
 
-**go+Part+Ad:go			#;	 **  go maith
-**ro+Part+Ad:ro			#;	 **  ro lag (Historical)
+-  **go+Part+Ad:go #;**  go maith
+-  **ro+Part+Ad:ro #;**  ro lag (Historical)
 
-**Ní+Part+Pat:Ní			#;	 **  Ní Ghráda
+-  **Ní+Part+Pat:Ní #;**  Ní Ghráda
 
 VERBAL PARTICLES
 
@@ -1405,11 +1424,11 @@ E. Uí Dhonnchadha
 -(5) Ó Dónaill Irish-English Dictionary
 Pronominals - words which act like pronouns
 
-**LEXICON Personal_Pronouns  ** 
+-  **LEXICON Personal_Pronouns** 
 Personal Pronouns
 
-**mé+Pron+Pers+1P+Sg:mé				#;	 **  me
-**tú+Pron+Pers+2P+Sg:tú				#;	 **  you
+-  **mé+Pron+Pers+1P+Sg:mé #;**  me
+-  **tú+Pron+Pers+2P+Sg:tú #;**  you
 
 Emphatic/Contrastive Pronouns
 
@@ -1424,17 +1443,17 @@ Copular DEMONSTRATIVE  See also Determiners
 
 PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 
-**LEXICON Emph_sa			 **  Broad: 1S & 2S & 3S(Fem) & 2P
+-  **LEXICON Emph_sa**  Broad: 1S & 2S & 3S(Fem) & 2P
 
-**LEXICON Emph_se			 **  Slender: 1S & 2S & 3S(Fem) & 2P
+-  **LEXICON Emph_se**  Slender: 1S & 2S & 3S(Fem) & 2P
 
-**LEXICON Emph_san		 **  Broad: 3S(Masc) & 3P
+-  **LEXICON Emph_san**  Broad: 3S(Masc) & 3P
 
-**LEXICON Emph_sean		 **  Slender: 3S(Masc) & 3P
+-  **LEXICON Emph_sean**  Slender: 3S(Masc) & 3P
 
-**LEXICON Emph_e			 ** Br/Sl: 1P
+-  **LEXICON Emph_e** Br/Sl: 1P
 
-**LEXICON Demonstrative  ** 
+-  **LEXICON Demonstrative** 
 
 * * *
 
@@ -1448,16 +1467,16 @@ Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 E. Uí Dhonnchadha 
 2003
 2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER
-**LEXICON NP-LEX-EIRE   ** 
+-  **LEXICON NP-LEX-EIRE** 
 
-**< Á t h %_:%  C l i a t h > NP-PLACE;  ** 
-**< Á i t h %_:%  C l i a t h > NP-PLACE;  ** 
-**< Á t h a %_:%  C l i a t h > NP-PLACE;  ** 
+-  **< Á t h %_:% C l i a t h > NP-PLACE;** 
+-  **< Á i t h %_:% C l i a t h > NP-PLACE;** 
+-  **< Á t h a %_:% C l i a t h > NP-PLACE;** 
 
-**Oileán	Nm1-Prop-Place;  ** 
-**Oileáin	NP-PLACE-pl; ** 
-**Meán	Nm1-Prop-Place; ** 
-**Oírr	Nm1-Prop-Place; ** 
+-  **Oileán Nm1-Prop-Place;** 
+-  **Oileáin NP-PLACE-pl;** 
+-  **Meán Nm1-Prop-Place;** 
+-  **Oírr Nm1-Prop-Place;** 
 
 South Africa
 
@@ -1483,14 +1502,14 @@ E. Uí Dhonnchadha
 May 2004 : +Quo instead of +St & +End for quotation marks
 Feb 2023 : +Curr for currency symbols
 
-**LEXICON Punctuation_ga  ** 
-**%.	Final; ** 
-**<%!>	Final; ** 
-**%.%.%.	Final; ** 
-**%.%.	Final; ** 
-**%?	FinalQ; ** 
+-  **LEXICON Punctuation_ga** 
+-  **%. Final;** 
+-  **<%!> Final;** 
+-  **%.%.%. Final;** 
+-  **%.%. Final;** 
+-  **%? FinalQ;** 
 
-**%"	Quote; ** 
+-  **%" Quote;** 
 
 * * *
 
@@ -1522,12 +1541,12 @@ Tobar - ac Grianna
 E. Uí Dhonnchadha
 Jan 2009
 
-**LEXICON Tobar  ** 
+-  **LEXICON Tobar** 
 
-**abair+Verb+VTI+Vow+PastImp:adeireadh		#; ** 
+-  **abair+Verb+VTI+Vow+PastImp:adeireadh #;** 
 
-**is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea	#;	 **  is ea
-**is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard	 #;	 ** is éard
+-  **is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea #;**  is ea
+-  **is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard #;** is éard
 
 PLACENAMES
 
@@ -1551,9 +1570,9 @@ and some other e.g. úsáide, úsáidte
 CW manually checked Foclóir Póca entries and added FGB entries
 Updated Dec 2018: reorganised and verbal nouns have verb lemma again
 
-**LEXICON VerbalNounsV ** 
-**ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; ** 
-**achainigh+Verbal+Noun+VTI:achainí VN-INIT; ** 
+-  **LEXICON VerbalNounsV** 
+-  **ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT;** 
+-  **achainigh+Verbal+Noun+VTI:achainí VN-INIT;** 
 
 NOTE: 'druideadh' is commented out since it was not found as a verbal noun
 in the corpus, yet chances are that it would get mixed up with 'druideadh'
@@ -1610,11 +1629,11 @@ V1-SL-X:	eisceachtaí do V1-SL; leathnaítear iad ;
 ------------------------------------------------------------------------
 V1-SL-LC:	ends in áil
 ```
-**LEXICON VerbsC1A ** 
+-  **LEXICON VerbsC1A** 
 
-**mol+Verb+VTI:mol	V1-BR;	 ** 
-**glac+Verb+VT:glac	V1-BR;	 **  ta -. tha (glactha)
-**lúb+Verb+VTI:lúb	V1-BR;	 ** 
+-  **mol+Verb+VTI:mol V1-BR;** 
+-  **glac+Verb+VT:glac V1-BR;**  ta -. tha (glactha)
+-  **lúb+Verb+VTI:lúb V1-BR;** 
 
 Second Conjugation Verb Stems
 

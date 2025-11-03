@@ -1,4 +1,7 @@
-
+E. Uí Dhonnchadha
+JULY 2013
+ENGLISH LEX & COMMUNICATORS (CHILDES term)
+AUG 2025 added +OLang/ENG for Giellalt integration
 
 @dm discourse marker added to distinguish this from Irish so=seo=here
 

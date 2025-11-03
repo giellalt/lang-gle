@@ -9,11 +9,11 @@ E. Uí Dhonnchadha
 -(5) Ó Dónaill Irish-English Dictionary
 Pronominals - words which act like pronouns
 
-**LEXICON Personal_Pronouns  ** 
+-  **LEXICON Personal_Pronouns** 
 Personal Pronouns
 
-**mé+Pron+Pers+1P+Sg:mé				#;	 **  me
-**tú+Pron+Pers+2P+Sg:tú				#;	 **  you
+-  **mé+Pron+Pers+1P+Sg:mé #;**  me
+-  **tú+Pron+Pers+2P+Sg:tú #;**  you
 
 Emphatic/Contrastive Pronouns
 
@@ -28,17 +28,17 @@ Copular DEMONSTRATIVE  See also Determiners
 
 PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 
-**LEXICON Emph_sa			 **  Broad: 1S & 2S & 3S(Fem) & 2P
+-  **LEXICON Emph_sa**  Broad: 1S & 2S & 3S(Fem) & 2P
 
-**LEXICON Emph_se			 **  Slender: 1S & 2S & 3S(Fem) & 2P
+-  **LEXICON Emph_se**  Slender: 1S & 2S & 3S(Fem) & 2P
 
-**LEXICON Emph_san		 **  Broad: 3S(Masc) & 3P
+-  **LEXICON Emph_san**  Broad: 3S(Masc) & 3P
 
-**LEXICON Emph_sean		 **  Slender: 3S(Masc) & 3P
+-  **LEXICON Emph_sean**  Slender: 3S(Masc) & 3P
 
-**LEXICON Emph_e			 ** Br/Sl: 1P
+-  **LEXICON Emph_e** Br/Sl: 1P
 
-**LEXICON Demonstrative  ** 
+-  **LEXICON Demonstrative** 
 
 * * *
 

@@ -1,4 +1,4 @@
-DETERMINERS
+# DETERMINERS
 E. Uí Dhonnchadha
 
 Determiners: Possessives

@@ -22,7 +22,7 @@ In the case of an initial "s", a "t" will be placed before it
 	2nd. Declension - All Feminine -  nouns end in broad or slender consonant
 	3rd. Declension - Feminine & Masculine - nouns end in a broad or slender consonant.
 	4th. Declension - Feminine & Masculine - all end in a vowel or "ín"
-**LEXICON Nouns ** 
+-  **LEXICON Nouns** 
 ##					1st DECLENSION 
 (1) WEAK PLURALS 
 Nom												
@@ -34,10 +34,10 @@ Gen
 Voc
 	
 
-**airgeadas	Nm1-SINGULAR; ** 
-**áireamh		Nm1-SINGULAR; ** 
-**amhras		Nm1-SINGULAR; ** 
-**aonar		Nm1-SINGULAR; ** 
+-  **airgeadas Nm1-SINGULAR;** 
+-  **áireamh Nm1-SINGULAR;** 
+-  **amhras Nm1-SINGULAR;** 
+-  **aonar Nm1-SINGULAR;** 
 etc. 
 
 (2) WEAK PLURALS
@@ -47,35 +47,35 @@ Gen
 Voc	
 	
 
-**bruas		Nm1-2;	 **  (thick) lip 
-**cág		Nm1-2;	**  jackdaw 
-**ceart		Nm1-2;	 **  right
-**cor		Nm1-2;	 ** 
-**fionn		Nm1-2;	 **  fair, white
-**gnáth		Nm1-2;	 ** 
-**íol		Nm1-2;	 **  idol 
+-  **bruas Nm1-2;**  (thick) lip 
+-  **cág Nm1-2;**  jackdaw 
+-  **ceart Nm1-2;**  right
+-  **cor Nm1-2;** 
+-  **fionn Nm1-2;**  fair, white
+-  **gnáth Nm1-2;** 
+-  **íol Nm1-2;**  idol 
 
 (3) STRONG PLURALS - ADD "TA"
 	LONG VOWEL (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr])
 
-**ál		Nm1-3;	 **  clutch, brood
-**aon		Nm1-3;	 **  one, ace 
+-  **ál Nm1-3;**  clutch, brood
+-  **aon Nm1-3;**  one, ace 
 etc.
 
 (4) STRONG PLURALS - ADD "THA"
-**glór		Nm1-4;	 **  voice
-**múr		Nm1-4;	 **  wall, shower
+-  **glór Nm1-4;**  voice
+-  **múr Nm1-4;**  wall, shower
 
 (5) STRONG PLURALS - ADD (A)Í
 
-**bealach		Nm1-5;	 **  way, road
-**cogadh		Nm1-5;	 ** 
-**Domhnach	Nm1-5;	 **  Sunday
+-  **bealach Nm1-5;**  way, road
+-  **cogadh Nm1-5;** 
+-  **Domhnach Nm1-5;**  Sunday
 etc
 
 (6) STRONG PLURALS - ADD  "ANNA"
 
-**bás		Nm1-6;	 ** 
+-  **bás Nm1-6;** 
 
 (7) STRONG PLURALS - ADD "Í"
 
@@ -88,18 +88,18 @@ etc
 			1 MASC.
 		list the categories here ......
 
-**baint		Nf2-SINGULAR;   ** 
-**réir		Nf2-SINGULAR; ** 
-**spéis		Nf2-SINGULAR;  ** 
-**teilifís	Nf2-SINGULAR;  ** 
-**titim		Nf2-SINGULAR;  ** 
+-  **baint Nf2-SINGULAR;** 
+-  **réir Nf2-SINGULAR;** 
+-  **spéis Nf2-SINGULAR;** 
+-  **teilifís Nf2-SINGULAR;** 
+-  **titim Nf2-SINGULAR;** 
 
 (1) WEAK PLURALS (no longer used)
 (2) WEAK PLURALS (ie Nom, Gen & Voc plurals are not the same)
 ONE SYLLABLE - Broad/Slender
-**binn		Nf2-2;	 **  peak		
-**cliath		Nf2-2;	 ** 
-**deoir		Nf2-2;	 **  tear
+-  **binn Nf2-2;**  peak		
+-  **cliath Nf2-2;** 
+-  **deoir Nf2-2;**  tear
 
 (3) WEAK PLURALS 
 
@@ -126,9 +126,9 @@ BROAD & SLENDER
 ##					3rd DECLENSION 
 
 3rd declension FEMININE NOUNS 
-**coinneáil	Nf3-SINGULAR;	 ** 
-**éisteacht	Nf3-SINGULAR;	 ** 
-**imirt		Nf3-4;		 **  -SINGULAR;
+-  **coinneáil Nf3-SINGULAR;** 
+-  **éisteacht Nf3-SINGULAR;** 
+-  **imirt Nf3-4;**  -SINGULAR;
 
 3rd declension MASCULINE NOUNS 
 
@@ -140,9 +140,9 @@ BROAD & SLENDER
 
 =======================end of 5th declension==========================!
 
-**LEXICON NounsB   ** 
+-  **LEXICON NounsB** 
 
-**LEXICON NounsC  ** 
+-  **LEXICON NounsC** 
 
 * * *
 
