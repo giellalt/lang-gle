@@ -179,40 +179,297 @@ These were the set types.
 
 ---
 
+## src-fst-morphology-affixes-adjectives.lexc.md 
+
+## Na hAidiactaí Tuairisciúla - Descriptive Adjectives
+E. Uí Dhonnchadha
+(c)2001
+JUN 2012 EUD: Added +Len everywhere lenition is applied i.e. ^Sé 
+: May have implications for CG3
+###		C O N T I N U A T I O N     C L A S S E S
+```
+___________________________________________________
+####					T Y P E   1
+##### 1st. Declension TYPE 1
+	MONOSYLLABIC & ENDING IN	-LL (except dall)
+1st. Declension TYPE 2
+	MONOSYLLABIC : OTHERS
+	POLYSYLLABIC & ENDING IN -(MH)AR
+**Genitive Singular Masc.	} attenuate	(Noun Declension 1)
+1st. Declension TYPE 3
+	POLYSYLLABIC & ENDING IN 	-ACH
+**Genitive Singular Masc.	} change each->igh, ach->aigh (like Noun Declension 1)
+**Vocative Singular Masc.	}
+**Genitive Singular Fem.	: change each->í,   ach->aí   (like Noun Declension 2)
+1st. Declension TYPE 4
+	POLYSYLLABIC & ENDING IN 	-ÍOCH
+OR IS IT och -> [] + che ???????
+BACK TO USING SAME AS COMPARATIVE FORM IF NECESSARY AT A LATER STAGE).
+1st. Declension TYPE 5
+	POLYSYLLABIC & ENDING IN 	LONG VOWEL + CH (except lách)
+2nd. Declension TYPE 1
+	POLYSYLLABIC & ENDS IN 	-IÚIL
+2nd. Declension TYPE 2
+	OTHERS
+3rd. Declension TYPE 1
+	ALL (except a few cases - i.e. breá, te)
+- LEXICON Adj1-1 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj1-2 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj1-3 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj1-4 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj1-5 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj2-1 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj2-2 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj3-1 
+- AdjBASE; 
+- +Adj+Comp:0 #; 
+
+- LEXICON Adj4-1 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+- +Adj:^Adj^Coim Fem_gen-D2A_sg;  sync + slen + e
+
+- LEXICON Adj4-2 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj4-3 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+- LEXICON Adj4-4 
+- AdjBASE; 
+- +Adj+Fem+Com:^Adj Fem_nom_voc_sg; 
+
+#### ADJECTIVES QUALIFYING FEM SINGULAR NOUNS
+
+- LEXICON Fem_nom_voc_sg 
+adj following a fem. noun is always lenited (^Sé) regardless of whether 
+the preceding noun is lenited or eclipsed (neither ??)
+as is the vocative after vocative particle "a"
+
+- +Sg+Len:^Sé #; 
+
+- LEXICON Fem_gen-D2A_sg  like Noun Declension 2
+- +Fem+Gen+Sg:^Caole #; 
+- +Comp:^Caole #; 
+
+- LEXICON Fem_gen-D2B_sg  like Noun Declension 2 but without "e" appended
+
+- LEXICON Fem_gen-D2C_sg  a new change
+
+- LEXICON Fem_gen-D2D_sg  a new change
+
+- LEXICON Fem_gen-D3_sg  like Noun Declension 3
+
+- LEXICON Masc_nom_sg 
+
+- LEXICON Masc_gen-D4_voc_sg  like Noun Declension 4
+
+- +Sg+Len:^Sé #;  hata an fhir bhig - the small man's hat
+
+- LEXICON Masc_gen-D1_voc_sg  like Noun Declension 1
+
+- +Sg+Len:^Caol^Sé #;  
+
+- LEXICON PL-A 
+- +Pl:a #;  adj is NOT lenited after a noun ending in a 
+-   broad consonantor a vowel! E.G. na mná móra - the big women
+
+- LEXICON PL-A-SLENDER 
+
+- +Pl+Len:a^Sé #;  adj IS lenited after a noun ending in a 
+-   slender consonantE.G. na fir bheaga - the small men
+
+- +Pl:e #;  adj is NOT lenited after a noun ending in a 
+-   broad consonantor a vowel
+
+-   cathair (city) is a noun with strong plurals
+-   obair na bpáistí maithe (work of the good childres)
+
+-   vocative: a pháistí mhaithe - O good children
+- LEXICON PL-E-SLENDER 
+
+- +Pl+Len:e^Sé #;  adj IS lenited after a noun ending in a 
+
+- LEXICON PL-TADA-ADJ 	
+- +Pl:0 #;  bean (woman) is a noun with weak plurals
+- LEXICON AdjBASE 
+- +Adj+Base:0 #; 
+- +Adj+Base+hPref:^IM^hv #;  e.g. go hiontach
+- +Adj+Base+Len:^IM^Sé #;  e.g. ba bhreá, BÁC Thuaidh (adj)
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/affixes/adjectives.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/affixes/adjectives.lexc)</small>
+
+---
+
 ## src-fst-morphology-affixes-nouns.lexc.md 
 
-Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+## Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
++Idf is no longer used with base form .. just +DefArt after article ...
 
-FEMININE NOUN continuation classes
+### FEMININE NOUN continuation classes
 Weak Plurals : 
 Broad singular is made slender; plural already broad
 
-Weak Plurals : Broaden 
+- LEXICON Nf2-SINGULAR 
 
-Singular already slender; plural is made broad
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D2; 
 
-Weak Plurals : 
+- LEXICON Nf2a-SINGULAR 
 
-Weak Plurals : 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D2a; 
 
-STRONG PLURALS
+- LEXICON Nf2-1 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)A; 
+- +Noun+Fem+Gen+Weak:^G PL-TADA; 
+- +Noun+Fem+Voc:^V PL-(LEA)A; 
 
-STRONG PLURALS
+- LEXICON Nf2-1a 
+- Nf2a-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)A; 
+- +Noun+Fem+Gen+Weak:^G PL-TADA; 
+- +Noun+Fem+Voc:^V PL-(LEA)A; 
 
-STRONG PLURALS
+#### Weak Plurals : Broaden 
 
-STRONG PLURALS
+##### Singular already slender; plural is made broad
 
-STRONG PLURALS
+- LEXICON Nf2-2 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)A; 
 
-STRONG PLURALS
+###### Weak Plurals : 
 
-3rd Declension
-Strong Plurals : +aí
+- LEXICON Nf2-3 
+
+###### Weak Plurals : 
+
+- +Noun+Fem+Com:^C PL-(CAOL)E; 
+- +Noun+Fem+Gen+Weak:^G PL-LEATHNÚ; 
+- +Noun+Fem+Voc:^V PL-(CAOL)E; 
+
+- LEXICON Nf2-4 
+
+- Nf2a-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)A; 
+
+#### STRONG PLURALS
+
+- LEXICON Nf2-5 
+
+- Nf2-SINGULAR; 
+
+- +Noun+Fem+Com:^C PL-TE; 
+- +Noun+Fem+Gen+Strong:^G PL-TE; 
+- +Noun+Fem+Voc:^V PL-TE; 
+
+- LEXICON Nf2-6 
+
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ANNA; 
+- +Noun+Fem+Gen+Strong:^G PL-(E)ANNA; 
+- +Noun+Fem+Voc:^V PL-(E)ANNA; 
+
+- LEXICON Nf2-7 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-Í; 
+- +Noun+Fem+Gen+Strong:^G PL-Í; 
+- +Noun+Fem+Voc:^V PL-Í; 
+
+- LEXICON Nf2-8 
+- +Noun+Fem+Com:^C PL-(E)ACHA; 
+- +Noun+Fem+Gen+Strong:^G PL-(E)ACHA; 
+- +Noun+Fem+Voc:^V PL-(E)ACHA; 
+
+- LEXICON Nf2-9 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)THA; 
+- +Noun+Fem+Gen+Strong:^G PL-(LEA)THA; 
+- +Noun+Fem+Voc:^V PL-(LEA)THA; 
+
+- LEXICON Nf2-10 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-TA; 
+- +Noun+Fem+Gen+Strong:^G PL-TA; 
+- +Noun+Fem+Voc:^V PL-TA; 
+
+- LEXICON Nf2-11 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ANTA; 
+- +Noun+Fem+Gen+Strong:^G PL-(E)ANTA; 
+- +Noun+Fem+Voc:^V PL-(E)ANTA; 
+
+- LEXICON Nf2-12 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)A; 
+- +Noun+Fem+Gen+Strong:^G PL-(LEA)A; 
+- +Noun+Fem+Voc:^V PL-(LEA)A; 
+
+- LEXICON Nf2-13 
+- Nf2-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(CAOL)E; 
+- +Noun+Fem+Gen+Strong:^G PL-(CAOL)E; 
+- +Noun+Fem+Voc:^V PL-(CAOL)E; 
+
+#### 3rd Declension
+#### Strong Plurals : +aí
 
 an bheannacht -> na beannachtaí
 
+- LEXICON Nf3-SINGULAR 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D3; 
+- +Noun+Fem+Voc:^F^V Voc-sg-0; 
+
+- LEXICON Nf3a-SINGULAR 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G^Ath Gen-sg-D3;  EXCEPTION t-> th,  t->[], dh ->t
+- +Noun+Fem+Voc:^F^V Voc-sg-0; 
+
 gamhain - gamhna (gs), midheamhain - midheamhna (gs)
+- LEXICON Nf3b-SINGULAR 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G^Coim Gen-sg-D3;  SYNC + a 
+- +Noun+Fem+Voc:^F^V Voc-sg-0; 
+
+- LEXICON Nf3-1 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C PL-AÍ; 
+- +Noun+Fem+Gen+Strong:^G PL-AÍ; 
+- +Noun+Fem+Voc:^V PL-AÍ; 
+
+- LEXICON Nf3-2 
+- Nf3a-SINGULAR; 
+- +Noun+Fem+Com:^C^Ath^Lea PL-AÍ; 
+- +Noun+Fem+Gen+Strong:^G^Ath^Lea PL-AÍ; 
+- +Noun+Fem+Voc:^V^Ath^Lea PL-AÍ; 
 
 Strong Plurals :  +(e)anna
 
@@ -220,6 +477,41 @@ tóin -> tóineanna
 scoth -> scothanna
 EXCEPTION: an chuid -> na codanna see FIX file
 EXCEPTION: an raith -> na rathanna see FIX file
+- LEXICON Nf3-3 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ANNA; 
+- +Noun+Fem+Gen+Strong:^G PL-(E)ANNA; 
+- +Noun+Fem+Voc:^V PL-(E)ANNA; 
+
+- LEXICON Nf3-4 
+- Nf3a-SINGULAR; 
+- +Noun+Fem+Com:^C PL-Í; 
+- +Noun+Fem+Gen+Strong:^G PL-Í; 
+- +Noun+Fem+Voc:^V PL-Í; 
+
+- LEXICON Nf3-5 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C^Lea PL-TA; 
+- +Noun+Fem+Gen+Strong:^G^Lea PL-TA; 
+- +Noun+Fem+Voc:^V^Lea PL-TA; 
+
+- LEXICON Nf3-6 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ACHA; 
+- +Noun+Fem+Gen+Strong:^G PL-(E)ACHA; 
+- +Noun+Fem+Voc:^V PL-(E)ACHA; 
+
+- LEXICON Nf3-6a 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(LEA)ACHA; 
+- +Noun+Fem+Gen+Strong:^G PL-(LEA)ACHA; 
+- +Noun+Fem+Voc:^V PL-(LEA)ACHA; 
+
+- LEXICON Nf3-7 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C PL-TE; 
+- +Noun+Fem+Gen+Strong:^G PL-TE; 
+- +Noun+Fem+Voc:^V PL-TE; 
 
 Strong Plurals :  Broaden +anna
 
@@ -227,24 +519,93 @@ an chuid -> na codanna see FIX file
 an raith -> na rathanna
 an laith -> na lathanna
 an luaith -> na luathanna
+- LEXICON Nf3-8 
+- Nf3-SINGULAR; 
+- +Noun+Fem+Com:^C^Lea PL-(E)ANNA; 
+- +Noun+Fem+Gen+Strong:^G^Lea PL-(E)ANNA; 
+- +Noun+Fem+Voc:^V^Lea PL-(E)ANNA; 
+
+- LEXICON Nf4-SINGULAR 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D4; 
+- +Noun+Fem+Voc:^F^V Voc-sg-0; 
 
 Strong Plurals : +í
 
 an bhearna -> na bearnaí
 an eala -> na healaí
 
+- LEXICON Nf4-1 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-Í; 
+- +Noun+Fem+Gen+Strong:^G PL-Í; 
+- +Noun+Fem+Voc:^V PL-Í; 
+
 Strong Plurals : Athrú e -> í
 
 an aicme -> na haicmí (classes)
 an táille -> na táillí (fees)
 
+- LEXICON Nf4-2 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C^Ath PL-Í; 
+- +Noun+Fem+Gen+Strong:^G^Ath PL-Í; 
+- +Noun+Fem+Voc:^V^Ath PL-Í; 
+
 Strong Plurals : 
 
+- LEXICON Nf4-3 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C^Ath PL-TE; 
+- +Noun+Fem+Gen+Strong:^G^Ath PL-TE; 
+- +Noun+Fem+Voc:^V^Ath PL-TE; 
+
+- LEXICON Nf4-4 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C^Ath PL-THE; 
+- +Noun+Fem+Gen+Strong:^G^Ath PL-THE; 
+- +Noun+Fem+Voc:^V^Ath PL-THE; 
+
+- LEXICON Nf4-5 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ACHA; 
+
+- LEXICON Nf4-6 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ANNA; 
+- +Noun+Fem+Gen+Strong:^G PL-(E)ANNA; 
+- +Noun+Fem+Voc:^V PL-(E)ANNA; 
+
+- LEXICON Nf4-7 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-(E)ANTA; 
 various ending in vowel	! plurals +nna
+- LEXICON Nf4-8 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-NNA; 
+- +Noun+Fem+Gen+Strong:^G PL-NNA; 
+- +Noun+Fem+Voc:^V PL-NNA; 
+- LEXICON Nf4-9 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-ONNA; 
+- +Noun+Fem+Gen+Strong:^G PL-ONNA; 
+- +Noun+Fem+Voc:^V PL-ONNA; 
+- LEXICON Nf4-10 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C PL-OCHA; 
+- +Noun+Fem+Gen+Strong:^G PL-OCHA; 
+- +Noun+Fem+Voc:^V PL-OCHA; 
+- LEXICON Nf4-11 
+- Nf4-SINGULAR; 
+- +Noun+Fem+Com:^C^Ath PL-TÍ; 
+- +Noun+Fem+Gen+Strong:^G^Ath PL-TÍ; 
+- +Noun+Fem+Voc:^V^Ath PL-TÍ; 
 
 Strong Plurals : Leathnú  +acha
 
 an bheoir -> na beoracha (beers)
+
+- LEXICON Nf5-1 
 
 Gen Sg : Coim + ach
 Strong Plurals : Coimriú +eacha
@@ -252,61 +613,191 @@ Strong Plurals : Coimriú +eacha
 an chathaoir -> na cathaoireacha (chairs) (Note long vowel aoi is not sync.
 an cathair -> na cathracha
 
+- LEXICON Nf5-2 
+
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D5-2; 
+
 Gen Sg : Coim + a
 Strong Plurals : Coimriú +(e)acha
 samhail -> samhla
 anacair -> anacra
+- LEXICON Nf5-2a 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D5-2a; 
 
 Gen Sg : Coim + Slen + e
 Strong Plurals : Coimriú +(e)acha
 crithir - critre
 fothair - foithre
+- LEXICON Nf5-2b 
+
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D5-2b; 
+
+- LEXICON Nf5-3 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+
+- LEXICON Nf5-4 
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D5-5; 
 
 tarraingt - tarraingthe - tarraingtí
+- LEXICON Nf5-7  11/04/08
 
-MASCULINE NOUN continuation classes
+- +Noun+Fem+Com:^F^C Nom-sg; 
+- +Noun+Fem+Gen:^F^G Gen-sg-D5-7; 
+
+### MASCULINE NOUN continuation classes
+
+- LEXICON Nm1-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
+- +Noun+Masc+Gen:^M^G Gen-sg-D1; 
+- +Noun+Masc+Voc:^M^V Voc-sg-1; 
 
 WEAK PLURALS (i.e. where the nominative and genitive plurals are different) 
 TYPE 1 Nom pl. ends in conson. eg cat : cait, fear : fir, marcach: marcaigh 
 
+- LEXICON Nm1-1 
+
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-CAOLÚ; 
+- +Noun+Masc+Gen+Weak:^G PL-TADA; 
+- +Noun+Masc+Voc:^V PL-(LEA)A; 
+
 TYPE 2 Nom pl. formed by adding -a eg cos : cosa, úll : úlla 
+
+- LEXICON Nm1-2 
+
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(LEA)A; 
+- +Noun+Masc+Gen+Weak:^G PL-TADA; 
 
 (TYPE 3) Nom pl. formed by adding -ta eg 
 
-2nd Declension
+- LEXICON Nm1-3 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-TA; 
+- +Noun+Masc+Gen+Strong:^G PL-TA; 
+
+- LEXICON Nm1-4 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(LEA)THA; 
+- +Noun+Masc+Gen+Strong:^G PL-(LEA)THA; 
+
+- LEXICON Nm1-5 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-ATHRÚ; 
+- +Noun+Masc+Gen+Strong:^G PL-ATHRÚ; 
+
+- LEXICON Nm1-6 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ANNA; 
+- +Noun+Masc+Gen+Strong:^G PL-(E)ANNA; 
+- LEXICON Nm1-7 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C^Caol PL-Í; 
+
+- LEXICON Nm1-8 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C^Coim PL-(E)ANNA; 
+
+- LEXICON Nm1-9 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C^Coim PL-(CAOL)E; 
+
+- LEXICON Nm1-10 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C^Coim PL-(CAOL)EACHA; 
+
+- LEXICON Nm1-11 
+- Nm1-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ACHA; 
+### 2nd Declension
 sliabh -> na sléibhte 
 
+- LEXICON Nm2-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
+
+- LEXICON Nm2-1 
+- Nm2-SINGULAR; 
+- +Noun+Masc+Com:^C^Caol PL-TE; 
+
+- LEXICON Nm3-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
+- LEXICON Nm3a-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
 3rd Declension
 Strong Plurals : +í 
 as in Nm7 but singular are different
 
 eg. bádóir -> na bádóirí
 
+- LEXICON Nm3-1 
+- Nm3-SINGULAR; 
+- +Noun+Masc+Com:^C PL-Í; 
+
 Strong Plurals : +anna
 
 eg. an bláth -> na bláthanna
 
+- LEXICON Nm3-2 
+- Nm3-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ANNA; 
 Strong Plurals : +aí
+
+- LEXICON Nm3-3 
+- Nm3-SINGULAR; 
+- +Noun+Masc+Com:^C PL-AÍ; 
 
 gen briocht -> breachta
 Strong Plurals : +aí
 briocht -> briochtaí
 
+- LEXICON Nm3-3a 
+- Nm3a-SINGULAR; 
+- +Noun+Masc+Com:^C PL-AÍ; 
+
 Strong Plurals : +anna
 eg. an bláth -> na bláthanna
+
+- LEXICON Nm3-4a 
 
 ^Lea,broadening, is required, in gen sg: io -> ea (bior, crios) 
 and this is done using ^Ath (change)
 pl bior -> bioranna
 
-Strong Plurals : Athrú +anna (io->ea)
-eg. an cith -> na ceathanna
+- Nm3a-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ANNA; 
 
+#### Strong Plurals : Athrú +anna (io->ea)
+eg. an cith -> na ceathanna
+- LEXICON Nm3-4 
+- Nm3a-SINGULAR; 
 ^Lea,broadening, is required, in gen sg: cith -> ceatha, greim -> greama
 and this is done using ^Ath (change)
 pl also broadened cith -> ceathanna
+- +Noun+Masc+Com:^C^Ath^Lea PL-(E)ANNA; 
 
-sliocht - sleachta gs & pl
+- LEXICON Nm3-5 
+- Nm3-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ACHA; 
+
+- LEXICON Nm3-6 
+- Nm3-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(LEA)A; 
+
+- LEXICON Nm3-7 
+- Nm3-SINGULAR; 
+- +Noun+Masc+Com:^C PL-TA; 
+
+- LEXICON Nm3-8 
+- Nm3a-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(LEA)A; 
+
+- LEXICON Nm3-8a  sliocht - sleachta gs & pl
+- Nm3a-SINGULAR; 
+- +Noun+Masc+Com:^C^Ath PL-(LEA)A; 
 
 Strong Plurals : +í
 
@@ -318,26 +809,118 @@ eg. an báidín -> na báidíní (small boats)
 (B) nouns ending in -a
 eg. an balla -> na ballaí (walls)
 
+- LEXICON Nm4-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
+
+- LEXICON Nm4-1 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-Í; 
+
+- LEXICON Nm4-2 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C^Ath PL-Í; 
+
+- LEXICON Nm4-3 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C^Ath PL-TE; 
+
+- LEXICON Nm4-4 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C^Ath PL-THE; 
+
+- LEXICON Nm4-5 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ACHA; 
+
+- LEXICON Nm4-6 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-NNA; 
+
+- LEXICON Nm4-7 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(E)ANNA; 
+
+- LEXICON Nm4-8 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-ITE; 
+
+- LEXICON Nm4-9 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-ONNA; 
+
+- LEXICON Nm4-10 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-OCHA; 
+
+- LEXICON Nm4-11 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-(LEA)THA; 
+
 01/04/08
+- LEXICON Nm4-12 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-AÍ; 
+
+- LEXICON Nm4-13 
+- Nm4-SINGULAR; 
+- +Noun+Masc+Com:^C PL-THANNA; 
 
 Strong Plurals : +idí
 an fiche -> na fichidí (the twenties) eidí needs correcting
 an caoga -> na caogaidí (the fifties)
+- LEXICON Nm5-1 
+- +Noun+Masc+Com:^M^C Nom-sg;  
+- +Noun+Masc+Com:^C PL-IDÍ; 
+
+- LEXICON Nm5-2 
+- +Noun+Masc+Com:^M^C Nom-sg;  
+
+- LEXICON Nm5-3 
+- +Noun+Masc+Com:^M^C Nom-sg;  
 
 GS +the
+- LEXICON Nm5-4 
+- +Noun+Masc+Com:^M^C Nom-sg; 
 
 GS +te
+- LEXICON Nm5-5-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
+
+- LEXICON Nm5-5  PL +TÍ 
+- Nm5-5-SINGULAR; 
+- +Noun+Masc+Com:^C^Atht PL-Í; 
 
 GS +tha
 PL +thaí
 bascadh - basctha - bascthaí
+- LEXICON Nm5-6 
 
 GS +ta
+- LEXICON Nm5-7-SINGULAR 
+- +Noun+Masc+Com:^M^C Nom-sg; 
+
+- LEXICON Nm5-7 
+- Nm5-7-SINGULAR; 
 
 moladh / gs = molta / pl = moltaí
+- LEXICON Nm5-7a 
+- Nm5-7-SINGULAR; 
 
-INITIAL MUTATIONS
-NOMINATIVE SINGULAR 
+- LEXICON Ns 
+- +Subst+Noun+Sg:0 NounSéUrú; 
+
+- LEXICON Nspl 
+- +Subst+Noun+Pl:0 NounSéUrú; 
+
+### INITIAL MUTATIONS
+#### NOMINATIVE SINGULAR 
+- LEXICON Nom-sg-initial 
+- NounSéUrú; 
+definite article eg. an cat (m) (p38 NIG)
+an t-éan(m) - the bird (p39 NIG) 
+an bhróg(f) - the shoe
+initial mutation for other reasons
+e.g. comp. preps. ar an gcnoc, poss. mo chat
 
 ^IM = initial mutation e.g. with prepositions, and possession
 Singular:
@@ -347,27 +930,144 @@ Plural:
 e.g. ar bhoscaí, i mboscaí
 possessive e.g. ár n-aithreacha - our fathers (^C)
 
+- LEXICON NounSéUrú 
+- Emphasis; 
+- +Ecl:^IM^Urú Emphasis; 
 adds ^h to vowel-initial words ...  but adds the +hPref to all words ... see fix file
 
-GENITIVE SINGULAR 
+- LEXICON Emphasis 
+- #; 
+- +Emph:s^Emph #;   NEEDS 1PL NE/NA & 3PL SEAN/SAN ALSO
 
-VOCATIVE SINGULAR 
+#### GENITIVE SINGULAR 
+
+- LEXICON Gen-sg-initial 
+#### VOCATIVE SINGULAR 
 Since this is trivial (always ^Sé) it is included with Final Mutations
 in Voc-sg-0 and Voc-sg-1.
 
-ALL PLURALS
+#### ALL PLURALS
 Note: Vocative Plural does not require Def & Idf but it is easier to generate 
 them and remove all Voc Pl Idfs at the end (the Def form is correct 
 although the Def marker is unnecessary)
 
-FINAL MUTATIONS
-NOMINATIVE SINGULAR
+- LEXICON Pl-initial 
 
-GENITIVE SINGULAR 
+### FINAL MUTATIONS
+#### NOMINATIVE SINGULAR
+- LEXICON Nom-sg 
+- +Sg:0 Nom-sg-initial; 
 
-VOCATIVE SINGULAR 
+#### GENITIVE SINGULAR 
 
-ALL PLURALS
+- LEXICON Gen-sg-D1  1st. Declension - Caolú (Slenderise)
+- +Sg:^Caol Gen-sg-initial; 
+
+- LEXICON Gen-sg-D2  2nd. Declension - Caolú (Slenderise) and
+
+- LEXICON Gen-sg-D2a  2nd. Declension - each -> í, ach -> aí 
+
+- LEXICON Gen-sg-D3  3rd. Declension -  Broaden (Leathnú) and
+
+- LEXICON Gen-sg-D4  4th. Declension - No change
+
+- LEXICON Gen-sg-D5-1  5th. Declension - (Broaden) + ach
+- LEXICON Gen-sg-D5-2  5th. Declension - Sync + (e)ach
+- LEXICON Gen-sg-D5-2a  5th. Declension - Sync + a
+- LEXICON Gen-sg-D5-2b  5th. Declension - Sync + Slen + e
+- LEXICON Gen-sg-D5-3  5th. Declension - Add "n"
+- LEXICON Gen-sg-D5-4  5th. Declension - Add "d"
+- LEXICON Gen-sg-D5-5  5th. Declension -  Broaden (Leathnú)
+- LEXICON Gen-sg-D5-6  5th. Declension -  Change + ithe
+- LEXICON Gen-sg-D5-7  5th. Declension -  Change + Slen + the
+- LEXICON Gen-sg-D5-8  5th. Declension -  Change + Slen + te
+
+#### VOCATIVE SINGULAR 
+
+- LEXICON Voc-sg-0 
+- +Sg+Len:^Sé #;  eg. a rún, a phobal
+
+- LEXICON Voc-sg-1 
+
+#### ALL PLURALS
+
+- LEXICON PL-TADA  NO CHANGE (LIT. NOTHING)
+
+- LEXICON PL-CAOLÚ  CAOLÚ (SLENDERISE)
+
+- LEXICON PL-LEATHNÚ  LEATHNÚ (BROADEN)
+
+- LEXICON PL-(LEA)A  ADD "A" & LEATHNÚ (BROADEN) IF SLENDER
+
+- LEXICON PL-TA  ADD "TA"
+
+- LEXICON PL-(LEA)THA  ADD "THA" & LEATHNÚ IF SLENDER
+
+- LEXICON PL-(E)ANNA  ADD "ANNA" IF BROAD & ADD "EANNA" IF SLENDER
+
+- LEXICON PL-Í  ADD "Í"
+
+- LEXICON PL-TÍ  ADD "TÍ"
+
+- LEXICON PL-(CAOL)E  ADD "E" & CAOLÚ IF BROAD
+
+- LEXICON PL-(CAOL)EACHA  ADD "EACHA" & CAOLÚ
+
+- LEXICON PL-(LEA)ACHA  ADD "ACHA" & LEATHNÚ
+
+- LEXICON PL-(E)ACHA  ADD "ACHA" IF BROAD & ADD "EACHA" IF SLENDER
+
+- LEXICON PL-THANNA  ADD "THANNA"
+
+- LEXICON PL-TE  ADD "TE"
+
+- LEXICON PL-AÍ  ADD "AÍ"
+
+- LEXICON PL-NNA  ADD "NNA"
+
+- LEXICON PL-THE  ADD "THE"
+
+- LEXICON PL-NA  ADD "NA"
+
+- LEXICON PL-IDÍ  ADD "IDÍ"
+
+- LEXICON PL-ATHRÚ  ATHRÚ (CHANGE LAST SYLLABLE)
+
+- LEXICON PL-(E)ANTA  ADD "ANTA" IF BROAD & ADD "EANTA" IF SLENDER
+
+- LEXICON PL-ITE  ADD "ITE"
+
+- LEXICON PL-ONNA  ADD "ONNA"
+
+- LEXICON PL-OCHA  ADD "OCHA"
+
+E. Uí Dhonnchadha 
+ADDED THE +SG TAG 20/2/2004
+ADDED NP-Fam Aug 2004
+
+- LEXICON NP-PLACE 
+
+- LEXICON NP-PLACE-EN 
+
+- LEXICON NP-PLACE-sg 
+
+- LEXICON NP-PLACE-fem 
+
+- LEXICON NP-PLACE-pl 
+
+- LEXICON NP-FAM-EN 
+
+- LEXICON NP-PERS-EN-fem 
+
+- LEXICON NP-PERS-EN 
+
+- LEXICON NP-Fam 
+
+- LEXICON NP-Fam-0 
+
+- LEXICON NP-Fam-V 
+
+- LEXICON NP-Fam-chg 
 
 when it is a place name
 as well as the usual inflections for propernouns  (4 classes)
@@ -376,11 +1076,38 @@ we want to generate an adjectival form e.g. Beilg - Beilgeach
 new 5-6-2024
 Place and Personal name files both use Nf1-Prop and Nm1-Prop etc.
 
+- LEXICON Nf2-Prop-Place 
+
+- LEXICON Nf3-Prop-Place 
+
+- LEXICON Nf4-Prop-Place 
+
+- LEXICON Nf5-Prop-Place 
+
+- LEXICON Nm1-Prop-Place 
+
+- LEXICON Nm4-Prop-Place 
+
+- LEXICON Nm1-Prop-PName 
+
+- LEXICON Nm3-Prop-PName 
+
+- LEXICON Nm4-Prop-PName 
+
+- LEXICON Nf2-Prop-PName 
+
+- LEXICON Nf3-Prop-PName 
+
+- LEXICON Nf4-Prop-PName 
+
 masc nouns - slenderise
+- LEXICON Nm1-Prop 
 
 fem nouns - slenderise and add e
+- LEXICON Nf2-Prop 
 
 fem nouns - broaden and add a
+- LEXICON Nf3-Prop 
 
 fem nouns - no change
 
@@ -396,8 +1123,12 @@ fem nouns - Albain/na hAlban
 
 ## src-fst-morphology-affixes-prefixes.lexc.md 
 
-Prefixes
+## Prefixes
 Prefixes in the Irish language are bound to beginning of other words.
+
+- LEXICON Prefixes 
+- nounprefix- Nouns ; 
+- verbprefix- Verbs ; 
 
 * * *
 
@@ -407,9 +1138,13 @@ Prefixes in the Irish language are bound to beginning of other words.
 
 ## src-fst-morphology-affixes-propernouns.lexc.md 
 
-Proper noun inflection
+## Proper noun inflection
 The Irish language proper nouns inflect in the same cases as regular
 nouns, but with a colon (':') as separator.
+
+- LEXICON ProperNounCases 
+- +N+Prop:%: Cases ; 
+- - Nouns ; 
 
 * * *
 
@@ -419,8 +1154,23 @@ nouns, but with a colon (':') as separator.
 
 ## src-fst-morphology-affixes-symbols.lexc.md 
 
+## Symbol affixes
 
 ## Symbol affixes
+
+- LEXICON Noun_symbols_possibly_inflected 
++N+Symbol: SYMBOL_connector ; 
+
+- LEXICON Noun_symbols_never_inflected 
+- +N+Symbol: # ; 
+
+- LEXICON SYMBOL_connector 
+
+- LEXICON SYMBOL_NO_suff 
+- +Sg+Nom: # ; 
+
+- LEXICON SYMBOL_suff 
+- # ; todo
 
 * * *
 
@@ -430,10 +1180,142 @@ nouns, but with a colon (':') as separator.
 
 ## src-fst-morphology-affixes-verbs.lexc.md 
 
+## Verb morphology
 
+- LEXICON V1-SL =  1st. Conjugation - slender
+
+- +PastInd+1P+Sg:^Verbis NegQPast; = variation shílis as well as shíleas
+
+- LEXICON V1-BR = 1st. Conjugation - broad
+
+- LEXICON V1b-PresInd = Present Tense - Aimsir Láithreach
+- +Auto:tar NegQ; = +Auto = Autonomous - saor briathar
+
+- LEXICON V1b-PastInd = Past Tense - Aimsir Chaite
+- +1P+Sg:as NegQPast; = 14 Feb
+
+- LEXICON V1b-FutInd = Future Tense - Aimsir Fháistineach
+- +1P+Sg:fad NegQ; = 14 Feb
+
+- LEXICON V1b-PastImp = Imperfect  - Aimsir Ghnáthchaite ( past hab.)
+
+- LEXICON V1b-Cond = Conditional Mood - Modh Coinníollach
+
+- +CM:fadh #; = munster variation
+
+- LEXICON V1b-PresSubj = Present Subj. Mood - Modh Foshuiteach Láith.
+
+- LEXICON V1b-Imper = Imperative Mood - Modh Ordaitheach
+
+- LEXICON V1-BR-LV = 1st. Conjugation - ! Broad F Slender T 
+
+- LEXICON V1xa-PresInd = Present Tense - Aimsir Láithreach
+- +Auto:itear NegQ; = +Auto = Autonomous - saor briathar
+
+- LEXICON V1xa-PastInd = Past Tense - Aimsir Chaite
+
+- +1P+Sg:s NegQPast; = 14 Feb
+
+- LEXICON V1xa-FutInd = Future Tense - Aimsir Fháistineach
+
+- LEXICON V1xa-PastImp = Imperfect  - Aimsir Ghnáthchaite ( past hab.)
+
+- LEXICON V1xa-Cond = Conditional Mood - Modh Coinníollach
+
+- LEXICON V1xa-PresSubj = Present Subj. Mood - Modh Foshuiteach Láith.
+
+- LEXICON V1xa-Imper = Imperative Mood - Modh Ordaitheach
+
+- LEXICON V1-SL-LV = 1st. Conjugation - ! Slender F Slender T 
+
+- LEXICON V1xb-PresInd = Present Tense - Aimsir Láithreach
+
+- LEXICON V1xb-PastInd = Past Tense - Aimsir Chaite
+
+- LEXICON V1xb-FutInd = Future Tense - Aimsir Fháistineach
+- +1P+Sg:ifad NegQ; = ?????  14 Feb
+
+- LEXICON V1xb-PastImp = Imperfect  - Aimsir Ghnáthchaite ( past hab.)
+
+- LEXICON V1xb-Cond = Conditional Mood - Modh Coinníollach
+
+- LEXICON V1xb-PresSubj = Present Subj. Mood - Modh Foshuiteach Láith.
+
+- LEXICON V1xb-Imper = Imperative Mood - Modh Ordaitheach
+
+- LEXICON V1-SV = 1st. Conjugation - ! Slender F Slender T 
+
+- LEXICON V1xc-PresInd = Present Tense - Aimsir Láithreach
+
+- LEXICON V1xc-PastInd = Past Tense - Aimsir Chaite
+- +1P+Sg:^igh^Verbíos NegQPast; = 14 Feb
+
+- LEXICON V1xc-FutInd = Future Tense - Aimsir Fháistineach
+- +1P+Sg:íos NegQ; = 14 Feb
+
+- LEXICON V1xc-PastImp = Imperfect  - Aimsir Ghnáthchaite ( past hab.)
+
+- LEXICON V1xc-Cond = Conditional Mood - Modh Coinníollach
+- +CM:ífeadh #; = munster variation
+
+- LEXICON V1xc-PresSubj = Present Subj. Mood - Modh Foshuiteach Láith.
+
+- LEXICON V1xc-Imper = Imperative Mood - Modh Ordaitheach
+
+- LEXICON V1-SL-X = 1st. Conjugation - slender becomes broad
+
+- LEXICON V1-SL-BR-sync = 1st. Conjugation - slender is sync. and becomes broad
+
+- LEXICON V1-SL-BR = 1st. Conjugation - slender becomes broad
+
+- LEXICON V1xd-Imper = Imperative Mood - Modh Ordaitheach
+
+- LEXICON V1xd-PastInd = Past Tense - Aimsir Chaite
+- +1P+Sg:^Verbeas NegQPast; = 14 Feb
+
+- LEXICON V1-SL-LC = 1st. Conjugation - slender becomes broad except where
+
+- LEXICON V2-BR = 2nd. Conjugation - broad
+
+- LEXICON V2-SL = 2nd. Conjugation - slender
+
+- LEXICON V2-BR-sync = 2nd. Conjugation - broad - syncopated
+
+- LEXICON V2-SL-sync = 2nd. Conjugation - slender - syncopated
+
+- LEXICON V2-BR-0 = 2nd. Conjugation - broad
+
+- LEXICON V2-BR-PresInd = Present Tense - Aimsir Láithreach
+- +Auto:aítear NegQ; = +Auto = Autonomous - saor briathar
+
+- LEXICON V2-BR-PastInd = Past Tense - Aimsir Chaite
+
+- +1P+Sg:aíos NegQPast; = 14 Feb
+
+- LEXICON V2-BR-FutInd = Future Tense - Aimsir Fháistineach
+- +1P+Sg:aíos NegQ; = 14 Feb
+- +Rel:ós^Sé #; = a chosnós
+
+- LEXICON V2-BR-PastImp = Imperfect  - Aimsir Ghnáthchaite ( past hab.)
+
+- LEXICON V2-BR-Cond = Conditional Mood - Modh Coinníollach
+
+- LEXICON V2-BR-PresSubj = Present Subj. Mood - Modh Foshuiteach Láith.
+
+- LEXICON V2-BR-Imper = Imperative Mood - Modh Ordaitheach
 
 inserted +Len +Uru to distinguish between a bhíonn & a mbíonn Dir/Indir
 Rel clauses Dec 2004
+
+- LEXICON NegQ 
+
+- LEXICON NegQPast 
+
+- LEXICON NegQSaor 
+
+- LEXICON NegQLen 
+
+- LEXICON NegImper 
 
 * * *
 
@@ -441,11 +1323,328 @@ Rel clauses Dec 2004
 
 ---
 
+## src-fst-morphology-phonology.init.xfscript.md 
+
+## Noun (Gaeilge) Replace Rules
+### INITIAL MUTATIONS
+Elaine Uí Dhonnchadha
+12/12/96 - continued March 1998
+and January 2001
+- ^Sé : (Séimhiú) Lenition : insert "h" after certain initial consonants
+- ^Urú : Eclipsis
+- ^tv & ^hv : Prefix "t-" or "h" to words with an initial vowel
+- ^ts : prefix "t" to words starting with "s" followed by "l", "n", "r" or a vowel
+- ^Poss : possessive m', d' etc on nouns
+Oct 2003
+INITIAL MUTATION OF 2nd. PART OF COMPOUND
+#### DEFINITIONS
+- define VowelAll a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA|A|E|I|O|U|Á|É|Í|Ó|Ú ; 
+- define VowelLC a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA ; 
+- define VowelUC A|E|I|O|U|Á|É|Í|Ó|Ú ; 
+- define Len b|c|d|f|g|m|p|t|B|C|D|F|G|M|P|T ; 
+- define SLen S|s ; 
+- define SWord l|n|r ; 
+
+#### Rules
+- read regex [..] -> h || %^CB [m|b|c|d|f|g|p|t] _ 
+- [..] -> h || %^CB s _ [VowelLC|l|n|r] 
+- [..] -> %^FH h || .#. Len _ ?+ [[%^F %^C]|[%^M %^G]|[%^M %^V]|[%^F %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé 
+- ,, 
+- [..] -> %^FH h || .#. [S|s] _ [l|n|r] VowelLC ?+ 
+- [[%^F %^C] 
+- |[%^M %^G] 
+- |[%^F %^V] 
+- |[%^M %^V] 
+- |[%^IM] 
+- |[%^Adj] 
+- |[%^Verb] 
+- |[%^VN]] 
+- ?* %^Sé 
+- ,, 
+- [..] -> %^FH h || .#. [S|s] _ VowelLC ?* [[%^F %^C]|[%^M %^G]|[%^F %^V]|[%^M %^V]|[%^IM]|[%^Adj]|[%^Verb]|[%^VN]] ?* %^Sé 
+
+- h -> [] || [d|n|t|l|s] ([%-|%_]) %^CB [d|n|t|l|s] _ 
+
+- %^Sé -> [] 
+- %^Do -> [] 
+- %^VN -> []  used for séimhiú on f without d' e.g. a fheiceáil not a d'fheiceáil
+
+- b -> %^FU m b ,  consonants
+- B -> %^FU m B ,  consonants
+- c -> %^FU g c , 
+- C -> %^FU g C , 
+- d -> %^FU n d , 
+- D -> %^FU n D , 
+- f -> %^FU b h f , 
+- F -> %^FU b h F , 
+- g -> %^FU n g , 
+- G -> %^FU n G , 
+- p -> %^FU b p , 
+- P -> %^FU b P , 
+- T -> %^FU d T , 
+- t -> %^FU d t || .#. _ ?+ [[%^G]| [[%^M | %^F] %^C]|[%^Verb]|[%^Adj]|[%^IM]] ?* %^Urú  Gen Pl & comp prep.
+- [..] -> %^FU n %- || .#. (%^X) _ VowelAll ?* [[%^G]| [[%^M | %^F] %^C]|[%^Verb]|[%^IM]] ?* %^Urú  Gen Pl only
+
+- [%^Urú -> []] 
+
+#### VOWEL PREFIXING t-, h, ts
+- [..] -> %^FV t %- || .#. (%^X) _ VowelLC ?* %^M %^C ?* %^tv 
+- [..] -> %^FV t || .#. (%^X) _ VowelUC ?* %^M %^C ?* %^tv 
+- [%^tv -> []] 
+
+- [..] -> %^FV h || .#. (%^X) _ VowelAll ?* [[%^F %^G] | [%^C]|[%^Verb]|%^IM] ?* %^hv 
+- [%^hv -> []] 
+
+- s -> %^FU t s || .#. _ (%^FH) [VowelAll|l|n|r|h] ?* [[%^F %^C]|[%^M %^G]] ?* %^ts 
+
+- S -> %^FU t S || .#. _ (%^FH) [VowelAll|l|n|r|h] ?* [[%^F %^C]|[%^M %^G]] ?* %^ts 
+
+- %^FH h -> [] || .#. %^FU t [s|S] _ 
+
+- %^ts -> [] 
+
+#### POSSESSIVE PREFIX 
+
+the following are performed in parallel as we want all forms
+
+- [..] -> %^FV h || .#. _ VowelAll ?+ %^Poss  a hathair - her father
+- [..] -> %^FV n %- || .#. _ VowelAll ?+ %^Poss  n-athair - our/your/their
+- %^Poss -> [] 
+
+- %^IM -> []  initial mutations caused by compound prepp, possessives etc.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/phonology.init.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.init.xfscript)</small>
+
+---
+
 ## src-fst-morphology-phonology.nounadj.xfscript.md 
 
+## Noun (Gaeilge) Replace Rules
+Elaine Uí Dhonnchadha
+12/12/96 - continued March 1998
+### INTRO
+Certain vowel combinations will be represented by one symbol as these vowel
+sounds should be treated as a unit.
+#### DIPHTHONG EXAMPLE
+For example in slenderising "ua" we want "uai" not "uiai".
+Diphthongs 
+#### LONG VOWEL EXAMPLE
+In cathair (city) the "ai" is syncopated but in cathaoir (chair) "aoi" is not.
+There are two other diphthongs in Irish but the are not explicitly represented
+orthographically (radharc, etc see Fpóca)
+#### Long Vowels
+### Rules 
+#### Definitions
+- define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA ; 
+- define Nountag %^F|%^M|%^C|%^G|%^V ; 
+- define Cons b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY|%^FS|%^FB ; 
 
+Regex
+- read regex [ a e -> %^AE ]  Long vowel symbol
 
-a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
+- [ a o -> %^AO ]  Long vowel symbol
+
+- [ u a -> %^UA ]  Diphthong symbol
+
+- [e a n n] -> [%^FY n e] || Cons _ [Nountag+ |%^Adj] %^Coim 
+
+- [e a l l] -> [%^FY l e], 
+- [a l l] -> [%^FY l e] || Cons _ [Nountag+ |%^Adj] %^Coim 
+
+- [a i l l] -> [%^FY l a] || Cons _ [Nountag+ |%^Adj] %^Coim 
+
+- [a|e|i|o|u] -> [%^FY] || Cons (a|e) _ ?^<3 [Nountag+ |%^Adj] %^Coim 
+- %^Coim -> [] 
+
+- %^M -> [] 
+- %^F -> [] 
+- %^C -> [] 
+- %^G -> [] 
+- %^V -> [] 
+- %^Adj -> [] 
+
+- é -> %^FC é i || _ %^Ath  finné -> finnéi+the
+- í -> %^FC i || _ %^Ath t  ainmhí -> ainmhi+the
+-   NOTE must fire before ch->í rule as we
+-   don't want the new í being turned into i
+- i ú -> %^FC i || _ %^Ath t  deimhniú -> deimhni+the (pl)
+
+- ú -> %^FC u i || _ %^Ath t  tarlú -> tarlui+the (pl)
+
+- i ú -> [%^FC ] || _ %^Ath i  deimhniú -> deimhn+ithe (gen sg)
+
+- ú -> [%^FC a] || _ %^Ath i  tarlú -> tarla+ithe (gen sg)
+
+- a í -> [%^FC ] || _ %^Ath a  cónaí -> cón+aithe (gen sg)
+
+- d l %^X a d h -> [%^FC d l a] || _ %^Ath (%^Caol) t  codladh -> codlata
+
+- t h %^X a d h -> [%^FC ] || _ %^Ath (%^Caol) t  leathadh -> leata
+
+- t h %^X a d h -> [%^FC ] || _ %^Ath (%^Caol) t  leathadh -> leata
+
+- t e %^X a d h -> [%^FC ] || _ %^Ath (%^Caol) t 
+
+- t %^X a d h -> [%^FC ] || _ %^Ath (%^Caol) t 
+
+- e a d h -> [%^FC ] || %^X _ %^Ath (%^Caol) t 
+
+- g t -> [%^FC g] || _ %^Ath (%^Caol) t  tarrXaingt -> tarrXaingthe
+
+- a d h -> [%^FC ] || %^X _ %^Ath (%^Caol) t 
+
+end new
+
+Nouns :final syllable "ach"  and "adh" become "aí" , eg bealach 
+"each" and "eadh" become "í"
+stems must be polysyllabic e.g. not beach, sceach etc (teach is an exception)
+Adj Like Nouns :final syllable "ach"  (no "adh"?) become "aí" , eg déanach  - déanaí
+
+- c h -> %^FC í ,  bealach -> bealaí, soitheach -> soithí
+-   margadh -> margaí, geimhreadh -> geimhrí
+- d h -> %^FC í || Vowel+ Cons+ %^X (e) a _ %^Ath (%^Caol) (t)  added \t 31/08/06
+- e a -> [] || _ %^FC í %^Ath  correction : geimhrea^FCí->geimhr^FCí, 
+-   soitheaí->soithí
+-   Adj: leochaileaí -> leochailí
+- b h -> %^FC a í || _ %^Ath  leanbh -> leanaí
+
+- d h -> %^FC t || i _ %^Ath %^Lea  iarraidh(aí) -> iarrait(aí)
+
+- t -> [%^FC ] || n _ %^Ath  tiomáint -> tiomána  ( was t->a but D3 appenda a)
+
+- t -> %^FC t h || r _ %^Ath  tagairt -> tagartha, buairt -> buartha
+
+- e -> [%^FC ] || _ %^Ath  "e" is removed and "í" or "te" is appended
+-   buille -> buillí, císte -> cístí
+-   míle -> mílte, sloinne -> sloinnte
+- i o -> %^FC e a || _ [c|n|s|r] (h t) %^Ath  sioc(m) -> seaca, 
+-   briocht -> breachta 
+-   smior(m) -> smeara
+-   fios(m) -> feasa, crios(m) -> creasa
+-   cion(m) -> ceana
+-   gion(m) -> geana
+
+- o c h -> [%^FC ] || %^X (?) í _ %^Ath  buíoch -> buí +thí
+
+- c h -> [%^FC ] || %^X [á|ó|o|%^UA] _ %^Ath  sách,sóch,gleoch,díomuach (^UA=ua)
+
+- [ %^Caol -> [] || [i|í] Cons* _  search to check if 
+-   the last vowel is an "i" or "í" 
+
+- %^Lea -> [] || [a|o|u|á|ó|ú|%^UA|%^AO|%^AE|%^IA] Cons* _ 
+-   check that the last vowel is NOT an "i" or "í" 
+-   U=ua O=ao E=ae (I=ia included though not in use)
+
+- c h -> %^FC g h || Vowel+ Cons+ %^X (e) a _ %^Caol 
+
+- c h -> %^FC g h || Vowel+ Cons+ %^X í o _ %^Caol 
+
+- c h -> %^FC g h || d ú _ %^Caol 
+
+- a -> %^FS i || %^X [e|u] _ [[c (h)] cuach - cuiche, 
+- |[b (h)] dealbh - deilbhe
+- |[d (h)] nead - neide, fleadh - fleidhe
+- |[l b h] dealbh - deilbhe
+- |[n g] reang - reinge
+- |[r c] searc - seirce, leac - leice
+- |[r g] fearg - feirge
+- |[t h] leath - leithe
+- |[s] greas - greise
+- |[m (h)] neamh - neimhe (added '(h)') - CW 09/08
+- ] %^Caol e 
+
+- e a -> %^FS i || Cons+ %^X _ Cons+ %^Caol 
+
+- a -> %^FS i || %^X é _ Cons+ %^Caol 
+
+- [..] -> %^FS i || %^X (e) [%^AO|a|á|o|ó|u|ú|%^UA] _ Cons+ %^Caol 
+
+- [..] -> %^FS i || %^X (i) ú _ Cons+ %^Caol 
+- o -> [%^FS ] || %^X (a|u) [i|í] _ Cons+ %^Caol 
+
+- u -> [%^FS ] || %^X [i|í] _ Cons+ %^Caol 
+- i a -> %^FS é i || %^X (h) _ Cons+ %^Caol (t) e 
+- [..] -> %^FS i || %^X i a _ Cons+ %^Caol .#. 
+
+- i a -> %^FS e a || %^X _ Cons+ %^Caol a 
+
+- %^Caol -> [] 
+
+May 1998
+Leathú (^Lea) :Broadening of slender words
+Usually by removing "i"
+but also by substituting vowels eg io->ea
+and also by inserting a broad vowel eg í->ío
+included %^FH in i -> ea rule
+
+- o i -> %^FB a || r _ Cons+ %^Lea  roinn -> rann 
+
+- i -> %^FB a || [e|é] _ Cons+ %^Lea  greim(m) -> greama, spéir -> spéartha
+
+- i -> %^FB e a || [b|c|m|r] (%^FH h) %^X _ Cons+ %^Lea 
+-   binn -> beanna, rith -> reatha
+-   cith(m) -> ceatha, crith(m) -> creatha
+-   scian -> sceana (I) imirt -> imeartha
+
+- i -> [%^FB] || [a|á|%^AE|o|ó|ú|%^UA|%^AO] _ Cons+ %^Lea 
+-   CHECK WHETHER "u" SHOULD BE HERE TOO???
+-   OR DOES "ui" ALWAYS GO TO "o" (see next rule)
+-   it appears so ...
+-   súil - súl, dúil, glúin
+-   cóir - córa, móin - móna
+-   deoir - deora, feoil - feola
+-   troid - troda, cainteoir - cainteora
+-   droim(m) - droma, goin - gona, toil
+-   gáir - gártha, tiomáint - tiomána
+-   síocháin - síochána, cáisc - cásca
+-   stair - startha, flaith(m) - flatha
+-   bliain - bliana
+-   grósaeir - grósaera (E), traein - traen(E)
+-   bádóir - bádóra, buairt(U) -> buartha
+-   aoir - aortha (O)
+
+- u i -> %^FB o || _ Cons+ %^Lea  cuid -  na coda, fuil - fola
+
+- [..] -> %^FB o || (a) í _ Cons+ %^Lea 
+-   feadaíl - feadaíola, tír - tíortha
+- %^Lea -> [] 
+
+Vowel Harmony of Broad and Slender Vowels: 
+Endings (which are appended to the root) must be broad or slender to agree with root 
+NB: this must be tested after ^Coim, ^Caol or ^Lea tags have been applied
+Examples 
+- (1) (e)acha	: neadacha (nests), stoirmeacha (storms)
+- (2) (e)anna	: carranna (cars),  áiteanna (places)
+The broad ending "acha" or "anna" will be applied as standard. If the root
+is now found to be slender an "e" will be inserted
+- %^X -> []  no longer required and it would 
+-   get in the way of the next rule
+
+- [ %^VH -> e || [i|í] Cons* _ ]  check if the last vowel before the %^VH
+-   is slender (ie an "i" or "í" )
+- [ a -> [] || a %^VH _ ]  remove extre "a" in  Havana^VHach
+
+- %^VH -> [] 
+
+- [..] -> e || [e|é|i|í|%^AE] Cons* s _ %^Emph 
+
+- [..] -> a || [a|á|o|ó|u|ú|%^UA|%^IA|%^AO] Cons* s _ %^Emph 
+
+- [..] -> %- || s _ s (a|e) %^Emph 
+
+- %^Emph -> [] 
+
+- [ %^AE -> a e] 
+- [ %^AO -> a o] 
+- [ %^UA -> u a] 
+- [%^F -> []] 
+- [%^M -> []] 
+- [%^N -> []] 
+- [%^G -> []] 
+- [%^V -> []] 
+- [%^CB -> []] 
 
 * * *
 
@@ -453,32 +1652,96 @@ a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
 
 ---
 
-## src-fst-morphology-phonology.twolc.md 
+## src-fst-morphology-phonology.tidy.xfscript.md 
 
-=================================== !
-The Irish morphophonological/twolc rules file !
-=================================== !
-
-* *primus%>s*
-* *primus%>0*
-
-*  examples:*
-
-*  examples:*
-
-*  examples:*
-
-*  examples:*
+## Gaeilge: Replace Rules
+Elaine Uí Dhonnchadha
+May 2001
+Apr 2004
+### Last Part - tidy up
+- read regex [ %^AE -> a e] 
+- [ %^AO -> a o] 
+- [ %^UA -> u a] 
+- [%^F -> []] 
+- [%^M -> []] 
+- [%^N -> []] 
+- [%^G -> []] 
+- [%^V -> []] 
+- [%^CB -> []] 
+- [%^FB -> []]  broadened
+- [%^FC -> []]  last syllable changed
+- [%^FH -> []]  séimhiú i.e. h inserted
+- [%^FU -> []]  urú
+- [%^FV -> []]  prefing of vowel-initial words
+- [%^FS -> []]  slenderised
+- [%^FY -> []]  syncopated
+- [%^FT -> []]  verb stem truncated
+- [%^CB -> []]  compound boundary e.g. from pref + verb/adj scripts
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/morphology/phonology.twolc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.twolc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/phonology.tidy.xfscript](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/phonology.tidy.xfscript)</small>
 
 ---
 
 ## src-fst-morphology-phonology.verb.xfscript.md 
 
+## Verb (Gaeilge) Replace Rules
+Elaine Uí Dhonnchadha
+(c) 2001 - NEW
+2005 - new vn/va triggers
+### PastInd & Imper use stem
+- regex [i g h -> [%^FT] || _ (%^Caol) %^igh ?* %^Verb [[%^Fr]|.#.]] 
+- [%^igh ->[]] 
+- [a i g h -> [%^FT] || _ %^aigh ?* %^Verb [%^Fr]] 
+- [%^aigh ->[]] 
 Verbal Noun Gen
+- [á i l t e -> %^FT á l a || _ %^áil %^Verb ] 
+- [%^áil ->[]] 
+- [t h -> [%^FT] || _ %^th %^Verb ] 
+- [%^th ->[]] 
+- [b h -> [%^FT] , 
+- g h -> [%^FT] , 
+- m h -> [%^FT] || _ %^bgmh %^Verb ] 
+- [%^bgmh ->[]] 
+
+### 2nd. Conjugation Syncopation of Stem
+
+- [a i l -> %^FY l || _ %^Coim %^Verb [%^Fr]] 
+- [a i n -> %^FY n || _ %^Coim %^Verb [%^Fr]] 
+- [a i r -> %^FY r || _ %^Coim %^Verb [%^Fr]] 
+- [a i s -> %^FY s || _ %^Coim %^Verb [%^Fr]] 
+- [i l -> %^FY l || _ %^Caol %^Coim %^Verb [%^Fr]] 
+- [i n -> %^FY n || _ %^Caol %^Coim %^Verb [%^Fr]] 
+- [i r -> %^FY r || _ %^Caol %^Coim %^Verb [%^Fr]] 
+- [i s -> %^FY s || _ %^Caol %^Coim %^Verb [%^Fr]] 
+- [%^Coim ->[]] 
+- [%^Fr ->[]] 
+
+### 1st Conjugation Slender Stems => broaden stems; leave slender for t endings
+
+- [%^LC -> %^Caol || _ %^Verb [t|.#.]] 
+- [i -> [%^FB ] || ?+ _ ? %^LC %^Verb] 
+- [%^LC -> 0 ] 
+
+### 1st Conjugation Slender Stems => slenderise endings ! order is important
+
+- [a i -> %^FS i || %^Caol %^Verb [f|t]* _ ?+] 
+- [a í -> %^FS í || %^Caol %^Verb [f|t]* _ ?* .#.] 
+- [a -> %^FS e || %^Caol %^Verb [f|t]* _ .#.] 
+- [á -> %^FS e á || %^Caol %^Verb [f|t]* _ .#.] 
+- [a -> %^FS e a || %^Caol %^Verb [f|t]* _ ?+]  f/t - to prevent  amar - eamear
+- [ó -> %^FS e o || %^Caol %^Verb [f|t]* _ ?+] 
+- [%^Caol -> []] 
+
+### 1st Conjugation Slender Stems => broaden root eg sábháil
+
+- [i -> [%^FB ] || _ ? %^Lea] 
+- [%^Lea -> []] 
+- [%^Verb -> []] 
+
+- [%^VAdj -> [] ] TEMPORARY - VERBAL ADJS. AND VERBAL NOUNS
+IN 2 MUST BE SORTED OUT
 
 * * *
 

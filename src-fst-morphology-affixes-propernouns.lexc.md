@@ -1,6 +1,10 @@
-Proper noun inflection
+# Proper noun inflection
 The Irish language proper nouns inflect in the same cases as regular
 nouns, but with a colon (':') as separator.
+
+- LEXICON ProperNounCases 
+- +N+Prop:%: Cases ; 
+- - Nouns ; 
 
 * * *
 

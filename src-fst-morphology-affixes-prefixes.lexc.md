@@ -1,5 +1,9 @@
-Prefixes
+# Prefixes
 Prefixes in the Irish language are bound to beginning of other words.
+
+- LEXICON Prefixes 
+- nounprefix- Nouns ; 
+- verbprefix- Verbs ; 
 
 * * *
 
