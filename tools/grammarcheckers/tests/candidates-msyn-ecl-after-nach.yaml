@@ -1,6 +1,0 @@
-Config:
-  Spec: ../pipespec.xml
-  Variant: glegram-dev
-
-Tests:
-  - ", a fuarthas le hoidhreacht ón nGréigis. "
