@@ -9,6 +9,16 @@ if WANT_GRAMCHECK
 
 # List here (space separated) all yaml files to be run as part of make check:
 TESTS=from_grammarcheckers_cg3-FAIL.yaml \
+    candidates-msyn-ecl-after-go.yaml \
+    candidates-msyn-ecl-after-prep.yaml \
+    candidates-msyn-gen-noun-defart-noun.yaml \
+    candidates-msyn-gen-noun-noun.yaml \
+    candidates-msyn-gen-vn-noun-with-article.yaml \
+    candidates-msyn-gen-vn-noun.yaml \
+    candidates-msyn-len-after-prep.yaml \
+    candidates-msyn-lenition-after-nior.yaml \
+    candidates-msyn-noun-defart.yaml \
+    candidates-syn-a-before-verb-relativephrase.yaml \
     msyn-adj-gender.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
@@ -34,10 +44,19 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-sentences.yaml \
     msyn-teastaigh-o-PASS.yaml
 
-
 # List tests that are presently (expected) failures here, ie things that should
 # be fixed *later*, but is not critical at the moment:
 XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
+    candidates-msyn-ecl-after-go.yaml \
+    candidates-msyn-ecl-after-prep.yaml \
+    candidates-msyn-gen-noun-defart-noun.yaml \
+    candidates-msyn-gen-noun-noun.yaml \
+    candidates-msyn-gen-vn-noun-with-article.yaml \
+    candidates-msyn-gen-vn-noun.yaml \
+    candidates-msyn-len-after-prep.yaml \
+    candidates-msyn-lenition-after-nior.yaml \
+    candidates-msyn-noun-defart.yaml \
+    candidates-syn-a-before-verb-relativephrase.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
     msyn-gen-noun-detpss-noun-FAIL.yaml \
