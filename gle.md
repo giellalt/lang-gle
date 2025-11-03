@@ -1165,17 +1165,192 @@ Anonymisation in transcripts/exam scripts
 
 ---
 
+## src-fst-morphology-stems-nouns.lexc.md 
+
+## Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+E. Uí Dhonnchadha 
+January 2001 
+April 2003:  ^IM general initial mutation flag
+REFERENCES 
+- (1) New Irish Grammar by The Christian Brothers   
+- (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil 
+- (3) Foclóir Póca - An Gúm 
+- (4) Nuachúrsa Gaeilge na mBráithre Críostaí 
+- (5) Gléacht & Ó Dónaill Irish-English Dictionary 
+GENERAL NOTES
+0.	Alphabet : a b c d e f g h i l m n o p r s t u + á é í ó ú.
+1.	There are three principal cases : Nominative, Genitive and Vocative
+2.	Nouns are inflected for number, gender and case. They can be inflected at 
+2.1	Gender.
+	After the definite article "an" 
+In the case of an initial "s", a "t" will be placed before it 
+	(b) Masculine nouns will have "t-" inserted before an initial vowel.
+2.2	Vowel Harmony must be maintained within words ie a word must be Broad or Slender 
+3.	Number.
+	1st. Declension - All Masculine - nouns all end in broad consonant
+	2nd. Declension - All Feminine -  nouns end in broad or slender consonant
+	3rd. Declension - Feminine & Masculine - nouns end in a broad or slender consonant.
+	4th. Declension - Feminine & Masculine - all end in a vowel or "ín"
+**LEXICON Nouns ** 
+###					1st DECLENSION 
+(1) WEAK PLURALS 
+Nom												
+	an cat (the cat)				na cait	(the cats)		}
+	an suipéar (the supper)			na suipéir (the suppers)}
+Gen
+	ceol an éin (the birds's song)	ceol na n-éan (the birds' song)	
+	am an suipéir (the supper's time) an na suipéar (the suppers' time)
+Voc
+	
+
+**airgeadas	Nm1-SINGULAR; ** 
+**áireamh		Nm1-SINGULAR; ** 
+**amhras		Nm1-SINGULAR; ** 
+**aonar		Nm1-SINGULAR; ** 
+etc. 
+
+(2) WEAK PLURALS
+EXAMPLE:
+Nom	
+Gen	
+Voc	
+	
+
+**bruas		Nm1-2;	 **  (thick) lip 
+**cág		Nm1-2;	**  jackdaw 
+**ceart		Nm1-2;	 **  right
+**cor		Nm1-2;	 ** 
+**fionn		Nm1-2;	 **  fair, white
+**gnáth		Nm1-2;	 ** 
+**íol		Nm1-2;	 **  idol 
+
+(3) STRONG PLURALS - ADD "TA"
+	LONG VOWEL (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr])
+
+**ál		Nm1-3;	 **  clutch, brood
+**aon		Nm1-3;	 **  one, ace 
+etc.
+
+(4) STRONG PLURALS - ADD "THA"
+**glór		Nm1-4;	 **  voice
+**múr		Nm1-4;	 **  wall, shower
+
+(5) STRONG PLURALS - ADD (A)Í
+
+**bealach		Nm1-5;	 **  way, road
+**cogadh		Nm1-5;	 ** 
+**Domhnach	Nm1-5;	 **  Sunday
+etc
+
+(6) STRONG PLURALS - ADD  "ANNA"
+
+**bás		Nm1-6;	 ** 
+
+(7) STRONG PLURALS - ADD "Í"
+
+(8) STRONG PLURALS - SYNCOPATE + ADD "ANNA"
+
+(9) STRONG PLURALS - SYNCOPATE, ATTENUATE + ADD "E"
+
+(10) STRONG PLURALS - SYNCOPATE + ADD "EACHA"
+
+			1 MASC.
+		list the categories here ......
+
+**baint		Nf2-SINGULAR;   ** 
+**réir		Nf2-SINGULAR; ** 
+**spéis		Nf2-SINGULAR;  ** 
+**teilifís	Nf2-SINGULAR;  ** 
+**titim		Nf2-SINGULAR;  ** 
+
+(1) WEAK PLURALS (no longer used)
+(2) WEAK PLURALS (ie Nom, Gen & Voc plurals are not the same)
+ONE SYLLABLE - Broad/Slender
+**binn		Nf2-2;	 **  peak		
+**cliath		Nf2-2;	 ** 
+**deoir		Nf2-2;	 **  tear
+
+(3) WEAK PLURALS 
+
+- (4) WEAK PLURALS 
+- 	MORE THAN ONE SYLLABLE, 
+- 	ENDS IN (E)ACH WHICH CHANGES TO (A)Í IN GEN. SG. (USES ^ATH TAG & D4)
+- 	
+- 	Nom Pl : Append "a"		(PL-3)
+- 	Gen Pl : No change		(PL-0)
+- 	Voc Pl : Append "a"		(PL-3)
+
+(5) STRONG PLURALS - ADD "TE"
+
+(7) STRONG PLURALS - ADD "Í"
+more than one syllable - SLENDER
+
+BROAD & SLENDER
+(8) STRONG PLURALS - ADD -(E)ACHA
+
+) STRONG PLURALS - ADD "THA"
+
+3 Masculine words in 2nd Declension 
+
+###					3rd DECLENSION 
+
+3rd declension FEMININE NOUNS 
+**coinneáil	Nf3-SINGULAR;	 ** 
+**éisteacht	Nf3-SINGULAR;	 ** 
+**imirt		Nf3-4;		 **  -SINGULAR;
+
+3rd declension MASCULINE NOUNS 
+
+###					4th DECLENSION 
+
+###					5th DECLENSION 
+
+####                   5th Declension MASCULINE NOUNS 
+
+=======================end of 5th declension==========================!
+
+**LEXICON NounsB   ** 
+
+**LEXICON NounsC  ** 
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/morphology/stems/nouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/nouns.lexc)</small>
+
+---
+
 ## src-fst-morphology-stems-numerals.lexc.md 
 
 NUMBERS
 E. Uí Dhonnchadha
+Cardinal numbers are described seperately here rather than with other
+Adjectives
 For Personal Numerals (duine, beirt, triúr) SEE NOUNS
 
-CARDINAL Numbers
+**LEXICON Numerals  ** 
 
-ORDINAL Numbers
+CARDINAL Numbers
+**aon+Num+Card:aon			NumSéUrú;   ** 
+**aon+Num+Card+hPref:haon		#;	 **  le haon cheann de na ...
+**aon+Num+Card+Bare:haon		#;	 **  a haon
+**aon+Num+Card+DefArt:t-aon	#;	 **  the one; the ace
+**seacht+Num+Card:seacht		NumSéUrú; ** 
+**ocht+Num+Card:ocht			NumSéUrú; ** 
+**naoi+Num+Card:naoi			NumSéUrú; ** 
+
+= **naoi+Num+Card:naoi			NumSéUrú; ** 
+
+**céad+Num+Ord:céad			NumSéUrú;  **  first
+**aon+Num+Ord:aonú			NumSéUrú;  ** 
+**aon+Num+Ord+Def:t-aonú		#;  ** 
 
 Number  Operators
+**++Num+Op:+	#;  ** 
+**-+Num+Op:-	#; ** 
+
+**LEXICON NumSéUrú ** 
+**#; ** 
+**+Len:^IM^Sé^tv		#; ** 
 
 * * *
 
@@ -1189,6 +1364,18 @@ PARTICLES
 E. Uí Dhonnchadha
 Preverbal
 Unique Membership classes
+**LEXICON Particles  ** 
+
+**a+Part+Vc+Voc:a			#;	! **  a Shíle  Vc 12/03/2022
+**a+Part+Nm:a			#;	 **  a haon, a dó
+**a+Part+Inf:a			#;	 **  uisce a ól (in vn phrase) 
+
+**go+Part+Ad:go			#;	 **  go maith
+**ro+Part+Ad:ro			#;	 **  ro lag (Historical)
+
+**Ní+Part+Pat:Ní			#;	 **  Ní Ghráda
+
+VERBAL PARTICLES
 
 tense distiction is unnecessary
 
@@ -1209,9 +1396,20 @@ Reflexive (or emphatic) 'féin' moved from pronouns file
 
 Na Forainmneacha Pearsanta 		- The Personal Pronouns (mé,tú, sé, sí..)
 Na Forainmneacha Éiginnte 		- Indefinite Pronouns (ceachtar, cibé ...)
+E. Uí Dhonnchadha
+
+-(1) New Irish Grammar by The Christian Brothers  
+-(2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
+-(3) Foclóir Póca - An Gúm
+-(4) Nuachúrsa Gaeilge na mBráithre Críostaí
+-(5) Ó Dónaill Irish-English Dictionary
 Pronominals - words which act like pronouns
 
+**LEXICON Personal_Pronouns  ** 
 Personal Pronouns
+
+**mé+Pron+Pers+1P+Sg:mé				#;	 **  me
+**tú+Pron+Pers+2P+Sg:tú				#;	 **  you
 
 Emphatic/Contrastive Pronouns
 
@@ -1226,6 +1424,18 @@ Copular DEMONSTRATIVE  See also Determiners
 
 PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 
+**LEXICON Emph_sa			 **  Broad: 1S & 2S & 3S(Fem) & 2P
+
+**LEXICON Emph_se			 **  Slender: 1S & 2S & 3S(Fem) & 2P
+
+**LEXICON Emph_san		 **  Broad: 3S(Masc) & 3P
+
+**LEXICON Emph_sean		 **  Slender: 3S(Masc) & 3P
+
+**LEXICON Emph_e			 ** Br/Sl: 1P
+
+**LEXICON Demonstrative  ** 
+
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/pronouns.lexc](https://github.com/giellalt/lang-gle/blob/main/src/fst/morphology/stems/pronouns.lexc)</small>
@@ -1235,6 +1445,19 @@ PREPOSITIONAL PRONOUNS (CONJUGATED PREPOSITIONS)
 ## src-fst-morphology-stems-propernouns.lexc.md 
 
 Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
+E. Uí Dhonnchadha 
+2003
+2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER
+**LEXICON NP-LEX-EIRE   ** 
+
+**< Á t h %_:%  C l i a t h > NP-PLACE;  ** 
+**< Á i t h %_:%  C l i a t h > NP-PLACE;  ** 
+**< Á t h a %_:%  C l i a t h > NP-PLACE;  ** 
+
+**Oileán	Nm1-Prop-Place;  ** 
+**Oileáin	NP-PLACE-pl; ** 
+**Meán	Nm1-Prop-Place; ** 
+**Oírr	Nm1-Prop-Place; ** 
 
 South Africa
 
@@ -1255,6 +1478,19 @@ Female
 ## src-fst-morphology-stems-punctuations.lexc.md 
 
 Punctuation
+E. Uí Dhonnchadha
+
+May 2004 : +Quo instead of +St & +End for quotation marks
+Feb 2023 : +Curr for currency symbols
+
+**LEXICON Punctuation_ga  ** 
+**%.	Final; ** 
+**<%!>	Final; ** 
+**%.%.%.	Final; ** 
+**%.%.	Final; ** 
+**%?	FinalQ; ** 
+
+**%"	Quote; ** 
 
 * * *
 
@@ -1264,6 +1500,8 @@ Punctuation
 
 ## src-fst-morphology-stems-tags.lexc.md 
 
+XML Tags
+E Uí Dhonnchadha
 
 Multichar_Symbols
 
@@ -1281,6 +1519,15 @@ LEXICON Root
 ## src-fst-morphology-stems-tobar.lexc.md 
 
 Tobar - ac Grianna
+E. Uí Dhonnchadha
+Jan 2009
+
+**LEXICON Tobar  ** 
+
+**abair+Verb+VTI+Vow+PastImp:adeireadh		#; ** 
+
+**is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea	#;	 **  is ea
+**is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard	 #;	 ** is éard
 
 PLACENAMES
 
@@ -1292,7 +1539,21 @@ PLACENAMES
 
 ## src-fst-morphology-stems-verbalnouns.lexc.md 
 
+Ainm Briathra & Aidiacht Briathra
+Verbal Nouns & Verbal Adjectives
+E Uí Dhonnchadha
+2003 
+Nov 2005 version 3 
+Updated May 2008
+verbal nouns have vn lemma rather than verb lemma
+verbal noun gen is same as verbal adj except for new vns ending in -áil
+and some other e.g. úsáide, úsáidte 
+CW manually checked Foclóir Póca entries and added FGB entries
+Updated Dec 2018: reorganised and verbal nouns have verb lemma again
 
+**LEXICON VerbalNounsV ** 
+**ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; ** 
+**achainigh+Verbal+Noun+VTI:achainí VN-INIT; ** 
 
 NOTE: 'druideadh' is commented out since it was not found as a verbal noun
 in the corpus, yet chances are that it would get mixed up with 'druideadh'
@@ -1306,7 +1567,54 @@ as independed form of 'druid', i.e. 'ó druideadh an scoil'
 
 ## src-fst-morphology-stems-verbs.lexc.md 
 
-First Conjugation Verb Stems
+Briathra Gaeilge - Irregular
+E. Uí Dhonnchadha
+14/10/96
+(1) New Irish Grammar by The Christian Brothers  
+- (2) Gramadach na Gaeilge agus Litriú na Gaeilge - An Caighdeán Oifigiúil
+- (3) Foclóir Póca - An Gúm
+- (4) Nuachúrsa Gaeilge na mBráithre Críostaí
+- (5) Ó Dónaill Irish-English Dictionary
+
+```
+oct 2004 - removed PastSubj
+may 2012 - added +Suf, +Var, +Typo and tidied many things
+dec 2019 - added non-std fuair for bardic
+****************************************************************************
+! First Conjugation Verb Stems
+------------------------------------------------------------------------
+V1-BR: 	one syllable (broad vowel - gutha leathan)
+------------------------------------------------------------------------
+V1-SL: 	one syllable (slender vowel - gutha caol )
+------------------------------------------------------------------------
+V1-BR-LV: Broad F-sufixes Slender T-suffixes (áigh, eoigh, óigh, uaigh, úigh)
+------------------------------------------------------------------------
+V!-SL-LV: Slender F-suffixes Slender T-suffixes (verbs ending in -éigh ) p99
+------------------------------------------------------------------------
+V1-SV:	Slender F Slender T ( verbs ending in -igh preceded
+		by a cons. or cons. + short vowel ) p100
+------------------------------------------------------------------------
+V1-SL-BR:	eisceachtaí do V1-SL; e.g. siúil
+		leathnaítear iad SEACHAS
+		a) Imperative 2P Sg, e.g. siúil
+		b) All of Past Ind. except 1P Pl, e.g. shiúlamar
+------------------------------------------------------------------------
+V1-BR-SL:	eisceachtaí do V1-BR; a mhalairt de V1-SL-BR; e.g. tafann 
+		caolaítear agus coimrítear iad SEACHAS
+		a) Imperative 2P Sg, e.g. tafann
+		b) All of Past Ind. except 1P Pl, e.g. ????
+------------------------------------------------------------------------
+V1-SL-X:	eisceachtaí do V1-SL; leathnaítear iad ; 
+		?? polysyllabic with stress on second syllable  
+		is this a reason why they are in the first declension?
+------------------------------------------------------------------------
+V1-SL-LC:	ends in áil
+```
+**LEXICON VerbsC1A ** 
+
+**mol+Verb+VTI:mol	V1-BR;	 ** 
+**glac+Verb+VT:glac	V1-BR;	 **  ta -. tha (glactha)
+**lúb+Verb+VTI:lúb	V1-BR;	 ** 
 
 Second Conjugation Verb Stems
 
