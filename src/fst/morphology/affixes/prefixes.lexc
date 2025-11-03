@@ -1,10 +1,10 @@
-!! Prefixes
+!! # Prefixes
 !  --------
 !! Prefixes in the Irish language are bound to beginning of other words.
 
-LEXICON Prefixes
-nounprefix-     Nouns   ;
-verbprefix-     Verbs   ;
+LEXICON Prefixes	!!≈ - @CODE@ 
+nounprefix-     Nouns   ;	!!≈ - @CODE@ 
+verbprefix-     Verbs   ;	!!≈ - @CODE@ 
 
 
 ! vim: set ft=xfst-lexc:

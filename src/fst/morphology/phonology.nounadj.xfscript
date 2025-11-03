@@ -1,41 +1,47 @@
 !THIS ONE
-! Noun (Gaeilge) Replace Rules
-! Elaine Uí Dhonnchadha
-! 12/12/96 - continued March 1998
+!! # Noun (Gaeilge) Replace Rules
+!! Elaine Uí Dhonnchadha
+!! 12/12/96 - continued March 1998
 ! 
 !****************************************************************************
-! Certain vowel combinations will be represented by one symbol as these vowel
-! sounds should be treated as a unit.
-! DIPHTHONG EXAMPLE
-! For example in slenderising "ua" we want "uai" not "uiai".
-! Diphthongs 
-!	ua -> U eg bruas ^Caol, buairt ^Lea, díomuach ^Ath (adj.)
-!	ia -> I eg scian ^Lea	(NOT IN USE AT PRESENT)
-! LONG VOWEL EXAMPLE
-! In cathair (city) the "ai" is syncopated but in cathaoir (chair) "aoi" is not.
-! There are two other diphthongs in Irish but the are not explicitly represented
-! orthographically (radharc, etc see Fpóca)
-!
-! Long Vowels
-!	ao -> O saol, gaol, cathaoir (sounds like ee)
-!	ae -> E grosaeir, traen ^Lea (sounds like ay)
-!
-!	Note: sometimes "eo" has a long sound (like ó) eg ceol, gleo
+!! ## INTRO
+!! Certain vowel combinations will be represented by one symbol as these vowel
+!! sounds should be treated as a unit.
+!!
+!! ### DIPHTHONG EXAMPLE
+!! For example in slenderising "ua" we want "uai" not "uiai".
+!! Diphthongs 
+!!	- ua -> U eg bruas ^Caol, buairt ^Lea, díomuach ^Ath (adj.)
+!!	- ia -> I eg scian ^Lea	(NOT IN USE AT PRESENT)
+!!
+!! ### LONG VOWEL EXAMPLE
+!! In cathair (city) the "ai" is syncopated but in cathaoir (chair) "aoi" is not.
+!! There are two other diphthongs in Irish but the are not explicitly represented
+!! orthographically (radharc, etc see Fpóca)
+!!
+!! ### Long Vowels
+!!	ao -> O saol, gaol, cathaoir (sounds like ee)
+!!	ae -> E grosaeir, traen ^Lea (sounds like ay)
+!!
+!!	Note: sometimes "eo" has a long sound (like ó) eg ceol, gleo
 !***************************************************************************
-define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA;
-define Nountag  %^F|%^M|%^C|%^G|%^V;
-define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY|%^FS|%^FB;
+!! ## Rules 
+!! ### Definitions
+define Vowel a|e|i|o|u|á|é|í|ó|ú|%^AO|%^IA|%^AE|%^UA ;		 !!≈ - @CODE@ 
+define Nountag  %^F|%^M|%^C|%^G|%^V ;		 !!≈ - @CODE@ 
+define Cons  b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|%^FC|%^FY|%^FS|%^FB ;		 !!≈ - @CODE@ 
 
-read regex [ a e -> %^AE ]			! Long vowel symbol
+!! Regex
+read regex [ a e -> %^AE ]			!!≈ - @CODE@  Long vowel symbol
 !.o.
-![ i a -> %^IA ]					! Diphthong symbol
+![ i a -> %^IA ]					!!≈ - @CODE@  Diphthong symbol
 
 .o.
-[ a o -> %^AO ]						! Long vowel symbol
+[ a o -> %^AO ]						!!≈ - @CODE@  Long vowel symbol
 
 .o.
-[ u a -> %^UA ]						! Diphthong symbol
-!;
+[ u a -> %^UA ]						!!≈ - @CODE@  Diphthong symbol
+! ;
 ! (c) January 2001
 ! (1) Coimriú : Syncopation of Last Unstressed Syllable (^Coim)
 !		before an ending is added
@@ -59,22 +65,22 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 
 ! cloigeann - cloigne, craiceann - craicne
 .o.
-[e a n n] -> [%^FY n e] || Cons  _ [Nountag+ |%^Adj] %^Coim
+[e a n n] -> [%^FY n e] || Cons  _ [Nountag+ |%^Adj] %^Coim		 !!≈ - @CODE@ 
 
 .o.
 ! drioball - drible, fuigheall - fuighle
-[e a l l] -> [%^FY l e],
-[a l l]   -> [%^FY l e] || Cons  _ [Nountag+ |%^Adj] %^Coim
+[e a l l] -> [%^FY l e],		 !!≈ - @CODE@ 
+[a l l]   -> [%^FY l e] || Cons  _ [Nountag+ |%^Adj] %^Coim		 !!≈ - @CODE@ 
 
 .o.
 ! abhaill - abhla, abhlacha
-[a i l l]   -> [%^FY l a] || Cons  _ [Nountag+ |%^Adj] %^Coim
+[a i l l]   -> [%^FY l a] || Cons  _ [Nountag+ |%^Adj] %^Coim		 !!≈ - @CODE@ 
 
 .o.
-[a|e|i|o|u] -> [%^FY] || Cons  (a|e) _  ?^<3  [Nountag+ |%^Adj] %^Coim
+[a|e|i|o|u] -> [%^FY] || Cons  (a|e) _  ?^<3  [Nountag+ |%^Adj] %^Coim		 !!≈ - @CODE@ 
 .o.
- %^Coim -> []
-!;
+ %^Coim -> []		 !!≈ - @CODE@ 
+! ;
 ! 2004 include ^FY flag with consonants 
 !***************************************************************************!
 ! (1) Insert "^X" before the final vowel group of every word in the lexicon
@@ -94,18 +100,18 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 !***************************************************************************!
 
 .o.
- %^M -> []
+ %^M -> []		 !!≈ - @CODE@ 
 .o.
- %^F -> []
+ %^F -> []		 !!≈ - @CODE@ 
 .o.
- %^C -> []
+ %^C -> []		 !!≈ - @CODE@ 
 .o.
- %^G -> []
+ %^G -> []		 !!≈ - @CODE@ 
 .o.
- %^V -> []
+ %^V -> []		 !!≈ - @CODE@ 
 .o.
- %^Adj -> []
-!;
+ %^Adj -> []		 !!≈ - @CODE@ 
+! ;
 
 ! Athrú   : Ending Changes (^Ath)
 !
@@ -113,30 +119,30 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 !***************************************************************************!
 
 .o.
- é -> %^FC é i || _ %^Ath	! finné -> finnéi+the
+ é -> %^FC é i || _ %^Ath	!!≈ - @CODE@  finné -> finnéi+the
 !----------------------------------------------------------------------
 .o.
- í -> %^FC i || _ %^Ath t	! ainmhí -> ainmhi+the
-				! NOTE must fire before ch->í rule as we
-				! don't want the new í being turned into i
+ í -> %^FC i || _ %^Ath t	!!≈ - @CODE@  ainmhí -> ainmhi+the
+				!!≈ - @CODE@  NOTE must fire before ch->í rule as we
+				!!≈ - @CODE@  don't want the new í being turned into i
 !----------------------------------------------------------------------
 .o.
- i ú -> %^FC i || _ %^Ath t	! deimhniú -> deimhni+the (pl)
+ i ú -> %^FC i || _ %^Ath t	!!≈ - @CODE@  deimhniú -> deimhni+the (pl)
 
 .o.
- ú -> %^FC u i || _ %^Ath t	! tarlú -> tarlui+the (pl)
-
-!----------------------------------------------------------------------
-.o.
- i ú -> [%^FC ] || _ %^Ath i	! deimhniú -> deimhn+ithe (gen sg)
-
-.o.
-!!! ú -> [%^FC ] || _ %^Ath a	! tarlú -> tarl+aithe (gen sg)
- ú -> [%^FC a] || _ %^Ath i	! tarlú -> tarla+ithe (gen sg)
+ ú -> %^FC u i || _ %^Ath t	!!≈ - @CODE@  tarlú -> tarlui+the (pl)
 
 !----------------------------------------------------------------------
 .o.
- a í -> [%^FC ] || _ %^Ath a	! cónaí -> cón+aithe (gen sg)
+ i ú -> [%^FC ] || _ %^Ath i	!!≈ - @CODE@  deimhniú -> deimhn+ithe (gen sg)
+
+.o.
+!!! ú -> [%^FC ] || _ %^Ath a	!!≈ - @CODE@  tarlú -> tarl+aithe (gen sg)
+ ú -> [%^FC a] || _ %^Ath i	!!≈ - @CODE@  tarlú -> tarla+ithe (gen sg)
+
+!----------------------------------------------------------------------
+.o.
+ a í -> [%^FC ] || _ %^Ath a	!!≈ - @CODE@  cónaí -> cón+aithe (gen sg)
 
 
 !----------------------------------------------------------------------
@@ -159,95 +165,95 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
  n l %^X e a d h   -> [%^FC n n e a l]  || _ %^Ath (%^Caol) t ! inleadh -> innealta
 
 .o.
- d l %^X a d h   -> [%^FC d l a]  || _ %^Ath (%^Caol) t	! codladh -> codlata
+ d l %^X a d h   -> [%^FC d l a]  || _ %^Ath (%^Caol) t	!!≈ - @CODE@  codladh -> codlata
 
 .o.
- t h %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t	! leathadh -> leata
+ t h %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t	!!≈ - @CODE@  leathadh -> leata
 
 .o.
- t h %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t	! leathadh -> leata
+ t h %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t	!!≈ - @CODE@  leathadh -> leata
 
 .o.
- t e %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t
+ t e %^X a d h   -> [%^FC ]   || _ %^Ath (%^Caol) t		 !!≈ - @CODE@ 
 
 .o.
- t %^X a d h     -> [%^FC ]   || _ %^Ath (%^Caol) t
+ t %^X a d h     -> [%^FC ]   || _ %^Ath (%^Caol) t		 !!≈ - @CODE@ 
 
 .o.
- e a d h     -> [%^FC ]   || %^X _ %^Ath (%^Caol) t
+ e a d h     -> [%^FC ]   || %^X _ %^Ath (%^Caol) t		 !!≈ - @CODE@ 
 
 .o.
-    g t      -> [%^FC g]  || _ %^Ath (%^Caol) t	! tarrXaingt -> tarrXaingthe
+    g t      -> [%^FC g]  || _ %^Ath (%^Caol) t	!!≈ - @CODE@  tarrXaingt -> tarrXaingthe
 
 .o.
-  a d h      -> [%^FC ]   || %^X _ %^Ath (%^Caol) t
+  a d h      -> [%^FC ]   || %^X _ %^Ath (%^Caol) t		 !!≈ - @CODE@ 
 
-!!.o.
-!!  a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
-!end new
+!.o.
+!  a d h      -> [%^FC ]   ||  [d|n|t|l|s] %^X _ %^Ath (%^Caol) t
+!! end new
  
 !----------------------------------------------------------------------
-! Nouns :final syllable "ach"  and "adh" become "aí" , eg bealach 
-! "each" and "eadh" become "í"
-! stems must be polysyllabic e.g. not beach, sceach etc (teach is an exception)
-! Adj Like Nouns :final syllable "ach"  (no "adh"?) become "aí" , eg déanach  - déanaí
+!! Nouns :final syllable "ach"  and "adh" become "aí" , eg bealach 
+!! "each" and "eadh" become "í"
+!! stems must be polysyllabic e.g. not beach, sceach etc (teach is an exception)
+!! Adj Like Nouns :final syllable "ach"  (no "adh"?) become "aí" , eg déanach  - déanaí
 
 .o.
- c h -> %^FC í ,		! bealach -> bealaí, soitheach -> soithí
-				! margadh -> margaí, geimhreadh -> geimhrí
- d h -> %^FC í || Vowel+ Cons+ %^X (e) a _ %^Ath (%^Caol) (\t)	! added \t 31/08/06
+ c h -> %^FC í ,		!!≈ - @CODE@  bealach -> bealaí, soitheach -> soithí
+				!!≈ - @CODE@  margadh -> margaí, geimhreadh -> geimhrí
+ d h -> %^FC í || Vowel+ Cons+ %^X (e) a _ %^Ath (%^Caol) (\t)	!!≈ - @CODE@  added \t 31/08/06
 !----------------------------------------------------------------------
 .o.
- e a  -> [] || _ %^FC í %^Ath 	! correction : geimhrea^FCí->geimhr^FCí, 
-				! soitheaí->soithí
-				! Adj: leochaileaí -> leochailí
+ e a  -> [] || _ %^FC í %^Ath 	!!≈ - @CODE@  correction : geimhrea^FCí->geimhr^FCí, 
+				!!≈ - @CODE@  soitheaí->soithí
+				!!≈ - @CODE@  Adj: leochaileaí -> leochailí
 !----------------------------------------------------------------------
 .o.
- b h -> %^FC a í || _ %^Ath	! leanbh -> leanaí
-
-!----------------------------------------------------------------------
-.o.
- d h -> %^FC t || i _ %^Ath %^Lea	! iarraidh(aí) -> iarrait(aí)
-
+ b h -> %^FC a í || _ %^Ath	!!≈ - @CODE@  leanbh -> leanaí
 
 !----------------------------------------------------------------------
 .o.
- t -> [%^FC ] || n _ %^Ath	! tiomáint -> tiomána  ( was t->a but D3 appenda a)
+ d h -> %^FC t || i _ %^Ath %^Lea	!!≈ - @CODE@  iarraidh(aí) -> iarrait(aí)
+
 
 !----------------------------------------------------------------------
 .o.
- t -> %^FC t h || r _ %^Ath	! tagairt -> tagartha, buairt -> buartha
+ t -> [%^FC ] || n _ %^Ath	!!≈ - @CODE@  tiomáint -> tiomána  ( was t->a but D3 appenda a)
 
 !----------------------------------------------------------------------
 .o.
- e -> [%^FC ] || _ %^Ath	! "e" is removed and "í" or "te" is appended
-				! buille -> buillí, císte -> cístí
-				! míle -> mílte, sloinne -> sloinnte
+ t -> %^FC t h || r _ %^Ath	!!≈ - @CODE@  tagairt -> tagartha, buairt -> buartha
+
 !----------------------------------------------------------------------
 .o.
- i o -> %^FC e a || _ [c|n|s|r] (h t) %^Ath	! sioc(m) -> seaca, 
-					! briocht -> breachta 
-					! smior(m) -> smeara
-					! fios(m) -> feasa, crios(m) -> creasa
-					! cion(m) -> ceana
-					! gion(m) -> geana
+ e -> [%^FC ] || _ %^Ath	!!≈ - @CODE@  "e" is removed and "í" or "te" is appended
+				!!≈ - @CODE@  buille -> buillí, císte -> cístí
+				!!≈ - @CODE@  míle -> mílte, sloinne -> sloinnte
+!----------------------------------------------------------------------
+.o.
+ i o -> %^FC e a || _ [c|n|s|r] (h t) %^Ath	!!≈ - @CODE@  sioc(m) -> seaca, 
+					!!≈ - @CODE@  briocht -> breachta 
+					!!≈ - @CODE@  smior(m) -> smeara
+					!!≈ - @CODE@  fios(m) -> feasa, crios(m) -> creasa
+					!!≈ - @CODE@  cion(m) -> ceana
+					!!≈ - @CODE@  gion(m) -> geana
 !
 !----------------------------------------------------------------------
 ! Adjectives: final syllable íoch becomes íthí, e.g. buíoch -> buíthí
 ! AND [(e)á,ó,eo,ua] ch becomes thaí e.g.gnách -> gnáthaí, spleách->spleáthaí???
 
 .o.
- o c h -> [%^FC ] || %^X (?) í _ %^Ath	! buíoch -> buí +thí
+ o c h -> [%^FC ] || %^X (?) í _ %^Ath	!!≈ - @CODE@  buíoch -> buí +thí
 
 .o.
- c h -> [%^FC ] || %^X [á|ó|o|%^UA] _ %^Ath	! sách,sóch,gleoch,díomuach (^UA=ua)
+ c h -> [%^FC ] || %^X [á|ó|o|%^UA] _ %^Ath	!!≈ - @CODE@  sách,sóch,gleoch,díomuach (^UA=ua)
 
 ! --- end adj stuff ---
 
 !----------------------------------------------------------------------
 .o.
 %^Ath -> []
-!;
+! ;
 
 !
 ! (1) Remove the ^Caol (slenderise) tag if the word is already slender
@@ -260,17 +266,17 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 !***************************************************************************!
 
 .o.
-[ %^Caol -> [] || [i|í] Cons* _ 	! search to check if 
-				! the last vowel is an "i" or "í" 
+[ %^Caol -> [] || [i|í] Cons* _ 	!!≈ - @CODE@  search to check if 
+				!!≈ - @CODE@  the last vowel is an "i" or "í" 
 ]
 
 .o.
 [									
- %^Lea -> [] || [a|o|u|á|ó|ú|%^UA|%^AO|%^AE|%^IA] Cons* _ 	
-				! check that the last vowel is NOT an "i" or "í" 
-				! U=ua O=ao E=ae (I=ia included though not in use)
+ %^Lea -> [] || [a|o|u|á|ó|ú|%^UA|%^AO|%^AE|%^IA] Cons* _ 			 !!≈ - @CODE@ 
+				!!≈ - @CODE@  check that the last vowel is NOT an "i" or "í" 
+				!!≈ - @CODE@  U=ua O=ao E=ae (I=ia included though not in use)
 ]
-!;
+! ;
 
 ! 2004 included %^FC and %^FY in Cons
 !****************************************************************************
@@ -284,18 +290,18 @@ read regex [ a e -> %^AE ]			! Long vowel symbol
 ! marcach, clúdach, misneach, dúch
 ! polysyllabic stems only, e.g. not beach, laoch
 .o.
- c h -> %^FC g h || Vowel+ Cons+ %^X (e) a _ %^Caol 
+ c h -> %^FC g h || Vowel+ Cons+ %^X (e) a _ %^Caol 		 !!≈ - @CODE@ 
 
 .o.
 ! beithíoch -> beithígh (gs)		13/04/08
 ! also áinsíoch, gaiscíoch etc.
 ! polysyllabic stems only
 
-c h -> %^FC g h || Vowel+ Cons+ %^X í o _ %^Caol 
+c h -> %^FC g h || Vowel+ Cons+ %^X í o _ %^Caol 		 !!≈ - @CODE@ 
 
 .o.
 ! exception dúch -> dúigh
-c h -> %^FC g h || d ú _ %^Caol 
+c h -> %^FC g h || d ú _ %^Caol 		 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 ! beach, sceach, nead, neamh (+e => all fem )
@@ -303,17 +309,17 @@ c h -> %^FC g h || d ú _ %^Caol
 ! but not misneach as ch has become gh (see top)
 .o.
 !!!!a -> %^FS i || %^X [e|u] _ [[c h] | d| m ] %^Caol e	
-a -> %^FS i || %^X [e|u] _ [[c (h)] 	!cuach - cuiche, 
-                           |[b (h)]	!dealbh - deilbhe
-                           |[d (h)]	!nead - neide, fleadh - fleidhe
-                           |[l b h]	!dealbh - deilbhe
-                           |[n g]	!reang - reinge
-                           |[r c]	!searc - seirce, leac - leice
-                           |[r g]	!fearg - feirge
-                           |[t h]	!leath - leithe
-                           |[s]		!greas - greise
-                           |[m (h)]	!neamh - neimhe (added '(h)') - CW 09/08
-                           ] %^Caol e
+a -> %^FS i || %^X [e|u] _ [[c (h)] 	!!≈ - @CODE@ cuach - cuiche, 
+                           |[b (h)]	!!≈ - @CODE@ dealbh - deilbhe
+                           |[d (h)]	!!≈ - @CODE@ nead - neide, fleadh - fleidhe
+                           |[l b h]	!!≈ - @CODE@ dealbh - deilbhe
+                           |[n g]	!!≈ - @CODE@ reang - reinge
+                           |[r c]	!!≈ - @CODE@ searc - seirce, leac - leice
+                           |[r g]	!!≈ - @CODE@ fearg - feirge
+                           |[t h]	!!≈ - @CODE@ leath - leithe
+                           |[s]		!!≈ - @CODE@ greas - greise
+                           |[m (h)]	!!≈ - @CODE@ neamh - neimhe (added '(h)') - CW 09/08
+                           ] %^Caol e		 !!≈ - @CODE@ 
 						
 !-----------------------------------------------------------------------------
 
@@ -323,12 +329,12 @@ a -> %^FS i || %^X [e|u] _ [[c (h)] 	!cuach - cuiche,
 ! beag -> bige adj
 ! not earc
 .o.	
-e a -> %^FS i || Cons+ %^X _ Cons+ %^Caol
+e a -> %^FS i || Cons+ %^X _ Cons+ %^Caol		 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 ! éan, séipéal 
 .o.
-a -> %^FS i || %^X é _ Cons+ %^Caol
+a -> %^FS i || %^X é _ Cons+ %^Caol		 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 ! seol
@@ -341,23 +347,23 @@ a -> %^FS i || %^X é _ Cons+ %^Caol
 ! punt, cúr, casúr, bruas
 ! oil(e)án, cin(e)ál, s(e)án
 .o.
- [..] -> %^FS i || %^X (e) [%^AO|a|á|o|ó|u|ú|%^UA] _ Cons+ %^Caol 	
+ [..] -> %^FS i || %^X (e) [%^AO|a|á|o|ó|u|ú|%^UA] _ Cons+ %^Caol 			 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 ! náis(i)ún, proifisiúin
 .o.
- [..] -> %^FS i || %^X (i) ú _ Cons+ %^Caol 	
+ [..] -> %^FS i || %^X (i) ú _ Cons+ %^Caol 			 !!≈ - @CODE@ 
 !-----------------------------------------------------------------------------
 ! íol, bíol, síol, buíon, suíomh
 ! fionn 
 ! eachaíos - eachaís, soilíos - soilís
 .o.
- o -> [%^FS ] || %^X (a|u) [i|í] _ Cons+ %^Caol 
+ o -> [%^FS ] || %^X (a|u) [i|í] _ Cons+ %^Caol 		 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 ! fliuch - fliche
 .o.
- u -> [%^FS ] || %^X  [i|í] _ Cons+ %^Caol 
+ u -> [%^FS ] || %^X  [i|í] _ Cons+ %^Caol 		 !!≈ - @CODE@ 
 !-----------------------------------------------------------------------------
 ! grian->gréine, pian->péine, 
 ! sliabh->sléibhte, 
@@ -365,136 +371,136 @@ a -> %^FS i || %^X é _ Cons+ %^Caol
 ! liach - léiche
 ! cliabh needs fixing
 .o.
- i a -> %^FS é i || %^X (h) _ Cons+ %^Caol (t) e
+ i a -> %^FS é i || %^X (h) _ Cons+ %^Caol (t) e		 !!≈ - @CODE@ 
 !-----------------------------------------------------------------------------
 ! rian->riain
 .o.
- [..] -> %^FS i || %^X i a _ Cons+ %^Caol .#.
+ [..] -> %^FS i || %^X i a _ Cons+ %^Caol .#.		 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 ! scian->sceana
 .o.
-i a -> %^FS e a || %^X _ Cons+ %^Caol a 
+i a -> %^FS e a || %^X _ Cons+ %^Caol a 		 !!≈ - @CODE@ 
 
 !-----------------------------------------------------------------------------
 .o.
- %^Caol -> []
-!;
+ %^Caol -> []		 !!≈ - @CODE@ 
+! ;
 
-! May 1998
-! Leathú (^Lea) :Broadening of slender words
-! Usually by removing "i"
-! but also by substituting vowels eg io->ea
-! and also by inserting a broad vowel eg í->ío
-!
-! included %^FH in i -> ea rule
+!! May 1998
+!! Leathú (^Lea) :Broadening of slender words
+!! Usually by removing "i"
+!! but also by substituting vowels eg io->ea
+!! and also by inserting a broad vowel eg í->ío
+!!
+!! included %^FH in i -> ea rule
 !**************************************************************************
 
 .o.
- o i  -> %^FB a || r _ Cons+ %^Lea	! roinn -> rann 
+ o i  -> %^FB a || r _ Cons+ %^Lea	!!≈ - @CODE@  roinn -> rann 
 
 .o.
- i -> %^FB a || [e|é] _ Cons+ %^Lea	! greim(m) -> greama, spéir -> spéartha
+ i -> %^FB a || [e|é] _ Cons+ %^Lea	!!≈ - @CODE@  greim(m) -> greama, spéir -> spéartha
 
 .o. 
- i -> %^FB e a || [b|c|m|r] (%^FH h) %^X _ Cons+ %^Lea 	
-				! binn -> beanna, rith -> reatha
-				! cith(m) -> ceatha, crith(m) -> creatha
-				! scian -> sceana (I) imirt -> imeartha
+ i -> %^FB e a || [b|c|m|r] (%^FH h) %^X _ Cons+ %^Lea 			 !!≈ - @CODE@ 
+				!!≈ - @CODE@  binn -> beanna, rith -> reatha
+				!!≈ - @CODE@  cith(m) -> ceatha, crith(m) -> creatha
+				!!≈ - @CODE@  scian -> sceana (I) imirt -> imeartha
 
  
 .o.
- i -> [%^FB] || [a|á|%^AE|o|ó|ú|%^UA|%^AO] _ Cons+ %^Lea
-				! CHECK WHETHER "u" SHOULD BE HERE TOO???
-				! OR DOES "ui" ALWAYS GO TO "o" (see next rule)
-				! it appears so ...
-				! súil - súl, dúil, glúin
-				! cóir - córa, móin - móna
-				! deoir - deora, feoil - feola
-				! troid - troda, cainteoir - cainteora
-				! droim(m) - droma, goin - gona, toil
-				! gáir - gártha, tiomáint - tiomána
-				! síocháin - síochána, cáisc - cásca
-				! stair - startha, flaith(m) - flatha
-				! bliain - bliana
-				! grósaeir - grósaera (E), traein - traen(E)
-				! bádóir - bádóra, buairt(U) -> buartha
-				! aoir - aortha (O)
+ i -> [%^FB] || [a|á|%^AE|o|ó|ú|%^UA|%^AO] _ Cons+ %^Lea		 !!≈ - @CODE@ 
+				!!≈ - @CODE@  CHECK WHETHER "u" SHOULD BE HERE TOO???
+				!!≈ - @CODE@  OR DOES "ui" ALWAYS GO TO "o" (see next rule)
+				!!≈ - @CODE@  it appears so ...
+				!!≈ - @CODE@  súil - súl, dúil, glúin
+				!!≈ - @CODE@  cóir - córa, móin - móna
+				!!≈ - @CODE@  deoir - deora, feoil - feola
+				!!≈ - @CODE@  troid - troda, cainteoir - cainteora
+				!!≈ - @CODE@  droim(m) - droma, goin - gona, toil
+				!!≈ - @CODE@  gáir - gártha, tiomáint - tiomána
+				!!≈ - @CODE@  síocháin - síochána, cáisc - cásca
+				!!≈ - @CODE@  stair - startha, flaith(m) - flatha
+				!!≈ - @CODE@  bliain - bliana
+				!!≈ - @CODE@  grósaeir - grósaera (E), traein - traen(E)
+				!!≈ - @CODE@  bádóir - bádóra, buairt(U) -> buartha
+				!!≈ - @CODE@  aoir - aortha (O)
 
 .o.
- u i -> %^FB o || _ Cons+ %^Lea	! cuid -  na coda, fuil - fola
+ u i -> %^FB o || _ Cons+ %^Lea	!!≈ - @CODE@  cuid -  na coda, fuil - fola
 
 .o.
- [..] -> %^FB o || (a) í _ Cons+ %^Lea 	
-				! feadaíl - feadaíola, tír - tíortha
+ [..] -> %^FB o || (a) í _ Cons+ %^Lea 			 !!≈ - @CODE@ 
+				!!≈ - @CODE@  feadaíl - feadaíola, tír - tíortha
 .o.
-%^Lea -> []
-!;
+%^Lea -> []		 !!≈ - @CODE@ 
+! ;
 
 !
-! Vowel Harmony of Broad and Slender Vowels: 
-!	Broad (back) - labio-velarised; sounds like w-glide after vowel
-!	Slender (forward) - palatalised; sounds like y-glide after vowel
-! Endings (which are appended to the root) must be broad or slender to agree with root 
-!
-! NB: this must be tested after ^Coim, ^Caol or ^Lea tags have been applied
-!
-! Examples 
-! (1) (e)acha	: neadacha (nests), stoirmeacha (storms)
-! (2) (e)anna	: carranna (cars),  áiteanna (places)
-!
-!  The broad ending "acha" or "anna" will be applied as standard. If the root
-!  is now found to be slender an "e" will be inserted
+!! Vowel Harmony of Broad and Slender Vowels: 
+!!	Broad (back) - labio-velarised ; sounds like w-glide after vowel
+!!	Slender (forward) - palatalised ; sounds like y-glide after vowel
+!! Endings (which are appended to the root) must be broad or slender to agree with root 
+!!
+!! NB: this must be tested after ^Coim, ^Caol or ^Lea tags have been applied
+!!
+!! Examples 
+!! - (1) (e)acha	: neadacha (nests), stoirmeacha (storms)
+!! - (2) (e)anna	: carranna (cars),  áiteanna (places)
+!!
+!!  The broad ending "acha" or "anna" will be applied as standard. If the root
+!!  is now found to be slender an "e" will be inserted
 !
 !***************************************************************************!
 .o.
-%^X -> []			! no longer required and it would 
-					! get in the way of the next rule
+%^X -> []			!!≈ - @CODE@  no longer required and it would 
+					!!≈ - @CODE@  get in the way of the next rule
 
 .o.
 ! ^VH marker is replaced by "e" if final syllable is slender
-[ %^VH -> e || [i|í] Cons* _ ]		! check if the last vowel before the %^VH
-					! is slender (ie an "i" or "í" )
+[ %^VH -> e || [i|í] Cons* _ ]		!!≈ - @CODE@  check if the last vowel before the %^VH
+					!!≈ - @CODE@  is slender (ie an "i" or "í" )
 .o.
-[ a -> [] || a %^VH _ ]		! remove extre "a" in  Havana^VHach
+[ a -> [] || a %^VH _ ]		!!≈ - @CODE@  remove extre "a" in  Havana^VHach
 
 .o.
- %^VH -> [] 
+ %^VH -> [] 		 !!≈ - @CODE@ 
 
 .o.
-[..] -> e || [e|é|i|í|%^AE] Cons* s _ %^Emph
+[..] -> e || [e|é|i|í|%^AE] Cons* s _ %^Emph		 !!≈ - @CODE@ 
 
 .o.
-[..] -> a || [a|á|o|ó|u|ú|%^UA|%^IA|%^AO] Cons* s _ %^Emph
+[..] -> a || [a|á|o|ó|u|ú|%^UA|%^IA|%^AO] Cons* s _ %^Emph		 !!≈ - @CODE@ 
 
 .o.
-[..] -> %- ||  s _ s (a|e) %^Emph
+[..] -> %- ||  s _ s (a|e) %^Emph		 !!≈ - @CODE@ 
 
 .o.
-%^Emph -> []
+%^Emph -> []		 !!≈ - @CODE@ 
 
 ! May 2001
 ! Last Part - tidy up
 
 .o.
-[ %^AE -> a e]
+[ %^AE -> a e]		 !!≈ - @CODE@ 
 .o.
 ![ %^IA -> i a]
 !.o.
-[ %^AO -> a o]
+[ %^AO -> a o]		 !!≈ - @CODE@ 
 .o.
-[ %^UA -> u a]
+[ %^UA -> u a]		 !!≈ - @CODE@ 
 .o.
-[%^F -> []]
+[%^F -> []]		 !!≈ - @CODE@ 
 .o.
-[%^M -> []]
+[%^M -> []]		 !!≈ - @CODE@ 
 .o.
-[%^N -> []]
+[%^N -> []]		 !!≈ - @CODE@ 
 .o.
-[%^G -> []]
+[%^G -> []]		 !!≈ - @CODE@ 
 .o.
-[%^V -> []]
+[%^V -> []]		 !!≈ - @CODE@ 
 .o.
-[%^CB -> []]
-;
+[%^CB -> []]		 !!≈ - @CODE@ 
+ ;
 
