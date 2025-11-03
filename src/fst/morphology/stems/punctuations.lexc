@@ -11,14 +11,14 @@
 !LEXICON Root
 !	Punctuation;
 
-LEXICON Punctuation_ga  !!= **@CODE@** 
-%.	Final; !!= **@CODE@** 
-<%!>	Final; !!= **@CODE@** 
-%.%.%.	Final; !!= **@CODE@** 
-%.%.	Final; !!= **@CODE@** 
-%?	FinalQ; !!= **@CODE@** 
+LEXICON Punctuation_ga  !!≈ -  **@CODE@** 
+%.	Final; !!≈ -  **@CODE@** 
+<%!>	Final; !!≈ -  **@CODE@** 
+%.%.%.	Final; !!≈ -  **@CODE@** 
+%.%.	Final; !!≈ -  **@CODE@** 
+%?	FinalQ; !!≈ -  **@CODE@** 
 
-%"	Quote; !!= **@CODE@** 
+%"	Quote; !!≈ -  **@CODE@** 
 %"	Quote;
 %`	Quote;
 %'%'	Quote;

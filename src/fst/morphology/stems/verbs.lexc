@@ -43,11 +43,11 @@
 !!  V1-SL-LC:	ends in áil
 !! ```
 !------------------------------------------------------------------------
-LEXICON VerbsC1A !!= **@CODE@** 
+LEXICON VerbsC1A !!≈ -  **@CODE@** 
 
-mol+Verb+VTI:mol	V1-BR;	 !!= **@CODE@** 
-glac+Verb+VT:glac	V1-BR;	 !!= **@CODE@**  ta -. tha (glactha)
-lúb+Verb+VTI:lúb	V1-BR;	 !!= **@CODE@** 
+mol+Verb+VTI:mol	V1-BR;	 !!≈ -  **@CODE@** 
+glac+Verb+VT:glac	V1-BR;	 !!≈ -  **@CODE@**  ta -. tha (glactha)
+lúb+Verb+VTI:lúb	V1-BR;	 !!≈ -  **@CODE@** 
 gabh+Verb+VTI:gabh	V1-BR;	! bha - fa (gafa)
 gearr+Verb+VTI:gearr	V1-BR;	! cut
 scríobh+Verb+VTI:scríobh	V1-BR;	

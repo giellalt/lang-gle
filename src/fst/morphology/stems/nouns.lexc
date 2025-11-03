@@ -81,7 +81,7 @@
 !!	in order to  re-use information contained in dictionaries and grammar books 
 !!	and particularly dictionaries in electronic format.
 !**************************************************************************
-LEXICON Nouns !!= **@CODE@** 
+LEXICON Nouns !!≈ -  **@CODE@** 
 !**************************************************************************
 !! ##					1st DECLENSION 
 !************************************************************************** 
@@ -121,10 +121,10 @@ LEXICON Nouns !!= **@CODE@**
 !! 	
 !
 
-airgeadas	Nm1-SINGULAR; !!= **@CODE@** 
-áireamh		Nm1-SINGULAR; !!= **@CODE@** 
-amhras		Nm1-SINGULAR; !!= **@CODE@** 
-aonar		Nm1-SINGULAR; !!= **@CODE@** 
+airgeadas	Nm1-SINGULAR; !!≈ -  **@CODE@** 
+áireamh		Nm1-SINGULAR; !!≈ -  **@CODE@** 
+amhras		Nm1-SINGULAR; !!≈ -  **@CODE@** 
+aonar		Nm1-SINGULAR; !!≈ -  **@CODE@** 
 ár		Nm1-SINGULAR; !! etc. 
 brath		Nm1-SINGULAR;
 caitheamh	Nm1-SINGULAR;
@@ -281,14 +281,14 @@ uachtarán	Nm1-1;	!
 !! 	
 !!
 
-bruas		Nm1-2;	 !!= **@CODE@**  (thick) lip 
-cág		Nm1-2;	!!= **@CODE@**  jackdaw 
-ceart		Nm1-2;	 !!= **@CODE@**  right
-cor		Nm1-2;	 !!= **@CODE@** 
+bruas		Nm1-2;	 !!≈ -  **@CODE@**  (thick) lip 
+cág		Nm1-2;	!!≈ -  **@CODE@**  jackdaw 
+ceart		Nm1-2;	 !!≈ -  **@CODE@**  right
+cor		Nm1-2;	 !!≈ -  **@CODE@** 
 !dearg		Nm1-2;	! GS ea - > i BUT deirg not dirg SEE N-LEX-IRREG.TXT
-fionn		Nm1-2;	 !!= **@CODE@**  fair, white
-gnáth		Nm1-2;	 !!= **@CODE@** 
-íol		Nm1-2;	 !!= **@CODE@**  idol 
+fionn		Nm1-2;	 !!≈ -  **@CODE@**  fair, white
+gnáth		Nm1-2;	 !!≈ -  **@CODE@** 
+íol		Nm1-2;	 !!≈ -  **@CODE@**  idol 
 más		Nm1-2;	! etc.
 óg		Nm1-2;	!
 slán		Nm1-2;
@@ -302,8 +302,8 @@ slán		Nm1-2;
 
 ! EXAMPLE
 
-ál		Nm1-3;	 !!= **@CODE@**  clutch, brood
-aon		Nm1-3;	 !!= **@CODE@**  one, ace 
+ál		Nm1-3;	 !!≈ -  **@CODE@**  clutch, brood
+aon		Nm1-3;	 !!≈ -  **@CODE@**  one, ace 
 céad		Nm1-3;	!! etc.
 ceol		Nm1-3;	!
 dán		Nm1-3;	!
@@ -320,8 +320,8 @@ síol		Nm1-3;	! seed
 !--------------------------------------------------------------------------
 !! (4) STRONG PLURALS - ADD "THA"
 !
-glór		Nm1-4;	 !!= **@CODE@**  voice
-múr		Nm1-4;	 !!= **@CODE@**  wall, shower
+glór		Nm1-4;	 !!≈ -  **@CODE@**  voice
+múr		Nm1-4;	 !!≈ -  **@CODE@**  wall, shower
 scór		Nm1-4;	! twenty
 stór		Nm1-4;	! store, treasure 	** irreg voc.sg. - see xfst-fix.script
 
@@ -329,9 +329,9 @@ stór		Nm1-4;	! store, treasure 	** irreg voc.sg. - see xfst-fix.script
 !! (5) STRONG PLURALS - ADD (A)Í
 !			   AND ENDING CHANGES 
 
-bealach		Nm1-5;	 !!= **@CODE@**  way, road
-cogadh		Nm1-5;	 !!= **@CODE@** 
-Domhnach	Nm1-5;	 !!= **@CODE@**  Sunday
+bealach		Nm1-5;	 !!≈ -  **@CODE@**  way, road
+cogadh		Nm1-5;	 !!≈ -  **@CODE@** 
+Domhnach	Nm1-5;	 !!≈ -  **@CODE@**  Sunday
 deireadh	Nm1-5;	!! etc
 éadach		Nm1-5;	! cloth
 geimhreadh	Nm1-5;	! winter
@@ -346,7 +346,7 @@ toradh		Nm1-5;	! fruit, result 	** irreg pl - see xfst-fix.script
 !--------------------------------------------------------------------------
 !! (6) STRONG PLURALS - ADD  "ANNA"
 
-bás		Nm1-6;	 !!= **@CODE@** 
+bás		Nm1-6;	 !!≈ -  **@CODE@** 
 bun		Nm1-6;	! 
 cás		Nm1-6;	! 
 carr		Nm1-6;	! car
@@ -408,11 +408,11 @@ leagan		Nm1-11;	! version
 !**************************************************************************  
 
 
-baint		Nf2-SINGULAR;   !!= **@CODE@** 
-réir		Nf2-SINGULAR; !!= **@CODE@** 
-spéis		Nf2-SINGULAR;  !!= **@CODE@** 
-teilifís	Nf2-SINGULAR;  !!= **@CODE@** 
-titim		Nf2-SINGULAR;  !!= **@CODE@** 
+baint		Nf2-SINGULAR;   !!≈ -  **@CODE@** 
+réir		Nf2-SINGULAR; !!≈ -  **@CODE@** 
+spéis		Nf2-SINGULAR;  !!≈ -  **@CODE@** 
+teilifís	Nf2-SINGULAR;  !!≈ -  **@CODE@** 
+titim		Nf2-SINGULAR;  !!≈ -  **@CODE@** 
 
 
 !--------------------------------------------------------------------------
@@ -427,9 +427,9 @@ titim		Nf2-SINGULAR;  !!= **@CODE@**
 !!	- Gen Pl : Broaden if nec.	(PL-2)
 !!	- Voc Pl : Append "a"			(PL-3)
 !
-binn		Nf2-2;	 !!= **@CODE@**  peak		
-cliath		Nf2-2;	 !!= **@CODE@** 
-deoir		Nf2-2;	 !!= **@CODE@**  tear
+binn		Nf2-2;	 !!≈ -  **@CODE@**  peak		
+cliath		Nf2-2;	 !!≈ -  **@CODE@** 
+deoir		Nf2-2;	 !!≈ -  **@CODE@**  tear
 
 ! FROM 2-1
 adharc		Nf2-2;	! horn
@@ -609,9 +609,9 @@ sliabh		Nm2-1; 	! mountain
 !!                    3rd declension FEMININE NOUNS 
 !************************************************************************** 
 !
-coinneáil	Nf3-SINGULAR;	 !!= **@CODE@** 
-éisteacht	Nf3-SINGULAR;	 !!= **@CODE@** 
-imirt		Nf3-4;		 !!= **@CODE@**  -SINGULAR;
+coinneáil	Nf3-SINGULAR;	 !!≈ -  **@CODE@** 
+éisteacht	Nf3-SINGULAR;	 !!≈ -  **@CODE@** 
+imirt		Nf3-4;		 !!≈ -  **@CODE@**  -SINGULAR;
 labhairt	Nf3-SINGULAR;	!
 tuiscint	Nf3-SINGULAR;	!
 díbirt		Nf3-SINGULAR;
@@ -1184,7 +1184,7 @@ tarlú			Nm5-3;	! happen			SLENDER GEN SG
 cónaí			Nm5-3;	! home				SLENDER GEN SG
 !! =======================end of 5th declension==========================!
 
-LEXICON NounsB   !!= **@CODE@** 
+LEXICON NounsB   !!≈ -  **@CODE@** 
 
 béim	 	Nf2-6;	 ! pl ~eanna blow; notch;
 agóid	 	Nf2-7;	 ! objection, protest, lucht ~e
@@ -1333,7 +1333,7 @@ méid	 Nf2-6;	 ! size, magnitude, dul i
 != Automatically assigned CCs
 != *** = manual fix
 !=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!
-LEXICON NounsC  !!= **@CODE@** 
+LEXICON NounsC  !!≈ -  **@CODE@** 
 ainmhian	Nf2-10;	! gs -mhéine pl ~ta
 glóirmhian	Nf2-10;	! gs -mhéine pl ~ta
 uaillmhian	Nf2-10;	! gs -mhéine pl ~ta

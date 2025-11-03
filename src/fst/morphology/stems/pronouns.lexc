@@ -13,11 +13,11 @@
 !! Pronominals - words which act like pronouns
 !****************************************************************************
 
-LEXICON Personal_Pronouns  !!= **@CODE@** 
+LEXICON Personal_Pronouns  !!≈ -  **@CODE@** 
 !! Personal Pronouns
 
-mé+Pron+Pers+1P+Sg:mé				#;	 !!= **@CODE@**  me
-tú+Pron+Pers+2P+Sg:tú				#;	 !!= **@CODE@**  you
+mé+Pron+Pers+1P+Sg:mé				#;	 !!≈ -  **@CODE@**  me
+tú+Pron+Pers+2P+Sg:tú				#;	 !!≈ -  **@CODE@**  you
 tú+Pron+Pers+2P+Sg+Len:thú				#;	! you
 
 sí+Pron+Pers+3P+Sg+Fem+Sbj:sí	#;	! she
@@ -302,34 +302,34 @@ um+Pron+Prep+2P+Pl:umaibh			Emph_se; 	!  about you
 um+Pron+Prep+3P+Pl:umpu				Emph_san; 	!  about them
 
 
-LEXICON Emph_sa			 !!= **@CODE@**  Broad: 1S & 2S & 3S(Fem) & 2P
+LEXICON Emph_sa			 !!≈ -  **@CODE@**  Broad: 1S & 2S & 3S(Fem) & 2P
 +Emph:sa	#;
 +Emph:-sa	#;
 Demonstrative;
 
-LEXICON Emph_se			 !!= **@CODE@**  Slender: 1S & 2S & 3S(Fem) & 2P
+LEXICON Emph_se			 !!≈ -  **@CODE@**  Slender: 1S & 2S & 3S(Fem) & 2P
 +Emph:se	#;
 +Emph:-se	#;
 Demonstrative;
 
-LEXICON Emph_san		 !!= **@CODE@**  Broad: 3S(Masc) & 3P
+LEXICON Emph_san		 !!≈ -  **@CODE@**  Broad: 3S(Masc) & 3P
 +Emph:san	#;
 +Emph:-san	#;
 Demonstrative;
 
-LEXICON Emph_sean		 !!= **@CODE@**  Slender: 3S(Masc) & 3P
+LEXICON Emph_sean		 !!≈ -  **@CODE@**  Slender: 3S(Masc) & 3P
 +Emph:sean	#;
 +Emph:-sean	#;
 Demonstrative;
 
-LEXICON Emph_e			 !!= **@CODE@** Br/Sl: 1P
+LEXICON Emph_e			 !!≈ -  **@CODE@** Br/Sl: 1P
 +Emph:e	#;
 #;
 
 !!! These demonstrative suffixes are used in historical text
 !!! e.g. aici-sin, aici-seo etc. Only 3rd person??? é & í
 
-LEXICON Demonstrative  !!= **@CODE@** 
+LEXICON Demonstrative  !!≈ -  **@CODE@** 
 +Dem:-sin	#;
 +Dem:-seo	#;
 +Dem:-siúd	#;

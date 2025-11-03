@@ -13,9 +13,9 @@
 
 !==============================================================================
 
-LEXICON VerbalNounsV !!= **@CODE@** 
-ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; !!= **@CODE@** 
-achainigh+Verbal+Noun+VTI:achainí VN-INIT; !!= **@CODE@** 
+LEXICON VerbalNounsV !!≈ -  **@CODE@** 
+ábhraigh+Verbal+Noun+VI:ábhrú VN-INIT; !!≈ -  **@CODE@** 
+achainigh+Verbal+Noun+VTI:achainí VN-INIT; !!≈ -  **@CODE@** 
 achair+Verbal+Noun+VTI:achairt VN-INIT;
 achoimrigh+Verbal+Noun+VT:achoimriú VN-INIT;
 achtáil+Verbal+Noun+VT:achtáil VN-INIT;
