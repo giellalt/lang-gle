@@ -1,0 +1,20 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - ": ' eolas, staidéar, foghlaim ' ) ná réimse eolais a chuimsíonn topaicí amhail; uimhreacha ( Teoiric na matamaitice agus na huimhirtheoirice ), foirmlí agus struchtúir ghaolmhara ( ailgéabar ), cruthanna agus na spásanna ina bhfuil siad ( geoiméadracht ), agus cainníochtaí agus a n-athruithe ( calcalas agus anailís ). Baineann an chuid is mó den ghníomhaíocht mhatamaiticiúil le húsáid a bhaint as glanréasúnaíocht theibí chun airíonna réad teibí a fháil amach nó a chruthú, arb éard atá i gceist leo ná teibithe ó nádúr, nó sa mhatamaitic nua-aimseartha, aonáin a bhfuil airíonna áirithe acu, ar a dtugtar aicsímí. "
+  - "an gá leis an tsamhail matamaitice a úsáidtear a athrú. "
+  - "Ó thús, roinneadh an mhatamaitic go bunúsach i gGeoiméadracht, agus uimhríocht ( ionramháil uimhreacha aiceanta agus codáin ), go dtí an 16ú agus an 17ú haois, nuair a tugadh ailgéabar agus calcalas an-bhídeach isteach mar réimsí nua den ábhar. "
+  - " ) as an modh aicsímeach a chórasú. "
+  - ". "
+  - "; d'athraigh an bhrí de réir a chéile go dtí an ceann atá ann faoi láthair ó thart ar 1500 go 1800. "
+  - ", a fuarthas le hoidhreacht ón nGréigis. "
+  - "Bhí roinnt ábhar a forbraíodh le linn na tréimhse seo ann roimh thús na na matamaitic, agus tá siad roinnte ina réimsí cosúil le teoiric na dóchúlachta agus an mhatamaitic theaglamach, a measadh níos déanaí mar réimse uathrialaitheach. "
+  - "Ag deireadh an 19ú haois, mar thoradh ar an ngéarchéim bhunaitheach sa mhatamaitic agus mar thoradh ar an modh aicsímeach, tháinig borradh mór ar réimsí nua na matamaitice. "
+  - ") Ní fheictear an t-ailgéabar agus an calcalas mar limistéir chéad leibhéal, ach roinntear iad i roinnt réimsí céadleibhéil faoi seach. "
+  - "Agus a tagann forbairt ar an chóras uimhir, aithnítear na slánuimhir mar fo-thacar do na uimhir chóimheasta. "
+  - "Tá an uimhir choimpléascach tacar ginearálaithe do na réaduimhir Matamaitic Fheidhmeach. "
+  - "Scríobhann roinnt daoine an dáta agus na litreacha CMB thar an doras freisin. "
+  - "Is iad seo túslitreacha ainmneacha traidisiúnta an Triúr Saoithe: Caspar, Meilcíór agus Baltazár. "
+  - "An Fheabhra An Márta Is é Márta nó Mí Mhárta an tríú mí den bhliain, agus lá is tríocha ann. "

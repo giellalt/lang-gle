@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Tuartha míchruinn, seachas a bheith de bharr na matamaitice míchirte, le tuiscint go bhfuil gá leis tsamhail mhatamaiticiúil a úsáidtear a athrú. "
+  - ", a fuarthas le hoidhreacht ón nGréigis. "

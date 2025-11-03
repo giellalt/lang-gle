@@ -1,0 +1,6 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Mar thoradh air seo tháinig méadú mór ar líon na réimsí matamaitice agus ar a réimsí feidhmeanna. "

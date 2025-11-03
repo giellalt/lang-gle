@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "; d'athraigh an bhrí de réir a chéile go dtí an ceann atá ann faoi láthair ó thart ar 1500 go 1800. "
+  - "Tosaíonn staidéar an cainníocht le uimhreacha, ar dtús le na uimhreacha aiceanta agus slánuimhir agus uimhríocht orthu. "
+  - "HomePage HomePage / Talk ArnoLagrange An tEanáir Is é an tEanáir nó Mí Eanáir an chéad mhí den bhliain. "

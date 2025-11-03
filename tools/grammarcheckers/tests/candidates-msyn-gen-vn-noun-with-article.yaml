@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Is éard atá i gcruthúnas matamaiticiúil ná sraith d'fheidhmeanna ar roinnt rialacha déaduchtacha do thorthaí atá ar eolas cheana féin, lena n-áirítear teoirimí cruthaithe roimhe seo, aicsímí a bhí cruthaithe roimhe seo agus ( i gcás teibithe ón nádúr ) roinnt airíonna bunúsacha a mheastar mar fhíorphointí tosaigh na teoirice atá á meas. "
+  - " ( le Janus - dia na ngeataí agus na ndoirse ag na Rómhánaigh ). Sean-nós atá ann doirse a bheannú tráth na hEipeafáine ( 6 Eanáir ) chun a chur i gcuimhne dúinn fáilte a chur roimh dhaoine agus aíonna nua le linn na bliana amach romhainn. "

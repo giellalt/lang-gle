@@ -1,0 +1,18 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Mar shampla, ní fhéadfaí luainíocht pheirihéileach Mhearcair a mhíniú ach amháin tar éis coibhneasacht ghinearálta Einstein a bheith tagtha chun cinn, a tháinig in ionad dhlí imtharraingthe Newton mar mhúnla matamaiticiúil níos fearr. "
+  - "Ó shin i leith, tá an t-idirghníomhú idir nuálaíochtaí matamaiticiúla agus fionnachtana eolaíocha mar thoradh ar mhéadú tapa i bhforbairt na matamaitice. "
+  - "; d'athraigh an bhrí de réir a chéile go dtí an ceann atá ann faoi láthair ó thart ar 1500 go 1800. "
+  - ", mar cáineadh ar na matamaiticeoirí. "
+  - "Is éard is calcalas ann, ina bhfuil an dá fho-réimse, mionchalcalas agus calcalas suimeálach, ná staidéar ar fheidhmeanna leanúnacha, a mhúnlaíonn na caidrimh neamhlíneacha idir cainníochtaí éagsúla ( athróga ) de ghnáth. "
+  - "Mhair an roinnt seo ina cheithre phríomhréimse - uimhríocht, geoiméadracht, ailgéabar, calcalas [ fíorú de dhíth ] - go dtí deireadh an 19ú haois. "
+  - "Is minic a measadh réimsí mar mheicnic neamhaí agus meicnic sholadach mar chuid den mhatamaitic, ach anois meastar go mbaineann siad leis an bhfisic. "
+  - "Bhí roinnt ábhar a forbraíodh le linn na tréimhse seo ann roimh thús na na matamaitic, agus tá siad roinnte ina réimsí cosúil le teoiric na dóchúlachta agus an mhatamaitic theaglamach, a measadh níos déanaí mar réimse uathrialaitheach. "
+  - "Ag deireadh an 19ú haois, mar thoradh ar an ngéarchéim bhunaitheach sa mhatamaitic agus mar thoradh ar an modh aicsímeach, tháinig borradh mór ar réimsí nua na matamaitice. "
+  - " ina n-ainmneacha ag go leor réimsí céadleibhéil eile nó meastar go coitianta iad ar shlí eile mar chuid den gheoiméadracht. "
+  - ") Ní fheictear an t-ailgéabar agus an calcalas mar limistéir chéad leibhéal, ach roinntear iad i roinnt réimsí céadleibhéil faoi seach. "
+  - "Tháinig réimsí eile den chéad leibhéal chun cinn le linn an 20ú haois ( mar shampla teoiric na gcatagóirí; ailgéabar hoimeolaíoch, agus ríomheolaíocht ) nó nár breathnaíodh orthu roimhe seo mar mhatamaitic, amhail; loighic agus bunúis na matamaitice ( lena n-áirítear teoiric na mionsamhla, ríomhtheoiric, tacartheoiric, teoiric an chruthúnais, agus loighic ailgéabrach ). Matamaitic ríomhaireachtúil. "
+  - "Agus a tagann forbairt ar an chóras uimhir, aithnítear na slánuimhir mar fo-thacar do na uimhir chóimheasta. "

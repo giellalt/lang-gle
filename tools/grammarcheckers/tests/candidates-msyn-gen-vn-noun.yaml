@@ -1,0 +1,10 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Sampla de seo is ea Rangú Ábhair na Matamaitice, a liostaíonn níos mó ná 60 réimse matamaitice den chéad leibhéal. "
+  - "Bhí roinnt ábhar a forbraíodh le linn na tréimhse seo ann roimh thús na na matamaitic, agus tá siad roinnte ina réimsí cosúil le teoiric na dóchúlachta agus an mhatamaitic theaglamach, a measadh níos déanaí mar réimse uathrialaitheach. "
+  - "Sa lá atá inniu ann, níl níos lú ná 64 réimse den chéad leibhéal i Rangú Ábhar na Matamaitice. "
+  - ") Ní fheictear an t-ailgéabar agus an calcalas mar limistéir chéad leibhéal, ach roinntear iad i roinnt réimsí céadleibhéil faoi seach. "
+  - "Tháinig réimsí eile den chéad leibhéal chun cinn le linn an 20ú haois ( mar shampla teoiric na gcatagóirí; ailgéabar hoimeolaíoch, agus ríomheolaíocht ) nó nár breathnaíodh orthu roimhe seo mar mhatamaitic, amhail; loighic agus bunúis na matamaitice ( lena n-áirítear teoiric na mionsamhla, ríomhtheoiric, tacartheoiric, teoiric an chruthúnais, agus loighic ailgéabrach ). Matamaitic ríomhaireachtúil. "

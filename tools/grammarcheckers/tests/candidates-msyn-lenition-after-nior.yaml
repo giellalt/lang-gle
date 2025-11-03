@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - ", a fuarthas le hoidhreacht ón nGréigis. "
+  - "Tháinig réimsí eile den chéad leibhéal chun cinn le linn an 20ú haois ( mar shampla teoiric na gcatagóirí; ailgéabar hoimeolaíoch, agus ríomheolaíocht ) nó nár breathnaíodh orthu roimhe seo mar mhatamaitic, amhail; loighic agus bunúis na matamaitice ( lena n-áirítear teoiric na mionsamhla, ríomhtheoiric, tacartheoiric, teoiric an chruthúnais, agus loighic ailgéabrach ). Matamaitic ríomhaireachtúil. "

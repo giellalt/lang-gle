@@ -1,0 +1,17 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - ": ' eolas, staidéar, foghlaim ' ) ná réimse eolais a chuimsíonn topaicí amhail; uimhreacha ( Teoiric na matamaitice agus na huimhirtheoirice ), foirmlí agus struchtúir ghaolmhara ( ailgéabar ), cruthanna agus na spásanna ina bhfuil siad ( geoiméadracht ), agus cainníochtaí agus a n-athruithe ( calcalas agus anailís ). Baineann an chuid is mó den ghníomhaíocht mhatamaiticiúil le húsáid a bhaint as glanréasúnaíocht theibí chun airíonna réad teibí a fháil amach nó a chruthú, arb éard atá i gceist leo ná teibithe ó nádúr, nó sa mhatamaitic nua-aimseartha, aonáin a bhfuil airíonna áirithe acu, ar a dtugtar aicsímí. "
+  - "Forbraítear roinnt réimsí matamaitice, ar nós staitisticí agus teoiric na gcluichí, i ndlúthghaol lena n-úsáidí agus is minic a ghrúpáiltear iad faoin mhatamaitic fheidhmeach. "
+  - "Is sampla oiriúnach é an fhadhb a bhaineann le fachtóiriú slánuimhir, a théann ar ais go dtí Eoiclídéas, ach nach raibh aon fheidhm phraiticiúil aige sular úsáideadh é i gcripteachóras le heochair phoiblí RSA ( le haghaidh slándáil líonraí ríomhaireachta ). Go stairiúil, ba sa mhatamaitic Ghréagach a tháinig coincheap an chruthúnais agus na críochnúlachta matamaiticiúla a bhaineann leis chun cinn ar dtús, go háirithe sna hUraiceachtaí. "
+  - "Sampla de seo is ea Rangú Ábhair na Matamaitice, a liostaíonn níos mó ná 60 réimse matamaitice den chéad leibhéal. "
+  - ". "
+  - "; d'athraigh an bhrí de réir a chéile go dtí an ceann atá ann faoi láthair ó thart ar 1500 go 1800. "
+  - "Sa lá atá inniu ann, níl níos lú ná 64 réimse den chéad leibhéal i Rangú Ábhar na Matamaitice. "
+  - ") Ní fheictear an t-ailgéabar agus an calcalas mar limistéir chéad leibhéal, ach roinntear iad i roinnt réimsí céadleibhéil faoi seach. "
+  - "Tháinig réimsí eile den chéad leibhéal chun cinn le linn an 20ú haois ( mar shampla teoiric na gcatagóirí; ailgéabar hoimeolaíoch, agus ríomheolaíocht ) nó nár breathnaíodh orthu roimhe seo mar mhatamaitic, amhail; loighic agus bunúis na matamaitice ( lena n-áirítear teoiric na mionsamhla, ríomhtheoiric, tacartheoiric, teoiric an chruthúnais, agus loighic ailgéabrach ). Matamaitic ríomhaireachtúil. "
+  - "Agus a tagann forbairt ar an chóras uimhir, aithnítear na slánuimhir mar fo-thacar do na uimhir chóimheasta. "
+  - "Tá an uimhir choimpléascach tacar ginearálaithe do na réaduimhir Matamaitic Fheidhmeach. "
+  - "Scríobhann roinnt daoine an dáta agus na litreacha CMB thar an doras freisin. "

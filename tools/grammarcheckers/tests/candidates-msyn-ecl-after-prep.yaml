@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - " sa chiall nua-aimseartha. "
+  - "Agus a tagann forbairt ar an chóras uimhir, aithnítear na slánuimhir mar fo-thacar do na uimhir chóimheasta. "
