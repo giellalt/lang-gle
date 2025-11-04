@@ -23,6 +23,9 @@ lex-ar-an-gcaife = "Ar" and not "i" with coffee
 lex-ar-an-tae = "Ar" and not "i" with "tae"
     .desc = Milk and sugar ar put on the tea, not into tea
 
+lex-dairire = blabla
+    .desc = blabla
+
 lex-tá-is = Use "is", not "tá"
     .desc = When "tá" has a first person pronoun to the right, use "is" and not "tá".
 
