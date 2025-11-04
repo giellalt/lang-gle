@@ -615,10 +615,10 @@ LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;    #!!= * @CODE@
 LIST &lex-ar-an-tae = &lex-ar-an-tae;    #!!= * @CODE@ 
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@ 
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@ 
-LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ; #!!= * @CODE@ 
+LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@ 
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@ 
-LIST &msyn-fada-ó = &msyn-fada-ó ;    #!!= * @CODE@ 
+LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
@@ -633,6 +633,12 @@ LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
+LIST &lex-da-bharr-sin = &lex-da-bharr-sin ;
+LIST &lex-os-a-choinne-sin = &lex-os-a-choinnse-sin ;
+LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ;
+LIST &lex-de-ainneoin = &lex-de-ainneoin ;
+LIST &lex-dairire = &lex-dairire ;
+LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -760,10 +766,51 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 #agus ‘os a choinne sin.’ Úsáidtear an aidiacht shealbhach sa tríú pearsa iolra chomh maith, de réir mar
 #is cuí: ‘dá mbarr sin’, ‘ina n-ainneoin sin’ agus ‘os a gcoinne sin.’
 
-##de bharr sin - #$dá bharr sin,
-##in ainneoin sin - #$ina ainneoin sin,
-##os coinne sin - #$os a choinne sin.
-##in ainneoin - #$d'ainneoin.
+
+
+
+##de bharr sin - #$dá bharr sin
+
+ADD:lex-da-bharr-sin (&lex-da-bharr-sin) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+COPY:lex-da-bharr-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-da-bharr-sin) TARGET (Art &lex-da-bharr-sin) IF (1 (Noun Fem)) ;
+
+
+##in ainneoin sin - #$ina ainneoin sin
+
+ADD:lex-ina-ainneoin-sin (&lex-ina-ainneoin-sin) TARGET ("i" Prep Simp Vow) IF (1 ("ainneoin"));
+COPY:lex-ina-ainneoin-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-ina-ainneoin-sin) TARGET (Art &lex-ina-ainneoin-sin) IF (1 (Noun Fem)) ;
+
+
+##os coinne sin - #$os a choinne sin
+
+ADD:lex-os-a-choinne-sin (&lex-os-a-choinne-sin) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+COPY:lex-os-a-choinne-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-os-a-choinne-sin) TARGET (Art &lex-os-a-choinne-sin) IF (1 (Noun Fem)) ;
+
+
+##in ainneoin - #$d'ainneoin
+
+ADD:lex-de-ainneoin (&lex-de-ainneoin ) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-ainneoin) TARGET (Art &lex-de-ainneoin ) IF (1 (Noun Fem)) ;
+
+##i ndáiríre - #$dáiríre
+
+ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
+ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i" Prep Simp)) ;
+COPY:lex-dairire (SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Prep &lex-dairire);
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Noun Masc Com Sg Ecl &lex-dairire) TARGET (Prep &lex-dairire);
+COPY:lex-dairire (SUGGEST) EXCEPT (Ecl) TARGET ("dáiríre" &lex-dairire) ;
+
+ADDRELATION: ($2 LEFT) (&lex-dairire) TO (-1 (&lex-dairire));
+SUBSTITUTE (&lex-dairire) (&lex-dairire) TARGET (SUGGEST);
+
+##ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
+
+	
+	
+ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
+COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
+COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
+
 
 ##faoi: faoi bhord OIBRÍONN AN RIAIL
 ##de: de chapall OIBRÍONN AN RIAIL
@@ -818,7 +865,7 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 	
 	## Tá fiche duine ar mheitheal.
 	## Tá mo chara ar mheisce.
-	#$ Ar muhui na beatha.
+	#$ Ar mhuir na beatha.
 
 
 #!! ### Rules for lenition
@@ -897,25 +944,27 @@ SET NOT-SCALE-WORDS = WORD - SCALE-WORDS ;
 
 # "fada" A + "ó"
 
-#!! **ADD:msyn-fada-ó** ...
-ADD:msyn-fada-ó (&msyn-fada-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada" Adj) BARRIER NOT-SCALE-WORDS LINK *-1 ("is")) ;
-COPY:msyn-fada-ó ("ó" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers Sbj &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-fada-ó) IF (NEGATE 1 (Verb PastInd));
+#!! **ADD:msyn-fada-o** ...
+
+ADD:msyn-fada-o (&msyn-fada-o) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada" Adj) BARRIER NOT-SCALE-WORDS LINK *-1 ("is")) ;
+COPY:msyn-fada-o ("ó" Prep SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-fada-o) OR ("tú" Pron Pers 2P Sg &msyn-fada-o) OR ("é" Pron Pers 3P Sg Masc &msyn-fada-o) OR ("í" Pers Pers 1P Sg Fem &msyn-fada-o) OR ("sinn" Pers Pers 1P Pl &msyn-fada-o) OR ("sibh" Pers Pers 2P Pl &msyn-fada-o) OR ("siad" Pron Pers 3P Pl Sbj &msyn-fada-o) AFTER Pron TARGET (&msyn-fada-o) IF (NEGATE 1 (Verb PastInd));
 
 	## Is fada buí mé. - incorrect
 	#$ Is fada buí uaim. - correct 
 	## Is fada buí é.
 	## Is fada buí iad.
+	## Is fada mé bhí mise i mo mhac léinn.
+	#$ Is fada ó bhí mise i mo mhac léinn.
 
-#!! **ADD:msyn-beag-is-fiú-de** "beag is fiú de" A + "de"
+#!! **ADD:msyn-beag-is-fiu-de** "beag is fiú de" A + "de"
 	
-ADD:msyn-beag-is-fiú-de (&msyn-beag-is-fiú-de) TARGET (Pron Pers) IF (NOT 0 ("de" Prep))(*-1 ("beag is fiú de" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
-COPY:msyn-beag-is-fiú-de ("de" Prep SUGGEST) EXCEPT ("dom" Pers &msyn-teastaigh-ó) OR ("duit" Pers &msyn-teastaigh-ó) OR ("dó" Pers &msyn-teastaigh-ó) OR ("di" Pers &msyn-teastaigh-ó) OR ("dúinn" Pers &msyn-teastaigh-ó) OR ("daoibh" Pers &msyn-teastaigh-ó) OR ("dóibh" Pers Sbj &msyn-beag-is-fiú-de) AFTER Pron TARGET (&msyn-beag-is-fiú-de) IF (NEGATE 1 (Verb PastInd));	
+ADD:msyn-beag-is-fiu-de (&msyn-beag-is-fiu-de) TARGET (Pron Pers) IF (NOT 0 ("de" Prep))(*-1 ("beag is fiú de" Adj) BARRIER (*) - SCALE-WORDS LINK *-1 ("is")) ;
+COPY:msyn-beag-is-fiu-de ("de" Prep SUGGEST) EXCEPT ("dom" Pers &msyn-beag-is-fiu-de) OR ("duit" Pers &msyn-beag-is-fiu-de) OR ("dó" Pers &msyn-beag-is-fiu-de) OR ("di" Pers &msyn-beag-is-fiu-de) OR ("dúinn" Pers &mmsyn-beag-is-fiu-de) OR ("daoibh" Pers &msyn-beag-is-fiu-de) OR ("dóibh" Pers Sbj &msyn-beag-is-fiu-de) AFTER Pron TARGET (&msyn-beag-is-fiu-de) IF (NEGATE 1 (Verb PastInd));	
 	## Ná déan beag is fiú dom. - incorrect
 	#$ Ná déan beag is fiú díom. - correct
 	
-COPY:msyn-fada-ó ("ó" Prep Simp SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-teastaigh-ó) OR ("tú" Pers Pers 2P Sg &msyn-teastaigh-ó) OR ("é" Pers Pers 3P Sg Masc &msyn-teastaigh-ó) OR ("í" Pers Pers 1P Sg Fem &msyn-teastaigh-ó) OR ("sinn" Pers Pers 1P Pl &msyn-teastaigh-ó) OR ("sibh" Pers Pers 2P Pl &msyn-teastaigh-ó) OR ("siad" Pron Pers 3P Pl Sbj &msyn-teastaigh-ó) TARGET (&msyn-fada-ó) IF (1 (Verb PastInd));
-	## Is fada mé bhí mise i mo mhac léinn.
-	#$ Is fada ó bhí mise i mo mhac léinn.
+COPY:msyn-fada-o ("ó" Prep Simp SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-teastaigh-ó) OR ("tú" Pers Pers 2P Sg &msyn-teastaigh-ó) OR ("é" Pers Pers 3P Sg Masc &msyn-teastaigh-ó) OR ("í" Pers Pers 1P Sg Fem &msyn-teastaigh-ó) OR ("sinn" Pers Pers 1P Pl &msyn-teastaigh-ó) OR ("sibh" Pers Pers 2P Pl &msyn-teastaigh-ó) OR ("siad" Pron Pers 3P Pl Sbj &msyn-teastaigh-ó) TARGET (&msyn-fada-o) IF (1 (Verb PastInd));
+
 
 #!! **ADD:msyn-cúpla-plnoun-sgnoun** ..
 
@@ -1532,10 +1581,6 @@ ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFOR
 	
 	## ar fhud an domhan. - incorrect
 	#$ ar fud an domhain. - correct
-	
-	##ar: ar chathaoir (fisiciúil)
-	##eisceacht – ar bord, ar maidin (neamh-fhisiciúil)
-
 
 #!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
 
