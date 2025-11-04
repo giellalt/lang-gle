@@ -365,6 +365,7 @@ Other gen tags:
 
 ###  Other tags
 
+* LIST &use-guillemets = &use-guillemets ;     
 * LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ;  
 * LIST &lex-ar-an-aonach = &lex-ar-an-aonach ;  
 * LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
