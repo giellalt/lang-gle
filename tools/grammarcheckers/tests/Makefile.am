@@ -9,15 +9,29 @@ if WANT_GRAMCHECK
 
 # List here (space separated) all yaml files to be run as part of make check:
 TESTS=from_grammarcheckers_cg3-FAIL.yaml \
+    candidates-lex-ar-an-aonach.yaml \
+    candidates-lex-ar-an-tae.yaml \
+    candidates-msyn-adj-gender.yaml \
+    candidates-msyn-cúpla-plnoun-sgnoun.yaml \
+    candidates-msyn-ecl-after-da.yaml \
     candidates-msyn-ecl-after-go.yaml \
+    candidates-msyn-ecl-after-mura.yaml \
+    candidates-msyn-ecl-after-nach.yaml \
     candidates-msyn-ecl-after-prep.yaml \
+    candidates-msyn-fada-ó.yaml \
+    candidates-msyn-gen-noun-adj.yaml \
     candidates-msyn-gen-noun-defart-noun.yaml \
+    candidates-msyn-gen-noun-detpss-noun.yaml \
     candidates-msyn-gen-noun-noun.yaml \
     candidates-msyn-gen-vn-noun-with-article.yaml \
     candidates-msyn-gen-vn-noun.yaml \
     candidates-msyn-len-after-prep.yaml \
+    candidates-msyn-lenition-after-ni.yaml \
     candidates-msyn-lenition-after-nior.yaml \
+    candidates-msyn-lenition-after-possessive-adjective.yaml \
     candidates-msyn-noun-defart.yaml \
+    candidates-msyn-prep-pron.yaml \
+    candidates-msyn-teastaigh-ó.yaml \
     candidates-syn-a-before-verb-relativephrase.yaml \
     msyn-adj-gender.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
@@ -47,15 +61,29 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
 # List tests that are presently (expected) failures here, ie things that should
 # be fixed *later*, but is not critical at the moment:
 XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
+    candidates-lex-ar-an-aonach.yaml \
+    candidates-lex-ar-an-tae.yaml \
+    candidates-msyn-adj-gender.yaml \
+    candidates-msyn-cúpla-plnoun-sgnoun.yaml \
+    candidates-msyn-ecl-after-da.yaml \
     candidates-msyn-ecl-after-go.yaml \
+    candidates-msyn-ecl-after-mura.yaml \
+    candidates-msyn-ecl-after-nach.yaml \
     candidates-msyn-ecl-after-prep.yaml \
+    candidates-msyn-fada-ó.yaml \
+    candidates-msyn-gen-noun-adj.yaml \
     candidates-msyn-gen-noun-defart-noun.yaml \
+    candidates-msyn-gen-noun-detpss-noun.yaml \
     candidates-msyn-gen-noun-noun.yaml \
     candidates-msyn-gen-vn-noun-with-article.yaml \
     candidates-msyn-gen-vn-noun.yaml \
     candidates-msyn-len-after-prep.yaml \
+    candidates-msyn-lenition-after-ni.yaml \
     candidates-msyn-lenition-after-nior.yaml \
+    candidates-msyn-lenition-after-possessive-adjective.yaml \
     candidates-msyn-noun-defart.yaml \
+    candidates-msyn-prep-pron.yaml \
+    candidates-msyn-teastaigh-ó.yaml \
     candidates-syn-a-before-verb-relativephrase.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
