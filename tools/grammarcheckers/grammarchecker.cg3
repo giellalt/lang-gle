@@ -608,7 +608,7 @@ LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old ge
 #LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@ 
 #LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@ 
 #LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@ 
-#LIST &use-guillemets = &use-guillemets ;    #!!= * @CODE@ 
+LIST &use-guillemets = &use-guillemets ;    #!!= * @CODE@ 
 LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ; #!!= * @CODE@ 
 LIST &lex-ar-an-aonach = &lex-ar-an-aonach ; #!!= * @CODE@ 
 LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;    #!!= * @CODE@ 
@@ -1201,9 +1201,9 @@ COPY:attr-not-pred (Attr SUGGEST) EXCEPT (Sg) TARGET (&attr-not-pred) ;
 
 #!! **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
 
-ADD:use-guillemets (&guillemets) TARGET ("""); #"
-COPY:left-guillemet ("«" SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
-COPY:right-guillemet ("»" SUGGEST) EXCEPT (""") TARGET (&guillemets) ;
+ADD:use-guillemets (&use-guillemets) TARGET ("""); #"
+COPY:left-guillemet ("«" SUGGEST) EXCEPT (""") TARGET (&use-guillemets) ;
+COPY:right-guillemet ("»" SUGGEST) EXCEPT (""") TARGET (&use-guillemets) ;
 
 #!! **ADD:use-ellipsis** ...
 
