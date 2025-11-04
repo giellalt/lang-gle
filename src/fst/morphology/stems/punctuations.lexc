@@ -45,7 +45,7 @@ LEXICON Punctuation_ga  !!≈ -  **@CODE@**
 
 %(	Br_Start;
 %)	Br_End;
-%)%.+Punct+Brack+Fin:%)%.	#;	! added 24/07/08
+!%)%.+Punct+Brack+Fin:%)%.	#;	! added 24/07/08, removed 25/11/04, it breaks tokenisation
 %[	Br_Start;
 %]	Br_End;
 %{	Br_Start;
