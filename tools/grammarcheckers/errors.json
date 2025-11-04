@@ -54,9 +54,19 @@
       "id": "msyn-cúpla-plnoun-sgnoun"
     }
   ],
+  "msyn-ecl-after-go": [
+    {
+      "id": "msyn-ecl-after-go"
+    }
+  ],
   "msyn-ecl-after-prep": [
     {
       "id": "msyn-ecl-after-prep"
+    }
+  ],
+  "msyn-ecl-after-prep2": [
+    {
+      "id": "msyn-ecl-after-prep2"
     }
   ],
   "msyn-ecl-after-prep-sfem": [
@@ -77,6 +87,16 @@
   "msyn-gen-case-nouns": [
     {
       "id": "msyn-gen-case-nouns"
+    }
+  ],
+  "msyn-gen-noun-adj": [
+    {
+      "id": "msyn-gen-noun-adj"
+    }
+  ],
+  "msyn-gen-noun-detpss-noun": [
+    {
+      "id": "msyn-gen-noun-detpss-noun"
     }
   ],
   "msyn-gen-vn-noun-with-article": [
