@@ -372,10 +372,10 @@ Other gen tags:
 * LIST &lex-ar-an-tae = &lex-ar-an-tae;     
 * LIST &lex-tá-is = &lex-tá-is ;       
 * LIST &msyn-adj-gender = &msyn-adj-gender ;       
-* LIST &msyn-beag-is-fiú-de = &msyn-beag-is-fiú-de ;  
+* LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
-* LIST &msyn-fada-ó = &msyn-fada-ó ;     
+* LIST &msyn-fada-o = &msyn-fada-o ;     
 * LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
 * LIST &msyn-inis-do = &msyn-inis-do ;     
 * LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
@@ -440,9 +440,9 @@ Here ends the list and set section
 
 **ADD:msyn-inis-do** ...
 
-**ADD:msyn-fada-ó** ...
+**ADD:msyn-fada-o** ...
 
-**ADD:msyn-beag-is-fiú-de** "beag is fiú de" A + "de"
+**ADD:msyn-beag-is-fiu-de** "beag is fiú de" A + "de"
 
 **ADD:msyn-cúpla-plnoun-sgnoun** ..
 
