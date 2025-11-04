@@ -47,10 +47,27 @@ msyn-cúpla-plnoun-sgnoun = Bíonn uimhir uatha ann i lorg an fhocail cúpla
 msyn-ecl-after-go = Eclipse tar éis imeacht
     .desc = Ba chóir go mbeadh eclipse ann tar éis imeacht.
 
-msyn-ecl-after-nach = 
+msyn-ecl-after-da = blabla
+    .desc = blabla
+
+msyn-ecl-after-nach = blabla
+    .desc = blabla
+
+msyn-ecl-after-mura = blabla
+    .desc = blabla
+
+msyn-gen-noun-noun = blabla
+    .desc = blabla
+
+msyn-gen-vn-noun-with-article = blabla
+    .desc = blabla
+
+msyn-gen-noun-defart-noun = blabla
+    .desc = blabla
+
 msyn-ecl-after-prep = Tá urú in easnamh
     .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
-.example-1 = I mbarr, i gceannas
+    .example-1 = I mbarr, i gceannas
 
 msyn-ecl-after-prep2 = Tá urú in easnamh
     .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
@@ -158,3 +175,4 @@ typo = Earráid litrithe
 
 use-guillemets = Guillemets
     .desc = Úsáid comharthaí athfhriotail uillinne dúbailte
+

@@ -1,4 +1,34 @@
 {
+  "msyn-ecl-after-da": [
+    {
+      "id": "msyn-ecl-after-da"
+    }
+  ],
+  "msyn-ecl-after-mura": [
+    {
+      "id": "msyn-ecl-after-mura"
+    }
+  ],
+  "msyn-ecl-after-nach": [
+    {
+      "id": "msyn-ecl-after-nach"
+    }
+  ],
+  "msyn-gen-noun-defart-noun": [
+    {
+      "id": "msyn-gen-noun-defart-noun"
+    }
+  ],
+  "msyn-gen-noun-noun": [
+    {
+      "id": "msyn-gen-noun-noun"
+    }
+  ],
+  "msyn-gen-vn-noun": [
+    {
+      "id": "msyn-gen-vn-noun"
+    }
+  ],
   "ellipsis": [
     {
       "id": "ellipsis"
