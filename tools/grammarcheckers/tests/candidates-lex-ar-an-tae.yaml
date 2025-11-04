@@ -1,0 +1,15 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - " ( lus a fhliuchtar ar nós an tae san Airgintín agus i dtíortha eile i réigiún Río de la Plata i Meiriceá Theas ), sa ghuaranà, agus beagáinín i síolta cócó. "
+  - ", ach is í an chaiféin an príomhoibreán iontu go léir. "
+  - "Rinne sí cuid den obair i gcaife i nDún Éideann. "
+  - " ( 1988 ). Scríobhadh léirmheasanna lúcháireacha faoin albam agus chuaigh sí ar an mbóthar agus ag bailiú lucht leanúna. "
+  - "Sar i bhfad thosaigh sé ag seinm i gcaife gar don Ollscoil darbh ainm “ The 10 o ’ clock Scholar ”. "
+  - " ) a thabhairt ar an bpróiseas, cé nach coipeadh ná giosáil i gciall cheart an fhocail atá i gceist. "
+  - "Cuireann daoine i dtae agus i gcaife é agus ina lán oideas eile chun blas milis a thabhairt do bhia. "
+  - "Is féidir scian a bheith ann i gcóir im; spúnóg bheag chun siúcra a chaitheamh isteach i tae nó caife agus é a chorraí. "
+  - "Baintear feidhm as cinn bheaga chun siúcra a mheascadh isteach i dtae nó caife, nó chun iógart a ithe. "
+  - "Bhain sé dochtúireacht amach in Iarúsailéim agus oibríonn sé anois leis an Technion in Haifa. "
