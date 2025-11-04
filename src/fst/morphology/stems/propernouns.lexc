@@ -1,18 +1,18 @@
 !**************************************************************************
 !! Moirfeolaíocht na nAinmfhocail Gaeilge (Morphology of Irish Nouns)
 !**************************************************************************
-!!		PROPER NOUNS
+!! #		PROPER NOUNS
 !**************************************************************************
-! E. Uí Dhonnchadha 
-! 2003
-! 2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER
+!! E. Uí Dhonnchadha 
+!! 2003
+!! 2024 Updated for +Sem/Org, +PersName, etc for Semantic tagging and NER
 !**************************************************************************
-LEXICON NP-LEX-EIRE
+LEXICON NP-LEX-EIRE   !!≈ -  **@CODE@** 
 
-< Á t h %_:%  C l i a t h > NP-PLACE;
-< Á i t h %_:%  C l i a t h > NP-PLACE;
+< Á t h %_:%  C l i a t h > NP-PLACE;  !!≈ -  **@CODE@** 
+< Á i t h %_:%  C l i a t h > NP-PLACE;  !!≈ -  **@CODE@** 
 !!!{Áith_Cliath}:{Áith Cliath}  NP-PLACE;
-< Á t h a %_:%  C l i a t h > NP-PLACE;
+< Á t h a %_:%  C l i a t h > NP-PLACE;  !!≈ -  **@CODE@** 
 < B a i l e %_:%  Á t h a %_:%  C l i a t h > NP-PLACE;	! (Added CW 09/08)
 < C e a n n %_:%  Á t h a %_:%  G a d > NP-PLACE;	! (Added CW 09/08)
 < C i o n n %_:%  Á t h a %_:%  G a d > NP-PLACE;	! (Added CW 09/08)
@@ -34,10 +34,10 @@ LEXICON NP-LEX-EIRE
 < C l o c h %_:%  L i a t h > NP-PLACE;	! Greystone
 < L e i t i r %_:%  C e a n a n n >	NP-PLACE; 
 
-Oileán	Nm1-Prop-Place;
-Oileáin	NP-PLACE-pl;
-Meán	Nm1-Prop-Place;
-Oírr	Nm1-Prop-Place;
+Oileán	Nm1-Prop-Place;  !!≈ -  **@CODE@** 
+Oileáin	NP-PLACE-pl; !!≈ -  **@CODE@** 
+Meán	Nm1-Prop-Place; !!≈ -  **@CODE@** 
+Oírr	Nm1-Prop-Place; !!≈ -  **@CODE@** 
 BÁC	NP-PLACE;
 BAC	NP-PLACE;
 Cabhán	NP-PLACE;	! Cavan

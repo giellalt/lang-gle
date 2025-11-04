@@ -28,6 +28,9 @@ lex-ar-an-tae = "Ar" agus ní "i" le "tae"
     .desc = Cuirtear bainne agus siúcra ar an tae, ní chuirtear isteach sa tae iad.
     .example-1 = An gcuireann sé bainne ar an tae? Tá siúcra ar an tae.
 
+lex-dairire = blabla
+    .desc = blabla
+
 lex-tá-is = Úsáid "is", ní "tá"
     .desc = Nuair atáthar ag scríobh faoi rud atá buan, bain úsáid as an gcopail "is" .
     .example-1 = Is bean láidir í. Is múinteoir é.
@@ -44,9 +47,33 @@ msyn-cúpla-plnoun-sgnoun = Bíonn uimhir uatha ann i lorg an fhocail cúpla
     .desc = Bíonn uimhir uatha ann i lorg an fhocail cúpla.
     .example-1 = Cúpla lá, cúpla focal, cúpla bliain.
 
+msyn-ecl-after-go = Eclipse tar éis imeacht
+    .desc = Ba chóir go mbeadh eclipse ann tar éis imeacht.
+
+msyn-ecl-after-da = blabla
+    .desc = blabla
+
+msyn-ecl-after-nach = blabla
+    .desc = blabla
+
+msyn-ecl-after-mura = blabla
+    .desc = blabla
+
+msyn-gen-noun-noun = blabla
+    .desc = blabla
+
+msyn-gen-vn-noun-with-article = blabla
+    .desc = blabla
+
+msyn-gen-noun-defart-noun = blabla
+    .desc = blabla
+
 msyn-ecl-after-prep = Tá urú in easnamh
     .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
     .example-1 = I mbarr, i gceannas
+
+msyn-ecl-after-prep2 = Tá urú in easnamh
+    .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
 
 msyn-ecl-after-prep-sfem = Urú i ndiaidh réamhfhocail
     .desc = Nuair a bhíonn réamhfhocail áirithe ann, déantar urú ar an ainmfhocal ina lorg.
@@ -63,6 +90,9 @@ msyn-fem-article = An leagan baininscneach den alt
 msyn-gen-case-nouns = An tuiseal ginideach i ndiaidh an ailt
     .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
+
+msyn-gen-noun-adj = blabla
+    .desc = blabla
 
 msyn-gen-noun-defart-nouns = An tuiseal ginideach i ndiaidh an ailt
     .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile ({$2}), ní mór don dara hainmfhocal a bheith sa ghinideach.
@@ -148,3 +178,4 @@ typo = Earráid litrithe
 
 use-guillemets = Guillemets
     .desc = Úsáid comharthaí athfhriotail uillinne dúbailte
+

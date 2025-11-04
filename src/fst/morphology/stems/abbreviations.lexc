@@ -1,16 +1,16 @@
 !****************************************************************************
-!! Abbreviations 
-!
-!  E. Uí Dhonnchadha
+!! # Abbreviations 
+!"
+!"  E. Uí Dhonnchadha
 !****************************************************************************
 
-LEXICON Abbrev
+LEXICON Abbrev !!≈ **@CODE@**
 
 ! Abbreviations with full stop(s)
 ! MUST BE INCLUDED IN TOKENIZER ALSO
 
-Dochtúir+Abr+Sem/Title:Dr.	#;
-Miss+Abr+Sem/Title:Ms.	#;
+Dochtúir+Abr+Sem/Title:Dr.	#; !!≈ @CODE@
+Miss+Abr+Sem/Title:Ms.	#;  !!≈ @CODE@
 Missus+Abr+Sem/Title:Mrs.	#;
 Mister+Abr+Sem/Title:Mr.	#;
 

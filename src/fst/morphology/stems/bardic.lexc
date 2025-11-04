@@ -1,15 +1,15 @@
 !****************************************************************************
-! Bardic - Classical Irish
+!! # Bardic - Classical Irish
 !
-! E. Uí Dhonnchadha
+!! E. Uí Dhonnchadha
 !
-! Nov 2020 
+!# Nov 2020 
 !****************************************************************************
 !--------------------------------------------------------------------------------
 !LEXICON Root
 !        Bardic;
 
-LEXICON Bardiclex
+LEXICON Bardiclex  !!≈ **@CODE@**
 
 file+Noun+Masc+Acc+Sg+NG:filidh	#;
 file+Noun+Masc+Acc+Sg+Len+NG:fhilidh	#;

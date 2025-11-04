@@ -23,6 +23,9 @@ lex-ar-an-gcaife = "Ar" and not "i" with coffee
 lex-ar-an-tae = "Ar" and not "i" with "tae"
     .desc = Milk and sugar ar put on the tea, not into tea
 
+lex-dairire = blabla
+    .desc = blabla
+
 lex-tá-is = Use "is", not "tá"
     .desc = When "tá" has a first person pronoun to the right, use "is" and not "tá".
 
@@ -35,8 +38,29 @@ msyn-beag-is-fiú-de = "De", not "dom", after "beag is fiú"
 msyn-cúpla-plnoun-sgnoun = The singular form follows the word cúpla
     .desc = The singular form follows the word cúpla.
 
+msyn-ecl-after-da = blabla
+    .desc = blabla
+
+msyn-ecl-after-mura = blabla
+    .desc = blabla
+
+msyn-ecl-after-nach = Eclipsis is missing
+    .desc = When a preposition comhes before a noun, nach in this case, the noun must be eclipsed.
+
+msyn-gen-noun-noun = blabla
+    .desc = blabla
+
+msyn-gen-vn-noun-with-article = blabla
+    .desc = blabla
+    
 msyn-ecl-after-prep = Eclipsis is missing
     .desc = When a preposition comhes before a noun, {$1} in this case, the noun must be eclipsed.
+
+msyn-ecl-after-prep2 = Eclipsis is missing
+    .desc = When a preposition comhes before a noun, {$1} in this case, the noun must be eclipsed.
+
+msyn-ecl-after-go = Eclipse after go
+    .desc = There should be eclipse after go
 
 msyn-ecl-after-prep-sfem = Eclipse after a preposition
     .desc = With certain prepositions, eclipsis occurs.
@@ -49,17 +73,23 @@ msyn-fem-article = Correcting the article for feminine nouns
 
 msyn-gen-case-nouns = The genitive case following the article
     .desc = If the article and noun ({$1}) follow another noun, the second noun must be in the genitive case.
+
 msyn-gen-noun-defart-noun = The genitive case following the article
     .desc = If the article and noun ({$1}) follow another noun ({$2}), the second noun must be in the genitive case.
 
+msyn-gen-noun-adj = blabla
+    .desc = blabla
+
 msyn-gen-noun-detpss-noun = Genitive noun
     .desc = When a noun follows a noun (like {$2}) and a possessive adjective, it should be in the genitive case.
-#msyn-gen-noun-noun = 
+
+msyn-gen-noun-noun = blabla
+    .desc = blabla
 
 msyn-gen-vn-noun = Genitive case after verbal noun
     .desc = If a noun, here ({$1}) follows a verbal noun, it should be in the genitive case."
 
-msyn-gen-vn-noun-with-artichle = Genitive case after verbal noun + article
+msyn-gen-vn-noun-with-artichle = Genitive case after verbal noun and article
     .desc = If a noun, here ({$1}) follows a verbal noun, it should be in the genitive case."
 
 msyn-h-after-fem-possessive-adjective = Add title

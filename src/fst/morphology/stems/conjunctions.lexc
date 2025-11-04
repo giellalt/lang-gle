@@ -1,7 +1,8 @@
 !****************************************************************************
-!! CONJUNCTIONS
+!! # CONJUNCTIONS
+!!
 !!  E. Uí Dhonnchadha
-!!  New Irish Grammar by The Christian Brothers, etc.
+!!  - New Irish Grammar by The Christian Brothers, etc.
 !!
 !! removed items (subbord conjs) which are pre-verbal (which often have past tense inflection)
 !! e.g. go/gur a/ar nach/nár 
@@ -14,8 +15,8 @@
 !! e.g. sula, sular, murar etc.
 !****************************************************************************
 LEXICON Conjunctions
-
 !! ### LEXICON @LEXNAME@
+
 !!agus+Conj+Coord:is		# ; !!≈ - **@LEMMA@**
 !!agus+Conj+Coord:'s		# ; !!≈ - **@LEMMA@**
 !!agus+Conj+Coord:a's		# ; !!≈ - **@LEMMA@**

@@ -1,46 +1,47 @@
 !THIS ONE
-! Gaeilge: Replace Rules
-! Elaine Uí Dhonnchadha
-! May 2001
-! Apr 2004
-! Last Part - tidy up
+!! # Gaeilge: Replace Rules
+!! Elaine Uí Dhonnchadha
+!! May 2001
+!! Apr 2004
+!!
+!! ## Last Part - tidy up
 !
 !**************************************************************************
-read regex [ %^AE -> a e]
+read regex [ %^AE -> a e]		 !!≈ - @CODE@ 
 .o.
-![ %^IA -> i a]
+![ %^IA -> i a]		 !!≈ - @CODE@ 
 !.o.
-[ %^AO -> a o]
+[ %^AO -> a o]		 !!≈ - @CODE@ 
 .o.
-[ %^UA -> u a]
+[ %^UA -> u a]		 !!≈ - @CODE@ 
 .o.
-[%^F -> []]
+[%^F -> []]		 !!≈ - @CODE@ 
 .o.
-[%^M -> []]
+[%^M -> []]		 !!≈ - @CODE@ 
 .o.
-[%^N -> []]
+[%^N -> []]		 !!≈ - @CODE@ 
 .o.
-[%^G -> []]
+[%^G -> []]		 !!≈ - @CODE@ 
 .o.
-[%^V -> []]
+[%^V -> []]		 !!≈ - @CODE@ 
 .o.
-[%^CB -> []]
+[%^CB -> []]		 !!≈ - @CODE@ 
 .o.
-[%^FB -> []]		! broadened
+[%^FB -> []]		!!≈ - @CODE@  broadened
 .o.
-[%^FC -> []]		! last syllable changed
+[%^FC -> []]		!!≈ - @CODE@  last syllable changed
 .o.
-[%^FH -> []]		! séimhiú i.e. h inserted
+[%^FH -> []]		!!≈ - @CODE@  séimhiú i.e. h inserted
 .o.
-[%^FU -> []]		! urú
+[%^FU -> []]		!!≈ - @CODE@  urú
 .o.
-[%^FV -> []]		! prefing of vowel-initial words
+[%^FV -> []]		!!≈ - @CODE@  prefing of vowel-initial words
 .o.
-[%^FS -> []]		! slenderised
+[%^FS -> []]		!!≈ - @CODE@  slenderised
 .o.
-[%^FY -> []]		! syncopated
+[%^FY -> []]		!!≈ - @CODE@  syncopated
 .o.
-[%^FT -> []]		! verb stem truncated
+[%^FT -> []]		!!≈ - @CODE@  verb stem truncated
 .o.
-[%^CB -> []]		! compound boundary e.g. from pref + verb/adj scripts
+[%^CB -> []]		!!≈ - @CODE@  compound boundary e.g. from pref + verb/adj scripts
 ;

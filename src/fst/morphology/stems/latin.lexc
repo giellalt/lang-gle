@@ -1,14 +1,14 @@
-! JUN 2016
-! LATIN LEX (RIACORPAS 1)
-! AUG 2025 added +OLang/LAT for Giellalt integration
+!! JUN 2016
+!! # LATIN LEX (RIACORPAS 1)
+!! AUG 2025 added +OLang/LAT for Giellalt integration
 
 
 !LEXICON Root
 !	Latinlex;
 
-LEXICON Latinlex
-vobis+OLang/LAT+Foreign+Latin:vobis	#;
-nivus+OLang/LAT+Foreign+Latin:nivus	#;
+LEXICON Latinlex !!≈ **@CODE@**
+vobis+OLang/LAT+Foreign+Latin:vobis	#; !!≈ @CODE@
+nivus+OLang/LAT+Foreign+Latin:nivus	#; !!≈ @CODE@
 ecce+OLang/LAT+Foreign+Latin:ecce	#;
 omnes+OLang/LAT+Foreign+Latin:omnes	#;
 mihi+OLang/LAT+Foreign+Latin:mihi	#;

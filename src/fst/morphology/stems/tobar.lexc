@@ -1,18 +1,19 @@
+!! # Tobar
 !****************************************************************************
 !! Tobar - ac Grianna
 !
-! E. Uí Dhonnchadha
-! Jan 2009
+!! - E. Uí Dhonnchadha
+!! Jan 2009
 !****************************************************************************
 
 
-LEXICON Tobar
+LEXICON Tobar  !!≈ **@CODE@** 
 
-abair+Verb+VTI+Vow+PastImp:adeireadh		#;
+abair+Verb+VTI+Vow+PastImp:adeireadh		#; !!≈ -  @CODE@ 
 
 ! IS (Copula)
-is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea	#;	! is ea
-is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard	 #;	! is éard
+is_ea+Cop+Pres+Pron+Pers+3P+Sg:is_ea	#;	 !!≈ -  @CODE@  is ea
+is_éard+Cop+Pres+Noun+Masc+Com+Sg:is_éard	 #;	 !!≈ -  @CODE@ is éard
 is_é+Cop+Pres+Pron+Pers+3P+Sg+Masc:is_é	#;	! is é
 is_é+Cop+Pres+Dep+Pron+Pers+3P+Sg+Masc:gurb_é	#;	! gurb é
 is_í+Cop+Pres+Pron+Pers+3P+Sg+Fem:is_í	#;	! is í

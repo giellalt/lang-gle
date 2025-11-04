@@ -7,4 +7,7 @@ Tests:
   - "Níl a fhios {ag mé}£{agam} faoi rothaí na gréine."  
   - "Níl a fhios {ag mé}£{agam} faoi rothaí {an grian}£{na gréine}."  
   - "Tá an carr ag taisteal ar nós {an gaoth}£{na gaoithe}."
+  - "Táim ag dul go hoifig an {dochtúir}£{dochtúra}."
+  - "Táim ag dul go {oifig}£{hoifig} an dochtúra."
+  - "Táim ag dul go {oifig}£{hoifig} an {dochtúir}£{dochtúra}."
   

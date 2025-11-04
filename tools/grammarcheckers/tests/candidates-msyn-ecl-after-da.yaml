@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Úsáidtear a lán breosla peitril chun an púdar bán céanna a dhéanamh ( agus tá sé ráite dá gcífeadh an dream a úsáideann an cocaon an próiseas fhéin, ná bacfaidís leis, tá an próiseas chomh salach míshláintiúil ). Do mhargadh na hEorpa agus na Stát Aontaithe is mó a dhéantar é. "
+  - ". "

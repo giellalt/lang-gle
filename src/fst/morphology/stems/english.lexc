@@ -1,14 +1,14 @@
-! E. Uí Dhonnchadha
-! JULY 2013
-! ENGLISH LEX & COMMUNICATORS (CHILDES term)
-! AUG 2025 added +OLang/ENG for Giellalt integration
+!! E. Uí Dhonnchadha
+!! JULY 2013
+!! ENGLISH LEX & COMMUNICATORS (CHILDES term)
+!! AUG 2025 added +OLang/ENG for Giellalt integration
 
 !LEXICON Root
 !	Englishlex;
 !	Communicators-English;
 
 
-LEXICON Communicators-English
+LEXICON Communicators-English  !!≈ **@CODE@**
 < f a i r  %_:%  p l a y %+OLang%/ENG:0 %+Cmc:0 %+English:0 >		#;
 < s o r t  %_:%  o f %+OLang%/ENG:0 %+Cmc:0 %+English:0 >		#;
 < n o %_:%  w a y %+OLang%/ENG:0 %+Cmc:0 %+English:0 >		#;

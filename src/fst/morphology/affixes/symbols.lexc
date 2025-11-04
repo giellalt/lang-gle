@@ -1,3 +1,4 @@
+!! # Symbol affixes
 ! Divvun & Giellatekno - open source grammars for Sámi and other languages
 ! Copyright © 2000-2010 The University of Tromsø & the Norwegian Sámi Parliament
 ! http://giellatekno.uit.no & http://divvun.no
@@ -14,21 +15,21 @@
 
 !! # Symbol affixes
 
-LEXICON Noun_symbols_possibly_inflected
- +N+Symbol: SYMBOL_connector ;
+LEXICON Noun_symbols_possibly_inflected	!!≈ - @CODE@ 
+ +N+Symbol: SYMBOL_connector ;	!!≈ @CODE@ 
 
-LEXICON Noun_symbols_never_inflected
- +N+Symbol: # ;
+LEXICON Noun_symbols_never_inflected	!!≈ - @CODE@ 
+ +N+Symbol: # ;	!!≈ - @CODE@ 
 
-LEXICON SYMBOL_connector
+LEXICON SYMBOL_connector	!!≈ - @CODE@ 
                SYMBOL_NO_suff ; ! §
           :%:  SYMBOL_suff    ; ! §:sne
  +Err/Orth:    SYMBOL_suff    ; ! §esne
  +Err/Orth:%-e SYMBOL_suff    ; ! §-esne
  +Err/Orth:%'e SYMBOL_suff    ; ! §'esne
 
-LEXICON SYMBOL_NO_suff
- +Sg+Nom: # ;
+LEXICON SYMBOL_NO_suff	!!≈ - @CODE@ 
+ +Sg+Nom: # ;	!!≈ - @CODE@ 
 
-LEXICON SYMBOL_suff
-# ; !todo
+LEXICON SYMBOL_suff	!!≈ - @CODE@ 
+# ; 	!!≈ - @CODE@ todo
