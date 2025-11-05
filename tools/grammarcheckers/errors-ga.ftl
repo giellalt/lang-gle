@@ -62,9 +62,6 @@ msyn-ecl-after-mura = blabla
 msyn-gen-noun-noun = blabla
     .desc = blabla
 
-msyn-gen-noun-defart-noun = blabla
-    .desc = blabla
-
 msyn-ecl-after-prep = Tá urú in easnamh
     .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
     .example-1 = I mbarr, i gceannas
@@ -91,7 +88,7 @@ msyn-gen-case-nouns = An tuiseal ginideach i ndiaidh an ailt
 msyn-gen-noun-adj = blabla
     .desc = blabla
 
-msyn-gen-noun-defart-nouns = An tuiseal ginideach i ndiaidh an ailt
+msyn-gen-noun-defart-noun = An tuiseal ginideach i ndiaidh an ailt
     .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile ({$2}), ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
 
