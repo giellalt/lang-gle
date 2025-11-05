@@ -796,14 +796,18 @@ COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-a
 
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i" Prep Simp)) ;
+ADDRELATION:lex-dairire ($2 RIGHT) (&lex-dairire) TO (1 (&lex-dairire)) ;
+SUBSTITUTE (Noun &lex-dairire) (Noun co&lex-dairire) TARGET (Noun &lex-dairire) ;
+ADDRELATION:lex-dairire (DELETE1) (Prep &lex-dairire) TO (1 (Noun co&lex-dairire)) ;
+
 COPY:lex-dairire (SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Prep &lex-dairire);
 COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Noun Masc Com Sg Ecl &lex-dairire) TARGET (Prep &lex-dairire);
 COPY:lex-dairire (SUGGEST) EXCEPT (Ecl) TARGET ("dáiríre" &lex-dairire) ;
 
-ADDRELATION: ($2 LEFT) (&lex-dairire) TO (-1 (&lex-dairire));
-SUBSTITUTE (&lex-dairire) (&lex-dairire) TARGET (SUGGEST);
+SUBSTITUTE:lex-dairire (&lex-dairire) (co&lex-dairire) TARGET (SUGGEST &lex-dairire);
+MAP:LOCK_READING (SUGGEST) (SUGGEST) ;
 
-##ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
+##
 
 	
 	
