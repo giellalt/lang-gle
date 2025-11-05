@@ -62,9 +62,6 @@ msyn-ecl-after-mura = blabla
 msyn-gen-noun-noun = blabla
     .desc = blabla
 
-msyn-gen-vn-noun-with-article = blabla
-    .desc = blabla
-
 msyn-gen-noun-defart-noun = blabla
     .desc = blabla
 

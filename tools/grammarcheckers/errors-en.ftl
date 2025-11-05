@@ -47,9 +47,6 @@ msyn-ecl-after-mura = blabla
 msyn-ecl-after-nach = Eclipsis is missing
     .desc = When a preposition comhes before a noun, nach in this case, the noun must be eclipsed.
 
-msyn-gen-noun-noun = blabla
-    .desc = blabla
-
 msyn-gen-vn-noun-with-article = blabla
     .desc = blabla
     
