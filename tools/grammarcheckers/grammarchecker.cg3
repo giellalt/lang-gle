@@ -696,7 +696,7 @@ ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
 ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron)) ;
 SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
-ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
+#ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
 
 COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
 COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
@@ -800,8 +800,14 @@ COPY:lex-dairire (SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Prep &lex-dairire);
 COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Noun Masc Com Sg Ecl &lex-dairire) TARGET (Prep &lex-dairire);
 COPY:lex-dairire (SUGGEST) EXCEPT (Ecl) TARGET ("dáiríre" &lex-dairire) ;
 
-ADDRELATION: ($2 LEFT) (&lex-dairire) TO (-1 (&lex-dairire));
+ADDRELATION:lex-dairire ($2 LEFT) (&lex-dairire) TO (1 (&lex-dairire)) ;
+ADDRELATION:lex-dairire (DELETE -1) (Prep &lex-dairire) TO (-1 (Noun &lex-dairire)) ;
 SUBSTITUTE (&lex-dairire) (&lex-dairire) TARGET (SUGGEST);
+SUBSTITUTE (&lex-dairire) (&lex-dairire) TARGET (SUGGEST &lex-dairire) ;
+MAP:LOCK_READING (SUGGEST) (SUGGEST);
+
+
+#ADDRELATION:msyn-prep-pron (DELETE1) ("dáiríre" &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
 
 ##ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
 
