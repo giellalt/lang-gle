@@ -47,12 +47,6 @@ msyn-ecl-after-mura = blabla
 msyn-ecl-after-nach = Eclipsis is missing
     .desc = When a preposition comhes before a noun, nach in this case, the noun must be eclipsed.
 
-msyn-gen-noun-noun = blabla
-    .desc = blabla
-
-msyn-gen-vn-noun-with-article = blabla
-    .desc = blabla
-    
 msyn-ecl-after-prep = Eclipsis is missing
     .desc = When a preposition comhes before a noun, {$1} in this case, the noun must be eclipsed.
 
@@ -89,7 +83,7 @@ msyn-gen-noun-noun = blabla
 msyn-gen-vn-noun = Genitive case after verbal noun
     .desc = If a noun, here ({$1}) follows a verbal noun, it should be in the genitive case."
 
-msyn-gen-vn-noun-with-artichle = Genitive case after verbal noun and article
+msyn-gen-vn-noun-with-article = Genitive case after verbal noun and article
     .desc = If a noun, here ({$1}) follows a verbal noun, it should be in the genitive case."
 
 msyn-h-after-fem-possessive-adjective = Add title

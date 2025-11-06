@@ -795,11 +795,12 @@ COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-a
 ##i ndáiríre - #$dáiríre
 
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
-ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i" Prep Simp)) ;
-COPY:lex-dairire (SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Prep &lex-dairire);
-COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Noun Masc Com Sg Ecl &lex-dairire) TARGET (Prep &lex-dairire);
-COPY:lex-dairire (SUGGEST) EXCEPT (Ecl) TARGET ("dáiríre" &lex-dairire) ;
+ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
+#ADDRELATION:lex-dairire ($2 RIGHT) (Prep &lex-dairire) TO (1 (&lex-dairire)) ;
+#SUBSTITUTE (Noun &lex-dairire) (Noun co&lex-dairire) TARGET (Noun &lex-dairire) ;
+ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ;
 
+<<<<<<< HEAD
 ADDRELATION:lex-dairire ($2 LEFT) (&lex-dairire) TO (1 (&lex-dairire)) ;
 ADDRELATION:lex-dairire (DELETE -1) (Prep &lex-dairire) TO (-1 (Noun &lex-dairire)) ;
 SUBSTITUTE (&lex-dairire) (&lex-dairire) TARGET (SUGGEST);
@@ -808,8 +809,16 @@ MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 
 #ADDRELATION:msyn-prep-pron (DELETE1) ("dáiríre" &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
+=======
+#COPY:lex-dairire (SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Prep &lex-dairire);
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl &lex-dairire) TARGET (Noun &lex-dairire);
+#COPY:lex-dairire (SUGGEST) EXCEPT (Ecl) TARGET ("dáiríre" &lex-dairire) ;
+>>>>>>> aac087e8e10587241cc74acd199e3a41b486e547
 
-##ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
+#SUBSTITUTE:lex-dairire (&lex-dairire) (co&lex-dairire) TARGET (SUGGEST &lex-dairire);
+#MAP:LOCK_READING (SUGGEST) (SUGGEST) ;
+
+##
 
 	
 	
@@ -1280,7 +1289,7 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 
 ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
 ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
-ADDRELATION ($2 RIGHT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
+ADDRELATION ($2 LEFT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
 	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
 	## An ceol sheinneann sé gach lá agus é i mbun oibre.
