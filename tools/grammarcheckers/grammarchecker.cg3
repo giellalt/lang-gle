@@ -356,6 +356,11 @@ SET NOT-FAUXV = FMAINV OR OBJ + V OR ADVL + V ;
 SET SYN-V = FMAINV OR FAUXV OR V + SUBJ OR OBJ + V OR ADVL + V OR (V @>N) OR (V @N<) OR (V @A<) ; #!! * SYN-V
 LIST @X = @X ;    #!! * @X
 
+# Secondary tags
+
+LIST <ComGen> = <ComGen> ; # Tag for nouns where Com and Gen forms are homonymous
+
+
 # ========
   SETS
 # ========
@@ -801,6 +806,12 @@ COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl &lex-
 ## I ndáiríre ní chaithfidh tú tada a rá.	
 
 
+<<<<<<< HEAD
+=======
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
+	## I ndáiríre ní chaithfidh tú tada a rá.	
+	#$ Dáiríre ní chaithfidh tú tada a rá.
+>>>>>>> 7ad5fd3 (correcting eclipse rule)
 	
 
 
@@ -1583,7 +1594,7 @@ ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFOR
 
 #!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
 
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) IF
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(-1 Art)
 	(-2 ECLIPSE-PREP + Prep + Simp)
 	(0 ("<[bcdfgpsBCDFGPS].*>"r))
@@ -1597,6 +1608,8 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (NEGATE 0 Ecl)
         (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+
+COPY:msyn-ecl-after-prep (Com Sg Ecl SUGGEST) EXCEPT (Gen Sg &msyn-ecl-after-prep) OR (Gen Sg DefArt &msyn-ecl-after-prep) OR (Gen Sg Len &msyn-ecl-after-prep) TARGET (Gen &msyn-ecl-after-prep);
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECLIPSE-PREP + (Prep Simp))
