@@ -3638,6 +3638,7 @@ Other gen tags:
 * LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ;  
 * LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
 * LIST &msyn-noun-defart = &msyn-noun-defart ;     
+* LIST &msyn-prepart-prep = &msyn-prepart-prep ;     
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
@@ -3741,6 +3742,8 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
 
 **ADD:lex-ar-an-gcaife** ...
+
+**ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
 
 **ADD:msyn-hPref-after-prep**: A rule to insert an h after certain prepositions 
 
