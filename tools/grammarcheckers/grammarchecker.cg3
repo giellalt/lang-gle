@@ -803,15 +803,9 @@ ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
 ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ; # DEL from keep TO delete
 COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl &lex-dairire) TARGET (Noun &lex-dairire);
-## I ndáiríre ní chaithfidh tú tada a rá.	
-
-
-<<<<<<< HEAD
-=======
-COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
 	## I ndáiríre ní chaithfidh tú tada a rá.	
 	#$ Dáiríre ní chaithfidh tú tada a rá.
->>>>>>> 7ad5fd3 (correcting eclipse rule)
+
 	
 
 
