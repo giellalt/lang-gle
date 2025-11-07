@@ -380,7 +380,7 @@ LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  	#!!= * @COD
 
 #!! ### Sets for word or not
 
-LIST WORD = N A Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR  \? ; #!! WORD
+LIST WORD = Noun Adj Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR  \? ; #!! WORD
  #!! any word
 # SET REAL-WORD = WORD - Num - Ord ; #!! REAL-WORD
 SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR #!!= * @CODE@
@@ -454,24 +454,24 @@ SET A-CASE = Adj - Attr - Adv ;
 
 LIST A-CC = A CC ;
 
-SET NOT-A = WORD - Adj ; # This is former NOT-ADJ
-SET NOT-A-COMMA = WORD - Adj - COMMA ;
-SET NOT-Attr = WORD - Attr ;
-SET NOT-A-PCLE = WORD - Adj - Pcle ;
-SET NOT-A-CC = WORD - A-CC ;
+SET NOT-A = (*) - Adj ; # This is former NOT-ADJ
+SET NOT-A-COMMA = (*) - Adj - COMMA ;
+SET NOT-Attr = (*) - Attr ;
+SET NOT-A-PCLE = (*) - Adj - Pcle ;
+SET NOT-A-CC = (*) - A-CC ;
 
 
 #!! ### Adverbial sets and their complements
 # ------------------------------------
 SET LEX-ADV = Adv - (AA) ;
 
-SET NOT-ADV-DE         = WORD - Adv ;
+SET NOT-ADV-DE         = (*) - Adv ;
 SET NOT-ADV            = NOT-ADV-DE OR CLB ;
 SET NOT-ADV-N          = NOT-ADV - N;
 SET NOT-ADV-PCLE       = NOT-ADV - Pcle ;
 SET NOT-ADV-INDEF      = NOT-ADV - Indef ;
-SET NOT-ADV-PCLE-ILL-LOC-COM = WORD - Adv - Pcle - Loc - Com;
-SET NOT-A-ADV-PCLE = WORD - Pcle - A - Adv ;
+SET NOT-ADV-PCLE-ILL-LOC-COM = (*) - Adv - Pcle - Loc - Com;
+SET NOT-A-ADV-PCLE =  (*) - Pcle - A - Adv ;
 
 
 
@@ -520,33 +520,33 @@ SET PRE-NP-HEAD = (Prop Attr) OR (Prop @>N) OR (A Attr) OR (ABBR Attr)
 
 SET PRE-A-N     = (Pron Pers Gen) OR (Pron Pers Acc) OR (Pron Indef) OR Num OR (A Ord) OR (Pron Dem) OR (Pron Refl Gen) OR (Pron Refl Acc) ;
 
-SET NOT-PRE-A-N = WORD - PRE-A-N ;
+SET NOT-PRE-A-N =  (*) - PRE-A-N ;
 
 LIST PUNCT-LEFT = (PUNCT LEFT) ;
 LIST PUNCT-RIGHT = (PUNCT RIGHT) ;
 
-SET NOT-NPMOD     = WORD - PRE-NP-HEAD OR ABBR OR @CVP ;
+SET NOT-NPMOD     =  (*) - PRE-NP-HEAD OR ABBR OR @CVP ;
 # NOT-NPMOD  = "NOT-PRE-NP-HEAD"
 
 SET NOT-NPMOD-ACC     = NOT-NPMOD - Acc OR ABBR ;
 SET NOT-NPMOD-ACC-ADV     = NOT-NPMOD - Acc - Adv OR ABBR ;
 
-SET NOT-NPMODADV    = WORD - PRE-NP-HEAD - Adv ;
-SET NOT-NPMODADV-INDEF   = WORD - PRE-NP-HEAD - Adv - Indef ;
+SET NOT-NPMODADV    =  (*) - PRE-NP-HEAD - Adv ;
+SET NOT-NPMODADV-INDEF   =  (*) - PRE-NP-HEAD - Adv - Indef ;
 
-SET NOT-N = WORD - N ;
-SET NOT-ART = WORD - Art ; 
-SET NOT-N-A = WORD - N - A ;
+SET NOT-N =  (*) - N ;
+SET NOT-ART =  (*) - Art ; 
+SET NOT-N-A =  (*) - N - A ;
 
 SET NOT-NP = Inf OR Pcle OR Interj OR CS ;
 
 SET NUM = Num ;
 
-SET NOT-NUM = WORD - Num ;
+SET NOT-NUM =  (*) - Num ;
 
-SET NOT-CC = WORD - CC ;
+SET NOT-CC =  (*) - CC ;
 
-SET NOT-PCLE = WORD - Pcle ;
+SET NOT-PCLE =  (*) - Pcle ;
 
 SET REAL-CLB = CLB - COMMA ;
 
@@ -946,7 +946,7 @@ COPY:msyn-inis-do ("do" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-inis-do) OR ("tú
 
 LIST SCALE-WORDS = "buí" ;
 
-SET NOT-SCALE-WORDS = WORD - SCALE-WORDS ;
+SET NOT-SCALE-WORDS =  (*) - SCALE-WORDS ;
 
 # "fada" A + "ó"
 
