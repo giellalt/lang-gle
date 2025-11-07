@@ -440,7 +440,7 @@ Template rule to delete A and modify B in A B strings:
 
 ### Rules for lenition
 
-**ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
+**ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh" IT WORKS
 
 **ADD:msyn-inis-do** ...
 
