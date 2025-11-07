@@ -179,6 +179,7 @@ LIST Cmp/SgGen = Cmp/SgGen ; #!! * Cmp/SgGen
 LIST Comp = Comp ;		   #!! * Comp
 LIST Superl = Superl ;	   #!! * Superl
 LIST Attr = Attr ;		   #!! * Attr
+LIST Base = Base ;
 LIST Ord = Ord ;		   #!! * Ord
 LIST Qst = Qst ;		   #!! * Qst
 LIST IV = IV ; #!! * IV
@@ -625,6 +626,7 @@ LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@ 
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
+LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
 LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
@@ -802,7 +804,7 @@ COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-a
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
 ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ; # DEL from keep TO delete
-COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl &lex-dairire) TARGET (Noun &lex-dairire);
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
 	## I ndáiríre ní chaithfidh tú tada a rá.	
 	#$ Dáiríre ní chaithfidh tú tada a rá.
 
@@ -1585,6 +1587,23 @@ ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFOR
 	
 	## ar fhud an domhan. - incorrect
 	#$ ar fud an domhain. - correct
+	
+	
+#!! **ADD:msyn-hPref-after-prep**: A rule to insert an h after certain prepositions 
+
+LIST VOW-PREP = "le" "go" ;
+
+ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
+	(-1 VOW-PREP)
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+	
+	## Bhí cion go áirithe ar an bpréachán aige.
+	
+COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
+
+COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
+
 
 #!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
 
