@@ -3682,6 +3682,8 @@ Here ends the list and set section
 
 **ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
 
+Template rule to delete A and modify B in A B strings:
+
 #### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
 #### rule to take away lenition for nouns after certain prepositions
