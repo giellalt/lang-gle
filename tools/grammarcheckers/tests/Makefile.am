@@ -9,11 +9,8 @@ if WANT_GRAMCHECK
 
 # List here (space separated) all yaml files to be run as part of make check:
 TESTS=from_grammarcheckers_cg3-FAIL.yaml \
-    candidates-lex-ar-an-aonach.yaml \
-    candidates-lex-ar-an-tae.yaml \
+    candidates-lex-ina-ainneoin-sin.yaml \
     candidates-msyn-adj-gender.yaml \
-    candidates-msyn-cúpla-plnoun-sgnoun.yaml \
-    candidates-msyn-ecl-after-da.yaml \
     candidates-msyn-ecl-after-go.yaml \
     candidates-msyn-ecl-after-mura.yaml \
     candidates-msyn-ecl-after-nach.yaml \
@@ -31,8 +28,8 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     candidates-msyn-lenition-after-possessive-adjective.yaml \
     candidates-msyn-noun-defart.yaml \
     candidates-msyn-prep-pron.yaml \
-    candidates-msyn-teastaigh-ó.yaml \
     candidates-syn-a-before-verb-relativephrase.yaml \
+    candidates-use-guillemets.yaml \
     msyn-adj-gender.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
@@ -61,11 +58,8 @@ TESTS=from_grammarcheckers_cg3-FAIL.yaml \
 # List tests that are presently (expected) failures here, ie things that should
 # be fixed *later*, but is not critical at the moment:
 XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
-    candidates-lex-ar-an-aonach.yaml \
-    candidates-lex-ar-an-tae.yaml \
+    candidates-lex-ina-ainneoin-sin.yaml \
     candidates-msyn-adj-gender.yaml \
-    candidates-msyn-cúpla-plnoun-sgnoun.yaml \
-    candidates-msyn-ecl-after-da.yaml \
     candidates-msyn-ecl-after-go.yaml \
     candidates-msyn-ecl-after-mura.yaml \
     candidates-msyn-ecl-after-nach.yaml \
@@ -83,8 +77,8 @@ XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     candidates-msyn-lenition-after-possessive-adjective.yaml \
     candidates-msyn-noun-defart.yaml \
     candidates-msyn-prep-pron.yaml \
-    candidates-msyn-teastaigh-ó.yaml \
     candidates-syn-a-before-verb-relativephrase.yaml \
+    candidates-use-guillemets.yaml \
     msyn-ar-a-haon-a-chlog-FAIL.yaml \
     msyn-ar-an-aonach-FAIL.yaml \
     msyn-gen-noun-detpss-noun-FAIL.yaml \
