@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "In ainneoin go leor deacrachtaí bunaíodh a lán scoileanna nua ar fud na hÉireann"
+  - "In ainneoin na bhfeithicil nua seo dúnadh cuid mór de na hiarnróid i rithna gcaogaidí"
