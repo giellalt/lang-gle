@@ -796,13 +796,15 @@ COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-a
 
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
-#ADDRELATION:lex-dairire ($2 RIGHT) (Prep &lex-dairire) TO (1 (&lex-dairire)) ;
-#SUBSTITUTE (Noun &lex-dairire) (Noun co&lex-dairire) TARGET (Noun &lex-dairire) ;
 
-COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl &lex-dairire) TARGET (Noun &lex-dairire);
+ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ;
+
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
 	## I ndáiríre ní chaithfidh tú tada a rá.	
 	
-ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ;
+
+
+## tóin-poill 
 	
 ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
 COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
