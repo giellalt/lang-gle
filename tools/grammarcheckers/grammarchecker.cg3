@@ -701,9 +701,9 @@ ADDRELATION:msyn-adj-gender ($2) (Noun) FROM (1 Adj LINK 0 (&msyn-adj-gender));
 
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
-ADDRELATION:msyn-prep-pron ($2 RIGHT) (&msyn-prep-pron) TO (1 (&msyn-prep-pron)) ;
-SUBSTITUTE (Pron Pers &msyn-prep-pron) (Pron Pers co&msyn-prep-pron) TARGET (Pron Pers &msyn-prep-pron);
-#ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron co&msyn-prep-pron)) ;
+	## Níl an am ag mé le aghaidh é seo.
+
+ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron &msyn-prep-pron)) ;
 
 COPY:msyn-prep-pron (Pron Prep 1P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Sg)) ;
 COPY:msyn-prep-pron (Pron Prep 2P Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Sg)) ;
@@ -712,7 +712,7 @@ COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp) TARGET (Pre
 COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
 COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
 COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
-SUBSTITUTE (&msyn-prep-pron) (co&msyn-prep-pron) TARGET (SUGGEST &msyn-prep-pron) ;
+
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 	#$ Tá an madra ag siúl leat (correct)
@@ -1599,6 +1599,7 @@ ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Ge
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 	## Bhí cion go áirithe ar an bpréachán aige.
+	## Níl an t-am agam le aghaidh é seo.
 	
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
 
