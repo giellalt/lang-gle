@@ -1,7 +1,7 @@
 # ==================================================================== #
 # I R I S H   D I S A M B I G U A T I O N  FOR GRAMMAR CHECKING
 # ==================================================================== #
-# Elaine Uí Dhonnchadha # 2004-2024
+# Elaine Uí Dhonnchadha # 2004-2025
 # Christoph Wendler # 2008-2009
 # Gearóid Ó Donnchadha # 2015
 # Linda Wiechetek (grammar checker modifications) # 2024-2025
@@ -37,6 +37,15 @@ LIST Num = Num ;
 LIST Det = Det ;
 LIST Abr = Abr ;
 LIST Cop = Cop ;
+
+LIST Len = Len ; #!! * Len
+LIST hPref = hPref ; #!! * hPref, for h prefixation
+LIST Ecl = Ecl ; #!! * Ecl
+
+
+# Secondary tags
+
+LIST <ComGen> = <ComGen> ; # Tag for nouns where Com and Gen forms are homonymous
 
 SETS 
 LIST BOS = (>>>) "<p>" "<s>" (ChildesID);
@@ -128,6 +137,14 @@ LIST CUMANN-PRON = "<tú>" "<sé>" "<sí>" "<muid>" "<sibh>" "<siad>";
 LIST NOUN-VERB-PAIR = "bac";
 LIST UAIN-FEM-SURR = ("an" Def Art) ("aon" Det Qty) ("céad" Num Ord Len);
 LIST NOUN-LEN = "ar" "de" "do" "faoi" "mar" "ó" "roimh" "trí" "um" ;
+
+###############
+BEFORE-SECTIONS
+###############
+
+SUBSTITUTE (Noun) (Noun <ComGen>) TARGET Noun IF (0 (Com Sg Len) LINK 0 (Gen Sg Len)); 
+SUBSTITUTE (Noun) (Noun <ComGen>) TARGET Noun IF (0 (Com Sg) - Len LINK 0 (Gen Sg) - Len); 
+	# this rule needs to be before disambiguation starts
 
 
 
