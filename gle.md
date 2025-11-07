@@ -3629,6 +3629,7 @@ Other gen tags:
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
 * LIST &msyn-fada-o = &msyn-fada-o ;     
 * LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
+* LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
 * LIST &msyn-inis-do = &msyn-inis-do ;     
 * LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
 * LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	  
@@ -3740,6 +3741,8 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
 
 **ADD:lex-ar-an-gcaife** ...
+
+**ADD:msyn-hPref-after-prep**: A rule to insert an h after certain prepositions 
 
 **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
 
