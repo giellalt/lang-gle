@@ -792,15 +792,15 @@ COPY:lex-os-a-choinne-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex
 ADD:lex-de-ainneoin (&lex-de-ainneoin ) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
 COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-ainneoin) TARGET (Art &lex-de-ainneoin ) IF (1 (Noun Fem)) ;
 
+#!!  Template rule to delete A and modify B in A B strings:
 ##i ndáiríre - #$dáiríre
-
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
+ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ; # DEL from keep TO delete
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl &lex-dairire) TARGET (Noun &lex-dairire);
+## I ndáiríre ní chaithfidh tú tada a rá.	
 
-ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ;
 
-COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
-	## I ndáiríre ní chaithfidh tú tada a rá.	
 	
 
 
