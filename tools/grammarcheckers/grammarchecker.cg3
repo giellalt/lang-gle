@@ -627,6 +627,7 @@ LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
+LIST &msyn-i-mbliana = &msyn-i-mbliana ;
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
 LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
@@ -774,8 +775,10 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 #agus ‘os a choinne sin.’ Úsáidtear an aidiacht shealbhach sa tríú pearsa iolra chomh maith, de réir mar
 #is cuí: ‘dá mbarr sin’, ‘ina n-ainneoin sin’ agus ‘os a gcoinne sin.’
 
+#díriú isteach ar -> díriú ar
 
-
+ADD:msyn-i-mbliana (&msyn-i-mbliana) TARGET ("bliain" Noun Fem Com Pl) IF (-1 ("i" Prep Simp)) ;
+COPY:msyn-i-mbliana ("bliain" Noun Fem Gen Sg Ecl SUGGEST) EXCEPT (Noun Fem Gen Sg DefArt &msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
 
 ##de bharr sin - #$dá bharr sin
 
@@ -801,6 +804,7 @@ ADD:lex-de-ainneoin (&lex-de-ainneoin ) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-
 COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-ainneoin) TARGET (Art &lex-de-ainneoin ) IF (1 (Noun Fem)) ;
 
 #!!  Template rule to delete A and modify B in A B strings:
+
 ##i ndáiríre - #$dáiríre
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
@@ -874,8 +878,8 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 #        (NEGATE 0 ("<si.*>"r) + Fem)   
 #        (NEGATE 0 ("<sr.*>"r) + Fem) 
 
-	## Tá an dochtúir ag seasamh ag an fuinneog mhór.
-    	#$ Tá an dochtúir ag seasamh ag an bhfuinneog mhór. Verb VI FutInd Ecl  NACH NegQ Ecl
+	## Tá an dochtúir ina sheasamh ag an fuinneog mhór.
+    	#$ Tá an dochtúir ina sheasamh ag an bhfuinneog mhór. Verb VI FutInd Ecl  NACH NegQ Ecl
  
 ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Verb Cond CM) IF
 	(-1 (Conj Subord))
@@ -887,7 +891,7 @@ ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) IF
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-go (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-go) TARGET (&msyn-ecl-after-go);
     	
-ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) IF
+ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) OR (Verb VI FutInd) OR (Verb VI Cond CM) OR (Verb PresImp) IF
 	(-1 ("mura") OR ("Mura"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-mura (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET (&msyn-ecl-after-mura);
@@ -921,7 +925,7 @@ COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&
 # Valency errors
 # "teastaigh" V + "ó"	
 
-#!! **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh"
+#!! **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh" IT WORKS
 
 ADD:msyn-teastaigh-ó (&msyn-teastaigh-ó) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("teastaigh") BARRIER (*) - (Noun Com)) ;
 COPY:msyn-teastaigh-ó ("ó" Prep SUGGEST) EXCEPT ("mé" Pers &msyn-teastaigh-ó) OR ("tú" Pers &msyn-teastaigh-ó) OR ("é" Pers &msyn-teastaigh-ó) OR ("í" Pers &msyn-teastaigh-ó) OR ("sinn" Pers &msyn-teastaigh-ó) OR ("muid" Pers &msyn-teastaigh-ó) OR ("sibh" Pers &msyn-teastaigh-ó) OR ("siad" Pers &msyn-teastaigh-ó) AFTER Pron TARGET (&msyn-teastaigh-ó) ;
@@ -1381,7 +1385,7 @@ COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGE
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(-1 Art)
 	(-2 ECLIPSE-PREP + Prep + Simp)
-	(0 ("<[bcdfgpsBCDFGPS].*>"r))
+	(0 ("<[bcfgpBCFGP].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 	## Bainne a chur ar an caife.
 	#$ Bainne a chur ar an gcaife.
