@@ -737,7 +737,7 @@ ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 
 
 #!! ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Subst Noun Sg) IF (-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))(NEGATE 0 (Noun Fem Com Sg Len))(0 ("<[bcdfgmpstBCDFGMPST].*>"r)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF (-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))(NEGATE 0 (Noun Fem Com Len))(0 ("<[bcdfgmpstBCDFGMPST].*>"r)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
@@ -810,15 +810,6 @@ COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARG
 	#$ Dáiríre ní chaithfidh tú tada a rá.
 
 	
-
-
-## tóin-poill 
-	
-ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
-COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
-COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
-
-
 ##faoi: faoi bhord OIBRÍONN AN RIAIL
 ##de: de chapall OIBRÍONN AN RIAIL
 ##do: do Mháire OIBRÍONN AN RIAIL
@@ -1290,224 +1281,6 @@ ADDRELATION ($2 LEFT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 	## Tá sé ar intinn aici é sin {dhéanamh}.
 	## Sin an obair {chríochnófar} amárach
 	
-	
-##An réamhfhocal AR
-
-##In references of a general nature it does not normally affect initial letter of following noun, e.g.
-##ar muir, ar cíos, ar cosa in airde, on sea, rented, galloping.
-
-##
-
-##In qualified or particularized references it lenites, e.g.
-##ar mhuir na beatha, ar chíos mór, on the sea of life, at a high rent.
-
-##Eclipses in a few instances, e.g.
-##ar gcúl, backwards CORRECT
-##ar CÚL, backwards INCORRECT
-
-
-##Ar neamh, ar talamh, ar tír, in heaven, on earth, on land. CORRECT "ar talamh" really means "ar an talamh" (on the earth/land). A rule could written if the talamh is referring to a definite piece of land.
-##Ar neamh, ar tHalamh, ar tHír, in heaven, on earth, on land. INCORRECT
-
-##Ar cnoc nó ar machaire, on hill or plain. CORRECT
-##Ar cHnoc nó ar mHachaire, on hill or plain. INCORRECT
-
-##Ar bhonn mo bhróige, on the sole of my shoe. CORRECT
-##Ar bonn mo bhróige, on the sole of my shoe. INCORRECT
-
-##(b) (Relative position)
-##Ar tosach, in front. CORRECT
-##Ar tHosach, in front. INCORRECT
-
-##Ar shála a chéile, at each other’s heels. CORRECT
-##Ar sála a chéile, at each other’s heels. INCORRECT
-
-##Ar cheann na sochraide, at the head of the funeral procession. CORRECT
-##Ar ceann na sochraide, at the head of the funeral procession. INCORRECT
-
-##2.
-##(a) (Support)
-##Ar rothaí, ar cheithre cosa, on wheels, on four legs. CORRECT
-##Ar rothaí, ar ceithre cosa, on wheels, on four legs. INCORRECT
-
-##Ar cheap cloiche, on a stone base. CORRECT
-##Ar ceap cloiche, on a stone base. INCORRECT
-
-##(b) (Posture)
-##Ar corr, ar fiar, edgeways, askew. CORRECT
-##Ar cHorr, ar fHiar, edgeways, askew. INCORRECT
-
-##(c) (Attachment)
-##Ar ancaire, ar teaghrán, anchored, tethered. CORRECT
-##Ar ancaire, ar tHeaghrán, anchored, tethered. INCORRECT
-
-##Ar adhastar, ar srian, on a halter, on a bridle. CORRECT
-##Ar adhastar, ar sHrian, on a halter, on a bridle. INCORRECT
-
-##Bhí an chaora ar adharc aige, he held the sheep by the horn. CORRECT
-
-##3. (Dimensions)
-##Ar fad, ar leithead, ar airde, ar doimhneacht, ar tiús, in length, breadth, height, depth, thickness. CORRECT
-##Ar fHad, ar leithead, ar airde, ar dHoimhneacht, ar tHiús, in length, breadth, height, depth, thickness. INCORRECT
-
-##4.
-##(a) (Attendance)
-##Ar scoil, ar an aonach, ar an Aifreann, at school, at the fair, at Mass. CORRECT
-
-##(b) (Membership)
-##Ar meitheal, ar bhord fiosrúcháin, on a work-team, on an enquiry board. CORRECT
-##Ar mHeitheal, ar bhord fiosrúcháin, on a work-team, on an enquiry board. INCORRECT
-
-##Ar mhná áille na hÉireann, one of the most beautiful women in Ireland. CORRECT
-##Ar mná áille na hÉireann, one of the most beautiful women in Ireland. INCORRECT
-
-##5.
-##(a) (Similitude)
-##Ar dhath an róis, rose-coloured. CORRECT
-##Ar dath an róis, rose-coloured. INCORRECT
-
-##Ar dhéanamh báid, boat-shaped. CORRECT
-##Ar déanamh báid, INCORRECT
-
-##Ar ghile na gréine, bright as the sun. CORRECT
-##Ar gile na gréine, bright as the sun. INCORRECT
-
-
-##Ar chiall na bpáistí, with no more sense than a child. CORRECT
-##Ar ciall na bpáistí, with no more sense than a child. INCORRECT
-
-##6. (Range, compass)
-##Ar amharc, ar éisteacht, within sight, hearing. CORRECT
-
-##Ar feadh m’eolais, as far as I know. CORRECT
-##Ar fHeadh m’eolais, as far as I know. INCORRECT
-
-#$Beidh slagmhargadh ann ar feadh na míosa. CORRECT
-##Beidh sladmhargadh ann ar fheadh na míosa. INCORRECT
-
-##Ar fud na tíre, throughout the country. CORRECT
-##Ar fHud na tíre, throughout the country. INCORRECT
-
-##Tá an dlí sin i bhfeidhm ar fud na hEorpa. CORRECT
-##Tá an dlí sin i bhfeidhm ar fhud na hEorpa. INCORRECT
-
-##7.
-##(a)
-##(State)
-##Ar meisce, ar seachrán, drunk, astray. CORRECT
-##Ar mHeisce, ar sHeachrán, drunk, astray. INCORRECT
-
-#$Bhí mo mháthair ar meisce aréir. CORRECT
-##Bhí mo mháthair ar mheisce aréir. INCORRECT
-
-##Ar deil, in proper working order. CORRECT
-##Ar dHeil, in proper working order. INCORRECT
-
-##Bhí gach ní ar deil acu. CORRECT
-##Bhí gach ní ar deil acu. INCORRECT
-
-##Ar (a) fheabhas, excellent. CORRECT
-##Ar (a) feabhas, excellent. INCORRECT
-
-#$Tá an bia sa bhialann sin ar fheabhas. CORRECT
-##Tá an bia sa bhialann sin ar feabhas. INCORRECT.
-
-##(b) (Dependence)
-##(Beo) ar arán, (living) on bread. CORRECT
-
-##Ar leathshúil, having only one eye. CORRECT
-
-##Ar thoil Dé, depending on the will of God. CORRECT
-##Ar toil Dé, depending on the will of God. INCORRECT
-
-
-##9.
-##(a) (Conditions)
-##Ar acht, ar choinníoll, ar chuntar, (go), on condition (that). CORRECT
-##Ar acht, ar coinníoll, ar cuntar, (go), on condition (that). INCORRECT
-
-##(b) (Terms).
-##Ar cairde, ar iasacht, ar malairt, on credit, on loan, in exchange. CORRECT
-##Ar cHairde, ar iasacht, ar mHalairt, on credit, on loan, in exchange. INCORRECT
-
-##(c) (Prices)
-##Ar chéad punt, for one hundred pounds, CORRECT
-##Ar céad punt, for one hundred pounds, INCORRECT
-
-##Ar scilling an ceann, at a shilling each. CORRECT
-
-##Ar ór na cruinne, (not) for all the gold in the world. CORRECT
-
-##10.
-##(a) On account of.
-##Ar ghrá Dé, ar mhaithe leis féin, for the love of God, for his own sake. CORRECT
-##Ar grá Dé, ar aithe leis féin, for the love of God, for his own sake. INCORRECT
-
-##Ar eagla a gcaillte, for fear of losing them. CORRECT
-
-##Ar mhéad a dheifre, so great was his hurry. CORRECT
-##Ar mHéad a dheifre, so great was his hurry. INCORRECT
-
-##(b) In return for.
-##Ar tuarastal, ar a chuid, for a salary, for his meals. CORRECT
-##Ar tHuarastal, ar a chuid, for a salary, for his meals. INCORRECT
-
-##Ar bheagán buíochais, with small thanks. CORRECT
-##Ar beagán buíochais, with small thanks. INCORRECT
-
-##Ar mhórán saothair, with great effort. CORRECT
-##Ar mórán saothair, with great effort. INCORRECT
-
-##(e) In respect of.
-##Goll ar ghaisce, a Goll for valour. CORRECT
-##Goll ar gaisce, a Goll for valour. INCORRECT
-
-##11.
-##(a) (Addition)
-##Duine ar fhichid, twenty-one persons. CORRECT
-##Duine ar fichid, twenty-one persons. INCORRECT
-
-##Trí bliana ar chéad, one hundred and three years. CORRECT
-##Trí bliana ar céad, one hundred and three years. INCORRECT
-
-##(b) (Progression)
-##Ceann ar cheann, céim ar chéim, one by one, step by step. CORRECT
-##Ceann ar ceann, céim ar céim, one by one, step by step. INCORRECT
-
-##12. (Movement, travel)
-##(a) (Direction)
-##Ar aghaidh, ar gcúl, ar deis, ar clé, forwards, backwards, to the right, to the left. CORRECT
-##Ar aghaidh, ar cHúl, ar dHeis, ar clHé, forwards, backwards, to the right, to the left. INCORRECT
-
-##Chuaigh sé amach ar an doras, he went out by the door. CORRECT
-##Chuaigh sé amach TRÍD an doras, he went out through the door. INCORRECT
-
-##(b) (Manner)
-##Ar sodar, ar marcaíocht, trotting, riding. CORRECT
-##Ar sHodar, ar marcaíocht, trotting, riding. INCORRECT
-
-##Ar an mbád, ar an traein, by boat, train.
-
-##(c) (Purpose)
-##Ar cuairt, ar teachtaireacht, ar oilithreacht, on a visit, a message, a pilgrimage. CORRECT
-##Ar cHuairt, ar tHeachtaireacht, ar oilithreacht, on a visit, a message, a pilgrimage. INCORRECT
-
-##13. (Time)
-##Ar maidin, ar a sé a chlog, in the morning, at six o’clock. CORRECT
-##Ar mHaidin, ar a sé a chlog, in the morning, at six o’clock. INCORRECT
-
-##14. (With verbal noun)
-##(a) (State)
-##Ar crith, ar crochadh, ar foluain, trembling, hanging, hovering. CORRECT
-##Ar cHrith, ar cHrochadh, ar fHoluain, trembling, hanging, hovering. INCORRECT
-
-#$Tá an teach ar díol, on sale. CORRECT
-##Tá an teach ar dHíol, on sale. INCORRECT
-
-##(b) (Action)
-##Ar éirí dom, when I get, got, up. CORRECT
-
-##Ar iompú boise, in the turn of a hand, suddenly. CORRECT
 
 ADD:lex-ar-an-aonach (&lex-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
 COPY:lex-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &lex-ar-an-aonach) TARGET (&lex-ar-an-aonach);	
@@ -1568,28 +1341,6 @@ ADDCOHORT:lex-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-gcaife) AF
 ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
-##Tá an múinteoir ar bhuile linn. INCORRECT
-#$Tá an múinteoir ar buile linn.  CORRECT
-
-	## Ar bhuile. - incorrect
-	#$ Ar buile. - correct
-	
-	## Ar mheisce. - incorrect
-	#$ Ar meisce. - correct
-	
-	## ar fhud. - incorrect
-	#$ ar fud. - correct.
-	
-	## ar fhud an tír. - incorrect
-	#$ ar fud na tíre. - correct
-	
-	## ar fhud an Eoraip. - incorrect
-	#$ ar fud na hEorpa. - correct
-	
-	## ar fhud an domhan. - incorrect
-	#$ ar fud an domhain. - correct
-
-
 #!! **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
 
 LIST PREPART = "faoi" "ó" "de" "do" ;
@@ -1616,7 +1367,9 @@ ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Ge
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 	## Bhí cion go áirithe ar an bpréachán aige.
+	#$ Bhí cion go háirithe ar an bpréachán aige.
 	## Níl an t-am agam le aghaidh é seo.
+	#$ Níl an t-am agam le haghaidh é seo.
 	
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
 
@@ -1638,6 +1391,7 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen
 	(0 ("<[bcdfgpsBCDFGPS].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 	## Tá an mála faoi an bord.
+	#$ Tá an mála faoin mbord.
 	# KEVIN: the analyzer still sees the deleted word one to the left
 	
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);

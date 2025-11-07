@@ -28,8 +28,9 @@ lex-ar-an-tae = "Ar" agus ní "i" le "tae"
     .desc = Cuirtear bainne agus siúcra ar an tae, ní chuirtear isteach sa tae iad.
     .example-1 = An gcuireann sé bainne ar an tae? Tá siúcra ar an tae.
 
-lex-dairire = blabla
-    .desc = blabla
+lex-dairire = Dáíríre
+    .desc = Is é dáiríre an leagan ceart.
+    .example-1 = Dáiríre ní chaithfidh tú tada a rá.
 
 lex-tá-is = Úsáid "is", ní "tá"
     .desc = Nuair atáthar ag scríobh faoi rud atá buan, bain úsáid as an gcopail "is" .
