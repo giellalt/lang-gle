@@ -216,6 +216,9 @@ REMOVE (Noun) IF (0 ("<ba>") OR ("<Ba>")) (NOT -1 (Art Pl));
 SELECT (Part Ad) IF (0 ("go")) (1 ("<deimhin>"));
 SELECT (Adj Base) IF (-1 ("go")) (0 ("<deimhin>"));
 
+# go háirithe is usually adjective; 
+SELECT ("áirithe" Adj Base) IF (-1 ("go")) (0 ("áirithe"));
+
 # dar as a verb must be followed by prep "le", i.e. dar le = according to
 # dar/V leis/léi/liom ,
 SELECT (Verb) IF (0 ("<dar>") OR ("<Dar>")) (1 ("le"));
