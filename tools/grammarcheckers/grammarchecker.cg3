@@ -637,6 +637,7 @@ LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@
 LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@ 
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@ 
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
+LIST &msyn-prepart-prep = &msyn-prepart-prep ;    #!!= * @CODE@ 
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
@@ -1587,7 +1588,23 @@ ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFOR
 	
 	## ar fhud an domhan. - incorrect
 	#$ ar fud an domhain. - correct
-	
+
+
+#!! **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
+
+LIST PREPART = "faoi" "ó" "de" "do" ;
+
+ADD:msyn-prepart-prep (&msyn-prepart-prep) TARGET PREPART IF 
+	(0 (Prep Simp))
+	(1 ("an" Art Sg Def));
+ADD:msyn-prepart-prep (&msyn-prepart-prep) TARGET (Art Sg Def) IF 
+	(-1 (Prep &msyn-prepart-prep));
+	## Tá an mála faoi an bord - under the table INCORRECT
+	#$ Tá an mála faoin mbord CORRECT
+
+ADDRELATION (DELETE1) (Prep &msyn-prepart-prep) TO (1 (Art &msyn-prepart-prep));
+
+COPY:msyn-prepart-prep (Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-prepart-prep);	
 	
 #!! **ADD:msyn-hPref-after-prep**: A rule to insert an h after certain prepositions 
 
@@ -1613,8 +1630,19 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen
 	(-2 ECLIPSE-PREP + Prep + Simp)
 	(0 ("<[bcdfgpsBCDFGPS].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+	## Bainne a chur ar an caife.
+	#$ Bainne a chur ar an gcaife.
+		
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
+	(*-1 (Prep Art Sg) BARRIER (*) - Art)
+	(0 ("<[bcdfgpsBCDFGPS].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+	## Tá an mála faoi an bord.
+	# KEVIN: the analyzer still sees the deleted word one to the left
+	
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECLIPSE-PREP + (Prep Simp))
