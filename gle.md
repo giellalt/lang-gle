@@ -3658,6 +3658,7 @@ Other gen tags:
 * LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
+* LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;      
 * LIST &msyn-fada-o = &msyn-fada-o ;     
 * LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
 * LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
