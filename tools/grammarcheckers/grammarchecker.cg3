@@ -1391,8 +1391,9 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen
 	#$ Bainne a chur ar an gcaife.
 		
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
-	(*-1 (Prep Art Sg) BARRIER (*) - Art)
+	(*-1 (Prep Art Sg) - ("de") - ("do") BARRIER (*) - Art)
 	(0 ("<[bcdfgpsBCDFGPS].*>"r))
+	(NEGATE -1 ("de" Prep Art Sg) OR ("do" Prep Art Sg))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 	## Tá an mála faoi an bord.
 	#$ Tá an mála faoin mbord.
