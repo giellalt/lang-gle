@@ -213,6 +213,7 @@ LIST Ger = Ger ;			   #!! * Ger
 LIST Sup = Sup ;			   #!! * Sup
 LIST Actio = Actio ;		   #!! * Actio
 LIST VAbess = VAbess ;		   #!! * VAbess
+LIST Abr = Abr ;   #!! * Abbreviation
 
 SET NUMBER = Sg OR Pl ;  #!!= * @CODE@
 
@@ -649,6 +650,7 @@ LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ;
 LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ;
 LIST &lex-de-ainneoin = &lex-de-ainneoin ;
 LIST &lex-dairire = &lex-dairire ;
+LIST &typo = &typo ;
 #LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
