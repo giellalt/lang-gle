@@ -1,0 +1,14 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Ní síneadh fada í an agúid san Fhraincis"
+  - "Tháinig faoiseamh ar gach duine agus níorbh fhada é anois go dtí go raibh an ghrian ag dul ina luí"
+  - "Agus ós rud é gur ghlanadh amach na slumaí a bhí fágtha fós le teacht na Seascaidí leagadh mórán sean-chomharsanachta í an láir agus fágadh mar talamh lochta ar feadh blianta fada iad"
+  - "Is guta fada é an / ø / in kjølen ach gur fhuaimniú goirid atá i gCuiltheann toisc nach féidir le guta fada a bheith ró - “ lth ”"
+  - " ( / r / ) consan nach rolladh fada é ach cnag"
+  - " )"
+  - "Tost Scríofa ag Seán Ó Ríordáin agus foilsithe ins an leabhar Brosna Is fada mise amuigh Is fada mé im thost Is nach fios nach amhlaidh bheigh go deireadh scríbe Ní cuimhin liom go baileach Dá mhéad a mhachnaím air Car leagas uaim an eochair oíche ghaoithe Tá m'aigne fé ghlas Níl agam cead isteach le go ríordánóinn an farasbarr neamhscrite Gach barra taoide ait Dár chraol an mhuir isteach Ó bhíos-sa féin go deireanach i m'intinn B'é gur folamh bheadh do thearmann beag iata Cuir as do cheann ar fad An fharraige is a slad Is bí sásta leis an aigne neamhscríte"
+  - "G Daingean Uí Chúis Lúin Chealtchair Sa Rúraíocht i miotaseolaíocht na nGael ba sleá nó ga fada é Lúin Celtchair arm a bhí le Celtchar mac Uthechar agus beartaithe ag laochra eile amhail Dubthach Mac Cécht agus Fedlimid"
+  - " ) a scríobhadh sna meánaoiseanna mar a bhailítear cuntais ghearra faoi mhná iomráiteacha ó stair agus ó sheanscéalta na nGael le chéile in aon insint amháin"

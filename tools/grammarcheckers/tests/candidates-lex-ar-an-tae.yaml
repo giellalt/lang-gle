@@ -1,0 +1,20 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - " ( lus a fhliuchtar ar nós an tae san Airgintín agus i dtíortha eile i réigiún Río de la Plata i Meiriceá Theas ) sa ghuaranà agus beagáinín i síolta cócó"
+  - " ach is í an chaiféin an príomhoibreán iontu go léir"
+  - "Rinne sí cuid den obair i gcaife i nDún Éideann"
+  - " ( 1988 )"
+  - "Sar i bhfad thosaigh sé ag seinm i gcaife gar don Ollscoil darbh ainm “ The 10 o ’ clock Scholar ”"
+  - " ) a thabhairt ar an bpróiseas cé nach coipeadh ná giosáil i gciall cheart an fhocail atá i gceist"
+  - "Cuireann daoine i dtae agus i gcaife é agus ina lán oideas eile chun blas milis a thabhairt do bhia"
+  - "Is féidir scian a bheith ann i gcóir im spúnóg bheag chun siúcra a chaitheamh isteach i tae nó caife agus é a chorraí"
+  - "Baintear feidhm as cinn bheaga chun siúcra a mheascadh isteach i dtae nó caife nó chun iógart a ithe"
+  - "Bhain sé dochtúireacht amach in Iarúsailéim agus oibríonn sé anois leis an Technion in Haifa"
+  - "Rugadh é in Bae Colwyn i dtuaisceart na Breataine Bige agus fuair sé bás i Londain Shasana"
+  - "Chuir Sheridan uisce beatha sa chaife leis na paisinéirí a théamh"
+  - "Tá cuid fuinneog cáiliúil Harry Clarke i gcaife Bewley ’ s ar Shráid Grafton i mBaile Átha Cliath"
+  - "Cúpla seachtain ina dhiaidh sin gabhadh é ar 23 Meitheamh 1970 in Iosrael agus é ag iompar dhá chileagram de phléascáin chun suiteálacha cuain a phléascadh in Haifa"
+  - "Bhí daoine tagtha le chéile le haghaidh tórraimh a bhí ar siúl i gcaife i sráidbhaile Hroza nuair a phléasc an diúracán gan aon fhógra sa tsráidbhaile"
