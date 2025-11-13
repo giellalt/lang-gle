@@ -37,6 +37,15 @@ LIST Num = Num ;
 LIST Det = Det ;
 LIST Abr = Abr ;
 LIST Cop = Cop ;
+LIST Det = Det ;
+LIST Poss = Poss ;
+LIST 3P = 3P ;
+LIST Com = Com ;
+LIST Part = Part ;
+LIST Inf = Inf ;
+LIST Verbal = Verbal ;
+LIST Pl = Pl ;
+LIST Sg = Sg ;
 
 LIST Len = Len ; #!! * Len
 LIST hPref = hPref ; #!! * hPref, for h prefixation
@@ -808,7 +817,7 @@ SELECT (Part Vb Rel Indirect) IF (0 ("a")) ( 1C (Verb Ecl)) ;
 # DEPENDANT FORMS also follow rel particles
 SELECT (Part Vb Rel Indirect) IF ( 1 (Verb Dep));
 # Added CW 11/08
-SELECT (Part Inf) IF (0 ("<a>")) (1 (Verbal Noun Len)) (NOT 2 (Noun) OR (Pron Pers) OR (Art Def));
+#SELECT (Part Inf) IF (0 ("<a>")) (1 (Verbal Noun Len)) (NOT 2 (Noun) OR (Pron Pers) OR (Art Def))(NEGATE 0 (Det Poss 3P) LINK 1 (Noun Com));
 # End Added CW 11/08
 # Ar shíl/inis/thomhais tú etc. where Verb/Noun ambiguity - choose verb if preceded by Ar at start of sentence (i.e. starts with cap)
 SELECT (Part Vb Q Past) IF (0 ("<Ar>")) (1 (Verb)) (2 (Pron Pers)) (NOT 2 ("í") OR ("é"));
@@ -1313,7 +1322,7 @@ REMOVE (Verbal Noun) IF (-1 ("<a>")) (NOT 0 (Verbal Noun Len) OR (Verbal Noun Ec
 # Removing 'C' produces the right results for VN. - CW 09/08
 #SELECT (Verbal Noun Len) IF (0 (Verbal Noun)) (-1 ("a" Prep Simp));
 
-SELECT (Verbal Noun Len) IF (-1 ("<a>" Part Inf));
+#SELECT (Verbal Noun Len) IF (-1 ("<a>" Part Inf))(NEGATE 0 Noun + Com LINK -1 Det + Poss + 3P);
 
 # a dtaithí, a ndéanamh: "a" is Det Poss rather than Simp Prep ...
 REMOVE (Verbal Noun Ecl) IF (-1C ("<a>" Det Poss 3P Pl)) ;
@@ -1761,7 +1770,8 @@ SELECT (Art) IF (1 (Num));
 # and followed be a noun
 # e.g. ar an gcuma san
 # ar an gcéad dul síos
-SELECT (Art) IF (-1C (Prep Simp)) (1 (Noun) OR NOUN-PREMOD);
+SELECT (Art) IF (-1C (Prep Simp)) (1 (Noun) OR NOUN-PREMOD)(NEGATE 0 (Det Poss 3P));
+	#$ Tabhair do a athair é.
 
 # san = ins an (prep art)  / sin (det)
 # san Earrach => san = prep art
@@ -1834,7 +1844,7 @@ REMOVE (Prep Simp) IF (0 ("a")) ( NOT 1 A-PREP-PHR OR (Verbal Noun Len) OR (Gues
 SELECT (Prep Simp) IF (1C NOUN-PREMOD OR (Noun)) (NOT 0 ("<trí>") OR ("<a>") OR Det);
 
 # NEW EUD
-SELECT (Part Inf) IF (1C (Verbal Noun));
+#SELECT (Part Inf) IF (1C (Verbal Noun));
 
 # TYPE 4 after diasamb of VN
 # it is a (simple?) prep if followed by an verbal noun
@@ -1933,9 +1943,9 @@ REMOVE (Det Poss 3P Pl) IF ( NOT 1 (Noun Ecl) );
 #REMOVE (Det Poss 3P Sg Masc) IF ( NOT 1 (Noun Len));
 
 SELECT (Det Poss 3P Pl) IF ( 1C (Noun Ecl) ) (NOT 1 (Verbal Noun));
-SELECT (Det Poss 3P Sg Masc) IF ( 1C (Noun Len) ) (NOT 1C (Noun Voc)) (NOT 1 (Verbal Noun));
+SELECT (Det Poss 3P) - Pl IF ( 1C (Noun Len) ) (NOT 1C (Noun Voc)) (NOT 1 (Verbal Noun));
 # á hól
-SELECT (Det Poss 3P Sg Fem) IF ( 1C (Noun hPref) ) (NOT 1 (Verbal Noun));
+SELECT (Det Poss 3P) - Pl IF ( 1C (Noun hPref) ) (NOT 1 (Verbal Noun));
 # a possessive determiner is not followed by a verb e.g. mo, do etc
 # (can be followed by verbal noun - e.g. do mo chrá)
 REMOVE (Poss) IF (1C (Verb));
