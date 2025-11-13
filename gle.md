@@ -3670,6 +3670,7 @@ Other gen tags:
 * LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
 * LIST &msyn-noun-defart = &msyn-noun-defart ;     
 * LIST &msyn-prepart-prep = &msyn-prepart-prep ;     
+* LIST &msyn-prep-detposs = &msyn-prep-detposs ;     
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
@@ -3701,9 +3702,11 @@ Here ends the list and set section
 
 **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
-### Prepositions
+### Prepositions and pronouns fused
 
 **ADD:msyn-prep-pron** RULE TO CHANGE A PREPOSITION AND A PRONOUN INTO A PREPOSITIONAL PRONOUN (e.g., AG MÉ = AGAM, ROIMH SIBH = ROMHAIBH) !!IT WORKS!!
+
+### Prepositions and possessive adjectives fused
 
 **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
