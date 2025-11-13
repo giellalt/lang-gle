@@ -174,3 +174,30 @@ typo = Earráid litrithe
 use-guillemets = Guillemets
     .desc = Úsáid comharthaí athfhriotail uillinne dúbailte
 
+
+lex-da-bharr-sin = "na, ní "an" xxx
+    .desc = xxx
+
+lex-de-ainneoin = "na, ní "an" xxx
+    .desc = xxx
+
+lex-ina-ainneoin-sin = "na, ní "an" xxx
+    .desc = xxx
+
+lex-os-a-choinne-sin = "na, ní "an" xxx
+    .desc = 
+
+msyn-beag-is-fiu-de = "de" ní "dom" tar éis "beag is fiú" xxx
+    .desc = xxx
+
+msyn-fada-o = "do" ní "de" tar éis "fada buí" xxx
+    .desc = xxx
+
+msyn-hPref-after-prep = Réimír h- tar éis réamhfhocail xxx
+    .desc = 
+
+msyn-i-mbliana = Urú tar éis "i" xxx
+    .desc = Nuair atá ainmní ar dheis "i", caithfear é a urdúchaireamh.
+
+msyn-prepart-prep = Caithfidh an réamhfhocal a bheith ina chuid den alt xxx
+    .desc = xxx

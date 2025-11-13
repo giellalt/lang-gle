@@ -2,6 +2,7 @@
 # Generated from XML by xml-conv
 ## Default patterns: id:default
 
+
 ellipsis = Ellipsis
     .desc = You have used three periods {$1}. Here an ellipsis "…" would have been a better choice.
 
@@ -139,3 +140,30 @@ typo = Spelling error
 
 use-guillemets = Guillemets
     .desc = Use double-angle quotation marks
+
+lex-da-bharr-sin = "na, not "an" xxx
+    .desc = xxx
+
+lex-de-ainneoin = "na, not "an" xxx
+    .desc = xxx
+
+lex-ina-ainneoin-sin = "na, not "an" xxx
+    .desc = xxx
+
+lex-os-a-choinne-sin = "na, not "an" xxx
+    .desc = 
+
+msyn-beag-is-fiu-de = "de" not "dom" after "beag is fiú" xxx
+    .desc = xxx
+
+msyn-fada-o = "do" not "de" after "fada buí" xxx
+    .desc = xxx
+
+msyn-hPref-after-prep = Prefix h- after preposition xxx
+    .desc = 
+
+msyn-i-mbliana = Eclipse after "i" xxx
+    .desc = When "i" has a noun to the right, it must be eclipsed.
+
+msyn-prepart-prep = The preposition must be part of the article xxx
+    .desc = xxx
