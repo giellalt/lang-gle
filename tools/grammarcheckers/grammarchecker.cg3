@@ -624,6 +624,7 @@ LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@ 
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@ 
+LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     #!!= * @CODE@ 
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
@@ -644,11 +645,11 @@ LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
 LIST &lex-da-bharr-sin = &lex-da-bharr-sin ;
-LIST &lex-os-a-choinne-sin = &lex-os-a-choinnse-sin ;
+LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ;
 LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ;
 LIST &lex-de-ainneoin = &lex-de-ainneoin ;
 LIST &lex-dairire = &lex-dairire ;
-LIST &msyn-tóin-poill = &msyn-tóin-poill ;
+#LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -984,7 +985,7 @@ SET NOT-SCALE-WORDS =  (*) - SCALE-WORDS ;
 #!! **ADD:msyn-fada-o** ...
 
 ADD:msyn-fada-o (&msyn-fada-o) TARGET (Pron Pers) IF (NOT 0 ("ó" Prep))(*-1 ("fada" Adj) BARRIER NOT-SCALE-WORDS LINK *-1 ("is")) ;
-COPY:msyn-fada-o ("ó" Prep SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-fada-o) OR ("tú" Pron Pers 2P Sg &msyn-fada-o) OR ("é" Pron Pers 3P Sg Masc &msyn-fada-o) OR ("í" Pers Pers 1P Sg Fem &msyn-fada-o) OR ("sinn" Pers Pers 1P Pl &msyn-fada-o) OR ("sibh" Pers Pers 2P Pl &msyn-fada-o) OR ("siad" Pron Pers 3P Pl Sbj &msyn-fada-o) AFTER Pron TARGET (&msyn-fada-o) IF (NEGATE 1 (Verb PastInd));
+COPY:msyn-fada-o ("ó" Prep Simp SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-fada-o) OR ("tú" Pron Pers 2P Sg &msyn-fada-o) OR ("é" Pron Pers 3P Sg Masc &msyn-fada-o) OR ("í" Pers Pers 1P Sg Fem &msyn-fada-o) OR ("sinn" Pers Pers 1P Pl &msyn-fada-o) OR ("sibh" Pers Pers 2P Pl &msyn-fada-o) OR ("siad" Pron Pers 3P Pl Sbj &msyn-fada-o) AFTER Pron TARGET (&msyn-fada-o) IF (NEGATE 1 (Verb PastInd));
 
 	## Is fada buí mé. - incorrect
 	#$ Is fada buí uaim. - correct 
