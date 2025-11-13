@@ -766,7 +766,6 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 	## Thar bharr. - incorrect
 	#$ Thar barr. - correct
 	
-
 #Caithfear a bheith airdeallach maidir leis na haidiachtaí taispeántacha ‘seo’ agus ‘sin’ a úsáid
 #le réamhfhocail chomhshuite. Is é an tuiseal ginideach a leanann leithéidí ‘de bharr’, ‘de bhrí’, ‘in
 #ainneoin’ agus ‘os coinne’ de ghnáth. Bíodh sin mar atá, ní féidir ‘seo’ agus ‘sin’ a infhilleadh. Botún
@@ -841,19 +840,28 @@ COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARG
 ##le: le háthas, le heagla
 
 #!! ### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
-
+	# PREP N
+	# ------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (0 ("<[bcdfgmpstBCDFGMPST].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
         (NEGATE 0 Ecl);
-COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) OR (Ecl &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
+    ## Thug sé buille de bata do an chaora. INCORRECT
+
+	# PREP Art N
+	# -----------
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Masc Com Sg) OR (Noun Masc Com Sg DefArt) IF
+	(*-1 ("de" Prep Art Sg) OR ("do" Prep Art Sg) OR ("de" Prep Simp) OR ("do" Prep Simp) BARRIER (*) - Art)
+    (0 ("<[bcdfgmpstBCDFGMPST].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
+    (NEGATE 0 Ecl OR Len);
+    ## Bain na torthaí de an crann. INCORRECT
+    #$ Bain na torthaí den chrann. CORRECT
+    
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) OR (Ecl &msyn-len-after-prep) OR (DefArt &msyn-len-after-prep) TARGET (&msyn-len-after-prep);
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after-prep));
 
 # Model for Trond, smn:	 2673 ADDRELATION:msyn-adj-nom-acc ($2) () FROM (-1 A LINK 0 (&msyn-adj-nom-acc)) ;
 
-## Tá bainisteoir nua ar an banc. # wrong
-## Tá bainisteoir nua thar an banc. # wrong
-## Tá bainisteoir nua ar an mbanc. # ok
 
 
 #!! ### rule to take away lenition for nouns after certain prepositions
@@ -1401,6 +1409,9 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen
 	
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
+	## Tá bainisteoir nua ar an banc. # wrong
+	## Tá bainisteoir nua thar an banc. # wrong
+	## Tá bainisteoir nua ar an mbanc. # ok
 
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
