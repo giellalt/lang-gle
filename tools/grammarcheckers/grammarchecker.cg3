@@ -102,7 +102,7 @@ LIST A = A ;		    #!! * A CHECK!!
 LIST Noun = Noun ;	    #!! * Noun
 LIST Adj = Adj ;	    #!! * Adjective
 LIST Adv = Adv ;	    #!! * Adv
-LIST V = V ;		    #!! * V
+LIST Verb = Verb ;		    #!! * V
 LIST Pron = Pron ;	    #!! * Pron
 LIST CS = CS ;		    #!! * CS
 LIST CC = CC ;		    #!! * CC
@@ -352,10 +352,10 @@ LIST <OBJ = @-F<OBJ @<OBJ ;    		#!! * `<OBJ`
 LIST OBJ> = @OBJ> @-FOBJ> ;    		#!! * `OBJ>`
 SET <OBJ-OTHERS = <OBJ OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! * `<OBJ-OTHERS`
 SET OBJ>-OTHERS = OBJ> OR (Gen) OR (Nom) OR (Ess) OR (Loc) OR (Adv) ; #!! * `OBJ>-OTHERS`
-SET NOT-FAUXV = FMAINV OR OBJ + V OR ADVL + V ;
+SET NOT-FAUXV = FMAINV OR OBJ + Verb OR ADVL + Verb ;
 
 # Works after the mapping rules for verbs.
-SET SYN-V = FMAINV OR FAUXV OR V + SUBJ OR OBJ + V OR ADVL + V OR (V @>N) OR (V @N<) OR (V @A<) ; #!! * SYN-V
+SET SYN-V = FMAINV OR FAUXV OR Verb + SUBJ OR OBJ + Verb OR ADVL + Verb OR (V @>N) OR (V @N<) OR (V @A<) ; #!! * SYN-V
 LIST @X = @X ;    #!! * @X
 
 # Secondary tags
@@ -381,7 +381,7 @@ LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"  	#!!= * @COD
 
 #!! ### Sets for word or not
 
-LIST WORD = Noun Adj Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR  \? ; #!! WORD
+LIST WORD = Noun Adj Adv Verb Pron CS CC Po Pr Interj Pcle Num ABBR ACR  \? ; #!! WORD
  #!! any word
 # SET REAL-WORD = WORD - Num - Ord ; #!! REAL-WORD
 SET REAL-WORD-NOT-ABBR = WORD - Num - Ord - (ABBR N) ; # This is former REALWORD-NOTABBR #!! REAL-WORD-NOT-ABBR #!!= * @CODE@
@@ -405,7 +405,7 @@ SET NOT-ACC = CASE - Acc ; #!! * NOT-ACC
 #!! #### Verbs and their complements
 # - - - - - - - - - - - - - -
 
-SET NOT-V = WORD - V ; #!! * NOT-V
+SET NOT-V = WORD - Verb ; #!! * NOT-V
 
 #!! ### Sets for finiteness and mood
 # - - - - - - - - - -
@@ -965,7 +965,7 @@ COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&
 
 
 # Valency errors
-# "teastaigh" V + "ó"	
+# "teastaigh" Verb + "ó"	
 
 #!! **ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh" IT WORKS
 
@@ -1040,7 +1040,13 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 #!! #### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
 #        ===============================================
 
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Noun Com) LINK NEGATE 0 (Num Card))(NEGATE 0 Gen)(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr);
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
+	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
+	(NEGATE 0 Gen)
+	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
+	(NEGATE 0 Prop LINK -1 Prop)
+	(NEGATE 0 Verbal)
+	(NEGATE -2 Verb OR ("é"));
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
@@ -1279,11 +1285,11 @@ ADD:spell-conservatively (&typo SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 
 
 #!! ### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
 
-ADD:err-agr (&err-agr) TARGET V IF (-1C Sg + Nom) (0 V) (NOT 0 Sg3);
-ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Sg1 + Nom) (0 V) (NOT 0 Sg1);
-ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Sg2 + Nom) (0 V) (NOT 0 Sg2);
-ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Pl1 + Nom) (0 V) (NOT 0 Pl1);
-ADD:err-agr (&err-agr) TARGET V IF (-1C Pron + Pl2 + Nom) (0 V) (NOT 0 Pl2);
+#ADD:err-agr (&err-agr) TARGET Verb IF (-1C Sg + Nom) (0 V) (NOT 0 Sg3);
+#ADD:err-agr (&err-agr) TARGET Verb IF (-1C Pron + Sg1 + Nom) (0 V) (NOT 0 Sg1);
+#ADD:err-agr (&err-agr) TARGET Verb IF (-1C Pron + Sg2 + Nom) (0 V) (NOT 0 Sg2);
+#ADD:err-agr (&err-agr) TARGET Verb IF (-1C Pron + Pl1 + Nom) (0 V) (NOT 0 Pl1);
+#ADD:err-agr (&err-agr) TARGET Verb IF (-1C Pron + Pl2 + Nom) (0 V) (NOT 0 Pl2);
 
 # And one with a suggestion where we simply change the tag Sg into Attr:
 
@@ -1318,7 +1324,7 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 
 ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
 ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
-ADDRELATION ($2 LEFT) (V &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
+ADDRELATION ($2 LEFT) (Verb &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
 	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
 	## An ceol sheinneann sé gach lá agus é i mbun oibre.
@@ -1339,7 +1345,7 @@ COPY:lex-ar-an-aonach ("ar" SUGGEST) EXCEPT ("ag" &lex-ar-an-aonach) TARGET (&le
 ADD:lex-ar-an-aonach (&lex-ar-an-aonach) TARGET ("ag" Prep Simp) IF (*2 ("aonach")) ;
 COPY:lex-ar-an-aonach ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (&lex-ar-an-aonach) ;
 ADDCOHORT:lex-ar-an-aonach ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-aonach) AFTER &lex-ar-an-aonach (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK); ####THIS CAUSES CHAOS AND STOPS THE TERMINAL!!!###
-ADDRELATION:lex-ar-an-aonach ($2 RIGHT) (V &lex-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
+ADDRELATION:lex-ar-an-aonach ($2 RIGHT) (Verb &lex-ar-an-aonach) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 #!! **ADD:lex-ar-a-haon-a-chlog** ...
 
@@ -1368,7 +1374,7 @@ ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Simp) IF (*1 CAIFE BARRIER (
 COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Simp &lex-ar-an-tae) ;
 
 ADDCOHORT:lex-ar-an-tae ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-tae) AFTER &lex-ar-an-tae (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK) (NEGATE 1 (Det Poss));
-ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
+ADDRELATION:lex-ar-an-tae ($2 RIGHT) (Verb &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
 #!! This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
@@ -1384,7 +1390,7 @@ ADDRELATION:lex-ar-an-tae ($2 RIGHT) (V &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLAN
 ADD:lex-ar-an-gcaife (&lex-ar-an-gcaife) TARGET ("i" Prep Art Sg) IF (1 CAIFE + (Noun Masc Gen Sg DefArt)) ;
 COPY:lex-ar-an-gcaife ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (&lex-ar-an-gcaife) ;
 ADDCOHORT:lex-ar-an-gcaife ("<an>" "an" ADDED-BEFORE-BLANK &lex-ar-an-gcaife) AFTER &lex-ar-an-gcaife (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
-ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (V &lex-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
+ADDRELATION:lex-ar-an-gcaife ($2 RIGHT) (Verb &lex-ar-an-gcaife) TO (1 (ADDED-BEFORE-BLANK)) ;
 
 
 #!! **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
