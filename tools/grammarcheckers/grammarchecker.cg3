@@ -765,9 +765,9 @@ ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 
 # go + a = gona, le + a = lena, etc.
 
 #"<faoina>"
-        "faoi" Prep Poss 3P Pl <W:0.0> SELECT:1853
-        "faoi" Prep Poss 3P Sg Fem <W:0.0> SELECT:1853
-        "faoi" Prep Poss 3P Sg Masc <W:0.0> SELECT:1853
+#        "faoi" Prep Poss 3P Pl <W:0.0> SELECT:1853
+#        "faoi" Prep Poss 3P Sg Fem <W:0.0> SELECT:1853
+#        "faoi" Prep Poss 3P Sg Masc <W:0.0> SELECT:1853
 	## Tá bogha dubh faoi a shúile 
 
 #!! ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
