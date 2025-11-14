@@ -3417,6 +3417,7 @@ Num
 * Sup
 * Actio
 * VAbess
+* Abbreviation
 
 * SET NUMBER = Sg OR Pl ;  
 
