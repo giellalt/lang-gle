@@ -36,6 +36,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 
 ! TODO: Documet these tags:
 
++Foreign 
 +Corr  !!= - **@CODE@** = correction in Learner corpus
 +Error !!= - **@CODE@** = error in Learner corpus
 +Start !!= - **@CODE@** = start of error/correction

@@ -116,7 +116,7 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 +V
 +v1
 +v2
-
++Foreign
 
 ! =============================================
 
@@ -332,7 +332,7 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 +Wh		  !!= - **@CODE@** = wh word?
 
 +Noun +Com +Gen +Dat +Sg +Pl +Masc +Fem +DefArt +Emph +Subst
-+Pron +Prep +Pers +Cmpd +Simp
++Pron +Prep  +Cmpd +Simp
 +Det +Dem +Q +Def +Qty
 +Adj +Base
 +Adv +Dir
@@ -388,7 +388,7 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 +CC		! Canúint Chonnachta
 +CU		! Canúint Uladh
 +Abr
-
++PersName
 +Len
 +Ecl
 
