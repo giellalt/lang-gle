@@ -1040,13 +1040,20 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 #!! #### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
 #        ===============================================
 
+LIST MODIFYERNOUN = "cuid" ;
+LIST MODIFYERPROP = "ainm" ;
+
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
 	(NEGATE 0 Gen)
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop)
 	(NEGATE 0 Verbal)
-	(NEGATE -2 Verb OR ("é"));
+	(NEGATE -2 Verb OR ("é"))
+	(NEGATE -2 Prep)                      # ar bheagán breis
+	(NEGATE -1 MODIFYERNOUN)              # agus cuid lucht
+	(NEGATE 0 Prop LINK -1 MODIFYERPROP)  # óg darbh ainm Éadbhard Ó Cathaoir
+	;
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 

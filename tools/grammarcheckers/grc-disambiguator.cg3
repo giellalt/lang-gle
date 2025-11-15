@@ -1664,7 +1664,7 @@ SELECT (Noun Fem) IF (0C (Noun)) (1 (Adj Fem));
 SELECT (Noun Masc) IF (0C (Noun)) (1 (Adj Masc));
 SELECT (Noun Sg) IF (0C (Noun)) (1 (Adj Sg));
 SELECT (Noun Pl) IF (0C (Noun)) (1 (Adj Pl));
-SELECT (Noun Com) IF (0C (Noun)) (1 (Adj Com));
+SELECT (Noun Com) IF (NEGATE -1 Noun)(0C (Noun)) (1 (Adj Com));
 SELECT (Noun Gen) IF (0C (Noun)) (1 (Adj Gen));
 SELECT (Noun Voc) IF (0C (Noun)) (1 (Adj Voc));
 
