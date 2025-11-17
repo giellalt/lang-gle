@@ -772,7 +772,11 @@ ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 
 
 #!! ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF (-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))(NEGATE 0 (Noun Fem Com Len))(0 ("<[bcdfgmpstBCDFGMPST].*>"r)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF
+	(NEGATE 0 Len)
+	(-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))
+	(NEGATE 0 (Noun Fem Com Len))
+	(0 ("<[bcdfgmpstBCDFGMPST].*>"r)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
@@ -780,7 +784,11 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 
 #!! ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
-ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF (-1 (Part Vb Neg"+NG") OR (Part Vb Neg))(0 ("<[bcdfgmpstBCDFGMPST].*>"r))(NEGATE 0 ("<[aeilnoru].*>"r))(NEGATE 0 Len);
+ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF
+	(-1 (Part Vb Neg"+NG") OR (Part Vb Neg))
+	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 ("<[aeilnoru].*>"r))
+	(NEGATE 0 Len);
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
 
 ## Ní ceannaíonn sí caifé gach lá. # incorrect
@@ -794,7 +802,10 @@ COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni
 
 #!! **ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
 
-ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF
+	(NEGATE 0 Len)
+	(-1 ART-LEN-PREP + (Prep Cmpd))
+	(1 (Noun Fem)) ;
 COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	
 	## Thar bharr. - incorrect
@@ -877,6 +888,7 @@ COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARG
 	# PREP N
 	# ------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+	(NEGATE 0 Len)
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (0 ("<[bcdfgmpstBCDFGMPST].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
         (NEGATE 0 Ecl);
@@ -885,6 +897,7 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com
 	# PREP Art N
 	# -----------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Masc Com Sg) OR (Noun Masc Com Sg DefArt) IF
+	(NEGATE 0 Len)
 	(*-1 ("de" Prep Art Sg) OR ("do" Prep Art Sg) OR ("de" Prep Simp) OR ("do" Prep Simp) BARRIER (*) - Art)
     (0 ("<[bcdfgmpstBCDFGMPST].*>"r)) 			# the thing you TARGET itself if starting with the letters bcdfgp
     (NEGATE 0 Ecl OR Len);
@@ -1481,6 +1494,7 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
 ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
+	(NEGATE 0 LEN)
         (-2 ART-LEN-PREP + (Prep Simp)) 			# two words to the left of the thing you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (-1 Art) 						# One to the left of the thing you TARGET is Art
         (0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
