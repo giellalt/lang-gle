@@ -259,11 +259,11 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" ("le" Prep Simp SUGGEST); #!!= * @CODE@
-#  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<trí>" "<um>"
+LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" "<Le>" ("le" Prep Simp SUGGEST); #!!= * @CODE@
+#  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<thar>" "<trí>" "<um>"
 
 #!! These prepositions always cause the nouns after them to be lenited:
-LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<trí>";					#!!= * @CODE@
+LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					#!!= * @CODE@
 
 #!! Noun errors (Ecl vs. not Ecl) after prepositions
 # Prepositions that do not lenite nouns: "<ag>" "<i>" "<le>" "<as>" "<chuig>" "<thar>" "<um>"
@@ -634,6 +634,10 @@ LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
 LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
 LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
+LIST &msyn-len-after-da = &msyn-len-after-da ;
+LIST &msyn-len-after-ma = &msyn-len-after-ma ;
+LIST &msyn-lenition-after-um = &msyn-lenition-after-um ;
+LIST &lex-ma-plus-copula = &lex-ma-plus-copula ;
 LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@ 
@@ -744,19 +748,24 @@ ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detp
 	# faoi+Poss
 	
 LIST PREPDETPOSS-N-INSERT = "faoi" "go" "i" "le" "ó" "trí" ;
-# faoi + a = faoina
-# go + a = gona, le + a = lena, etc.
+# faoi + a = faoina, go + a = gona, le + a = lena, etc.
 
 ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Prep Simp) + PREPDETPOSS-N-INSERT (1 (Det Poss) LINK 0 (3P) OR (1P Pl));
 ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detposs) ;
 	## Tá bogha dubh faoi a shúile.
 	#$ Tá bogha dubh faoina shúile.
-	## Long go a lucht. #NOT WORKING YET
+	## Long go a lasta.
+	#$ Long gona lasta.
 	## Rith sé trí a intinn ansin gur chuala sé scéal tráth dá raibh.
+	#$ Rith sé trína intinn ansin gur chuala sé scéal tráth dá raibh.
 	## Shuigh Nancy síos ar chorr na cathaoireach le a taobh.
+	## Shuigh Nancy síos ar chorr na cathaoireach lena taobh.
 	## Bhain sé an cóta de a athair.
+	#$ Bhain sé an cóta dá athair.
 	## Tá sé i a shuí sa charr.
+	#$ Tá sé ina shuí sa charr.
 	## Fuair sé idir fháilte agus cháineadh ó a lucht éisteachta.
+	#$ Fuair sé idir fháilte agus cháineadh óna lucht éisteachta.
 
 	
 ADDRELATION:msyn-prep-detposs (DELETE1) (Prep &msyn-prep-detposs) TO (1 (Det Poss &msyn-prep-detposs)) ;
@@ -777,8 +786,6 @@ ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (Det) FROM (1 Noun LIN
 ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
 COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
 ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 0 (&msyn-adj-nom-acc)) ;
-
-
 
 #!! ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 
@@ -801,8 +808,8 @@ ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (V
 	(NEGATE 0 Len);
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
 
-## Ní ceannaíonn sí caifé gach lá. # incorrect
-#$ Ní cheannaíonn sí caifé gach lá. # correct
+## Ní ceannaíonn sí caife gach lá. # incorrect
+#$ Ní cheannaíonn sí caife gach lá. # correct
 
 #!! ### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
@@ -818,9 +825,6 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET ("an" Art Sg Def) IF
 	(1 (Noun Fem)) ;
 COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-len-after-prep) TARGET (Art &msyn-len-after-prep) IF (1 (Noun Fem)) ;
 	
-	## Thar bharr. - incorrect
-	#$ Thar barr. - correct
-	
 #Caithfear a bheith airdeallach maidir leis na haidiachtaí taispeántacha ‘seo’ agus ‘sin’ a úsáid
 #le réamhfhocail chomhshuite. Is é an tuiseal ginideach a leanann leithéidí ‘de bharr’, ‘de bhrí’, ‘in
 #ainneoin’ agus ‘os coinne’ de ghnáth. Bíodh sin mar atá, ní féidir ‘seo’ agus ‘sin’ a infhilleadh. Botún
@@ -831,6 +835,7 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 
 #díriú isteach ar -> díriú ar
 
+#i bliana -> i mbliana rule.
 ADD:msyn-i-mbliana (&msyn-i-mbliana) TARGET ("bliain" Noun Fem Com Pl) IF (-1 ("i" Prep Simp)) ;
 COPY:msyn-i-mbliana ("bliain" Noun Fem Gen Sg Ecl SUGGEST) EXCEPT (Noun Fem Gen Sg DefArt &msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
 
@@ -859,34 +864,17 @@ COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-a
 
 #!!  Template rule to delete A and modify B in A B strings:
 
-##i ndáiríre - #$dáiríre
+##i ndáiríre -> #$dáiríre
 ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
 ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
 ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ; # DEL from keep TO delete
 COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
 	## I ndáiríre ní chaithfidh tú tada a rá.	
 	#$ Dáiríre ní chaithfidh tú tada a rá.
-
 	
-##faoi: faoi bhord OIBRÍONN AN RIAIL
-##de: de chapall OIBRÍONN AN RIAIL
-##do: do Mháire OIBRÍONN AN RIAIL
-##ó: ó Sheán OIBRÍONN AN RIAIL
-##mar: mar dhuine 
-##um: um thráthnóna
-##trí: trí dhoras
-##roimh: roimh mhaidin
-##thar: thar fhalla (fisiciúil)
-##eisceacht – thar fóir, thar barr (neamh-fhisiciúil)
-
+	
 ##i: i gCorcaigh, i dtigh
-##ag: ag duine
-##ar: ar baile
-##chuig: chuig dochtúir
-	## Chuig an Chomhairle. - incorrect
-	#$ Chuig an gComhairle. - correct
 ##go: go Ciarraí
-##le: le fear
 ##idir: idir Corcaigh agus Baile Átha Cliath
 ##‘h’ nuair a chiallaíonn idir ’both’ – idir fhir agus mhná
 ##gan: gan Seán
@@ -923,9 +911,12 @@ ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after
 
 #!! ### rule to take away lenition for nouns after certain prepositions
 
+LIST NO-LEN-AFTER-THAR-N = "barr" "bord" "claí" "fóir" "fulaingt" "muir" "sáile";
+
 LIST NO-LEN-AFTER-AR-N = "barr" "béal maidine" "bith" "bogadh" "buile" "cairde" "clé" "cnoc" "colbha" "corr" "cois" "cosa" "crith" "crochadh" "cuairt" "cúl" "deil" "deireadh" "deis" "díol" "doimhne" "doimhneacht" "fad" "fáil" "fán" "feadh" "fiar" "fiuchadh" "forbhás" "fónamh" "fuaidreamh" "fud" "gor" "machaire" "maidin" "malairt" "maos" "marcaíocht" "meitheal" "meisce" "muir" "sála" "seachrán" "sodar" "son" "srian" "tarraingt" "teachtaireacht" "teaghrán" "tí" "tír" "tiús" "tosach" "triomú" "tuarastal";
 
 ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art)	(NEGATE *1 (Noun Gen) BARRIER (*) - Art)(NEGATE 0 ("cúl") LINK -1 ("ar"));
+ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("thar" Prep Simp))(0 NO-LEN-AFTER-THAR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
 
 COPY:msyn-no-len-after-prep (SUGGEST) EXCEPT (Len &msyn-no-len-after-prep) TARGET (&msyn-no-len-after-prep);
 ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len-after-prep));
@@ -933,6 +924,8 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 	## Tá fiche duine ar mheitheal.
 	## Tá mo chara ar mheisce.
 	#$ Ar mhuir na beatha.
+	## Tá an ceol sin thar bharr.
+	#$ Tá an ceol sin thar barr.
 
 
 #!! ### Rules for lenition
@@ -949,12 +942,42 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Verb Cond CM) IF
 	(-1 (Conj Subord))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
-COPY:msyn-ecl-after-da (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-da) TARGET (&msyn-ecl-after-da); 
+COPY:msyn-ecl-after-da (Verb VI Cond SUGGEST) EXCEPT (&msyn-ecl-after-da) TARGET (&msyn-ecl-after-da);
+
+#Verb VTI 
  
 ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) IF
 	(-1 ("go") or ("Go"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-go (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-go) TARGET (&msyn-ecl-after-go);
+
+## compound of preposition "de" and particle "a" used with abstract nouns denoting degree. (Lenites)
+ADD:msyn-len-after-da (&msyn-len-after-da) TARGET (Noun Com) IF
+	(-1 ("de" Prep Rel))
+	(0 ("<[bcdfgpstBCDFGPST].*>"r));
+COPY:msyn-len-after-da (Len SUGGEST) EXCEPT (&msyn-len-after-da) TARGET (&msyn-len-after-da);
+	
+	## Dá donacht iad
+	#$ Dá dhonacht iad
+	## Dá túisce dá dtiocfaidh sé
+	#$ Dá thúisce dá dtiocfaidh sé (focus on the first dá causing lenition.)
+	## Dá teocht an aimsir	
+	#$ Dá theocht an aimsir
+
+ADD:msyn-len-after-ma (&msyn-len-after-ma) TARGET (Verb) IF
+	(-1 ("má") OR ("Má"))
+	(0 ("<[bcdfgpstBCDFGPST].*>"r));
+COPY:msyn-len-after-ma (Len SUGGEST) EXCEPT (&msyn-len-after-ma) TARGET (&msyn-len-after-ma);
+
+ADD:lex-ma-plus-copula (&lex-ma-plus-copula) TARGET ("is" Cop) IF (-1 ("má") OR ("Má"));
+ADD:lex-ma-plus-copula (&lex-ma-plus-copula) TARGET ("má") IF (1 (Cop));
+ADDRELATION:lex-ma-plus-copula  (DELETE1) (Cop lex-ma-plus-copula) TO (-1 ("Má" lex-ma-plus-copula)) ; # DEL from keep TO delete
+COPY:lex-ma-plus-copula ("má" Conj Subord Cop SUGGEST) EXCEPT (Cop) TARGET (&lex-ma-plus-copula);
+
+ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
+ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
+ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ; # DEL from keep TO delete
+COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
     	
 ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) OR (Verb VI FutInd) OR (Verb VI Cond CM) OR (Verb PresImp) IF
 	(-1 ("mura") OR ("Mura"))
@@ -974,7 +997,13 @@ COPY:msyn-ecl-after-mura (Cond CM SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET 
 ADD:msyn-ecl-after-nach (&msyn-ecl-after-nach) TARGET (Verb) IF
 	(-1 ("nach") OR ("Nach"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
-COPY:msyn-ecl-after-nach (NegQ Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach); 
+COPY:msyn-ecl-after-nach (NegQ Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach);
+
+##A rule to lenite nouns beginning with the letters CDFGST after the preposition "um".
+ADD:msyn-lenition-after-um (&msyn-lenition-after-um) TARGET (Noun) IF
+	(-1 ("um") OR ("Um"))
+	(0 ("<[cdfgstCDFGST].*>"r));
+COPY:msyn-lenition-after-um (Len SUGGEST) EXCEPT (&msyn-lenition-after-um) TARGET (&msyn-lenition-after-um); 
 
     	
 ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF

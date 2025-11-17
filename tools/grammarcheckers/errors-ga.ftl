@@ -44,12 +44,16 @@ msyn-beag-is-fiú-de = "De", ní "dom", i ndiaidh "beag is fiú"
     .desc = Ba cheart "de" a úsáid in ionad "do" i ndiaidh "beag is fiú"
     .example-1 = Beag is fiú a dhéanamh de dhuine. Ná déan beag is fiú díom.
 
-msyn-cúpla-plnoun-sgnoun = Bíonn uimhir uatha ann i lorg an fhocail cúpla
-    .desc = Bíonn uimhir uatha ann i lorg an fhocail cúpla.
+msyn-cúpla-plnoun-sgnoun = Bíonn uimhir uatha ann ar lorg an fhocail cúpla
+    .desc = Bíonn uimhir uatha ann ar lorg an fhocail cúpla.
     .example-1 = Cúpla lá, cúpla focal, cúpla bliain.
+    
+msyn-lenition-after-um = Séimhítear ainmfhocail ar lorg an réamhfhocail um.
+    .desc = Séimhítear ainmfhocail a thosaíonn le CDFGST ar lorg an réamhfhocail um.
+    .example-1 = Um thráthnóna, An Coimisiún um Chaidreamh san Áit Oibre.
 
-msyn-ecl-after-go = Eclipse tar éis imeacht
-    .desc = Ba chóir go mbeadh eclipse ann tar éis imeacht.
+msyn-ecl-after-go = Urú ar lorg imeacht
+    .desc = Ba chóir go mbeadh urú ann ar lorg imeacht.
 
 msyn-ecl-after-da = blabla
     .desc = blabla
@@ -64,14 +68,14 @@ msyn-gen-noun-noun = blabla
     .desc = blabla
 
 msyn-ecl-after-prep = Tá urú in easnamh
-    .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
+    .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar an ainmfhocal.
     .example-1 = I mbarr, i gceannas
 
 msyn-ecl-after-prep2 = Tá urú in easnamh
-    .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar.
+    .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar an ainmfhocal.
 
-msyn-ecl-after-prep-sfem = Urú i ndiaidh réamhfhocail
-    .desc = Nuair a bhíonn réamhfhocail áirithe ann, déantar urú ar an ainmfhocal ina lorg.
+msyn-ecl-after-prep-sfem = Urú ar lorg réamhfhocail
+    .desc = Nuair a bhíonn réamhfhocail áirithe ann, déantar urú ar an ainmfhocal ar a lorg.
     .example-1 = I mbarr, ar dtús, i gceannas
 
 msyn-fada-ó = Bíonn fada buí agus ó le chéile
@@ -83,14 +87,14 @@ msyn-fem-article = An leagan baininscneach den alt
     .example-1 = Tús na bliana, lár na páirce.
 
 msyn-gen-case-nouns = An tuiseal ginideach i ndiaidh an ailt
-    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.
+    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) ar lorg ainmfhocail eile, ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
 
 msyn-gen-noun-adj = blabla
     .desc = blabla
 
 msyn-gen-noun-defart-noun = An tuiseal ginideach i ndiaidh an ailt
-    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) i lorg ainmfhocail eile ({$2}), ní mór don dara hainmfhocal a bheith sa ghinideach.
+    .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) ar lorg ainmfhocail eile ({$2}), ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
 
 msyn-gen-noun-detpss-noun = Genitive noun
@@ -108,28 +112,28 @@ msyn-h-after-fem-possessive-adjective = Cuir teideal leis
     .desc = Cuir cur síos leis
     .example-1 = ...
 
-msyn-i-rith-nom-gen = An i lorg ainmfhocail ama.
+msyn-i-rith-nom-gen = An ar lorg ainmfhocail ama.
     .desc = Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara hainmfhocal.
     .example-1 = I rith na bliana, i rith na seachtaine, le linn an tsamhraidh, ar feadh an lae.
 
-msyn-ie.i. = I.e. i nGaeilge
-    .desc = An leagan Gaeilge de i.e., ná .i.
+msyn-ie.i. = i.e. i nGaeilge
+    .desc = An leagan Gaeilge de i.e. ná .i.
     .example-1 = .i.
 
 msyn-inis-do = Inis agus do
     .desc = Is é "do" seachas "de" an réamhfhocal ceart a théann leis an mbriathar "inis".
     .example-1 = Inis don phríomhoide céard a tharla.
 
-msyn-len-after-prep = Ainmfhocal séimhithe i lorg an réamhfhocail
-    .desc = Nuair a bhíonn ainmfhocal, {$1}, i lorg an réamhfhocail {$2}, ba cheart é a shéimhiú.
+msyn-len-after-prep = Ainmfhocal séimhithe ar lorg an réamhfhocail
+    .desc = Nuair a bhíonn ainmfhocal, {$1}, ar lorg an réamhfhocail {$2}, ba cheart é a shéimhiú.
     .example-1 = Roimh dheireadh na seachtaine.
 
-msyn-lenition-after-ni = Séimhiú ar bhriathar i lorg ní.
-    .desc = Má bhíonn briathar, {$1} anseo, i lorg "ní", ní mór é a shéimhiú.
+msyn-lenition-after-ni = Séimhiú ar bhriathar ar lorg ní.
+    .desc = Má bhíonn briathar, {$1} anseo, ar lorg "ní", ní mór é a shéimhiú.
     .example-1 = Ní cheannaím, ní bhrísfear, ní dhúnfar, ní theastaíonn.
 
-msyn-lenition-after-nior = Séímhiú i lorg níor.
-    .desc = Ní mór briathar a bhíonn i lorg níor a shéimhiú.
+msyn-lenition-after-nior = Séímhiú ar lorg níor.
+    .desc = Ní mór briathar a bhíonn ar lorg níor a shéimhiú.
     .example-1 = Níor cheannaigh sé, níor bhríseadh, níor dhún sé, níor theastaigh uaithi.
 
 msyn-lenition-after-possessive-adjective = Séimhiú i ndiaidh aidiachta sealbhaí
@@ -140,16 +144,16 @@ msyn-noun-defart = Alt an ainmfhocail
     .desc = Má thagann an t-alt {$2} roimh an ainmfhocail, {$1} sa chás seo, ba cheart go mbeadh sé cinnte.
     .example-1 = An t-uachtarán.
 
-msyn-possadj-nom-gen = An ginideach i lorg na haidiachta sealbhaí
+msyn-possadj-nom-gen = An ginideach ar lorg na haidiachta sealbhaí
     .desc = Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach an ginideach ar ceal.
     .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
 
 msyn-prep-pron = Riail chun réamhfhocail agus forainmneacha a chumasc
     .desc = Nuair a thagann réamhfhocal agus forainm le chéile, is gá iad a chumasc.
-    .example-1 = Ag + mé - agam, ar + sí - uirthi.
+    .example-1 = Ag + mé = agam, ar + sí = uirthi.
 
 msyn-teastaigh-ó = teastaigh ó
-    .desc = Is é an réamhfhocal ó a thagann i lorg an bhriathair teastaigh.
+    .desc = Is é an réamhfhocal ó a thagann ar lorg an bhriathair teastaigh.
     .example-1 = Teastaíonn post nua uaim.
 
 msyn-tóin-poill = Tóin poill
@@ -187,7 +191,7 @@ lex-ina-ainneoin-sin = "na, ní "an" xxx
 lex-os-a-choinne-sin = "na, ní "an" xxx
     .desc = 
 
-msyn-beag-is-fiu-de = "de" ní "dom" tar éis "beag is fiú" xxx
+msyn-beag-is-fiu-de = "de" ní "do" tar éis "beag is fiú" xxx
     .desc = xxx
 
 msyn-fada-o = "do" ní "de" tar éis "fada buí" xxx

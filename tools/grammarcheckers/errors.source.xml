@@ -148,6 +148,20 @@
     </examples>
     </body>
   </error>
+    <error id="msyn-lenition-after-um">
+    <header>
+      <title xml:lang="en">Lenition after the preposition um</title>
+      <title xml:lang="ga">Séimhiú ar lorg um</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">When there are nouns beginning with CDFGST following "um", those nouns have to be lenited.</description>
+      <description xml:lang="ga">Nuair a bhíonn an réamhfhocail "um" ann, déantar ainmfhocail dar tús CDFGST ar a lorg a shéimhiú.</description>
+    <examples>
+      <ex xml:lang="ga">Um thráthnón, an Coimisiún um Chaidreamh san Áit Oibre</ex>
+    </examples>
+    </body>
+  </error>
   <error id="msyn-fada-ó">
     <header>
       <title xml:lang="en">Fada buí and ó go together</title>
