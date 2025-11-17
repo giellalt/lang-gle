@@ -1168,7 +1168,8 @@ SUBSTITUTE (&msyn-gen-noun-defart-noun) (co&msyn-gen-noun-defart-noun) TARGET (S
 #!! A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE CASE.
 #!! Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final noun.
 
-ADD:msyn-gen-noun-detpss-noun (&msyn-gen-noun-detpss-noun) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com));
+ADD:msyn-gen-noun-detpss-noun (&msyn-gen-noun-detpss-noun) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com))(NEGATE 0 Prop);
+	## Tá Murphy cairdiúil leis na comhaisteoirí Éireannacha Colin Farrell agus Liam Neeson agus tugann sé urraim do {Neeson} mar athair ionaid i saol na scannáin.
 COPY:msyn-gen-noun-detpss-noun (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-detpss-noun) OR (Com Sg Len &msyn-gen-noun-detpss-noun) TARGET (&msyn-gen-noun-detpss-noun);
 ADDRELATION:msyn-gen-noun-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
 
