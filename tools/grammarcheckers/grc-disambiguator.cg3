@@ -694,7 +694,7 @@ REMOVE (Noun Gen) IF (-1C (Art)) (-2C (Prep Simp));
 # NOTE this does not take into account longer NPs with Adj etc.
 # OR: "b'fhearr le na cailíní a/Det? leithéid"
 # TEST this:
-REMOVE (Det Poss) IF (NOT 1 (Noun));
+REMOVE (Det Poss) IF (NOT 1 (Noun))(NEGATE 0 ("<a>") LINK -1 ("<go>")) ;
 
 # ==================================================================== #
 # -------------------------------------------------------------------- #
@@ -706,8 +706,9 @@ REMOVE (Prep Simp) IF (0 ("<a>")) (NOT 1 (Verbal Noun));
 REMOVE (Part Inf) IF (0 ("<a>")) (NOT 1 (Verbal Noun));
 
 # go != Prep Simp unless followed by a Noun
-# go Meiriceá, go doran an tí, go 91 vóta
-REMOVE (Prep Simp) IF (0 ("<go>")) (NOT 1 (Noun) OR NOUN-PREMOD);
+# go Meiriceá, go doras an tí, go 91 vóta
+REMOVE (Prep Simp) IF (0 ("<go>")) (NOT 1 (Noun) OR NOUN-PREMOD OR ("<a>"));
+	#$ Each go a shrian.
 SELECT (Prep Simp) IF (0 ("<go>")) (1C (Noun) OR (Num) OR (Det));
 
 # TYPE 1
@@ -783,7 +784,7 @@ REMOVE (Part Vb Subj) IF ( -1 ("cé"));
 #=>>>>> 25/06/08 go = Part Vb Cmpl (complementizer)
 #=>>>>>SELECT (Part Vb) IF (1C (Verb)) (NOT 0 ("go"));
 SELECT (Part Vb Subj) IF (1C (Verb PresSubj));
-SELECT (Part Vb) IF (1C (Verb));
+SELECT (Part Vb) IF (1C (Verb))(NEGATE 0 ("<a>") LINK -1 ("<go>")) ;
 
 #===>>> check this NegQ out ...
 SELECT (Part Vb NegQ) IF (1C (Verb Q));
@@ -809,7 +810,8 @@ SELECT (Part Vb Rel Indirect) IF ( 1C (Verb)) (2 (Det Poss));
 
 # verb is lenited after direct rel "a" and eclipsed after indir rel "a"
 # use 1C here as "a" could be Prep Simp with Nv e.g. a dhíol
-SELECT (Part Vb Rel Direct)   IF (0 ("a")) ( 1C (Verb Len)) ;
+SELECT (Part Vb Rel Direct)   IF (0 ("a")) (1C (Verb Len))(NEGATE 0 ("<a>") LINK -1 ("<go>")) ;
+	#$ Each go a shrian.
 # Added CW 11/08
 SELECT (Part Vb Rel Direct)   IF (0 ("<a>")) ( 1C ("do" Part Vb)) ;
 # End Added CW 11/08
@@ -1885,7 +1887,8 @@ SELECT (Conj) IF (0 ("agus")) (-1 (Adj)) (1 (Adj));
 SELECT (Conj) IF (0 ("agus")) (-1 (Prop Noun)) (1 (Prop Noun));
 
 # in "mar a bhíodh" mar is conj rather than prep
-SELECT (Conj) IF (1 (Part Vb)) (2 (Verb));
+SELECT (Conj) IF (1 (Part Vb)) (2 (Verb))(NEGATE 0 ("go") LINK 1 ("<a>"));
+	#$ Each go a shrian.
 # nuair a d´ fhág
 SELECT (Conj) IF (1 (Part Vb)) (2 (Part Vb)) (3 (Verb));
 # nó "mar/nuair is eol duit", "mar/agus ba cheart"
@@ -1948,7 +1951,8 @@ SELECT (Det Poss 3P) - Pl IF ( 1C (Noun Len) ) (NOT 1C (Noun Voc)) (NOT 1 (Verba
 SELECT (Det Poss 3P) - Pl IF ( 1C (Noun hPref) ) (NOT 1 (Verbal Noun));
 # a possessive determiner is not followed by a verb e.g. mo, do etc
 # (can be followed by verbal noun - e.g. do mo chrá)
-REMOVE (Poss) IF (1C (Verb));
+REMOVE (Poss) IF (1C (Verb))(NEGATE 0 ("<a>") LINK -1 ("<go>")) ;
+	#$ Each go a shrian.
 
 # select the posessive det reading (rather than noun) if followed by a noun
 # e.g. rinneamar ár ndícheall 
