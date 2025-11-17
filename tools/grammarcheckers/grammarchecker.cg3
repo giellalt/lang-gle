@@ -753,6 +753,8 @@ ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detp
 	## Tá bogha dubh faoi a shúile.
 	#$ Tá bogha dubh faoina shúile.
 	## Long go a lucht. #NOT WORKING YET
+	## Rith sé trí a intinn ansin gur chuala sé scéal tráth dá raibh.
+	## Shuigh Nancy síos ar chorr na cathaoireach le a taobh.
 	
 ADDRELATION:msyn-prep-detposs (DELETE1) (Prep &msyn-prep-detposs) TO (1 (Det Poss &msyn-prep-detposs)) ;
 
@@ -1459,18 +1461,19 @@ COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGE
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(-1 Art)
 	(-2 ECLIPSE-PREP + Prep + Simp)
-	(0 ("<[bcfgpBCFGP].*>"r))
+	(0 ("<[bcfgpBCFGP].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 	## Bainne a chur ar an caife.
 	#$ Bainne a chur ar an gcaife.
 		
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(*-1 (Prep Art Sg) - ("de") - ("do") BARRIER (*) - Art)
-	(0 ("<[bcdfgpsBCDFGPS].*>"r))
+	(0 ("<[bcdfgpsBCDFGPS].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
 	(NEGATE -1 ("de" Prep Art Sg) OR ("do" Prep Art Sg))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 	## Tá an mála faoi an bord.
 	#$ Tá an mála faoin mbord.
+	#$ Tá sé i a shuí sa charr.
 	# KEVIN: the analyzer still sees the deleted word one to the left
 	
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
