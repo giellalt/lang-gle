@@ -740,7 +740,6 @@ ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detp
 	## Tabhair do a athair é. INCORRECT
 	## Tabhair do a hathair é. INCORRECT
 	## Tabhair do ár n-athair é. INCORRECT
-	## Bhain sé an cóta de a athair.
 	
 	# faoi+Poss
 	
@@ -755,6 +754,10 @@ ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detp
 	## Long go a lucht. #NOT WORKING YET
 	## Rith sé trí a intinn ansin gur chuala sé scéal tráth dá raibh.
 	## Shuigh Nancy síos ar chorr na cathaoireach le a taobh.
+	## Bhain sé an cóta de a athair.
+	## Tá sé i a shuí sa charr.
+	## Fuair sé idir fháilte agus cháineadh ó a lucht éisteachta.
+
 	
 ADDRELATION:msyn-prep-detposs (DELETE1) (Prep &msyn-prep-detposs) TO (1 (Det Poss &msyn-prep-detposs)) ;
 
