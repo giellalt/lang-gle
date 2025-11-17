@@ -644,6 +644,7 @@ LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@
 LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@ 
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@ 
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
+LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ;
 LIST &msyn-prepart-prep = &msyn-prepart-prep ;    #!!= * @CODE@ 
 LIST &msyn-prep-detposs = &msyn-prep-detposs ;    #!!= * @CODE@ 
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
@@ -1462,6 +1463,7 @@ ADD:msyn-prepart-prep (&msyn-prepart-prep) TARGET PREPART IF
 	(1 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
 ADD:msyn-prepart-prep (&msyn-prepart-prep) TARGET (Art Sg Def) IF 
 	(-1 (Prep &msyn-prepart-prep));
+	
 	## Tá an mála faoi an bord - under the table INCORRECT
 	#$ Tá an mála faoin mbord CORRECT
 	#$ Tá bogha dubh faoi a shúile. 
@@ -1504,6 +1506,7 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen
 	(0 ("<[bcdfgpsBCDFGPS].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
 	(NEGATE -1 ("de" Prep Art Sg) OR ("do" Prep Art Sg))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+	
 	## Tá an mála faoi an bord.
 	#$ Tá an mála faoin mbord.
 	#$ Tá sé i a shuí sa charr.
@@ -1544,3 +1547,14 @@ ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg
         (0 ("<[bcfgpsBCFGPS].*>"r)) 				# the thing you TARGET itself if starting with the letters bcfgps
         (NEGATE 0 ("<[s].*>"r) + Masc) ; 			# The rule dosn't target a masculine word starting with the letter S.
 COPY:msyn-ecl-after-prep-sfem (DefArt SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
+
+LIST PRONQ = "cé" ;
+
+ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET "cé" OR "Cé" IF
+	(0 ("cé"))
+	(1 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
+ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET (Art Sg Def) IF (-1 ("Cé" OR "cé" &msyn-ce-plus-defart));
+	
+ADDRELATION (DELETE1) (Cop Q &msyn-ce-plus-defart) TO (1 (Art &msyn-ce-plus-defart));
+
+COPY:msyn-ce-plus-defart (Cop Q Art Sg SUGGEST) EXCEPT (Pron Q) TARGET (&msyn-ce-plus-defart);
