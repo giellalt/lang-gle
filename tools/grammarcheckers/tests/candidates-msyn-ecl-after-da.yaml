@@ -3,4 +3,5 @@ Config:
   Variant: glegram-dev
 
 Tests:
+  - "Iad a bhualadh isteach ansin sa naomhóg agus má chífeá aon bhogadh ag na cosa á dhéanamh teacht agus an cupán áras atá ag leanúint na naomhóige a chur anuas don uisce agus cúpla maith uisce a dhoirteadh anuas ar an téad agus d'fháiscfeadh sé sin go maith ar a chéile iad \""
   - "Úsáidtear a lán breosla peitril chun an púdar bán céanna a dhéanamh ( agus tá sé ráite dá gcífeadh an dream a úsáideann an cocaon an próiseas fhéin ná bacfaidís leis tá an próiseas chomh salach míshláintiúil )"
