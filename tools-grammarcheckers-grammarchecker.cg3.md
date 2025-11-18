@@ -181,6 +181,8 @@ Num
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
 * LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" "<Le>" ("le" Prep Simp SUGGEST); 
 
+* LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; 
+
 These prepositions always cause the nouns after them to be lenited:
 * LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					
 
