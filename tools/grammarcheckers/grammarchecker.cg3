@@ -262,6 +262,8 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" "<Le>" ("le" Prep Simp SUGGEST); #!!= * @CODE@
 #  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<thar>" "<trí>" "<um>"
 
+LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; #!!= * @CODE@
+
 #!! These prepositions always cause the nouns after them to be lenited:
 LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					#!!= * @CODE@
 
@@ -637,7 +639,7 @@ LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
 LIST &msyn-len-after-da = &msyn-len-after-da ;
 LIST &msyn-len-after-ma = &msyn-len-after-ma ;
 LIST &msyn-lenition-after-um = &msyn-lenition-after-um ;
-LIST &lex-ma-plus-copula = &lex-ma-plus-copula ;
+LIST &lex-conj-plus-copula = &lex-conj-plus-copula ;
 LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@ 
@@ -647,6 +649,7 @@ LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@
 LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ;
 LIST &msyn-prepart-prep = &msyn-prepart-prep ;    #!!= * @CODE@ 
 LIST &msyn-prep-detposs = &msyn-prep-detposs ;    #!!= * @CODE@ 
+LIST &msyn-tri-plus-defart = &msyn-tri-plus-defart ;
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
@@ -656,7 +659,6 @@ LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ;
 LIST &lex-de-ainneoin = &lex-de-ainneoin ;
 LIST &lex-dairire = &lex-dairire ;
 LIST &typo = &typo ;
-#LIST &msyn-tóin-poill = &msyn-tóin-poill ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -714,6 +716,7 @@ ADDRELATION:msyn-adj-gender ($2) (Noun) FROM (1 Adj LINK 0 (&msyn-adj-gender));
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
 	## Níl an am ag mé le aghaidh é seo.
+	#$ Níl an t-am agam le haghaidh é seo.
 
 ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron &msyn-prep-pron)) ;
 
@@ -970,15 +973,10 @@ ADD:msyn-len-after-ma (&msyn-len-after-ma) TARGET (Verb) IF
 	(0 ("<[bcdfgpstBCDFGPST].*>"r));
 COPY:msyn-len-after-ma (Len SUGGEST) EXCEPT (&msyn-len-after-ma) TARGET (&msyn-len-after-ma);
 
-ADD:lex-ma-plus-copula (&lex-ma-plus-copula) TARGET ("is" Cop) IF (-1 ("má") OR ("Má"));
-ADD:lex-ma-plus-copula (&lex-ma-plus-copula) TARGET ("má") IF (1 (Cop));
-ADDRELATION:lex-ma-plus-copula  (DELETE1) (Cop lex-ma-plus-copula) TO (-1 ("Má" lex-ma-plus-copula)) ; # DEL from keep TO delete
-COPY:lex-ma-plus-copula ("má" Conj Subord Cop SUGGEST) EXCEPT (Cop) TARGET (&lex-ma-plus-copula);
-
-ADD:lex-dairire (&lex-dairire) TARGET ("i" Prep) IF (1 ("dáiríre"));
-ADD:lex-dairire (&lex-dairire) TARGET ("dáiríre" Ecl) IF (-1 ("i")) ;
-ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)) ; # DEL from keep TO delete
-COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
+ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Cop Pres) IF (-1 (Conj Subord));
+ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Conj Subord) IF (1 (Cop));
+ADDRELATION:lex-conj-plus-copula (DELETE1) (Conj Subord &lex-conj-plus-copula) TO (1 (Cop Pres &lex-conj-plus-copula)) ;
+COPY:lex-conj-plus-copula (Cop SUGGEST) EXCEPT (Cop Pres) TARGET (&lex-conj-plus-copula);
     	
 ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) OR (Verb VI FutInd) OR (Verb VI Cond CM) OR (Verb PresImp) IF
 	(-1 ("mura") OR ("Mura"))
@@ -1016,6 +1014,14 @@ ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
 COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
 #ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
 
+#tríd an
+## Agus bí liom anois trí an lá seo.
+#$ Agus bí liom anois tríd an lá seo.
+
+ADD:msyn-tri-plus-defart (&msyn-tri-plus-defart) TARGET ("trí" Prep Simp) IF (1 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
+COPY:msyn-tri-plus-defart (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARGET (&msyn-tri-plus-defart);
+
+##Noun Fem Com Sg Ecl
 
 # Valency errors
 # "teastaigh" Verb + "ó"	
@@ -1162,14 +1168,12 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com 
 COPY:msyn-gen-noun-defart-noun (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
 
-# Tha article
+# The article
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Pl Def) IF
 	(NEGATE 0 Gen)
 	(1 (Noun &msyn-gen-noun-defart-noun));
 COPY:msyn-gen-noun-defart-noun ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Fem));
 COPY:msyn-gen-noun-defart-noun ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
-
-
 
 #$ Seomra na fir  # men.pl.com room 
 ## Seomra na bhfear # men.sg.ecl room where sg.ecl is gramtrad for pl.gen
@@ -1533,8 +1537,25 @@ ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (0 ("<[bcdfgpsBCDFGPS].*>"r))
         (NEGATE 0 Ecl)
         (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
+
+
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 ECLIPSE-PREP + (Prep Simp))
+        (0 ("<[bcdfgpsBCDFGPS].*>"r))
+        (NEGATE 0 Ecl)
+        (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
+
+##a rule to correct the error "tríd an bord" to "tríd an mbord", "tríd an geata" to "tríd an ngeata", etc. !!The rule has to be refined to fix "tríd an tsrón", etc., (feminine nouns beginning with S)!!
+	
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) OR (Noun Fem Com Sg DefArt) + <ComGen> IF
+	(-1 Art)
+	(-2 ECLIPSE-TRID + Prep + Simp)
+	(0 ("<[bcfgpsBCFGPS].*>"r) LINK NOT 0 ("<[bcfgpsBCFGPS][hH].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
@@ -1543,18 +1564,18 @@ ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg
         (-2 ART-LEN-PREP + (Prep Simp)) 			# two words to the left of the thing you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (-1 Art) 						# One to the left of the thing you TARGET is Art
         (0 ("st.*"r) OR ("sr.*"r) OR ("se.*"r) OR ("sa.*"r) )
-        (NOT 0 Ecl OR ECL-NON-ECL-N)  				# The thing you target is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
-        (0 ("<[bcfgpsBCFGPS].*>"r)) 				# the thing you TARGET itself if starting with the letters bcfgps
+        (NOT 0 Ecl OR ECL-NON-ECL-N)  				# The thing you target 0 is NOT Ecl OR a word in the LIST/SET ECL-NON-ECL-N
+        (0 ("<[bcfgpsBCFGPS].*>"r)) 				# the thing you TARGET itself if starting with the letters BCFGPS
         (NEGATE 0 ("<[s].*>"r) + Masc) ; 			# The rule dosn't target a masculine word starting with the letter S.
 COPY:msyn-ecl-after-prep-sfem (DefArt SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
 
-LIST PRONQ = "cé" ;
+##LIST PRONQ = "cé" ;
 
-ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET "cé" OR "Cé" IF
+ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET ("cé") OR ("Cé") IF
 	(0 ("cé"))
 	(1 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
-ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET (Art Sg Def) IF (-1 ("Cé" OR "cé" &msyn-ce-plus-defart));
+ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET (Art Sg Def) IF (-1 ("cé"));
 	
-ADDRELATION (DELETE1) (Cop Q &msyn-ce-plus-defart) TO (1 (Art &msyn-ce-plus-defart));
+ADDRELATION (DELETE1) (Cop Pro Q &msyn-ce-plus-defart) TO (1 (Art &msyn-ce-plus-defart));
+COPY:msyn-ce-plus-defart (Det Q Art Sg SUGGEST) EXCEPT (Cop Pro Q) TARGET (&msyn-ce-plus-defart);
 
-COPY:msyn-ce-plus-defart (Cop Q Art Sg SUGGEST) EXCEPT (Pron Q) TARGET (&msyn-ce-plus-defart);

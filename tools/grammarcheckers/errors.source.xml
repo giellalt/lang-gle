@@ -514,7 +514,92 @@
       <description xml:lang="ga">Úsáid comharthaí athfhriotail uillinne dúbailte</description>
     </body>
   </error>
-   
+  
+  
+   <error id="lex-dairire">
+    <header>
+      <title xml:lang="en">Dáiríre error.</title>
+      <title xml:lang="ga">Dáiríre.</title>
+    </header>
+    <body>
+      <description xml:lang="en">"i ndáiríre" is a mistake based on "in earnest" in English. The correct phrase is simply "dáiríre".</description>
+      <description xml:lang="ga">Is botún é "i ndáiríre" bunaithe ar "in earnest" an Bhéarla. Is é "dáiríre" amháin an leagan ceart.</description>
+    <examples>
+      <ex xml:lang="ga">Dáiríre.</ex>
+    </examples>
+    </body>
+    </error>
+    
+    <error id="msyn-ce-plus-defart">
+    <header>
+      <title xml:lang="en">Cé and an fused.</title>
+      <title xml:lang="ga">Cé agus an cumasctha le chéile.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The questioning particle "cé" and the definite artilce "an" fuse to become "cén".</description>
+      <description xml:lang="ga">Déantar an mhír cheisteach "cé" agus an t-alt "an" a chumasc le chéile chun "cén" a scríobh.</description>
+    <examples>
+      <ex xml:lang="ga">Cén fáth a bhfuil an doras ar oscailt?</ex>
+    </examples>
+    </body>
+  </error>
+    
+    <error id="msyn-prep-detposs">
+    <header>
+      <title xml:lang="en">Combining prepositions and possessive adjectives</title>
+      <title xml:lang="ga">Réamhfhocail agus aidiachtaí sealbhacha a chumasc.</title>
+    </header>
+    <body>
+      <description xml:lang="en">Some prepositions and possessive adjectives have to be combined.</description>
+      <description xml:lang="ga">Ní mór roinnt de na réamhfhocail agus na haidiachtaí sealbhacha a chumasc.</description>
+    <examples>
+      <ex xml:lang="ga">Faoina, gona, ina, lena, óna, trína.</ex>
+    </examples>
+    </body>
+  </error>
+
+    <error id="msyn-prepart-prep">
+    <header>
+      <title xml:lang="en">Combining prepositions and the definite article</title>
+      <title xml:lang="ga">Réamhfhocail agus an t-alt a chumasc.</title>
+    </header>
+    <body>
+      <description xml:lang="en">Some prepositions and the definite article "an" have to be combined.</description>
+      <description xml:lang="ga">Ní mór roinnt de na réamhfhocail agus an t-alt "an" a chumasc.</description>
+    <examples>
+      <ex xml:lang="ga">Den, don, faoin, ón.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="lex-conj-plus-copula">
+    <header>
+      <title xml:lang="en">Combining conjunctions and the copula</title>
+      <title xml:lang="ga">Conaisc agus an chopail a chumasc.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The conjuctions are combined with the copula "is".</description>
+      <description xml:lang="ga">Déantar na cónaisc agus an chopail "is" a chumasc le chéile.</description>
+    <examples>
+      <ex xml:lang="ga">Más é do thoil é. Ós teach nua é.</ex>
+    </examples>
+    </body>
+  </error>
+  
+    <error id="msyn-tri-plus-defart">
+    <header>
+      <title xml:lang="en">Preposition "trí" before the definite article "an"</title>
+      <title xml:lang="ga">An réamhfhocal "trí" roimh an alt.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The preposition "trí" becomes "tríd" when it is located before the definite article "an".</description>
+      <description xml:lang="ga">Déantar "tríd" den réamhfhocal "trí" nuair a bhíonn sé roimh an alt "an".</description>
+    <examples>
+      <ex xml:lang="ga">Siúl isteach tríd an gcistin.</ex>
+    </examples>
+    </body>
+  </error>
+  
   <error id="typo">
     <header>
       <title xml:lang="en">Spelling error</title>
