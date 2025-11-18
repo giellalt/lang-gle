@@ -1550,13 +1550,13 @@ COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt 
 
 ##a rule to correct the error "tríd an bord" to "tríd an mbord", "tríd an geata" to "tríd an ngeata", etc. !!The rule has to be refined to fix "tríd an tsrón", etc., (feminine nouns beginning with S)!!
 	
-ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) OR (Noun Fem Com Sg DefArt) + <ComGen> IF
+ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(-1 Art)
 	(-2 ECLIPSE-TRID + Prep + Simp)
 	(0 ("<[bcfgpsBCFGPS].*>"r) LINK NOT 0 ("<[bcfgpsBCFGPS][hH].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &msyn-ecl-after-prep);
-
+COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
 ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg) IF
