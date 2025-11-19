@@ -633,6 +633,7 @@ LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
 LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula; 
 LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast; 
+LIST &msyn-hPref-after-i-prep-vowel = &msyn-hPref-after-i-prep-vowel ;
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
 LIST &msyn-i-mbliana = &msyn-i-mbliana ;
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
@@ -1518,7 +1519,7 @@ COPY:msyn-hPref-after-copula (hPref SUGGEST) EXCEPT (&msyn-hPref-after-copula) T
 
 COPY:msyn-hPref-after-copula (hPref SUGGEST) EXCEPT (&msyn-hPref-after-copula) TARGET (Adj &msyn-hPref-after-copula);
 
-LIST VOW-PREP = "chomh", "go", "le" ;
+LIST VOW-PREP = "chomh", "go", "le";
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
 	(-1 VOW-PREP)
@@ -1533,6 +1534,20 @@ ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Ge
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
 
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
+
+## "in" Prep Simp Vow 
+
+ADD:msyn-hPref-after-i-prep-vowel (&msyn-hPref-after-i-prep-vowel) TARGET ("i" Prep Simp) IF 
+	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+	
+	## Tá an leabhar i áit eile.
+	#$ Tá an leabhar in áit eile.
+	## Ní raibh siad i aghaidh an dlí.
+	#$ Ní raibh siad in aghaidh an dlí.
+	
+COPY:msyn-hPref-after-i-prep-vowel (Vow SUGGEST) EXCEPT (&msyn-hPref-after-i-prep-vowel) TARGET (&msyn-hPref-after-i-prep-vowel);
+
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> IF 
 	(-1 ("cá"))
