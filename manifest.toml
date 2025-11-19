@@ -22,11 +22,11 @@ legacy_product_codes = [
 
 [package.speller]
 name = "Irish"
-version = "0.1.1"
+version = "0.2.0"
 
 [package.grammar]
 name = "Irish"
-version = "0.1.0"
+version = "0.2.0"
 
 [package.tts-text-proc]
 name = "Irish"
