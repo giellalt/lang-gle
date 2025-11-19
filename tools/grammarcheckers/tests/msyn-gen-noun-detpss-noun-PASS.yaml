@@ -21,6 +21,8 @@ Tests:
 
 # This rule fails, since barr is imperative TODO: Find an authentic example, then fix grc-disambiguator
 
+  - "mála a {bhean}£{mhná}."
+
 
 # 3. When two nouns come together and there is a possessive adjective between the nouns,
 # the possessive adjective does not cancel the rule of the second noun being in the genitive case.
