@@ -3462,13 +3462,13 @@ Num
 ### Noun errors (Len vs. not Len) after prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" "<Le>" ("le" Prep Simp SUGGEST); 
+* LIST ECLIPSE-PREP = "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); 
 
 * LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; 
 * LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; 
 
 These prepositions always cause the nouns after them to be lenited:
-* LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					
+* LIST ART-LEN-PREP = "<ar>" "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					
 
 Noun errors (Ecl vs. not Ecl) after prepositions
 
@@ -3664,7 +3664,7 @@ Other gen tags:
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
 * LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;      
 * LIST &msyn-fada-o = &msyn-fada-o ;     
-* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	 
+* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	 
 * LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
 * LIST &msyn-inis-do = &msyn-inis-do ;     
 * LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
