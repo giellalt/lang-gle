@@ -600,6 +600,35 @@
     </body>
   </error>
   
+      <error id="msyn-hPref-after-prep">
+    <header>
+      <title xml:lang="en">The "h" prefix insertion before nouns beginning with vowels</title>
+      <title xml:lang="ga">An réimír "h" ag tús focail dar tús guta.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The letter "h" is inserted at the beginning of nouns beginning with a vowel after "chomh", "go", and "le".</description>
+      <description xml:lang="ga">Cuirtear an litr "h" roimh fhocail dar tús guta má bhíonn an focal ar lorg "chomh", "go", agus "le".</description>
+    <examples>
+      <ex xml:lang="ga">Tá Donncha chomh hard lena athair. Táimid inár suí le hais na tine. Bhí sé go héasca.</ex>
+    </examples>
+    </body>
+  </error>
+  
+   <error id="msyn-lenition-after-coppast">
+    <header>
+      <title xml:lang="en">Nouns after the copula past tense have to be lenited.</title>
+      <title xml:lang="ga">Séimhiú ar ainmfhocail ar lorg "ba".</title>
+    </header>
+    <body>
+      <description xml:lang="en">When a noun follows the copula in the past tense, "ba", the nouns have to be lenited.</description>
+      <description xml:lang="ga">Ní mór ainmfhocail ar lorg "ba" a shéimhiú.</description>
+    <examples>
+      <ex xml:lang="ga">Ba mhór an trua é. Ba chosúil lena chéile iad.</ex>
+    </examples>
+    </body>
+  </error>
+  
+   
   <error id="typo">
     <header>
       <title xml:lang="en">Spelling error</title>
