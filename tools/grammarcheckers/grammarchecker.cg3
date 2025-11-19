@@ -194,20 +194,7 @@ LIST Pot = Pot ;			   #!! * Pot
 LIST Cond = Cond ;			   #!! * Cond
 LIST Imprt = Imprt ;		   #!! * Imprt
 LIST ImprtII = ImprtII ;	   #!! * ImprtII
-LIST Sg1 = Sg1 (p1 sg) ;			   #!! * Sg1
-LIST Sg2 = Sg2 (p2 sg) ;			   #!! * Sg2
-LIST Sg3 = Sg3 (p3 sg) ;			   #!! * Sg3
-LIST Du1 = Du1 (p1 du) ;			   #!! * Du1
-LIST Du2 = Du2 (p2 du) ;			   #!! * Du2
-LIST Du3 = Du3 (p3 du) ;			   #!! * Du3
-LIST Pl1 = Pl1 (p1 pl) ;			   #!! * Pl1
-LIST Pl2 = Pl2 (p2 pl);			   #!! * Pl2
-LIST Pl3 = Pl3 (p3 pl);			   #!! * Pl3
 LIST Inf = Inf ;			   #!! * Inf
-LIST ConNeg = ConNeg ;		   #!! * ConNeg
-LIST Neg = Neg ;			   #!! * Neg
-LIST PrfPrc = PrfPrc ;		   #!! * PrfPrc
-LIST VGen = VGen ;			   #!! * VGen
 LIST PrsPrc = PrsPrc ;		   #!! * PrsPrc
 LIST Ger = Ger ;			   #!! * Ger
 LIST Sup = Sup ;			   #!! * Sup
@@ -413,9 +400,7 @@ SET NOT-V = WORD - Verb ; #!! * NOT-V
 #!! ### Sets for finiteness and mood
 # - - - - - - - - - -
 
-SET REAL-NEG = Neg - Sup ; #!! * REAL-NEG
 SET MOOD-V = Ind OR Pot OR Imprt OR ImprtII OR Cond OR (Neg Sup) ; #!! MOOD-V
-SET NOT-PRFPRC = WORD - PrfPrc ; #!! NOT-PRFPRC
 
 
 #!! ### Sets for person
@@ -568,7 +553,7 @@ SET BOC = S-BOUNDARY OR BOS ;
 SET BOC-PUNCT = BOC - ("-") - ("–") ;
 SET EOC = S-BOUNDARY OR EOS ;
 
-SET NP-BOUNDARY = BOS OR EOS OR REAL-CLB OR Inf OR VGen OR Sup OR PPRON-NOT-GEN OR Recipr OR Po OR Pr OR Pcle OR Interj OR CS OR CP OR @CVP ;
+SET NP-BOUNDARY = BOS OR EOS OR REAL-CLB OR Inf OR PPRON-NOT-GEN OR Recipr OR Po OR Pr OR Pcle OR Interj OR CS OR CP OR @CVP ;
 
 SET SV-BOUNDARY = S-BOUNDARY OR Inf OR Sup OR FMAINV ;
 
@@ -1278,7 +1263,7 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 
 ## with article "ag scríobh na litreach".
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp)) 			#LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag")) 		#LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
@@ -1286,32 +1271,32 @@ COPY:msyn-gen-vn-noun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt
 
 ## without article "ag scríobh litreach".
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun) TARGET (Com &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
-#ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
-	#(*-1 (Noun Com) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
-	#(NEGATE 0 (Gen Sg))
-	#(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
-	#(NEGATE -2 (Verb VTI));
-#COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
+	(*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-defart-noun) TARGET (Com Sg &msyn-gen-noun-defart-noun) IF (-1 (Art Def))(NEGATE 0 DefArt);
 
