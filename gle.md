@@ -3465,6 +3465,7 @@ The following prepositions cause the following noun to be eclipsed and there are
 * LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" "<Le>" ("le" Prep Simp SUGGEST); 
 
 * LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; 
+* LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; 
 
 These prepositions always cause the nouns after them to be lenited:
 * LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					
@@ -3730,7 +3731,7 @@ Template rule to delete A and modify B in A B strings:
 
 #### Rules for lenition
 
-**ADD:msyn-teastaigh-ó**: exchange prep "mé" with "ó" when following "teastaigh" IT WORKS
+**ADD:msyn-teastaigh-ó**: exchange pronoun with the preposition "ó" when following "teastaigh" IT WORKS
 
 **ADD:msyn-inis-do** ...
 
@@ -3783,7 +3784,7 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 
 **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
 
-**ADD:msyn-hPref-after-prep**: A rule to insert an h after certain prepositions 
+Rules to insert an h after the negative copula "ní" and certain prepositions 
 
 **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
 
