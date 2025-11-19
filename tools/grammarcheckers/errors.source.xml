@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE errors>
+
+<errors>
+    <defaults>
+    <default type="Grammar error">
+      <ids>
+       <e id="default"/>
+      </ids>
+    <header>
+      <title xml:lang="en">Grammatical error</title>
+      <title xml:lang="ga">Botún gramadaí</title>
+      </header>
+      <body>
+        <description xml:lang="ga">Tá an focal "$1" san fhoclóir, ach tá brí eile leis sa chomhthéacs seo.</description>
+        <description xml:lang="en">The word "$1" is in the dictionary, but it has a different meaning in this context.</description>
+      </body>
+    </default>
+    </defaults>
+        
+  <error id="msyn-gen-noun-noun">
+    <header>
+      <title xml:lang="ga">Ainmfhocail sa tuiseal ginideach</title>
+      <title xml:lang="en">Nouns in the genitive case</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a bhíonn dhá ainmfhocal le chéile, ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
+      <description xml:lang="en">When two nouns are together, the second noun must be in the genitive case.</description>
+    <examples>
+      <ex xml:lang="ga">Teach cúirte, mála scoile, bosca bruscair, ceadúnas tiomána.</ex>
+    </examples>
+    </body>
+  </error>
+  
+    <error id="msyn-gen-noun-defart-noun">
+    <header>
+      <title xml:lang="ga">Ainmfhocal cinnte sa tuiseal ginideach</title>
+      <title xml:lang="en">Defininte nouns in the genitive case</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a bhíonn dhá ainmfhocal le chéile agus an t-alt eatarthu, ní mór don dara hainmfhocal a bheith sa ghinideach.</description>
+      <description xml:lang="en">When two nouns are together with the article between them, the second noun must be in the genitive case.</description>
+    <examples>
+      <ex xml:lang="ga">Teach na cúirte, príomhoide na scoile, baile an tsagairt, leabhar na mná.</ex>
+    </examples>
+    </body>
+  </error>
+  
+    <error id="msyn-gen-vn-noun">
+    <header>
+      <title xml:lang="en">A genitive noun after a verbal noun</title>
+      <title xml:lang="ga">Ainmfhocal ginideach ar lorg ainmfhocal briathartha</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">The noun that follows a verbal noun must be in the genitive case.</description>
+      <description xml:lang="ga">Ní mór d'ainmfhocal a bheith sa ghinideach ar lorg ainmfhocal briathartha</description>
+    <examples>
+      <ex xml:lang="ga">Ag glanadh na fuinneoige. Ag scríobh an leabhair.</ex>
+    </examples>
+    </body>
+  </error>
+  
+  
+  
+  <error id="fixedcase-np">
+    <header>
+      <title xml:lang="en">Proper noun capital letter</title>
+      <title xml:lang="ga">Litir mhór le hainmfhocal cinnte</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Never change the case of proper nouns</description>
+      <description xml:lang="ga">Ná hathraigh cás ainmfhocail chinnte</description>
+    <examples>
+      <ex xml:lang="ga">An tUachtarán. Cumann na mBan.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="lex-tá-is">
+    <header>
+      <title xml:lang="en">Use "is", not "tá"</title>
+      <title xml:lang="ga">Úsáid "is", ní "tá"</title>
+    </header>
+    <body>
+      <description xml:lang="en">When "tá" has a first person pronoun to the right, use "is" and not "tá".</description>
+      <description xml:lang="ga">Nuair atáthar ag scríobh faoi rud atá buan, bain úsáid as an gcopail "is" .</description>
+    <examples>
+      <ex xml:lang="ga">Is bean láidir í. Is múinteoir é.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-ar-an-gcaife">
+    <header>
+      <title xml:lang="en">"Ar" and not "i" with coffee</title>
+      <title xml:lang="ga">"Ar" agus ní "i" le caife</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Milk and sugar ar put on the coffee, not into coffee</description>
+      <description xml:lang="ga">Cuirtear bainne agus siúcra ar an gcaife, ní chuirtear isteach sa chaife iad.</description>
+    <examples>
+      <ex xml:lang="ga">An gcuireann tú siúcra ar do chaife? Tá bainne ar an gcaife.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-ar-an-tae">
+    <header>
+      <title xml:lang="en">"Ar" and not "i" with "tae"</title>
+      <title xml:lang="ga">"Ar" agus ní "i" le "tae"</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Milk and sugar ar put on the tea, not into tea</description>
+      <description xml:lang="ga">Cuirtear bainne agus siúcra ar an tae, ní chuirtear isteach sa tae iad.</description>
+    <examples>
+      <ex xml:lang="ga">An gcuireann sé bainne ar an tae? Tá siúcra ar an tae.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-beag-is-fiú-de">
+    <header>
+      <title xml:lang="en">"De", not "dom", after "beag is fiú"</title>
+      <title xml:lang="ga">"De", ní "dom", i ndiaidh "beag is fiú"</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">"De" should be used instead of "do" after "beag is fiú"</description>
+      <description xml:lang="ga">Ba cheart "de" a úsáid in ionad "do" i ndiaidh "beag is fiú"</description>
+    <examples>
+      <ex xml:lang="ga">Beag is fiú a dhéanamh de dhuine. Ná déan beag is fiú díom.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-ecl-after-prep-sfem">
+    <header>
+      <title xml:lang="en">Eclipse after a preposition</title>
+      <title xml:lang="ga">Urú i ndiaidh réamhfhocail</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">With certain prepositions, eclipsis occurs.</description>
+      <description xml:lang="ga">Nuair a bhíonn réamhfhocail áirithe ann, déantar urú ar an ainmfhocal ar a lorg.</description>
+    <examples>
+      <ex xml:lang="ga">I mbarr, ar dtús, i gceannas</ex>
+    </examples>
+    </body>
+  </error>
+    <error id="msyn-lenition-after-um">
+    <header>
+      <title xml:lang="en">Lenition after the preposition um</title>
+      <title xml:lang="ga">Séimhiú ar lorg um</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">When there are nouns beginning with CDFGST following "um", those nouns have to be lenited.</description>
+      <description xml:lang="ga">Nuair a bhíonn an réamhfhocail "um" ann, déantar ainmfhocail dar tús CDFGST ar a lorg a shéimhiú.</description>
+    <examples>
+      <ex xml:lang="ga">Um thráthnón, an Coimisiún um Chaidreamh san Áit Oibre</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-fada-ó">
+    <header>
+      <title xml:lang="en">Fada buí and ó go together</title>
+      <title xml:lang="ga">Bíonn fada buí agus ó le chéile</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">When using the phrase "fada buí", the preposition "ó" must be used.</description>
+      <description xml:lang="ga">Nuair atáthar ag tagairt do "fada buí", ní mór an réamhfhocal "ó" a bheith leis.</description>
+    <examples>
+      <ex xml:lang="ga">Is fada buí uaim é a chreidiúint.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-h-after-fem-possessive-adjective">
+    <header>
+      <title xml:lang="en">Add title</title>
+      <title xml:lang="ga">Cuir teideal leis</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Add description</description>
+      <description xml:lang="ga">Cuir cur síos leis</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-ie.i.">
+    <header>
+      <title xml:lang="en">Irish i.e.</title>
+      <title xml:lang="ga">I.e. i nGaeilge</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">i.e. is .i. in Irish</description>
+      <description xml:lang="ga">An leagan Gaeilge de i.e., ná .i.</description>
+    <examples>
+      <ex xml:lang="ga">.i.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="msyn-prep-pron">
+    <header>
+      <title xml:lang="en">A rule to combine prepositions and pronounds</title>
+      <title xml:lang="ga">Riail chun réamhfhocail agus forainmneacha a chumasc</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">When a preposition and a pronoun come together, they must be combined.</description>
+      <description xml:lang="ga">Nuair a thagann réamhfhocal agus forainm le chéile, is gá iad a chumasc.</description>
+    <examples>
+      <ex xml:lang="ga">Ag + mé = agam, ar + sí = uirthi.</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="spell-conservatively">
+    <header>
+      <title xml:lang="en">Only suggest spellings of words that are not inside "quotes"</title>
+      <title xml:lang="ga">Only suggest spellings of words that are not inside "quotes"</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Only suggest spellings of words that are not inside "quotes"</description>
+      <description xml:lang="ga">Only suggest spellings of words that are not inside "quotes"</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="spell-it-all">
+    <header>
+      <title xml:lang="en">Add title</title>
+      <title xml:lang="ga">Cuir teideal leis</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">Add description</description>
+      <description xml:lang="ga">Cuir cur síos leis</description>
+    <examples>
+      <ex xml:lang="ga">...</ex>
+    </examples>
+    </body>
+  </error>
+  <error id="syn-a-before-verb-relativephrase">
+    <header>
+      <title xml:lang="en">"a" before verbs</title>
+      <title xml:lang="ga">"a" roimh bhriathair</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="en">The particle "a" is required before verbs.</description>
+      <description xml:lang="ga">Is gá an mhír "a" a chur roimh bhriathair.</description>
+    <examples>
+      <ex xml:lang="ga">An méid a dhéanann an tÚdarás.</ex>
+    </examples>
+    </body>
+  </error>
+  
+
+  <error id="msyn-noun-defart">
+    <header>
+      <title xml:lang="ga">Alt an ainmfhocail</title>
+      <title xml:lang="en">The article of the noun</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Má thagann an t-alt "$2" roimh an ainmfhocail, "$1" sa chás seo, ba cheart go mbeadh sé cinnte.</description>
+      <description xml:lang="en">If the article "$2" precedes the noun, "$1" in this case, it should be definite.</description>
+    <examples>
+      <ex xml:lang="ga">An t-uachtarán.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ar-a-haon-a-chlog">
+    <header>
+      <title xml:lang="ga">Ar agus an t-am</title>
+      <title xml:lang="en">Ar and the time</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Is ceart an réamhfhocal AR a úsáid nuair atáthar ag caint faoin am ar an gclog.</description>
+      <description xml:lang="en">The preposition AR should be used when talking about the time on the clock.</description>
+    <examples>
+      <ex xml:lang="ga">Ithfear an dinnéar ar a seacht a chlog.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-ar-an-aonach">
+    <header>
+      <title xml:lang="ga">Ar an aonach</title>
+      <title xml:lang="en">On the fair</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Bítear ar an aonach, ní ag an aonach.</description>
+      <description xml:lang="en">One is on the fair, not at the fair.</description>
+    <examples>
+      <ex xml:lang="ga">Bhí slua mór ar an aonach inniu.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-adj-gender">
+    <header>
+      <title xml:lang="ga">Ba cheart go n-aontódh an aidiacht le hinscne an ainmfhocail.</title>
+      <title xml:lang="en">The adjective should agree with the gender of the noun.</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Ní mór don aidiacht,"$1" sa chás seo, teacht le hinscne an ainmfhocail, "$2" sa chás seo.</description>
+      <description xml:lang="en">The adjective, "$1" in this case, must agree with the gender of the noun, "$2" in this case.</description>
+    <examples>
+      <ex xml:lang="ga">Beidh slua mór ar an bhfaiche mhór an Aoine bheag seo.</ex>
+    </examples>
+    </body>
+  </error>
+     <error id="msyn-lenition-after-ni">
+    <header>
+      <title xml:lang="ga">Séimhiú ar bhriathar ar lorg ní.</title>
+      <title xml:lang="en">The verb following ní has to be lenited.</title>
+      <references><ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Má bhíonn briathar, "$1" anseo, ar lorg "ní", ní mór é a shéimhiú.</description>
+      <description xml:lang="en">If a verb, here "$1", follows the particle "ní", it should be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Ní cheannaím, ní bhrísfear, ní dhúnfar, ní theastaíonn.</ex>
+    </examples>
+    </body>
+  </error>  
+    <error id="msyn-lenition-after-nior">
+    <header>
+      <title xml:lang="ga">Séímhiú ar lorg níor.</title>
+      <title xml:lang="en">The verb in past tense following níor has to be lenited.</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Ní mór briathar a bhíonn ar lorg níor a shéimhiú.</description>
+      <description xml:lang="en">A verb following níor has to be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Níor cheannaigh sé, níor bhríseadh, níor dhún sé, níor theastaigh uaithi.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-len-after-prep">
+    <header>
+      <title xml:lang="ga">Ainmfhocal séimhithe ar lorg an réamhfhocail</title>
+      <title xml:lang="en">Lenited noun following preposition</title>
+      <references><ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a bhíonn ainmfhocal, "$1", ar
+      lorg réamhfhocail, "$2", ba cheart é a shéimhiú.</description>
+      <description xml:lang="en">If a noun, here "$1", follows a
+      preposition, such as "$2", it should be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Roimh dheireadh na seachtaine.</ex>
+    </examples>
+    </body>
+  </error> 
+  <error id="msyn-teastaigh-ó">
+    <header>
+      <title xml:lang="ga">teastaigh ó</title>
+      <title xml:lang="en">teastaigh ó</title>
+      <references><ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Is é an réamhfhocal ó a thagann ar lorg an bhriathair teastaigh.</description>
+      <description xml:lang="en">The preposition ó follows the verb teastaigh.</description>
+    <examples>
+      <ex xml:lang="ga">Teastaíonn post nua uaim.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-inis-do">
+    <header>
+      <title xml:lang="en">Inis and do</title>
+      <title xml:lang="ga">Inis agus do</title>
+    </header>
+    <body>
+      <description xml:lang="en">"Do" not "de" is the correct preposition to use with the verb "inis".</description>
+      <description xml:lang="ga">Is é "do" seachas "de" an réamhfhocal ceart a théann leis an mbriathar "inis".</description>
+    <examples>
+      <ex xml:lang="ga">Inis don phríomhoide céard a tharla.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-cúpla-plnoun-sgnoun">
+    <header>
+      <title xml:lang="ga">Bíonn uimhir uatha ann ar lorg an fhocail cúpla</title>
+      <title xml:lang="en">The singular form follows the word cúpla</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Bíonn uimhir uatha ann ar lorg an fhocail cúpla.</description>
+      <description xml:lang="en">The singular form follows the word cúpla.</description>
+    <examples>
+      <ex xml:lang="ga">Cúpla lá, cúpla focal, cúpla bliain.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="msyn-i-rith-nom-gen">
+    <header>
+      <title xml:lang="ga">An<em>ginideach</em> ar lorg ainmfhocail ama.</title>
+      <title xml:lang="en">The genitive follows a noun of time.</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara hainmfhocal <em>sa ghinideach</em>.</description>
+      <description xml:lang="en">When two nouns come together, the second noun is in the <em>genitive</em>.</description>
+    <examples>
+      <ex xml:lang="ga">I rith na bliana, i rith na seachtaine, le linn an tsamhraidh, ar feadh an lae.</ex>
+    </examples>
+    </body>
+  </error>
+  
+  <error id="msyn-ecl-after-prep">
+    <header>
+        <title xml:lang="ga">Tá urú in easnamh</title>
+        <title xml:lang="en">Eclipsis is missing</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a bhíonn réamhfhocal roimh ainmfhocal, "$1" sa chás seo, ní mór urú a bheith ar an ainmfhocal.</description>
+      <description xml:lang="en">When a preposition comhes before a noun, "$1" in this case, the noun must be eclipsed.</description>
+    <examples>
+      <ex xml:lang="ga">I mbarr, i gceannas, ar dtús.</ex>
+    </examples>
+    </body>
+  </error>
+  
+  <error id="msyn-possadj-nom-gen"><!-- fix this, add $1, $2, check
+					noun vs. adj in rule
+				   Also, the rules targets final noun
+				   in Noun.Com Det.Poss Noun.Com, thus
+				   the nouns do not come together, and
+				   there is no adjective here. -->
+    <header>
+      <title xml:lang="ga">An ginideach ar lorg na haidiachta sealbhaí</title>
+      <title xml:lang="en">The genitive follows the possessive adjective</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+        <description xml:lang="ga">Nuair a thagann dhá ainmfhocal le
+	chéile, "$2" agus "$1", bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach an ginideach ar ceal.</description>
+        <description xml:lang="en">When two nouns, here "$2" and "$1", come together, the second noun should be in the genitive. The possessive adjective does not cancel the genitive.</description>
+    <examples>
+      <ex xml:lang="ga">Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.</ex>
+    </examples>
+    </body>
+  </error>
+
+
+  <error id="msyn-lenition-after-possessive-adjective">
+    <header>
+        <title xml:lang="ga">Séimhiú ar lorg aidiachta sealbhaí</title>
+        <title xml:lang="en">Lenition after possessive adjective</title>
+      <references> <ref n=""/></references>
+    </header>
+    <body>
+      <description xml:lang="ga">Nuair a bhíonn aidiacht shealbhach (mo/do/a fireann) roimh ainmfhocal, "$1" sa chás seo, ba chóir an t-ainmfhocal a shéimhiú.</description>
+      <description xml:lang="en">When a determiner, here "($1)", preceedes a noun, here "($2)", the noun should be lenited.</description>
+    <examples>
+      <ex xml:lang="ga">Mo theach, do mhadra, a charr.</ex>
+    </examples>
+    </body>
+  </error>
+ 
+  
+  <error id="ellipsis">
+    <header>
+      <title xml:lang="en">Ellipsis</title>
+      <title xml:lang="ga">Comhartha focalbhá</title>
+    </header>
+    <body>
+      <description xml:lang="en">You have used three periods "$1". Here an ellipsis "…" would have been a better choice.</description>
+      <description xml:lang="ga">Tá tú tar éis trí phonc "$1" a úsáid. B'fhearr comhartha focalbhá "…" anseo.</description>
+    </body>
+  </error>
+
+
+   <error id="msyn-fem-article">
+    <header>
+      <title xml:lang="en">Correcting the article for feminine nouns</title>
+      <title xml:lang="ga">An leagan baininscneach den alt</title>
+    </header>
+    <body>
+      <description xml:lang="en">When a feminine noun is in the genitive case, it must have the feminine form of the article "na".</description>
+      <description xml:lang="ga">Nuair is ainmfhocal baininscneach sa ghinideach atá ann, ní mór an leagan baininscneach den alt "na" a bheith ann.</description>
+          <examples>
+      <ex xml:lang="ga">Tús na bliana, lár na páirce.</ex>
+    </examples>
+    </body>
+  </error>
+  
+  <error id="use-guillemets">
+    <header>
+      <title xml:lang="en">Guillemets</title>
+      <title xml:lang="ga">Guillemets</title>
+    </header>
+    <body>
+      <description xml:lang="en">Use double-angle quotation marks</description>
+      <description xml:lang="ga">Úsáid comharthaí athfhriotail uillinne dúbailte</description>
+    </body>
+  </error>
+  
+  
+   <error id="lex-dairire">
+    <header>
+      <title xml:lang="en">Dáiríre error.</title>
+      <title xml:lang="ga">Dáiríre.</title>
+    </header>
+    <body>
+      <description xml:lang="en">"i ndáiríre" is a mistake based on "in earnest" in English. The correct phrase is simply "dáiríre".</description>
+      <description xml:lang="ga">Is botún é "i ndáiríre" bunaithe ar "in earnest" an Bhéarla. Is é "dáiríre" amháin an leagan ceart.</description>
+    <examples>
+      <ex xml:lang="ga">Dáiríre.</ex>
+    </examples>
+    </body>
+    </error>
+    
+    <error id="msyn-ce-plus-defart">
+    <header>
+      <title xml:lang="en">Cé and an fused.</title>
+      <title xml:lang="ga">Cé agus an cumasctha le chéile.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The questioning particle "cé" and the definite artilce "an" fuse to become "cén".</description>
+      <description xml:lang="ga">Déantar an mhír cheisteach "cé" agus an t-alt "an" a chumasc le chéile chun "cén" a scríobh.</description>
+    <examples>
+      <ex xml:lang="ga">Cén fáth a bhfuil an doras ar oscailt?</ex>
+    </examples>
+    </body>
+  </error>
+    
+    <error id="msyn-prep-detposs">
+    <header>
+      <title xml:lang="en">Combining prepositions and possessive adjectives</title>
+      <title xml:lang="ga">Réamhfhocail agus aidiachtaí sealbhacha a chumasc.</title>
+    </header>
+    <body>
+      <description xml:lang="en">Some prepositions and possessive adjectives have to be combined.</description>
+      <description xml:lang="ga">Ní mór roinnt de na réamhfhocail agus na haidiachtaí sealbhacha a chumasc.</description>
+    <examples>
+      <ex xml:lang="ga">Faoina, gona, ina, lena, óna, trína.</ex>
+    </examples>
+    </body>
+  </error>
+
+    <error id="msyn-prepart-prep">
+    <header>
+      <title xml:lang="en">Combining prepositions and the definite article</title>
+      <title xml:lang="ga">Réamhfhocail agus an t-alt a chumasc.</title>
+    </header>
+    <body>
+      <description xml:lang="en">Some prepositions and the definite article "an" have to be combined.</description>
+      <description xml:lang="ga">Ní mór roinnt de na réamhfhocail agus an t-alt "an" a chumasc.</description>
+    <examples>
+      <ex xml:lang="ga">Den, don, faoin, ón.</ex>
+    </examples>
+    </body>
+  </error>
+
+  <error id="lex-conj-plus-copula">
+    <header>
+      <title xml:lang="en">Combining conjunctions and the copula</title>
+      <title xml:lang="ga">Conaisc agus an chopail a chumasc.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The conjuctions are combined with the copula "is".</description>
+      <description xml:lang="ga">Déantar na cónaisc agus an chopail "is" a chumasc le chéile.</description>
+    <examples>
+      <ex xml:lang="ga">Más é do thoil é. Ós teach nua é.</ex>
+    </examples>
+    </body>
+  </error>
+  
+    <error id="msyn-tri-plus-defart">
+    <header>
+      <title xml:lang="en">Preposition "trí" before the definite article "an"</title>
+      <title xml:lang="ga">An réamhfhocal "trí" roimh an alt.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The preposition "trí" becomes "tríd" when it is located before the definite article "an".</description>
+      <description xml:lang="ga">Déantar "tríd" den réamhfhocal "trí" nuair a bhíonn sé roimh an alt "an".</description>
+    <examples>
+      <ex xml:lang="ga">Siúl isteach tríd an gcistin.</ex>
+    </examples>
+    </body>
+  </error>
+  
+      <error id="msyn-hPref-after-prep">
+    <header>
+      <title xml:lang="en">The "h" prefix insertion before nouns beginning with vowels</title>
+      <title xml:lang="ga">An réimír "h" ag tús focail dar tús guta.</title>
+    </header>
+    <body>
+      <description xml:lang="en">The letter "h" is inserted at the beginning of nouns beginning with a vowel after "chomh", "go", and "le".</description>
+      <description xml:lang="ga">Cuirtear an litr "h" roimh fhocail dar tús guta má bhíonn an focal ar lorg "chomh", "go", agus "le".</description>
+    <examples>
+      <ex xml:lang="ga">Tá Donncha chomh hard lena athair. Táimid inár suí le hais na tine. Bhí sé go héasca.</ex>
+    </examples>
+    </body>
+  </error>
+  
+   <error id="msyn-lenition-after-coppast">
+    <header>
+      <title xml:lang="en">Nouns after the copula past tense have to be lenited.</title>
+      <title xml:lang="ga">Séimhiú ar ainmfhocail ar lorg "ba".</title>
+    </header>
+    <body>
+      <description xml:lang="en">When a noun follows the copula in the past tense, "ba", the nouns have to be lenited.</description>
+      <description xml:lang="ga">Ní mór ainmfhocail ar lorg "ba" a shéimhiú.</description>
+    <examples>
+      <ex xml:lang="ga">Ba mhór an trua é. Ba chosúil lena chéile iad.</ex>
+    </examples>
+    </body>
+  </error>
+  
+   
+  <error id="typo">
+    <header>
+      <title xml:lang="en">Spelling error</title>
+      <title xml:lang="ga">Earráid litrithe</title>
+    </header>
+    <body>
+      <description xml:lang="en">This word is not in the dictionary</description>
+      <description xml:lang="ga">Níl an focal sin san fhoclóir</description>
+    </body>
+  </error>
+
+  
+  
+</errors>
