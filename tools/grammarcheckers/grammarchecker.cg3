@@ -259,14 +259,14 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST ECLIPSE-PREP = "<ar>" ("ar" Prep Simp SUGGEST) "<Ar>" "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" "<Le>" ("le" Prep Simp SUGGEST); #!!= * @CODE@
+LIST ECLIPSE-PREP = "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); #!!= * @CODE@
 #  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<thar>" "<trí>" "<um>"
 
 LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; #!!= * @CODE@
 LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; #!!= * @CODE@
 
 #!! These prepositions always cause the nouns after them to be lenited:
-LIST ART-LEN-PREP = "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					#!!= * @CODE@
+LIST ART-LEN-PREP = "<ar>" "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					#!!= * @CODE@
 
 #!! Noun errors (Ecl vs. not Ecl) after prepositions
 # Prepositions that do not lenite nouns: "<ag>" "<i>" "<le>" "<as>" "<chuig>" "<thar>" "<um>"
@@ -630,9 +630,10 @@ LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     #!!= * @CODE@ 
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
-LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article;	#!!= * @CODE@ 
-LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula; 
-LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast; 
+LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	#!!= * @CODE@ 
+LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; 
+LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; 
+LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ;
 LIST &msyn-hPref-after-i-prep-vowel = &msyn-hPref-after-i-prep-vowel ;
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
 LIST &msyn-i-mbliana = &msyn-i-mbliana ;
@@ -934,6 +935,7 @@ COPY:msyn-no-len-after-prep (SUGGEST) EXCEPT (Len &msyn-no-len-after-prep) TARGE
 ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len-after-prep));
 	
 	## Tá fiche duine ar mheitheal.
+	#$ Tá fiche duine ar meitheal.
 	## Tá mo chara ar mheisce.
 	#$ Ar mhuir na beatha.
 	## Tá an ceol sin thar bharr.
@@ -1012,7 +1014,7 @@ ADD:msyn-lenition-after-um (&msyn-lenition-after-um) TARGET (Noun) IF
 	(0 ("<[cdfgstCDFGST].*>"r));
 COPY:msyn-lenition-after-um (Len SUGGEST) EXCEPT (&msyn-lenition-after-um) TARGET (&msyn-lenition-after-um); 
 
-    	
+   	
 ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) IF
 	(-1 ECLIPSE-PREP + (Prep Simp))
 	(0 ("<[bcdfgpstBCDFGPST].*>"r))
@@ -1121,7 +1123,6 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
 	(NEGATE 0 Verbal)
 	(NEGATE -2 Verb OR ("é"))
-	(NEGATE -2 Prep)                      # ar bheagán breis
 	(NEGATE -1 MODIFYERNOUN)              # agus cuid lucht
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)  # óg darbh ainm Éadbhard Ó Cathaoir
 	;
@@ -1277,7 +1278,7 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 
 ## with article "ag scríobh na litreach".
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art)) 			#LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp)) 			#LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
@@ -1285,34 +1286,34 @@ COPY:msyn-gen-vn-noun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt
 
 ## without article "ag scríobh litreach".
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun) TARGET (Com &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
-ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
-	(*-1 (Noun Com) BARRIER (*) - Art OR (Prep Art) LINK NEGATE -1 (Art Sg Def))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
-	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
+#ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Gen Weak Pl) - Ecl - DefArt IF
+	#(*-1 (Noun Com) BARRIER (*) - Art OR ("ag" Prep Simp) LINK NEGATE -1 (Art Sg Def))
+	#(NEGATE 0 (Gen Sg))
+	#(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	#(NEGATE -2 (Verb VTI));
+#COPY:msyn-gen-vn-noun (Gen Pl SUGGEST) EXCEPT (Weak Pl &msyn-gen-vn-noun) AFTER Masc TARGET (Masc Gen Weak Pl &msyn-gen-vn-noun);
 
-COPY:msyngen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyngen-noun-defart-noun) TARGET (Com Sg &msyngen-noun-defart-noun) IF (-1 (Art Def))(NEGATE 0 DefArt);
+COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-defart-noun) TARGET (Com Sg &msyn-gen-noun-defart-noun) IF (-1 (Art Def))(NEGATE 0 DefArt);
 
 COPY:msyn-gen-noun-defart-noun (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref &msyn-gen-noun-defart-noun) AFTER Masc TARGET (Masc Gen Sg hPref &msyn-gen-noun-defart-noun)(NEGATE 0 DefArt);
 	## Chuaigh na saighdiúirí isteach i mbialann na hoifigigh.
@@ -1350,7 +1351,6 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	#$ An tsráid. - correct
 	## an asal. - incorrect
 	#$ an t-asal. - correct
-	#$ Ar an chaife. - correct
 	
 # Speller suggestions rule – add SUGGESTWF to any spelling suggestion
 # that we actually want to suggest to the user.
@@ -1519,7 +1519,13 @@ COPY:msyn-hPref-after-copula (hPref SUGGEST) EXCEPT (&msyn-hPref-after-copula) T
 
 COPY:msyn-hPref-after-copula (hPref SUGGEST) EXCEPT (&msyn-hPref-after-copula) TARGET (Adj &msyn-hPref-after-copula);
 
-LIST VOW-PREP = "chomh", "go", "le";
+ADD:msyn-hPref-after-neg-imp (&msyn-hPref-after-neg-imp) TARGET (Verb VTI Vow Imper) IF 
+	(-1 (Part Vb Neg Imp))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+COPY:msyn-hPref-after-neg-imp (Neg SUGGEST) EXCEPT (msyn-hPref-after-neg-imp) TARGET (msyn-hPref-after-neg-imp);
+
+LIST VOW-PREP = "chomh", "go", "le" "ná";
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
 	(-1 VOW-PREP)
