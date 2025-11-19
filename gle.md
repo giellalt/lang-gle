@@ -3398,20 +3398,7 @@ Num
 * Cond
 * Imprt
 * ImprtII
-* Sg1
-* Sg2
-* Sg3
-* Du1
-* Du2
-* Du3
-* Pl1
-* Pl2
-* Pl3
 * Inf
-* ConNeg
-* Neg
-* PrfPrc
-* VGen
 * PrsPrc
 * Ger
 * Sup
@@ -3590,9 +3577,7 @@ any word
 
 #### Sets for finiteness and mood
 
-* REAL-NEG
 MOOD-V
-NOT-PRFPRC
 
 #### Sets for person
 
