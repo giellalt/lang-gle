@@ -698,9 +698,20 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg))(NOT 0 Fem) ;
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg) TARGET (Masc &msyn-adj-gender);
-ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));
-    ## An fhuinneog beag - INCORRECT
+ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));   	
+    	## An fhuinneog beag - INCORRECT
 	#$ An fhuinneog bheag - CORRECT
+	
+	##a rule to ensure a plural adjective is matched with a plural noun MASCULINE
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Masc Com Pl)) ;
+COPY:msyn-pl-noun-pl-adj (Adj Com Pl SUGGEST) EXCEPT (&msyn-pl-noun-pl-adj) TARGET (&msyn-pl-noun-pl-adj);
+
+	##FEMININE
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (-1 (Noun Com Pl)) ;
+COPY:msyn-pl-noun-pl-adj (Adj Fem Com NotSlen Pl SUGGEST) EXCEPT (&msyn-pl-noun-pl-adj) TARGET (&msyn-pl-noun-pl-adj);
+ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));	
+	
+	
 
 	#!! ## Prepositions and pronouns fused
 	# -------------------------------------
@@ -942,8 +953,6 @@ ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Verb Cond CM) IF
 	(-1 (Conj Subord))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-da (Verb VI Cond SUGGEST) EXCEPT (&msyn-ecl-after-da) TARGET (&msyn-ecl-after-da);
-
-#Verb VTI 
  
 ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) IF
 	(-1 ("go") or ("Go"))
@@ -1220,9 +1229,8 @@ ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Com Sg DefArt) IF
 	(NEGATE -4 (Verb VTI));
 COPY:msyn-gen-noun-adj (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-adj) TARGET (&msyn-gen-noun-adj);
 
-#$  Príomhoide an scoil beag.  # msyn-gen-noun-defart-noun-adj
-#$ Príomhoide na scoile beag.
-## Príomhoide na scoile bige
+##  Príomhoide an scoil beag.  # msyn-gen-noun-defart-noun-adj
+#$  Príomhoide na scoile bige
 
 # --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
 ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-noun-defart-noun) OR (Adj));
@@ -1254,12 +1262,12 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 
 #!! #### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
 
-	##ag scríobh litir INCORRECT
-	#$ag scríobh litreach CORRECT
+	## ag scríobh litir INCORRECT
+	#$ ag scríobh litreach CORRECT
 	## ag glanadh an t-urlár INCORRECT
 	#$ ag glanadh an urláir. CORRECT
-	##ag glanadh an fhuinneog INCORRECT.
-	#$ag glanadh na fuinneoige CORRECT.
+	## ag glanadh an fhuinneog INCORRECT.
+	#$ ag glanadh na fuinneoige CORRECT.
 
 ## with article "ag scríobh na litreach".
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
@@ -1390,9 +1398,9 @@ ADDRELATION ($2 LEFT) (Verb &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
 	## An ceol sheinneann sé gach lá agus é i mbun oibre.
 	## An obair {rinne} an bainisteoir.
-	## Sin an cleas céanna d'imir sé orm.
-	## Tá sé ar intinn aici é sin {dhéanamh}.
-	## Sin an obair {chríochnófar} amárach
+	## Sin an cleas céanna a d'imir sé orm.
+	## Tá sé ar intinn aici é sin a {dhéanamh}.
+	## Sin an obair a {chríochnófar} amárach
 	
 
 ADD:lex-ar-an-aonach (&lex-ar-an-aonach) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("an aonach") BARRIER (*) - (Noun Com)) ;
@@ -1416,14 +1424,13 @@ COPY:lex-a-haon-a-chlog ("ar" SUGGEST) EXCEPT ("ag" &lex-a-haon-a-chlog) TARGET 
 	#$ Ar a haon a chlog. - correct ("ar" on)
 
 #!! **ADD:lex-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
-	#$ Bainne a chur ar an tae.		CORRECT
-	#$ Bainne a chur ar do chuid tae.	CORRECT
-	## Bainne a chur sa tae.			INCORRECT
-	## Bainne a chur i mo/do/a/ár/bhur/a thae/tae/dtae. INCORRECT
-	## An gcuireann tú bainne i do thae? - Do you put milk in your tea?
-	#$ An gcuireann tú bainne ar do thae? - Do you put milk on your tea?
-	## Ar mhaith leat bainne i dtae do mhic? - Would you like milk in your son's tea?
-	##  INCORRECT
+	#$ Bainne a chur ar an tae.				CORRECT
+	#$ Bainne a chur ar do chuid tae.			CORRECT
+	## Bainne a chur sa tae.				INCORRECT
+	## Bainne a chur i mo/do/a/ár/bhur/a thae/tae/dtae. 	INCORRECT
+	## An gcuireann tú bainne i do thae? - Do you put milk in your tea? INCORRECT
+	#$ An gcuireann tú bainne ar do thae? - Do you put milk on your tea? CORRECT
+	## Ar mhaith leat bainne i dtae do mhic? - Would you like milk in your son's tea? INCORRECT
 
 LIST CAIFE = "caife" "tae" "gcaife" "chaife" "dtae";
 
@@ -1464,12 +1471,13 @@ ADD:msyn-prepart-prep (&msyn-prepart-prep) TARGET PREPART IF
 ADD:msyn-prepart-prep (&msyn-prepart-prep) TARGET (Art Sg Def) IF 
 	(-1 (Prep &msyn-prepart-prep));
 	
-	## Tá an mála faoi an bord - under the table INCORRECT
+	## Tá an mála faoi an bord INCORRECT
 	#$ Tá an mála faoin mbord CORRECT
 	
 ADDRELATION (DELETE1) (Prep &msyn-prepart-prep) TO (1 (Art &msyn-prepart-prep));
 
 COPY:msyn-prepart-prep (Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-prepart-prep);	
+
 
 ## a rule to correct "i an" to "san"
 
@@ -1619,7 +1627,7 @@ ADDRELATION:msyn-ecl-after-prep ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &msyn-ecl
 COPY:msyn-ecl-after-prep (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep) OR (DefArt &msyn-ecl-after-prep) OR (Len &msyn-ecl-after-prep) TARGET (&msyn-ecl-after-prep);
 
 
-##a rule to correct the error "le an bord" to "leis an mbord", "le an fear" to "leis an bhfear", etc. !!The rule has to be refined to fix "tríd an tsrón", etc., (feminine nouns beginning with S)!!
+##a rule to correct the error "le an bord" to "leis an mbord", "le an fear" to "leis an bhfear", etc.
 	
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(-1 Art)
@@ -1657,7 +1665,13 @@ COPY:msyn-ce-plus-defart (Det Q Art Sg SUGGEST) EXCEPT (Cop Pro Q) TARGET (&msyn
 ADD:lex-chomh (&lex-chomh) TARGET ("comh" Adv Its) OR ("Comh" Adv Its) ;
 COPY:lex-chomh (Adv Its SUGGEST) EXCEPT ("comh" Adv Its) TARGET (&lex-chomh) ;
 
-##ADD:msyn-tóin-poill (&msyn-tóin-poill) TARGET ("poll" Com Sg) OR ("poll" Gen Weak Pl) IF (-1 ("tóin")) ;
-#COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-tóin-poill) ;
-#COPY:msyn-tóin-poill (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl) TARGET (&msyn-tóin-poill) ;
+## We need a rule to fuse "mo" and vowels beginning with "fh", e.g., mo fhear becomes m'fhear, do fhear become d'fhear, do iníon becomes d'iníon, etc.
+
+##Léim sé isteach san fharraige -> it should be léim sé AMACH san fharraige.
+ADD:lex-amach-farraige (&lex-amach-farraige) TARGET (Adv Dir) IF 
+	(1 ("san" Prep Simp Sg)) 
+	(2 ("fharraige" Fem Com Len)) ;
+COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TARGET (&lex-amach-farraige);
+
+
 
