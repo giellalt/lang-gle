@@ -837,9 +837,9 @@ COPY:msyn-len-after-prep ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn
 
 #i bliana -> i mbliana rule.
 ADD:msyn-i-mbliana (&msyn-i-mbliana) TARGET ("bliain" Noun Fem Com Pl) IF (-1 ("i" Prep Simp)) ;
-COPY:msyn-i-mbliana ("bliain" Noun Fem Gen Sg Ecl SUGGEST) EXCEPT (Noun Fem Gen Sg DefArt &msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
-
-##de bharr sin - #$dá bharr sin
+COPY:msyn-i-mbliana (Ecl SUGGEST) EXCEPT (&msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
+	## Beidh toghchán i mbliana.
+	##de bharr sin - #$dá bharr sin
 
 ADD:lex-da-bharr-sin (&lex-da-bharr-sin) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
 COPY:lex-da-bharr-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-da-bharr-sin) TARGET (Art &lex-da-bharr-sin) IF (1 (Noun Fem)) ;
