@@ -697,9 +697,9 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 #!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg))(NOT 0 Fem) ;
-COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg &msyn-adj-gender) TARGET (Masc &msyn-adj-gender);
-ADDRELATION:msyn-adj-gender ($2) (Noun) FROM (1 Adj LINK 0 (&msyn-adj-gender));
-        ## An fhuinneog beag - INCORRECT
+COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg) TARGET (Masc &msyn-adj-gender);
+ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));
+    ## An fhuinneog beag - INCORRECT
 	#$ An fhuinneog bheag - CORRECT
 
 	#!! ## Prepositions and pronouns fused
