@@ -7,9 +7,17 @@
 # (2) REMOVE UNWANTED ECLIPSED VOCATIVES
 # there should be no Voc form with Eclipsis 
 ~$[%+Voc ?* %+Pl %+Ecl]
+.o.
+
+# (3) REMOVE UNWANTED DefArt FROM LENITED COM/GEN SG nouns starting with [d|t]  (s becomes ts, l and n can't be lenited)
+# EUD Nov 2025
+# Feminine nouns (common case, singular) not starting with [d|t] are lenited following the definite article 'an' (the) and receive +DefArt tag
+# Masculine nouns (genitive case, singular) not starting with [d|t] are lenited following the definite article 'an' (the) and receive +DefArt tag
+# remove overgeneration of DefArt tag from these categories of noun which start with [d|t]
+~$[.#.[d|t] ?* %+Sg %+DefArt]
 
 .o.
-# (3) FIX SOME STRINGS WHICH WERE GENERATED ACCORDING TO THE GENERAL RULES BUT 
+# (4) FIX SOME STRINGS WHICH WERE GENERATED ACCORDING TO THE GENERAL RULES BUT 
 #     WHICH ARE IN FACT IRREGULAR
 
 ~$[[{tonn} %+Noun %+Fem %+Gen %+Pl]		! (d)tonnta - doesn't append "ta"
