@@ -13,9 +13,11 @@ LEXICON Determiners
 mo+Det+Poss+1P+Sg:mo		#;	! my
 !mo+Det+Poss+1P+Sg+NG:m'		#;	! my
 mo+Det+Poss+1P+Sg+Short:m'		#;	! my  - changed +NG to +Short (as per Trond) for m' before a vowel
+mo+Det+Poss+1P+Sg+Short:m’		#;	! my with curly apos ’
 do+Det+Poss+2P+Sg:do		#;	! your
 !do+Det+Poss+2P+Sg+NG:d'		#;	! your
 do+Det+Poss+2P+Sg+Short:d'		#;	! your - changed +NG to +Short (as per Trond for m' for d' before a vowel
+do+Det+Poss+2P+Sg+Short:d’		#;	! your with curly apos ’
 do+Det+Poss+2P+Sg+NG:t'		#;	! your Bardic Apr 2019
 do+Det+Poss+2P+Sg+NG:th'		#;	! your Bardic Apr 2019
 ár+Det+Poss+1P+Pl:ár			#;	! our
@@ -78,6 +80,7 @@ sin+Det+Dem:sin			#;	! that
 sin+CM+Det+Dem+NG:san		#;	! that
 !seo+Det+Dem+NG:s'			#;	! seo (or sin?) e.g. teach s'againne 
 seo+Det+Dem+Short:s'			#;	! seo (or sin?) e.g. teach s'againne - shanged to +Short as for m' and d'
+seo+Det+Dem+Short:s’			#;	! seo (or sin?) with curly apos ’
 siúd+Det+Dem:siúd		#;	! those
 úd+Det+Dem:úd			#;	! (those?) yonder
 ! contextual tagged as demonstrative for now at least ...

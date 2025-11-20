@@ -21,7 +21,7 @@ set need-separators off
 
 Define lexmorph @bin"analyser_relabelled-gramcheck-gt-desc.hfst" ;
 
-Define prefixes_v [ [ {m'} | {d'} | {s'} | {b'} | {M'} | {D'} | {S'} | {B'} ] .o. lexmorph
+Define prefixes_v [ [ [ m | d | s | b | M | D | S | B ] [ ' | ’ ] ] .o. lexmorph
                   [ 0:"@PMATCH_INPUT_MARK@" | 0:"@PMATCH_BACKTRACKING@" ]
                 ] ;
 
