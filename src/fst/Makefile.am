@@ -156,6 +156,18 @@ endif # CAN_FOMA
 				 save stack $@\n\
 				 quit\n" | $(XFST_TOOL)
 
+# FIXME: better place for this 
+.generated/generator-gramcheck-gt-norm.hfst: .generated/generator-gramcheck-gt-norm.tmp.hfst \
+											 orthography/urucaps.compose.hfst
+	hfst-compose -F .generated/generator-gramcheck-gt-norm.tmp.hfst \
+		orthography/urucaps.compose.hfst -o $@
+
+.generated/analyser-gramcheck-gt-desc.hfst: .generated/analyser-gramcheck-gt-desc.tmp.hfst \
+											orthography/urucaps.compose.hfst
+	hfst-compose -F .generated/analyser-gramcheck-gt-desc.tmp.hfst \
+		orthography/urucaps.compose.hfst |\
+		hfst-invert -o $@
+
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######
 ##################################################################
