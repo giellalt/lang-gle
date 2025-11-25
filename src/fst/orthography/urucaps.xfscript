@@ -24,17 +24,17 @@ define ntVowel %- a (->) A, %- e (->) E, %- i (->) I, %- o (->) O, %- u (->) U,
 define hVowel a (->) A, e (->) E, i (->) I, o (->) O, u (->) U, 
 á (->) Á, é (->) É, í (->) Í, ó (->) Ó, ú (->) Ú || .#. h  _ ;
 
-push uruB
-push uruC
-push uruD
-push uruG
-push uruF
-push uruG
-push uruP
-push uruS
-push uruT
-push ntVowel
-push hVowel
+!push uruB
+!push uruC
+!push uruD
+!push uruG
+!push uruF
+!push uruG
+!push uruP
+!push uruS
+!push uruT
+!push ntVowel
+!push hVowel
 
 !! NOW COMPOSED IN LOOKUP.SCRIPT
 
