@@ -360,7 +360,7 @@ Other gen tags:
 * LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
 * LIST &lex-ar-an-tae = &lex-ar-an-tae;     
 * LIST &lex-tá-is = &lex-tá-is ;       
-* LIST &msyn-adj-gender = &msyn-adj-gender ;       
+* LIST &msyn-adj-gender = &msyn-adj-gender ;      
 * LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
 * LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
@@ -408,6 +408,8 @@ Here ends the list and set section
 ## Gender errors in adjectives
 
 **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
+
+**RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 
 ## Prepositions and pronouns fused
 
