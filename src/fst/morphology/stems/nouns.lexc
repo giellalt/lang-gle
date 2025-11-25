@@ -253,6 +253,7 @@ tionchar	Nm1-1;	!
 tom		Nm1-1;	!
 triúr		Nm1-1;	!
 turas		Nm1-1;	!
+tUachtarán	Nm1-1;	!
 uachtarán	Nm1-1;	!
 údar		Nm1-1;	!
 údarás		Nm1-1;	!
@@ -2563,7 +2564,7 @@ fothoghchán	Nm1-1;	! by-election
 seachród	Nm1-1;	! by-road, by-pass
 cábán	Nm1-1;	! cabin
 bothán	Nm1-1;	! cabin; shed, coop
-caibinéad	Nm1-1;	! cabinet
+caibinéad	Nf1-1;	! cabinet
 cachtas	Nm1-1;	! cactus
 daltas	Nm1-1;	! cadetship
 carn	Nm1-1;	! cairn; heap, pile; great
@@ -7941,7 +7942,7 @@ búmaraing	Nf2-7;	! boomerang
 cabaireacht	Nf3-SINGULAR;	! babbling; loquacity
 cadráil	Nf3-SINGULAR;	! chattering; gossip
 cadóg	Nf2-1;	! haddock
-caibidil:caibidl	Nf2-7;	! gs -dle, pl -dlí
+caibidil 	Nf2-7;	! chapter
 caibléir	Nm3-1;	! cobbler
 caibléireog	Nf2-1;	! cobbler
 caidéis	Nf2-SINGULAR;	! inquisitiveness, ~ a chur
@@ -17755,6 +17756,7 @@ cáfall		Nm1-1;	!	(gs & npl -aill, gpl ~)
 cágaire		Nm4-2;	!	(gs ~, pl -rí)
 caibeálaí		Nm4-4;	!	(gs ~, pl -aithe)
 caibeallán		Nm1-1;	!	(gs & npl -áin, gpl ~)
+caibidil		Nf2-7;	!	(gs -dle, pl -dlí)
 caibidleoir		Nm3-1;	!	(gs -ora, pl ~í)
 caibín		Nm4-1;	!	(gs ~, pl ~í)
 caibíneach		Nm1-1;	!	(gs & npl -nigh, gpl ~)
@@ -25205,9 +25207,10 @@ cágaíl		Nf3-SINGULAR;	!	(gs -íola)
 caí		Nf4-SINGULAR;	!	(gs ~)
 caib		Nf2-6;	!	(gs ~e, pl ~eanna)
 caibhdeog		Nf2-1;	!	(gs -oige, npl ~a, gpl ~)
+caibidil		Nf2-7;	!	(gs -dle, pl -dlí)
 cáibleáil		Nf3-SINGULAR;	!	(gs -ála)
 caibléireacht		Nf3-SINGULAR;	!	(gs ~a)
-caiblidí		Nf4-SINGULAR;	!	(gs ~)
+caiblide		Nf4-SINGULAR;	!	(gs ~)
 caide		Nf4-SINGULAR;	!	(gs ~)
 cáidhe		Nf4-SINGULAR;	!	(gs ~)
 caidhleog		Nf2-1;	!	(gs -oige, npl ~a, gpl ~)

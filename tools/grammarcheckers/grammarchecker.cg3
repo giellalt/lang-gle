@@ -595,8 +595,7 @@ LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old ge
 #!! ###  Other tags
 
 #LIST &msyn-com-case-nouns = &msyn-com-case-nouns ;
-#LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@ 
-#LIST &msyn-i-rith-nom-gen = &msyn-i-rith-nom-gen ;   not in use
+#LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@
 #LIST &use-ie.i. = &use-ie.i. ;    #!!= * @CODE@ 
 #LIST &msyn-inis-de = &msyn-inis-de ;    #!!= * @CODE@ 
 #LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@ 
@@ -609,7 +608,8 @@ LIST &lex-ar-an-aonach = &lex-ar-an-aonach ; #!!= * @CODE@
 LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;    #!!= * @CODE@ 
 LIST &lex-ar-an-tae = &lex-ar-an-tae;    #!!= * @CODE@ 
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@ 
-LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@ 
+LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
+LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@ 
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;     #!!= * @CODE@ 
@@ -701,6 +701,12 @@ COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg) TARGET (Masc 
 ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));   	
     	## An fhuinneog beag - INCORRECT
 	#$ An fhuinneog bheag - CORRECT
+	
+#!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
+	
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Len) IF (-1 (Noun Masc Com Sg));
+COPY:msyn-adj-masc-gender (Base SUGGEST) EXCEPT (Len) TARGET (Masc &mysn-adj-masc-gender);
+ADDRELATION:msyn-adj-masc-gender ($2) (Noun) TO (1 (Adj &msyn-adj-masc-gender));
 	
 	##a rule to ensure a plural adjective is matched with a plural noun MASCULINE
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Masc Com Pl)) ;
@@ -1518,7 +1524,7 @@ ADD:msyn-hPref-after-neg-imp (&msyn-hPref-after-neg-imp) TARGET (Verb VTI Vow Im
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 COPY:msyn-hPref-after-neg-imp (Neg SUGGEST) EXCEPT (msyn-hPref-after-neg-imp) TARGET (msyn-hPref-after-neg-imp);
 
-LIST VOW-PREP = "chomh", "go", "le" "ná";
+LIST VOW-PREP = "chomh", "go", "le" "ná"; ##This rule should be changed to disguish ná before the imperative verb, "ná habair é".
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
 	(-1 VOW-PREP)
@@ -1538,6 +1544,7 @@ COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGE
 
 ADD:msyn-hPref-after-i-prep-vowel (&msyn-hPref-after-i-prep-vowel) TARGET ("i" Prep Simp) IF 
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 (Prep Simp Vow))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 	## Tá an leabhar i áit eile.
@@ -1673,5 +1680,7 @@ ADD:lex-amach-farraige (&lex-amach-farraige) TARGET (Adv Dir) IF
 	(2 ("fharraige" Fem Com Len)) ;
 COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TARGET (&lex-amach-farraige);
 
-
-
+##fear mór - fear mhór, fear móra, fear mhóra
+##scoil bheag - scoil beag, scoil beaga, scoil bheaga
+##scoileanna cáiliúla - scoileanna cáiliúil, scoileanna cháiliúil
+## an fhir mhóir, na bhfear mór,  
