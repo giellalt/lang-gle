@@ -1,0 +1,24 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Ach ní raibh eolas dá laghad ag Jellia ar an ábhar sin agus d'éirigh sí an-neirbhíseach leis an gceistiú agus thosaigh sí ag gol rud a chuir an-ionadh ar Glinda"
+  - "\" Mar sin nuair a chuir a saighdiúirí a chaitheadh formhór a gcuid ama ag déanamh milseán i gcistiní an pháláis comhairle ar Jinjur gan géilleadh d'éist sí lena raiméis agus sheol sí teachtaireacht neamhghéilliúna chuig Glinda Mhaith agus chuig an mBanríon Ozma"
+  - "Leis sin thosaigh sé ag caitheamh cuid de Phúdar na Beatha ón mboiscín ar cholainn an chapaill sábhadóireachta"
+  - "\" Dá bhrí sin a fhaid a bhí an tOllamh ag baint na gcailíní beaga - ar mhó de gheit a baineadh astu ná de ghortú a baineadh dóibh den talamh agus a fhaid a bhí na daltaí uime shiúil mé go deas réidh amach as teach na scoile chuaigh mé timpeall cor sa bhóthar agus d'éalaigh mé liom isteach i ndoire a bhí in aice láimhe"
+  - "Dá bhrí sin agus iad breá sásta a bheith ag déanamh rud ar bith a chuirfeadh deireadh lena bpríosúnacht scaip na cairde óna chéile agus chuaigh siad ar fud an pháláis féachaint an dtiocfaidís ar ábhar a bheadh oiriúnach chun an meaisín eitilte a chur le chéile"
+  - "Ansin chonaic sé Mambaí ag ardú a láimhe agus ag caitheamh púdair ón mbosca ar cheann an fhir a chruthaigh sé"
+  - "Bhí cuid díobh ag priocadh súile an Ghump a bhí ar crochadh thar imeall na neide go dímríoch"
+  - "Agus nuair a bhíodh sé in ainm is a bheith ag obair sna goirt arbhair agus é i bhfolach ó Mhambaí i measc na ngas arda arbhair ba mhinic Tip a bheith ag tochailt phoill na ngófar nó dá mbuaileadh an fonn é a bheith ina luí ar a dhrom idir na hiomairí ina chodladh"
+  - "Dá brí sin a luaithe a thosaigh Glinda ag gluaiseacht agus a thosaigh na saighdiúirí ag máirseáil agus a thosaigh an banna ag seinm ceol spreagthach léim ár gcairde in airde ar na toilg agus as go brách leo ina ndiaidh"
+  - "Bhí an Fear Bréige agus Seán Puimcíncheann fós ag imirt caidhtí sa chlós nuair a cuireadh isteach go borb ar an gcluiche ach ar tháinig Arm Ríoga Oz isteach de ruathar gan a hata ná a ghunna a chuid éadaí sraoilleach agus a fhéasóg fhada ar foluain um shlat taobh thiar de agus é ag rith"
+  - "\" Rug Tip greim go fonnmhar ar an gciseán agus thosaigh sé ag ithe agus é ag leanúint an chailín aduain ar feadh tamaill gan aon cheist a chur uirthi"
+  - "\" arsa an capall \" tá tú ag baint creathadh uafásach asam"
+  - "D'fhan siad ar foluain os cionn an pháláis agus níorbh fhada go bhfaca siad Jinjur ina luí i leaba luascáin i gclós an pháláis mar a raibh sí ag léamh úrscéil a raibh clúdach glas air agus ag ithe milseán"
+  - "\" Nuathair bhí éirí amach ann a Shoilse faoi mar is eol duitse go maith \" arsa an fear \" agus ó d’imigh tú tá na mná i gceannas agus ag déanamh rudaí mar is mian leo féin"
+  - "Toisc go raibh sé ró-mhoch sa lá fós go mbeadh an tseanbhean ag filleadh abhaile chuaigh Tip síos isteach sa ghleann faoin teach feirme agus thosaigh sé ag bailiú cnónna ó na crainn a bhí ag fás ann"
+  - "Chonaic mé Mambaí ag déanamh rudaí den sórt seo roimhe seo"
+  - "I ndeireadh na dála gheall mé do chailín beag amháin a thaistil achar fada le bualadh liom -- is ' Dorothy ' í dála an scéil -- nuair a scríobhfadh míle cailín beag litir chugam ag éileamh scéalta an Fhir Bhréige agus an Fhir Choille Stáin go scríobhfainn leabhar"
+  - "\" arsa an Fheithid Oilte agus é ag breith barróg mhór ar chloigeann righin an Ghump le teann áthais"
+  - "Lean a Shoilse air ag caitheamh caidhtí ar nóscumaliom amhail is nach raibh a ríocht i mbaol ach nuair a chonaic an Puimcíncheann Tip chuaigh sé anonn chuige chomh gasta agus arbh fhéidir leis"

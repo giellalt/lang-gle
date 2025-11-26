@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" \" Nach bhféadfaí dá tholg a úsáid"
+  - "\" Ach seans go dtabharfaimid na cosa linn fós ach dullamullóg a chur ar an mbandraíodóir seo dá chistí dar léi féin"

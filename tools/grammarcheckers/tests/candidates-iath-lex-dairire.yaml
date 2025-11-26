@@ -1,0 +1,24 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Níorbh é sin an t-ainm a bhí air ó cheart óir deireadh Mambaí go minic gurbh é Tipirtéirias an t-ainm a bhí air i ndáiríre ach ní bheifí ag súil go ndéarfadh éinne focal chomh mór sin nuair ba leor ' Tip '"
+  - "Thug Mambaí sracfhéachaint mhíshuaimhneach ar an mBandraíodóir agus chonaic sí go raibh sí i ndáiríre agus nár chóir cur ina coinne"
+  - "\" Agus an bhfuil tú oll-mhéadaithe i ndáiríre"
+  - "\" \" An bhfuil sé folamh i ndáiríre"
+  - "\" An bhfuaireamar an lámh in uachtar uirthi i ndáiríre"
+  - "Maidir leis an liúdramán de Phuimcíncheann atá leat snámhadh sé nó téadh sé go tóin poill is cuma faoi i ndáiríre"
+  - "\" Dúirt Jinjur an méid sin go diongbháilte agus go fonnmhar agus ba léir go raibh sí i ndáiríre"
+  - "\" \" Is cinnte go ndéanfaidh mé é sin \" arsa Glinda agus í breá sásta \" más ionann an duine seo agus a samhail i ndáiríre"
+  - "Tháinig amhras uirthi láithreach agus i bhfaiteadh na súl bhí a fhios ag an Bandraíodóir gur chlaochlú Mhambaí a bhí sa rós sin i ndáiríre"
+  - "\" An Deargadaol thú i ndáiríre"
+  - "53 bhris deireadh an eireabaill a raibh greim aige air toisc nach raibh ann i ndáiríre ach craobh fheoite crainn agus cuireadh an buachaill ag guairneán sa dusta a bhí ar an mbóthar agus chonaic sé an capall agus an marcach ag imeacht as radharc roimhe amach"
+  - "Bhí an chuma orthu i ndáiríre nárbh fhéidir le namhaid ar bith arm chomh hiontach seo a chloí"
+  - "Ach ní raibh aon cheann ar bith de na bacainní sin ann i ndáiríre - is amhlaidh gur chleasaíocht ar fad a bhí ann"
+  - "Ní raibh a fhios ag éinne acu i ndáiríre a raibh ag teastáil ach thug siad go léir rud éigin leo"
+  - "\" \" Níl i ndáiríre \" arsa Tip"
+  - "Níor chailleach i ndáiríre í Mambaí óir chuir an Chailleach Mhaith a bhí i gceannas ar an gcuid den de Chríoch Oz cosc ar aon chailleach eile a bheith sa cheantar"
+  - "Bhí an chuma ar an scéal nach raibh aon bhealach éalaithe ann i ndáiríre agus nuair a thuig siad go raibh siad i bponc thosaigh an bhuíon bheag taistealaithe ag olagón faoina gcás"
+  - "\" Táimid inár bpríosúnaigh acu i ndáiríre mar a faoi bhíomar sular chuir na lucha an ruaig orthu ón bpálás"
+  - "\" Níl péire agam a chlúdóidh na súile sin i ndáiríre \" arsa an feairín agus lig sé osna as \" agus tá do chloigeann chomh mór sin go mbeidh orm na spéaclaí a cheangal ort"

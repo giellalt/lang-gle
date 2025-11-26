@@ -1,0 +1,19 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Chonaic siad balla mór ard cloch glas a bhí breactha le smaragaidí os a gcomhair amach agus toisc go raibh eagla ar 54 nach mbeadh a fhios ag an gCapall Sábhadóireachta gur chóir dó stopadh as a stuaim féin agus go mbuailfeadh an bheirt acu faoin mballa lig Seán ' faí ' as in ard a chinn agus a ghutha"
+  - "\" \" Buíon cailíní a tháinig le chéile as ceithre chríoch Oz \" arsa an Saighdiúir agus a aghaidh mílítheach leis an eagla"
+  - "\" arsa Tip agus é ag féachaint ar an bPuimcíncheann ag satailt leis agus é ag baint trialach as a chos nua"
+  - "An mhaidin dár gcionn bhí cúis acu comhghairdeas a dhéanamh leo féin as an gcuma iontach a bhí ar an nGump óir le breacadh an lae tháinig scata mór Cág chun troid mhór amháin eile a dhéanamh don nead"
+  - "\" Chuala mé gur féidir duine ar bith a cheannú le cneastacht beag beann ar a ghránna atá siad"
+  - "\" Níorbh fhada go raibh Tip ina shuí agus d'éirigh leis an Saighdiúir agus leis an bhFear Bréige an Puimcíncheann a chur in airde díreach laistiar de"
+  - "\" \" Is minic a bhí deallraitheach cailliúnach \" arsa an Deargadaol go dáiríre"
+  - "\" Dá mbeimis sa Chathair Iathghas d'fhéadfaimis gluaiseacht díreach ó dheas agus ár gceann scríbe a bhaint amach"
+  - "Bhí a haghaidh dathúil go cinnte dar leis ach bhí a gnúis míshásta agus cuma an teanntáis nó na ceanndánachta uirthi"
+  - "Ansin arsa an Fear Bréige \" Chuala mé a chara na páirte gur féidir le duine a bheith róoilte agus cé go bhfuil ardmheas agam ar inchinn beag beann ar a cineál déanaim amach go bhfuil d'inchinn féin in aimhréidh beagán"
+  - "D'éirigh an Fear Bréige corrthónach ar a ríchathaoir agus chuimil sé a lámh chlé dá cheann"
+  - "Nuair a bhí an tuí tirim bhrúigh sé isteach san Fhear Bréige í agus shocraigh sé í ionas go mbeadh cuma cheart ar a cholainn"
+  - "68 difriúil le \" Abair leat"
+  - "Tar éis tamall an-fhada go deo dar leo-san a bhí ag féachaint air shuigh an fear bréige machnamhach aniar sa chathaoir agus d'fhéach sé ar a chairde agus arsa seisean \" Tá meabhair mo chinn go hiontach ar fad inniu"

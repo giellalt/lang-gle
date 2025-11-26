@@ -1,0 +1,10 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" Dá bhrí sin a fhaid a bhí an tOllamh ag baint na gcailíní beaga - ar mhó de gheit a baineadh astu ná de ghortú a baineadh dóibh den talamh agus a fhaid a bhí na daltaí uime shiúil mé go deas réidh amach as teach na scoile chuaigh mé timpeall cor sa bhóthar agus d'éalaigh mé liom isteach i ndoire a bhí in aice láimhe"
+  - "Bhí an Fear Bréige agus Seán Puimcíncheann fós ag imirt caidhtí sa chlós nuair a cuireadh isteach go borb ar an gcluiche ach ar tháinig Arm Ríoga Oz isteach de ruathar gan a hata ná a ghunna a chuid éadaí sraoilleach agus a fhéasóg fhada ar foluain um shlat taobh thiar de agus é ag rith"
+  - "Bhain sí snáithe óir dá crios agus chaith sí um chloigeann na Gríbhe a raibh gearranáil uirthi agus leis sin chuir sí deireadh na draíodóireacht Mhambaí"
+  - "Chuir an Fear Coille Stáin a raibh meáchan mór ann a dhá lámh um Sheán Puimcíncheann agus d’éirigh leis é a tharrtháil"
+  - "\" Móradh dhuit um thráthnóna a thuismitheoir uasail \" ar seisean agus áthas air"

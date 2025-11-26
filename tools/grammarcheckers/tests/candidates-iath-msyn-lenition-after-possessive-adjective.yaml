@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" Leis sin rith gach éinne seachas Seán Puimcíncheann a bhí i gceangal do daingean den Chapall Sábhadóireachta fós chuig 159 isteach difriúla phálás an rí agus dhún siad na doirse móra troma agus chuir siad faoi ghlas iad"
+  - "Ceapfaidh sí go bhfuil Mambaí cheart gafa aici agus imeoidh sí léi láithreach do Críoch an Deiscirt"

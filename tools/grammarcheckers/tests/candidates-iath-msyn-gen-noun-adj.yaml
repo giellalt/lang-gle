@@ -1,0 +1,31 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Chonaic siad balla mór ard cloch glas a bhí breactha le smaragaidí os a gcomhair amach agus toisc go raibh eagla ar 54 nach mbeadh a fhios ag an gCapall Sábhadóireachta gur chóir dó stopadh as a stuaim féin agus go mbuailfeadh an bheirt acu faoin mballa lig Seán ' faí ' as in ard a chinn agus a ghutha"
+  - "Ach sular fhág siad an gairdín thug an Fear Coille Stáin a raibh dúil mhór aige i mbláthanna thug sé rós mór dearg a bhí ag fás ar sceach faoi deara"
+  - "I bhfaiteadh na súl d'imigh an t-ainmhí as radharc agus chonacthas ina áit an tseanchailleach agus í ag stánadh go fíochmhar ar éadan aoibhinn álainn an Bhandraíodóra"
+  - "Bhí duilleoga seamair bróidnithe ar a básta síoda agus bhí seaicéad beag aoibhinn uirthi a bhí maisithe le smaragaidí glioscarnacha a bhí ar cóimhéad"
+  - "Ach shiúil an Luch Féir liath díreach tríd agus rinne an chuid eile acu amhlaidh agus ba chosúil gur scaip an balla mar a scaipfeadh ceo agus iad ag dul tríd"
+  - "Fiú an cosán glas marmair féin bhí sé ag glioscarnach de bharr na gcloch lómhar a bhí ann agus b'iontach an radharc go cinnte é don té a d'fheicfeadh den chéad uair é"
+  - "Bhí dath glas ar a chuid éadaí go léir agus bhí hata speiceach glas ar a cheann aige agus spéaclaí glasa ar a shúile aige"
+  - "D'éirigh an bhean ina seasamh chroith sí grabhróga aráin dá naprún agus chroch sí citeal beag dubh os cionn na tine"
+  - "Bhí gunna fada glas ar iompar aige ar a ghualainn agus bhí féasóg leicinn aoibhinn ghlas air síos go dtí a ghlúine"
+  - "Ní fhéadfaí a rá go raibh an aghaidh álainn nuair a chríochnaigh sé í ach bhí miongháire mór leathan uirthi a bhí chomh meidhreach sin gur thosaigh Tip ag gáirí agus é ag féachaint go bródúil ar a chuid oibre"
+  - "An gcaithfeá cailín bocht leochaileach"
+  - "D'ordaigh an Fear Bréige do Shaighdiúir na Féasóige Glaise cuardach i measc na ndaoine nó go dtiocfadh sé ar dhuine a thuigfeadh teanga na nGilicíní mar aon le teanga na Cathrach Iathghlaise agus an duine sin a thabhairt chuige láithreach"
+  - "Ba tríd an ngeata sin a bheartaigh a Shoilse éalú agus thug an tArm Ríoga an Capall Sábhadóireachta fan phasáiste agus d'oscail sé an geata de phlab mór callánach"
+  - "Rinneadh an Turas go sábháilte - bhí Mambaí ina suí ann agus cuma dhuairc shotalach uirthi óir ní raibh neart ar bith ag an tseanchailleach a fhaid a bhí an tsnáithe dhraíochta um a scornach"
+  - "\" Seans nach n-éireoidh léi \" ar seisean faoina fhiacla de ghlór lag éadóchasach"
+  - "Labhair an Garda leis láithreach agus arsa seisean \" Seo fear uasal aisteach nach eol dó cén fáth ar tháinig sé chuig an gCathair Iathghlas nó a bhfuil uaidh"
+  - "Chuaigh sí in airde ar thúr ní b'airde sa phálás ríoga agus chonaic sí meirgí ar foluain i ngach treo agus puball mór bán Glinda ina seasamh díreach is comhair na ngeataí"
+  - "78 an fear bocht uaill as agus é ag éileamh trócaire agus níor chuir sé ina coinne nuair a bhain Jingur an glac eochracha dá mhuineál"
+  - "\" arsa an Fear Coille Stáin de ghlór séimh báúil"
+  - "\" \" Seafóid \" arsa an tImpire de ghlór caoin báúil"
+  - "Agus iad ag imeacht leo thug Seán faoi deara go raibh dath geal iathghlas ar an bhféar agus ar na crainn agus dúirt sé leis féin nárbh fholáir go raibh siad ag druidim leis an gCathair Iathghlas fiú sula bhfaca sé na spuaiceanna arda agus na dóim"
+  - "133 an duine mós buíoch díom óir dá gcailleadh sé an naoú beatha sin bheadh a chosa nite agus d'impigh sé orm a cheadú dó an éide phéacógach atá á caitheamh anois agam a dhéanamh dom"
+  - "\" I rith na hoíche mar sin luigh an rós go ciúin ar bhrollach an Fhir Choille Stáin agus nuair a chuir Glinda fios ar a cairde maidin lá arna mhárach thug Nick Chopper an bláth deas leis chuig an bpuball síoda bán"
+  - "Bhí seisean sa chlós chomh maith áit ar bhain sé ceithre dhuilleog mhóra leathana de chrann pailme a raibh muintir uile na Cathrach Iathghlaise bródúil as"
+  - "240 B anphrionsa Ozma as Oz \" Is tusa mo phríosúnach agus ní fiú duit streachailt a thuilleadh \" a dúirt Glinda ina guth bog milis"
+  - "28 éanann Tip Tástáil Draíodóireachta Bhí an chuma ar an scéal go raibh náire ar an mbuachaill a bhí beag agus sách leochaileach go raibh fear puimcínchinn ard amscaí ag tabhairt ' athair ' air ach dá séanfadh sé an caidreamh bheadh air míniú leamh fadálach eile a thabhairt dá bhrí sin d'athraigh sé ábhar na cainte ach an cheist a chur \" An bhfuil tuirse ort"

@@ -1,0 +1,27 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Ansin d'ardaigh Tip a dhá lámh shín sé a mhéaracha go léir i dtreo na spéire agus ar seisean de ghlór ard \" Peá"
+  - "Thiontaigh sé chun an Airm ansin agus ar sise de bhéic \" A chailíní níl aon urchar sa ghunna"
+  - "\" Nach féidir linn éalú ach iad a úsáid"
+  - "” \" Ach a gcuirfí beocht sa Rud seans go bhféadfadh sé eireaball a úsáid chun é féin a stiúradh \" arsa an Fear Bréige"
+  - "\" Ní mór dom an Chathair Iathghlas a bhaint amach \" ar seisean le fear an bháid \" ach conas is féidir liom an abhainn a thrasnú mura dtabharfaidh tusa trasna mé"
+  - "32 leis na cosa ba é a bhí ann ceithre chraobh crainn a fheistíodh den cholainn agus iad scartha amach óna chéile ionas go seasfadh an capall sábhadóireachta go socair nuair a leagfaí lomán anuas air chun é a ghearradh leis an sábh"
+  - "\" Ní mór do gach rud cloigeann a bheith aige chun é a threorú agus ós rud é go mbeidh an créatúr seo ag eitilt seachas ag siúl is cuma an mbeidh beocht ina chosa nó nach mbeidh"
+  - "\" Bhí Tip ceangailte chomh daingean sin leis an gcorda nárbh fhéidir leis a chloigeann a chasadh chun go bhféachfadh sé ar a chompánaigh agus ar seisean leis an gCapall Sábhadóireachta \" Déan céaslóireacht le do chosa i dtreo an bhruaigh"
+  - "\" Ba chruálach an mhaise é na créatúir áille seo a leagan \" ar seisean go brónach \" ach níl a fhios agam conas is féidir linn dul ar aghaidh gan é sin a dhéanamh"
+  - "Dá bhrí sin dúirt an Chailleach go ndéanfadh sí an claochlú agus cuireadh gach rud in ord agus in eagar láithreach chun é sin a dhéanamh"
+  - "Sheol sí bladhm mhór chnagarnach thine trasna an mhóinéir chun iad a shlogadh agus den chéad uair tháinig sceimhle ar an bhFear Bréige agus thiontaigh sé ar a shála agus é ar tí rith"
+  - "Dá bhrí sin ba bheag mealladh a bhí le déanamh chun í a thabhairt chuig an gCathair Iathghlas agus lámh chúnta a thabhairt do Jingur chun an Fear Bréige agus an Fear Coille Stáin a bhí cairdiúil le Tip a chloí"
+  - "Nuair a rith madra glas amach agus é ag amhastrach leo tharraing an Capall Sábhadóireachta speach air lena chois adhmaid agus d'imigh an t-ainmhí bocht isteach i gceann de na tithe ag é ag geonaíl ach ba bheag rud eile a chuir isteach ar a dturas chuig pálás an rí"
+  - "Ní raibh cuimhneamh dá laghad ag an mbuachaill ar a thuismitheoirí óir nuair a bhí sé an-óg tugadh chuig Mambaí é nach raibh cáil rómhaith uirthi ní mór a rá chun é a thógáil"
+  - "\" Ansin thiontaigh sé i dtreo Glinda agus ar seisean go drogallach \" B'fhéidir go mbainfinn triail as ar feadh tamaill díreach féachaint conas a bheadh agam"
+  - "Ach ansin thug sé faoi deara gur thit géag na láimhe clé den fhear le linn an aistir agus chuaigh sé ar ais chun í a aimsiú agus ina dhiaidh sin tar éis dó pionna úr 8 téagartha a dhéanamh d'alt na gualainne dheisigh sé é agus bhí an ghéag sin ní ba láidre ná mar a bhí sí roimhe sin"
+  - "\" Sheas Seán Puimcíncheann siar céim amháin ansin agus ar seisean de ghlór gearánach \" Ní bí ag béicíl mar sin"
+  - "Jinjur 70 Beartaíonn an Fear Bréige ar éalú 82 An Turas chuig an bhFear Coille Stáin 94 Impire Nicilchlúdaithe 104 An tUasal O. M. Deargadaol L. O. 117 Stair Ollmhéadaithe 128 Déanann Mambaí Asarlaíocht 138 Príosúnaigh na Banríona 149 Déanann an Fear Bréige a Mharana 161 Eitilt Éachtach an Ghump 171 I Nead an Cháig 180 AN FEAR COILLE STÁIN Piollaí Iomráiteacha Guí an Dr Nicidic 197 Achainí sn Fhir Bhréige ar Glinda Mhaith DEARGADAOL Stoitheann an Fear Coille Stáin Rós 223 Claochlú Mhambaí 233 An Banphrionsa Osma as Oz Saibhreas na Sástachta GUMP 208 241 251 Íontach Oz éanann Tip puimcíncheann I gCríoch na nGilicíní atá ar an taobh ó thuaidh de Chríoch Oz bhí cónaí ar bhuachaill darbh ainm dó Tip"
+  - "\" Rith an Saighdiúir leis chun é sin a dhéanamh agus d'fhan Tip a tháinig sna sála ar an saighdiúir sa chlós agus é ag faire ar an bhFear Bréige agus ionadh air"
+  - "240 B anphrionsa Ozma as Oz \" Is tusa mo phríosúnach agus ní fiú duit streachailt a thuilleadh \" a dúirt Glinda ina guth bog milis"
+  - "Dá bhrí sin ar sise agus strainc uirthi go bhfuarthas an lámh in uachtar uirthi \" Thug an Draoi chuig an gcailín Ozma mé nach raibh inti ach páiste an uair sin agus d'impigh sé orm an páiste a cheilt"
+  - "\" \" Agus is súile fadharcáin atá ag an gCapall Sábhadóireachta \" arsa Seán agus é ag cromadh chun tosaigh chun iad a scrúdú"

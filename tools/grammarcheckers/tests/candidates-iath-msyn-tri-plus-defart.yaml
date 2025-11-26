@@ -1,0 +1,24 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" Níl a fhios againn conas balún a dhéanamh gan amhras ach is 167 le rud ar bith atá in ann eitilt tríd an aer muid a iompar go héasca"
+  - "Chuaigh an oíche i ndoircheacht agus i ndoircheacht agus d'eitil an Gump leis faoi luas tríd an spéir dhorcha"
+  - "\" Lig an tOllamh uaill uafáis as agus rith sé tríd an doras féachaint ar gortaíodh na páistí bochta nuair a thit siad"
+  - "Níl de dhíth orainn ón Rud ach go n-iompróidh sé trí an aer muid"
+  - "\" Bhíothas ag féachaint go hamhrasach ar mheall mór an ábhair éagsúil a bhí caite ar an díon agus i ndeireadh na dála chroith an Fear Bréige a cheann agus arsa seisean \" Bhuel má éiríonn le mo chara Nick Rud a dhéanamh as an gcarn earraí gan mhaith seo Rud a eitleoidh trí an aer agus a thabharfaidh gach duine againn leis go slán sábháilte admhóidh mise gur fearr de mheicneoir é ná mar a cheap mé"
+  - "Ba tríd an ngeata sin a bheartaigh a Shoilse éalú agus thug an tArm Ríoga an Capall Sábhadóireachta fan phasáiste agus d'oscail sé an geata de phlab mór callánach"
+  - "\" An féidir le heitilt tríd an aer puimcíní a mhilleadh"
+  - "Tháinig Seán anuas den chapall - ní gan dua - agus thug giolla an Capall Sábhadóireachta siar ar chúl an pháláis a fhaid a thug Saighdiúir na Féasóige Glaise an Puimcíncheann isteach sa phálás tríd an doras tosaigh"
+  - "Agus ós rud é nach féidir éalú trí an talamh níl ach rud amháin eile is féidir a dhéanamh"
+  - "Nuair a tháinig siar ar bhruach abhann a raibh flosc uisce inti agus gan deis acu dul trasna is amhlaidh gur lean an Bhanríon bheag uirthi tríd an tuile gan tuisle agus lean na taistealaithe í gan oiread is braon uisce a bhrath"
+  - "Thug Saighdiúir na Féasóige Glaise tríd an ngeata istigh ansin iad agus b'iúd iar ar phríomhshráid na Cathrach Iathghlaise iontaí"
+  - "Dá bhrí sin chuaigh na taistealaithe isteach go sábháilte tríd an ngeata agus mháirseáil siad síos sráid na mbrící glasa marmair i dtreo phálás an rí"
+  - "Ní dhearna sé ach tiontú ar a shála agus rith leis chomh tapaidh agus arbh fhéidir leis tríd an ngeata agus i dtreo phálás an Rí"
+  - "An bhfuil tú sásta sinn a iompar tríd an aer pé áit ar mian linn dul"
+  - "\" B'fhearr liom i bhfad taisteal tríd an aer"
+  - "Ní mór dúinn éalú tríd an aer"
+  - "Tráth dá raibh bhí mé i gceannas ar an bhforaois mar is léir ó bheanna mo chinn ach anois agus mé i mo thoilg agus i mo ghiolla agus dualgas orm eitilt tríd an aer - ní féidir liom mo chosa a úsáid beag na mór"
+  - "Thiontaigh gach duine acu le féachaint ar an Rud agus bhí toradh ar an nguí chomh tapaidh sin go raibh an Gump ansin os a gcomhair amach agus é chomh maith is a bhí sé riamh agus é in ann eitilt tríd an aer chomh breá agus a bhí sé an chéad lá riamh sin ar dhíon an pháláis"
+  - "\" Óir má eitlíonn sé tríd an aer ní bheidh sé éagosúil le héan agus tugaim faoi deara go mbíonn eireabaill ag gach éan agus go n-úsáideann siad mar a bheadh stiúir báid iad agus iad ag eitilt"

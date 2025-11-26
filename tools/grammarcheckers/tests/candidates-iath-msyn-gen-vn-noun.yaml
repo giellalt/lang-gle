@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Bhí sé ar tí blúire bia a lorg uirthi nuair a sheas an cailín in airde agus í ag baint na ngrabhróg dá gúna"
+  - "Agus ní raibh gíog ná míog as an gcuid eile acu agus iad ag iarraidh gan cur isteach air óir bhí muinín mhór ag cách as meabhair chinn iontach an Fhir Bhréige"

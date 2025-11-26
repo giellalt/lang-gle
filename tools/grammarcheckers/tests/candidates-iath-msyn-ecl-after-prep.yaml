@@ -1,0 +1,12 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" Cé gur dóigh liom go bhfuil go leor ar eolas agam níl a fhios agam cé mhéad eolais atá sa domhan ná cé mhéad de atá ar eolas agamsa"
+  - "Nuair a bhain an fear an bruach abhus amach arsa Tip leis \" An dtabharfaidh tú chuig an bruach thall muid"
+  - "Cuirigí oraibh na spéaclaí agus leanaigí ag duine seo agus tabharfaidh mé chuig an pálás an rí é"
+  - "96 sé go bruach ansin é agus thriomaigh sé an t-uisce dá aghaidh lena chiarsúr agus rith sé anonn chuig Seán agus chuir sé ar ais ar a mhuineál é"
+  - "53 bhris deireadh an eireabaill a raibh greim aige air toisc nach raibh ann i ndáiríre ach craobh fheoite crainn agus cuireadh an buachaill ag guairneán sa dusta a bhí ar an mbóthar agus chonaic sé an capall agus an marcach ag imeacht as radharc roimhe amach"
+  - "Chuir cleitearnach na sciathán mór sin scaoll ar an cága agus nuair a d'éirigh leis an nGump é féin ó shaoradh ón starróg charraige ar a raibh sé ar crochadh thit sé isteach sa nead de phlab agus baineadh an oiread sin de gheit as na héin gur theit siad leo thar na sléibhte agus iad ag scréachadh"
+  - "140 \" Ní fheadar an bhfuil mo sheanchara Banríon na Luch Féir sa dúthaigh"

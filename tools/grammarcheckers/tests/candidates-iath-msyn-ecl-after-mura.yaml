@@ -1,0 +1,9 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" \" Níor thug mé faoi deara riamh go milleann uisce puimcín \" arsa Tip \" mura bhfuil an t-uisce sin ar fiuchadh"
+  - "\" \" Ach tá an tráthnóna ag dul i ndoircheacht \" arsa an Fear Coille Stáin \" agus mura bhfanfaimid go maidin chun an eitilt a dhéanamh is amhlaidh a bhféadfadh a thuilleadh tubaistí a bheith romhainn"
+  - "\" Tá sé chomh maith againn \" arsa an buachaill \" mura bhfuil rud is fearr leatsa a dhéanfaimis"
+  - "” Mura bhfuil scoilt i do chloigeann a chara ní foláir nó go bhfuil bail mhaith ort"

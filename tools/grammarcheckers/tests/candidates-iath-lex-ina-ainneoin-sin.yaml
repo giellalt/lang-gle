@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "“ Ach níl a fhios agam ó thalamh an domhain cá bhfuil sí in ainneoin mo chuid iarrachtaí"
+  - "Thug an fheithid leis é go cúramach in ainneoin an dua a bhain leis in airde chuig an díon"
+  - "\" \" Ní féidir \" arsa Tip agus é ag gáirí in ainneoin na himní a bhí air"

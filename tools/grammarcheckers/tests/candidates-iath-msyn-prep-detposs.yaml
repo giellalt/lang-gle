@@ -1,0 +1,9 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "\" Bhí Tip ceangailte chomh daingean sin leis an gcorda nárbh fhéidir leis a chloigeann a chasadh chun go bhféachfadh sé ar a chompánaigh agus ar seisean leis an gCapall Sábhadóireachta \" Déan céaslóireacht le do chosa i dtreo an bhruaigh"
+  - "\" Ach ansin díreach stad an Capall Sábhadóireachta as a stuaim féin óir thuig sé nárbh fhéidir leis a cholainn féin a fheiceáil"
+  - "\" Ó a thiarcais"
+  - "\" Fiafraigh de a leanbh ar chuma leis é dá gcuirfí sa phríosún é as ceannasaí na Cathrach Iathghlaise a mhaslú"

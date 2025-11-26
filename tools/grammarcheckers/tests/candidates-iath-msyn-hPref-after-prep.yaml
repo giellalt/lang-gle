@@ -1,0 +1,13 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "94 \" Óir ní mise a rinne an abhainn ná ní mise a chuir sa tslí orainn í dá bhí sin níor chóir caitheamh anuas ar éinne ach an té a bheadh cantalach liomsa as titim isteach san uisce"
+  - "Agus lean an Capall Sábhadóireachta air ag luascadh agus an imeacht trí na páirceanna bláthbhreactha agus na marcaigh á dtabhairt leis aige"
+  - "Tháinig Mambaí ar ais ní ba luaithe ná mar a bhí súil aige léi áfach"
+  - "\" Táim ag fáil tuisceana ar a bhfuiltear ag súil leis uaim \" arsa an Gump \" agus déanfaidh mé mo dhícheall rud a dhéanamh oraibh \" agus d'eitil sé leis gan focal a rá ar feadh tamaill"
+  - "Bhí bosca caramal ar a glúine aici agus bhí sí ag ithe léi as agus bhí an chuma uirthi go raibh sí ar a suaimhneas sa timpeallacht ríoga sin"
+  - "\" Ach ní bheidh aon ' rud is measa ' ann óir is dóigh liom gur féidir liom eagla a chur ar na saighdiúirí gan deallramh seo"
+  - "Níor ghlac sé i bhfad orthu é sin a dhéanamh agus nuair a tháinig an tImpire ar ais bhí an cholainn a bhí clúdaithe le nicil ag glioscarnach chomh hiontach sin go ndearna an Fear Bréige comhghairdeas ó chroí leis as an dreach feabhsaithe a bhí air"
+  - "\" Is iontach an rud é Capall Sábhadóireachta beo agus ba bhreá liom eolas a fháil air"
