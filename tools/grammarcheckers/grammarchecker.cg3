@@ -1121,9 +1121,6 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Gen)
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
-	(NEGATE 0 Verbal)
-	(NEGATE -2 Verb OR ("é"))
-	(NEGATE -1 MODIFYERNOUN)              # agus cuid lucht
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)  # óg darbh ainm Éadbhard Ó Cathaoir
 	;
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
@@ -1397,13 +1394,17 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 	
 #!! ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
-ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) IF (-1 Noun OR Dem) ;
-ADDCOHORT  ("<a>" "a" Det Poss 3P Sg Fem ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
+ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) OR (Verb PastInd Auto) IF (-1 Noun OR Dem) ;
+ADDCOHORT  ("<a>" "a" Part Vb Rel Direct ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
 ADDRELATION ($2 LEFT) (Verb &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
 	## An méid {dhéanann}¥{missing|a dhéanann} an tÚdarás
 	## An ceol sheinneann sé gach lá agus é i mbun oibre.
-	## An obair {rinne} an bainisteoir.
+	#$ An ceol a sheinneann sé gach lá agus é i mbun oibre.
+	## An obair rinne an bainisteoir.
+	#$ An obair a rinne an bainisteoir.
+	## An obair críochnaíodh inné.
+	#$ An obair a críochnaíodh inné.
 	## Sin an cleas céanna a d'imir sé orm.
 	## Tá sé ar intinn aici é sin a {dhéanamh}.
 	## Sin an obair a {chríochnófar} amárach
@@ -1518,13 +1519,16 @@ COPY:msyn-hPref-after-copula (hPref SUGGEST) EXCEPT (&msyn-hPref-after-copula) T
 
 COPY:msyn-hPref-after-copula (hPref SUGGEST) EXCEPT (&msyn-hPref-after-copula) TARGET (Adj &msyn-hPref-after-copula);
 
-ADD:msyn-hPref-after-neg-imp (&msyn-hPref-after-neg-imp) TARGET (Verb VTI Vow Imper) IF 
-	(-1 (Part Vb Neg Imp))
-	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N);
-COPY:msyn-hPref-after-neg-imp (Neg SUGGEST) EXCEPT (msyn-hPref-after-neg-imp) TARGET (msyn-hPref-after-neg-imp);
+##This rule is for adding the h prefix to imperative verbs that begin with a vowel after ná (Part Vb Neg Imp) [negative verbal particle used with imperative (Prefixes h to vowel)], e.g., "ná habair é", "ná hoscail", etc.
 
-LIST VOW-PREP = "chomh", "go", "le" "ná"; ##This rule should be changed to disguish ná before the imperative verb, "ná habair é".
+ADD:msyn-hPref-after-neg-imp (&msyn-hPref-after-neg-imp) TARGET (Verb Imper) IF
+	(-1 ("Ná") OR ("ná"))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 (Verb VTI Vow PastInd Neg Len))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+COPY:msyn-hPref-after-neg-imp (Sg Neg SUGGEST) EXCEPT (Sg &msyn-hPref-after-neg-imp) TARGET (&msyn-hPref-after-neg-imp);
+
+LIST VOW-PREP = "chomh", "go", "le"; 
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
 	(-1 VOW-PREP)
@@ -1571,6 +1575,9 @@ ADD:msyn-lenition-after-coppast (&msyn-lenition-after-coppast) TARGET (Adj Base)
 COPY:msyn-lenition-after-coppast (Len SUGGEST) EXCEPT (&msyn-lenition-after-coppast) TARGET (Adj &msyn-lenition-after-coppast);
 
 #!! **ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
+
+
+
 
 ADD:msyn-ecl-after-prep (&msyn-ecl-after-prep) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
 	(-1 Art)
