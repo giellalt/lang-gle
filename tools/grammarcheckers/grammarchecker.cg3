@@ -1134,12 +1134,15 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 #        =========================================================
 
 # Singular N.com Art.com N.sg.com ==> N.com Art.gen N.sg.gen
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) IF
+
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE -3 (Verb VTI));
+	(NEGATE 0 (Gen Sg));
+	#(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
+
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg Def) IF
 	(NEGATE 0 Gen)
 	(1 (Noun &msyn-gen-noun-defart-noun));
@@ -1148,11 +1151,8 @@ COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg De
 
 ## Tá barr an fhuinneog ar oscailt.  # Art N in Com
 #$ Tá barr na fuinneoige ar oscailt. # Art N in Gen
-#$ Tá doras an teach ar oscailt.
-## Tá doras an thí ar oscailt. ### NB! Elaine! should be teach+Noun+Masc+Gen+Sg+DefArt	thí > tí
-#$ Tá doirse na tithe ar oscailt.
-#$ Seomra an fear  # man.sg.com room 
-## Seomra an fhir # man.sg.gen room where sg.ecl is gramtrad for pl.gen
+#$ Seomra an fear
+## Seomra an fhir
 
 # Plural:  N.com Art.com N.pl.com ==> N.com Art.gen N.pl.gen # Noun Masc Com Pl DefArt 
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Com Pl DefArt) IF
