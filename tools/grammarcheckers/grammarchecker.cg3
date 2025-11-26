@@ -1138,7 +1138,8 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
-	(NEGATE 0 (Gen Sg));
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -3 (Art Def));
 	#(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
@@ -1336,7 +1337,7 @@ SUBSTITUTE (&msyn-gen-vn-noun-with-article) (&msyn-gen-noun-with-article) TARGET
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF 
-	(-1 ("an" Art) LINK NEGATE -1 (Prep Simp))(NEGATE 0 DefArt)
+	(-1 ("an" Art Sg Def) LINK NEGATE -1 (Prep Simp))(NEGATE 0 DefArt)
 	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
@@ -1348,11 +1349,8 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	## an asal. - incorrect
 	#$ an t-asal. - correct
 	
-# Speller suggestions rule – add SUGGESTWF to any spelling suggestion
-# that we actually want to suggest to the user.
-# The simplest is to just add it to all spelled words:	
+
 ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;
-# But perhaps you want to only suggest spellings of words that are not inside "quotes":
 ADD:spell-conservatively (&typo SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 2 QMARK);
 
 #!! ### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
