@@ -634,7 +634,7 @@ LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
 LIST &msyn-len-after-da = &msyn-len-after-da ;
 LIST &msyn-len-after-ma = &msyn-len-after-ma ;
 LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ;
-LIST &&msyn-plural-after-sna = &msyn-plural-after-sna ;
+LIST &msyn-plural-after-sna = &msyn-plural-after-sna ;
 LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ;
 LIST &msyn-lenition-after-um = &msyn-lenition-after-um ;
 LIST &lex-conj-plus-copula = &lex-conj-plus-copula ;
@@ -1248,7 +1248,7 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 
 # Singular N.com Art.com N.sg.com ==> N.com Art.gen N.sg.gen
 
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg DefArt) OR (Noun Fem Com Sg) IF
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) IF # DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Sg))
@@ -1449,8 +1449,9 @@ SUBSTITUTE (&msyn-gen-vn-noun-with-article) (&msyn-gen-noun-with-article) TARGET
 
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF 
-	(-1 ("an" Art Sg Def) LINK NEGATE -1 (Prep Simp))(NEGATE 0 DefArt)
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
+	(NEGATE -2 Noun)
+	(-1 ("an" Art Sg Def))(NEGATE 0 DefArt)
 	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
