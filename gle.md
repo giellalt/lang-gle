@@ -3455,7 +3455,7 @@ The following prepositions cause the following noun to be eclipsed and there are
 * LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; 
 
 These prepositions always cause the nouns after them to be lenited:
-* LIST ART-LEN-PREP = "<ar>" "<de>" "<do>" "<faoi>" "<mar>" "<ó>" "<roimh>" "<thar>" "<trí>";					
+* LIST ART-LEN-PREP = "<ar>" "<de>" "<do>" "<faoi>" "<gan>" "<idir>" "<mar>" "<ó>" "<roimh>" "<trí>";	
 
 Noun errors (Ecl vs. not Ecl) after prepositions
 
@@ -3646,8 +3646,12 @@ Other gen tags:
 * LIST &msyn-adj-gender = &msyn-adj-gender ;      
 * LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
-* LIST &msyn-ecl-after-prep = &msyn-ecl-after-prep ;      
-* LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;      
+* LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;      
+* LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     
+* LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;      
+* LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;      
+* LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;      
+* LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;      
 * LIST &msyn-fada-o = &msyn-fada-o ;     
 * LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	 
 * LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
@@ -3707,8 +3711,6 @@ Here ends the list and set section
 #### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
 #### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
-
-**ADD:msyn-len-after-prep**: rule to add lenition to nouns following prepositions
 
 Template rule to delete A and modify B in A B strings:
 
@@ -3772,8 +3774,6 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
 
 Rules to insert an h after the negative copula "ní" and certain prepositions 
-
-**ADD:msyn-ecl-after-prep**: A rule to correct eclipse errors without an intervening article. !!!IT WORKS!!! THESE RULES NEED TO BE AFTER THE ADDING AN ARTICLE AFTER PREPOSITION RULES
 
 **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
