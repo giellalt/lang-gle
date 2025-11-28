@@ -47,7 +47,6 @@ XFAIL_TESTS=from_grammarcheckers_cg3-FAIL.yaml \
     msyn-gen-noun-adj-PASS.yaml \
     msyn-gen-noun-defart-noun-FAIL.yaml \
     msyn-gen-noun-noun-FAIL.yaml \
-    msyn-gen-vn-noun-PASS.yaml \
     msyn-inis-do-FAIL.yaml \
     msyn-noun-defart-FAIL.yaml \
     msyn-sentences.yaml
