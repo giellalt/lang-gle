@@ -154,6 +154,9 @@ BEFORE-SECTIONS
 SUBSTITUTE (Noun) (Noun <ComGen>) TARGET Noun IF (0 (Com Sg Len) LINK 0 (Gen Sg Len)); 
 SUBSTITUTE (Noun) (Noun <ComGen>) TARGET Noun IF (0 (Com Sg) - Len LINK 0 (Gen Sg) - Len); 
 	# this rule needs to be before disambiguation starts
+	
+REMOVE:no-mascgensghpref (Noun Masc Gen Sg hPref) IF (0 Noun) ;
+	## hárasáin ar na hurláir uachtarach agus tá na seirbhísí
 
 
 
