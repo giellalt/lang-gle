@@ -3,5 +3,4 @@ Config:
   Variant: glegram-dev
 
 Tests:
-  - "Tá an dochtúir ag seasamh ag an {fuinneog}£{fhuinneog}"
 
