@@ -714,9 +714,17 @@ COPY:msyn-pl-noun-pl-adj (Adj Com Pl SUGGEST) EXCEPT (&msyn-pl-noun-pl-adj) TARG
 
 	##FEMININE
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 Sg OR Base OR (Gen Weak Pl))(-1 (Noun Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
-COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg &msyn-pl-noun-pl-adj) OR (Fem Com Sg &msyn-pl-noun-pl-adj) OR (Gen Weak Pl &msyn-pl-noun-pl-adj) TARGET (&msyn-pl-noun-pl-adj);
-ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));	
+
+COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
+	## Tháinig fir cáiliúil go leor chun na Ríochta i mbliana.
+COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (NEGATE -1 ("<.*i.>"r));
+	
+
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Noun) IF (1 (Adj &msyn-pl-noun-pl-adj)) ;
+
+ADDRELATION:msyn-pl-noun-pl-adj ($2) (Adj &msyn-pl-noun-pl-adj) TO (-1 (Noun &msyn-pl-noun-pl-adj));	
 	## Tháinig daltaí cáiliúil go leor chun na Ríochta i mbliana.
+	##LINDA
 	
 	
 
