@@ -634,6 +634,7 @@ LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
 LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
 LIST &msyn-len-after-da = &msyn-len-after-da ;
 LIST &msyn-len-after-ma = &msyn-len-after-ma ;
+LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ;
 LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ;
 LIST &msyn-plural-after-sna = &msyn-plural-after-sna ;
 LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ;
@@ -869,7 +870,10 @@ COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARG
 ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl));
 COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (&msyn-plural-after-sna) ;
 
-
+ADD:msyn-lenition-after-aon (&msyn-lenition-after-aon) TARGET (Noun) IF
+	(-1 ("aon")) 
+	(0 ("<[bcfgmpBCFGMP].*>"r));
+COPY:msyn-lenition-after-aon (Len &SUGGEST) EXCEPT (&msyn-lenition-after-aon) TARGET (&msyn-lenition-after-aon) ;
 	
 #Caithfear a bheith airdeallach maidir leis na haidiachtaí taispeántacha ‘seo’ agus ‘sin’ a úsáid
 #le réamhfhocail chomhshuite. Is é an tuiseal ginideach a leanann leithéidí ‘de bharr’, ‘de bhrí’, ‘in
