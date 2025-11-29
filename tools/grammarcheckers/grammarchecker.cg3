@@ -601,7 +601,7 @@ LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old ge
 #LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@ 
 #LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@ 
 #LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@ 
-#LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@ 
+LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@ 
 LIST &use-guillemets = &use-guillemets ;    #!!= * @CODE@ 
 LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ; #!!= * @CODE@ 
 LIST &lex-ar-an-aonach = &lex-ar-an-aonach ; #!!= * @CODE@ 
@@ -620,6 +620,8 @@ LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;     #!!= * @CODE@ 
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
+LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ;
+LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ;
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	#!!= * @CODE@ 
 LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ;
 LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; 
@@ -663,6 +665,7 @@ LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ;
 LIST &lex-de-ainneoin = &lex-de-ainneoin ;
 LIST &lex-chomh = &lex-chomh ;
 LIST &lex-dairire = &lex-dairire ;
+LIST &lex-ar-leibheal = &lex-ar-leibheal ;
 LIST &typo = &typo ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -853,8 +856,9 @@ COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARG
 
 #!! ### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
-ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb VTI Imper 2P Sg) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
-COPY:msyn-lenition-after-nior (PastInd Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
+ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
+COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
+
 
 ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
 	(-1 ("i" Prep Art Sg)) 
@@ -866,6 +870,65 @@ ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
        	(NEGATE 0 ("<si.*>"r) + Fem)   
      	(NEGATE 0 ("<sr.*>"r) + Fem);
 COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+LIST &msyn-gen-after-trasna = &msyn-gen-after-trasna ;
+
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET (Noun Com Sg) IF # DefArt) OR (Noun Fem Com Sg) IF
+	#(*-2 (Noun Com) BARRIER NOT-A)
+	(-2 ("trasna") OR ("Trasna")) 
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -3 (Art Def));
+	#(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-after-trasna (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-after-trasna) TARGET (&msyn-gen-after-trasna);
+
+
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET ("an" Art Sg Def) IF
+	(-1 ("trasna") OR ("Trasna")) 
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-noun-defart-noun));
+COPY:msyn-gen-after-trasna ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Fem));
+COPY:msyn-gen-after-trasna ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Masc));
+
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna ) TARGET (Noun Com Sg) IF # DefArt) OR (Noun Fem Com Sg) IF
+	(*-2 (Noun Com) BARRIER NOT-A)
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -3 (Art Def));
+	#(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-after-trasna (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-after-trasna) TARGET (&msyn-gen-after-trasna);
+
+
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET ("an" Art Sg Def) IF
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-after-trasna));
+COPY:msyn-gen-after-trasna ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Fem));
+COPY:msyn-gen-after-trasna ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Masc));
+
+
+# Plural:  Trasna Art.com N.pl.com ==> N.com Art.gen N.pl.gen # Noun Masc Com Pl DefArt 
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET (Noun Masc Com Pl DefArt) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Pl))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-after-trasna (Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Masc Com Pl DefArt &msyn-gen-after-trasna) TARGET (&msyn-gen-after-trasna);
+
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET (Noun Fem Com Pl DefArt) IF
+	(-2 (Noun Com))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Pl))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-after-trasna (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-after-trasna) TARGET (&msyn-gen-after-trasna);
+
+
+# The article
+ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET ("an" Art Pl Def) IF
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-noun-defart-noun));
+COPY:msyn-gen-after-trasna ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Fem));
+COPY:msyn-gen-after-trasna ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Masc));
+
 
 ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl));
 COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (&msyn-plural-after-sna) ;
@@ -1084,6 +1147,11 @@ ADDRELATION:lex-conj-plus-copula (DELETE1) (Conj Subord &lex-conj-plus-copula) T
 COPY:lex-conj-plus-copula (Cop SUGGEST) EXCEPT (Cop Pres) TARGET (&lex-conj-plus-copula);
 
 	# Need to change the rule to exclude "sin" Cop Pro Dem
+	
+	##ag leibhéal to ar leibhéal - change Prep Simp "ag" to "ar".
+	
+ADD:lex-ar-leibheal (&lex-ar-leibheal) TARGET ("ag" Prep Simp) IF (1 ("leibhéal") OR ("leibhéil")) ;
+COPY:lex-ar-leibheal ("ar" Prep Simp SUGGEST) EXCEPT ("ag" Prep Simp) TARGET (Simp &lex-ar-leibheal) ;
     	
 ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) OR (Verb VI FutInd) OR (Verb VI Cond CM) OR (Verb PresImp) IF
 	(-1 ("mura") OR ("Mura"))
@@ -1253,11 +1321,11 @@ LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
+	(NEGATE -1 ("cúpla" OR "Cúpla"))
 	(NEGATE 0 Gen)
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
-	(NEGATE 0 Prop LINK -1 MODIFYERPROP)  # óg darbh ainm Éadbhard Ó Cathaoir
-	;
+	(NEGATE 0 Prop LINK -1 MODIFYERPROP);  # óg darbh ainm Éadbhard Ó Cathaoir
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
@@ -1468,6 +1536,61 @@ COPY:msyn-gen-noun-defart-noun (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref
         #$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
 
 
+ADD:msyn-gen-chun-noun (&msyn-gen-chun-noun) TARGET (Noun Com Sg) IF
+	(-1 ("chun" Prep Simp))
+	(NEGATE 0 (Gen Weak Pl))
+	(NEGATE 0 (Verbal Noun) OR (Verbal Noun VTI))
+	(NEGATE 0 (Verb));
+COPY:msyn-gen-chun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-chun-noun) TARGET (&msyn-gen-chun-noun) ;
+
+
+ADD:msyn-gen-chun-defart-noun (&msyn-gen-chun-defart-noun) TARGET (Noun Com Sg) IF # DefArt) OR (Noun Fem Com Sg) IF
+	(-2 ("chun" Prep Simp))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg));
+COPY:msyn-gen-chun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-chun-defart-noun) TARGET (&msyn-gen-chun-defart-noun);
+
+
+ADD:msyn-gen-chun-defart-noun (&msyn-gen-chun-defart-noun) TARGET ("an" Art Sg Def) IF
+	(-1 ("chun" Prep Simp))
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-chun-defart-noun));
+COPY:msyn-gen-chun-defart-noun ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-chun-defart-noun) TARGET (Art &msyn-gen-chun-defart-noun) IF (1 (Noun Fem));
+COPY:msyn-gen-chun-defart-noun ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-chun-defart-noun) TARGET (Art &msyn-gen-chun-defart-noun) IF (1 (Noun Masc));
+
+
+# Plural:  Chun Art.com N.pl.com ==> N.com Art.gen N.pl.gen # Noun Masc Com Pl DefArt 
+ADD:msyn-gen-chun-defart-noun (&msyn-gen-chun-defart-noun) TARGET (Noun Masc Com Pl DefArt) IF
+	(-2 ("chun" Prep Simp))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Pl))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-chun-defart-noun (Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Masc Com Pl DefArt &msyn-gen-chun-defart-noun) TARGET (&msyn-gen-chun-defart-noun);
+
+ADD:msyn-gen-chun-defart-noun (&msyn-gen-chun-defart-noun) TARGET (Noun Fem Com Pl DefArt) IF
+	(-2 ("chun" Prep Simp))
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Pl))
+	(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-chun-defart-noun (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-chun-defart-noun) TARGET (&msyn-gen-chun-defart-noun);
+
+
+# The article
+ADD:msyn-gen-chun-defart-noun (&msyn-gen-chun-defart-noun) TARGET ("an" Art Pl Def) IF
+	(-1 ("chun" Prep Simp))
+	(NEGATE 0 Gen)
+	(1 (Noun &msyn-gen-noun-defart-noun));
+COPY:msyn-gen-chun-defart-noun ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-chun-defart-noun) TARGET (Art &msyn-gen-chun-defart-noun) IF (1 (Noun Fem));
+COPY:msyn-gen-chun-defart-noun ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-chun-defart-noun) TARGET (Art &msyn-gen-chun-defart-noun) IF (1 (Noun Masc));
+
+# Addrelation for singular and plural
+ADDRELATION ($2 LEFT) (&msyn-gen-chun-defart-noun) TO (-1 (Art &msyn-gen-chun-defart-noun));
+SUBSTITUTE (&msyn-gen-chun-defart-noun) (co&msyn-gen-chun-defart-noun) TARGET (SUGGEST);
+
+
+
+
+
 #!! #### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct 
 
 #!! **ADD:msyn-gen-case-nouns** ...
@@ -1571,12 +1694,12 @@ ADDRELATION:lex-ar-an-aonach ($2 RIGHT) (Verb &lex-ar-an-aonach) TO (1 (ADDED-BE
 
 #!! **ADD:lex-ar-a-haon-a-chlog** ...
 
-ADD:lex-ar-a-haon-a-chlog (&lex-ar-a-haon-a-chlog) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep))(*-1 ("a haon a chlog") BARRIER (*) - (Noun Com)) ;
+ADD:lex-ar-a-haon-a-chlog (&lex-ar-a-haon-a-chlog) TARGET ("ag" Prep) IF (NOT 0 ("ar" Prep Simp))(*-1 ("a haon a chlog") BARRIER (*) - (Noun Com)) ;
 COPY:lex-a-haon-a-chlog ("ar" SUGGEST) EXCEPT ("ag" &lex-a-haon-a-chlog) TARGET (&lex-a-haon-a-chlog);	
 	## Ag a haon a chlog. - incorrect ("ag" at)
 	#$ Ar a haon a chlog. - correct ("ar" on)
 
-#!! **ADD:lex-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
+#!! **ADD:lex-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way toy it is that milk is put on tea.
 	#$ Bainne a chur ar an tae.				CORRECT
 	#$ Bainne a chur ar do chuid tae.			CORRECT
 	## Bainne a chur sa tae.				INCORRECT
@@ -1755,8 +1878,86 @@ ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET (Art Sg Def) IF (-1 ("cé"
 ADDRELATION (DELETE1) (Cop Pro Q &msyn-ce-plus-defart) TO (1 (Art &msyn-ce-plus-defart));
 COPY:msyn-ce-plus-defart (Det Q Art Sg SUGGEST) EXCEPT (Cop Pro Q) TARGET (&msyn-ce-plus-defart);
 
-## A rule to correct the error numbers and years.
-##aon bhliain amháin, dhá bhliain, trí, ceithre, cúig, sé bliana, seacht, ocht, naoi, deich mbliana.
+##uimhreacha
+
+LIST &lex-3456 = &lex-3456 ;
+
+LIST SPECIALNUMBERS = "bliain" "seachtain" "ceann" "cloigeann" "fiche" "pingin" "orlach" "trian" "troigh" "uair" ;
+
+LIST NUMBERS3456 = "trí" "ceathair" "cúig" "sé" ;
+
+LIST NUMBERS78910 = "seacht" "ocht" "naoi" "deich" ;
+
+ADD:lex-3456 (&lex-3456) TARGET ("bliain" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("bliain" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("seachtain" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("seachtain" Com Sg) IF (-1 NUMBERS78910); # IT DOES NOT WORK
+COPY:lex-3456 (Com Pl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("cloigeann") IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Pl SUGGEST) EXCEPT (Sg &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("cloigeann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+
+ADD:lex-3456 (&lex-3456) TARGET ("pingin" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("pingin" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+
+ADD:lex-3456 (&lex-3456) TARGET ("orlach" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("orlach" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+
+ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+
+ADD:lex-3456 (&lex-3456) TARGET ("trian" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("trian" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+
+ADD:lex-3456 (&lex-3456) TARGET ("troigh" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("troigh" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("uair" Com Sg Len) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (hPref SUGGEST) EXCEPT (Com Sg Len &lex-3456) TARGET (&lex-3456);
+
+ADD:lex-3456 (&lex-3456) TARGET ("uair" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Gen Sg Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
 ADD:lex-bliana (&lex-chomh) TARGET ("bhliain" Adv Its) OR ("Comh" Adv Its) ;
 COPY:lex-bliana ( SUGGEST) EXCEPT (*) TARGET (&lex-bliana) ;
@@ -1777,4 +1978,7 @@ COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TAR
 ##fear mór - fear mhór, fear móra, fear mhóra
 ##scoil bheag - scoil beag, scoil beaga, scoil bheaga
 ##scoileanna cáiliúla - scoileanna cáiliúil, scoileanna cháiliúil
+
+
+
 ## an fhir mhóir, na bhfear mór,  
