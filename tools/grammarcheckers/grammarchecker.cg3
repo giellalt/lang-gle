@@ -1082,6 +1082,8 @@ ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Cop Pres) IF (-1 (Conj 
 ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Conj Subord) IF (1 (Cop));
 ADDRELATION:lex-conj-plus-copula (DELETE1) (Conj Subord &lex-conj-plus-copula) TO (1 (Cop Pres &lex-conj-plus-copula)) ;
 COPY:lex-conj-plus-copula (Cop SUGGEST) EXCEPT (Cop Pres) TARGET (&lex-conj-plus-copula);
+
+	# Need to change the rule to exclude "sin" Cop Pro Dem
     	
 ADD:msyn-ecl-after-mura (&msyn-ecl-after-mura) TARGET (Verb PresInd) OR (Verb VI FutInd) OR (Verb VI Cond CM) OR (Verb PresImp) IF
 	(-1 ("mura") OR ("Mura"))
@@ -1109,6 +1111,14 @@ ADD:msyn-ecl-after-verb-particle-q (&msyn-ecl-after-verb-particle-q) TARGET (Ver
 	(-1 (Part Vb Q))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-verb-particle-q (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-verb-particle-q) TARGET (&msyn-ecl-after-verb-particle-q);
+
+#Ar cheannaigh tú é? "ar" Part Vb Q Past
+
+ADD:msyn-len-after-verb-particle-q-past (&msyn-len-after-verb-particle-q-past) TARGET (Verb) IF
+	(-1 (Part Vb Q Past))
+	(NEGATE -1 ("ar" Prep Simp)) 
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
+COPY:msyn-len-after-verb-particle-q-past (PastInd Len SUGGEST) EXCEPT (&msyn-len-after-verb-particle-q-past) TARGET (&msyn-len-after-verb-particle-q-past);
 
 ##A rule to lenite nouns beginning with the letters CDFGST after the preposition "thar".
 
@@ -1184,7 +1194,7 @@ LIST SCALE-WORDS = "buí" ;
 
 SET NOT-SCALE-WORDS =  (*) - SCALE-WORDS ;
 
-# "fada" A + "ó"
+# "fada" A + "ó"  Is fada buí ó am scoir é
 
 #!! **ADD:msyn-fada-o** ...
 
@@ -1417,7 +1427,7 @@ ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Adj) 
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
-COPY:msyn-gen-vn-noun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
+COPY:msyn-gen-vn-noun-with-article (Adj SUGGEST) EXCEPT (&msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
 
 
 ##Nuair nach mbíonn an t-alt (na) i láthair, is iondúil gurb é an t-ainmneach a úsáidtear in áit an ghinidigh: ag lorg na litreach fada, le haghaidh na litreach fada ach ag lorg litir fhada, le haghaidh litir fhada.
@@ -1744,6 +1754,12 @@ ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET (Art Sg Def) IF (-1 ("cé"
 	
 ADDRELATION (DELETE1) (Cop Pro Q &msyn-ce-plus-defart) TO (1 (Art &msyn-ce-plus-defart));
 COPY:msyn-ce-plus-defart (Det Q Art Sg SUGGEST) EXCEPT (Cop Pro Q) TARGET (&msyn-ce-plus-defart);
+
+## A rule to correct the error numbers and years.
+##aon bhliain amháin, dhá bhliain, trí, ceithre, cúig, sé bliana, seacht, ocht, naoi, deich mbliana.
+
+ADD:lex-bliana (&lex-chomh) TARGET ("bhliain" Adv Its) OR ("Comh" Adv Its) ;
+COPY:lex-bliana ( SUGGEST) EXCEPT (*) TARGET (&lex-bliana) ;
 
 ## A rule to correct the error "comh" to "chomh".
 
