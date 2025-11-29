@@ -3637,6 +3637,7 @@ Other gen tags:
 
 ####  Other tags
 
+* LIST &use-ellipsis = &use-ellipsis ;     
 * LIST &use-guillemets = &use-guillemets ;     
 * LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ;  
 * LIST &lex-ar-an-aonach = &lex-ar-an-aonach ;  
@@ -3765,7 +3766,7 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 
 **ADD:lex-ar-a-haon-a-chlog** ...
 
-**ADD:lex-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way to say it is that milk is put on tea.
+**ADD:lex-ar-an-tae**: This rule is for when people put milk in tea. In Irish, the correct way toy it is that milk is put on tea.
 
 This rule is for when people put milk in coffee. In Irish, the correct way to say it is that milk is put on coffee. At is stands, the rule works for Ulaidh Irish. It needs to be changed to work for standard Irish.
 
