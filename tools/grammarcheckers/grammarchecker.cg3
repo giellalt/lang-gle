@@ -960,8 +960,10 @@ COPY:lex-da-bharr-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-da-
 
 ##in ainneoin sin - #$ina ainneoin sin
 
-ADD:lex-ina-ainneoin-sin (&lex-ina-ainneoin-sin) TARGET ("i" Prep Simp Vow) IF (1 ("ainneoin"));
-COPY:lex-ina-ainneoin-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-ina-ainneoin-sin) TARGET (Art &lex-ina-ainneoin-sin) IF (1 (Noun Fem)) ;
+ADD:lex-ina-ainneoin-sin (&lex-ina-ainneoin-sin) TARGET ("i" Prep Simp Vow) IF
+	(1 ("ainneoin"))
+	(2 ("sin" Det Dem));
+COPY:lex-ina-ainneoin-sin ("i" Prep Poss 3P Sg Masc SUGGEST) EXCEPT ("i" Prep Simp Vow) TARGET (Prep &lex-ina-ainneoin-sin);
 
 
 ##os coinne sin - #$os a choinne sin
@@ -972,8 +974,14 @@ COPY:lex-os-a-choinne-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex
 
 ##in ainneoin - #$d'ainneoin
 
-ADD:lex-de-ainneoin (&lex-de-ainneoin ) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
-COPY:lex-de-ainneoin  ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def lex-de-ainneoin) TARGET (Art &lex-de-ainneoin ) IF (1 (Noun Fem)) ;
+ADD:lex-de-ainneoin (&lex-de-ainneoin) TARGET ("i" Prep Simp Vow) IF (1 ("ainneoin" Conj Subord));
+#ADDRELATION:lex-de-ainneoin (DELETE1) (Conj &lex-de-ainneoin) TO (-1 (Prep &lex-de-ainneoin)) ; 
+COPY:lex-de-ainneoin ("d'ainneoin" Prep Cmpd SUGGEST) EXCEPT ("i" Prep Simp Vow) TARGET (Prep &lex-de-ainneoin);
+
+#ADD:lex-de-ainneoin (&lex-de-ainneoin) TARGET ("i" Prep Simp Vow) IF (1 ("ainneoin"));
+#ADD:lex-de-ainneoin (&lex-de-ainneoin) TARGET ("ainneoin") IF (-1 ("i" Prep Simp Vow));
+#ADDRELATION:lex-de-ainneoin (DELETE1) (Noun &lex-de-ainneoin) TO (-1 (Prep &lex-de-ainneoin)) ; 		# DEL from keep TO delete
+#COPY:lex-de-ainneoin ("d'ainneoin" Prep Cmpd SUGGEST) EXCEPT (Subst Noun Sg) TARGET (Prep &lex-de-ainneoin) ;
 
 #!!  Template rule to delete A and modify B in A B strings:
 
@@ -1141,10 +1149,10 @@ ADD:msyn-len-after-ma (&msyn-len-after-ma) TARGET (Verb) IF
 	(0 ("<[bcdfgpstBCDFGPST].*>"r));
 COPY:msyn-len-after-ma (Len SUGGEST) EXCEPT (&msyn-len-after-ma) TARGET (&msyn-len-after-ma);
 
-ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Cop Pres) IF (-1 (Conj Subord));
-ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Conj Subord) IF (1 (Cop));
-ADDRELATION:lex-conj-plus-copula (DELETE1) (Conj Subord &lex-conj-plus-copula) TO (1 (Cop Pres &lex-conj-plus-copula)) ;
-COPY:lex-conj-plus-copula (Cop SUGGEST) EXCEPT (Cop Pres) TARGET (&lex-conj-plus-copula);
+#ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Cop Pres) IF (-1 (Conj Subord));
+#ADD:lex-conj-plus-copula (&lex-conj-plus-copula) TARGET (Conj Subord) IF (1 (Cop));
+#ADDRELATION:lex-conj-plus-copula (DELETE1) (Conj Subord &lex-conj-plus-copula) TO (1 (Cop Pres &lex-conj-plus-copula)) ;
+#COPY:lex-conj-plus-copula (Cop SUGGEST) EXCEPT (Cop Pres) TARGET (&lex-conj-plus-copula);
 
 	# Need to change the rule to exclude "sin" Cop Pro Dem
 	
@@ -1900,8 +1908,8 @@ COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
 ADD:lex-3456 (&lex-3456) TARGET ("seachtain" Com Sg) IF (-1 NUMBERS78910); # IT DOES NOT WORK
 COPY:lex-3456 (Com Pl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
-ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
-COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+ADD:lex-3456 (&lex-3456) TARGET ("ceann") IF (-1 NUMBERS3456)(NEGATE -1 ("trí" Prep Simp)); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
 ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
 COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
