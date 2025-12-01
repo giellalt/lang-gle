@@ -91,6 +91,7 @@ etc
 -  **baint Nf2-SINGULAR;** 
 -  **réir Nf2-SINGULAR;** 
 -  **spéis Nf2-SINGULAR;** 
+-  **suim Nf2-SINGULAR;** 
 -  **teilifís Nf2-SINGULAR;** 
 -  **titim Nf2-SINGULAR;** 
 

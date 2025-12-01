@@ -2617,6 +2617,7 @@ etc
 -  **baint Nf2-SINGULAR;** 
 -  **réir Nf2-SINGULAR;** 
 -  **spéis Nf2-SINGULAR;** 
+-  **suim Nf2-SINGULAR;** 
 -  **teilifís Nf2-SINGULAR;** 
 -  **titim Nf2-SINGULAR;** 
 
@@ -3644,6 +3645,7 @@ Other gen tags:
 * LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
 * LIST &lex-ar-an-tae = &lex-ar-an-tae;     
 * LIST &lex-tá-is = &lex-tá-is ;       
+* LIST &lex-part-comparative-adj = &lex-part-comparative-adj ;  
 * LIST &msyn-adj-gender = &msyn-adj-gender ;      
 * LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ;  
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
@@ -3654,21 +3656,54 @@ Other gen tags:
 * LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;      
 * LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;      
 * LIST &msyn-fada-o = &msyn-fada-o ;     
+* LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; 
+* LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; 
 * LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	 
+* LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ; 
+* LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; 
+* LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; 
+* LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ; 
+* LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ; 
+* LIST &msyn-hPref-after-na = &msyn-hPref-after-na ; 
 * LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
+* LIST &msyn-i-mbliana = &msyn-i-mbliana ; 
 * LIST &msyn-inis-do = &msyn-inis-do ;     
 * LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
+* LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ; 
+* LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; 
+* LIST &msyn-len-after-da = &msyn-len-after-da ; 
+* LIST &msyn-len-after-ma = &msyn-len-after-ma ; 
+* LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; 
+* LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; 
+* LIST &msyn-plural-after-sna = &msyn-plural-after-sna ; 
+* LIST &msyn-sna-before-plural = &msyn-sna-before-plural ; 
+* LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ; 
+* LIST &msyn-lenition-after-um = &msyn-lenition-after-um ; 
+* LIST &lex-conj-plus-copula = &lex-conj-plus-copula ; 
 * LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	  
 * LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	  
 * LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	  
 * LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ;  
 * LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
 * LIST &msyn-noun-defart = &msyn-noun-defart ;     
+* LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ; 
 * LIST &msyn-prepart-prep = &msyn-prepart-prep ;     
 * LIST &msyn-prep-detposs = &msyn-prep-detposs ;     
+* LIST &msyn-le-plus-defart = &msyn-le-plus-defart ; 
+* LIST &msyn-tri-plus-defart = &msyn-tri-plus-defart ;  
+* LIST &msyn-ecl-after-trí-defart = &msyn-ecl-after-trí-defart ; 
 * LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
 * LIST &msyn-prep-pron = &msyn-prep-pron ;     
+* LIST &msyn-sa = &msyn-sa ; 
+* LIST &msyn-san = &msyn-san ; 
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
+* LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	
+* LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; 
+* LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; 
+* LIST &lex-de-ainneoin = &lex-de-ainneoin ; 
+* LIST &lex-chomh = &lex-chomh ; 
+* LIST &lex-dairire = &lex-dairire ; 
+* LIST &lex-ar-leibheal = &lex-ar-leibheal ; 
 * LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;     
 * LIST ADDED = ADDED ;   tag ensuring ... hmm
 * LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;   tag ensuring ... hmm
