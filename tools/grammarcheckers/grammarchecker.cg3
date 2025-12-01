@@ -752,7 +752,7 @@ COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg) OR (Fem C
 
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Prep Simp) (1 (Pron Pers)) ;
 ADD:msyn-prep-pron (&msyn-prep-pron) TARGET (Pron Pers) (-1 &msyn-prep-pron) ;
-	## Níl an am ag mé le aghaidh é seo.
+	## Níl an am ag mé le aghaidh é seo. Pron Prep 1P Sg Emph
 	#$ Níl an t-am agam le haghaidh é seo.
 
 ADDRELATION:msyn-prep-pron (DELETE1) (Prep &msyn-prep-pron) TO (1 (Pron &msyn-prep-pron)) ;
@@ -764,6 +764,8 @@ COPY:msyn-prep-pron (Pron Prep 3P Sg Fem SUGGEST) EXCEPT (Prep Simp) TARGET (Pre
 COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (1P Pl)) ;
 COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
 COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
+
+
 
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
@@ -870,6 +872,16 @@ ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
        	(NEGATE 0 ("<si.*>"r) + Fem)   
      	(NEGATE 0 ("<sr.*>"r) + Fem);
 COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+#"Aoine" Noun <ComGen> Fem Gen Sg hPref
+
+ADD:lex-de-haoine (&lex-de-haoine) TARGET ("Aoine" Fem Gen Sg) IF (-1 ("Dé" Subst Noun <ComGen> Sg))(NEGATE 0 (Noun Fem Gen Sg hPref)) ; 
+COPY:lex-de-haoine (hPref &SUGGEST) EXCEPT (&lex-de-haoine) TARGET (&lex-de-haoine) ;
+
+ADD:lex-deardaoin (&lex-de-haoine) TARGET ("Dé" Subst Noun Sg) IF (1 ("Déardaoin")) ; 
+ADD:lex-deardaoin (&lex-de-haoine) TARGET ("Déardaoin") IF (-1 ("Dé" Subst Noun Sg)) ; 
+ADDRELATION:lex-deardaoin (DELETE1) (Noun &lex-dairire) TO (-1 (Subst Noun &lex-deardaoin)) ; # DEL from keep TO delete
+COPY:lex-deardaoin ("Déardaoin" Noun Masc Com Sg SUGGEST) EXCEPT ("Dé" Subst Noun Sg) TARGET (Noun &lex-deardaoin);
 
 LIST &msyn-gen-after-trasna = &msyn-gen-after-trasna ;
 
@@ -1324,16 +1336,15 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 #!! #### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
 #        ===============================================
 
-LIST MODIFYERNOUN = "cuid" ;
+LIST MODIFYERNOUN = "cuid" "cúpla" ;
 LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
-	(NEGATE -1 ("cúpla" OR "Cúpla"))
 	(NEGATE 0 Gen)
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
-	(NEGATE 0 Prop LINK -1 MODIFYERPROP);  # óg darbh ainm Éadbhard Ó Cathaoir
+	(NEGATE 0 Prop LINK -1 MODIFYERPROP); 
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
@@ -1782,7 +1793,29 @@ ADD:msyn-hPref-after-neg-imp (&msyn-hPref-after-neg-imp) TARGET (Verb Imper) IF
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 COPY:msyn-hPref-after-neg-imp (Sg Neg SUGGEST) EXCEPT (Sg &msyn-hPref-after-neg-imp) TARGET (&msyn-hPref-after-neg-imp);
 
-LIST VOW-PREP = "chomh", "go", "le"; 
+	## Bhí cion go áirithe ar an bpréachán aige.
+	#$ Bhí cion go háirithe ar an bpréachán aige.
+	## Níl an t-am agam le aghaidh é seo.
+	#$ Níl an t-am agam le haghaidh é seo.
+
+ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
+	(-1 ("chomh"))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+
+ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
+	(-1 ("go"))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+	
+ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
+	(-1 ("le"))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+	
+COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
+
+COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
 	(-1 VOW-PREP)
@@ -1798,12 +1831,14 @@ COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGE
 
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
 
+
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> IF 
 	(-1 ("cá"))
 	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
+
 
 ## A rule to insert lenition after Cop Past Ba cosúil -> Ba chosúil, ba bocht -> ba bhocht.
 
@@ -1986,6 +2021,9 @@ COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TAR
 ##fear mór - fear mhór, fear móra, fear mhóra
 ##scoil bheag - scoil beag, scoil beaga, scoil bheaga
 ##scoileanna cáiliúla - scoileanna cáiliúil, scoileanna cháiliúil
+
+## "<Chomh>"
+	#"chomh" Adv Its <W:0.0>
 
 
 
