@@ -1,6 +1,0 @@
-Config:
-  Spec: ../pipespec.xml
-  Variant: glegram-dev
-
-Tests:
-  - "Ach in aon áit amháin bhí pasáiste chuig geata lasmuigh a bhlocáil an Saighdiúir de bhun ordú ón Rí"
