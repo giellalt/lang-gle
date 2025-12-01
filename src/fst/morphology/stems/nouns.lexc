@@ -412,6 +412,7 @@ leagan		Nm1-11;	! version
 baint		Nf2-SINGULAR;   !!≈ -  **@CODE@** 
 réir		Nf2-SINGULAR; !!≈ -  **@CODE@** 
 spéis		Nf2-SINGULAR;  !!≈ -  **@CODE@** 
+suim		Nf2-SINGULAR;  !!≈ -  **@CODE@** 
 teilifís	Nf2-SINGULAR;  !!≈ -  **@CODE@** 
 titim		Nf2-SINGULAR;  !!≈ -  **@CODE@** 
 
@@ -7492,30 +7493,30 @@ achomharcóir	Nm3-1;	! appellant
 aclaíocht	Nf3-SINGULAR;	! agility; limbering, exercise; adroitness
 acmhainn	Nf2-SINGULAR;	! capacity, endurance; means, resources;
 acraíocht	Nf3-SINGULAR;	! acreage
-adhaint	Nf2-SINGULAR;	! inflammation; ignition
+adhaint		Nf2-SINGULAR;	! inflammation; ignition
 adhascaid	Nf2-SINGULAR;	! nausea, morning sickness
 adhlacóir	Nm3-1;	! undertaker
 adhmadóireacht	Nf3-SINGULAR;	! woodwork, carpentry
 adhmaint	Nf2-7;	! lodestone, magnet
 adhraitheoir	Nm3-1;	! adorer, worshipper
 admháil:admhál	Nf3-6;	! acknowledgement, admission; receipt
-adóib	Nf2-SINGULAR;	! adobe
+adóib		Nf2-SINGULAR;	! adobe
 aeistéitic	Nf2-SINGULAR;	! aesthetics
-aeracht	Nf3-SINGULAR;	! airiness; gaiety; flightiness
+aeracht		Nf3-SINGULAR;	! airiness; gaiety; flightiness
 aeraidinimic	Nf2-1;	! aerodynamics
 aeraíocht	Nf3-SINGULAR;	! open-air entertainment, ag ~
 aerloingseoireacht	Nf3-SINGULAR;	! aeronautics
-aeráid	Nf2-7;	! climate
-aeráil	Nf3-SINGULAR;	! ventilation vt ventilate, air
-aeróg	Nf2-1;	! aerial
-agaill	Nf2-7;	! earthworm, lobworm
-agall	Nf2-1;	! exclamation, cry; talk, argument
-agáit	Nf2-7;	! agate
+aeráid		Nf2-7;	! climate
+aeráil		Nf3-SINGULAR;	! ventilation vt ventilate, air
+aeróg		Nf2-1;	! aerial
+agaill		Nf2-7;	! earthworm, lobworm
+agall		Nf2-1;	! exclamation, cry; talk, argument
+agáit		Nf2-7;	! agate
 aibhleog	Nf2-1;	! coal (of fire), ~
 aibhléis	Nf2-SINGULAR;	! electricity
-aibhéis	Nf2-SINGULAR;	! abyss
-aibreog	Nf2-1;	! apricot
-aibéil	Nf2-SINGULAR;	! ~ chainte back-chat a1
+aibhéis		Nf2-SINGULAR;	! abyss
+aibreog		Nf2-1;	! apricot
+aibéil		Nf2-SINGULAR;	! ~ chainte back-chat a1
 aibíocht	Nf3-SINGULAR;	! ripeness, maturity; quickness, cleverness
 aibítir:aibítr	Nf2-7;	! gs -tre pl -trí
 aicearracht	Nf3-SINGULAR;	! in ~ soon, without
@@ -22170,7 +22171,6 @@ oistéaclast		Nm4-12;	!	(gs ~, pl ~aí)
 oisté-eolaí		Nm4-4;	!	(gs ~, pl -aithe)
 oistiam		Nm4-12;	!	(gs ~, pl ~aí)
 oistín		Nm4-1;	!	(gs ~, pl ~í)
-ól		Nm4-1;	!	(gs ~il)
 olabhraon		Nm1-3;	!	(gs -oin, pl ~ta)
 olachrann		Nm1-1;	!	(gs & npl -ainn, gpl ~)
 ola-éadach		Nm1-5;	!	(gs -aigh, pl -aí)

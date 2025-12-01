@@ -608,6 +608,7 @@ LIST &lex-ar-an-aonach = &lex-ar-an-aonach ; #!!= * @CODE@
 LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;    #!!= * @CODE@ 
 LIST &lex-ar-an-tae = &lex-ar-an-tae;    #!!= * @CODE@ 
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@ 
+LIST &lex-part-comparative-adj = &lex-part-comparative-adj ; #!!= * @CODE@ 
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
 LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@ 
@@ -620,52 +621,54 @@ LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;     #!!= * @CODE@ 
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
-LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ;
-LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ;
+LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; #!!= * @CODE@
+LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; #!!= * @CODE@
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	#!!= * @CODE@ 
-LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ;
-LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; 
-LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; 
-LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ;
-LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ;
+LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ; #!!= * @CODE@
+LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; #!!= * @CODE@
+LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; #!!= * @CODE@
+LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ; #!!= * @CODE@
+LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ; #!!= * @CODE@
+LIST &msyn-hPref-after-na = &msyn-hPref-after-na ; #!!= * @CODE@
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
-LIST &msyn-i-mbliana = &msyn-i-mbliana ;
+LIST &msyn-i-mbliana = &msyn-i-mbliana ; #!!= * @CODE@
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@ 
-LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ;
-LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ;
-LIST &msyn-len-after-da = &msyn-len-after-da ;
-LIST &msyn-len-after-ma = &msyn-len-after-ma ;
-LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ;
-LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ;
-LIST &msyn-plural-after-sna = &msyn-plural-after-sna ;
-LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ;
-LIST &msyn-lenition-after-um = &msyn-lenition-after-um ;
-LIST &lex-conj-plus-copula = &lex-conj-plus-copula ;
+LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ; #!!= * @CODE@
+LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; #!!= * @CODE@
+LIST &msyn-len-after-da = &msyn-len-after-da ; #!!= * @CODE@
+LIST &msyn-len-after-ma = &msyn-len-after-ma ; #!!= * @CODE@
+LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; #!!= * @CODE@
+LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; #!!= * @CODE@
+LIST &msyn-plural-after-sna = &msyn-plural-after-sna ; #!!= * @CODE@
+LIST &msyn-sna-before-plural = &msyn-sna-before-plural ; #!!= * @CODE@
+LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ; #!!= * @CODE@
+LIST &msyn-lenition-after-um = &msyn-lenition-after-um ; #!!= * @CODE@
+LIST &lex-conj-plus-copula = &lex-conj-plus-copula ; #!!= * @CODE@
 LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@ 
 LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@ 
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@ 
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@ 
-LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ;
+LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ; #!!= * @CODE@
 LIST &msyn-prepart-prep = &msyn-prepart-prep ;    #!!= * @CODE@ 
 LIST &msyn-prep-detposs = &msyn-prep-detposs ;    #!!= * @CODE@ 
-LIST &msyn-le-plus-defart = &msyn-le-plus-defart ;
-LIST &msyn-tri-plus-defart = &msyn-tri-plus-defart ;
-LIST &msyn-ecl-after-trí-defart = &msyn-ecl-after-trí-defart ;
+LIST &msyn-le-plus-defart = &msyn-le-plus-defart ; #!!= * @CODE@
+LIST &msyn-tri-plus-defart = &msyn-tri-plus-defart ;  #!!= * @CODE@
+LIST &msyn-ecl-after-trí-defart = &msyn-ecl-after-trí-defart ; #!!= * @CODE@
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@ 
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@ 
-LIST &msyn-sa = &msyn-sa ;
-LIST &msyn-san = &msyn-san ;
+LIST &msyn-sa = &msyn-sa ; #!!= * @CODE@
+LIST &msyn-san = &msyn-san ; #!!= * @CODE@
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@ 
-LIST &lex-da-bharr-sin = &lex-da-bharr-sin ;
-LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ;
-LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ;
-LIST &lex-de-ainneoin = &lex-de-ainneoin ;
-LIST &lex-chomh = &lex-chomh ;
-LIST &lex-dairire = &lex-dairire ;
-LIST &lex-ar-leibheal = &lex-ar-leibheal ;
+LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	#!!= * @CODE@
+LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; #!!= * @CODE@
+LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; #!!= * @CODE@
+LIST &lex-de-ainneoin = &lex-de-ainneoin ; #!!= * @CODE@
+LIST &lex-chomh = &lex-chomh ; #!!= * @CODE@
+LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
+LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
 LIST &typo = &typo ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@ 
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -873,7 +876,13 @@ ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
      	(NEGATE 0 ("<sr.*>"r) + Fem);
 COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
 
-#"Aoine" Noun <ComGen> Fem Gen Sg hPref
+
+ADD:msyn-sna-before-plural (&msyn-sna-before-plural) TARGET ("i" Prep Art Sg) IF (1 (Noun Com Pl));
+COPY:msyn-sna-before-plural ("i" Prep Art Pl &SUGGEST) EXCEPT (Prep Art Sg &msyn-sna-before-plural) TARGET (&msyn-sna-before-plural) ;
+
+ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl));
+COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (&msyn-plural-after-sna) ;
+
 
 ADD:lex-de-haoine (&lex-de-haoine) TARGET ("Aoine" Fem Gen Sg) IF (-1 ("Dé" Subst Noun <ComGen> Sg))(NEGATE 0 (Noun Fem Gen Sg hPref)) ; 
 COPY:lex-de-haoine (hPref &SUGGEST) EXCEPT (&lex-de-haoine) TARGET (&lex-de-haoine) ;
@@ -903,7 +912,7 @@ COPY:msyn-gen-after-trasna ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &ms
 COPY:msyn-gen-after-trasna ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Masc));
 
 ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna ) TARGET (Noun Com Sg) IF # DefArt) OR (Noun Fem Com Sg) IF
-	(*-2 (Noun Com) BARRIER NOT-A)
+	(-2 ("trasna") OR ("Trasna")) 
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Art Def));
@@ -912,6 +921,7 @@ COPY:msyn-gen-after-trasna (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-g
 
 
 ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET ("an" Art Sg Def) IF
+	(-1 ("trasna") OR ("Trasna")) 
 	(NEGATE 0 Gen)
 	(1 (Noun &msyn-gen-after-trasna));
 COPY:msyn-gen-after-trasna ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Fem));
@@ -920,14 +930,14 @@ COPY:msyn-gen-after-trasna ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &m
 
 # Plural:  Trasna Art.com N.pl.com ==> N.com Art.gen N.pl.gen # Noun Masc Com Pl DefArt 
 ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET (Noun Masc Com Pl DefArt) IF
-	(-2 (Noun Com))
+	(-1 ("trasna") OR ("Trasna")) 
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Pl))
 	(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-after-trasna (Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Masc Com Pl DefArt &msyn-gen-after-trasna) TARGET (&msyn-gen-after-trasna);
 
 ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET (Noun Fem Com Pl DefArt) IF
-	(-2 (Noun Com))
+	(-1 ("trasna") OR ("Trasna")) 
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Pl))
 	(NEGATE -3 (Verb VTI));
@@ -936,6 +946,7 @@ COPY:msyn-gen-after-trasna (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl D
 
 # The article
 ADD:msyn-gen-after-trasna (&msyn-gen-after-trasna) TARGET ("an" Art Pl Def) IF
+	(-1 ("trasna") OR ("Trasna")) 
 	(NEGATE 0 Gen)
 	(1 (Noun &msyn-gen-noun-defart-noun));
 COPY:msyn-gen-after-trasna ("na" Gen Pl Def Fem SUGGEST) EXCEPT ("an" Pl Def &msyn-gen-after-trasna) TARGET (Art &msyn-gen-after-trasna) IF (1 (Noun Fem));
@@ -1513,7 +1524,7 @@ ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Adj) 
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-vn-noun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
+COPY:msyn-gen-vn-noun-with-article (Gen Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
 COPY:msyn-gen-vn-noun-with-article (Adj SUGGEST) EXCEPT (&msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
 
 
@@ -1525,14 +1536,14 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun) TARGET (Com &msyn-gen-vn-noun);
+COPY:msyn-gen-vn-noun (Gen Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun) TARGET (Com &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
-COPY:msyn-gen-vn-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl &msyn-gen-vn-noun);
+COPY:msyn-gen-vn-noun (Gen Sg SUGGEST) EXCEPT (Gen Weak Pl &msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Masc Gen Sg hPref) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
@@ -1793,10 +1804,25 @@ ADD:msyn-hPref-after-neg-imp (&msyn-hPref-after-neg-imp) TARGET (Verb Imper) IF
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 COPY:msyn-hPref-after-neg-imp (Sg Neg SUGGEST) EXCEPT (Sg &msyn-hPref-after-neg-imp) TARGET (&msyn-hPref-after-neg-imp);
 
+
 	## Bhí cion go áirithe ar an bpréachán aige.
 	#$ Bhí cion go háirithe ar an bpréachán aige.
 	## Níl an t-am agam le aghaidh é seo.
 	#$ Níl an t-am agam le haghaidh é seo.
+	
+ADD:msyn-hPref-after-na (&msyn-hPref-after-na) TARGET (Noun Com Pl) IF 
+	(-1 (Art Pl Def))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);	
+
+COPY:msyn-hPref-after-na (hPref SUGGEST) EXCEPT (&msyn-hPref-after-na) TARGET (Noun &msyn-hPref-after-na);
+
+ADD:msyn-hPref-after-sna (&msyn-hPref-after-sna) TARGET (Noun Com Pl) IF 
+	(-1 ("i" Prep Art Pl))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);	
+
+COPY:msyn-hPref-after-sna (hPref SUGGEST) EXCEPT (&msyn-hPref-after-sna) TARGET (Noun &msyn-hPref-after-sna);
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
 	(-1 ("chomh"))
@@ -1813,31 +1839,14 @@ ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Ge
 	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
-COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
-
-COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
-
-ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF 
-	(-1 VOW-PREP)
-	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N);
-	
-	## Bhí cion go áirithe ar an bpréachán aige.
-	#$ Bhí cion go háirithe ar an bpréachán aige.
-	## Níl an t-am agam le aghaidh é seo.
-	#$ Níl an t-am agam le haghaidh é seo.
-	
-COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
-
-COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
-
-
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> IF 
 	(-1 ("cá"))
 	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Noun &msyn-hPref-after-prep);
+
+COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
 
 
 ## A rule to insert lenition after Cop Past Ba cosúil -> Ba chosúil, ba bocht -> ba bhocht.
@@ -2021,10 +2030,21 @@ COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TAR
 ##fear mór - fear mhór, fear móra, fear mhóra
 ##scoil bheag - scoil beag, scoil beaga, scoil bheaga
 ##scoileanna cáiliúla - scoileanna cáiliúil, scoileanna cháiliúil
+## an fhir mhóir, na bhfear mór
 
-## "<Chomh>"
-	#"chomh" Adv Its <W:0.0>
+##"níos" Part Comp <W:0.0> 
+##"beag" Adj Comp <W:0.0>
+
+ADD:lex-part-comparative-adj (&lex-part-comparative-adj) TARGET (Adj Base) IF 
+	(-1 ("níos"))
+	(NEGATE 0 (Com Sg));
+COPY:lex-part-comparative-adj (Comp SUGGEST) EXCEPT (Base &lex-part-comparative-adj) TARGET (&lex-part-comparative-adj);
+
+ADD:lex-part-comparative-adj (&lex-part-comparative-adj) TARGET (Adj Base) IF 
+	(-1 ("is" Part Sup))
+	(NEGATE -1 (Cop Pres Rel))
+	(NEGATE -1 (Conj Coord NG))
+	(NEGATE -1 (Cop Pres));
+COPY:lex-part-comparative-adj (Comp SUGGEST) EXCEPT (Base &lex-part-comparative-adj) TARGET (&lex-part-comparative-adj);
 
 
-
-## an fhir mhóir, na bhfear mór,  
