@@ -122,6 +122,7 @@ LIST QMARK = """ ; # "      #!! * QMARK
 LIST PPUNCT = PUNCT ;       #!! * PPUNCT
 LIST Det = Det ;            #!! * Det
 SET PUNCT = PPUNCT - QMARK ;  #!! * PUNCT
+LIST SA = SA ; #!! Ad hoc tag for i > sa, to be revised.
 
 LIST COMMA = "," ;  #!! * COMMA
 LIST ¶ = ¶;   #!! * ¶
@@ -1897,9 +1898,9 @@ ADD:msyn-san (&msyn-san) TARGET (Art Sg Def) IF
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
-ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
-COPY:msyn-san ("<san>" "i" Prep Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
-
+#ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
+#COPY:msyn-san ("<san>" "i" Prep Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
+COPY:msyn-san ("i" Prep Art Sg SA SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
 
 ## 	A rule to correct "i an" to "sa" for nouns beginning with consonants (Sa lenites consonants b, c, g, m, p, and prefixes t to initial s of feminine noun).
 
@@ -1911,7 +1912,7 @@ ADD:msyn-sa (&msyn-sa) TARGET (Art Sg Def) IF
 	(-1 (Prep &msyn-sa))
 	(1 ("<[bcfgmpBCFGMP].*>"r));
 ADDRELATION (DELETE1) (Prep &msyn-sa) TO (1 (Art &msyn-sa));
-COPY:msyn-sa ("<sa>" "i" Prep Art Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-san);	
+COPY:msyn-sa ("i" Prep Art Sg SA SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-sa);	
 
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
