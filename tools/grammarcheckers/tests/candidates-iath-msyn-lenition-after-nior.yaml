@@ -1,0 +1,16 @@
+Config:
+  Spec: ../pipespec.xml
+  Variant: glegram-dev
+
+Tests:
+  - "Gan an treoraí cúramach sin seans nach mbaineadh an Fear Bréige agus a chomrádaithe an Chathair Iathghlas amach in aon chor óir ba mhó bac a chuir Mambaí rompu lena cuid asarlaíochta"
+  - "Bhí greim an fhir bháite ag an gcuid eile acu ar chúl na dtolg agus ba chosúil nár chuir an ghluaiseacht isteach ná amach orthu a fhaid agus nár caitheadh de na toilg iad"
+  - "191 cloigeann Sheáin ar bhrollach bog an Fhir Bhréige ar ámharaí an tsaoil agus thit Tip ar charn duilleog agus páipéar rud a fhág nár gortaíodh in aon chor é"
+  - "\" Seans nach dtugadh an Capall Sábhadóireachta aon aird air sin ach amháin gur sheas sé isteach i bpoll sa talamh agus gur thit sé i mullach a chinn áit ar luigh sé ar fhleasc a dhroma agus a cheithre chos á luascadh san aer aige ar mire"
+  - "Ar ámharaí an tsaoil níor thit siad ach cúpla troigh óir bhí nead ollmhór a thóg scata cág ar lomán carraige fúthu agus dá bhrí sin níor gortaíodh aon duine acu - fiú amháin an Puimcíncheann - sa timpiste"
+  - "\" \" Nach ndúirt mé leatsa \" arsa Tip de ghlór cáinteach"
+  - "Baineadh stangadh as an bhFear Coille Stáin ar dtús ach nuair a fuair sé amach nár cuireadh oiread agus scríob amháin ar a phlátáil nicil bhí sé sona sásta arís agus labhair sé lena chompánaigh"
+  - "Bhí intinn Mhambaí chomh dírithe sin ar na hearraí luachmhara a fuair sí nach ndearna sí ach a ceann a sméideadh leis an bhfear a chonaic sé ag an gcor sa bhóthar agus arsa sise \" Móradh dhuit tráthnóna a dhuine uasail"
+  - "Cén fáth nach ndearna tú as stán mé - nó as tuí fiú - ionas go mbeadh seasmhacht ionam"
+  - "59 S hoilse An Fear Bréige Ní foláir go bhfuil a fhios ag gach léitheoir an leabhair seo cad is fear bréige ann ach toisc nach bhfaca Seán Puimcíncheann a leithéid riamh ba mhó d'ionadh a bhí air Rí iontach na Cathrach Iathghlaise a fheiceáil ná aon ní eile a tharla dó ina shaol gairid go dtí sin"
+  - "Bhuail an Deargadaol a chloigeann cruinn i gcoinne an Chapaill Sábhadóireachta ach níor cuireadh isteach ná amach air"
