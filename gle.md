@@ -3333,6 +3333,7 @@ Num
 * PPUNCT
 * Det
 * PUNCT
+Ad hoc tag for i > sa, to be revised.
 
 * COMMA
 * ¶
