@@ -381,6 +381,7 @@ Other gen tags:
 * LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ; 
 * LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ; 
 * LIST &msyn-hPref-after-na = &msyn-hPref-after-na ; 
+* LIST &msyn-hPref-after-sna = &msyn-hPref-after-sna ; 
 * LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
 * LIST &msyn-i-mbliana = &msyn-i-mbliana ; 
 * LIST &msyn-inis-do = &msyn-inis-do ;     
