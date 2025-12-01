@@ -630,6 +630,7 @@ LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; #!!= * @CODE@
 LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ; #!!= * @CODE@
 LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ; #!!= * @CODE@
 LIST &msyn-hPref-after-na = &msyn-hPref-after-na ; #!!= * @CODE@
+LIST &msyn-hPref-after-sna = &msyn-hPref-after-sna ; #!!= * @CODE@
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
 LIST &msyn-i-mbliana = &msyn-i-mbliana ; #!!= * @CODE@
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@ 
@@ -875,6 +876,11 @@ ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
        	(NEGATE 0 ("<si.*>"r) + Fem)   
      	(NEGATE 0 ("<sr.*>"r) + Fem);
 COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+ADD:msyn-san-before-vowel (&msyn-san-before-vowel) TARGET ("<sa>" "i" Prep Art Sg) IF 
+	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(1 ("<fh.*>"r) OR ("<Fh.*>"r));
+COPY:msyn-san-before-vowel ("<san>" "i" Prep Art Sg &SUGGEST) EXCEPT ("<sa>" "i" Prep Art Sg &msyn-san-before-vowel) TARGET (&msyn-san-before-vowel) ;
 
 
 ADD:msyn-sna-before-plural (&msyn-sna-before-plural) TARGET ("i" Prep Art Sg) IF (1 (Noun Com Pl));
@@ -1892,7 +1898,7 @@ ADD:msyn-san (&msyn-san) TARGET (Art Sg Def) IF
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
-COPY:msyn-san (Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
+COPY:msyn-san ("<san>" "i" Prep Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
 
 
 ## 	A rule to correct "i an" to "sa" for nouns beginning with consonants (Sa lenites consonants b, c, g, m, p, and prefixes t to initial s of feminine noun).
@@ -1905,7 +1911,7 @@ ADD:msyn-sa (&msyn-sa) TARGET (Art Sg Def) IF
 	(-1 (Prep &msyn-sa))
 	(1 ("<[bcfgmpBCFGMP].*>"r));
 ADDRELATION (DELETE1) (Prep &msyn-sa) TO (1 (Art &msyn-sa));
-COPY:msyn-sa (Prep Art Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-san);	
+COPY:msyn-sa ("<sa>" "i" Prep Art Sg SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-san);	
 
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
@@ -1930,11 +1936,18 @@ ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET (Art Sg Def) IF (-1 ("cé"
 ADDRELATION (DELETE1) (Cop Pro Q &msyn-ce-plus-defart) TO (1 (Art &msyn-ce-plus-defart));
 COPY:msyn-ce-plus-defart (Det Q Art Sg SUGGEST) EXCEPT (Cop Pro Q) TARGET (&msyn-ce-plus-defart);
 
+##is deas an áit í -> is deas an áit é.
+
+LIST &lex-an-áit-é = &lex-an-áit-é ;
+
+ADD:lex-an-áit-é (&lex-an-áit-é) TARGET (Pron Pers 3P Sg Fem) IF
+	(-1 ("áit"))
+	(-2 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
+COPY:lex-an-áit-é (Pron Pers 3P Sg Masc SUGGEST) EXCEPT (Pron Pers 3P Sg Fem &lex-an-áit-é) TARGET (Pron Pers &lex-an-áit-é);
+
 ##uimhreacha
 
 LIST &lex-3456 = &lex-3456 ;
-
-LIST SPECIALNUMBERS = "bliain" "seachtain" "ceann" "cloigeann" "fiche" "pingin" "orlach" "trian" "troigh" "uair" ;
 
 LIST NUMBERS3456 = "trí" "ceathair" "cúig" "sé" ;
 
