@@ -618,7 +618,6 @@ LIST &msyn-ecl-after-prep-i = msyn-ecl-after-prep-i ;
 LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;     #!!= * @CODE@ 
-LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;     #!!= * @CODE@ 
 LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;     #!!= * @CODE@ 
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@ 
@@ -627,6 +626,7 @@ LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; #!!= * @CODE@
 LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	#!!= * @CODE@ 
 LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ; #!!= * @CODE@
 LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; #!!= * @CODE@
+LIST &msyn-láimh-le = &msyn-láimh-le ;
 LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; #!!= * @CODE@
 LIST &msyn-hPref-after-neg-imp = &msyn-hPref-after-neg-imp ; #!!= * @CODE@
 LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ; #!!= * @CODE@
@@ -643,6 +643,7 @@ LIST &msyn-len-after-ma = &msyn-len-after-ma ; #!!= * @CODE@
 LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; #!!= * @CODE@
 LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; #!!= * @CODE@
 LIST &msyn-plural-after-sna = &msyn-plural-after-sna ; #!!= * @CODE@
+LIST &msyn-prep-lámh = &msyn-prep-lámh ; #!!= * @CODE@
 LIST &msyn-sna-before-plural = &msyn-sna-before-plural ; #!!= * @CODE@
 LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ; #!!= * @CODE@
 LIST &msyn-lenition-after-um = &msyn-lenition-after-um ; #!!= * @CODE@
@@ -844,7 +845,7 @@ ADD:msyn-ecl-after-prep1 (&msyn-ecl-after-prep1) TARGET (Noun Com Sg) OR (Noun G
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 	
 COPY:msyn-ecl-after-prep1 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep1) OR (DefArt &msyn-ecl-after-prep1) OR (Len &msyn-ecl-after-prep1) TARGET (&msyn-ecl-after-prep1);
-#ADDRELATION:msyn-ecl-after-prep1 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep1);
+ADDRELATION:msyn-ecl-after-prep1 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep1);
 
 
 #!! ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
@@ -864,7 +865,7 @@ COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARG
 #!! ### RULE TO LENITE VERBS IN THE PAST TENSE AFTER THE NEGATIVE PARTICLE NÍOR
 
 ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
-COPY:msyn-lenition-after-nior (Neg Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
+COPY:msyn-lenition-after-nior (Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ; 
 
 
 ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
@@ -1126,14 +1127,6 @@ COPY:msyn-ecl-after-prep3 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep3) OR (DefAr
 	## Tá bainisteoir nua thar an banc. # wrong
 	## Tá bainisteoir nua ar an mbanc. # ok
 
-
-ADD:msyn-ecl-after-prep4 (&msyn-ecl-after-prep4) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
-        (-1 ECLIPSE-PREP + (Prep Simp))
-        (0 ("<[bcdfgpsBCDFGPS].*>"r))
-        (NEGATE 0 Ecl)
-        (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
-COPY:msyn-ecl-after-prep4 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep4) OR (DefArt &msyn-ecl-after-prep4) OR (Len &msyn-ecl-after-prep4) TARGET (&msyn-ecl-after-prep4);
-
 COPY:msyn-ecl-after-prep (Com Sg Ecl SUGGEST) EXCEPT (Gen Sg &msyn-ecl-after-prep) OR (Gen Sg DefArt &msyn-ecl-after-prep) OR (Gen Sg Len &msyn-ecl-after-prep) TARGET (Gen &msyn-ecl-after-prep);
 
 ADD:msyn-ecl-after-prep5 (&msyn-ecl-after-prep5) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
@@ -1328,7 +1321,7 @@ COPY:msyn-fada-o ("ó" Prep Simp SUGGEST) EXCEPT ("mé" Pron Pers 1P Sg &msyn-te
 
 #!! ### RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
 
-ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty)) ;
+ADD:msyn-cúpla-plnoun-sgnoun (&msyn-cúpla-plnoun-sgnoun) TARGET (Noun Com Pl) IF (-1 ("cúpla" Det Qty) OR ("cúpla" Noun Masc Com Sg Len)) ;
 COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnoun) TARGET (&msyn-cúpla-plnoun-sgnoun);
 	
 	## Cúpla laethanta. - incorrect
@@ -1337,8 +1330,6 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 	#$ Cúpla focal. - correct
 	
 	# nouns in genitive after compound prepositions
-	
-# We cannot do gen > com on an "Art Noun" string, since "Noun Art Noun" wants Gen for the 2nd noun.	
 
 #ADD:msyn-com-case-nouns (&msyn-com-case-nouns) TARGET (Noun Gen) IF (-1 ("an" Art Sg Def));
 #COPY:msyn-com-case-nouns (Com Sg DefArt SUGGEST) EXCEPT (Gen Sg DefArt &msyn-com-case-nouns) TARGET (&msyn-com-case-nouns);
@@ -2061,4 +2052,36 @@ ADD:lex-part-comparative-adj (&lex-part-comparative-adj) TARGET (Adj Base) IF
 	(NEGATE -1 (Cop Pres));
 COPY:lex-part-comparative-adj (Comp SUGGEST) EXCEPT (Base &lex-part-comparative-adj) TARGET (&lex-part-comparative-adj);
 
+LIST PREPLÁMH = "ag" "as" "ar" "de" "do" "faoi" "i" "ó";
 
+ADD:msyn-prep-lámh (&msyn-prep-lámh) TARGET ("lámh" Com Sg) IF (-1 PREPLÁMH);
+COPY:msyn-prep-lámh (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-prep-lámh) TARGET (&msyn-prep-lámh);
+
+	## ag lámh
+	#$ ag láimh
+	## ar lámh
+	#$ ar láimh
+	## as lámh
+	#$ as láimh
+	## de lámh
+	#$ de láimh
+	## do lámh
+	#$ do láimh
+	## faoi lámh
+	#$ faoi láimh
+	## i lámh
+	#$ i láimh
+	## ó lámh go lámh
+	## ó láimh go lámh
+	
+ADD:msyn-láimh-le (&msyn-láimh-le) TARGET ("lámh" Com Sg) IF (1 ("le" Prep Simp));
+COPY:msyn-láimh-le (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-láimh-le) TARGET (&msyn-láimh-le);
+
+## Níorbh "is" Cop Past Neg VF
+
+LIST &msyn-cop-past-neg-vowel = &msyn-cop-past-neg-vowel ;
+
+ADD:msyn-cop-past-neg-vowel (&msyn-cop-past-neg-vowel) TARGET ("níor" Cop Past Neg) IF
+	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(1 ("<fh.*>"r) OR ("<Fh.*>"r));
+COPY:msyn-cop-past-neg-vowel (Cop Past Neg VF SUGGEST) EXCEPT (Cop Past Neg &msyn-cop-past-neg-vowel) TARGET (&msyn-cop-past-neg-vowel);
