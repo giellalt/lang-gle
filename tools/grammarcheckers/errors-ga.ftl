@@ -205,3 +205,8 @@ msyn-i-mbliana = Urú tar éis "i" xxx
 
 msyn-prepart-prep = Caithfidh an réamhfhocal a bheith ina chuid den alt xxx
     .desc = xxx
+
+punct-question-mark = Marcáil ceisteanna le comhartha ceiste.
+    .desc = Nuair is ceist abairte, is gnách í a ligean le comhartha ceiste, ní le ponc.
+
+
