@@ -66,7 +66,7 @@ msyn-ecl-after-nach = Urú ar lorg nach
 
 msyn-ecl-after-mura = Urú ar lorg mura
     .desc = Ní mór urú a bheith ann ar lorg an bhfocal "mura".
-    .example-1 = Muna mbíonn, beidh pócaí folmha agus cloigeann tinn agaibh.
+    .example-1 = Mura mbíonn, beidh pócaí folmha agus cloigeann tinn agaibh.
 
 msyn-gen-noun-noun = Ní mór don dara hainmfhocal a bheith sa tuiseal ginideach.
     .desc = Nuair a bhíonn dhá ainmfhocal le chéile, ní mór don dara hainmfhocal a bheith sa tuiseal ginideach.
@@ -78,10 +78,10 @@ msyn-ecl-after-prep = Tá urú in easnamh
 
 msyn-ecl-after-prep2 = Tá urú in easnamh
     .desc = Nuair a bhíonn réamhfhocal roimh ainmfhocal, {$1} sa chás seo, ní mór urú a bheith ar an ainmfhocal.
-
-msyn-fada-ó = Bíonn fada buí agus ó le chéile
-    .desc = Nuair atáthar ag tagairt do "fada buí", ní mór an réamhfhocal "ó" a bheith leis.
-    .example-1 = Is fada buí uaim é a chreidiúint.
+    
+msyn-fada-o = An réamhfhocal ceart ar lorg "fada buí".
+    .desc = Is é "ó" an réamhfhocal ceart don nath "fada buí".
+    .example-1 = Is fada buí uaim  é a chreidiúint.Bain súp as an lá inniu, is fada buí uainn amárach.
 
 msyn-gen-noun-adj = Ní mór don ainmfhocal agus an aidiacht teacht le chéile
     .desc = Nuair a bhíonn focal baininscneach ann, ní mór don aidiacht a ghabhann leis a bheith baininscneach freisin.
@@ -182,6 +182,10 @@ msyn-beag-is-fiu-de = An réamhfhocal ceart don nath beag is fiú.
 msyn-fada-o = An réamhfhocal ceart ar lorg "fada buí".
     .desc = Is é "ó" an réamhfhocal ceart don nath "fada buí".
     .example-1 = Bain súp as an lá inniu, is fada buí uainn amárach.
+    
+msyn-fada-o = An réamhfhocal ceart ar lorg "fada buí".
+    .desc = Is é "ó" an réamhfhocal ceart don nath "fada buí".
+    .example-1 = Bain súp as an lá inniu, is fada buí uainn amárach.
 
 msyn-hPref-after-prep = Réimír h- ar lorg réamhfhocail
     .desc = Cuirtear an litir h ag tús focail ar lorg na réamhfhocail chomh, go, agus le.
@@ -205,7 +209,7 @@ lex-ar-leibheal = An réamhfhocal ceart don bhfocal leibhéal
     
 msyn-le-plus-defartl = An réamhfhocal "le" agus an t-alt
     .desc = Nuair a bhíonn an t-alt ar lorg an réamhfhocail "le", tiontaítear go leis é agus bíonn urú ar an ainmfhocal ar a lorg.
-    .example-1 = An raibh tú ag caint leis an mbean sin?  
+    .example-1 = An raibh tú ag caint leis an mbean sin?
     
 msyn-tri-plus-defart = An réamhfhocal "trí" agus an t-alt
     .desc = Nuair a bhíonn an t-alt ar lorg an réamhfhocail "trí", tiontaítear go tríd é agus bíonn urú ar an ainmfhocal ar a lorg.
@@ -213,10 +217,10 @@ msyn-tri-plus-defart = An réamhfhocal "trí" agus an t-alt
     
 msyn-lenition-after-sa = Séimhiú ar lorg an réamhfhocail "sa"
     .desc = Nuair a bhíonn an réamhfhocal "sa" ann, séimhítear focail ar a lorg.
-    .example-1 = Tá an madra sa ghairdín. Níl faic sa chuisneoir. msyn-gen-chun-defart-noun
+    .example-1 = Tá an madra sa ghairdín. Níl faic sa chuisneoir.
         
 msyn-prep-lámh = Lámh sa tuiseal tabharthach
-    .desc = Nuair a bhíonn na réamhfhocal ag, ar, de, do, faoi, i, agus ó roimh an bhfocal lámh, tiontaítear lámh go dtí an tuiseal tabharthach.
+    .desc = Nuair a bhíonn na réamhfhocail ag, ar, de, do, faoi, i, agus ó roimh an bhfocal lámh, tiontaítear lámh go dtí an tuiseal tabharthach.
     .example-1 = Ar láimh, ag láimh, de láimh, do láimh, faoi láimh, i láimh, ó láimh.
     
 msyn-gen-chun-defart-noun = Focail ar lorg chun sa tuiseal ginideach.
