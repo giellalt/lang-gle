@@ -500,10 +500,6 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 
 #### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
 
-#### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct
-
-**ADD:msyn-gen-case-nouns** ...
-
 ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
 ### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
