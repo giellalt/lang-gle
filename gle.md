@@ -3794,7 +3794,7 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 
 **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
 
-**ADD:use-ellipsis** ...
+**ADD:use-ellipsis**
 
 **ADD:use-ie.i.** ...
 
