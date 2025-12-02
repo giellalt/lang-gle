@@ -355,26 +355,26 @@ Other gen tags:
 
 ###  Other tags
 
-* LIST &use-ellipsis = &use-ellipsis ;     
-* LIST &use-guillemets = &use-guillemets ;     
-* LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ;  
-* LIST &lex-ar-an-aonach = &lex-ar-an-aonach ;  
-* LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;     
-* LIST &lex-ar-an-tae = &lex-ar-an-tae;     
-* LIST &lex-tá-is = &lex-tá-is ;       
-* LIST &lex-part-comparative-adj = &lex-part-comparative-adj ;  
+* LIST &use-ellipsis = &use-ellipsis ;    
+* LIST &use-guillemets = &use-guillemets ;    
+* LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ; 
+* LIST &lex-ar-an-aonach = &lex-ar-an-aonach ; 
+* LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;    
+* LIST &lex-ar-an-tae = &lex-ar-an-tae;    
+* LIST &lex-tá-is = &lex-tá-is ;      
+* LIST &lex-part-comparative-adj = &lex-part-comparative-adj ; 
 * LIST &msyn-adj-gender = &msyn-adj-gender ;      
-* LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ;  
-* LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;      
-* LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;      
+* LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; 
+* LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     
+* LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;     
 * LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     
-* LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;      
-* LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;      
-* LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;      
-* LIST &msyn-fada-o = &msyn-fada-o ;     
+* LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;     
+* LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;     
+* LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;     
+* LIST &msyn-fada-o = &msyn-fada-o ;    
 * LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; 
 * LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; 
-* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	 
+* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	
 * LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ; 
 * LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; 
 * LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; 
@@ -384,8 +384,8 @@ Other gen tags:
 * LIST &msyn-hPref-after-sna = &msyn-hPref-after-sna ; 
 * LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; 
 * LIST &msyn-i-mbliana = &msyn-i-mbliana ; 
-* LIST &msyn-inis-do = &msyn-inis-do ;     
-* LIST &msyn-len-after-prep = &msyn-len-after-prep ;     
+* LIST &msyn-inis-do = &msyn-inis-do ;    
+* LIST &msyn-len-after-prep = &msyn-len-after-prep ;    
 * LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ; 
 * LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; 
 * LIST &msyn-len-after-da = &msyn-len-after-da ; 
@@ -398,23 +398,23 @@ Other gen tags:
 * LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ; 
 * LIST &msyn-lenition-after-um = &msyn-lenition-after-um ; 
 * LIST &lex-conj-plus-copula = &lex-conj-plus-copula ; 
-* LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	  
-* LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	  
-* LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	  
-* LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ;  
-* LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;       
-* LIST &msyn-noun-defart = &msyn-noun-defart ;     
+* LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 
+* LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 
+* LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 
+* LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; 
+* LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      
+* LIST &msyn-noun-defart = &msyn-noun-defart ;    
 * LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ; 
-* LIST &msyn-prepart-prep = &msyn-prepart-prep ;     
-* LIST &msyn-prep-detposs = &msyn-prep-detposs ;     
+* LIST &msyn-prepart-prep = &msyn-prepart-prep ;    
+* LIST &msyn-prep-detposs = &msyn-prep-detposs ;    
 * LIST &msyn-le-plus-defart = &msyn-le-plus-defart ; 
 * LIST &msyn-tri-plus-defart = &msyn-tri-plus-defart ;  
 * LIST &msyn-ecl-after-trí-defart = &msyn-ecl-after-trí-defart ; 
-* LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;     
-* LIST &msyn-prep-pron = &msyn-prep-pron ;     
+* LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    
+* LIST &msyn-prep-pron = &msyn-prep-pron ;    
 * LIST &msyn-sa = &msyn-sa ; 
 * LIST &msyn-san = &msyn-san ; 
-* LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;     
+* LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    
 * LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	
 * LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; 
 * LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; 
@@ -422,21 +422,21 @@ Other gen tags:
 * LIST &lex-chomh = &lex-chomh ; 
 * LIST &lex-dairire = &lex-dairire ; 
 * LIST &lex-ar-leibheal = &lex-ar-leibheal ; 
-* LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;     
+* LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    
 * LIST ADDED = ADDED ;   tag ensuring ... hmm
 * LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;   tag ensuring ... hmm
 * LIST SUGGEST = SUGGEST ;   tag ensuring generation of a suggestion for an errouneous word
 
-* MAPPING-PREFIX = & ;     
+* MAPPING-PREFIX = & ;    
 
 Here ends the list and set section
 
-# BEFORE-SECTIONS       
+# BEFORE-SECTIONS      
 
-* LIST <fixedcase> = <fixedcase>;        
+* LIST <fixedcase> = <fixedcase>;       
 * ADD:fixedcase-np <fixedcase> TARGET Prop ;     	 ,  Never change case of proper nouns
 
-# SECTION       
+# SECTION      
 
 ## spellchecking
 
@@ -499,7 +499,7 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 
 #### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
 
-#### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct 
+#### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct
 
 **ADD:msyn-gen-case-nouns** ...
 
@@ -515,7 +515,7 @@ Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final 
 
 ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
-**ADD:lex-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".	
+**ADD:lex-ar-an-aonach**: A rule to correct the error "ag an aonach" to the correct form "ar an aonach".
 
 **ADD:lex-ar-a-haon-a-chlog** ...
 
@@ -527,7 +527,7 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 
 **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
 
-Rules to insert an h after the negative copula "ní" and certain prepositions 
+Rules to insert an h after the negative copula "ní" and certain prepositions
 
 **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
