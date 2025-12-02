@@ -123,6 +123,7 @@ LIST PPUNCT = PUNCT ;       #!! * PPUNCT
 LIST Det = Det ;            #!! * Det
 SET PUNCT = PPUNCT - QMARK ;  #!! * PUNCT
 LIST SA = SA ; #!! Ad hoc tag for i > sa, to be revised.
+LIST Q = Q ;
 
 LIST COMMA = "," ;  #!! * COMMA
 LIST ¶ = ¶;   #!! * ¶
@@ -673,6 +674,7 @@ LIST &lex-de-ainneoin = &lex-de-ainneoin ; #!!= * @CODE@
 LIST &lex-chomh = &lex-chomh ; #!!= * @CODE@
 LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
 LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
+LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
 LIST &typo = &typo ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -2104,3 +2106,9 @@ COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-corr
 ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF (1 (Noun Pl))(NEGATE 0 Gen);
 COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
+ADD:punct-question-mark &punct-question-mark (Punct Fin) IF
+	(*-1 BOS LINK 1 ("an" Q))
+	(NOT 0 Q)
+	;
+COPY:punct-question-mark (Q SUGGEST) EXCEPT &punct-question-mark TARGET (Punct Fin &punct-question-mark);
+	
