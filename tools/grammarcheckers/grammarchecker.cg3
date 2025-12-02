@@ -797,7 +797,7 @@ ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detp
 LIST PREPDETPOSS-N-INSERT = "faoi" "go" "i" "le" "ó" "trí" ;
 # faoi + a = faoina, go + a = gona, le + a = lena, etc.
 
-ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Prep Simp) + PREPDETPOSS-N-INSERT (1 (Det Poss) LINK 0 (3P) OR (1P Pl));
+ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Prep Simp) + PREPDETPOSS-N-INSERT (1 (Det Poss) LINK 0 (3P) OR (1P Pl)) (NEGATE 1 ("ár" Noun));
 ADD:msyn-prep-detposs (&msyn-prep-detposs) TARGET (Det Poss) (-1 &msyn-prep-detposs) ;
 	## Tá bogha dubh faoi a shúile.
 	#$ Tá bogha dubh faoina shúile.
