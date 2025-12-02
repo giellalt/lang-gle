@@ -3706,6 +3706,7 @@ Other gen tags:
 * LIST &lex-chomh = &lex-chomh ; 
 * LIST &lex-dairire = &lex-dairire ; 
 * LIST &lex-ar-leibheal = &lex-ar-leibheal ; 
+* LIST &punct-question-mark = &punct-question-mark ; 
 * LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    
 * LIST ADDED = ADDED ;   tag ensuring ... hmm
 * LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;   tag ensuring ... hmm
