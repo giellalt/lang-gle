@@ -670,6 +670,7 @@ LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@
 LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	#!!= * @CODE@
 LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; #!!= * @CODE@
 LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; #!!= * @CODE@
+LIST &msyn-cop-past-neg-vowel = &msyn-cop-past-neg-vowel ;
 LIST &lex-de-ainneoin = &lex-de-ainneoin ; #!!= * @CODE@
 LIST &lex-chomh = &lex-chomh ; #!!= * @CODE@
 LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
@@ -975,7 +976,7 @@ COPY:msyn-lenition-after-aon (Len &SUGGEST) EXCEPT (&msyn-lenition-after-aon) TA
 #Caithfear a bheith airdeallach maidir leis na haidiachtaí taispeántacha ‘seo’ agus ‘sin’ a úsáid
 #le réamhfhocail chomhshuite. Is é an tuiseal ginideach a leanann leithéidí ‘de bharr’, ‘de bhrí’, ‘in
 #ainneoin’ agus ‘os coinne’ de ghnáth. Bíodh sin mar atá, ní féidir ‘seo’ agus ‘sin’ a infhilleadh. Botún
-#atá ann a leithéid seo a scríobh: ‘de bharr sin’, ‘in ainneoin sin’ agus ‘os coinne sin’ Ina áit sin, ní mór
+#atá ann a leithéid seo a scríobh: ‘de bharr sin’, ‘in ainneoin sin’ agus ‘os coinne sin’. Ina áit sin, ní mór
 #an aidiacht shealbhach fhirinscneach sa tríú pearsa uatha a chur leo: ‘dá bharr sin’, ‘ina ainneoin sin’
 #agus ‘os a choinne sin.’ Úsáidtear an aidiacht shealbhach sa tríú pearsa iolra chomh maith, de réir mar
 #is cuí: ‘dá mbarr sin’, ‘ina n-ainneoin sin’ agus ‘os a gcoinne sin.’
@@ -1566,6 +1567,7 @@ COPY:msyn-gen-noun-defart-noun (Gen Weak Pl DefArt SUGGEST) EXCEPT (Gen Sg hPref
 	## Chuaigh na saighdiúirí isteach i mbialann na hoifigigh.
         #$ Chuaigh na saighdiúirí isteach i mbialann na n-oifigeach.
 
+## Rules to correct nouns after "chun" to genitive case nouns.
 
 ADD:msyn-gen-chun-noun (&msyn-gen-chun-noun) TARGET (Noun Com Sg) IF
 	(-1 ("chun" Prep Simp))
@@ -1617,23 +1619,6 @@ COPY:msyn-gen-chun-defart-noun ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl De
 # Addrelation for singular and plural
 ADDRELATION ($2 LEFT) (&msyn-gen-chun-defart-noun) TO (-1 (Art &msyn-gen-chun-defart-noun));
 SUBSTITUTE (&msyn-gen-chun-defart-noun) (co&msyn-gen-chun-defart-noun) TARGET (SUGGEST);
-
-
-
-
-
-#!! #### Art + Noun.Gen => Art.Gen + Noun.Gen # here we correct
-
-#!! **ADD:msyn-gen-case-nouns** ...
-ADD:msyn-gen-case-nouns (&msyn-gen-case-nouns) TARGET ("an" Art Sg Def) IF (NEGATE 0 Gen)(1 (Noun &msyn-gen-case-nouns));
-COPY:msyn-gen-case-nouns ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Fem));
-COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
-COPY:msyn-gen-case-nouns ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-case-nouns) TARGET (Art &msyn-gen-case-nouns) IF (1 (Noun Masc));
-ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Art &msyn-gen-case-nouns));
-SUBSTITUTE (&msyn-gen-case-nouns) (&msyn-gen-case-nouns) TARGET (SUGGEST);
-
-
-
 
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
@@ -1694,7 +1679,7 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 
 #!! ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
-ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) OR (Verb PastInd Auto) IF (-1 Noun OR Dem) ;
+ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) OR (Verb PastInd Auto) IF (-1 Noun)(-2 Art Def);
 ADDCOHORT  ("<a>" "a" Part Vb Rel Direct ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
 ADDRELATION ($2 LEFT) (Verb &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
@@ -1892,8 +1877,8 @@ ADD:msyn-san (&msyn-san) TARGET (Art Sg Def) IF
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 
-#ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
-#COPY:msyn-san ("<san>" "i" Prep Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
+ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
+COPY:msyn-san ("<san>" "i" Prep Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
 COPY:msyn-san ("i" Prep Art Sg SA SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
 
 ## 	A rule to correct "i an" to "sa" for nouns beginning with consonants (Sa lenites consonants b, c, g, m, p, and prefixes t to initial s of feminine noun).
@@ -1921,8 +1906,6 @@ ADD:msyn-ecl-after-prep-sfem (&msyn-ecl-after-prep-sfem) TARGET (Noun Fem Com Sg
         (NEGATE 0 ("<[s].*>"r) + Masc) ; 			# The rule dosn't target a masculine word starting with the letter S.
 COPY:msyn-ecl-after-prep-sfem (DefArt SUGGEST) EXCEPT (&msyn-ecl-after-prep-sfem) OR (Ecl &msyn-ecl-after-prep-sfem) TARGET (&msyn-ecl-after-prep-sfem);
 
-##LIST PRONQ = "cé" ;
-
 ADD:msyn-ce-plus-defart (&msyn-ce-plus-defart) TARGET ("cé") OR ("Cé") IF
 	(0 ("cé"))
 	(1 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
@@ -1935,10 +1918,10 @@ COPY:msyn-ce-plus-defart (Det Q Art Sg SUGGEST) EXCEPT (Cop Pro Q) TARGET (&msyn
 
 LIST &lex-an-áit-é = &lex-an-áit-é ;
 
-ADD:lex-an-áit-é (&lex-an-áit-é) TARGET (Pron Pers 3P Sg Fem) IF
+ADD:lex-an-áit-é (&lex-an-áit-é) TARGET ("í" Pron Pers 3P Sg Fem) IF
 	(-1 ("áit"))
 	(-2 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
-COPY:lex-an-áit-é (Pron Pers 3P Sg Masc SUGGEST) EXCEPT (Pron Pers 3P Sg Fem &lex-an-áit-é) TARGET (Pron Pers &lex-an-áit-é);
+COPY:lex-an-áit-é ("é" Pron Pers 3P Sg Masc SUGGEST) EXCEPT (Pron Pers 3P Sg Fem &lex-an-áit-é) TARGET (Pron Pers &lex-an-áit-é);
 
 ##uimhreacha
 
@@ -2077,10 +2060,6 @@ COPY:msyn-prep-lámh (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-prep-lámh) TARGET (&
 
 ADD:msyn-láimh-le (&msyn-láimh-le) TARGET ("lámh" Com Sg) IF (1 ("le" Prep Simp));
 COPY:msyn-láimh-le (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-láimh-le) TARGET (&msyn-láimh-le);
-
-## Níorbh "is" Cop Past Neg VF
-
-LIST &msyn-cop-past-neg-vowel = &msyn-cop-past-neg-vowel ;
 
 ADD:msyn-cop-past-neg-vowel (&msyn-cop-past-neg-vowel) TARGET ("níor" Cop Past Neg) IF
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))

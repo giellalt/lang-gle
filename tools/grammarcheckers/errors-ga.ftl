@@ -90,25 +90,22 @@ msyn-gen-noun-adj = Ní mór don ainmfhocal agus an aidiacht teacht le chéile
 msyn-gen-noun-defart-noun = An tuiseal ginideach ar lorg an ailt
     .desc = Nuair a bhíonn an t-alt agus ainmfhocal ({$1}) ar lorg ainmfhocail eile ({$2}), ní mór don dara hainmfhocal a bheith sa ghinideach.
     .example-1 = Áras an Uachtaráin. Oifig an Phoist. Éadaí na mná. Lár na páirce.
-
-msyn-gen-noun-detpss-noun = Genitive noun
-    .desc = When a noun follows a noun (like {$2}) and a possessive adjective, it should be in the genitive case.
+    
+msyn-gen-noun-detpss-noun = An ginideach ar lorg na haidiachta sealbhaí
+    .desc = Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach (mo, do, a, ár, bhur) an ginideach ar ceal.
+    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
 
 msyn-gen-vn-noun = An tuiseal ginideach ar lorg ainm briathartha
     .desc = Más thagann ainmfhocal, ({$1}) sa chás seo, ar lorg ainm briathartha, ba chóir é a bheith sa tuiseal ginideach.
-    .example-1 = Ag glanadh na fuinneoige. Ag scríobh an leabhair.
+    .example-1 = Ag glanadh fuinneoige. Ag scríobh litreach.
 
-msyn-gen-vn-noun-with-article = An tuiseal ginideach ar lorg ainm briathartha
+msyn-gen-vn-noun-with-article = An tuiseal ginideach ar lorg ainm briathartha leis an alt
     .desc = Más thagann ainmfhocal, ({$1}) sa chás seo, ar lorg ainm briathartha, ba chóir é a bheith sa tuiseal ginideach.
     .example-1 = Ag glanadh na fuinneoige. Ag scríobh an leabhair.
 
-msyn-h-after-fem-possessive-adjective = Cuir teideal leis
-    .desc = Cuir cur síos leis
-    .example-1 = ...
-
-msyn-i-rith-nom-gen = An ar lorg ainmfhocail ama.
-    .desc = Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara hainmfhocal.
-    .example-1 = I rith na bliana, i rith na seachtaine, le linn an tsamhraidh, ar feadh an lae.
+msyn-h-after-fem-possessive-adjective = An litir H do rudaí a bhaineann le bean.
+    .desc = Cuirtear an litir h roimh ainmfhocail ar lorg na haidiachta sealbhaí más rud é a bhaineann le bean.
+    .example-1 = A haghaidh, a hairgead, a hárasán, a hiasc, a hobair.
 
 msyn-ie.i. = i.e. i nGaeilge
     .desc = An leagan Gaeilge de i.e. ná .i.
@@ -120,15 +117,15 @@ msyn-inis-do = Inis agus do
 
 msyn-len-after-prep = Ainmfhocal séimhithe ar lorg an réamhfhocail
     .desc = Nuair a bhíonn ainmfhocal, {$1}, ar lorg an réamhfhocail {$2}, ba cheart é a shéimhiú.
-    .example-1 = Roimh dheireadh na seachtaine.
+    .example-1 = Roimh dheireadh na seachtaine, thar bharr an chnoic.
 
 msyn-lenition-after-ni = Séimhiú ar bhriathar ar lorg ní.
-    .desc = Má bhíonn briathar, {$1} anseo, ar lorg "ní", ní mór é a shéimhiú.
+    .desc = Má bhíonn briathar, {$1} anseo, ar lorg "ní" (an chopail diúltach), ní mór é a shéimhiú.
     .example-1 = Ní cheannaím, ní bhrísfear, ní dhúnfar, ní theastaíonn.
 
 msyn-lenition-after-nior = Séímhiú ar lorg níor.
     .desc = Ní mór briathar a bhíonn ar lorg níor a shéimhiú.
-    .example-1 = Níor cheannaigh sé, níor bhríseadh, níor dhún sé, níor theastaigh uaithi.
+    .example-1 = Níor cheannaigh sé, níor bhris siad, níor dhún sé, níor theastaigh uaithi.
 
 msyn-lenition-after-possessive-adjective = Séimhiú i ndiaidh aidiachta sealbhaí
     .desc = Séimhítear an t-ainmfhocal i ndiaidh aidiacht shealbhach.
@@ -137,10 +134,6 @@ msyn-lenition-after-possessive-adjective = Séimhiú i ndiaidh aidiachta sealbha
 msyn-noun-defart = Alt an ainmfhocail
     .desc = Má thagann an t-alt {$2} roimh an ainmfhocail, {$1} sa chás seo, ba cheart go mbeadh sé cinnte.
     .example-1 = An t-uachtarán, an t-iasc, an tsráid, an fhuinneog.
-
-msyn-possadj-nom-gen = An ginideach ar lorg na haidiachta sealbhaí
-    .desc = Nuair a thagann dhá ainmfhocal le chéile, bíonn an dara focal sa ghinideach. Ní chuireann an aidiacht shealbhach (mo, do, a, ár, bhur) an ginideach ar ceal.
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
 
 msyn-prep-pron = Riail chun réamhfhocail agus forainmneacha a chumasc
     .desc = Nuair a thagann réamhfhocal agus forainm le chéile, is gá iad a chumasc.
@@ -151,8 +144,7 @@ msyn-teastaigh-ó = teastaigh ó
     .example-1 = Teastaíonn post nua uaim.
 
 spell-conservatively = Only suggest spellings of words that are not inside "quotes"
-    .desc = Only suggest spellings of words that are not inside "quotes"
-    .example-1 = ...
+    .desc = Only suggest spellings of words that are not inside "quotes".
 
 spell-it-all = Cuir teideal leis
     .desc = Cuir cur síos leis
@@ -167,44 +159,68 @@ typo = Earráid litrithe
 use-guillemets = Guillemets
     .desc = Úsáid comharthaí athfhriotail uillinne dúbailte
 
-lex-da-bharr-sin = "na, ní "an" xxx
-    .desc = Is é dá bharr sin an leagan ceart, ní de bharr sin.
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+lex-da-bharr-sin = An chaoi cheart dá bharr sin a scríobh.
+    .desc = Botún atá ann 'de bharr sin' a scríobh. Ina áit sin, ní mór an aidiacht shealbhach fhirinscneach sa tríú pearsa uatha a chur leis.
+    .example-1 = Dá bharr sin.
 
-lex-de-ainneoin = "na, ní "an" xxx
-    .desc = Is é d'ainneoin an chaoi cheart chun sin a scríobh.
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+lex-de-ainneoin = An chaoi cheart d'ainneoin a scríobh.
+    .desc = Botún atá ann 'in ainneoin' a scríobh. Is é d'ainneoin an chaoi cheart chun sin a scríobh.
+    .example-1 = D’ainneoin na bhforbairtí dearfacha seo le blianta beaga anuas, tá dúshláin ann i gcónaí.
 
-lex-ina-ainneoin-sin = "na, ní "an" xxx
-    .desc = Is é ina ainneoin sin an chaoi cheart chun sin a scríobh.
+lex-ina-ainneoin-sin = An chaoi cheart ina ainneoin sin a scríobh.
+    .desc = Botún atá ann 'in ainneoin sin' a scríobh. Ina áit sin, ní mór an aidiacht shealbhach fhirinscneach sa tríú pearsa uatha a chur leis.
     .example-1 = Ina ainneoin sin, taitníonn an cluiche liom.
 
-lex-os-a-choinne-sin = "na, ní "an" xxx
-    .desc = 
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+lex-os-a-choinne-sin = An chaoi cheart os a choinne sin a scríobh.
+    .desc = Botún atá ann 'os a coinne sin' a scríobh. Ina áit sin, ní mór an aidiacht shealbhach fhirinscneach sa tríú pearsa uatha a chur leis.
+    .example-1 = Os a choinne sin, dúradh go raibh sé an-fhial..
 
-msyn-beag-is-fiu-de = "de" ní "do" tar éis "beag is fiú" xxx
-    .desc = xxx
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+msyn-beag-is-fiu-de = An réamhfhocal ceart don nath beag is fiú.
+    .desc = Is é "de" seachas "do" an réamhfhocal ceart don nath "beag is fiú".
+    .example-1 = Ná déan beag is fiú díom. Ná déan beag is fiú den scéal.
 
-msyn-fada-o = "do" ní "de" tar éis "fada buí" xxx
-    .desc = xxx
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+msyn-fada-o = An réamhfhocal ceart ar lorg "fada buí".
+    .desc = Is é "ó" an réamhfhocal ceart don nath "fada buí".
+    .example-1 = Bain súp as an lá inniu, is fada buí uainn amárach.
 
-msyn-hPref-after-prep = Réimír h- tar éis réamhfhocail xxx
-    .desc = 
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+msyn-hPref-after-prep = Réimír h- ar lorg réamhfhocail
+    .desc = Cuirtear an litir h ag tús focail ar lorg na réamhfhocail chomh, go, agus le.
+    .example-1 = Le haghaidh, go haoibhinn, go háirithe.
 
 msyn-i-mbliana = Urú ar bhliain ar lorg an réamhfhocail "i"
     .desc = Nuair a bhíonn focal ar lorg "i", ní mór urú a bheith ar an bhfocal bliana.
     .example-1 = Tá Corn an Domhain ar siúl sa Fhrainc i mbliana.
 
-msyn-prepart-prep = Caithfidh an réamhfhocal a bheith ina chuid den alt xxx
-    .desc = xxx
-    .example-1 = Cúl a chinn, dath a capaill, doras mo thí, teach m'athar.
+msyn-prepart-prep = An t-alt cumasctha leis an réamhfhocal
+    .desc = Caithfidh an t-alt a bheith ina chuid den réamhfhocal
+    .example-1 = Den, don, faoin, ón.
 
 punct-question-mark = Cuir comhartha ceiste le ceisteanna.
     .desc = Nuair is ceist atá ann, ní mór comhartha ceiste a bheith ag deireadh na habairte.
     .example-1 = Conas atá tú? An gcuireann tú bainne ar an gcaife? Ar cheannaigh tú carr nua? Cá raibh tú?
+    
+lex-ar-leibheal = An réamhfhocal ceart don bhfocal leibhéal
+    .desc = Is é "ar" an réamhfhocal ceart a bhíonn le leibhéal.
+    .example-1 = Ar leibhéal an Aontais Eorpaigh.
+    
+msyn-le-plus-defartl = An réamhfhocal "le" agus an t-alt
+    .desc = Nuair a bhíonn an t-alt ar lorg an réamhfhocail "le", tiontaítear go leis é agus bíonn urú ar an ainmfhocal ar a lorg.
+    .example-1 = An raibh tú ag caint leis an mbean sin?  
+    
+msyn-tri-plus-defart = An réamhfhocal "trí" agus an t-alt
+    .desc = Nuair a bhíonn an t-alt ar lorg an réamhfhocail "trí", tiontaítear go tríd é agus bíonn urú ar an ainmfhocal ar a lorg.
+    .example-1 = Shiúil siad tríd an ngairdín. 
+    
+msyn-lenition-after-sa = Séimhiú ar lorg an réamhfhocail "sa"
+    .desc = Nuair a bhíonn an réamhfhocal "sa" ann, séimhítear focail ar a lorg.
+    .example-1 = Tá an madra sa ghairdín. Níl faic sa chuisneoir. msyn-gen-chun-defart-noun
+        
+msyn-prep-lámh = Lámh sa tuiseal tabharthach
+    .desc = Nuair a bhíonn na réamhfhocal ag, ar, de, do, faoi, i, agus ó roimh an bhfocal lámh, tiontaítear lámh go dtí an tuiseal tabharthach.
+    .example-1 = Ar láimh, ag láimh, de láimh, do láimh, faoi láimh, i láimh, ó láimh.
+    
+msyn-gen-chun-defart-noun = Focail ar lorg chun sa tuiseal ginideach.
+    .desc = Nuair a bhíonn an réamhfhocal "chun" ann, ní mór an focal ar a lorg a bheith sa tuiseal ginideach.
+    .example-1 = Chuaigh siad chun na hoifige.
 
 
