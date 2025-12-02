@@ -1210,7 +1210,7 @@ COPY:msyn-ecl-after-nach (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&
 ## Rule for eclipse after "an" Part Vb Q.
 
 ADD:msyn-ecl-after-verb-particle-q (&msyn-ecl-after-verb-particle-q) TARGET (Verb) IF
-	(-1 (Part Vb Q))
+	(-1 ("ar" Part Vb Q))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-verb-particle-q (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-verb-particle-q) TARGET (&msyn-ecl-after-verb-particle-q);
 
@@ -1745,8 +1745,8 @@ ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Art Sg) IF (*1 CAIFE BARRIER
 ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Art Sg) IF (1 (Det Poss) LINK *1 CAIFE BARRIER (*) - (Det Poss)) ;
 COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Art Sg) TARGET (Art Sg &lex-ar-an-tae) ;
 
-ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Simp) IF (*1 CAIFE BARRIER (*) - (Det Poss)) ;
-COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Simp &lex-ar-an-tae) ;
+#ADD:lex-ar-an-tae (&lex-ar-an-tae) TARGET ("i" Prep Simp) IF (*1 CAIFE BARRIER (*) - (Det Poss)) ;
+#COPY:lex-ar-an-tae ("ar" Prep Simp SUGGEST) EXCEPT ("i" Prep Simp) TARGET (Simp &lex-ar-an-tae) ;
 
 ADDCOHORT:lex-ar-an-tae ("<an>" "an" Art Sg Def ADDED-BEFORE-BLANK &lex-ar-an-tae) AFTER &lex-ar-an-tae (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK) (NEGATE 1 (Det Poss));
 ADDRELATION:lex-ar-an-tae ($2 RIGHT) (Verb &lex-ar-an-tae) TO (1 (ADDED-BEFORE-BLANK)) ;
@@ -2040,8 +2040,6 @@ COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TAR
 ##scoileanna cáiliúla - scoileanna cáiliúil, scoileanna cháiliúil
 ## an fhir mhóir, na bhfear mór
 
-##"níos" Part Comp <W:0.0>
-##"beag" Adj Comp <W:0.0>
 
 ADD:lex-part-comparative-adj (&lex-part-comparative-adj) TARGET (Adj Base) IF
 	(-1 ("níos"))
@@ -2105,10 +2103,91 @@ COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-corr
 
 ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF (1 (Noun Pl))(NEGATE 0 Gen);
 COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
+	
 
-ADD:punct-question-mark &punct-question-mark (Punct Fin) IF
-	(*-1 BOS LINK 1 ("an" Q))
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("an" Part Vb Q))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cathain" Adv Q Wh))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("ar" Part Vb Q Past))
 	(NOT 0 Q)
-	;
-COPY:punct-question-mark (Q SUGGEST) EXCEPT &punct-question-mark TARGET (Punct Fin &punct-question-mark);
+	(NOT 0 ("ar" Prep Simp));
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("céard" Cop Pro Q))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+	
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cad" Cop Pro Q))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("nár" Part Vb NegQ))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cé" Pron Q))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cé" Cop Pro Q))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cé" Cop Q Art Sg))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("conas" Adv Q Wh))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cad" Cop Pro Q))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cé" Cop Pro Q Cop Vow))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cá" Adv Q Wh))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("is" Cop Past NegQ VF ))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cá" Adv Q Wh Past))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cá" Part Vb Q Past))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+	(*-1 BOS LINK 1 ("cén"))
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
 	
