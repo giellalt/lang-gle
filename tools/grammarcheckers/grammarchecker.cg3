@@ -1676,10 +1676,10 @@ ADD:use-guillemets (&use-guillemets) TARGET ("""); #"
 COPY:left-guillemet ("«" SUGGEST) EXCEPT (""") TARGET (&use-guillemets) ;
 COPY:right-guillemet ("»" SUGGEST) EXCEPT (""") TARGET (&use-guillemets) ;
 
-#!! **ADD:use-ellipsis** ...
+#!! **ADD:use-ellipsis**
 
-ADD:use-ellipsis (&ellipsis) TARGET ("...");
-COPY:use-ellipsis ("…" SUGGEST) EXCEPT ("...") TARGET (&ellipsis) ;
+ADD:use-ellipsis (&ellipsis) TARGET ("..." Punct Fin);
+COPY:use-ellipsis ("…" Punct Int SUGGEST) EXCEPT ("..." Punct Fin) TARGET (&ellipsis) ;
 
 #!! **ADD:use-ie.i.** ...
 
