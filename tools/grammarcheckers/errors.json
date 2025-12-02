@@ -263,5 +263,11 @@
     {
       "id": "use-guillemets"
     }
+  ],
+  "punct-question-mark": [
+    {
+      "id": "punct-question-mark"
+    }
   ]
 }
+
