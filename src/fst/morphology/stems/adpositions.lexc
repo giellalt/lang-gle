@@ -118,7 +118,7 @@ faoi+CU+Prep+Art+Sg+NG:fán			#;	! under the: CANÚINT/VARIANT
 i+Prep+Art+Sg:ins				#;	! in
 i+Prep+Art+Sg:insa				#;	! in (Added CW 04/09/08)
 i+Prep+Art+Sg:insan				#;	! in (Added CW 04/09/08)
-i+Prep+Art+Sg:sa				#;	! in
+i+Prep+Art+Sg+SA:sa				#;	! in
 i+Prep+Art+Sg:san				#;	! in the (sg)
 i+Prep+Art+Sg:San				#;	! in the (sg)
 i+Prep+Art+Pl:sna			#;	! in the (pl)
