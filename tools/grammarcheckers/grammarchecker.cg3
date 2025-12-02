@@ -608,6 +608,7 @@ LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ; #!!= * @CODE@
 LIST &lex-ar-an-aonach = &lex-ar-an-aonach ; #!!= * @CODE@
 LIST &lex-ar-an-gcaife = &lex-ar-an-gcaife;    #!!= * @CODE@
 LIST &lex-ar-an-tae = &lex-ar-an-tae;    #!!= * @CODE@
+LIST &lex-correct-art = &lex-correct-art;
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@
 LIST &lex-part-comparative-adj = &lex-part-comparative-adj ; #!!= * @CODE@
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
@@ -2093,4 +2094,13 @@ COPY:msyn-cop-past-neg-vowel (Cop Past Neg VF SUGGEST) EXCEPT (Cop Past Neg &msy
 ADD:casefix (<fixedcase>) TARGET (SUGGEST) IF (NEGATE -1 BOS) ;
 
 ## an Uachtarán -> an tUachtarán
+
+
+## A rule to correct the wrong article used with singular or plural, e.g., an scoileanna -> na scoileanna, na cailín -> an cailín.
+
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) IF (1 (Noun Sg))(NEGATE 0 Gen);
+COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
+
+ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF (1 (Noun Pl))(NEGATE 0 Gen);
+COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
