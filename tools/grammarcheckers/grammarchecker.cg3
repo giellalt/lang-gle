@@ -675,6 +675,7 @@ LIST &lex-de-ainneoin = &lex-de-ainneoin ; #!!= * @CODE@
 LIST &lex-chomh = &lex-chomh ; #!!= * @CODE@
 LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
 LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
+LIST &syn-not-initial = &syn-not-initial ;
 LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
 LIST &typo = &typo ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@
@@ -1655,6 +1656,8 @@ COPY:attr-not-pred (Attr SUGGEST) EXCEPT (Sg) TARGET (&attr-not-pred) ;
 
 # The method is: Add SUGGEST to a copied reading to *generate* a suggestion form from that reading. The copy should contain the error tag too – &-prefixed error tags are ignored when generating, but used to create human-readable messages.
 
+ADD:syn-not-initial (&syn-not-initial) TARGET ("áfach") IF (-1 BOS);
+
 #!! **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
 
 ADD:use-guillemets (&use-guillemets) TARGET ("""); #"
@@ -1668,8 +1671,8 @@ COPY:use-ellipsis ("…" Punct Int SUGGEST) EXCEPT ("..." Punct Fin) TARGET (&el
 
 #!! **ADD:use-ie.i.** ...
 
-ADD:use-ie.i. (&ie.i.) TARGET ("i.e.");
-COPY:use-ie.i. (".i." A"br" SUGGEST) EXCEPT ("i.e.") TARGET (&ie.i.) ;
+ADD:use-ie.i. (&ie.i.) TARGET ("i.e." Abr);
+COPY:use-ie.i. (".i." A"br" SUGGEST) EXCEPT ("i.e." Abr)  TARGET (&ie.i.) ;
 
 LIST <fixedcase> = <fixedcase>;
 
@@ -1679,7 +1682,7 @@ ADD <fixedcase> TARGET ("<Eoraip>") ;
 
 #!! ###  A RULE TO INSERT THE PARTICLE A BEFORE A VERB RELATIVE PHRASE !!IT WORKS!!
 
-ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) OR (Verb PastInd Auto) IF (-1 Noun)(-2 Art Def);
+ADD:syn-a-before-verb-relativephrase (&syn-a-before-verb-relativephrase) TARGET (Verb Len) OR (Verb PastInd Auto) IF (-1 Noun)(-2 Art);
 ADDCOHORT  ("<a>" "a" Part Vb Rel Direct ADDED-BEFORE-BLANK &syn-a-before-verb-relativephrase) BEFORE &syn-a-before-verb-relativephrase (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
 ADDRELATION ($2 LEFT) (Verb &syn-a-before-verb-relativephrase) TO (-1 ADDED) ;
 
@@ -2169,4 +2172,10 @@ ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
 	(*-1 BOS LINK 1 ("cén"))
 	(NOT 0 Q);
 COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET ("áfach" Adv Gn) IF (*-1 BOS LINK 1 ("cén"));
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+
+
+
 	

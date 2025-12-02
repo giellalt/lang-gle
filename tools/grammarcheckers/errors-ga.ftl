@@ -226,5 +226,10 @@ msyn-prep-lámh = Lámh sa tuiseal tabharthach
 msyn-gen-chun-defart-noun = Focail ar lorg chun sa tuiseal ginideach.
     .desc = Nuair a bhíonn an réamhfhocal "chun" ann, ní mór an focal ar a lorg a bheith sa tuiseal ginideach.
     .example-1 = Chuaigh siad chun na hoifige.
+    
+&syn-not-initial = Áfach ag tús abairte
+    .desc = Níor cheart an focal áfach a bheith ag tús na habairte. Bog chuig lár nó deireadh na habairte é.
+    .example-1 = Níl gach duine sásta faoi seo, áfach.
+	
 
 
