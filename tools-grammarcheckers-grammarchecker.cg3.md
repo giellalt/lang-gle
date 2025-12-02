@@ -369,7 +369,6 @@ Other gen tags:
 * LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;      
 * LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     
 * LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;      
-* LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;      
 * LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;      
 * LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;      
 * LIST &msyn-fada-o = &msyn-fada-o ;     
@@ -394,6 +393,7 @@ Other gen tags:
 * LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; 
 * LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; 
 * LIST &msyn-plural-after-sna = &msyn-plural-after-sna ; 
+* LIST &msyn-prep-lámh = &msyn-prep-lámh ; 
 * LIST &msyn-sna-before-plural = &msyn-sna-before-plural ; 
 * LIST &msyn-lenition-after-thar = &msyn-lenition-after-thar ; 
 * LIST &msyn-lenition-after-um = &msyn-lenition-after-um ; 
