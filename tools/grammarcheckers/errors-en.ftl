@@ -170,3 +170,6 @@ msyn-prepart-prep = The preposition must be part of the article xxx
 
 punct-question-mark = "Mark questions with question mark"
     .desc = When a sentence is a question, it is common to let it end with a question mark, not with a period.
+
+syn-not-initial = "Áfach" at the beginning of a sentence
+    .desc = The word "áfach" ("however") should not be at the beginning of the sentence. Move it to the middle or end of the sentence.
