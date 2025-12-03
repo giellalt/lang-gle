@@ -207,9 +207,9 @@ arna+Prep+Cmpd:arna				#;  ! arna = iar n-a
 !iar+Prep+Poss+3P+Sg+Masc:arna			#;  ! after his/her/their
 !iar+Prep+Poss+3P+Pl:arna			#;  ! after his/her/their
 
-go+Prep+Poss+3P+Sg+Fem+NG:gona				#;
-go+Prep+Poss+3P+Sg+Masc+NG:gona				#;
-go+Prep+Poss+3P+Pl+NG:gona				#;
+go+Prep+Poss+3P+Sg+Fem:gona				#;
+go+Prep+Poss+3P+Sg+Masc:gona				#;
+go+Prep+Poss+3P+Pl:gona				#;
 go+Prep+Poss+1P+Pl+NG:gonár			#;
 
 !! COMPOUNDS: PREP + REL. PART. (a/ar)
