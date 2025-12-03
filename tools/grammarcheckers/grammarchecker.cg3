@@ -249,7 +249,7 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-LIST ECLIPSE-PREP = "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); #!!= * @CODE@
+LIST ECLIPSE-PREP =  "<ag>" "<ar>" <"as"> "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); #!!= * @CODE@
 #  "<ó>" "<roimh>" "<faoi> "<de>" "<do>" "<thar>" "<trí>" "<um>"
 
 LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; #!!= * @CODE@
@@ -618,11 +618,10 @@ LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep-i = msyn-ecl-after-prep-i ;
-LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;     #!!= * @CODE@
+LIST &msyn-ecl-after-prep-plus-art = &msyn-ecl-after-prep-plus-art ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;     #!!= * @CODE@
-LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;     #!!= * @CODE@
-LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;     #!!= * @CODE@
+LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     #!!= * @CODE@
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@
 LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; #!!= * @CODE@
 LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; #!!= * @CODE@
@@ -852,18 +851,6 @@ ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (Det) FROM (1 Noun LIN
 ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
 COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
 ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 0 (&msyn-adj-nom-acc)) ;
-
-#!! ### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
-
-ADD:msyn-ecl-after-prep1 (&msyn-ecl-after-prep1) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
-	(-1 Art)
-	(-2 ECLIPSE-PREP + Prep + Simp)
-	(0 ("<[bcfgpBCFGP].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N);
-
-COPY:msyn-ecl-after-prep1 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep1) OR (DefArt &msyn-ecl-after-prep1) OR (Len &msyn-ecl-after-prep1) TARGET (&msyn-ecl-after-prep1);
-ADDRELATION:msyn-ecl-after-prep1 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep1);
-
 
 #!! ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
@@ -1111,23 +1098,18 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 #        (NEGATE 0 ("<si.*>"r) + Fem)
 #        (NEGATE 0 ("<sr.*>"r) + Fem)
 
-	## Tá an dochtúir ina sheasamh ag an fuinneog mhór.
-    	#$ Tá an dochtúir ina sheasamh ag an bhfuinneog mhór. Verb VI FutInd Ecl  NACH NegQ Ecl
-
-
-ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com Sg) OR (Noun Gen Sg) + <ComGen> IF
-	(-1 Art)
+ADD:msyn-ecl-after-prep-plus-art (&msyn-ecl-after-prep-plus-art) TARGET (Noun Com Sg) + <ComGen> IF
+	(-1 (Art Sg Def))
 	(-2 ECLIPSE-PREP + Prep + Simp)
 	(0 ("<[bcfgpBCFGP].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 
-COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) OR (DefArt &msyn-ecl-after-prep2) OR (Len &msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
-ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
-
+COPY:msyn-ecl-after-prep-plus-art (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-plus-art) OR (DefArt &msyn-ecl-after-prep-plus-art) OR (Len &msyn-ecl-after-prep-plus-art) TARGET (&msyn-ecl-after-prep-plus-art);
+ADDRELATION:msyn-ecl-after-prep-plus-art ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep-plus-art);
 	## Bainne a chur ar an caife.
 	#$ Bainne a chur ar an gcaife.
 
-ADD:msyn-ecl-after-prep3 (&msyn-ecl-after-prep3) TARGET (Noun Com) OR (Noun Gen) + <ComGen> IF
+ADD:msyn-ecl-after-prep2 (&msyn-ecl-after-prep2) TARGET (Noun Com) + <ComGen> IF
 	(*-1 (Prep Art Sg) - ("de") - ("do") - ("i") BARRIER (*) - Art)
 	(0 ("<[bcdfgpsBCDFGPS].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
 	(NEGATE -1 ("de" Prep Art Sg) OR ("do" Prep Art Sg))
@@ -1138,30 +1120,30 @@ ADD:msyn-ecl-after-prep3 (&msyn-ecl-after-prep3) TARGET (Noun Com) OR (Noun Gen)
 	#$ Tá sé i a shuí sa charr.
 	# KEVIN: the analyzer still sees the deleted word one to the left
 
-COPY:msyn-ecl-after-prep3 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep3) OR (DefArt &msyn-ecl-after-prep3) OR (Len &msyn-ecl-after-prep3) TARGET (&msyn-ecl-after-prep3);
-#ADDRELATION:msyn-ecl-after-prep3 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep3);
+COPY:msyn-ecl-after-prep2 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep2) OR (DefArt &msyn-ecl-after-prep2) OR (Len &msyn-ecl-after-prep2) TARGET (&msyn-ecl-after-prep2);
+#ADDRELATION:msyn-ecl-after-prep2 ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep2);
 
 
 	## Tá bainisteoir nua ar an banc. # wrong
 	## Tá bainisteoir nua thar an banc. # wrong
 	## Tá bainisteoir nua ar an mbanc. # ok
 
-COPY:msyn-ecl-after-prep (Com Sg Ecl SUGGEST) EXCEPT (Gen Sg &msyn-ecl-after-prep) OR (Gen Sg DefArt &msyn-ecl-after-prep) OR (Gen Sg Len &msyn-ecl-after-prep) TARGET (Gen &msyn-ecl-after-prep);
+COPY:msyn-ecl-after-prep2 (Com Sg Ecl SUGGEST) EXCEPT (Gen Sg &msyn-ecl-after-prep2) OR (Gen Sg DefArt &msyn-ecl-after-prep2) OR (Gen Sg Len &msyn-ecl-after-prep2) TARGET (Gen &msyn-ecl-after-prep2);
 
-ADD:msyn-ecl-after-prep5 (&msyn-ecl-after-prep5) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+ADD:msyn-ecl-after-prep3 (&msyn-ecl-after-prep3) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
+        (-1 ECLIPSE-PREP + Prep + Simp)
+        (0 ("<[bcdfgpsBCDFGPS].*>"r))
+        (NEGATE 0 Ecl)
+        (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
+COPY:msyn-ecl-after-prep3 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep3) OR (DefArt &msyn-ecl-after-prep3) OR (Len &msyn-ecl-after-prep3) TARGET (&msyn-ecl-after-prep3);
+
+ADD:msyn-ecl-after-prep4 (&msyn-ecl-after-prep4) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
         (-1 ECLIPSE-PREP + (Prep Simp))
         (0 ("<[bcdfgpsBCDFGPS].*>"r))
         (NEGATE 0 Ecl)
         (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
-COPY:msyn-ecl-after-prep5 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep5) OR (DefArt &msyn-ecl-after-prep5) OR (Len &msyn-ecl-after-prep5) TARGET (&msyn-ecl-after-prep5);
+COPY:msyn-ecl-after-prep4 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep4) OR (DefArt &msyn-ecl-after-prep4) TARGET (&msyn-ecl-after-prep4);
 
-
-ADD:msyn-ecl-after-prep6 (&msyn-ecl-after-prep6) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
-        (-1 ECLIPSE-PREP + (Prep Simp))
-        (0 ("<[bcdfgpsBCDFGPS].*>"r))
-        (NEGATE 0 Ecl)
-        (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
-COPY:msyn-ecl-after-prep6 (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep6) OR (DefArt &msyn-ecl-after-prep6) TARGET (&msyn-ecl-after-prep6);
 
 ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Verb) IF
 	(-1 (Conj Subord))
