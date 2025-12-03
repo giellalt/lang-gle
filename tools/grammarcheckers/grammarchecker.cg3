@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "./modes/glegram-dev6-cg.mode" -*-
+	# -*- cg-pre-pipe: "./modes/glegram-dev6-cg.mode" -*-
 # Divvun & Giellatekno - open source grammars for Sámi and other languages
 # Copyright © 2000-2025 UiT The Arctic University of Norway
 # http://giellatekno.uit.no & http://divvun.no
@@ -731,18 +731,22 @@ ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));
 #!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) IF (-1 (Noun Masc Com Sg));
+	##fear móra -> fear mór.
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender));
 
 COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com NotSlen Pl) OR (Fem Sg Len) TARGET (Adj Fem &msyn-adj-masc-gender) OR (Adj Pl &msyn-adj-masc-gender);
 
 ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
-	## Mar sin,ar son Comhairle laighean, cuirimid fearradh na fáilte roimh óg ‘s aosta, sult a bhaint as táipeantais suantasach damhsa le a rinceoir réigiúnacha.
+	## Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ónár rinceoir réigiúnacha.
 
 	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
 
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Masc Com Pl)) ;
 COPY:msyn-pl-noun-pl-adj (Adj Com Pl SUGGEST) EXCEPT (&msyn-pl-noun-pl-adj) TARGET (&msyn-pl-noun-pl-adj);
+
+	## boic mór
+	#$ boic mhóra
 
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Masc Com Sg Len))(-1 (Noun Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
 COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
@@ -758,8 +762,10 @@ COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg) OR (Fem C
 
 #ADDRELATION:msyn-pl-noun-pl-adj ($2) (Adj &msyn-pl-noun-pl-adj) TO (-1 (Noun &msyn-pl-noun-pl-adj));
 	## Tháinig daltaí cáiliúil go leor chun na Ríochta i mbliana.
-	##LINDA
 
+#A rule is needed here to correct for "Boic beaga -> boic bheaga"
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (-1 (Noun Masc Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
+COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj);
 
 
 	#!! ## Prepositions and pronouns fused
@@ -991,12 +997,14 @@ COPY:msyn-lenition-after-aon (Len &SUGGEST) EXCEPT (&msyn-lenition-after-aon) TA
 #díriú isteach ar -> díriú ar
 
 #i bliana -> i mbliana rule.
-ADD:msyn-i-mbliana (&msyn-i-mbliana) TARGET ("bliain" Noun Fem Com Pl) - Ecl IF (-1 ("i" Prep Simp)) ;
-COPY:msyn-i-mbliana (Ecl SUGGEST) EXCEPT (&msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
-	## Beidh toghchán i mbliana.
-	##de bharr sin - #$dá bharr sin
+ADD:msyn-i-mbliana (&msyn-i-mbliana) TARGET ("bliain" Gen Sg) - Ecl IF (-1 ("i" Prep Simp)) ;
+COPY:msyn-i-mbliana (Gen Sg Ecl SUGGEST) EXCEPT (Gen Sg &msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
+	## Beidh toghchán ann i mbliana.
 
-ADD:lex-da-bharr-sin (&lex-da-bharr-sin) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
+## de bharr sin
+#$ dá bharr sin
+
+ADD:lex-da-bharr-sin (&lex-da-bharr-sin) TARGET (xxx) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
 COPY:lex-da-bharr-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-da-bharr-sin) TARGET (Art &lex-da-bharr-sin) IF (1 (Noun Fem)) ;
 
 
@@ -1630,6 +1638,7 @@ SUBSTITUTE (&msyn-gen-chun-defart-noun) (co&msyn-gen-chun-defart-noun) TARGET (S
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
+	(NEGATE -2 (Prep Simp))
 	(NEGATE -2 Noun)
 	(-1 ("an" Art Sg Def))(NEGATE 0 DefArt)
 	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
