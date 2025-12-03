@@ -1662,7 +1662,7 @@ SELECT (Noun Gen Pl) IF (-1C (Art Pl Def) ) (-2C (Noun)) (NOT -3 (Art Def));
 SELECT NOUN-NOT-VN IF (-1 (Num)) (NOT -1 ("sé" Pron Pers));
 
 # it is a noun if preceded by an unambiguous prep (C=careful mode)
-SELECT (Noun) IF (-1C (Prep));
+SELECT (Noun) IF (-1C (Prep))(NEGATE 0 (Det Poss));
 
 # noun  should match following adj in gender, number and case
 SELECT (Noun Fem) IF (0C (Noun)) (1 (Adj Fem));
@@ -2174,13 +2174,13 @@ SELECT (Verb) IF (-1C (Part Vb));
 
 # TYPE 4
 # e.g. dúil acu sa troid - select the noun reading for troid rather than verb reading
-SELECT (Noun) IF (-1C (Prep));
+SELECT (Noun) IF (-1C (Prep))(NEGATE 0 (Det Poss));
 SELECT (NOUN-NOT-VN) IF (-1C (Art));
 
 # TYPE 4
 # nouns take com case after prep except for list of preps which take 
 # gen case, (dat case is handled earlier)
-SELECT (Noun Com) IF (-1C (Prep Simp)) (NOT -1 GEN-SIMP-PREP);
+SELECT (Noun Com) IF (-1C (Prep Simp)) (NOT -1 GEN-SIMP-PREP)(NEGATE 0 (Det Poss));
 
 # TYPE 4
 # arm na Róimhe => arm = Noun Com not Gen
@@ -2278,10 +2278,10 @@ SELECT (Prop Noun) IF (0 ("<Mí>")) (-1 ("<na>"));
 REMOVE (Noun) IF (0 ("<Ní>")) (1C (Noun));
 
 # disambiguate initial mutation ambiguity
-SELECT (Noun Len) IF  (-1 NOUN-LEN) (-1 (Prep Simp));
-SELECT (Noun Len) IF  (-1 NUM-LEN) ;
-SELECT (Noun Ecl) IF  (-1 NUM-ECL) ;
-REMOVE (Noun Len) IF  (NOT -1 NOUN-LEN) (-1 (Prep Simp));
+SELECT (Noun Len) IF  (-1 NOUN-LEN) (-1 (Prep Simp))(NEGATE 0 (Det Poss));
+SELECT (Noun Len) IF  (-1 NUM-LEN)(NEGATE 0 (Det Poss)) ;
+SELECT (Noun Ecl) IF  (-1 NUM-ECL)(NEGATE 0 (Det Poss)) ;
+REMOVE (Noun Len) IF  (NOT -1 NOUN-LEN) (-1 (Prep Simp))(NEGATE 0 (Det Poss));
 #=====#
 END #
 #=====#
