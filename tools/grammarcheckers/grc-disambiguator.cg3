@@ -158,7 +158,9 @@ SUBSTITUTE (Noun) (Noun <ComGen>) TARGET Noun IF (0 (Com Sg) - Len LINK 0 (Gen S
 REMOVE:no-mascgensghpref (Noun Masc Gen Sg hPref) IF (0 Noun) ;
 	## hárasáin ar na hurláir uachtarach agus tá na seirbhísí
 
-
+REMOVE:no-adjmasccomsglen (Adj Masc Com Sg Len) IF (NEGATE -1 (Noun Masc Com Sg) LINK -1 DefArt LINK -1 (Prep Simp)) ;
+	## Tá hata ar an bhfear beag.
+	#$ Tá hata ar an bhfear bheag.
 
 # ==================================================================== #
 # DISAMBIGUATION RULES
@@ -1155,8 +1157,10 @@ REMOVE (Adj Base Len) IF (-1C (Noun)) (NOT -1 (Noun Len) OR (Noun Fem) OR (Noun 
 # let us assume that they are followed by Noun Gen rather than Adj
 # - this more likely but not essential ...
 
+LIST CASE = Gen Com ;
+
 SELECT (Adj Fem) IF (0C ADJ-NOT-VA) (-1C (Fem))  ;
-SELECT (Adj Masc) IF (0C ADJ-NOT-VA) (-1C (Masc)) ;
+SELECT (Adj Masc + $$CASE) IF (0C ADJ-NOT-VA) (-1C (Masc) + $$CASE) ;
 SELECT (Adj Sg) IF (0C ADJ-NOT-VA) (-1C (Sg)) (NOT -1 ("déag")) (NOT -2 (Num))  ;
 SELECT:GRAM (Adj Pl) - (Gen Weak) IF (0C ADJ-NOT-VA) (-1C (Pl))  ;
 SELECT (Adj Pl) IF (0C ADJ-NOT-VA) (-1C ("déag"))  ;

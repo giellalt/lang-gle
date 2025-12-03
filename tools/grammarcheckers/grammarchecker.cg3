@@ -730,9 +730,14 @@ ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));
 
 #!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 
-ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Len) IF (-1 (Noun Masc Com Sg));
-COPY:msyn-adj-masc-gender (Base SUGGEST) EXCEPT (Len) TARGET (Masc &mysn-adj-masc-gender);
-ADDRELATION:msyn-adj-masc-gender ($2) (Noun) TO (1 (Adj &msyn-adj-masc-gender));
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) IF (-1 (Noun Masc Com Sg));
+
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender));
+
+COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com NotSlen Pl) OR (Fem Sg Len) TARGET (Adj Fem &msyn-adj-masc-gender) OR (Adj Pl &msyn-adj-masc-gender);
+
+ADDRELATION:msyn-adj-masc-gender ($2) (Adj &msyn-adj-masc-gender) TO (-1 (Noun &msyn-adj-masc-gender));
+	## Mar sin,ar son Comhairle laighean, cuirimid fearradh na fáilte roimh óg ‘s aosta, sult a bhaint as táipeantais suantasach damhsa le a rinceoir réigiúnacha.
 
 	##a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
 
