@@ -3451,7 +3451,7 @@ Ad hoc tag for i > sa, to be revised.
 ### Noun errors (Len vs. not Len) after prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST ECLIPSE-PREP = "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); 
+* LIST ECLIPSE-PREP =  "<ag>" "<ar>" <"as"> "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); 
 
 * LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; 
 * LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; 
@@ -3650,11 +3650,10 @@ Other gen tags:
 * LIST &msyn-adj-gender = &msyn-adj-gender ;      
 * LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; 
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     
-* LIST &msyn-ecl-after-prep1 = &msyn-ecl-after-prep1 ;     
+* LIST &msyn-ecl-after-prep-plus-art = &msyn-ecl-after-prep-plus-art ;     
 * LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     
 * LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;     
-* LIST &msyn-ecl-after-prep5 = &msyn-ecl-after-prep5 ;     
-* LIST &msyn-ecl-after-prep6 = &msyn-ecl-after-prep6 ;     
+* LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     
 * LIST &msyn-fada-o = &msyn-fada-o ;    
 * LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; 
 * LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; 
@@ -3744,8 +3743,6 @@ Here ends the list and set section
 ### Prepositions and possessive adjectives fused
 
 **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
-
-#### RULE TO ADD LENITION TO NOUNS FOLLOWING PREPOSITIONS
 
 #### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
