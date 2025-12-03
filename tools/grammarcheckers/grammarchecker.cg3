@@ -736,10 +736,10 @@ ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1
 
 COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com NotSlen Pl) OR (Fem Sg Len) TARGET (Adj Fem &msyn-adj-masc-gender) OR (Adj Pl &msyn-adj-masc-gender);
 
-ADDRELATION:msyn-adj-masc-gender ($2) (Adj &msyn-adj-masc-gender) TO (-1 (Noun &msyn-adj-masc-gender));
+ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
 	## Mar sin,ar son Comhairle laighean, cuirimid fearradh na fáilte roimh óg ‘s aosta, sult a bhaint as táipeantais suantasach damhsa le a rinceoir réigiúnacha.
 
-	##a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
+	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
 
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Masc Com Pl)) ;
 COPY:msyn-pl-noun-pl-adj (Adj Com Pl SUGGEST) EXCEPT (&msyn-pl-noun-pl-adj) TARGET (&msyn-pl-noun-pl-adj);
