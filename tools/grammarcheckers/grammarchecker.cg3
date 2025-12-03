@@ -147,6 +147,7 @@ LIST Allegro = Allegro ; #!! * Allegro
 LIST Arab = Arab ; #!! * Arab
 LIST Rom = Rom ; #!! * Romertall
 LIST Foreign = Foreign ;
+LIST NG = NG ;
 
 #!! ### Tags for morphosyntactic properties
 
@@ -2080,10 +2081,10 @@ ADD:casefix (<fixedcase>) TARGET (SUGGEST) IF (NEGATE -1 BOS) ;
 
 ## A rule to correct the wrong article used with singular or plural, e.g., an scoileanna -> na scoileanna, na cailín -> an cailín.
 
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) IF (1 (Noun Sg))(NEGATE 0 Gen);
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun Sg))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
 COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
-ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF (1 (Noun Pl))(NEGATE 0 Gen);
+ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) - NG IF (1 (Noun Pl))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
 COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
 	
 
