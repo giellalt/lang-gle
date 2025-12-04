@@ -650,9 +650,8 @@ LIST &lex-conj-plus-copula = &lex-conj-plus-copula ; #!!= * @CODE@
 LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 #!!= * @CODE@
 LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 #!!= * @CODE@
 LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@
-LIST &msyn-hpref-after-go-part = %msyn-hpref-after-go-part ;
+LIST &msyn-hpref-after-go-part = &msyn-hpref-after-go-part ;
 LIST &msyn-ecl-after-goPrepSimp = &msyn-ecl-after-goPrepSimp ;
-LIST &msyn-ecl-after-go = &msyn-ecl-after-goPrepSimp ;
 LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@
@@ -1162,14 +1161,21 @@ COPY:msyn-ecl-after-da (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-da) TARGET (&msyn-e
 #Lá go n-oíche, a day and a night. 
 #Go bhfios dom, as far as I know. 
 #Go gcuimhin liom, as far as I remember. 
-#Go gclos dom, from what I hear.
+#Go gclos dom, from what I hear. Prop Noun Fem Dat Sg
 
-ADD:msyn-ecl-after-goPrepSimp (&msyn-ecl-after-goPrepSimp) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF
+ADD:msyn-ecl-after-goPrepSimp (&msyn-ecl-after-goPrepSimp) TARGET (Noun Com) OR (Noun Gen) OR (Prop Noun) + <ComGen> OR (Adj Base) IF
 	(-1 ("go" Prep Simp))
 	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 COPY:msyn-ecl-after-goPrepSimp (hPref SUGGEST) EXCEPT (&msyn-ecl-after-goPrepSimp) TARGET (Noun &msyn-ecl-after-goPrepSimp);
 COPY:msyn-ecl-after-goPrepSimp (hPref SUGGEST) EXCEPT (&msyn-ecl-after-goPrepSimp) TARGET (Adj &msyn-ecl-after-goPrepSimp);
+
+
+ADD:msyn-ecl-after-goPrepSimp (&msyn-ecl-after-goPrepSimp) TARGET (Prop Noun) IF
+	(-1 ("go" Prep Simp))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+COPY:msyn-ecl-after-goPrepSimp (hPref SUGGEST) EXCEPT (&msyn-ecl-after-goPrepSimp) TARGET (Noun &msyn-ecl-after-goPrepSimp);
 
 # go particle, used with predicative adjectives and with adverbs) (Prefixes h to vowels)
 ADD:msyn-hpref-after-go-part (&msyn-hpref-after-go-part) TARGET (Noun) + <ComGen> OR (Adj Base) IF
@@ -1187,7 +1193,7 @@ ADD:msyn-hpref-after-go-part (&msyn-hpref-after-go-part) TARGET ("éag" Verb VI 
 	(NEGATE 0 (Verbal Noun));
 COPY:msyn-hpref-after-go-part (Verb VI Vow Imper 2P Sg Neg SUGGEST) EXCEPT (&msyn-hpref-after-go-part) TARGET (Noun &msyn-hpref-after-go-part);
 
-ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) - Ecl IF
+ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) OR (Verb VTI PresSubj) - Ecl IF
 	(-1 ("go") or ("Go"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-go (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-go) TARGET (&msyn-ecl-after-go);
