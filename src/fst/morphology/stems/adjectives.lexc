@@ -13131,10 +13131,10 @@ beag:lú			AI-COMP;
 beag:lúide		AI-COMP;
 breá:breátha		AI-COMP;
 dócha:dóichí		AI-COMP;
-dearg:deirge		AI-COMP; ! dirge removed in xfst-fix.script
+dearg:deirge		AI-COMP; 	! dirge removed in xfst-fix.script
 bándearg:bándeirge	AI-COMP;
 liathdhearg:liathdheirge AI-COMP;
-!dian:déine		AI-COMP;
+dian:déine		AI-COMP;
 fada:faide		AI-COMP;
 fliuch:fliche		AI-COMP;
 furasta:fusa		AI-COMP;
