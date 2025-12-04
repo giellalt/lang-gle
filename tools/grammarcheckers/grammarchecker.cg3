@@ -597,11 +597,8 @@ LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old ge
 
 #!! ###  Other tags
 
-#LIST &msyn-com-case-nouns = &msyn-com-case-nouns ;
-#LIST &msyn-fem-article = &msyn-fem-article ;    #!!= * @CODE@
 #LIST &use-ie.i. = &use-ie.i. ;    #!!= * @CODE@
 #LIST &msyn-inis-de = &msyn-inis-de ;    #!!= * @CODE@
-#LIST &msyn-len-after-prep-sfem = &msyn-len-after-prep-sfem ;    #!!= * @CODE@
 #LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@
 #LIST &spell-it-all = spell-it-all ;    #!!= * @CODE@
 LIST &use-ellipsis = &use-ellipsis ;    #!!= * @CODE@
@@ -653,6 +650,9 @@ LIST &lex-conj-plus-copula = &lex-conj-plus-copula ; #!!= * @CODE@
 LIST &msyn-ecl-after-mura = &msyn-ecl-after-mura ;	 #!!= * @CODE@
 LIST &msyn-ecl-after-da = &msyn-ecl-after-da ;	 #!!= * @CODE@
 LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@
+LIST &msyn-hpref-after-go-part = %msyn-hpref-after-go-part ;
+LIST &msyn-ecl-after-goPrepSimp = &msyn-ecl-after-goPrepSimp ;
+LIST &msyn-ecl-after-go = &msyn-ecl-after-goPrepSimp ;
 LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@
 LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@
@@ -1151,10 +1151,47 @@ ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Verb) IF
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-da (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-da) TARGET (&msyn-ecl-after-da);
 
+#Scian go mbua, a charmed knife. 
+#Cath go ndíth, a destructive battle. 
+#Flaith go ngail, a valorous prince. 
+#Go n-aghaidh suilt, with a pleasant face. 
+#Go n-onóir, with honour. 
+#Each gona shrian, a horse plus its bridle. 
+
+
+#Lá go n-oíche, a day and a night. 
+#Go bhfios dom, as far as I know. 
+#Go gcuimhin liom, as far as I remember. 
+#Go gclos dom, from what I hear.
+
+ADD:msyn-ecl-after-goPrepSimp (&msyn-ecl-after-goPrepSimp) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF
+	(-1 ("go" Prep Simp))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
+COPY:msyn-ecl-after-goPrepSimp (hPref SUGGEST) EXCEPT (&msyn-ecl-after-goPrepSimp) TARGET (Noun &msyn-ecl-after-goPrepSimp);
+COPY:msyn-ecl-after-goPrepSimp (hPref SUGGEST) EXCEPT (&msyn-ecl-after-goPrepSimp) TARGET (Adj &msyn-ecl-after-goPrepSimp);
+
+# go particle, used with predicative adjectives and with adverbs) (Prefixes h to vowels)
+ADD:msyn-hpref-after-go-part (&msyn-hpref-after-go-part) TARGET (Noun) + <ComGen> OR (Adj Base) IF
+	(-1 ("go" Part Ad))
+	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r));
+COPY:msyn-hpref-after-go-part (hPref SUGGEST) EXCEPT (&msyn-hpref-after-go-part) TARGET (Noun &msyn-hpref-after-go-part);
+COPY:msyn-hpref-after-go-part (hPref SUGGEST) EXCEPT (&msyn-hpref-after-go-part) TARGET (Adj &msyn-hpref-after-go-part);
+
+ADD:msyn-hpref-after-go-part (&msyn-hpref-after-go-part) TARGET ("uile") IF (-1 ("go"));
+COPY:msyn-hpref-after-go-part (hPref SUGGEST) EXCEPT (&msyn-hpref-after-go-part) TARGET (Noun &msyn-hpref-after-go-part);
+
+ADD:msyn-hpref-after-go-part (&msyn-hpref-after-go-part) TARGET ("éag" Verb VI Vow Imper 2P Sg) IF 
+	(-1 ("go"))
+	(NEGATE 0 (Verb))
+	(NEGATE 0 (Verbal Noun));
+COPY:msyn-hpref-after-go-part (Verb VI Vow Imper 2P Sg Neg SUGGEST) EXCEPT (&msyn-hpref-after-go-part) TARGET (Noun &msyn-hpref-after-go-part);
+
 ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) - Ecl IF
 	(-1 ("go") or ("Go"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-go (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-go) TARGET (&msyn-ecl-after-go);
+
 
 ## compound of preposition "de" and particle "a" used with abstract nouns denoting degree. (Lenites)
 
@@ -1353,7 +1390,6 @@ LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
-	(NEGATE 0 Gen)
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP);
@@ -1369,7 +1405,7 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 
 # Singular N.com Art.com N.sg.com ==> N.com Art.gen N.sg.gen
 
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) IF # DefArt) OR (Noun Fem Com Sg) IF
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Sg))
@@ -1814,11 +1850,6 @@ COPY:msyn-hPref-after-sna (hPref SUGGEST) EXCEPT (&msyn-hPref-after-sna) TARGET 
 
 ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF
 	(-1 ("chomh"))
-	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N);
-
-ADD:msyn-hPref-after-prep (&msyn-hPref-after-prep) TARGET (Noun Com) OR (Noun Gen) + <ComGen> OR (Adj Base) IF
-	(-1 ("go"))
 	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 
