@@ -355,6 +355,21 @@ LIST @X = @X ;    #!! * @X
 
 LIST <ComGen> = <ComGen> ; # Tag for nouns where Com and Gen forms are homonymous
 
+LIST <firstCohortOfParagraph> = <firstCohortOfParagraph> ;
+LIST <NoSpaceAfterPunctMark> = <NoSpaceAfterPunctMark> ;
+LIST <NoSpaceAfterParenEnd> = <NoSpaceAfterParenEnd> ;
+LIST <NoSpaceBeforeParenBeg> = <NoSpaceBeforeParenBeg> ;
+
+LIST <spaceAfterParenBeg> = <spaceAfterParenBeg> ;
+LIST <spaceBeforeParenEnd> = <spaceBeforeParenEnd> ;
+LIST <SpaceBeforePunctMark> = <SpaceBeforePunctMark> ;
+
+LIST <LastCohortOfParagraph> = <LastCohortOfParagraph> ;
+LIST <LastCohort> = <LastCohort> ;
+
+LIST <SpaceOnRightSide> = <SpaceOnRightSide> ;
+LIST <SpaceOnLeftSide> = <SpaceOnLeftSide> ;
+LIST <spelled> = <spelled> ;
 
 # ========
   SETS
