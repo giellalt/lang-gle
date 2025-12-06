@@ -1502,37 +1502,50 @@ ADDRELATION:msyn-gen-noun-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-
 
 #!! #### Genitive rule 4 N A
 
-ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Com Sg DefArt) IF
-	(-1 (Noun Com))
-	(-2 (Art Def))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE -4 (Verb VTI));
-COPY:msyn-gen-noun-adj (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-adj) TARGET (&msyn-gen-noun-adj);
+LIST &msyn-adj-genitive-masc = &msyn-adj-genitive-masc ;
+
+ADD:msyn-adj-genitive-masc (&msyn-adj-genitive-masc) TARGET (Adj) IF (-1 (Noun Masc Gen Sg DefArt));
+COPY:msyn-adj-genitive-masc (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-adj-genitive-masc);
+ADDRELATION:msyn-adj-genitive-masc ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-masc));
+
+#LIST &msyn-adj-genitive-fem = &msyn-adj-genitive-fem ;
+
+#ADD:msyn-adj-genitive-fem (&msyn-adj-genitive-fem) TARGET (Adj) IF (-1 (Noun Fem Gen Sg DefArt));
+#COPY:msyn-adj-genitive-fem (Gen SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-adj-genitive-fem);
+#ADDRELATION:msyn-adj-genitive-fem ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-fem));
+
+
+#ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Com Sg DefArt) IF
+	#(-1 (Noun Com))
+	#(-2 (Art Def))
+	#(NEGATE 0 (Gen Sg))
+	#(NEGATE -4 (Verb VTI));
+#COPY:msyn-gen-noun-adj (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-adj) TARGET (&msyn-gen-noun-adj);
 
 ##  Príomhoide an scoil beag.  # msyn-gen-noun-defart-noun-adj
 #$  Príomhoide na scoile bige
 
 # --- This is jacket of.the boy tall > this is jacket of.the boy.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-noun-defart-noun) OR (Adj));
-COPY:msyn-gen-noun-adj (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
-ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun) OR (Adj)); # but the tags should be identical
+#ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Masc Com Sg) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-noun-defart-noun) OR (Adj));
+#COPY:msyn-gen-noun-adj (Gen Sg Len SUGGEST) EXCEPT (Com Sg Len &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun) OR (Adj)); # but the tags should be identical
 #ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-noun-defart-noun) OR (Adj)); # but the tags should be identical
 
 # --- This is jacket of.the girl tall > this is jacket of.the girl.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-defart-noun));
-COPY:msyn-gen-noun-adj (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
-ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
+#ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Fem Com Sg) IF (NEGATE 0 Gen)(NEGATE 0 Len)(-1 (Noun &msyn-gen-defart-noun));
+#COPY:msyn-gen-noun-adj (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
 #ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-case-nouns));
 
 # --- # This is jacket of the girl tall > this is jacket of.the girl.gen tall.genFem+Gen+Sg
-ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Fem Com Sg Len) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-defart-noun));
-COPY:msyn-gen-noun-adj (Gen Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
-ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
+#ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Fem Com Sg Len) IF (NEGATE 0 Gen)(-1 (Noun &msyn-gen-defart-noun));
+#COPY:msyn-gen-noun-adj (Gen Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gen-noun-adj) TARGET (Adj &msyn-gen-noun-adj);
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
 #ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-case-nouns));
 
-ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Base) IF (NEGATE 0 Gen)(-1 (Noun Masc Sg &msyn-gen-defart-noun));
-COPY:msyn-gen-noun-adj (Len SUGGEST) EXCEPT (&msyn-gen-noun-adj) TARGET (Adj Base &msyn-gen-noun-adj);
-ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
+#ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Base) IF (NEGATE 0 Gen)(-1 (Noun Masc Sg &msyn-gen-defart-noun));
+#COPY:msyn-gen-noun-adj (Len SUGGEST) EXCEPT (&msyn-gen-noun-adj) TARGET (Adj Base &msyn-gen-noun-adj);
+#ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun));
 #ADDRELATION ($2 LEFT) (&msyn-gen-noun-adj) TO (-1 (Noun &msyn-gen-case-nouns));
 
 # --- # ... and the same in plural
@@ -1557,18 +1570,28 @@ SUBSTITUTE (&msyn-gen-vn-noun-with-article) (&msyn-gen-noun-with-article) TARGET
 ## with article "ag scríobh na litreach".
 
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag")) 		#LINK NEGATE -1 (Art Sg Def))
+	(*-1 (Verbal Noun VTI))	#LINK NEGATE -1 (Art Sg Def))#(BARRIER (*) - Prep Art LINK -1 ("ag")) 
 	(NEGATE 0 (Gen Sg))
-	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	#(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
 	(NEGATE -2 (Verb VTI));
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Adj) IF
 	(-1 (Noun Com))
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag")) 		#LINK NEGATE -1 (Art Sg Def))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
-	(NEGATE -2 (Verb VTI));
+	(-2 Art)
+	(*-1 (Verbal Noun VTI));
 COPY:msyn-gen-vn-noun-with-article (Gen Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
-COPY:msyn-gen-vn-noun-with-article (Adj SUGGEST) EXCEPT (&msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
+COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len) TARGET (Adj &msyn-gen-vn-noun-with-article);
+
+ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
+	(*-1 (Verbal Noun VTI))	#LINK NEGATE -1 (Art Sg Def))#(BARRIER (*) - Prep Art LINK -1 ("ag")) 
+	(NEGATE 0 (Gen Sg))
+	#(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
+	(NEGATE -2 (Verb VTI));
+ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Adj Fem Com Sg Len) IF
+	(-1 (Noun Com))
+	(-2 Art)
+	(*-1 (Verbal Noun VTI));
+COPY:msyn-gen-vn-noun-with-article (Gen Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
+COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len &msyn-gen-vn-noun-with-article) TARGET (Adj &msyn-gen-vn-noun-with-article);
 
 
 ##Nuair nach mbíonn an t-alt (na) i láthair, is iondúil gurb é an t-ainmneach a úsáidtear in áit an ghinidigh: ag lorg na litreach fada, le haghaidh na litreach fada ach ag lorg litir fhada, le haghaidh litir fhada.
