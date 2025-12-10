@@ -1700,7 +1700,28 @@ COPY:msyn-gen-chun-defart-noun ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl De
 ADDRELATION ($2 LEFT) (&msyn-gen-chun-defart-noun) TO (-1 (Art &msyn-gen-chun-defart-noun));
 SUBSTITUTE (&msyn-gen-chun-defart-noun) (co&msyn-gen-chun-defart-noun) TARGET (SUGGEST);
 
+## an Uachtarán -> an tUachtarán
+
+
+## A rule to correct the wrong article used with singular or plural, e.g., an scoileanna -> na scoileanna, na cailín -> an cailín.
+# Maybe &lex-correct-art and &msyn-noun-defart should be put together
+
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun Sg))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
+
+	# Gen has not been disambiguated for Art, but the noun is a safe Com
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1C (Noun Com Sg))(NEGATE 0 &msyn-prep-detposs);
+	## Chuaigh na bean á bprapáil féin.
+	#$ Chuaigh an bhean á bprapáil féin.
+	
+COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
+
+
+ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) - NG IF (1 (Noun Pl))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
+COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
+	
+
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
+# Maybe &lex-correct-art and &msyn-noun-defart should be put together
 
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
 	(NEGATE -2 (Prep Simp))
@@ -2152,17 +2173,6 @@ COPY:msyn-cop-past-neg-vowel (Cop Past Neg VF SUGGEST) EXCEPT (Cop Past Neg &msy
 
 ADD:casefix (<fixedcase>) TARGET (SUGGEST) IF (NEGATE -1 BOS) ;
 
-## an Uachtarán -> an tUachtarán
-
-
-## A rule to correct the wrong article used with singular or plural, e.g., an scoileanna -> na scoileanna, na cailín -> an cailín.
-
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun Sg))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
-COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
-
-ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) - NG IF (1 (Noun Pl))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
-COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
-	
 
 ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
 	(*-1 BOS LINK 1 ("an" Part Vb Q))
