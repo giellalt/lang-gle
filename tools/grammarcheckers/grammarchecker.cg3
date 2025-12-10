@@ -626,6 +626,7 @@ LIST &lex-correct-art = &lex-correct-art;
 LIST &lex-tá-is = &lex-tá-is ;      #!!= * @CODE@
 LIST &lex-part-comparative-adj = &lex-part-comparative-adj ; #!!= * @CODE@
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
+LIST &msyn-adj-fem-gender = &msyn-adj-fem-gender ;
 LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@
@@ -741,7 +742,7 @@ ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));
     	## An fhuinneog beag - INCORRECT
 	#$ An fhuinneog bheag - CORRECT
 
-#!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
+#!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine Adj Fem Com Sg Len
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) IF (-1 (Noun Masc Com Sg));
 	## fear móra
@@ -754,33 +755,87 @@ ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1
 COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com NotSlen Pl) OR (Fem Sg Len) TARGET (Adj Fem &msyn-adj-masc-gender) OR (Adj Pl &msyn-adj-masc-gender);
 
 ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
-	## Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ónár rinceoir réigiúnacha.
 
-	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
+
+	# A rule to correct the error of a lenited plural adjective being after a feminine singular noun, e.g., fuinneog mhóra.
+ADD:msyn-sg-femnoun-pl-adj (&msyn-sg-femnoun-pl-adj) TARGET (Adj) IF (0 (Adj Com Slender Pl Len) OR (Adj Com NotSlen Pl))(-1 (Noun Fem Sg) LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-sg-femnoun-pl-adj (Fem Com Sg Len SUGGEST) EXCEPT (Com Slender Pl Len) OR (Masc Com Sg) TARGET (Adj &msyn-sg-femnoun-pl-adj) IF (-1 Noun - ("<.*i.>"r))
+	
+	# A rule to correct the error of non-slender plural adjective being after a feminine singular noun, e.g., fuinneog móra -> fuinneog mhór
+ADD:msyn-sg-femnoun-pl-adj (&msyn-sg-femnoun-pl-adj) TARGET (Adj Com NotSlen Pl) IF (-1 (Noun Fem Com Sg) LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-sg-femnoun-pl-adj (Fem Com Sg Len SUGGEST) EXCEPT (Com Slender Pl Len) TARGET (Adj &msyn-sg-femnoun-pl-adj)
+
+	## Tá an fhuinneog móra ar oscailt.
+	#$ Tá an fhuinneog mhór ar oscailt. Adj Fem Com Sg Len
+
+
+ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com Pl) OR (Fem Com Sg Len))(-1 (Noun Fem Com));
+ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Noun Fem Com) IF (1 (Adj &msyn-adj-fem-gender));
+
+COPY:msyn-adj-fem-gender (Fem Com Sg Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Sg Len) TARGET (Adj Masc &msyn-adj-fem-gender) OR (Adj Pl &msyn-adj-fem-gender);
+
+ADDRELATION:msyn-adj-fem-gender ($2 RIGHT) (Adj &msyn-adj-fem-gender) TO (-1 Noun + &msyn-adj-fem-gender);
+	
+
+	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta "mór" (Adj Fem Com Sg Len) OR 
 	
 	# non-slender noun before
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
 COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (Fem Com Sg Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
-
-
-	## boic mór
-	#$ boic mhóra
+	## Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ó ár rinceoirí réigiúnach.
+	#$ Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ónár rinceoirí réigiúnacha.
 	
 	# slender noun before
-ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com NotSlen Pl))(-1 (Noun Com Pl) LINK 0 ("<.*i.>"r))(NEGATE 0 Pl - (Gen Weak) - (Com NotSlen)) ;
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com NotSlen Pl) OR (Masc Com Sg))(-1 (Noun Com Pl) LINK 0 ("<.*i.>"r))(NEGATE 0 Pl - (Gen Weak) - (Com NotSlen)) ;
 COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Gen Weak Pl) OR (Fem Com Sg Len) OR (Masc Com Sg) OR (Com NotSlen Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
+
 	## Chuaigh na fir ghustalach á bprapáil féin.
 	## Chuaigh na fir gustalach á bprapáil féin.
 	## Chuaigh na fir gustalacha á bprapáil féin.
 	#$ Chuaigh na fir ghustalacha á bprapáil féin.
-	## Tháinig fir cáiliúil go leor chun na Ríochta i mbliana. 
+	## Tháinig fir cáiliúil go leor chun na Ríochta i mbliana.
+	## Tháinig fir cáiliúla go leor chun na Ríochta i mbliana.
 	## Chuaigh na boic bheag á bprapáil féin.
+	## boic mór
+	#$ boic mhóra
 	
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET Noun IF (1 (Adj &msyn-pl-noun-pl-adj));
 
 
 ADDRELATION:msyn-pl-noun-pl-adj (LEFT $2) (Adj &msyn-pl-noun-pl-adj) TO (-1 (Noun &msyn-pl-noun-pl-adj));
 	## Tháinig daltaí cáiliúil go leor chun na Ríochta i mbliana.
+
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Fem Com Sg Len) OR (Com Slender Pl Len))(-1 (Noun Com Pl) LINK 0 ("<.*i.>"r))(NEGATE 0 Pl - (Gen Weak) - (Com NotSlen)) ;
+COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Gen Weak Pl) OR (Fem Com Sg Len) OR (Masc Com Sg) OR (Com Slender Pl Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
+
+	
+	# a rule for feminine plural words, e.g., fuinneoga, scoileanna, blianta.
+ADD:msyn-fempl-noun-pl-adj (&msyn-fempl-noun-pl-adj) TARGET (Adj Com Slender Pl Len) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-fempl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (Fem Com Sg Len) OR (Com Slender Pl Len) TARGET (Adj &msyn-fempl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
+	## Tá na fuinneoga mhóra ar oscailt.
+	## Tá na fuinneoga mhór ar oscailt.
+	## Ta na fuinneoga mór ar oscailt.
+	#$ Tá na fuinneoga móra ar oscailt.
+
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (Fem Com Sg Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
+	
+
+	# A rule to correct the error of a lenited plural adjective being after a masculine singular noun, e.g., fear gharbha.
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Com Slender Pl Len) OR (Adj Base Len) IF (-1 (Noun Masc Com Sg));
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender));
+
+COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com Slender Pl Len) OR (Com NotSlen Pl) OR (Fem Sg Len) TARGET (Adj Pl &msyn-adj-masc-gender);
+
+ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
+
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Base Len) IF (-1 (Noun Masc Com Sg));
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender));
+
+COPY:msyn-adj-masc-gender (Base SUGGEST) EXCEPT (Com Slender Pl Len) OR (Com NotSlen Pl) OR (Fem Sg Len) OR (Len) TARGET (Adj Pl &msyn-adj-masc-gender);
+
+ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
+
 
 	#!! ## Prepositions and pronouns fused
 	# -------------------------------------
@@ -890,6 +945,9 @@ COPY:msyn-lenition-after-nior (Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) 
 ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun) IF
 	(-1 ("i" Prep Art Sg))
 	(0 ("<[bcfgmpsBCFGMPS].*>"r))
+	#(NEGATE 0 (Gen Sg))
+	(NEGATE 0 (Sg DefArt))
+	#(NEGATE 0 (Masc Com Sg Len))
 	(NEGATE 0 ("<[s].*>"r) + Masc)
 	(NEGATE 0 ("<st.*>"r) + Fem)
 	(NEGATE 0 ("<sc.*>"r) + Fem)
@@ -981,7 +1039,7 @@ COPY:msyn-gen-after-trasna ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl Def &m
 
 
 ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl));
-COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (&msyn-plural-after-sna) ;
+COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (Noun &msyn-plural-after-sna) ;
 
 ADD:msyn-lenition-after-aon (&msyn-lenition-after-aon) TARGET (Noun) IF
 	(-1 ("aon"))
@@ -1408,14 +1466,15 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 #!! #### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
 #        ===============================================
 
-LIST MODIFYERNOUN = "cuid" "cúpla" ;
+LIST MODIFYERNOUN = "cuid" "cúpla" "chéad";
 LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
-	(NEGATE 0 Prop LINK -1 MODIFYERPROP);
+	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
+	(NOT 0 ("chéad" Noun Masc Com Sg Len));
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
@@ -1735,6 +1794,7 @@ ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
 	(NEGATE -2 Noun)
 	(NEGATE -1 (Art Pl Def))
 	(-1 ("an" Art Sg Def))(NEGATE 0 DefArt)
+	(NEGATE 0 (Noun Masc Com Sg Len))
 	(NEGATE 0 Gen)
 	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
