@@ -450,7 +450,7 @@ Here ends the list and set section
 
 **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
-**RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
+**RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine Adj Fem Com Sg Len
 
 ## Prepositions and pronouns fused
 
