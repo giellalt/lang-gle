@@ -778,7 +778,7 @@ COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg) OR (Fem C
 
 #A rule is needed here to correct for "Boic beaga -> boic bheaga"
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (-1 (Noun Masc Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
-COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj);
+COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 (Noun Masc Com Pl));
 
 
 	#!! ## Prepositions and pronouns fused
