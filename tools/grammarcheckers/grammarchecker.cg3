@@ -1000,7 +1000,8 @@ COPY:msyn-lenition-after-aon (Len &SUGGEST) EXCEPT (&msyn-lenition-after-aon) TA
 #i bliana -> i mbliana rule.
 ADD:msyn-i-mbliana (&msyn-i-mbliana) TARGET ("bliain" Gen Sg) - Ecl IF (-1 ("i" Prep Simp)) ;
 COPY:msyn-i-mbliana (Gen Sg Ecl SUGGEST) EXCEPT (Gen Sg &msyn-i-mbliana) TARGET (&msyn-i-mbliana) ;
-	## Beidh toghchán ann i mbliana.
+	## Beidh toghchán ann i bliana.
+	#$ Beidh toghchán ann i mbliana.
 
 ## de bharr sin
 #$ dá bharr sin
