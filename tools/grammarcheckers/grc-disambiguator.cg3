@@ -1755,11 +1755,12 @@ REMOVE (Art) IF (1C (Verb));
 
 # TYPE 1
 # Art "na" is not a feminine article unless the following noun is Fem
-REMOVE (Art Fem) IF ( NOT 1 (Noun Fem));
+REMOVE (Art Fem) IF (NOT 1 (Noun Fem));
 
 # TYPE 1
 # Art "na" is not the plural article unless the following noun is Pl
-REMOVE (Art Pl) IF ( NOT 1 (Noun Pl));
+REMOVE (Art Pl) IF (NOT 1 (Noun Pl))(NEGATE 0 (Art Gen Sg) LINK 1 (Com Sg));
+	#$ Chuaigh {na} bean á bprapáil féin.
 
 # NOTE
 # an 19ú haois déag .. an t-aon ceann amháin, an droch rud ná, an CCEA 
