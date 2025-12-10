@@ -744,7 +744,10 @@ ADDRELATION:msyn-adj-gender ($2) (Noun) TO (1 (Adj &msyn-adj-gender));
 #!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) IF (-1 (Noun Masc Com Sg));
-	##fear móra -> fear mór.
+	## fear móra
+	#$ fear mór
+	## madra mhór
+	#$ madra mór
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender));
 
@@ -756,7 +759,7 @@ ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 N
 	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
 	
 	# non-slender noun before
-ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 Noun LINK NOT 0 ("<.*i.>"r)) ;
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
 COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (Fem Com Sg Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
 
 
@@ -769,6 +772,7 @@ COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Gen Weak Pl) OR (F
 	## Chuaigh na fir ghustalach á bprapáil féin.
 	## Chuaigh na fir gustalach á bprapáil féin.
 	## Chuaigh na fir gustalacha á bprapáil féin.
+	#$ Chuaigh na fir ghustalacha á bprapáil féin.
 	## Tháinig fir cáiliúil go leor chun na Ríochta i mbliana. 
 	## Chuaigh na boic bheag á bprapáil féin.
 	
@@ -1432,6 +1436,12 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) 
 	#(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Gen Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
+	(*-2 (Noun Com) BARRIER NOT-A)
+	(-1 (Art Def))
+	(NEGATE -3 (Art Def));
+COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Sg &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
 
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg Def) IF
 	(NEGATE 0 Gen)
@@ -1708,7 +1718,7 @@ ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun
 	# Gen has not been disambiguated for Art, but the noun is a safe Com
 ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1C (Noun Com Sg))(NEGATE 0 &msyn-prep-detposs);
 	## Chuaigh na bean á bprapáil féin.
-	#$ Chuaigh an bhean á bprapáil féin.
+	#$ Chuaigh an bhean á prapáil féin.
 	
 COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
@@ -1723,7 +1733,9 @@ COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-corr
 ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
 	(NEGATE -2 (Prep Simp))
 	(NEGATE -2 Noun)
+	(NEGATE -1 (Art Pl Def))
 	(-1 ("an" Art Sg Def))(NEGATE 0 DefArt)
+	(NEGATE 0 Gen)
 	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
@@ -1734,7 +1746,6 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	#$ An tsráid. - correct
 	## an asal. - incorrect
 	#$ an t-asal. - correct
-
 
 ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;
 ADD:spell-conservatively (&typo SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 2 QMARK);
