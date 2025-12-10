@@ -754,32 +754,29 @@ ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 N
 	## Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ónár rinceoir réigiúnacha.
 
 	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta
+	
+	# non-slender noun before
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 Noun LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (Fem Com Sg Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
 
-ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Masc Com Sg) IF (-1 (Noun Masc Com Pl)) ;
-COPY:msyn-pl-noun-pl-adj (Adj Com Pl SUGGEST) EXCEPT (&msyn-pl-noun-pl-adj) TARGET (&msyn-pl-noun-pl-adj);
 
 	## boic mór
 	#$ boic mhóra
+	
+	# slender noun before
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com NotSlen Pl))(-1 (Noun Com Pl) LINK 0 ("<.*i.>"r))(NEGATE 0 Pl - (Gen Weak) - (Com NotSlen)) ;
+COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Gen Weak Pl) OR (Fem Com Sg Len) OR (Masc Com Sg) OR (Com NotSlen Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
+	## Chuaigh na fir ghustalach á bprapáil féin.
+	## Chuaigh na fir gustalach á bprapáil féin.
+	## Chuaigh na fir gustalacha á bprapáil féin.
+	## Tháinig fir cáiliúil go leor chun na Ríochta i mbliana. 
+	## Chuaigh na boic bheag á bprapáil féin.
+	
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET Noun IF (1 (Adj &msyn-pl-noun-pl-adj));
 
-ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Masc Com Sg Len))(-1 (Noun Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
-COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
 
-ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 Sg OR Base OR (Gen Weak Pl) OR (Masc Com Sg Len))(-1 (Noun Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
-COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
-	## Tháinig fir cáiliúil go leor chun na Ríochta i mbliana.
-
-COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (NEGATE -1 ("<.*i.>"r));
-
-
-#ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Noun) IF (1 (Adj &msyn-pl-noun-pl-adj)) ;
-
-#ADDRELATION:msyn-pl-noun-pl-adj ($2) (Adj &msyn-pl-noun-pl-adj) TO (-1 (Noun &msyn-pl-noun-pl-adj));
+ADDRELATION:msyn-pl-noun-pl-adj (LEFT $2) (Adj &msyn-pl-noun-pl-adj) TO (-1 (Noun &msyn-pl-noun-pl-adj));
 	## Tháinig daltaí cáiliúil go leor chun na Ríochta i mbliana.
-
-#A rule is needed here to correct for "Boic beaga -> boic bheaga"
-ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (-1 (Noun Masc Com Pl))(NEGATE 0 Pl - (Gen Weak)) ;
-COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Com Sg) OR (Fem Com Sg) OR (Gen Weak Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 (Noun Masc Com Pl));
-
 
 	#!! ## Prepositions and pronouns fused
 	# -------------------------------------

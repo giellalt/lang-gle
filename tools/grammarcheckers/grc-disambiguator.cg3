@@ -158,7 +158,7 @@ SUBSTITUTE (Noun) (Noun <ComGen>) TARGET Noun IF (0 (Com Sg) - Len LINK 0 (Gen S
 REMOVE:no-mascgensghpref (Noun Masc Gen Sg hPref) IF (0 Noun) ;
 	## hárasáin ar na hurláir uachtarach agus tá na seirbhísí
 
-REMOVE:no-adjmasccomsglen (Adj Masc Com Sg Len) IF (NEGATE -1 (Noun Masc Com Sg) LINK -1 DefArt LINK -1 (Prep Simp)) ;
+REMOVE:no-adjmasccomsglen (Adj Masc Com Sg Len) IF (NEGATE -1 (Noun Masc Com)) ;
 	## Tá hata ar an bhfear beag.
 	#$ Tá hata ar an bhfear bheag.
 
