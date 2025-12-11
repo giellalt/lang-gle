@@ -3451,7 +3451,7 @@ Ad hoc tag for i > sa, to be revised.
 ### Noun errors (Len vs. not Len) after prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST ECLIPSE-PREP =  "<ag>" ("ag" Prep Simp SUGGEST) "<ar>" ("ar" Prep Simp SUGGEST) <"as"> ("as" Prep Simp SUGGEST) "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST); 
+* LIST ECLIPSE-PREP =  "<ag>" ("ag" Prep Simp SUGGEST) "<ar>" ("ar" Prep Simp SUGGEST) <"as"> ("as" Prep Simp SUGGEST) "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<roimh>"; 
 
 * LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; 
 * LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; 
@@ -3652,12 +3652,13 @@ Other gen tags:
 * LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     
 * LIST &msyn-ecl-after-prep-plus-art = &msyn-ecl-after-prep-plus-art ;     
 * LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     
-* LIST &msyn-ecl-after-prep3 = &msyn-ecl-after-prep3 ;     
+* LIST &msyn-len-after-roimh = &msyn-len-after-roimh ;     
 * LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     
 * LIST &msyn-fada-o = &msyn-fada-o ;    
 * LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; 
 * LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; 
-* LIST &msyn-gen-vn-noun-with-article = &msyn-gen-vn-noun-with-article ;	
+* LIST &msyn-gen-vn-femnoun-with-article = &msyn-gen-vn-femnoun-with-article ;	
+* LIST &msyn-gen-vn-mascnoun-with-article = &msyn-gen-vn-mascnoun-with-article ;	
 * LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ; 
 * LIST &msyn-hPref-after-copula = &msyn-hPref-after-copula ; 
 * LIST &msyn-lenition-after-coppast = &msyn-lenition-after-coppast ; 
@@ -3724,7 +3725,7 @@ Here ends the list and set section
 
 ### spellchecking
 
-* ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;      		 = add rule marking typos
+* ADD:spell-it-all (&botún-litrithe SUGGESTWF) (<spelled>) ;      		 = add rule marking typos
 
 * LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;    	 (to be moved to other tags)
 
@@ -3734,7 +3735,7 @@ Here ends the list and set section
 
 **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
-**RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine Adj Fem Com Sg Len
+**RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 
 ### Prepositions and pronouns fused
 
