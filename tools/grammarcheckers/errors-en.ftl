@@ -173,3 +173,142 @@ punct-question-mark = "Mark questions with question mark"
 
 syn-not-initial = "Áfach" at the beginning of a sentence
     .desc = The word "áfach" ("however") should not be at the beginning of the sentence. Move it to the middle or end of the sentence.
+
+lex-3456 = tbw
+    .desc = tbw
+
+lex-an-áit-é = tbw
+    .desc = tbw
+
+lex-ar-leibheal = tbw
+    .desc = tbw
+
+lex-chomh = tbw
+    .desc = tbw
+
+lex-conj-plus-copula = tbw
+    .desc = tbw
+
+lex-correct-art = tbw
+    .desc = tbw
+
+lex-part-comparative-adj = tbw
+    .desc = tbw
+
+msyn-adj-fem-gender = tbw
+    .desc = tbw
+
+msyn-adj-genitive-masc = tbw
+    .desc = tbw
+
+msyn-adj-masc-gender = tbw
+    .desc = tbw
+
+msyn-ce-plus-defart = tbw
+    .desc = tbw
+
+msyn-contracted-possessive-adjective-before-vowel = tbw
+    .desc = tbw
+
+msyn-cop-past-neg-vowel = tbw
+    .desc = tbw
+
+msyn-ecl-after-goPrepSimp = tbw
+    .desc = tbw
+
+msyn-ecl-after-prep-i = tbw
+    .desc = tbw
+
+msyn-ecl-after-prep-plus-art = tbw
+    .desc = tbw
+
+msyn-ecl-after-prep3 = tbw
+    .desc = tbw
+
+msyn-ecl-after-prep4 = tbw
+    .desc = tbw
+
+msyn-ecl-after-trí-defart = tbw
+    .desc = tbw
+
+msyn-ecl-after-verb-particle-q = tbw
+    .desc = tbw
+
+msyn-gen-after-trasna = tbw
+    .desc = tbw
+
+msyn-gen-chun-defart-noun = tbw
+    .desc = tbw
+
+msyn-gen-chun-noun = tbw
+    .desc = tbw
+
+msyn-hPref-after-copula = tbw
+    .desc = tbw
+
+msyn-hpref-after-go-part = tbw
+    .desc = tbw
+
+msyn-hPref-after-na = tbw
+    .desc = tbw
+
+msyn-hPref-after-neg-imp = tbw
+    .desc = tbw
+
+msyn-hPref-after-sna = tbw
+    .desc = tbw
+
+msyn-láimh-le = tbw
+    .desc = tbw
+
+msyn-le-plus-defart = tbw
+    .desc = tbw
+
+msyn-len-after-da = tbw
+    .desc = tbw
+
+msyn-len-after-ma = tbw
+    .desc = tbw
+
+msyn-lenition-after-aon = tbw
+    .desc = tbw
+
+msyn-lenition-after-coppast = tbw
+    .desc = tbw
+
+msyn-lenition-after-sa = tbw
+    .desc = tbw
+
+msyn-lenition-after-thar = tbw
+    .desc = tbw
+
+msyn-lenition-after-um = tbw
+    .desc = tbw
+
+msyn-n-after-i-prep-vowel = tbw
+    .desc = tbw
+
+msyn-plural-after-sna = tbw
+    .desc = tbw
+
+msyn-prep-detposs = tbw
+    .desc = tbw
+
+msyn-prep-lámh = tbw
+    .desc = tbw
+
+msyn-sa = tbw
+    .desc = tbw
+
+msyn-san = tbw
+    .desc = tbw
+
+msyn-sna-before-plural = tbw
+    .desc = tbw
+
+msyn-tri-plus-defart = tbw
+    .desc = tbw
+
+use-ellipsis = tbw
+    .desc = tbw
+

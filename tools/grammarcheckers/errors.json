@@ -274,5 +274,241 @@
       "id": "syn-not-initial"
     }
   ]
-}
+{
+  "lex-3456": [
+    {
+      "id": "lex-3456"
+    }
+  ],
+  "lex-an-áit-é": [
+    {
+      "id": "lex-an-áit-é"
+    }
+  ],
+  "lex-ar-leibheal": [
+    {
+      "id": "lex-ar-leibheal"
+    }
+  ],
+  "lex-chomh": [
+    {
+      "id": "lex-chomh"
+    }
+  ],
+  "lex-conj-plus-copula": [
+    {
+      "id": "lex-conj-plus-copula"
+    }
+  ],
+  "lex-correct-art": [
+    {
+      "id": "lex-correct-art"
+    }
+  ],
+  "lex-part-comparative-adj": [
+    {
+      "id": "lex-part-comparative-adj"
+    }
+  ],
+  "msyn-adj-fem-gender": [
+    {
+      "id": "msyn-adj-fem-gender"
+    }
+  ],
+  "msyn-adj-genitive-masc": [
+    {
+      "id": "msyn-adj-genitive-masc"
+    }
+  ],
+  "msyn-adj-masc-gender": [
+    {
+      "id": "msyn-adj-masc-gender"
+    }
+  ],
+  "msyn-beag-is-fiu-de": [
+    {
+      "id": "msyn-beag-is-fiu-de"
+    }
+  ],
+  "msyn-ce-plus-defart": [
+    {
+      "id": "msyn-ce-plus-defart"
+    }
+  ],
+  "msyn-contracted-possessive-adjective-before-vowel": [
+    {
+      "id": "msyn-contracted-possessive-adjective-before-vowel"
+    }
+  ],
+  "msyn-cop-past-neg-vowel": [
+    {
+      "id": "msyn-cop-past-neg-vowel"
+    }
+  ],
+  "msyn-ecl-after-goPrepSimp": [
+    {
+      "id": "msyn-ecl-after-goPrepSimp"
+    }
+  ],
+  "msyn-ecl-after-prep-i": [
+    {
+      "id": "msyn-ecl-after-prep-i"
+    }
+  ],
+  "msyn-ecl-after-prep-plus-art": [
+    {
+      "id": "msyn-ecl-after-prep-plus-art"
+    }
+  ],
+  "msyn-ecl-after-prep3": [
+    {
+      "id": "msyn-ecl-after-prep3"
+    }
+  ],
+  "msyn-ecl-after-prep4": [
+    {
+      "id": "msyn-ecl-after-prep4"
+    }
+  ],
+  "msyn-ecl-after-trí-defart": [
+    {
+      "id": "msyn-ecl-after-trí-defart"
+    }
+  ],
+  "msyn-ecl-after-verb-particle-q": [
+    {
+      "id": "msyn-ecl-after-verb-particle-q"
+    }
+  ],
+  "msyn-gen-after-trasna": [
+    {
+      "id": "msyn-gen-after-trasna"
+    }
+  ],
+  "msyn-gen-chun-defart-noun": [
+    {
+      "id": "msyn-gen-chun-defart-noun"
+    }
+  ],
+  "msyn-gen-chun-noun": [
+    {
+      "id": "msyn-gen-chun-noun"
+    }
+  ],
+  "msyn-hPref-after-copula": [
+    {
+      "id": "msyn-hPref-after-copula"
+    }
+  ],
+  "msyn-hpref-after-go-part": [
+    {
+      "id": "msyn-hpref-after-go-part"
+    }
+  ],
+  "msyn-hPref-after-na": [
+    {
+      "id": "msyn-hPref-after-na"
+    }
+  ],
+  "msyn-hPref-after-neg-imp": [
+    {
+      "id": "msyn-hPref-after-neg-imp"
+    }
+  ],
+  "msyn-hPref-after-sna": [
+    {
+      "id": "msyn-hPref-after-sna"
+    }
+  ],
+  "msyn-láimh-le": [
+    {
+      "id": "msyn-láimh-le"
+    }
+  ],
+  "msyn-le-plus-defart": [
+    {
+      "id": "msyn-le-plus-defart"
+    }
+  ],
+  "msyn-len-after-da": [
+    {
+      "id": "msyn-len-after-da"
+    }
+  ],
+  "msyn-len-after-ma": [
+    {
+      "id": "msyn-len-after-ma"
+    }
+  ],
+  "msyn-lenition-after-aon": [
+    {
+      "id": "msyn-lenition-after-aon"
+    }
+  ],
+  "msyn-lenition-after-coppast": [
+    {
+      "id": "msyn-lenition-after-coppast"
+    }
+  ],
+  "msyn-lenition-after-sa": [
+    {
+      "id": "msyn-lenition-after-sa"
+    }
+  ],
+  "msyn-lenition-after-thar": [
+    {
+      "id": "msyn-lenition-after-thar"
+    }
+  ],
+  "msyn-lenition-after-um": [
+    {
+      "id": "msyn-lenition-after-um"
+    }
+  ],
+  "msyn-n-after-i-prep-vowel": [
+    {
+      "id": "msyn-n-after-i-prep-vowel"
+    }
+  ],
+  "msyn-plural-after-sna": [
+    {
+      "id": "msyn-plural-after-sna"
+    }
+  ],
+  "msyn-prep-detposs": [
+    {
+      "id": "msyn-prep-detposs"
+    }
+  ],
+  "msyn-prep-lámh": [
+    {
+      "id": "msyn-prep-lámh"
+    }
+  ],
+  "msyn-sa": [
+    {
+      "id": "msyn-sa"
+    }
+  ],
+  "msyn-san": [
+    {
+      "id": "msyn-san"
+    }
+  ],
+  "msyn-sna-before-plural": [
+    {
+      "id": "msyn-sna-before-plural"
+    }
+  ],
+  "msyn-tri-plus-defart": [
+    {
+      "id": "msyn-tri-plus-defart"
+    }
+  ],
+  "use-ellipsis": [
+    {
+      "id": "use-ellipsis"
+    }
+  ]
+}}
 
