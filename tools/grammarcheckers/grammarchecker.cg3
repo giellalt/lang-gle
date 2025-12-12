@@ -628,6 +628,7 @@ LIST &lex-part-comparative-adj = &lex-part-comparative-adj ; #!!= * @CODE@
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
 LIST &msyn-adj-fem-gender = &msyn-adj-fem-gender ;
 LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
+LIST &msyn-genitive-adj-gender = &msyn-genitive-adj-gender ;
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep-i = msyn-ecl-after-prep-i ;
@@ -735,15 +736,23 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 
 #!! ## Gender errors in adjectives
 
+#!! **RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
+
+ADD:msyn-genitive-adj-gender (&msyn-genitive-adj-gender) TARGET (Adj Fem) IF (-1 (Noun Fem Gen Sg)) ;
+COPY:msyn-genitive-adj-gender (Gen Sg SUGGEST) EXCEPT (Com Sg Len) TARGET (Adj &msyn-genitive-adj-gender);
+ADDRELATION:msyn-genitive-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-genitive-adj-gender));
+    	
+	## Príomhoide an scoil mhór
+	#$ Príomhoide na scoile móra
+
 #!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg) LINK NOT 0 Masc)(NOT 0 Fem) ;
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg) TARGET (Masc &msyn-adj-gender);
 ADDRELATION:msyn-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-adj-gender));
-    	
+
     	## An fhuinneog beag - INCORRECT
 	#$ An fhuinneog bheag - CORRECT
-
 
 #!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 	## fear mhór
@@ -771,12 +780,12 @@ COPY:msyn-sg-femnoun-pl-adj (Fem Com Sg Len SUGGEST) EXCEPT (Com Slender Pl Len)
 	#$ Tá an fhuinneog mhór ar oscailt.
 
 
-#ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com Pl) OR (Fem Com Sg Len))(-1 (Noun Fem Com))(NEGATE 0 );
-#ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Noun Fem Com) IF (1 (Adj &msyn-adj-fem-gender));
+ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com Pl) OR (Fem Com Sg Len))(-1 (Noun Fem Com));
+ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Noun Fem Com) IF (1 (Adj &msyn-adj-fem-gender));
 
-#COPY:msyn-adj-fem-gender (Fem Com Sg Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Sg Len) TARGET (Adj Masc &msyn-adj-fem-gender) OR (Adj Pl &msyn-adj-fem-gender);
+COPY:msyn-adj-fem-gender (Fem Com Sg Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Sg Len) TARGET (Adj Masc &msyn-adj-fem-gender) OR (Adj Pl &msyn-adj-fem-gender);
 
-#ADDRELATION:msyn-adj-fem-gender ($2 RIGHT) (Adj &msyn-adj-fem-gender) TO (-1 Noun + &msyn-adj-fem-gender);
+ADDRELATION:msyn-adj-fem-gender ($2 RIGHT) (Adj &msyn-adj-fem-gender) TO (-1 Noun + &msyn-adj-fem-gender);
 	
 
 	## a rule to ensure a plural adjective is matched with a plural noun #Adj Masc Com Sg Len + Adj Masc Com Sg "boic ghustalach". Leanaí tanaí, leanaí cliste. institiúidí náisiúnta "mór" (Adj Fem Com Sg Len) OR 
@@ -1700,10 +1709,10 @@ ADD:msyn-gen-vn-femnoun-with-article (&msyn-gen-vn-femnoun-with-article) TARGET 
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
 	(NEGATE -2 (Verb VTI));
 ADD:msyn-gen-vn-femnoun-with-article (&msyn-gen-vn-femnoun-with-article) TARGET (Adj Fem Com Sg Len) IF
-	(-1 (Noun Fem Sg Com) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
+	(-1 (Noun Fem Sg Com))					#BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(-2 Art)
 	(*-2 (Verbal Noun VTI));
-COPY:msyn-gen-vn-femnoun-with-article (Gen Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-femnoun-with-article) TARGET (Com &msyn-gen-vn-femnoun-with-article);
+COPY:msyn-gen-vn-femnoun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-femnoun-with-article) TARGET (Com &msyn-gen-vn-femnoun-with-article);
 COPY:msyn-gen-vn-femnoun-with-article (Fem Gen Sg SUGGEST) EXCEPT (Fem Com Sg Len) TARGET (Adj &msyn-gen-vn-femnoun-with-article);
 
 ADD:msyn-gen-vn-femnoun-with-article (&msyn-gen-vn-femnoun-with-article) TARGET ("an" Art Sg Def) IF
@@ -1713,7 +1722,7 @@ COPY:msyn-gen-vn-femnoun-with-article ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an"
 
 
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI))	#LINK NEGATE -1 (Art Sg Def))#(BARRIER (*) - Prep Art LINK -1 ("ag")) 
+	(*-1 (Verbal Noun VTI))						#LINK NEGATE -1 (Art Sg Def))#(BARRIER (*) - Prep Art LINK -1 ("ag")) 
 	(NEGATE 0 (Sg))
 	#(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
 	(NEGATE -2 (Verb VTI));
@@ -1736,7 +1745,7 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Com SUGGEST) EXCEPT (Gen &msyn-gen-vn-noun) TARGET (Noun &msyn-gen-vn-noun);
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
-	(-1 (Noun Fem Sg Com) BARRIER (*) LINK -1 ("ag"))
+	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
 	(*-2 (Verbal Noun VTI));
 COPY:msyn-gen-vn-noun (Fem Com Sg Len SUGGEST) EXCEPT (Fem Gen Sg Len) TARGET (Adj &msyn-gen-vn-noun);
 
@@ -2023,7 +2032,7 @@ COPY:msyn-hPref-after-neg-imp (Sg Neg SUGGEST) EXCEPT (Sg &msyn-hPref-after-neg-
 	## Níl an t-am agam le aghaidh é seo.
 	#$ Níl an t-am agam le haghaidh é seo.
 
-ADD:msyn-hPref-after-na (&msyn-hPref-after-na) TARGET (Noun Com Pl) IF
+ADD:msyn-hPref-after-na (&msyn-hPref-after-na) TARGET (Noun Com Pl) OR (Noun Fem Gen Sg) IF
 	(-1 (Art Pl Def))
 	(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
