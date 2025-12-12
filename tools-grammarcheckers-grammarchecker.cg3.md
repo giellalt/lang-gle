@@ -449,6 +449,8 @@ Here ends the list and set section
 
 ## Gender errors in adjectives
 
+**RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
+
 **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
 
 **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
