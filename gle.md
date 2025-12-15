@@ -3634,6 +3634,8 @@ expression **WORD - premodifiers**.
 
 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
 
+6. But in singular we want com (??)
+
 Other gen tags:
 * LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;    is the old genrule tag we want to get rid of
 
