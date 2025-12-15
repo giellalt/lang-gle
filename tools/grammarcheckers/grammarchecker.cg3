@@ -605,6 +605,9 @@ LIST &msyn-gen-noun-adj = &msyn-gen-noun-adj ;
 #!! 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
 LIST &msyn-gen-vn-noun = &msyn-gen-vn-noun ;
 
+#!! 6. But in singular we want com (??)
+LIST &msyn-gen-vn-noun-com = &msyn-gen-vn-noun-com ;
+
 #!! Other gen tags:
 #LIST &msyn-gen-case-noun = &msyn-gen-case-noun ;   #!!= * @CODE@ is the old genrule tag we want to get rid of
 LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old genrule tag we want to get rid of
@@ -738,7 +741,7 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 
 #!! **RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
 
-ADD:msyn-genitive-adj-gender (&msyn-genitive-adj-gender) TARGET (Adj Fem) IF (-1 (Noun Fem Gen Sg)) ;
+ADD:msyn-genitive-adj-gender (&msyn-genitive-adj-gender) TARGET (Adj Fem Com) IF (-1 (Noun Fem Gen Sg)) ;
 COPY:msyn-genitive-adj-gender (Gen Sg SUGGEST) EXCEPT (Com Sg Len) TARGET (Adj &msyn-genitive-adj-gender);
 ADDRELATION:msyn-genitive-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-genitive-adj-gender));
     	
@@ -1689,6 +1692,9 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 
 ## with article "ag scríobh na litreach".
 
+#$ ag scríobh litreach shuimiúil # wrong
+#% ag scríobh litir shuimiúil    # corret
+
 ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Sg Com) IF
 	(*-1 (Verbal Noun VTI))
 	(NEGATE 0 (Noun Fem Sg Com))
@@ -1736,6 +1742,18 @@ COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len &msyn-gen-vn-noun-
 
 ##Nuair nach mbíonn an t-alt (na) i láthair, is iondúil gurb é an t-ainmneach a úsáidtear in áit an ghinidigh: ag lorg na litreach fada, le haghaidh na litreach fada ach ag lorg litir fhada, le haghaidh litir fhada.
 
+
+## New msyn-gen-vn-noun rule where the noun IS IN THE SINGULAR
+ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen  Sg) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
+#$ "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
+#% "Bhí na fir ag glanadh fuinneog shalach." # (correct)
+
+
+
 ## without article "ag scríobh litreach". When there is an adjective after the noun, the correct form is "ag lorg litir fhada" (ag + vn + noun + adj).
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
@@ -1744,6 +1762,7 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Com SUGGEST) EXCEPT (Gen &msyn-gen-vn-noun) TARGET (Noun &msyn-gen-vn-noun);
+
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
 	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
 	(*-2 (Verbal Noun VTI));
