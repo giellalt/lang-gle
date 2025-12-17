@@ -632,6 +632,7 @@ LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
 LIST &msyn-adj-fem-gender = &msyn-adj-fem-gender ;
 LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
 LIST &msyn-genitive-adj-gender = &msyn-genitive-adj-gender ;
+LIST &msyn-gen-prepcmpd-detpss-noun = &msyn-gen-prepcmpd-detpss-noun 
 LIST &msyn-beag-is-fiu-de = &msyn-beag-is-fiu-de ; #!!= * @CODE@
 LIST &msyn-cúpla-plnoun-sgnoun = &msyn-cúpla-plnoun-sgnoun ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep-i = msyn-ecl-after-prep-i ;
@@ -1415,7 +1416,9 @@ COPY:msyn-ecl-after-trí-defart (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-trí-defar
 ## Bhí mé ag labhairt le an fear.
 #$ Bhí mé ag labhairt leis an bhfear.
 
-ADD:msyn-le-plus-defart (&msyn-le-plus-defart) TARGET ("le" Prep Simp) IF (1 (Art) LINK NOT 0 ("<a>"));
+ADD:msyn-le-plus-defart (&msyn-le-plus-defart) TARGET ("le" Prep Simp) IF 
+	(1 (Art) LINK NOT 0 ("<a>"))
+	(NEGATE 0 ("le" Prep Simp DefArt));
 COPY:msyn-le-plus-defart (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARGET (&msyn-le-plus-defart);
 
 
@@ -1518,6 +1521,10 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 	## teach scoil > #$teach scoile
 	## bosca bruscar > #$ bosca bruscair.
 	## ceadúnas tiomáint > #$ ceadúnas tiomána.
+	
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
+	(-1 (Prep Cmpd))
+COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 #!! #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
 #        =========================================================
@@ -1617,9 +1624,13 @@ SUBSTITUTE (&msyn-gen-noun-defart-noun) (co&msyn-gen-noun-defart-noun) TARGET (S
 #!! Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final noun.
 
 ADD:msyn-gen-noun-detpss-noun (&msyn-gen-noun-detpss-noun) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Noun Com))(NEGATE 0 Prop);
-	## Tá Murphy cairdiúil leis na comhaisteoirí Éireannacha Colin Farrell agus Liam Neeson agus tugann sé urraim do {Neeson} mar athair ionaid i saol na scannáin.
 COPY:msyn-gen-noun-detpss-noun (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-detpss-noun) OR (Com Sg Len &msyn-gen-noun-detpss-noun) TARGET (&msyn-gen-noun-detpss-noun);
 ADDRELATION:msyn-gen-noun-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
+
+
+ADD:&msyn-gen-prepcmpd-detpss-noun (&&msyn-gen-prepcmpd-detpss-noun) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Prep Cmpd))(NEGATE 0 Prop);
+COPY:&msyn-gen-prepcmpd-detpss-noun (Gen Sg Len SUGGEST) EXCEPT (Com Sg &&msyn-gen-prepcmpd-detpss-noun) OR (Com Sg Len &&msyn-gen-prepcmpd-detpss-noun) TARGET (&&msyn-gen-prepcmpd-detpss-noun);
+ADDRELATION:&msyn-gen-prepcmpd-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
 
 	## carr a athair - incorrect
 	#$ carr a athar - correct
@@ -2425,11 +2436,11 @@ COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-
 
 LIST &msyn-contracted-possessive-adjective-before-vowel = &msyn-contracted-possessive-adjective-before-vowel ;
 
-ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Noun Com) IF (-1 (Det Poss 1P Sg)) ;
-ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET ("mo" Det Poss 1P Sg) IF 
+ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Noun Com) IF (-1 (Det Poss 1P Sg))(NEGATE 0 (Com Sg Len));
+ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Det Poss 1P Sg) IF 
 	(1 (Noun Com))
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r) OR ("<fh.*>"r) OR ("<Fh.*>"r));
-COPY:msyn-contracted-possessive-adjective-before-vowel ("mo" Det Poss 1P Sg &SUGGEST) EXCEPT (&msyn-contracted-possessive-adjective-before-vowel) TARGET (&msyn-contracted-possessive-adjective-before-vowel) ;
+COPY:msyn-contracted-possessive-adjective-before-vowel (Det Poss 1P Sg"+Short" &SUGGEST) EXCEPT (Det Poss 1P Sg msyn-contracted-possessive-adjective-before-vowel) TARGET (Det Poss &msyn-contracted-possessive-adjective-before-vowel) ;
 #ADDRELATION:msyn-contracted-possessive-adjective-before-vowel ($2) (Det) FROM (1 Noun LINK 0 (&msyn-adj-nom-acc)) ;
 
 ADD:lex-de-ainneoin (&lex-de-ainneoin) TARGET ("i" Prep Simp Vow) IF (1 ("ainneoin" Conj Subord));
