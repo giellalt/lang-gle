@@ -1538,6 +1538,14 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Gen Sg) 
 	(NEGATE -3 (Art Def));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Sg &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
+	(*-2 (Prep Cmpd) BARRIER NOT-A)
+	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE -3 (Art Def));
+	#(NEGATE -3 (Verb VTI));
+COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
 
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg Def) IF
 	(NEGATE 0 Gen)
@@ -1572,6 +1580,7 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com 
 	(NEGATE 0 (Gen Pl))
 	(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
 
 
 # The article
@@ -1696,7 +1705,7 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 #% ag scríobh litir shuimiúil    # corret
 
 ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Sg Com) IF
-	(*-1 (Verbal Noun VTI))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(NEGATE 0 (Noun Fem Sg Com))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
@@ -1705,7 +1714,7 @@ ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (A
 	(-1 (Noun Com))
 	(-2 Art)
 	(*-1 (Verbal Noun VTI));
-COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
+COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
 
 ADD:msyn-gen-vn-femnoun-with-article (&msyn-gen-vn-femnoun-with-article) TARGET (Noun Fem Sg Com) IF
