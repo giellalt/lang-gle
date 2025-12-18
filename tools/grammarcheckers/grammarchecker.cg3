@@ -1399,7 +1399,7 @@ COPY:msyn-lenition-after-um (Len SUGGEST) EXCEPT (&msyn-lenition-after-um) TARGE
 
 ##a rule to correct the error "trí an mbord" to "tríd an mbord".
 
-ADD:msyn-tri-plus-defart (&msyn-tri-plus-defart) TARGET ("trí" Prep Simp) IF (1 ("an" Art Sg Def) LINK NOT 0 ("<a>"));
+ADD:msyn-tri-plus-defart (&msyn-tri-plus-defart) TARGET ("trí" Prep Simp) IF (1 ("an" Art Sg Def) LINK NOT 0 ("<a>"))(NEGATE 0 ("tríd" Prep Simp));
 COPY:msyn-tri-plus-defart (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARGET (&msyn-tri-plus-defart);
 
 ##a rule to correct the error "tríd an bord" to "tríd an mbord", "tríd an geata" to "tríd an ngeata", etc. !!The rule has to be refined to fix "tríd an tsrón", etc., (feminine nouns beginning with S)!!
@@ -1711,7 +1711,7 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 
 ## with article "ag scríobh na litreach".
 
-#$ ag scríobh litreach shuimiúil # wrong
+#$ ag scríobh litreach suimiúil # wrong
 #% ag scríobh litir shuimiúil    # corret
 
 ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Sg Com) IF
@@ -1763,15 +1763,32 @@ COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len &msyn-gen-vn-noun-
 
 
 ## New msyn-gen-vn-noun rule where the noun IS IN THE SINGULAR
-ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen  Sg) IF
+ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen Sg) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
-#$ "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
-#% "Bhí na fir ag glanadh fuinneog shalach." # (correct)
+	## "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
+	#$ "Bhí na fir ag glanadh fuinneog shalach." # (correct)
+
+ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Com Sg Len) IF
+	(-1 (Det Poss))
+	(*-2 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
+	(NEGATE 0 (Noun Fem Sg Com))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
+	(NEGATE -2 (Verb VTI));
+ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Adj Com Sg) IF
+	(-1 (Noun Com))
+	(-2 Art)
+	(*-1 (Verbal Noun VTI));
+COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
+COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
 
 
+ADD:&msyn-gen-prepcmpd-detpss-noun (&&msyn-gen-prepcmpd-detpss-noun) TARGET (Noun Com) IF (-1 (Det Poss) LINK NOT 0 &msyn-prep-pron)(-2 (Prep Cmpd))(NEGATE 0 Prop);
+COPY:&msyn-gen-prepcmpd-detpss-noun (Gen Sg Len SUGGEST) EXCEPT (Com Sg &&msyn-gen-prepcmpd-detpss-noun) OR (Com Sg Len &&msyn-gen-prepcmpd-detpss-noun) TARGET (&&msyn-gen-prepcmpd-detpss-noun);
+ADDRELATION:&msyn-gen-prepcmpd-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-possadj-nom-gen);
 
 ## without article "ag scríobh litreach". When there is an adjective after the noun, the correct form is "ag lorg litir fhada" (ag + vn + noun + adj).
 
