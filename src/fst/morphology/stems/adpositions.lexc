@@ -259,22 +259,24 @@ trí+Prep+Rel:trínar			#;  !
 !!!<f a o i %_:%  c h e a n n %+Prep:0 %+Cmpd:0>		#;
 <f a o i %_:%  c h o i n n e %+Prep:0 %+Cmpd:0>	#;
 <f á %_:%  c h o i n n e %+CU:0 %+Prep:0 %+Cmpd:0>	#;  ! CU canúint Uladh
+<f a o i %_:%  c h o m h a i r %+Prep:0 %+Cmpd:0>	#;
 <f a o i %_:%  d h é i n %+Prep:0 %+Cmpd:0>		#;
 
 <g o %_:%  c e a n n %+Prep:0 %+Cmpd:0>			#;
 <g o %_:%  d t í %+Prep:0 %+Cmpd:0>				#;
 <i %_:%  b h f e i g h i l %+Prep:0 %+Cmpd:0>		#;
-!!<i %_:%  b h f i a n a i s e %+Prep:0 %+Cmpd:0>	#; ! doesn not need to govern an NP (e.g. like tar éis) therefore leave seperate 
+!!<i %_:%  b h f i a n a i s e %+Prep:0 %+Cmpd:0>	#; ! does not need to govern an NP (e.g. like tar éis) therefore leave seperate 
 <i %_:%  b h f o c h a i r %+Prep:0 %+Cmpd:0>		#;
 
 <i %_:%  d t e a n n t a %+Prep:0 %+Cmpd:0>		#;
-<i %_:%  g c i o n n %+Prep:0 %+Cmpd:0>		#;
-<i %_:%  d t r á t h a %+Prep:0 %+Cmpd:0>			#;
+<i %_:%  g c i o n n %+Prep:0 %+Cmpd:0>			#;
+<i %_:%  d t r á t h a %+Prep:0 %+Cmpd:0>		#;
 <i %_:%  d t u i l l e a m a í %+Prep:0 %+Cmpd:0>	#;
-<i %_:%  g c a i t h e a m h %+Prep:0 %+Cmpd:0>	#;
+<i %_:%  g c a i t h e a m h %+Prep:0 %+Cmpd:0>		#;
 <i %_:%  g c e a n n %+Prep:0 %+Cmpd:0>			#;
-<i %_:%  g c o i n n e %+Prep:0 %+Cmpd:0>			#;
-<i %_:%  g c ó i r %+Prep:0 %+Cmpd:0> 				#;
+<i %_:%  g c o i n n e %+Prep:0 %+Cmpd:0>		#;
+<i %_:%  g c ó i r %+Prep:0 %+Cmpd:0> 			#;
+<i %_:%  g c o m h a i r %+Prep:0 %+Cmpd:0> 		#;
 <i %_:%  g c o s a m a r %+Prep:0 %+Cmpd:0> 		#;
 <i %_:%  g c u i d e a c h t a %+Prep:0 %+Cmpd:0> 	#;
 
@@ -305,6 +307,7 @@ trí+Prep+Rel:trínar			#;  !
 <o s %_:%  c i o n n %+Prep:0 %+Cmpd:0>			#;
 <o s %_:%  c o i n n e %+Prep:0 %+Cmpd:0>			#;
 <o s %_:%  c o m h a i r %+Prep:0 %+Cmpd:0>		#;
+
 <t a r %_:%  é i s %+Prep:0 %+Cmpd:0>				#;
 <t h a r %_:%  c e a n n %+Prep:0 %+Cmpd:0>		#;	
 
