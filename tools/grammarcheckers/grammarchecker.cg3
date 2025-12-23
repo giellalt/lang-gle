@@ -1598,6 +1598,7 @@ COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &ms
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Gen Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
+	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Art Def));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Sg &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
@@ -1668,7 +1669,7 @@ SUBSTITUTE (&msyn-gen-noun-defart-noun) (co&msyn-gen-noun-defart-noun) TARGET (S
 
 	#A rule to correct to ensure there are not two definite articles when the second noun is in the genitive case, e.g., an rialtas na hÉireann -> rialtas na hÉireann, an príomhoide an choláiste -> príomhoide an choláiste.
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET ("an" Art Sg Def) IF
-	(1 (Noun Masc Com DefArt))
+	(*1 (Noun Masc Com DefArt) BARRIER NOT-A)
 	(2 (Art Def))
 	(3 (Noun Gen DefArt));
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET (Noun Com DefArt) IF (-1 ("an" Art Sg Def &syn-gen-two-defart));
@@ -1676,7 +1677,7 @@ ADDRELATION (DELETE1) (Noun Com DefArt &syn-gen-two-defart) TO (*-1 ("an" Art Sg
 COPY:syn-gen-two-defart (Noun Com Sg SUGGEST) EXCEPT (Noun Com Sg DefArt) TARGET (Noun Com &syn-gen-two-defart);
 
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET ("an" Art Sg Def) IF
-	(1 (Noun Fem Com DefArt))
+	(*1 (Noun Fem Com DefArt) BARRIER NOT-A)
 	(2 (Art Def))
 	(3 (Noun Gen DefArt));
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET (Noun Fem Com DefArt) IF (-1 ("an" Art Sg Def &syn-gen-two-defart));
@@ -1684,7 +1685,7 @@ ADDRELATION (DELETE1) (Noun Fem Com DefArt &syn-gen-two-defart) TO (*-1 ("an" Ar
 COPY:syn-gen-two-defart (Noun Fem Com Sg SUGGEST) EXCEPT (Noun Fem Com Sg DefArt) TARGET (Noun Fem Com &syn-gen-two-defart);
 
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET ("na" Art Pl Def) IF
-	(1 (Noun Com Pl DefArt))
+	(*1 (Noun Com Pl DefArt) BARRIER NOT-A)
 	(2 (Art Def))
 	(3 (Noun Gen DefArt));
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET (Noun Com Pl DefArt) IF (-1 ("na" Art Pl Def &syn-gen-two-defart));
@@ -2232,7 +2233,8 @@ COPY:msyn-lenition-after-coppast (Len SUGGEST) EXCEPT (&msyn-lenition-after-copp
 
 ADD:msyn-ecl-after-prep-i (&msyn-ecl-after-prep-i) TARGET (Noun Com) IF
 	(-1 ("i" Prep Simp))
-	(0 ("<[bcdfgptBCDFGPT].*>"r));
+	(0 ("<[bcdfgptBCDFGPT].*>"r))
+	(NEGATE 0 (Noun Com Ecl));
 COPY:msyn-ecl-after-prep-i (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-i) TARGET (&msyn-ecl-after-prep-i);
 
 ## 	A rule to add the letter N to the preposition "i" when it is located before nouns beginning with a vowel. (Prep Simp Vow)
