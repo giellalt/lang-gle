@@ -588,6 +588,8 @@ LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
 
 #!! ### Grammarchecker sets
 
+LIST &msyn-sg-femnoun-pl-adj = &msyn-sg-femnoun-pl-adj ;
+
 #!! #### Genitive rules
 
 #!! 1. N N => N N.Gen (When two nouns come together, the second noun has to be in the genitive case.)
@@ -759,7 +761,7 @@ ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj 
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg) TARGET (Masc &msyn-adj-gender);
 ADDRELATION:msyn-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-adj-gender));
 
-    	## An fhuinneog beag - INCORRECT
+	## An fhuinneog beag - INCORRECT
 	#$ An fhuinneog bheag - CORRECT
 
 #!! **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
@@ -778,17 +780,24 @@ ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 N
 
 	# A rule to correct the error of a lenited plural adjective being after a feminine singular noun, e.g., fuinneog mhóra.
 ADD:msyn-sg-femnoun-pl-adj (&msyn-sg-femnoun-pl-adj) TARGET (Adj) IF (0 (Adj Com Slender Pl Len) OR (Adj Com NotSlen Pl))(-1 (Noun Fem Sg) LINK NOT 0 ("<.*i.>"r)) ;
-COPY:msyn-sg-femnoun-pl-adj (Fem Com Sg Len SUGGEST) EXCEPT (Com Slender Pl Len) OR (Masc Com Sg) TARGET (Adj &msyn-sg-femnoun-pl-adj) IF (-1 Noun - ("<.*i.>"r)) ;
-	
+
+COPY:msyn-sg-femnoun-pl-adj (Fem Com Sg Len SUGGEST) EXCEPT (Com Slender Pl Len) OR (Masc Com Sg) OR (Com NotSlen Pl) TARGET (Adj &msyn-sg-femnoun-pl-adj) IF (-1 Noun - ("<.*i.>"r)) ;
+
+
 	# A rule to correct the error of non-slender plural adjective being after a feminine singular noun, e.g., fuinneog móra -> fuinneog mhór
 ADD:msyn-sg-femnoun-pl-adj (&msyn-sg-femnoun-pl-adj) TARGET (Adj Com NotSlen Pl) IF (-1 (Noun Fem Com Sg) LINK NOT 0 ("<.*i.>"r)) ;
 COPY:msyn-sg-femnoun-pl-adj (Fem Com Sg Len SUGGEST) EXCEPT (Com Slender Pl Len) TARGET (Adj &msyn-sg-femnoun-pl-adj) ;
+
+ # NOUN for connection
+ 
+ADD:msyn-sg-femnoun-pl-adj (&msyn-sg-femnoun-pl-adj) TARGET (Noun Fem Com Sg) IF (1 (Adj &msyn-sg-femnoun-pl-adj)) ;
+ADDRELATION:msyn-sg-femnoun-pl-adj ($2 RIGHT) (Adj &msyn-sg-femnoun-pl-adj) TO (-1 Noun + &msyn-sg-femnoun-pl-adj);
 
 	## Tá an fhuinneog móra ar oscailt.
 	#$ Tá an fhuinneog mhór ar oscailt.
 
 
-ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com Pl) OR (Fem Com Sg Len))(-1 (Noun Fem Com));
+ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Fem Com Sg Len))(-1 (Noun Fem Com))(NEGATE 0 &msyn-sg-femnoun-pl-adj);
 ADD:msyn-adj-fem-gender (&msyn-adj-fem-gender) TARGET (Noun Fem Com) IF (1 (Adj &msyn-adj-fem-gender));
 
 COPY:msyn-adj-fem-gender (Fem Com Sg Len SUGGEST) EXCEPT (Com NotSlen Pl) OR (Masc Sg Len) TARGET (Adj Masc &msyn-adj-fem-gender) OR (Adj Pl &msyn-adj-fem-gender);
