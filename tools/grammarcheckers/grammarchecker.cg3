@@ -663,6 +663,10 @@ LIST &msyn-len-after-da = &msyn-len-after-da ; #!!= * @CODE@
 LIST &msyn-len-after-ma = &msyn-len-after-ma ; #!!= * @CODE@
 LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; #!!= * @CODE@
 LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; #!!= * @CODE@
+LIST &msyn-num-card-dó = &msyn-num-card-dó ;
+LIST &msyn-num-card-dó-len = &msyn-num-card-dó-len ;
+LIST &msyn-ord-num-dara = &msyn-ord-num-dara;
+LIST &msyn-dara-hpref = &msyn-dara-hpref ;
 LIST &msyn-plural-after-sna = &msyn-plural-after-sna ; #!!= * @CODE@
 LIST &msyn-prep-lámh = &msyn-prep-lámh ; #!!= * @CODE@
 LIST &msyn-sna-before-plural = &msyn-sna-before-plural ; #!!= * @CODE@
@@ -1771,7 +1775,7 @@ COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com)
 	## "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
 	#$ "Bhí na fir ag glanadh fuinneog shalach." # (correct)
 
-ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Com Sg Len) IF
+ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Com Sg) IF
 	(-1 (Det Poss))
 	(*-2 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
 	(NEGATE 0 (Noun Fem Sg Com))
@@ -2462,4 +2466,53 @@ COPY:msyn-contracted-possessive-adjective-before-vowel (Det Poss 1P Sg"+Short" &
 ADD:lex-de-ainneoin (&lex-de-ainneoin) TARGET ("i" Prep Simp Vow) IF (1 ("ainneoin" Conj Subord));
 #ADDRELATION:lex-de-ainneoin (DELETE1) (Conj &lex-de-ainneoin) TO (-1 (Prep &lex-de-ainneoin)) ;
 COPY:lex-de-ainneoin ("d'ainneoin" Prep Cmpd SUGGEST) EXCEPT ("i" Prep Simp Vow) TARGET (Prep &lex-de-ainneoin);
-	
+
+	#A rule to ensure that the correct form of "dhá" is used after the singular article "an", "an dhá" becomes "an dá".
+ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("dó" Num Card) IF (-1 (Art Def))(NEGATE 0 (Num Card DefArt));
+COPY:msyn-num-card-dó ("dó" Num Card DefArt SUGGEST) EXCEPT ("dó" Num Card &msyn-num-card-dó) TARGET (Num Card &msyn-num-card-dó);
+
+	#A rule to ensure that the correct that the singular article is used before dhá or dá.
+ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("na" Art Pl Def) IF (1 ("dó" Num Card) OR ("dó" Num Card DefArt))(NEGATE 0 (Num Card DefArt));
+COPY:msyn-num-card-dó ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &msyn-num-card-dó) TARGET (&msyn-num-card-dó);
+
+	## A rule to ensure that the adjective after the noun after dhá or dhá is lenited and plural, e.g., an dá chrann mór -> an dá chrann mhóra, dhá chrann mhóra, Bhí dhá ghluaisteán mhóra sa chlós.
+ADD:msyn-num-card-dó-len &msyn-num-card-dó-len TARGET (Noun Com Sg) IF (-1 ("dó" Num Card) OR ("dó" Num Card DefArt))(NEGATE 0 (Noun Com Sg Len));
+ADD:msyn-num-card-dó-len &msyn-num-card-dó-len TARGET (Adj) IF (-2 ("dó" Num Card) OR ("dó" Num Card DefArt))(-1 (Noun Com));
+COPY:msyn-num-card-dó-len (Com Sg Len SUGGEST) EXCEPT (Com Sg &msyn-num-card-dó-len) TARGET (Noun &msyn-num-card-dó-len);
+COPY:msyn-num-card-dó-len (Com Slender Pl Len SUGGEST) EXCEPT (Com Sg) OR (Com NotSlen Pl) OR (Gen Weak Pl) TARGET (Adj &msyn-num-card-dó-len);
+
+	#A rule to ensure that "in" is used instead of "i" before dhá, e.g., i dhá áit -> in dhá áit.
+ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("i" Prep Simp) IF (1 ("dó" Num Card))(NEGATE 0 (Num Card DefArt));
+COPY:msyn-num-card-dó ("i" Prep Simp Vow SUGGEST) EXCEPT ("i" Prep Simp &msyn-num-card-dó) TARGET (&msyn-num-card-dó);
+
+	#A rule to ensure that singular lenited noun is used after dhá instead of a plural noun, e.g., an dá madraí mhóra -> an dá mhadra mhóra.
+ADD:msyn-num-card-dó &msyn-num-card-dó TARGET (Noun Com Pl) IF (-1 ("dó" Num Card))(NEGATE 0 (Num Card DefArt));
+COPY:msyn-num-card-dó (Sg Len SUGGEST) EXCEPT (Pl) TARGET (Noun &msyn-num-card-dó);
+
+	#A rule to ensure that singular lenited noun is used after dhá instead of a lenited plural noun, e.g., an dá mhadraí mhóra -> an dá mhadra mhóra.
+ADD:msyn-num-card-dó &msyn-num-card-dó TARGET (Noun Com Pl Len) IF (-1 ("dó" Num Card))(NEGATE 0 (Num Card DefArt));
+COPY:msyn-num-card-dó (Sg Len SUGGEST) EXCEPT (Pl Len) TARGET (Noun &msyn-num-card-dó);
+
+	#A rule to ensure that the correct form of "dhá" is used instead of "dá" if there is no article before the number.
+ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("dó" Num Card DefArt) IF (1 (Noun Com));
+COPY:msyn-num-card-dó ("dó" Num Card SUGGEST) EXCEPT ("dó" Num Card DefArt &msyn-num-card-dó) TARGET (Num Card &msyn-num-card-dó);
+
+	#A rule to ensure that noun beginning with a vowel gets changed to a vowel with a hPref after dara, e.g., an dara urlár -> an dara hurlár.
+ADD:msyn-dara-hpref &msyn-dara-hpref TARGET (Noun Com Sg) IF (-1 ("dara" Num Ord))(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r));
+COPY:msyn-dara-hpref (Com Sg hPref SUGGEST) EXCEPT (Com Sg &msyn-dara-hpref) TARGET (Noun &msyn-dara-hpref);
+
+	#A rule to ensure that unlenited form of a singular noun is used after the word dara, e.g., an dara fhocal -> an dara focal.
+ADD:msyn-ord-num-dara &msyn-ord-num-dara TARGET (Noun Com Sg Len) OR (Noun Gen Weak Pl Len) OR (Noun Gen Sg Len) IF 
+	(-1 ("dara" Num Ord))
+	(NEGATE 0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r)); 
+COPY:msyn-ord-num-dara (Com Sg SUGGEST) EXCEPT (Com Sg Len) OR (Gen Weak Pl Len) OR (Gen Sg Len) TARGET (Noun &msyn-ord-num-dara);
+
+	#A rule to ensure that plural com noun after "dara" get corrected to a singular com noun, e.g., an dara mná -> an dara bean.
+ADD:msyn-ord-num-dara &msyn-ord-num-dara TARGET (Noun Com Pl) IF 
+	(-1 ("dara" Num Ord))
+	(NEGATE 0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r)); 
+COPY:msyn-ord-num-dara (Com Sg SUGGEST) EXCEPT (Com Pl) TARGET (Noun &msyn-ord-num-dara);
+
+	#A rule to ensure that if the plural article "na" is before "dara" before com noun, it will get corrected to the singular article "an", e.g., na dara bliain -> an dara bliain.
+ADD:msyn-ord-num-dara &msyn-ord-num-dara TARGET ("na" Art Pl Def) IF (1 ("dara" Num Ord))(2 (Noun Com));
+COPY:msyn-ord-num-dara ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &msyn-ord-num-dara) TARGET (&msyn-ord-num-dara);
