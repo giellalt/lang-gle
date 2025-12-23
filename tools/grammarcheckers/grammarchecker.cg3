@@ -2340,12 +2340,12 @@ COPY:lex-part-comparative-adj (Comp SUGGEST) EXCEPT (Base &lex-part-comparative-
 LIST PREPLÁMH = "ag" "as" "ar" "de" "do" "faoi" "i" "ó";
 
 ADD:msyn-prep-lámh (&msyn-prep-lámh) TARGET ("lámh" Com Sg) IF (-1 PREPLÁMH);
-COPY:msyn-prep-lámh (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-prep-lámh) TARGET (&msyn-prep-lámh);
+COPY:msyn-prep-lámh (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-prep-lámh) OR (Com Sg Len &msyn-prep-lámh) TARGET (&msyn-prep-lámh);
 
 	## ag lámh
 	#$ ag láimh
-	## ar lámh
-	#$ ar láimh
+	#$ Agus ón uair sin amach bhí sé ag faire ar a dheis chun é thabhairt ar láimh. 
+	## Agus ón uair sin amach bhí sé ag faire ar a dheis chun é thabhairt ar lámh.	
 	## as lámh
 	#$ as láimh
 	## de lámh
