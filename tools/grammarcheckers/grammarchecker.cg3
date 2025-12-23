@@ -658,6 +658,8 @@ LIST &msyn-n-after-i-prep-vowel = &msyn-n-after-i-prep-vowel ; #!!= * @CODE@
 LIST &msyn-hPref-after-na = &msyn-hPref-after-na ; #!!= * @CODE@
 LIST &msyn-hPref-after-sna = &msyn-hPref-after-sna ; #!!= * @CODE@
 LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
+LIST &msyn-cá-bhfios = &msyn-cá-bhfios ;
+LIST &gen-after-go-leor = &gen-after-go-leor ;
 LIST &msyn-i-mbliana = &msyn-i-mbliana ; #!!= * @CODE@
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@
@@ -1284,6 +1286,12 @@ ADD:msyn-ecl-after-da (&msyn-ecl-after-da) TARGET (Cop) IF
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
 COPY:msyn-ecl-after-da (Ecl SUGGEST) EXCEPT (Cond &msyn-ecl-after-da) TARGET (Cop &msyn-ecl-after-da);
 
+	#An bhfuil go leor airgead agat? -> An bhfuil go leor airgid agat?, go leor am -> go leor ama
+
+ADD:gen-after-go-leor (&gen-after-go-leor) TARGET (Noun Com) IF (-1 (Adv Gn));
+COPY:gen-after-go-leor (Gen Sg SUGGEST) EXCEPT (Com Sg &gen-after-go-leor) TARGET (&gen-after-go-leor);
+
+
 #Scian go mbua, a charmed knife.  
 #Cath go ndíth, a destructive battle. 
 #Flaith go ngail, a valorous prince. 
@@ -1538,9 +1546,6 @@ COPY:msyn-cúpla-plnoun-sgnoun (Sg SUGGEST) EXCEPT (Pl &msyn-cúpla-plnoun-sgnou
 LIST MODIFYERNOUN = "cuid" "cúpla" "chéad";
 LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET ("beatha" Noun Fem Com Sg) IF (-1 (Noun Masc Com Sg))(NEGATE 0 (Noun Fem Com Sg));
-COPY:msyn-gen-noun-noun (Fem Com Sg SUGGEST) EXCEPT (Fem Com Sg Len &msyn-gen-noun-noun) OR (Fem Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
-
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
@@ -1565,9 +1570,13 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
-	# A rule to correct for feminine genitive case nouns, e.g., slí beatha -> slí bheatha.
+	# A rule to correct for feminine genitive case nouns, e.g., slí beatha -> slí bheatha. Noun Fem Gen Weak Pl Len
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
+	
+	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg));
+COPY:msyn-gen-noun-noun (Fem Gen Weak Pl Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	#ar feadh an bhliain -> ar feadh na bliana.
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Prep Cmpd));
@@ -2206,6 +2215,9 @@ COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGE
 
 COPY:msyn-hPref-after-prep (hPref SUGGEST) EXCEPT (&msyn-hPref-after-prep) TARGET (Adj &msyn-hPref-after-prep);
 
+ADD:msyn-cá-bhfios (&msyn-cá-bhfios) TARGET ("fios" Noun Com Sg) IF (-1 ("cá"))(NEGATE 0 (Com Sg Ecl));
+COPY:msyn-cá-bhfios (Com Sg Ecl SUGGEST) EXCEPT (Com Sg &msyn-cá-bhfios) TARGET (&msyn-cá-bhfios);
+
 
 ## A rule to insert lenition after Cop Past, e.g., Ba cosúil -> Ba chosúil, ba bocht -> ba bhocht.
 
@@ -2391,12 +2403,6 @@ ADD:lex-amach-farraige (&lex-amach-farraige) TARGET (Adv Dir) IF
 	(2 ("fharraige" Fem Com Len)) ;
 COPY:lex-amach-farraige ("amach" Adv Dir SUGGEST) EXCEPT ("isteach" Adv Dir) TARGET (&lex-amach-farraige);
 
-##fear mór - fear mhór, fear móra, fear mhóra
-##scoil bheag - scoil beag, scoil beaga, scoil bheaga
-##scoileanna cáiliúla - scoileanna cáiliúil, scoileanna cháiliúil
-## an fhir mhóir, na bhfear mór
-
-
 ADD:lex-part-comparative-adj (&lex-part-comparative-adj) TARGET (Adj Base) IF
 	(-1 ("níos"))
 	(NEGATE 0 (Noun Com Sg))
@@ -2434,6 +2440,10 @@ COPY:msyn-prep-lámh (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-prep-lámh) OR (Com S
 
 ADD:msyn-láimh-le (&msyn-láimh-le) TARGET ("lámh" Com Sg) IF (1 ("le" Prep Simp)); 
 COPY:msyn-láimh-le (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-láimh-le) TARGET (&msyn-láimh-le);
+
+ADD:msyn-láimh-le (&msyn-láimh-le) TARGET ("ró-fhada"); 
+COPY:msyn-láimh-le ("rófhada" Adv Temp SUGGEST) EXCEPT ("ró-fhada" ? &msyn-láimh-le) TARGET (&msyn-láimh-le);
+
 
 ADD:msyn-cop-past-neg-vowel (&msyn-cop-past-neg-vowel) TARGET ("níor" Cop Past Neg) IF
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
