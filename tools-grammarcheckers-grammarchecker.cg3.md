@@ -374,7 +374,7 @@ Other gen tags:
 * LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     
 * LIST &msyn-fada-o = &msyn-fada-o ;    
 * LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; 
-* LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; 
+* LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; art
 * LIST &msyn-gen-vn-femnoun-with-article = &msyn-gen-vn-femnoun-with-article ;	
 * LIST &msyn-gen-vn-mascnoun-with-article = &msyn-gen-vn-mascnoun-with-article ;	
 * LIST &msyn-ecl-after-verb-particle-q = &msyn-ecl-after-verb-particle-q ; 
@@ -489,7 +489,7 @@ Template rule to delete A and modify B in A B strings:
 
 ### RULE TO CORRECT PLURAL NOUNS AFTER THE WORD CÚPLA AS THE NOUN AFTER CÚPLA SHOULD BE IN THE SINGULAR FORM. !!IT WORKS!!
 
-#### Genitive rule 1. Noun + Noun => Noun + Noun.Gen
+#### Genitive rule 1. Noun + Noun => Noun + Noun.Gen  Noun <ComGen> Fem Com Sg
 
 #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
 
