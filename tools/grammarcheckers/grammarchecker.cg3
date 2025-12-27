@@ -932,8 +932,6 @@ COPY:msyn-prep-pron (Pron Prep 1P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &m
 COPY:msyn-prep-pron (Pron Prep 2P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (2P Pl)) ;
 COPY:msyn-prep-pron (Pron Prep 3P Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-prep-pron) (1 (3P Pl)) ;
 
-
-
 MAP:LOCK_READING (SUGGEST) (SUGGEST);
 
 	#$ Tá an madra ag siúl leat (correct)
@@ -1180,13 +1178,25 @@ COPY:syn-gen-two-defart (Noun Fem Com Sg SUGGEST) EXCEPT (Noun Fem Com Sg DefArt
 #!! ### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF
-	(NEGATE 0 Len)
 	(-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))
+	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 Len)
 	(NEGATE 0 (Noun Fem Com Len))
-	(0 ("<[bcdfgmpstBCDFGMPST].*>"r)) ;
+	(NEGATE 0 (Place Prop Noun Fem Com Sg))
+	(NEGATE 0 (Place Prop Noun Masc Com Sg));
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
+
+ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Adj Base) IF
+	(-3 ("idir" Prep Simp))
+	(-2 (Noun Com))
+	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 (Place Prop Noun Com Sg));
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
+ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
+COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
+
 
 
 	# PREP N
@@ -1618,27 +1628,37 @@ COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TAR
 
 # Singular N.com Art.com N.sg.com ==> N.com Art.gen N.sg.gen
 
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Com Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
+	#The genitive rule for singular masculine nouns after the article, e.g., éadaí an fear -> éadaí an fhir.
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
-	(-1 (Art Def))
+	(-1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Art Def));
-	#(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Gen Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
+	#The genitive rule for singular feminine nouns after the article, e.g., éadaí an bhean -> éadaí na mná.
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com Sg) OR (Noun Fem Com Sg DefArt) IF 
 	(*-2 (Noun Com) BARRIER NOT-A)
-	(-1 (Art Def))
+	(-1 (Art Sg Def))
+	(NEGATE 0 (Noun Fem Gen Strong Pl Ecl))
 	(NEGATE 0 (Gen Sg))
-	(NEGATE -3 (Art Def));
+	(NEGATE 0 (Fem Gen Strong Pl DefArt))
+	(NEGATE 0 (Fem Gen Strong Pl));
+COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) OR (Gen Strong Pl DefArt &msyn-gen-noun-defart-noun) OR (Fem Gen Strong Pl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+	
+	#The genitive rule for genitive nouns after the article, e.g., diallait an capaill -> diallait an chapaill.
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Gen Sg) IF
+	(*-2 (Noun Com) BARRIER NOT-A)
+	(-1 (Art Sg Def))
+	(NEGATE 0 (Noun Gen Sg DefArt));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Sg &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
+	#The genitive rule for nouns after prep cmpd, e.g.,"Bhí mé ann ar feadh an bhliain. -> Bhí mé ann ar feadh na bliana."
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Prep Cmpd) BARRIER NOT-A)
-	(-1 (Art Def))
+	(-1 (Art Sg Def))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE -3 (Art Def));
-	#(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
 
@@ -1653,30 +1673,51 @@ COPY:msyn-gen-noun-defart-noun ("an" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg De
 #$ Seomra an fear
 ## Seomra an fhir
 
-# Plural:  N.com Art.com N.pl.com ==> N.com Art.gen N.pl.gen # Noun Masc Com Pl DefArt
+# Plural:  N.com Art.com N.pl.com ==> N.com Art.gen N.pl.gen
+	#cumann na fir -> cumann na bhfear.
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Com Pl DefArt) IF
 	(-2 (Noun Com))
-	(-1 (Art Def))
+	(-1 (Art Pl Def))
 	(NEGATE 0 (Gen Pl))
 	(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun (Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Masc Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
+	#cumann na fear -> cumann na bhfear.
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Gen Weak Pl) IF
+	(-2 (Noun Com))
+	(-1 (Art Pl Def))
+	(NEGATE 0 (Gen Pl DefArt));
+COPY:msyn-gen-noun-defart-noun (Noun Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Noun Masc Gen Weak Pl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+
 # The fia rule (fianna is lookalike for plural com of FIANN and plural genitive of FIA)
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("fia" Noun Masc Gen Strong Pl) IF
 	(-2 (Noun Com))
-	(-1 (Art Def))
+	(-1 (Art Pl Def))
 	(NEGATE -3 (Verb VTI));
 COPY:msyn-gen-noun-defart-noun ("fiann" Noun Fem Gen Weak Pl DefArt SUGGEST) EXCEPT ("fia" Noun Masc Gen Strong Pl DefArt &msyn-gen-noun-defart-noun) TARGET ("fia" &msyn-gen-noun-defart-noun);
 
-
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com Pl DefArt) IF
+	# A rule for feminine nouns.
+#ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com Pl DefArt) IF
+	#(-2 (Noun Com))
+	#(-1 (Art Pl Def))
+	#(NEGATE 0 (Gen Pl))
+	#(NEGATE 0 (Gen Sg Ecl))
+	#(NEGATE 0 (Noun Fem Com Pl DefArt));
+#COPY:msyn-gen-noun-defart-noun (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
+	
+	#Cumann na mBean -> Cumann na mBan.
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com Sg Ecl) IF
 	(-2 (Noun Com))
-	(-1 (Art Def))
-	(NEGATE 0 (Gen Pl))
-	(NEGATE -3 (Verb VTI));
-COPY:msyn-gen-noun-defart-noun (Fem Gen Weak Pl DefArt SUGGEST) EXCEPT (Fem Com Pl DefArt &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
-
-
+	(-1 (Art Pl Def))
+	(NEGATE 0 (Fem Com Pl))
+	(NEGATE 0 (Fem Com Pl DefArt))
+	(NEGATE 0 (Fem Com Pl Ecl))
+	(NEGATE 0 (Fem Com Sg))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 (Gen Sg Ecl))
+	(NEGATE 0 (Gen Pl DefArt))
+	(NEGATE 0 (Gen Sg DefArt));
+COPY:msyn-gen-noun-defart-noun (Fem Gen Strong Pl DefArt SUGGEST) EXCEPT (Fem Com Sg Ecl &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
 
 # The article
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Pl Def) IF
@@ -2018,24 +2059,16 @@ SUBSTITUTE (&msyn-gen-chun-defart-noun) (co&msyn-gen-chun-defart-noun) TARGET (S
 ## A rule to correct the wrong article used with singular or plural, e.g., an scoileanna -> na scoileanna, na cailín -> an cailín.
 # Maybe &lex-correct-art and &msyn-noun-defart should be put together
 
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun Com Sg))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Prop Noun Fem Com Sg));
-
 	# Gen has not been disambiguated for Art, but the noun is a safe Com
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1C (Noun Com Sg))(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Prop Noun Fem Com Sg));
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1C (Noun Com Sg))(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Noun Gen Sg))(NEGATE 0 (Prop Noun Fem Com Sg));
 	## Chuaigh na bean á bprapáil féin.
 	#$ Chuaigh an bhean á prapáil féin.
-ADD:lex-correct-art (&lex-correct-art) TARGET (Noun Com Sg) - NG IF (-1 ("na" Art Pl Def))(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Prop Noun Fem Com Sg));
+ADD:lex-correct-art (&lex-correct-art) TARGET (Noun Com Sg) - NG IF (-1 ("na" Art Pl Def))(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Noun Gen Sg))(NEGATE 0 (Prop Noun Fem Com Sg));
 ADDRELATION ($2 RIGHT) (&lex-correct-art) TO (1 (Noun &lex-correct-art)) ;
 COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
-
 ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) - NG IF (1 (Noun Pl))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Noun Gen Sg))(NEGATE 0 (Prop Noun Fem Com Sg));
 COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
-
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF 
-	(-1 (Noun Com))
-	(1 (Noun Masc Gen Sg DefArt));
-COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 # Maybe &lex-correct-art and &msyn-noun-defart should be put together
