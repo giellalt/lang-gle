@@ -392,7 +392,8 @@ Other gen tags:
 * LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; 
 * LIST &msyn-len-after-da = &msyn-len-after-da ; 
 * LIST &msyn-len-after-ma = &msyn-len-after-ma ; 
-* LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; 
+* LIST &msyn-eclipse-after-numbers = &msyn-eclipse-after-numbers ; 
+* LIST &msyn-lenition-after-numbers = &msyn-lenition-after-numbers ; 
 * LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; 
 * LIST &msyn-plural-after-sna = &msyn-plural-after-sna ; 
 * LIST &msyn-prep-lámh = &msyn-prep-lámh ; 
@@ -453,7 +454,7 @@ Here ends the list and set section
 
 **RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
 
-**RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
+**RULE: msyn-adj-gender** to change Masculine adjective to Feminine if the adjective follows a feminine noun !!IT WORKS!!
 
 **RULE: msyn-adj-masc-gender** to correct Feminine adjectives to Masculine if the noun is masculine
 
