@@ -661,13 +661,16 @@ LIST &msyn-hPref-after-prep = &msyn-hPref-after-prep ; #!!= * @CODE@
 LIST &msyn-cá-bhfios = &msyn-cá-bhfios ;
 LIST &gen-after-go-leor = &gen-after-go-leor ;
 LIST &msyn-i-mbliana = &msyn-i-mbliana ; #!!= * @CODE@
+LIST &msyn-in-eirinn = &msyn-in-eirinn ;
 LIST &msyn-inis-do = &msyn-inis-do ;    #!!= * @CODE@
 LIST &msyn-len-after-prep = &msyn-len-after-prep ;    #!!= * @CODE@
 LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ; #!!= * @CODE@
 LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; #!!= * @CODE@
 LIST &msyn-len-after-da = &msyn-len-after-da ; #!!= * @CODE@
 LIST &msyn-len-after-ma = &msyn-len-after-ma ; #!!= * @CODE@
-LIST &msyn-lenition-after-aon = &msyn-lenition-after-aon ; #!!= * @CODE@
+LIST &msyn-eclipse-after-numbers = &msyn-eclipse-after-numbers ; #!!= * @CODE@
+LIST &msyn-lenition-after-numbers = &msyn-lenition-after-numbers ; #!!= * @CODE@
+LIST &msyn-singular-art-before-numbers = &msyn-singular-art-before-numbers ;
 LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; #!!= * @CODE@
 LIST &msyn-num-card-dó = &msyn-num-card-dó ;
 LIST &msyn-num-card-dó-len = &msyn-num-card-dó-len ;
@@ -706,6 +709,7 @@ LIST &lex-de-ainneoin = &lex-de-ainneoin ; #!!= * @CODE@
 LIST &lex-chomh = &lex-chomh ; #!!= * @CODE@
 LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
 LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
+LIST &syn-eire = &syn-eire ;
 LIST &syn-not-initial = &syn-not-initial ;
 LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
 LIST &botún-litrithe = &botún-litrithe ;
@@ -746,7 +750,43 @@ COPY:lex-tá-is ("is" Cop Pres SUGGEST) EXCEPT ("bí" Verb VI PresInd ) TARGET (
 	## Tá mé múinteoir.
 	#$ Is múinteoir mé.
 	## Tá mé fear.
-	#$ Is fear mé.
+	#$ Is fear mé. 
+
+ADD:msyn-lenition-after-numbers (&msyn-lenition-after-numbers) TARGET (Noun Com Sg) IF 
+	(-1 NUM-LEN)
+	(NEGATE 0 (Noun Com Sg Len))
+	(NEGATE -1 ("is" Cop Pres Pron Pers 3P Sg Masc))
+	(NEGATE -1 ("sé" Noun <ComGen> Masc))
+	(NEGATE -1 ("sé" Pron Pers 3P Sg Masc Sbj));
+COPY:msyn-lenition-after-numbers (Len &SUGGEST) EXCEPT (&msyn-lenition-after-numbers) TARGET (&msyn-lenition-after-numbers) ;
+
+ADD:msyn-eclipse-after-numbers (&msyn-eclipse-after-numbers) TARGET (Noun Com Sg) IF (-1 NUM-ECL);
+COPY:msyn-eclipse-after-numbers (Ecl &SUGGEST) EXCEPT (&msyn-eclipse-after-numbers) TARGET (&msyn-eclipse-after-numbers) ;
+
+ADD:msyn-singular-art-before-numbers (&msyn-singular-art-before-numbers) TARGET ("na" Art Pl Def) IF (1 ("aon" Num Card) OR ("dó" Num Card));
+COPY:msyn-singular-art-before-numbers ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &msyn-singular-art-before-numbers) TARGET (Art &msyn-singular-art-before-numbers);
+
+
+ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Masc) IF (-1 ("i" Prep Art Sg SA))(NEGATE 0 (Noun Com Sg));
+COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Com Sg) IF
+	(-1 ("i" Prep Art Sg SA))
+	(0 ("<[bcfgmpsBCFGMPS].*>"r))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 (Sg DefArt))
+	(NEGATE 0 (Masc Com Sg Len))
+	(NEGATE 0 ("<[s].*>"r) + Masc)
+	(NEGATE 0 ("<st.*>"r) + Fem)
+	(NEGATE 0 ("<sc.*>"r) + Fem)
+       	(NEGATE 0 ("<se.*>"r) + Fem)
+       	(NEGATE 0 ("<si.*>"r) + Fem)
+     	(NEGATE 0 ("<sr.*>"r) + Fem);
+COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (Com &msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+	#sa sráid -> sa tsráid, sa sochaí -> sa tsochaí.
+ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Fem Com Sg) IF (-1 ("i" Prep Art Sg SA))(NEGATE 0 (Noun Com Sg DefArt));
+COPY:msyn-lenition-after-sa (DefArt &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
 
 #!! ## Gender errors in adjectives
 
@@ -759,10 +799,14 @@ ADDRELATION:msyn-genitive-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-genitive
 	## Príomhoide an scoil mhór
 	#$ Príomhoide na scoile móra
 
-#!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if it modifies a feminine noun !!IT WORKS!!
+#!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if the adjective follows a feminine noun !!IT WORKS!!
 
 ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg DefArt) OR (Adj Masc) IF (-1 (Noun Fem Com Sg) LINK NOT 0 Masc)(NOT 0 Fem) ;
 COPY:msyn-adj-gender (Fem Com Sg Len SUGGEST) EXCEPT (Masc Com Sg) TARGET (Masc &msyn-adj-gender);
+ADDRELATION:msyn-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-adj-gender));
+
+ADD:msyn-adj-gender (&msyn-adj-gender) TARGET (Adj Base) IF (-1 (Noun Fem Com Sg) LINK NOT 0 Masc)(NOT 0 Fem) ;
+COPY:msyn-adj-gender (Adj Base Len SUGGEST) EXCEPT (Adj Base) TARGET (Adj &msyn-adj-gender);
 ADDRELATION:msyn-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-adj-gender));
 
 	## An fhuinneog beag - INCORRECT
@@ -780,7 +824,6 @@ ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl
 ADD:msyn-adj-masc-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender))(NEGATE 0 (Masc Com));
 COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com NotSlen Pl) OR (Fem Sg Len) TARGET (Adj Fem &msyn-adj-masc-gender) OR (Adj Pl &msyn-adj-gender);
 ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
-
 
 	# A rule to correct the error of a lenited plural adjective being after a feminine singular noun, e.g., fuinneog mhóra.
 ADD:msyn-sg-femnoun-pl-adj (&msyn-sg-femnoun-pl-adj) TARGET (Adj) IF (0 (Adj Com Slender Pl Len) OR (Adj Com NotSlen Pl))(-1 (Noun Fem Sg) LINK NOT 0 ("<.*i.>"r)) ;
@@ -842,8 +885,8 @@ COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Gen Weak Pl) OR (Fem C
 
 	
 	# a rule for feminine plural words, e.g., fuinneoga, scoileanna, blianta.
-ADD:msyn-fempl-noun-pl-adj (&msyn-fempl-noun-pl-adj) TARGET (Adj Com Slender Pl Len) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
-COPY:msyn-fempl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (Fem Com Sg Len) OR (Com Slender Pl Len) TARGET (Adj &msyn-fempl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
+ADD:msyn-fempl-noun-pl-adj (&msyn-fempl-noun-pl-adj) TARGET (Adj Com Slender Pl Len) OR (Adj Fem Com Sg Len) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-fempl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Fem Com Sg Len) OR (Masc Com Sg Len) OR (Com Slender Pl Len) TARGET (Adj &msyn-fempl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
 	## Tá na fuinneoga mhóra ar oscailt.
 	## Tá na fuinneoga mhór ar oscailt.
 	## Ta na fuinneoga mór ar oscailt.
@@ -973,27 +1016,6 @@ COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARG
 ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
 COPY:msyn-lenition-after-nior (Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ;
 
-
-ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Com Sg) IF
-	(-1 ("i" Prep Art Sg SA))
-	(0 ("<[bcfgmpsBCFGMPS].*>"r))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE 0 (Sg DefArt))
-	(NEGATE 0 (Masc Com Sg Len))
-	(NEGATE 0 ("<[s].*>"r) + Masc)
-	(NEGATE 0 ("<st.*>"r) + Fem)
-	(NEGATE 0 ("<sc.*>"r) + Fem)
-       	(NEGATE 0 ("<se.*>"r) + Fem)
-       	(NEGATE 0 ("<si.*>"r) + Fem)
-     	(NEGATE 0 ("<sr.*>"r) + Fem);
-COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
-
-ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Fem Com Sg) IF
-	(-1 ("i" Prep Art Sg SA))
-	(0 ("<sr.*>"r))
-	(0 ("<se.*>"r) + Fem);
-COPY:msyn-lenition-after-sa (Com Sg DefArt &SUGGEST) EXCEPT (Com Sg &msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
-
 ADD:msyn-san-before-vowel (&msyn-san-before-vowel) TARGET ("<sa>" "i" Prep Art Sg) IF
 	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
 	(1 ("<fh.*>"r) OR ("<Fh.*>"r));
@@ -1083,11 +1105,6 @@ COPY:msyn-gen-after-trasna ("na" Gen Pl Def Masc SUGGEST) EXCEPT ("an" Pl Def &m
 ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl));
 COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (Noun &msyn-plural-after-sna) ;
 
-ADD:msyn-lenition-after-aon (&msyn-lenition-after-aon) TARGET (Noun) IF
-	(-1 ("aon"))
-	(0 ("<[bcfgmpBCFGMP].*>"r));
-COPY:msyn-lenition-after-aon (Len &SUGGEST) EXCEPT (&msyn-lenition-after-aon) TARGET (&msyn-lenition-after-aon) ;
-
 #Caithfear a bheith airdeallach maidir leis na haidiachtaí taispeántacha ‘seo’ agus ‘sin’ a úsáid
 #le réamhfhocail chomhshuite. Is é an tuiseal ginideach a leanann leithéidí ‘de bharr’, ‘de bhrí’, ‘in
 #ainneoin’ agus ‘os coinne’ de ghnáth. Bíodh sin mar atá, ní féidir ‘seo’ agus ‘sin’ a infhilleadh. Botún
@@ -1145,6 +1162,19 @@ ADDRELATION:lex-dairire (DELETE1) (Noun &lex-dairire) TO (-1 (Prep &lex-dairire)
 COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
 	## I ndáiríre ní chaithfidh tú tada a rá.
 	#$ Dáiríre ní chaithfidh tú tada a rá.
+
+ADD:lex-dairire (&lex-dairire) TARGET ("beirt" Noun Fem Com Sg) IF (1 ("daoine"));
+ADD:lex-dairire (&lex-dairire) TARGET ("daoine") IF (-1 ("beirt" Noun Fem Com Sg)) ;
+ADDRELATION (DELETE1) ("daoine" &lex-dairire) TO (-1 (Prep &lex-dairire)) ; 
+COPY:lex-dairire ("beirt" Noun Fem Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARGET (Noun &lex-dairire);
+
+ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET ("an" Art Sg Def) IF
+	(*1 (Noun Fem Com DefArt) BARRIER NOT-A)
+	(2 (Art Def))
+	(3 (Noun Gen DefArt));
+ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET (Noun Fem Com DefArt) IF (-1 ("an" Art Sg Def &syn-gen-two-defart));
+ADDRELATION (DELETE1) (Noun Fem Com DefArt &syn-gen-two-defart) TO (*-1 ("an" Art Sg Def &syn-gen-two-defart)) ;
+COPY:syn-gen-two-defart (Noun Fem Com Sg SUGGEST) EXCEPT (Noun Fem Com Sg DefArt) TARGET (Noun Fem Com &syn-gen-two-defart);
 
 
 #!! ### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
@@ -1303,7 +1333,7 @@ COPY:gen-after-go-leor (Gen Sg SUGGEST) EXCEPT (Com Sg &gen-after-go-leor) TARGE
 #Lá go n-oíche, a day and a night. 
 #Go bhfios dom, as far as I know. 
 #Go gcuimhin liom, as far as I remember. 
-#Go gclos dom, from what I hear. Prop Noun Fem Dat Sg
+#Go gclos dom, from what I hear.
 
 ADD:msyn-ecl-after-goPrepSimp (&msyn-ecl-after-goPrepSimp) TARGET (Noun Com) OR (Noun Gen) OR (Prop Noun) + <ComGen> OR (Adj Base) IF
 	(-1 ("go" Prep Simp))
@@ -1548,12 +1578,13 @@ LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
+	(NEGATE -1 ("céad" Noun Masc Com Sg Len))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
-	(NEGATE 0 (Noun Gen Sg))
-	(NOT 0 ("chéad" Noun Masc Com Sg Len));
-COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
+	(NEGATE 0 (Noun Gen Sg));
+COPY:msyn-gen-noun-noun (Fem Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Fem));
+COPY:msyn-gen-noun-noun (Masc Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Masc));
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 	## teach scoil > #$teach scoile
@@ -1562,11 +1593,11 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 	
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
+	(NEGATE -1 ("céad" Noun Masc Com Sg Len))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
-	(NEGATE 0 (Noun Gen Sg))
-	(NOT 0 ("chéad" Noun Masc Com Sg Len));
+	(NEGATE 0 (Noun Gen Sg));
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
@@ -1587,7 +1618,7 @@ COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TAR
 
 # Singular N.com Art.com N.sg.com ==> N.com Art.gen N.sg.gen
 
-ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Com Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
+ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Masc Com Sg) IF # (DefArt) OR (Noun Fem Com Sg) IF
 	(*-2 (Noun Com) BARRIER NOT-A)
 	(-1 (Art Def))
 	(NEGATE 0 (Gen Sg))
@@ -1615,7 +1646,7 @@ ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET ("an" Art Sg D
 	(NEGATE 0 Gen)
 	(1 (Noun &msyn-gen-noun-defart-noun));
 COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Fem));
-COPY:msyn-gen-noun-defart-noun ("na" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
+COPY:msyn-gen-noun-defart-noun ("an" Gen Sg Def Masc SUGGEST) EXCEPT ("an" Sg Def &msyn-gen-noun-defart-noun) TARGET (Art &msyn-gen-noun-defart-noun) IF (1 (Noun Masc));
 
 ## Tá barr an fhuinneog ar oscailt.  # Art N in Com
 #$ Tá barr na fuinneoige ar oscailt. # Art N in Gen
@@ -1987,31 +2018,37 @@ SUBSTITUTE (&msyn-gen-chun-defart-noun) (co&msyn-gen-chun-defart-noun) TARGET (S
 ## A rule to correct the wrong article used with singular or plural, e.g., an scoileanna -> na scoileanna, na cailín -> an cailín.
 # Maybe &lex-correct-art and &msyn-noun-defart should be put together
 
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun Sg))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs);
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1 (Noun Com Sg))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Prop Noun Fem Com Sg));
 
 	# Gen has not been disambiguated for Art, but the noun is a safe Com
-ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1C (Noun Com Sg))(NEGATE 0 &msyn-prep-detposs);
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF (1C (Noun Com Sg))(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Prop Noun Fem Com Sg));
 	## Chuaigh na bean á bprapáil féin.
 	#$ Chuaigh an bhean á prapáil féin.
-ADD:lex-correct-art (&lex-correct-art) TARGET (Noun Com Sg) - NG IF (-1 ("na" Art Pl Def))(NEGATE 0 &msyn-prep-detposs);
+ADD:lex-correct-art (&lex-correct-art) TARGET (Noun Com Sg) - NG IF (-1 ("na" Art Pl Def))(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Prop Noun Fem Com Sg));
 ADDRELATION ($2 RIGHT) (&lex-correct-art) TO (1 (Noun &lex-correct-art)) ;
 COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
 
-ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) - NG IF (1 (Noun Pl))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Noun Gen Sg));
+ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) - NG IF (1 (Noun Pl))(NEGATE 0 Gen)(NEGATE 0 &msyn-prep-detposs)(NEGATE 0 (Noun Gen Sg))(NEGATE 0 (Prop Noun Fem Com Sg));
 COPY:lex-correct-art ("na" Art Pl Def SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (Art &lex-correct-art);
+
+ADD:lex-correct-art (&lex-correct-art) TARGET ("na" Art Pl Def) - NG IF 
+	(-1 (Noun Com))
+	(1 (Noun Masc Gen Sg DefArt));
+COPY:lex-correct-art ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &lex-correct-art) TARGET (Art &lex-correct-art);
 
 #!! ## Definiteness errors in nouns, e.g., an asal > an t-asal, an bean > an bhean, an sráid > an tsráid.
 # Maybe &lex-correct-art and &msyn-noun-defart should be put together
 
-ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Sg) IF
+ADD:msyn-noun-defart (&msyn-noun-defart) TARGET (Noun Com Sg) IF
 	(NEGATE -2 (Prep Simp))
 	(NEGATE -2 Noun)
 	(NEGATE -1 (Art Pl Def))
 	(-1 ("an" Art Sg Def))(NEGATE 0 DefArt)
 	(NEGATE 0 (Noun Masc Com Sg Len))
 	(NEGATE 0 Gen)
-	(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc);
+	#(NEGATE 0 ("<[dntl].*>"r) OR ("<s[^r].*>"r) OR ("<sr.*>"r) + Masc)
+	(NEGATE 0 (Prop Noun));
 COPY:msyn-noun-defart (DefArt SUGGEST) EXCEPT (&msyn-noun-defart) TARGET (&msyn-noun-defart);
 ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defart);
 
@@ -2053,10 +2090,14 @@ COPY:right-guillemet ("»" SUGGEST) EXCEPT (""") TARGET (&use-guillemets) ;
 ADD:use-ellipsis (&ellipsis) TARGET ("..." Punct Fin);
 COPY:use-ellipsis ("…" Punct Int SUGGEST) EXCEPT ("..." Punct Fin) TARGET (&ellipsis) ;
 
+ADD:use-ellipsis (&ellipsis) TARGET ("seiceáil" Verb VTI Imper 2P Sg);
+COPY:use-ellipsis ("dearbháil" Verb VT Imper 2P Sg SUGGEST) EXCEPT ("seiceáil" Verb VTI Imper 2P Sg) TARGET (&ellipsis) ;
+
+
 #!! **ADD:use-ie.i.** ...
 
 ADD:use-ie.i. (&ie.i.) TARGET ("i.e." Abr);
-COPY:use-ie.i. (".i." A"br" SUGGEST) EXCEPT ("i.e." Abr)  TARGET (&ie.i.) ;
+COPY:use-ie.i. (".i." Abr SUGGEST) EXCEPT ("i.e." Abr) TARGET (&ie.i.) ;
 
 LIST <fixedcase> = <fixedcase>;
 
@@ -2330,8 +2371,8 @@ COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
 ADD:lex-3456 (&lex-3456) TARGET ("seachtain" Com Sg) IF (-1 NUMBERS78910); # IT DOES NOT WORK
 COPY:lex-3456 (Com Pl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
-ADD:lex-3456 (&lex-3456) TARGET ("ceann") IF (-1 NUMBERS3456)(NEGATE -1 ("trí" Prep Simp)); # IT WORKS
-COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+ADD:lex-3456 (&lex-3456) TARGET ("ceann" Noun Masc Com Sg) OR ("ceann" Noun Masc Com Sg Len) IF (-1 NUMBERS3456)(NEGATE -1 ("trí" Prep Simp)); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com Sg &lex-3456) OR (Com Sg Len &lex-3456) TARGET (&lex-3456);
 
 ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
 COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
@@ -2383,8 +2424,8 @@ COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
 ADD:lex-3456 (&lex-3456) TARGET ("troigh" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
 COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
-ADD:lex-3456 (&lex-3456) TARGET ("uair" Com Sg Len) IF (-1 NUMBERS3456); # IT WORKS
-COPY:lex-3456 (hPref SUGGEST) EXCEPT (Com Sg Len &lex-3456) TARGET (&lex-3456);
+ADD:lex-3456 (&lex-3456) TARGET ("uair" Noun Com Sg Len) OR ("uair" Noun Fem Gen Sg Len) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg hPref SUGGEST) EXCEPT (Com Sg Len &lex-3456) OR (Gen Sg Len &lex-3456) TARGET (&lex-3456);
 
 ADD:lex-3456 (&lex-3456) TARGET ("uair" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
 COPY:lex-3456 (Gen Sg Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
@@ -2417,6 +2458,21 @@ ADD:lex-part-comparative-adj (&lex-part-comparative-adj) TARGET (Adj Base) IF
 	(NEGATE -1 (Conj Coord NG))
 	(NEGATE -1 (Cop Pres));
 COPY:lex-part-comparative-adj (Comp SUGGEST) EXCEPT (Base &lex-part-comparative-adj) TARGET (&lex-part-comparative-adj);
+
+	#A rule to correct "in Éire" to "in Éirinn".
+ADD:msyn-in-eirinn (&msyn-in-eirinn) TARGET ("Éire" Prop Noun Fem Com Sg) IF (-1 ("i" Prep Simp Vow));
+COPY:msyn-in-eirinn (Dat Sg SUGGEST) EXCEPT (Com Sg &msyn-in-eirinn) TARGET (&msyn-in-eirinn);
+
+	#A rule to correct "in Éireann" to "in Éirinn".
+ADD:msyn-in-eirinn (&msyn-in-eirinn) TARGET ("Éire" Prop Noun Fem Gen Sg) IF (-1 ("i" Prep Simp Vow));
+COPY:msyn-in-eirinn (Dat Sg SUGGEST) EXCEPT (Gen Sg &msyn-in-eirinn) TARGET (&msyn-in-eirinn);
+
+ADD:syn-eire (&syn-eire) TARGET ("an" Art Sg Def) IF (1 ("Éire" Prop Noun Fem Com Sg));
+ADD:syn-eire (&syn-eire) TARGET ("Éire" Prop Noun Fem Com Sg) IF (-1 ("an" Art Sg Def &syn-eire));
+ADDRELATION (DELETE1) ("Éire" Prop Noun Fem Com Sg &syn-eire) TO (*-1 ("an" Art Sg Def &syn-eire)) ;
+COPY:syn-eire ("Éire" Prop Noun Fem Com Sg SUGGEST) EXCEPT (Art Sg Def DefArt) TARGET (Art &syn-eire);
+
+
 
 LIST PREPLÁMH = "ag" "as" "ar" "de" "do" "faoi" "i" "ó";
 
@@ -2564,10 +2620,6 @@ COPY:lex-de-ainneoin ("d'ainneoin" Prep Cmpd SUGGEST) EXCEPT ("i" Prep Simp Vow)
 	#A rule to ensure that the correct form of "dhá" is used after the singular article "an", "an dhá" becomes "an dá".
 ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("dó" Num Card) IF (-1 (Art Def))(NEGATE 0 (Num Card DefArt));
 COPY:msyn-num-card-dó ("dó" Num Card DefArt SUGGEST) EXCEPT ("dó" Num Card &msyn-num-card-dó) TARGET (Num Card &msyn-num-card-dó);
-
-	#A rule to ensure that the correct that the singular article is used before dhá or dá.
-ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("na" Art Pl Def) IF (1 ("dó" Num Card) OR ("dó" Num Card DefArt))(NEGATE 0 (Num Card DefArt));
-COPY:msyn-num-card-dó ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &msyn-num-card-dó) TARGET (&msyn-num-card-dó);
 
 	## A rule to ensure that the adjective after the noun after dhá or dhá is lenited and plural, e.g., an dá chrann mór -> an dá chrann mhóra, dhá chrann mhóra, Bhí dhá ghluaisteán mhóra sa chlós.
 ADD:msyn-num-card-dó-len &msyn-num-card-dó-len TARGET (Noun Com Sg) IF (-1 ("dó" Num Card) OR ("dó" Num Card DefArt))(NEGATE 0 (Noun Com Sg Len));
