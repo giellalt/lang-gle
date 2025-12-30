@@ -673,10 +673,12 @@ LIST &msyn-lenition-after-ni = &msyn-lenition-after-ni ; #!!= * @CODE@
 LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; #!!= * @CODE@
 LIST &msyn-len-after-da = &msyn-len-after-da ; #!!= * @CODE@
 LIST &msyn-len-after-ma = &msyn-len-after-ma ; #!!= * @CODE@
+LIST &msyn-maidir-leis = &msyn-maidir-leis ;
 LIST &msyn-eclipse-after-numbers = &msyn-eclipse-after-numbers ; #!!= * @CODE@
 LIST &msyn-lenition-after-numbers = &msyn-lenition-after-numbers ; #!!= * @CODE@
 LIST &msyn-singular-art-before-numbers = &msyn-singular-art-before-numbers ;
 LIST &msyn-lenition-after-sa = &msyn-lenition-after-sa ; #!!= * @CODE@
+LIST &msyn-t-after-sa = &msyn-t-after-sa ;
 LIST &msyn-num-card-dó = &msyn-num-card-dó ;
 LIST &msyn-num-card-dó-len = &msyn-num-card-dó-len ;
 LIST &msyn-ord-num-dara = &msyn-ord-num-dara;
@@ -773,28 +775,6 @@ COPY:msyn-eclipse-after-numbers (Ecl &SUGGEST) EXCEPT (&msyn-eclipse-after-numbe
 ADD:msyn-singular-art-before-numbers (&msyn-singular-art-before-numbers) TARGET ("na" Art Pl Def) IF (1 ("aon" Num Card) OR ("dó" Num Card));
 COPY:msyn-singular-art-before-numbers ("an" Art Sg Def SUGGEST) EXCEPT ("na" Art Pl Def &msyn-singular-art-before-numbers) TARGET (Art &msyn-singular-art-before-numbers);
 
-
-ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Masc) IF (-1 ("i" Prep Art Sg SA))(NEGATE 0 (Noun Com Sg));
-COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
-
-ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Com Sg) IF
-	(-1 ("i" Prep Art Sg SA))
-	(0 ("<[bcfgmpsBCFGMPS].*>"r))
-	(NEGATE 0 (Gen Sg))
-	(NEGATE 0 (Sg DefArt))
-	(NEGATE 0 (Masc Com Sg Len))
-	(NEGATE 0 ("<[s].*>"r) + Masc)
-	(NEGATE 0 ("<st.*>"r) + Fem)
-	(NEGATE 0 ("<sc.*>"r) + Fem)
-       	(NEGATE 0 ("<se.*>"r) + Fem)
-       	(NEGATE 0 ("<si.*>"r) + Fem)
-     	(NEGATE 0 ("<sr.*>"r) + Fem);
-COPY:msyn-lenition-after-sa (Len &SUGGEST) EXCEPT (Com &msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
-
-	#sa sráid -> sa tsráid, sa sochaí -> sa tsochaí.
-ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Fem Com Sg) IF (-1 ("i" Prep Art Sg SA))(NEGATE 0 (Noun Com Sg DefArt));
-COPY:msyn-lenition-after-sa (DefArt &SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
-
 #!! ## Gender errors in adjectives
 
 
@@ -838,7 +818,7 @@ ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 N
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem Com Sg Len) IF
 	(-1 (Noun Masc Com Sg))
-	(NEGATE -1 ("is" Cop Pres Neg))
+	(NEGATE -1 ("is" Cop Pres Neg));
 ADD:msyn-adj-masc-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender))(NEGATE 0 (Masc Com));
 COPY:msyn-adj-masc-gender (Adj Masc Com Sg SUGGEST) EXCEPT (Adj Fem Com Sg Len) TARGET (Adj &msyn-adj-masc-gender);
 ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
@@ -1043,16 +1023,27 @@ COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARG
 ADD:msyn-lenition-after-nior (&msyn-lenition-after-nior) TARGET (Verb) IF (-1 (Part Vb Neg Past))(NEGATE 0 Len);
 COPY:msyn-lenition-after-nior (Len &SUGGEST) EXCEPT (&msyn-lenition-after-nior) TARGET (&msyn-lenition-after-nior) ;
 
-ADD:msyn-san-before-vowel (&msyn-san-before-vowel) TARGET ("<sa>" "i" Prep Art Sg) IF
-	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
-	(1 ("<fh.*>"r) OR ("<Fh.*>"r));
-COPY:msyn-san-before-vowel ("<san>" "i" Prep Art Sg &SUGGEST) EXCEPT ("<sa>" "i" Prep Art Sg SA &msyn-san-before-vowel) TARGET (&msyn-san-before-vowel) ;
+ADD:msyn-san-before-vowel (&msyn-san-before-vowel) TARGET ("i" Prep Art Sg SA) IF (1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r));
+COPY:msyn-san-before-vowel ("i" Prep Art Sg Vow &SUGGEST) EXCEPT ("i" Prep Art Sg SA &msyn-san-before-vowel) TARGET (&msyn-san-before-vowel) ;
 
+ADD:msyn-san-before-vowel (&msyn-san-before-vowel) TARGET ("i" Prep Art Sg SA) IF (1 ("<fh.*>"r) OR ("<Fh.*>"r));
+COPY:msyn-san-before-vowel ("i" Prep Art Sg Vow &SUGGEST) EXCEPT ("i" Prep Art Sg SA &msyn-san-before-vowel) TARGET (&msyn-san-before-vowel) ;
 
-ADD:msyn-sna-before-plural (&msyn-sna-before-plural) TARGET ("i" Prep Art Sg) IF (1 (Noun Com Pl));
-COPY:msyn-sna-before-plural ("i" Prep Art Pl &SUGGEST) EXCEPT (Prep Art Sg &msyn-sna-before-plural) TARGET (&msyn-sna-before-plural) ;
+	#A rule to correct "sa" to "sna" before plural nouns.
+ADD:msyn-sna-before-plural (&msyn-sna-before-plural) TARGET ("i" Prep Art Sg SA) IF (1 (Noun Com Pl));
+COPY:msyn-sna-before-plural ("i" Prep Art Pl Pl SUGGEST) EXCEPT ("i" Prep Art Sg SA) TARGET (&msyn-sna-before-plural) ;
+	
+	#A rule to correct "i na" to "sna" before plural nouns.
+ADD:msyn-sna-before-plural (&msyn-sna-before-plural) TARGET ("i" Prep Simp) IF
+	(1 (Art Pl Def) LINK NOT 0 ("<a>"))
+	(2 (Noun Com Pl));
+ADD:msyn-sna-before-plural (&msyn-sna-before-plural) TARGET (Art Pl Def) IF
+	(-1 (Prep &msyn-sna-before-plural))
+	(1 (Noun Com Pl));
+ADDRELATION (DELETE1) (Prep &msyn-sna-before-plural) TO (1 (Art &msyn-sna-before-plural));
+COPY:msyn-sna-before-plural ("i" Prep Art Pl Pl SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-sna-before-plural);
 
-ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl));
+ADD:msyn-plural-after-sna (&msyn-plural-after-sna) TARGET (Noun Sg) IF (-1 ("i" Prep Art Pl Pl));
 COPY:msyn-plural-after-sna (Pl &SUGGEST) EXCEPT (Sg &msyn-plural-after-sna) TARGET (&msyn-plural-after-sna) ;
 
 ADD:msyn-roimh-art (&msyn-roimh-art) TARGET (Noun MascCom Sg DefArt) IF 
@@ -1226,6 +1217,45 @@ COPY:syn-gen-two-defart (Noun Fem Com Sg SUGGEST) EXCEPT (Noun Fem Com Sg DefArt
 
 #!! ### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
+	## Cuir an bia sa cuisneoir -> cuir an bia sa chuisneoir.  
+ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Masc Sg) IF 
+	(-1 ("i" Prep Art Sg SA))
+	(0 ("<[bcfgmpsBCFGMPS].*>"r))
+	(NEGATE 0 ("<se.*>"r) + Masc)
+	(NEGATE 0 (Noun Masc Com Sg Len))
+	(NEGATE 0 (Gen Sg));
+COPY:msyn-lenition-after-sa (Len SUGGEST) EXCEPT (&msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Masc Gen Sg Len) IF 
+	(-1 ("i" Prep Art Sg SA))
+	(0 ("<[bcfgmpsBCFGMPS].*>"r));
+	#(NEGATE 0 ("<se.*>"r) + Masc);
+COPY:msyn-lenition-after-sa (Com Sg SUGGEST) EXCEPT (Gen Sg Len &msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+
+ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Com Sg) IF
+	(-1 ("i" Prep Art Sg SA))
+	(0 ("<[bcfgmpsBCFGMPS].*>"r))
+	(NEGATE 0 (Noun Masc Com Sg Len))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 (Sg DefArt))
+	(NEGATE 0 ("<[s].*>"r) + Masc)
+	(NEGATE 0 ("<se.*>"r) + Masc)
+	(NEGATE 0 ("<st.*>"r) + Fem)
+	(NEGATE 0 ("<sc.*>"r) + Fem)
+       	(NEGATE 0 ("<se.*>"r) + Fem)
+       	(NEGATE 0 ("<si.*>"r) + Fem)
+     	(NEGATE 0 ("<sr.*>"r) + Fem);
+COPY:msyn-lenition-after-sa (Len SUGGEST) EXCEPT (Com &msyn-lenition-after-sa) TARGET (&msyn-lenition-after-sa) ;
+
+	#sa sráid -> sa tsráid, sa sochaí -> sa tsochaí.
+ADD:msyn-t-after-sa (&msyn-t-after-sa) TARGET (Noun Fem Com Sg) IF 
+	(-1 ("i" Prep Art Sg SA))
+	(NEGATE 0 (Noun Fem Com Sg DefArt))
+	(NEGATE 0 ("<abcdefghilmnoprtu.*>"r) + Fem);
+COPY:msyn-t-after-sa (DefArt SUGGEST) EXCEPT (&msyn-t-after-sa) TARGET (&msyn-t-after-sa) ;
+
+
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF
 	(-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
@@ -1315,6 +1345,7 @@ ADD:msyn-ecl-after-prep-plus-art (&msyn-ecl-after-prep-plus-art) TARGET (Noun Co
 	(-1 (Art Sg Def))
 	(-2 ECLIPSE-PREP + Prep + Simp)
 	(0 ("<[bcfgpBCFGP].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
+	(NOT 0 ("i" Prep Art Sg SA))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 
 COPY:msyn-ecl-after-prep-plus-art (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-plus-art) OR (DefArt &msyn-ecl-after-prep-plus-art) OR (Len &msyn-ecl-after-prep-plus-art) TARGET (&msyn-ecl-after-prep-plus-art);
@@ -2540,34 +2571,41 @@ ADD:msyn-n-after-i-prep-vowel (&msyn-n-after-i-prep-vowel) TARGET ("i" Prep Simp
 COPY:msyn-n-after-i-prep-vowel (Vow SUGGEST) EXCEPT (&msyn-n-after-i-prep-vowel) TARGET (&msyn-n-after-i-prep-vowel);
 
 
-## 	A rule to correct "i an" to "san" for nouns beginning with a vowel. (san lenites f)
+## 	A rule to correct "i an" to "san" for nouns beginning with a vowel. (san lenites fh)
+
+	##A rule to change sa to san before nouns beginning with a vowel or fh.
+ADD:msyn-san-before-vowel (&msyn-san-before-vowel) TARGET ("i" Prep Art Sg SA) IF (1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r));
+COPY:msyn-san-before-vowel ("i" Prep Art Sg Vow &SUGGEST) EXCEPT ("i" Prep Art Sg SA &msyn-san-before-vowel) TARGET (&msyn-san-before-vowel) ;
 
 ADD:msyn-san (&msyn-san) TARGET ("i" Prep Simp) IF
-	(0 ("i" Prep Simp))
-	(1 ("an" Art Sg Def) LINK NOT 0 ("<a>"))
-	(2 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N);
+	(1 (Art Sg Def) LINK NOT 0 ("<a>"))
+	(2 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r));
 ADD:msyn-san (&msyn-san) TARGET (Art Sg Def) IF
 	(-1 (Prep &msyn-san))
-	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
-	(NOT 0 Ecl OR ECL-NON-ECL-N);
-
+	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r));
 ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
-COPY:msyn-san ("<san>" "i" Prep Art Sg SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
-COPY:msyn-san ("i" Prep Art Sg SA SUGGEST) EXCEPT (Simp) TARGET (Prep &msyn-san);
+COPY:msyn-sa ("i" Prep Art Sg Vow SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-san);
 
-## 	A rule to correct "i an" to "sa" for nouns beginning with consonants (Sa lenites consonants b, c, g, m, p, and prefixes t to initial s of feminine noun).
-
-ADD:msyn-sa (&msyn-sa) TARGET ("i" Prep Simp) IF
-	(0 ("i" Prep Simp))
+ADD:msyn-san (&msyn-san) TARGET ("i" Prep Simp) IF
 	(1 (Art Sg Def) LINK NOT 0 ("<a>"))
-	(2 ("<[bcfgmpBCFGMP].*>"r));
+	(2 ("<[fh].*>"r) OR ("<[fh].*>"r));
+ADD:msyn-san (&msyn-san) TARGET (Art Sg Def) IF
+	(-1 (Prep &msyn-sa))
+	(1 ("<fh.*>"r) OR ("<Fh.*>"r));
+ADDRELATION (DELETE1) (Prep &msyn-san) TO (1 (Art &msyn-san));
+COPY:msyn-san ("i" Prep Art Sg Vow SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-san);
+
+## 	A rule to correct "i an" to "sa" for nouns beginning with consonants ("Sa" lenites consonants b, c, g, m, p, and prefixes t to initial s of feminine noun).
+ADD:msyn-sa (&msyn-sa) TARGET ("i" Prep Simp) IF 
+	(1 (Art Sg Def) LINK NOT 0 ("<a>"))
+	(2 (Noun Com Sg))
+	(NEGATE 2 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r))
+	(NEGATE 2 ("<fh.*>"r) OR ("<Fh.*>"r));
 ADD:msyn-sa (&msyn-sa) TARGET (Art Sg Def) IF
 	(-1 (Prep &msyn-sa))
-	(1 ("<[bcfgmpBCFGMP].*>"r));
+	(1 (Noun Com Sg));
 ADDRELATION (DELETE1) (Prep &msyn-sa) TO (1 (Art &msyn-sa));
 COPY:msyn-sa ("i" Prep Art Sg SA SUGGEST) EXCEPT (Prep Simp) TARGET (Prep &msyn-sa);
-
 
 #!! **ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
@@ -2898,7 +2936,7 @@ ADD:msyn-ord-num-dara &msyn-ord-num-dara TARGET (Noun Com Sg Len) OR (Noun Gen W
 	(NEGATE 0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r)); 
 COPY:msyn-ord-num-dara (Com Sg SUGGEST) EXCEPT (Com Sg Len) OR (Gen Weak Pl Len) OR (Gen Sg Len) TARGET (Noun &msyn-ord-num-dara);
 
-	#A rule to ensure that plural com noun after "dara" get corrected to a singular com noun, e.g., an dara mná -> an dara bean.
+	#A rule to ensure that plural com noun after "dara" gets corrected to a singular com noun, e.g., an dara mná -> an dara bean.
 ADD:msyn-ord-num-dara &msyn-ord-num-dara TARGET (Noun Com Pl) IF 
 	(-1 ("dara" Num Ord))
 	(NEGATE 0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r)); 
@@ -2986,7 +3024,7 @@ ADD:&msyn-ar-chúl (&msyn-ar-chúl) TARGET ("cúl" Noun Masc Com Sg) IF
 	(-1 ("ar" Prep Simp))
 	(1 (Art Def))
 	(NEGATE 0 (Noun Masc Com Sg Len));
-COPY:&msyn-ar-chúl (Len SUGGEST) EXCEPT (&msyn-ar-chúl) TARGET (&msyn-ar-chúl);
+COPY:&msyn-ar-chúl (Len SUGGEST) EXCEPT (&msyn-ar-chúl) TARGET (&msyn-ar-chúl);	
 
 	##maidir le seo/sin -> maidir leis seo/sin.
 ADD:&msyn-maidir-leis (&msyn-maidir-leis) TARGET (Prep CmpdNoGen) IF 
