@@ -169,14 +169,14 @@ faoi+Prep+Poss+3P+Sg+Masc+NG:fána		#;  ! under his/her/their
 faoi+Prep+Poss+3P+Pl:faoina		#;  ! under his/her/their
 faoi+Prep+Poss+3P+Pl+NG:féna		#;  ! under his/her/their
 faoi+Prep+Poss+3P+Pl+NG:fána		#;  ! under his/her/their
-faoi+Prep+Poss+1P+Pl:faoinár	#;  ! under ours
+faoi+Prep+Poss+1P+Pl:faoinár		#;  ! under ours
 faoi+Prep+Poss+1P+Pl+NG:fénár		#;  ! under ours
 
 i+Prep+Poss+3P+Sg+Fem:ina		#;  ! e.g. ina láimh
 i+Prep+Poss+3P+Sg+Fem+NG:'na		#;  ! e.g. 'na láimh
 i+Prep+Poss+3P+Sg+Masc:ina		#;  ! e.g. ina láimh
 i+Prep+Poss+3P+Sg+Masc+NG:'na		#;  ! 
-i+Prep+Poss+3P+Pl:ina		#;  ! e.g. ina láimh
+i+Prep+Poss+3P+Pl:ina			#;  ! e.g. ina láimh
 i+Prep+Poss+3P+Pl+NG:'na		#;  ! e.g. 
 i+Prep+Poss+1P+Pl:inár			#;  !
 
@@ -312,8 +312,8 @@ trí+Prep+Rel:trínar			#;  !
 <t h a r %_:%  c e a n n %+Prep:0 %+Cmpd:0>		#;	
 
 <m a i d i r %_:%  l e %+Prep:0 %+CmpdNoGen:0>				#;
-<m a i d i r %_:%  l e 0:i 0:s %+Prep:0 %+CmpdNoGen:0>			#;
-<m a i d i r %_:%  l e 0:n 0:a %+Prep:0 %+CmpdNoGen:0 %+Rel:0> #;
+<m a i d i r %_:%  l e 0:i 0:s %+Prep:0 %+CmpdNoGen1:0>			#;
+<m a i d i r %_:%  l e 0:n 0:a %+Prep:0 %+CmpdNoGen:0 %+Rel:0> 		#;
 <m a i d i r %_:%  l e 0:n 0:a %+Prep:0 %+CmpdNoGen:0 %+Poss:0 %+3P:0 %+Pl:0> #;
 <m a i d i r %_:%  l e 0:n 0:a %+Prep:0 %+CmpdNoGen:0 %+Poss:0 %+3P:0 %+Sg:0 %+Masc:0> #;
 <m a i d i r %_:%  l e 0:n 0:a %+Prep:0 %+CmpdNoGen:0 %+Poss:0 %+3P:0 %+Sg:0 %+Fem:0> #;

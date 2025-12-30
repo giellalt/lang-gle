@@ -634,6 +634,8 @@ LIST &lex-part-comparative-adj = &lex-part-comparative-adj ; #!!= * @CODE@
 LIST &msyn-adj-gender = &msyn-adj-gender ;      #!!= * @CODE@
 LIST &msyn-adj-fem-gender = &msyn-adj-fem-gender ;
 LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
+LIST &msyn-ar-chúl = &msyn-ar-chúl ;
+LIST &msyn-ar-gcúl = &msyn-ar-gcúl ;
 LIST &msyn-genitive-adj-gender = &msyn-genitive-adj-gender ;
 LIST &syn-gen-two-defart = &syn-gen-two-defart ;
 LIST &msyn-gen-prepcmpd-detpss-noun = &msyn-gen-prepcmpd-detpss-noun 
@@ -1166,7 +1168,7 @@ COPY:lex-ina-ainneoin-sin ("i" Prep Poss 3P Sg Masc SUGGEST) EXCEPT ("i" Prep Si
 ADD:lex-os-a-choinne-sin (&lex-os-a-choinne-sin) TARGET ("an" Art Sg Def) IF (-1 ART-LEN-PREP + (Prep Cmpd))(1 (Noun Fem)) ;
 COPY:lex-os-a-choinne-sin ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an" Sg Def &lex-os-a-choinne-sin) TARGET (Art &lex-os-a-choinne-sin) IF (1 (Noun Fem)) ;
 
-	#A rule to correct the error "díriú isteach" ar... It should be only "díriú ar". "dírigh" Verb VTI PastInd Len
+	#A rule to correct the error "díriú isteach" ar... It should be only "díriú ar".
 ADD:lex-díriú-ar (&lex-díriú-ar) TARGET ("isteach" Adv Dir) IF (-1 ("dírigh" Verbal Noun VTI));
 ADD:lex-díriú-ar (&lex-díriú-ar) TARGET ("dírigh" Verbal Noun VTI) IF (1 ("isteach" Adv Dir));
 ADDRELATION:lex-díriú-ar (DELETE1) (Verbal Noun VTI &lex-díriú-ar) TO (1 (Adv Dir &lex-díriú-ar)) ;
@@ -1227,19 +1229,23 @@ COPY:syn-gen-two-defart (Noun Fem Com Sg SUGGEST) EXCEPT (Noun Fem Com Sg DefArt
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF
 	(-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 ("cúl"))
 	(NEGATE 0 Len)
 	(NEGATE 0 (Noun Fem Com Len))
 	(NEGATE 0 (Place Prop Noun Fem Com Sg))
-	(NEGATE 0 (Place Prop Noun Masc Com Sg));
+	(NEGATE 0 (Place Prop Noun Masc Com Sg))
+	(NEGATE 0 (Fem Com Sg));
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
 
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Adj Base) IF
+	(NEGATE 0 ("cúl"))
 	(-3 ("idir" Prep Simp))
 	(-2 (Noun Com))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
-	(NEGATE 0 (Place Prop Noun Com Sg));
+	(NEGATE 0 (Place Prop Noun Com Sg))
+	(NEGATE 0 (Fem Com Sg));
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
@@ -1250,9 +1256,11 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 	# ------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
 	(NEGATE 0 Len)
+	(NEGATE 0 ("cúl"))
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (0 ("<[bcdfgmpstBCDFGMPST].*>"r))
-        (NEGATE 0 Ecl);
+        (NEGATE 0 Ecl)
+        (NEGATE 0 (Fem Com Sg));
     		## Thug sé buille de bata do an chaora. INCORRECT
     		#$ Thug sé buille de bhata don chaora. INCORRECT
 
@@ -1260,6 +1268,8 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com
 	# -----------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Masc Com Sg) OR (Noun Masc Com Sg DefArt) IF
 	(NEGATE 0 Len)
+	(NEGATE 0 ("cúl"))
+	(NEGATE 0 (Fem Com Sg))
 	(*-1 ("de" Prep Art Sg) OR ("do" Prep Art Sg) OR ("de" Prep Simp) OR ("do" Prep Simp) BARRIER (*) - Art)
     	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
     	(NEGATE 0 Ecl OR Len);
@@ -1279,7 +1289,7 @@ LIST NO-LEN-AFTER-AR-N = "ball" "barr" "béal maidine" "bith" "bogadh" "buile" "
 LIST NO-LEN-AFTER-THAR-N = "barr" "bóchna" "bráid" "bord" "ceann" "cionn" "claí" "cnoc" "cuimse" "droichead" "fóir" "fulaingt" "meán" "míde" "modh" "muir" "paróiste" "sáile" "sliabh" "smacht" "tír" "toinn" ;
 
 
-ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art) (NEGATE *1 (Noun Gen) BARRIER (*) - Art)(NEGATE 0 ("cúl") LINK -1 ("ar"));
+ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art) (NEGATE *1 (Noun Gen) BARRIER (*) - Art)(NEGATE 0 ("cúl") LINK -1 ("ar"))(NEGATE 0 (Fem Com Sg));
 ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("thar" Prep Simp))(0 NO-LEN-AFTER-THAR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
 
 COPY:msyn-no-len-after-prep (SUGGEST) EXCEPT (Len &msyn-no-len-after-prep) TARGET (&msyn-no-len-after-prep);
@@ -1424,7 +1434,8 @@ COPY:msyn-hpref-after-go-part (Verb VI Vow Imper 2P Sg Neg SUGGEST) EXCEPT (&msy
 
 ADD:msyn-ecl-after-go (&msyn-ecl-after-go) TARGET (Verb) OR (Verb VTI PresSubj) - Ecl IF
 	(-1 ("go") or ("Go"))
-	(0 ("<[bcdfgptBCDFGPT].*>"r));
+	(0 ("<[bcdfgptBCDFGPT].*>"r))
+	(NOT 0 Ecl OR ECL-NON-ECL-N);
 COPY:msyn-ecl-after-go (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-go) TARGET (&msyn-ecl-after-go);
 
 
@@ -2015,7 +2026,8 @@ COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len &msyn-gen-vn-noun-
 ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Masc Com Sg) OR (Noun Masc Com Sg DefArt) IF
 	(*-2 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
-	(NEGATE -2 (Verb VTI));
+	(NEGATE -2 (Verb VTI))
+	(NEGATE 0 ("cúl"));
 COPY:msyn-gen-vn-noun-com (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-vn-noun-com) OR (Com Sg DefArt &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
 
 ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Masc Gen Sg) IF
@@ -2023,6 +2035,7 @@ ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Masc Gen Sg) IF
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
 	(NEGATE -2 (Verb VTI))
 	(NEGATE 0 (Noun Masc Gen Sg))
+	(NEGATE 0 ("cúl"))
 	(1 Adj);
 COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
 	
@@ -2032,6 +2045,7 @@ COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com)
 ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen Sg) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE 0 ("cúl"))
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
 	
@@ -2042,6 +2056,7 @@ COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com)
 ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen Sg) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE 0 ("cúl"))
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
 	## "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
@@ -2146,9 +2161,10 @@ ADD:msyn-gen-chun-noun (&msyn-gen-chun-noun) TARGET (Noun Com Sg) IF
 	(-1 ("chun" Prep Simp))
 	(NEGATE 0 (Gen Weak Pl))
 	(NEGATE 0 (Verbal Noun) OR (Verbal Noun VTI) OR (Verbal Noun NStem VI))
-	(NEGATE 0 (Verb))
+	(NOT 0 (Verb))
+	(NOT 0 (Verb VTI Vow PastImp))
 	(NEGATE 1 (Noun));
-COPY:msyn-gen-chun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-chun-noun) TARGET (&msyn-gen-chun-noun) ;
+COPY:msyn-gen-chun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-chun-noun) TARGET (Noun &msyn-gen-chun-noun) ;
 
 	## Suí chun bord -> #$ suí chun boird
 ADD:msyn-gen-chun-noun (&msyn-gen-chun-noun) TARGET (Noun Gen Weak Pl) IF
@@ -2953,6 +2969,30 @@ ADD:msyn-vn-vti (&msyn-vn-vti) TARGET (Verbal Noun VTI) IF
 	(NEGATE 0 (Noun Masc Com Sg))
 	(NEGATE 0 (Verbal Noun VTI Len));
 COPY:msyn-vn-vti (Verbal Noun VTI Ecl SUGGEST) EXCEPT (Verbal Noun VTI &msyn-vn-vti) TARGET (&msyn-vn-vti);
+	
+	##A rule tú correct "ar cúl" to "ar gcúl" when there is no definite noun after the word cúl.
+ADD:&msyn-ar-gcúl (&msyn-ar-gcúl) TARGET ("cúl" Noun Masc Com Sg) IF 
+	(-1 ("ar" Prep Simp))
+	(NOT 1 (Art Def))
+	(NEGATE 0 (Noun Masc Com Sg Ecl));
+COPY:&msyn-ar-gcúl (Ecl SUGGEST) EXCEPT (Com Sg &msyn-ar-gcúl) TARGET (&msyn-ar-gcúl);
+
+ADD:&msyn-ar-gcúl (&msyn-ar-gcúl) TARGET ("cúl" Noun Masc Com Sg Len) IF 
+	(-1 ("ar" Prep Simp))
+	(NOT 1 (Art Def));
+COPY:&msyn-ar-gcúl (Ecl SUGGEST) EXCEPT (Len &msyn-ar-gcúl) TARGET (&msyn-ar-gcúl);
+
+ADD:&msyn-ar-chúl (&msyn-ar-chúl) TARGET ("cúl" Noun Masc Com Sg) IF 
+	(-1 ("ar" Prep Simp))
+	(1 (Art Def))
+	(NEGATE 0 (Noun Masc Com Sg Len));
+COPY:&msyn-ar-chúl (Len SUGGEST) EXCEPT (&msyn-ar-chúl) TARGET (&msyn-ar-chúl);
+
+	##maidir le seo/sin -> maidir leis seo/sin.
+ADD:&msyn-maidir-leis (&msyn-maidir-leis) TARGET (Prep CmpdNoGen) IF 
+	(1 (Pron Dem) OR (Det Dem) OR (Cop Pro Dem))
+	(NEGATE 0 (Prep CmpdNoGen Poss 3P));
+COPY:&msyn-maidir-leis (Prep CmpdNoGen1 SUGGEST) EXCEPT (Prep CmpdNoGen &msyn-maidir-leis) TARGET (Prep CmpdNoGen &msyn-maidir-leis);
 
 	#A rule to correct for erroneous lenition after the word gach, e.g. ##Téim ar saoire gach bhliain -> #$Téim ar saoire gach bliain.
 ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Com Sg Len) IF (-1 ("gach" Det Qty Def));
