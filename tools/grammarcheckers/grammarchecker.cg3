@@ -647,6 +647,7 @@ LIST &msyn-len-after-roimh = &msyn-len-after-roimh ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     #!!= * @CODE@
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@
 LIST &msyn-gach-no-len = &msyn-gach-no-len ;
+LIST &msyn-no-ecl-after-pl-defart-pl-noun = &msyn-no-ecl-after-pl-defart-pl-noun ;
 LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; #!!= * @CODE@
 LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; #!!= * @CODE@art
 LIST &msyn-gen-vn-femnoun-with-article = &msyn-gen-vn-femnoun-with-article ;	#!!= * @CODE@
@@ -813,15 +814,31 @@ ADDRELATION:msyn-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-adj-gender));
 	## fear mhór
 	#$ fear mór
 	## madra mhór
-	#$ madra mór
+	#$ madra mór 
 
-ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) OR (Verbal Adj) IF
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) OR (Verbal Adj) OR (Adj Base Len) IF
 	(-1 (Noun Masc Com Sg))
 	(NEGATE -1 ("is" Cop Pres Neg))
 	(NEGATE 0 (Adj Masc Gen Sg Len))
 	(NEGATE 0 (Adj Fem Com Sg Len));
 ADD:msyn-adj-masc-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender))(NEGATE 0 (Masc Com));
 COPY:msyn-adj-masc-gender (Masc Com Sg SUGGEST) EXCEPT (Com NotSlen Pl) OR (Fem Sg Len) OR (Masc Com Pl) OR (Fem Gen Sg) OR (Verbal Adj) OR (Adj Base) TARGET (Adj Fem &msyn-adj-masc-gender) OR (Adj Pl &msyn-adj-gender);
+ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
+
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Base Len) IF
+	(-1 (Noun Masc Com Sg))
+	(NEGATE -1 ("is" Cop Pres Neg))
+	(NEGATE 0 (Adj Masc Gen Sg Len))
+	(NEGATE 0 (Adj Fem Com Sg Len));
+ADD:msyn-adj-masc-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender))(NEGATE 0 (Masc Com));
+COPY:msyn-adj-masc-gender (Adj Base SUGGEST) EXCEPT (Adj Base Len) TARGET (Adj &msyn-adj-masc-gender);
+ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
+
+ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem Com Sg Len) IF
+	(-1 (Noun Masc Com Sg))
+	(NEGATE -1 ("is" Cop Pres Neg))
+ADD:msyn-adj-masc-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender))(NEGATE 0 (Masc Com));
+COPY:msyn-adj-masc-gender (Adj Masc Com Sg SUGGEST) EXCEPT (Adj Fem Com Sg Len) TARGET (Adj &msyn-adj-masc-gender);
 ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Verbal Adj) IF
@@ -2942,6 +2959,18 @@ ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Com Sg Len) IF (-1 ("gach
 COPY:&msyn-gach-no-len (Com Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gach-no-len) TARGET (Noun &msyn-gach-no-len);
 
 	#A rule to correct for "na bhfir" to "na bhfear". ##na bhfir -> #$na bhfear
-ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Masc Com Pl Ecl) IF (-1 (Art Pl Def));
-COPY:&msyn-gach-no-len (Noun Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Noun Masc Com Pl Ecl &msyn-gach-no-len) TARGET (Noun &msyn-gach-no-len);
+#ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Masc Com Pl Ecl) IF (-1 (Art Pl Def));
+#COPY:&msyn-gach-no-len (Noun Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Noun Masc Com Pl Ecl &msyn-gach-no-len) TARGET (Noun &msyn-gach-no-len);
+
+	#A rule to correct for "na gceoltóirí" to "na ceoltóirí".
+ADD:&msyn-no-ecl-after-pl-defart-pl-noun (&msyn-no-ecl-after-pl-defart-pl-noun) TARGET (Noun Masc Com Pl Ecl) IF (-1 (Art Pl Def));
+COPY:&msyn-no-ecl-after-pl-defart-pl-noun (Noun Masc Com Pl DefArt DefArt SUGGEST) EXCEPT (Noun Masc Com Pl Ecl &msyn-no-ecl-after-pl-defart-pl-noun) TARGET (Noun &msyn-no-ecl-after-pl-defart-pl-noun);
+
+	#A rule to correct for "na cheoltóirí" to "na ceoltóirí".
+ADD:&msyn-no-len-after-pl-defart-pl-noun (&msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun Masc Com Pl Len) IF (-1 (Art Pl Def));
+COPY:&msyn-no-len-after-pl-defart-pl-noun (Noun Masc Com Pl DefArt DefArt SUGGEST) EXCEPT (Noun Masc Com Pl Len &msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun &msyn-no-len-after-pl-defart-pl-noun);
+
+	#A rule to correct for "na fhuinneoga" to "na fuinneoga".
+ADD:&msyn-no-len-after-pl-defart-pl-noun (&msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun Fem Com Pl Len) IF (-1 (Art Pl Def));
+COPY:&msyn-no-len-after-pl-defart-pl-noun (Noun Fem Com Pl DefArt DefArt SUGGEST) EXCEPT (Noun Fem Com Pl Len &msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun &msyn-no-len-after-pl-defart-pl-noun);
 
