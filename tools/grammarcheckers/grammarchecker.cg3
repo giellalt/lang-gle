@@ -868,6 +868,9 @@ COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Masc Com Sg Len) OR (F
 	## Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ó ár rinceoirí réigiúnach.
 	#$ Mar sin, ar son Comhairle Laighean, cuirimid fearadh na fáilte roimh óg ‘s aosta, sult a bhaint as taispeántais suntasacha damhsa ónár rinceoirí réigiúnacha.
 	
+ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj Gen Strong Pl) IF (-1 (Noun Masc Gen Weak Pl DefArt) LINK NOT 0 ("<.*i.>"r)) ;
+COPY:msyn-pl-noun-pl-adj (Gen Weak Pl SUGGEST) EXCEPT (Gen Strong Pl) OR (Com NotSlen Pl) OR (Masc Com Sg Len) OR (Fem Com Sg Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 Noun - ("<.*i.>"r));
+	
 	# slender noun before
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Masc Com Sg Len) OR (Com NotSlen Pl) OR (Masc Com Sg))(-1 (Noun Com Pl) LINK 0 ("<.*i.>"r))(NEGATE 0 Pl - (Gen Weak) - (Com NotSlen)) ;
 COPY:msyn-pl-noun-pl-adj (Com Slender Pl Len SUGGEST) EXCEPT (Gen Weak Pl) OR (Fem Com Sg Len) OR (Masc Com Sg) OR (Com NotSlen Pl) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
@@ -890,7 +893,6 @@ ADDRELATION:msyn-pl-noun-pl-adj (LEFT $2) (Adj &msyn-pl-noun-pl-adj) TO (-1 (Nou
 
 ADD:msyn-pl-noun-pl-adj (&msyn-pl-noun-pl-adj) TARGET (Adj) IF (0 (Fem Com Sg Len) OR (Com Slender Pl Len))(-1 (Noun Com Pl) LINK 0 ("<.*i.>"r))(NEGATE 0 Pl - (Gen Weak) - (Com NotSlen)) ;
 COPY:msyn-pl-noun-pl-adj (Com NotSlen Pl SUGGEST) EXCEPT (Gen Weak Pl) OR (Fem Com Sg Len) OR (Masc Com Sg) OR (Com Slender Pl Len) TARGET (Adj &msyn-pl-noun-pl-adj) IF (-1 ("<.*i.>"r));
-
 	
 	# a rule for feminine plural words, e.g., fuinneoga, scoileanna, blianta.
 ADD:msyn-fempl-noun-pl-adj (&msyn-fempl-noun-pl-adj) TARGET (Adj Com Slender Pl Len) OR (Adj Fem Com Sg Len) IF (-1 (Noun Pl) LINK NOT 0 ("<.*i.>"r)) ;
@@ -2938,4 +2940,8 @@ COPY:msyn-vn-vti (Verbal Noun VTI Ecl SUGGEST) EXCEPT (Verbal Noun VTI &msyn-vn-
 	#A rule to correct for erroneous lenition after the word gach, e.g. ##Téim ar saoire gach bhliain -> #$Téim ar saoire gach bliain.
 ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Com Sg Len) IF (-1 ("gach" Det Qty Def));
 COPY:&msyn-gach-no-len (Com Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gach-no-len) TARGET (Noun &msyn-gach-no-len);
+
+	#A rule to correct for "na bhfir" to "na bhfear". ##na bhfir -> #$na bhfear
+ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Masc Com Pl Ecl) IF (-1 (Art Pl Def));
+COPY:&msyn-gach-no-len (Noun Masc Gen Weak Pl DefArt SUGGEST) EXCEPT (Noun Masc Com Pl Ecl &msyn-gach-no-len) TARGET (Noun &msyn-gach-no-len);
 
