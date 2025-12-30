@@ -3641,6 +3641,8 @@ Other gen tags:
 
 ####  Other tags
 
+* LIST &use-ie.i. = &use-ie.i. ;    
+* LIST &msyn-inis-de = &msyn-inis-de ;    
 * LIST &use-ellipsis = &use-ellipsis ;    
 * LIST &use-guillemets = &use-guillemets ;    
 * LIST &lex-ar-a-haon-a-chlog = &lex-ar-a-haon-a-chlog ; 
