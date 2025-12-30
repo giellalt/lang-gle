@@ -350,7 +350,7 @@ expression **WORD - premodifiers**.
 
 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
 
-6. But in singular we want com (??)
+6. When a noun and adjective follow a verbal noun but no article between them, common noun is required.
 
 Other gen tags:
 * LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;    is the old genrule tag we want to get rid of
@@ -446,15 +446,13 @@ Here ends the list and set section
 
 ## spellchecking
 
-* ADD:spell-it-all (&botún-litrithe SUGGESTWF) (<spelled>) ;      		 = add rule marking typos
+* ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;      		 = add rule marking typos
 
 * LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;    	 (to be moved to other tags)
 
 * **RULE: lex-tá-is ** To change *TÁ* to *IS*
 
 ## Gender errors in adjectives
-
-**RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
 
 **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if the adjective follows a feminine noun !!IT WORKS!!
 
@@ -502,6 +500,8 @@ A RULE TO CHANGE THE NOUN AFTER A NOUN AND A POSSESIVE ADJECTIVE TO THE GENITIVE
 Note: Rule says target is Noun.Com + Det.Poss + Noun.Com, and changes the final noun.
 
 #### Genitive rule 4 N A
+
+**RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
 
 #### Genitive rule 5. Verbal noun + noun e.g., ag scríobh an litir > ag scríobh na litreach VN NOUN ART NOUN.Com > VN Noun Art.Gen Noun.Gen
 
