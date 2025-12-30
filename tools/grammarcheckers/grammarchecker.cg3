@@ -646,6 +646,7 @@ LIST &msyn-ecl-after-prep2 = &msyn-ecl-after-prep2 ;     #!!= * @CODE@
 LIST &msyn-len-after-roimh = &msyn-len-after-roimh ;     #!!= * @CODE@
 LIST &msyn-ecl-after-prep4 = &msyn-ecl-after-prep4 ;     #!!= * @CODE@
 LIST &msyn-fada-o = &msyn-fada-o ;    #!!= * @CODE@
+LIST &msyn-gach-no-len = &msyn-gach-no-len ;
 LIST &msyn-gen-chun-noun = &msyn-gen-chun-noun ; #!!= * @CODE@
 LIST &msyn-gen-chun-defart-noun = &msyn-gen-chun-defart-noun ; #!!= * @CODE@art
 LIST &msyn-gen-vn-femnoun-with-article = &msyn-gen-vn-femnoun-with-article ;	#!!= * @CODE@
@@ -2926,11 +2927,15 @@ ADD:msyn-vn-vti (&msyn-vn-vti) TARGET (Verbal Noun VT) IF
 COPY:msyn-vn-vti (hPref SUGGEST) EXCEPT (&msyn-vn-vti) TARGET (&msyn-vn-vti);
 
 
-	#Plural, e.g. á gceannach.
+	#Plural, e.g. á gceannach. &msyn-gach-no-len
 ADD:msyn-vn-vti (&msyn-vn-vti) TARGET (Verbal Noun VTI) IF
 	(-1 ("do" Prep Poss 3P Pl Obj))
 	(-2 (Noun Pl Com) OR ("siad" Pron Pers 3P Pl Sbj))
 	(NEGATE 0 (Noun Masc Com Sg))
 	(NEGATE 0 (Verbal Noun VTI Len));
 COPY:msyn-vn-vti (Verbal Noun VTI Ecl SUGGEST) EXCEPT (Verbal Noun VTI &msyn-vn-vti) TARGET (&msyn-vn-vti);
+
+	#A rule to correct for erroneous lenition after the word gach, e.g. ##Téim ar saoire gach bhliain -> #$Téim ar saoire gach bliain.
+ADD:&msyn-gach-no-len (&msyn-gach-no-len) TARGET (Noun Com Sg Len) IF (-1 ("gach" Det Qty Def));
+COPY:&msyn-gach-no-len (Com Sg SUGGEST) EXCEPT (Com Sg Len &msyn-gach-no-len) TARGET (Noun &msyn-gach-no-len);
 
