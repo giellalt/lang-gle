@@ -136,7 +136,7 @@ syn-a-before-verb-relativephrase = "a" before verbs
     .desc = The particle "a" is required before verbs.
 
 typo = Spelling error
-    .desc = This word is not in the dictionary
+    .desc = This word is not in the dictionary.
 
 use-guillemets = Guillemets
     .desc = Use double-angle quotation marks

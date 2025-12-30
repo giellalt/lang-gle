@@ -153,8 +153,8 @@ syn-a-before-verb-relativephrase = "a" roimh bhriathair
     .desc = Is gá an mhír "a" a chur roimh bhriathair.
     .example-1 = An méid a dhéanann an tÚdarás.
 
-typo = Earráid litrithe
-    .desc = Níl an focal sin san fhoclóir
+typo = typo
+    .desc = Níl an focal sin san fhoclóir.
 
 use-guillemets = Guillemets
     .desc = Úsáid comharthaí athfhriotail uillinne dúbailte

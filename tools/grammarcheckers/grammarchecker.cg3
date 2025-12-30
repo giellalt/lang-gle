@@ -607,7 +607,7 @@ LIST &msyn-gen-noun-adj = &msyn-gen-noun-adj ;
 #!! 5. VN N.Gen => VN N.Gen (When a definite noun follows a verbal noun, the definite noun has to be in the genitive case.)
 LIST &msyn-gen-vn-noun = &msyn-gen-vn-noun ;
 
-#!! 6. But in singular we want com (??)
+#!! 6. When a noun and adjective follow a verbal noun but no article between them, common noun is required.
 LIST &msyn-gen-vn-noun-com = &msyn-gen-vn-noun-com ;
 
 #!! Other gen tags:
@@ -715,7 +715,7 @@ LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
 LIST &syn-eire = &syn-eire ;
 LIST &syn-not-initial = &syn-not-initial ;
 LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
-LIST &botún-litrithe = &botún-litrithe ;
+LIST &typo = &typo ;
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -735,7 +735,7 @@ SECTION      #!!= # @CODE@
 
 #!! ## spellchecking
 
-ADD:spell-it-all (&botún-litrithe SUGGESTWF) (<spelled>) ;      		#!!= * @CODE@ = add rule marking typos
+ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;      		#!!= * @CODE@ = add rule marking typos
 
 LIST HUMAN-N = "dochtúir" "múinteoir" "bean" "fear" ;    	#!!= * @CODE@ (to be moved to other tags)
 
@@ -793,14 +793,7 @@ COPY:msyn-lenition-after-sa (DefArt &SUGGEST) EXCEPT (&msyn-lenition-after-sa) T
 
 #!! ## Gender errors in adjectives
 
-#!! **RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
 
-ADD:msyn-genitive-adj-gender (&msyn-genitive-adj-gender) TARGET (Adj Fem Com) IF (-1 (Noun Fem Gen Sg)) ;
-COPY:msyn-genitive-adj-gender (Gen Sg SUGGEST) EXCEPT (Com Sg Len) TARGET (Adj &msyn-genitive-adj-gender);
-ADDRELATION:msyn-genitive-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-genitive-adj-gender));
-    	
-	## Príomhoide an scoil mhór
-	#$ Príomhoide na scoile móra
 
 #!! **RULE: msyn-adj-gender** to change Masculine adjective to Feminine if the adjective follows a feminine noun !!IT WORKS!!
 
@@ -819,7 +812,7 @@ ADDRELATION:msyn-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-adj-gender));
 	## fear mhór
 	#$ fear mór
 	## madra mhór
-	#$ madra mór "saibhir" Adj Com NotSlen Pl
+	#$ madra mór
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem) OR (Adj Com Pl) OR (Verbal Adj) IF
 	(-1 (Noun Masc Com Sg))
@@ -1621,6 +1614,7 @@ LIST MODIFYERNOUN = "cuid" "cúpla" "chéad";
 LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
+	(*-1 (Noun Com) BARRIER NOT-A)	
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
 	(NEGATE -1 ("céad" Noun Masc Com Sg Len))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
@@ -1628,14 +1622,16 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
 	(NEGATE 0 (Noun Gen Sg));
 COPY:msyn-gen-noun-noun (Fem Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Fem));
-COPY:msyn-gen-noun-noun (Masc Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Masc));
+COPY:msyn-gen-noun-noun (Masc Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Masc));
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 	## teach scoil > #$teach scoile
 	## bosca bruscar > #$ bosca bruscair.
 	## ceadúnas tiomáint > #$ ceadúnas tiomána.
+	## fear mór peil > #$ fear mór peile
 	
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
+	(*-1 (Noun Com) BARRIER NOT-A)
 	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
 	(NEGATE -1 ("céad" Noun Masc Com Sg Len))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
@@ -1847,6 +1843,7 @@ ADDRELATION:&msyn-gen-prepcmpd-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &
 
 LIST &msyn-adj-genitive-masc = &msyn-adj-genitive-masc ;
 
+	#A rule to ensure that when a noun is in the genitive case, the adjective after it has to the be in the genitive case as well.
 ADD:msyn-adj-genitive-masc (&msyn-adj-genitive-masc) TARGET (Adj) IF 
 	(-1 (Noun Masc Gen Sg DefArt))
 	(NEGATE 0 (Adj Masc Gen Sg Len))
@@ -1855,11 +1852,34 @@ ADD:msyn-adj-genitive-masc (&msyn-adj-genitive-masc) TARGET (Adj) IF
 COPY:msyn-adj-genitive-masc (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-adj-genitive-masc);
 ADDRELATION:msyn-adj-genitive-masc ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-masc));
 
-#LIST &msyn-adj-genitive-fem = &msyn-adj-genitive-fem ;
+LIST &msyn-adj-genitive-fem = &msyn-adj-genitive-fem ;
 
-#ADD:msyn-adj-genitive-fem (&msyn-adj-genitive-fem) TARGET (Adj) IF (-1 (Noun Fem Gen Sg DefArt));
-#COPY:msyn-adj-genitive-fem (Gen SUGGEST) EXCEPT (Com Sg) TARGET (&msyn-adj-genitive-fem);
-#ADDRELATION:msyn-adj-genitive-fem ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-fem));
+ADD:msyn-adj-genitive-fem (&msyn-adj-genitive-fem) TARGET (Adj Fem Com Sg Len) IF (-1 (Noun Fem Gen Sg DefArt))(NEGATE 0 (Adj Fem Gen Sg));
+COPY:msyn-adj-genitive-fem (Adj Fem Gen Sg SUGGEST) EXCEPT (Adj Fem Com Sg Len) TARGET (&msyn-adj-genitive-fem); 
+ADDRELATION:msyn-adj-genitive-fem ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-fem));
+
+ADD:msyn-adj-genitive-fem (&msyn-adj-genitive-fem) TARGET (Adj Com Slender Pl Len) IF (-1 (Noun Fem Gen Sg DefArt))(NEGATE 0 (Adj Fem Gen Sg));
+COPY:msyn-adj-genitive-fem (Adj Fem Gen Sg SUGGEST) EXCEPT (Adj Com Slender Pl Len) TARGET (&msyn-adj-genitive-fem);
+ADDRELATION:msyn-adj-genitive-fem ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-fem));
+
+ADD:msyn-adj-genitive-fem (&msyn-adj-genitive-fem) TARGET (Adj Masc Com Sg) IF (-1 (Noun Fem Gen Sg DefArt))(NEGATE 0 (Adj Fem Gen Sg));
+COPY:msyn-adj-genitive-fem (Adj Fem Gen Sg SUGGEST) EXCEPT (Adj Masc Com Sg) TARGET (&msyn-adj-genitive-fem);
+ADDRELATION:msyn-adj-genitive-fem ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-fem));
+
+ADD:msyn-adj-genitive-fem (&msyn-adj-genitive-fem) TARGET (Adj) IF (-1 (Noun Fem Gen Sg DefArt))(NEGATE 0 (Adj Fem Gen Sg));
+COPY:msyn-adj-genitive-fem (Gen Sg SUGGEST) EXCEPT (Com Sg) OR (Com Sg Len) OR (Masc Com Sg) TARGET (&msyn-adj-genitive-fem);
+ADDRELATION:msyn-adj-genitive-fem ($2) (Noun) TO (1 (Adj &msyn-adj-genitive-fem));
+
+#!! **RULE: msyn-genitive-adj-gender** to change adjectives in the nominative case to adjectives in the genitive case after Feminine genitive nouns.
+
+ADD:msyn-genitive-adj-gender (&msyn-genitive-adj-gender) TARGET (Adj Fem Com) IF (-1 (Noun Fem Gen Sg)) ;
+COPY:msyn-genitive-adj-gender (Gen Sg SUGGEST) EXCEPT (Com Sg Len) TARGET (Adj &msyn-genitive-adj-gender);
+ADDRELATION:msyn-genitive-adj-gender ($2 RIGHT) (Noun) TO (1 (Adj &msyn-genitive-adj-gender));
+    	
+	## Príomhoide an scoil mhór
+	#$ Príomhoide na scoile móra
+	## Daltaí na scoile cháiliúil
+	## Daltaí na scoile cáiliúla
 
 
 #ADD:msyn-gen-noun-adj (&msyn-gen-noun-adj) TARGET (Adj Com Sg DefArt) IF
@@ -1918,13 +1938,11 @@ ADDRELATION ($2 LEFT) (&msyn-gen-case-nouns) TO (-1 (Noun &msyn-gen-case-nouns))
 #ADDRELATION ($2 LEFT) (&msyn-gen-vn-noun-with-article) TO (-1 (Art &msyn-gen-vn-noun-with-article));
 #SUBSTITUTE (&msyn-gen-vn-noun-with-article) (&msyn-gen-noun-with-article) TARGET (SUGGEST);
 
-## with article "ag scríobh na litreach".
-
-#$ ag scríobh litreach suimiúil # wrong
-#% ag scríobh litir shuimiúil    # corret
+## with article "ag glanadh an urláir".
 
 ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Sg Com) IF
-	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
+	(*-1 (Verbal Noun VTI) BARRIER (*) - (Prep Art) LINK -1 ("ag"))
+	(-1 Art)
 	(NEGATE 0 (Noun Fem Sg Com))
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
@@ -1935,6 +1953,8 @@ ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (A
 	(*-1 (Verbal Noun VTI));
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
+
+## with article "ag scríobh na litreach".
 
 ADD:msyn-gen-vn-femnoun-with-article (&msyn-gen-vn-femnoun-with-article) TARGET (Noun Fem Sg Com) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
@@ -1972,6 +1992,33 @@ COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len &msyn-gen-vn-noun-
 
 
 ## New msyn-gen-vn-noun rule where the noun IS IN THE SINGULAR
+ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Masc Com Sg) OR (Noun Masc Com Sg DefArt) IF
+	(*-2 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-vn-noun-com (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-vn-noun-com) OR (Com Sg DefArt &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
+
+ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Masc Gen Sg) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI))
+	(NEGATE 0 (Noun Masc Gen Sg))
+	(1 Adj);
+COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
+	
+	## "Bhí na fir ag glanadh urláir shalaigh"  # (incorrect)
+	#$ "Bhí na fir ag glanadh urlár salach." # (correct)
+	
+ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen Sg) IF
+	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
+	(NEGATE -2 (Verb VTI));
+COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
+	
+	## "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
+	#$ "Bhí na fir ag glanadh fuinneog shalach." # (correct)
+
+
 ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen Sg) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) LINK -1 ("ag"))
 	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun - Adj)
@@ -1979,6 +2026,20 @@ ADD:msyn-gen-vn-noun-com (&msyn-gen-vn-noun-com) TARGET (Noun Fem Gen Sg) IF
 COPY:msyn-gen-vn-noun-com (Com Sg SUGGEST) EXCEPT (Gen Sg &msyn-gen-vn-noun-com) TARGET (Noun &msyn-gen-vn-noun-com);
 	## "Bhí na fir ag glanadh fuinneoige salaí"  # (incorrect)
 	#$ "Bhí na fir ag glanadh fuinneog shalach." # (correct)
+
+ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Com Sg) IF
+	(-1 (Det Poss))
+	(*-2 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
+	(NEGATE 0 (Noun Fem Sg Com))
+	(NEGATE 0 (Gen Sg))
+	(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
+	(NEGATE -2 (Verb VTI));
+ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Adj Com Sg) IF
+	(-1 (Noun Com))
+	(-2 Art)
+	(*-1 (Verbal Noun VTI));
+COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
+COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
 
 ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Noun Masc Com Sg) IF
 	(-1 (Det Poss))
@@ -2008,10 +2069,29 @@ ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Com) IF
 	(NEGATE -2 (Verb VTI));
 COPY:msyn-gen-vn-noun (Com SUGGEST) EXCEPT (Gen &msyn-gen-vn-noun) TARGET (Noun &msyn-gen-vn-noun);
 
-ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj Base) IF
 	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
 	(*-2 (Verbal Noun VTI));
+COPY:msyn-gen-vn-noun (Base Len SUGGEST) EXCEPT (Base) TARGET (Adj &msyn-gen-vn-noun);
+	
+	#A rule for changing feminine adjectives from genitive to common.
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
+	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
+	(*-2 (Verbal Noun VTI))
+	(NEGATE 0 (Adj Fem Com Sg Len));
 COPY:msyn-gen-vn-noun (Fem Com Sg Len SUGGEST) EXCEPT (Fem Gen Sg Len) TARGET (Adj &msyn-gen-vn-noun);
+
+	#A rule for changing masculine adjectives from genitive to common. Adj Masc Com Sg
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
+	(-1 (Noun Masc Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
+	(*-2 (Verbal Noun VTI))
+	(NEGATE 0 (Masc Com Sg));
+COPY:msyn-gen-vn-noun (Masc Com Sg SUGGEST) EXCEPT (Masc Gen Sg Len) TARGET (Adj &msyn-gen-vn-noun);
+
+ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj Base) IF
+	(-1 (Noun Masc Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
+	(*-2 (Verbal Noun VTI));
+COPY:msyn-gen-vn-noun (Base SUGGEST) EXCEPT (Base Len) TARGET (Adj &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl) IF
 	(*-1 (Verbal Noun VTI) BARRIER (*) - Art OR (Prep Art) LINK -1 ("ag"))
@@ -2147,7 +2227,7 @@ ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF
 	(1 (Noun Fem Gen Sg DefArt));
 COPY:lex-correct-art ("na" Art Gen Sg Def Fem SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (&lex-correct-art) ;
 
-	##Éadaí an mná -> #$Éadaí na mná
+	##Éadaí an mná -> #$Éadaí na mná = this rule interferes with other rules at the moment. It could be useful to have if someone has written a simple error (an instead of na).
 #ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF 
 	#(-1 (Noun))
 	#(1 (Noun Fem Gen Sg DefArt));
@@ -2190,8 +2270,8 @@ ADDRELATION:msyn-noun-defart ($2) Art + Def FROM (1 Noun LINK 0 &msyn-noun-defar
 	## an asal. - incorrect
 	#$ an t-asal. - correct
 
-ADD:spell-it-all (&botún-litrithe SUGGESTWF) (<spelled>) ;
-ADD:spell-conservatively (&botún-litrithe SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 2 QMARK);
+ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;
+ADD:spell-conservatively (&typo SUGGESTWF) (<spelled>) IF (NEGATE -1 QMARK LINK 2 QMARK);
 
 #!! ### A simple grammar checker rule without suggestions: Ensure preceding nominal agrees with the verb
 

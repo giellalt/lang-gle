@@ -647,7 +647,7 @@
   <error id="typo">
     <header>
       <title xml:lang="en">Spelling error</title>
-      <title xml:lang="ga">Earráid litrithe</title>
+      <title xml:lang="ga">Botún litrithe</title>
     </header>
     <body>
       <description xml:lang="en">This word is not in the dictionary</description>
