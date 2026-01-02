@@ -628,6 +628,20 @@
     </body>
   </error>
   
+      <error id="msyn-claochlaigh">
+    <header>
+      <title xml:lang="en">Ní should not be used before chlaochlaigh</title>
+      <title xml:lang="ga">Níor cheart ní a bheith roimh chlaochlaigh</title>
+    </header>
+    <body>
+      <description xml:lang="en">The negative verbal particle "ní" should never be used before chlaochlaigh.</description>
+      <description xml:lang="ga">Níor cheart ní a bheith roimh chlaochlaigh riamh.</description>
+    <examples>
+      <ex xml:lang="ga">Chlaochlaigh an aimsir.</ex>
+    </examples>
+    </body>
+  </error>
+  
     <error id="syn-not-initial">
     <header>
       <title xml:lang="en">Áfach at the beginning of a sentence</title>

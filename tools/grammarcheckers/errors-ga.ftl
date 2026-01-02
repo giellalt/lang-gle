@@ -152,6 +152,10 @@ spell-it-all = Cuir teideal leis
 syn-a-before-verb-relativephrase = "a" roimh bhriathair
     .desc = Is gá an mhír "a" a chur roimh bhriathair.
     .example-1 = An méid a dhéanann an tÚdarás.
+    
+msyn-claochlaigh = chlaochlaigh
+    .desc = Níor cheart "ní" a bheith roimh chlaochlaigh riamh.
+    .example-1 = Ní chlaochlaigh an aimsir.
 
 typo = typo
     .desc = Níl an focal sin san fhoclóir.

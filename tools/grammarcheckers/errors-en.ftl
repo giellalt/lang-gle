@@ -135,6 +135,9 @@ spell-it-all = Add title
 syn-a-before-verb-relativephrase = "a" before verbs
     .desc = The particle "a" is required before verbs.
 
+msyn-chlaochlaigh = No "ní" before chlaochlaigh
+    .desc = The negative verbal particle should never be before the verb claochlaigh.
+
 typo = Spelling error
     .desc = This word is not in the dictionary.
 

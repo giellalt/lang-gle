@@ -636,6 +636,7 @@ LIST &msyn-adj-fem-gender = &msyn-adj-fem-gender ;
 LIST &msyn-adj-masc-gender = &msyn-adj-masc-gender ;
 LIST &msyn-ar-chúl = &msyn-ar-chúl ;
 LIST &msyn-ar-gcúl = &msyn-ar-gcúl ;
+LIST &msyn-claochlaigh = &msyn-claochlaigh ;
 LIST &msyn-genitive-adj-gender = &msyn-genitive-adj-gender ;
 LIST &syn-gen-two-defart = &syn-gen-two-defart ;
 LIST &msyn-gen-prepcmpd-detpss-noun = &msyn-gen-prepcmpd-detpss-noun 
@@ -3048,7 +3049,19 @@ COPY:&msyn-no-ecl-after-pl-defart-pl-noun (Noun Masc Com Pl DefArt DefArt SUGGES
 ADD:&msyn-no-len-after-pl-defart-pl-noun (&msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun Masc Com Pl Len) IF (-1 (Art Pl Def));
 COPY:&msyn-no-len-after-pl-defart-pl-noun (Noun Masc Com Pl DefArt DefArt SUGGEST) EXCEPT (Noun Masc Com Pl Len &msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun &msyn-no-len-after-pl-defart-pl-noun);
 
-	#A rule to correct for "na fhuinneoga" to "na fuinneoga".
+	#A rule to correct for "na fhuinneoga" to "na fuinneoga". 
 ADD:&msyn-no-len-after-pl-defart-pl-noun (&msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun Fem Com Pl Len) IF (-1 (Art Pl Def));
 COPY:&msyn-no-len-after-pl-defart-pl-noun (Noun Fem Com Pl DefArt DefArt SUGGEST) EXCEPT (Noun Fem Com Pl Len &msyn-no-len-after-pl-defart-pl-noun) TARGET (Noun &msyn-no-len-after-pl-defart-pl-noun);
+
+
+	#A rule to delete the word ní if before chlaochlaigh. The negative particle ní should not be used before chlaochlaigh.
+ADD:&msyn-claochlaigh (&msyn-claochlaigh) TARGET ("ní" Part Vb Neg) IF (1 ("claochlaigh" Verb VTI PastInd Neg Len));
+ADD:&msyn-claochlaigh (&msyn-claochlaigh) TARGET ("claochlaigh" Verb VTI PastInd Neg Len) IF (-1 ("ní" Part Vb Neg));
+ADDRELATION:msyn-claochlaigh (DELETE1) (Verb VTI &msyn-claochlaigh) TO (-1 (Part Vb Neg &msyn-claochlaigh));
+COPY:msyn-claochlaigh ("claochlaigh" Verb VTI PastInd Neg Len) EXCEPT ("ní" Part Vb Neg) TARGET (Verb &msyn-claochlaigh);
+
+ADD:&msyn-claochlaigh (&msyn-claochlaigh) TARGET ("níor" Part Vb Neg Past) IF (1 ("claochlaigh" Verb VTI PastInd Neg Len));
+ADD:&msyn-claochlaigh (&msyn-claochlaigh) TARGET ("claochlaigh" Verb VTI PastInd Neg Len) IF (-1 ("níor" Part Vb Neg Past));
+ADDRELATION:msyn-claochlaigh (DELETE1) (Verb VTI &msyn-claochlaigh) TO (-1 (Part Vb Neg Past &msyn-claochlaigh));
+COPY:msyn-claochlaigh ("claochlaigh" Verb VTI PastInd Neg Len) EXCEPT ("níor" Part Vb Neg Past) TARGET (Verb &msyn-claochlaigh);
 
