@@ -656,7 +656,20 @@
     </body>
   </error>
   
-  
+      <error id="msyn-maidir-leis">
+    <header>
+      <title xml:lang="en">Maidir leis</title>
+      <title xml:lang="ga">Maidir leis</title>
+    </header>
+    <body>
+      <description xml:lang="en">Maidir le becomes maidir leis if before "seo/sin" and the definite article "an" or "na".</description>
+      <description xml:lang="ga">Déantar maidir le a athrú go maidir leis nuair a bhíonn "seo" nó "sin" nó an t-alt ar a lorg.</description>
+    <examples>
+      <ex xml:lang="ga">Bhí mo bhean chéile aireach, go háirithe maidir leis na páistí.</ex>
+      <ex xml:lang="ga">Tá ceathrar in iomlán cúisithe maidir leis seo.</ex>
+    </examples>
+    </body>
+  </error>
    
   <error id="typo">
     <header>

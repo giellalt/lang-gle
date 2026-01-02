@@ -3029,7 +3029,7 @@ COPY:&msyn-ar-chúl (Len SUGGEST) EXCEPT (&msyn-ar-chúl) TARGET (&msyn-ar-chúl
 
 	##maidir le seo/sin -> maidir leis seo/sin.
 ADD:&msyn-maidir-leis (&msyn-maidir-leis) TARGET (Prep CmpdNoGen) IF 
-	(1 (Pron Dem) OR (Det Dem) OR (Cop Pro Dem))
+	(1 (Pron Dem) OR (Det Dem) OR (Cop Pro Dem) OR (Art Def))
 	(NEGATE 0 (Prep CmpdNoGen Poss 3P));
 COPY:&msyn-maidir-leis (Prep CmpdNoGen1 SUGGEST) EXCEPT (Prep CmpdNoGen &msyn-maidir-leis) TARGET (Prep CmpdNoGen &msyn-maidir-leis);
 
