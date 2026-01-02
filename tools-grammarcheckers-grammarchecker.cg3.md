@@ -167,7 +167,7 @@ Ad hoc tag for i > sa, to be revised.
 ## Noun errors (Len vs. not Len) after prepositions
 
 The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
-* LIST ECLIPSE-PREP =  "<ag>" ("ag" Prep Simp SUGGEST) "<ar>" ("ar" Prep Simp SUGGEST) <"as"> ("as" Prep Simp SUGGEST) "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<roimh>"; 
+* LIST ECLIPSE-PREP =  "<ag>" ("ag" Prep Simp SUGGEST) "<ar>" ("ar" Prep Simp SUGGEST) "<as>" ("as" Prep Simp SUGGEST) "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" ("le" Prep Simp SUGGEST) "<roimh>"; 
 
 * LIST ECLIPSE-TRID = "<trí>" ("trí" Prep Simp SUGGEST) "<Trí>"; 
 * LIST ECLIPSE-LEIS = "<le>" ("le" Prep Simp SUGGEST) "<Le>"; 
@@ -530,8 +530,6 @@ This rule is for when people put milk in coffee. In Irish, the correct way to sa
 **ADD:faoi an - faoin **: A rule to correct the error "faoi an" to the correct form "faoin".
 
 Rules to insert an h after the negative copula "ní" and certain prepositions
-
-**ADD:msyn-ecl-after-prep-sfem**: Eclipse after preposition ... (sfem?)
 
 * * *
 
