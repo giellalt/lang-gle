@@ -159,6 +159,7 @@ LIST Masc = Masc ; #!! * Masc
 LIST Len = Len ; #!! * Len
 LIST hPref = hPref ; #!! * hPref, for h prefixation
 LIST Ecl = Ecl ; #!! * Ecl
+LIST Short = Short ; #!! * Short
 LIST Poss = Poss ; #!! * Poss, possessive
 LIST 1P = 1P ;
 LIST 2P = 2P ;
@@ -2833,14 +2834,19 @@ ADD:punct-question-mark &punct-question-mark TARGET ("áfach" Adv Gn) IF (*-1 BO
 COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
 
 	#A rule to correct "mo" to "m'" when the Det Poss 1P Sg is before nouns beginning with a vowel or FH, e.g., mo iasc -> m'iasc, mo fhuinneog -> m'fhuinneog.
-ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Noun Com) IF (-1 (Det Poss 1P Sg))(NEGATE 0 (Com Sg Len));
-ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Det Poss) IF 
-	(1 (Noun Com))
-	(1 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r) OR ("<fh.*>"r) OR ("<Fh.*>"r))
-	(NEGATE 0 (Det Poss 1P Sg"+Short"))
-	(NEGATE 0 (Det Poss 1P Sg));
-COPY:msyn-contracted-possessive-adjective-before-vowel ("mo" Det Poss 1P Sg"+Short" &SUGGEST) EXCEPT ("mo" Det Poss 1P Sg) TARGET (&msyn-contracted-possessive-adjective-before-vowel) ;
-ADDRELATION:msyn-contracted-possessive-adjective-before-vowel ($2) (Det) FROM (1 Noun LINK 0 (&msyn-adj-nom-acc)) ;
+	
+ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Noun Com) IF (-1 (Det Poss Sg) LINK 0 1P OR 2P)(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r) OR ("<fh.*>"r) OR ("<Fh.*>"r));
+
+ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Det Poss Sg) IF 
+	(0 1P OR 2P)
+	(1 (Noun Com &msyn-contracted-possessive-adjective-before-vowel))	
+	(NEGATE 0 Short);
+COPY:msyn-contracted-possessive-adjective-before-vowel (Short &SUGGEST) TARGET (Det Poss Sg &msyn-contracted-possessive-adjective-before-vowel) ;
+
+ADDRELATION:msyn-contracted-possessive-adjective-before-vowel ($2 RIGHT) (Det Poss &msyn-contracted-possessive-adjective-before-vowel) TO (1 (Noun &msyn-contracted-possessive-adjective-before-vowel)) ;
+	## Tá do fhear céile ann. 
+	## Tá do iníon ann. 
+	## Tá mo athair sa chistin. 
 
 
 	#A rule to ensure that the correct form of "dhá" is used after the singular article "an", "an dhá" becomes "an dá".
