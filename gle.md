@@ -3367,6 +3367,7 @@ Ad hoc tag for i > sa, to be revised.
 * Len
 * hPref, for h prefixation
 * Ecl
+* Short
 * Poss, possessive
 
 * Nom
