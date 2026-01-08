@@ -1545,14 +1545,17 @@ COPY:msyn-ecl-after-nach (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&
 ADD:msyn-ecl-after-verb-particle-q (&msyn-ecl-after-verb-particle-q) TARGET (Verb) IF
 	(-1 (Part Vb Q))
 	(0 ("<[bcdfgptBCDFGPT].*>"r))
-	(NEGATE 0 (Verb Q Ecl));
+	(NEGATE 0 (Verb Q Ecl))
+	(NEGATE 0 Len);
 COPY:msyn-ecl-after-verb-particle-q (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-verb-particle-q) TARGET (&msyn-ecl-after-verb-particle-q);
 
 #Ar cheannaigh tú é? "ar" Part Vb Q Past, e.g., ar gearr tú é? -> ar ghearr tú é? Verb VTI PastInd Q Len
 
 ADD:msyn-len-after-verb-particle-q-past (&msyn-len-after-verb-particle-q-past) TARGET (Verb) IF
 	(-1 ("ar" Part Vb Q Past))
-	(0 ("<[bcdfgmpstBCDFGMPST].*>"r));
+	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 ("<sc.*>"r))
+	(NEGATE 0 Len);
 COPY:msyn-len-after-verb-particle-q-past (Len SUGGEST) EXCEPT (VTI Imper 3P Sg &msyn-len-after-verb-particle-q-past) TARGET (&msyn-len-after-verb-particle-q-past);
 
 ##A rule to lenite nouns beginning with the letters CDFGST after the preposition "thar".
@@ -1594,7 +1597,7 @@ ADD:msyn-ecl-after-trí-defart (&msyn-ecl-after-trí-defart) TARGET (Noun Fem Co
 	(-1 Art)
 	#(-2 (ECLIPSE-TRID + Prep + Simp) OR ("trí" Pron Prep 3P Sg Masc))
 	(0 ("<sr.*>"r) + Fem)
-	(NEGATE 0 (Fem Com Sg DefArt))
+	(NEGATE 0 (Fem Com Sg DefArt));
 	#(NOT 0 Ecl OR ECL-NON-ECL-N) ;
 ADDRELATION:msyn-ecl-after-trí-defart ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &msyn-ecl-after-trí-defart);
 COPY:msyn-ecl-after-trí-defart (Ecl SUGGEST) EXCEPT (DefArt &msyn-ecl-after-trí-defart) OR (Len &msyn-ecl-after-trí-defart) TARGET (Noun Fem Com &msyn-ecl-after-trí-defart);
@@ -2570,6 +2573,8 @@ COPY:msyn-cá-bhfios (Com Sg Ecl SUGGEST) EXCEPT (Com Sg &msyn-cá-bhfios) TARGE
 ADD:msyn-lenition-after-coppast (&msyn-lenition-after-coppast) TARGET (Noun Com) OR (Adj Base) IF
 	(-1 (Cop Past))
 	(0 ("<[bcdfgmpst].*>"r))
+	(NEGATE 0 ("<sc.*>"r))
+	(NEGATE 0 (Noun Masc Com Pl Len)) 
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
 COPY:msyn-lenition-after-coppast (Len SUGGEST) EXCEPT (&msyn-lenition-after-coppast) TARGET (Adj &msyn-lenition-after-coppast);
 #Noun Masc Com Sg Len
@@ -2813,9 +2818,9 @@ COPY:msyn-cop-past-neg-vowel (Cop Past Neg VF SUGGEST) EXCEPT (Cop Past Neg &msy
 
 ADD:casefix (<fixedcase>) TARGET (SUGGEST) IF (NEGATE -1 BOS) ;
 
-LIST QUESTION-WORDS = ("an" Part Vb Q) ("cathain" Adv Q Wh) ("ar" Part Vb Q Past) ("céard" Cop Pro Q) ("cad" Cop Pro Q) "nár" Part Vb NegQ) ("cé" Pron Q) ("cé" Cop Pro Q) ("cé" Cop Q Art Sg) ("conas" Adv Q Wh) ("cad" Cop Pro Q) ("cé" Cop Pro Q Cop Vow) ("cá" Adv Q Wh) ("is" Cop Past NegQ VF ) ("cá" Adv Q Wh Past) ("cá" Part Vb Q Past) ("cén");
+LIST QUESTION-WORDS = ("an" Part Vb Q) ("cathain" Adv Q Wh) ("ar" Part Vb Q Past) ("céard" Cop Pro Q) ("cad" Cop Pro Q) ("nár" Part Vb NegQ) ("cé" Pron Q) ("cé" Cop Pro Q) ("cé" Cop Q Art Sg) ("conas" Adv Q Wh) ("cad" Cop Pro Q) ("cé" Cop Pro Q Cop Vow) ("cá" Adv Q Wh) ("is" Cop Past NegQ VF) ("cá" Adv Q Wh Past) ("cá" Part Vb Q Past) ("cén") ("Ar" Part Vb Q Past); 
 
-ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin ) IF
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin) IF
 	(*-1 BOS LINK 1 QUESTION-WORDS)
 	(NOT 0 Q);
 COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin) TARGET (Punct Fin &punct-question-mark);
@@ -2828,10 +2833,10 @@ ADDRELATION ($2 LEFT) (Punct &punct-question-mark) TO (*-1 &punct-question-mark 
 	## Céard atá ann. 
 	## Cé hí sin. 
 	## Cad é an scéal.
-
-
-ADD:punct-question-mark &punct-question-mark TARGET ("áfach" Adv Gn) IF (*-1 BOS LINK 1 ("cén"));
-COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin &punct-question-mark) TARGET (Punct Fin &punct-question-mark);
+	## Cá bhfuil tú.
+	## An fíor é.
+	## Ar bhris tú é.
+	## Cén t-am é.
 
 	#A rule to correct "mo" to "m'" when the Det Poss 1P Sg is before nouns beginning with a vowel or FH, e.g., mo iasc -> m'iasc, mo fhuinneog -> m'fhuinneog.
 	
