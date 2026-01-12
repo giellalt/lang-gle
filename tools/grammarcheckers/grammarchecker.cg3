@@ -2383,7 +2383,16 @@ COPY:attr-not-pred (Attr SUGGEST) EXCEPT (Sg) TARGET (&attr-not-pred) ;
 
 # The method is: Add SUGGEST to a copied reading to *generate* a suggestion form from that reading. The copy should contain the error tag too – &-prefixed error tags are ignored when generating, but used to create human-readable messages.
 
-ADD:syn-not-initial (&syn-not-initial) TARGET ("áfach") IF (-1 BOS);
+ADD:syn-not-initial (&syn-not-initial DELETE1) TARGET ("áfach" Adv Gn) IF (-1 BOS);
+	## Áfach, theip ar an scéim.
+		
+COPYCOHORT:syn-not-initial (ADDED) # These tags will be added to the copy
+      EXCEPT (DELETE1) 
+      TARGET (&syn-not-initial) # Copy from the main WITH target
+      TO BEFORE (*1 EOS); 
+
+ADDRELATION:syn-not-initial ($2 LEFT) (ADDED &syn-not-initial) TO (*-1 (DELETE1 &syn-not-initial));	
+	
 
 #!! **ADD:use-guillemets**: Simple punctuation rules showing how to change the lemma in the suggestions:
 
