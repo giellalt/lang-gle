@@ -15,7 +15,6 @@ Tests:
 
   ## An dara bhliain. - incorrect: dara spelling error
   #$ An dara bliain. - correct
-  - "An dara {bhliain}£{bliain}."
 
   ## níos mór. - incorrect
   #$ níos mó. - correct

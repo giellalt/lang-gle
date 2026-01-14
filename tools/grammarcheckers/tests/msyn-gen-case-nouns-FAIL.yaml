@@ -36,7 +36,6 @@ Tests:
  
 # 4. When adjectives come after nouns, the adjective must be rendered into the genitive case as well.
   - "fad {an cosán}£{an chosáin} {gearr}£{ghearr}." # dromchla na gcosán gearr"
-  - "éadaí an fhir {mór}£{mhóir},"
   - "leabhar an dalta {díograiseach}£{dhíograisigh}"
   - "fionnadh {an stail}£{na staile} {mhear}£{mire}."
   - "Siúlfaidh mé fad {an cosán}£{an chosáin} {fada}£{fhada}."

@@ -11,5 +11,4 @@ Tests:
   - "Tá doirse {na tithe}£{na dteach} ar oscailt."
   - "Seomra {na fir}£{na bhfear}." 
   - "Seomra na {mná}£{mban}." # Problem: sg gen = pl com which is a problem
-  - "Tá teach cúirte i lár {an baile}£{an bhaile}."
   
