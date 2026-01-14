@@ -18,7 +18,7 @@
 # ==================================================================== #
 # ====================================================================
 
-#  Sámi language technology 2000-2025, UiT The Arctic University of Norway #
+#  Sámi language technology 2000-2026, UiT The Arctic University of Norway #
 
 # ---------------------- #
 #   Development setup:   #
@@ -589,6 +589,9 @@ LIST WORD-END-NO-LEN = ("<.*[dntls]>"r) ;
 
 #!! ### Grammarchecker sets
 
+LIST SUGGESTWF = SUGGESTWF ;
+LIST SUGGEST = SUGGEST ;
+
 LIST &msyn-sg-femnoun-pl-adj = &msyn-sg-femnoun-pl-adj ;
 
 #!! #### Genitive rules
@@ -714,17 +717,18 @@ LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@
 LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	#!!= * @CODE@
 LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; #!!= * @CODE@
 LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; #!!= * @CODE@
-LIST &msyn-cop-past-neg-vowel = &msyn-cop-past-neg-vowel ;
-LIST &lex-beirt = &lex-beirt ;
+LIST &msyn-cop-past-neg-vowel = &msyn-cop-past-neg-vowel ; #!!= * @CODE@
+LIST &no-space-after-poss-short = &no-space-after-poss-short ; #!!= * @CODE@
+LIST &lex-beirt = &lex-beirt ; #!!= * @CODE@
 LIST &lex-de-ainneoin = &lex-de-ainneoin ; #!!= * @CODE@
-LIST &lex-díriú-ar = &lex-díriú-ar ;
+LIST &lex-díriú-ar = &lex-díriú-ar ; #!!= * @CODE@
 LIST &lex-chomh = &lex-chomh ; #!!= * @CODE@
 LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
 LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
-LIST &syn-eire = &syn-eire ;
-LIST &syn-not-initial = &syn-not-initial ;
+LIST &syn-eire = &syn-eire ; #!!= * @CODE@
+LIST &syn-not-initial = &syn-not-initial ; #!!= * @CODE@
 LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
-LIST &typo = &typo ;
+LIST &typo = &typo ; #!!= * @CODE@
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
 LIST ADDED-BEFORE-BLANK = ADDED-BEFORE-BLANK ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -2861,6 +2865,23 @@ ADDRELATION:msyn-contracted-possessive-adjective-before-vowel ($2 RIGHT) (Det Po
 	## Tá do fhear céile ann. 
 	## Tá do iníon ann. 
 	## Tá mo athair sa chistin. 
+	
+
+LIST <SpaceOnRightSide> = <SpaceOnRightSide> ;
+LIST <SpaceOnLeftSide> = <SpaceOnLeftSide> ;	
+
+ADD:no-space-after-poss-short (&no-space-after-poss-short) TARGET (Det Poss <SpaceOnRightSide>)(1 &msyn-contracted-possessive-adjective-before-vowel);
+
+ADD:no-space-after-poss-short (&no-space-after-poss-short) TARGET (Noun &msyn-contracted-possessive-adjective-before-vowel) IF (-1 (<SpaceOnRightSide> &no-space-after-poss-short)) ;
+
+ADDRELATION:no-space-after-poss-short (RIGHT) (Det Poss &no-space-after-poss-short) TO (1 &no-space-after-poss-short) ;
+COPY:no-space-after-poss-short (VSTR:"$1$2"S SUGGESTWF) TARGET ("<(.*)>"r Det Poss &no-space-after-poss-short) IF
+        (1 ("<(.*)>"r))
+        (NOT 0 SUGGESTWF) ;     # don't COPY more than once
+
+	## áddejumi )	
+	## mo iasc -> m'iasc, 
+	## mo fhuinneog -> m'fhuinneog
 
 
 	#A rule to ensure that the correct form of "dhá" is used after the singular article "an", "an dhá" becomes "an dá".
