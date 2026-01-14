@@ -14,3 +14,8 @@
 [ { }     {"<.>"}       ?*  ]:[ "<SpaceBeforePunctMark>" ]
 [ { }     {"<:>"}       ?*  ]:[ "<SpaceBeforePunctMark>" ]
 [ { }     {"<;>"}       ?*  ]:[ "<SpaceBeforePunctMark>" ]
+[ { }     {"<do>"}       ?*  ]:[ "<SpaceOnRightSide>" ]
+[ { }     {"<d’>"}       ?*  ]:[ "<SpaceOnRightSide>" ]
+[ { }     {"<d'>"}       ?*  ]:[ "<SpaceOnRightSide>" ]
+[ { }     {"<m’>"}       ?*  ]:[ "<SpaceOnRightSide>" ]
+[ { }     {"<m'>"}       ?*  ]:[ "<SpaceOnRightSide>" ]
