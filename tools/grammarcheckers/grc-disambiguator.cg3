@@ -34,7 +34,10 @@ LIST Art = Art ;
 LIST DefArt = DefArt ;
 LIST Noun = Noun ;
 LIST Num = Num ;
+LIST Card  = Card ;
 LIST Det = Det ;
+LIST Prep = Prep ;
+LIST Simp = Simp ;
 LIST Abr = Abr ;
 LIST Cop = Cop ;
 LIST Det = Det ;
@@ -46,6 +49,10 @@ LIST Inf = Inf ;
 LIST Verbal = Verbal ;
 LIST Pl = Pl ;
 LIST Sg = Sg ;
+LIST Verb = Verb ;
+
+LIST Foreign = Foreign
+LIST English = English ;
 
 LIST Len = Len ; #!! * Len
 LIST hPref = hPref ; #!! * hPref, for h prefixation
@@ -1310,7 +1317,7 @@ REMOVE (Verbal Noun) IF (-1 ("<aon>") OR ("<t-aon>"));
 #NOTE Níor rith, Níor glacadh
 # Trond for headlines
 #
-SELECT (Verb) IF (NOT *-1 (Verb)) (NOT *-1 (Cop)) (NOT *1 (Verb));
+SELECT (Verb) IF (NEGATE *-1 (Verb)) (NOT *-1 (Cop)) (NOT *1 (Verb))(NEGATE 0 Foreign);
 
 #====>>>> TEST THIS
 # ná beadh, etc.
