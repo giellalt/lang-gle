@@ -273,8 +273,7 @@
     {
       "id": "syn-not-initial"
     }
-  ]
-{
+  ],
   "lex-3456": [
     {
       "id": "lex-3456"
@@ -510,5 +509,4 @@
       "id": "use-ellipsis"
     }
   ]
-}}
-
+}
