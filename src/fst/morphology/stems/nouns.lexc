@@ -121,40 +121,27 @@ LEXICON Nouns !!≈ -  **@CODE@**
 !! 	
 !
 
+0   Nouns-Vowel/fh  ;
+mo+Det+Poss+1P+Sg#:m'   Nouns-Vowel/fh  ;
+do+Det+Poss+2P+Sg#:d'   Nouns-Vowel/fh  ;
+0   Nouns-Consonant ;
+
+LEXICON Nouns-Vowel/fh
+
 airgeadas	Nm1-SINGULAR; !!≈ -  **@CODE@** 
 áireamh		Nm1-SINGULAR; !!≈ -  **@CODE@** 
 amhras		Nm1-SINGULAR; !!≈ -  **@CODE@** 
 aonar		Nm1-SINGULAR; !!≈ -  **@CODE@** 
 ár		Nm1-SINGULAR; !! etc. 
-brath		Nm1-SINGULAR;
-caitheamh	Nm1-SINGULAR;
-ceannas		Nm1-SINGULAR; ! authority, headship
-comhar		Nm1-SINGULAR;
-cothrom		Nm1-SINGULAR;
-cur		Nm1-SINGULAR;
-dearcadh	Nm1-SINGULAR;
-dochar		Nm1-SINGULAR;
-dubh		Nm1-SINGULAR;
 éigean		Nm1-SINGULAR;
 eolas		Nm1-SINGULAR;
 glan		Nm1-SINGULAR;
 iompar		Nm1-SINGULAR;
 iúl		Nm1-SINGULAR;
-láithreach	Nm1-SINGULAR;
-ligean		Nm1-SINGULAR;
-líon		Nm1-SINGULAR;
-misneach	Nm1-SINGULAR;	! courage 
-mórán		Nm1-SINGULAR;
-neart		Nm1-SINGULAR;
 oideachas	Nm1-SINGULAR;
 ól		Nm1-SINGULAR;
-seasamh		Nm1-SINGULAR;
-staidéar	Nm1-SINGULAR;
-tuilleadh	Nm1-SINGULAR;
 tús		Nm1-SINGULAR;
 úr		Nm1-SINGULAR;
-
-
 
 ábhar		Nm1-1;	!
 achar		Nm1-1;	!
@@ -166,6 +153,148 @@ amharc		Nm1-1;	!
 amhrán		Nm1-1;	!
 !aon		Nm1-1;	!
 arm		Nm1-1;	!
+éadan		Nm1-1;	!
+éan		Nm1-1;	! bird 
+inneall 	Nm1-1;	! engine 
+iomlán		Nm1-1;	!
+ionad		Nm1-1;	!
+iontas		Nm1-1;	!
+údar		Nm1-1;	!
+údarás		Nm1-1;	!
+
+íol		Nm1-2;	 !!≈ -  **@CODE@**  idol 
+óg		Nm1-2;	!
+úll		Nm1-2;	! apple
+
+ál		Nm1-3;	 !!≈ -  **@CODE@**  clutch, brood
+aon		Nm1-3;	 !!≈ -  **@CODE@**  one, ace 
+
+éadach		Nm1-5;	! cloth
+
+oileán		Nm1-1;	!
+uachtarán	Nm1-1;	!
+
+uasal		Nm1-9;	! noble person
+
+adharc		Nf2-2;	! horn
+
+aghaidh		Nf2-6;	!
+ais		Nf2-6;	!
+áit		Nf2-6;	! place
+aois		Nf2-6;	!
+ollscoil	Nf2-6;	!
+aip		Nf2-6;	! 04052019
+
+
+aimsir		Nf2-7;	! weather	
+eaglais		Nf2-7;	! church (as in organisation)
+insint		Nf2-7;	!
+intinn		Nf2-7;	!
+oifig		Nf2-7;	!
+oscailt		Nf2-7;	!
+úsáid		Nf2-7;	!
+
+iall		Nf2-8;	! leash, shoelace
+iníon		Nf2-8;	!
+ubh		Nf2-8;	! egg	
+
+aoir		Nf2-9;	! satire
+
+uair		Nf2-11;	! hour, time
+
+im		Nm2-SINGULAR;	! butter	! no pl. 
+
+éisteacht	Nf3-SINGULAR;	 !!≈ -  **@CODE@** 
+imirt		Nf3-4;		 !!≈ -  **@CODE@**  -SINGULAR;
+
+aisteoireacht	Nf3-1;	! acting ----test this e a
+
+iarracht	Nf3-1;	!
+
+iarraidh	Nf3-2;	! request
+
+íobairt		Nf3-4;
+
+acht		Nm3-2;	!
+am		Nm3-2;	! time
+áth		Nm3-2;	!
+
+ab		Nm3-3;	!
+imeacht		Nm3-3;	!
+
+anam		Nm3-5;	! soul
+
+aigne		Nf4-SINGULAR;	!
+aire		Nf4-SINGULAR;	!
+áirithe		Nf4-SINGULAR;	!
+aithne		Nf4-SINGULAR;	!
+imní		Nf4-SINGULAR;	!
+óige		Nf4-SINGULAR;	!
+
+eagla		Nf4-1;	! fear
+eala		Nf4-1;	! swam
+easpa		Nf4-1;	! lack
+
+aice		Nf4-2;	!
+aicme		Nf4-2;	! class
+aiste		Nf4-2;	! essay
+
+Aoine		Nf4-3;	! Friday
+
+iomaí		Nf4-4;	! couch, bed
+
+oíche		Nf4-7;	! night
+
+iomhá		Nf4-8;	! image
+
+asailín		Nm4-1;	! small ass
+earra		Nm4-1;	! article eg for sale
+ispín		Nm4-1;	! sausage (!?)
+
+ailtire		Nm4-2;	! architect
+aire		Nm4-2;	!
+uisce		Nm4-2;	! water
+
+ainmhí		Nm4-4;	! animal
+iompú		Nm4-4;	! turning
+ionaclú		Nm4-4;	! innoculation
+oibrí		Nm4-4;	! worker
+ullmhú		Nm4-4;	! preparation
+urú		Nm4-4;	! eclipse
+
+ae		Nm4-6;	! liver
+
+uimhir		Nf5-2;	! number		SLENDER GEN SG
+
+abhainn         Nf5-4;	! river			!=!=SEE FIX FILE
+
+ochtó			Nm5-1;	! eighty
+
+athair			Nm5-2;	! father
+
+athrú			Nm5-3;	! change
+
+LEXICON Nouns-Consonant
+
+brath		Nm1-SINGULAR;
+caitheamh	Nm1-SINGULAR;
+ceannas		Nm1-SINGULAR; ! authority, headship
+comhar		Nm1-SINGULAR;
+cothrom		Nm1-SINGULAR;
+cur		Nm1-SINGULAR;
+dearcadh	Nm1-SINGULAR;
+dochar		Nm1-SINGULAR;
+dubh		Nm1-SINGULAR;
+láithreach	Nm1-SINGULAR;
+ligean		Nm1-SINGULAR;
+líon		Nm1-SINGULAR;
+misneach	Nm1-SINGULAR;	! courage 
+mórán		Nm1-SINGULAR;
+neart		Nm1-SINGULAR;
+seasamh		Nm1-SINGULAR;
+staidéar	Nm1-SINGULAR;
+tuilleadh	Nm1-SINGULAR;
+
 bád		Nm1-1;	! boat
 ball 		Nm1-1;	!
 barr		Nm1-1;	!
@@ -192,8 +321,6 @@ dearmad+CM:dearúd		Nm1-1;	!
 diabhal		Nm1-1;	!
 diabhal+CC:deabhal		Nm1-1;	! Variation (Added CW 09/08)
 domhan		Nm1-1;	!
-éadan		Nm1-1;	!
-éan		Nm1-1;	! bird 
 fás		Nm1-1;	! growth
 focal		Nm1-1;	! word
 fad		Nm1-1;	! length
@@ -207,13 +334,9 @@ fómhar		Nm1-1;	!
 fonn		Nm1-1;	!
 gael		Nm1-1;	!
 glas		Nm1-1;	!
-inneall 	Nm1-1;	! engine 
-iomlán		Nm1-1;	!
-ionad		Nm1-1;	!
-iontas		Nm1-1;	!
 lán		Nm1-1;	!
 lár		Nm1-1;	!
-leabhar		Nm1-1;	! book 
+dddleabhar		Nm1-1;	! book 
 leibhéal	Nm1-1;	!
 !mac		Nm1-1;	! now in irregular file
 marbh		Nm1-1;	!
@@ -224,7 +347,6 @@ Meitheamh	Nm1-SINGULAR;	!
 
 naomh   	Nm1-1;	! saint
 nóiméad		Nm1-1;	!
-oileán		Nm1-1;	!
 páipéar		Nm1-1;	! paper 
 pictiúr		Nm1-1;	!
 pobal		Nm1-1;	! public		** irregular voc. sg.  see xfst-fix.script
@@ -254,9 +376,6 @@ tom		Nm1-1;	!
 triúr		Nm1-1;	!
 turas		Nm1-1;	!
 tUachtarán	Nm1-1;	!
-uachtarán	Nm1-1;	!
-údar		Nm1-1;	!
-údarás		Nm1-1;	!
 
 !--------------------------------------------------------------------------
 !! (2) WEAK PLURALS
@@ -289,11 +408,8 @@ cor		Nm1-2;	 !!≈ -  **@CODE@**
 !dearg		Nm1-2;	! GS ea - > i BUT deirg not dirg SEE N-LEX-IRREG.TXT
 fionn		Nm1-2;	 !!≈ -  **@CODE@**  fair, white
 gnáth		Nm1-2;	 !!≈ -  **@CODE@** 
-íol		Nm1-2;	 !!≈ -  **@CODE@**  idol 
 más		Nm1-2;	! etc.
-óg		Nm1-2;	!
 slán		Nm1-2;
-úll		Nm1-2;	! apple
 
 !--------------------------------------------------------------------------
 !! (3) STRONG PLURALS - ADD "TA"
@@ -303,8 +419,6 @@ slán		Nm1-2;
 
 ! EXAMPLE
 
-ál		Nm1-3;	 !!≈ -  **@CODE@**  clutch, brood
-aon		Nm1-3;	 !!≈ -  **@CODE@**  one, ace 
 céad		Nm1-3;	!! etc.
 ceol		Nm1-3;	!
 dán		Nm1-3;	!
@@ -334,7 +448,6 @@ bealach		Nm1-5;	 !!≈ -  **@CODE@**  way, road
 cogadh		Nm1-5;	 !!≈ -  **@CODE@** 
 Domhnach	Nm1-5;	 !!≈ -  **@CODE@**  Sunday
 deireadh	Nm1-5;	!! etc
-éadach		Nm1-5;	! cloth
 geimhreadh	Nm1-5;	! winter
 leanbh		Nm1-5;	! child	
 margadh		Nm1-5;	! market 
@@ -376,7 +489,6 @@ saghas		Nm1-8;	! type, kind
 bóthar		Nm1-9;	! road
 doras		Nm1-9;	! door
 solas 		Nm1-9;	! light
-uasal		Nm1-9;	! noble person
 
 !--------------------------------------------------------------------------
 !! (10) STRONG PLURALS - SYNCOPATE + ADD "EACHA"
@@ -434,7 +546,6 @@ cliath		Nf2-2;	 !!≈ -  **@CODE@**
 deoir		Nf2-2;	 !!≈ -  **@CODE@**  tear
 
 ! FROM 2-1
-adharc		Nf2-2;	! horn
 bróg		Nf2-2;	! shoe		
 clann		Nf2-2;	! family
 cos		Nf2-2;	! foot
@@ -486,10 +597,6 @@ slinn		Nf2-5;	! a slate
 ! (6) STRONG PLURALS - ADD "EANNA"
 !
 
-aghaidh		Nf2-6;	!
-ais		Nf2-6;	!
-áit		Nf2-6;	! place
-aois		Nf2-6;	!
 beirt		Nf2-6;	!
 breis		Nf2-6;	!
 caint		Nf2-6;	! talk
@@ -502,7 +609,6 @@ feidhm		Nf2-6;	!
 leith		Nf2-6;	!
 méid		Nf2-6;	! size, magniture
 mír		Nf2-6;	!
-ollscoil	Nf2-6;	!
 sail		Nf2-6;	! timber beam, cudgel
 scéim		Nf2-6;	!
 scoil		Nf2-6;	!
@@ -511,28 +617,20 @@ sraith		Nf2-6;	!
 stailc		Nf2-6;	! strike
 suim		Nf2-6;	!
 
-aip		Nf2-6;	! 04052019
 
 !--------------------------------------------------------------------------
 !! (7) STRONG PLURALS - ADD "Í"
 !!  more than one syllable - SLENDER
 
-aimsir		Nf2-7;	! weather	
 beairic		Nf2-7;	! barrack
-eaglais		Nf2-7;	! church (as in organisation)
-insint		Nf2-7;	!
-intinn		Nf2-7;	!
 léaráid		Nf2-7;	!
 leithéid	Nf2-7;	!
 malairt		Nf2-7;	!
-oifig		Nf2-7;	!
-oscailt		Nf2-7;	!
 seachtain	Nf2-7;	!
 seirbhís	Nf2-7;	! service
 sochraid	Nf2-7;	! funeral
 tuairim		Nf2-7;	!
 tuairisc	Nf2-7;	! an account
-úsáid		Nf2-7;	!
 
 !--------------------------------------------------------------------------
 !! BROAD & SLENDER
@@ -544,19 +642,15 @@ ceirt		Nf2-8;	! a rag
 craobh		Nf2-8;	! branch			
 fíor		Nf2-8;	! figure/diagram
 fréamh		Nf2-8;	! root
-iall		Nf2-8;	! leash, shoelace
-iníon		Nf2-8;	!
 maidin		Nf2-8;	!
 muintir		Nf2-8;	!
 nead		Nf2-8;	! nest              ?????? test this
 splanc		Nf2-8;	! spark
 stoirm		Nf2-8;	! storm
-ubh		Nf2-8;	! egg	
 !--------------------------------------------------------------------------
 !! ) STRONG PLURALS - ADD "THA"
 !! 
 
-aoir		Nf2-9;	! satire
 gáir		Nf2-9;	! a shout
 spéir		Nf2-9;	! sky
 stair		Nf2-9;	! history
@@ -577,7 +671,6 @@ tonn		Nf2-10;	! wave (as in sea)	! irregular gen pl - see xfst-fix.script
 ! 
 !  STRONG PLURALS - ADD "EANTA"
 
-uair		Nf2-11;	! hour, time
 
 !--------------------------------------------------------------------------
 toisc		Nf2-12;	! purpose, etc..
@@ -586,7 +679,6 @@ toisc		Nf2-12;	! purpose, etc..
 !!  3 Masculine words in 2nd Declension 
 
 !=im		Nm2-1;	! butter		! no pl. see xfst-remove.script
-im		Nm2-SINGULAR;	! butter	! no pl. 
 sliabh		Nm2-1; 	! mountain
 
 
@@ -612,8 +704,6 @@ sliabh		Nm2-1; 	! mountain
 !************************************************************************** 
 !
 coinneáil	Nf3-SINGULAR;	 !!≈ -  **@CODE@** 
-éisteacht	Nf3-SINGULAR;	 !!≈ -  **@CODE@** 
-imirt		Nf3-4;		 !!≈ -  **@CODE@**  -SINGULAR;
 labhairt	Nf3-SINGULAR;	!
 tuiscint	Nf3-SINGULAR;	!
 díbirt		Nf3-SINGULAR;
@@ -622,11 +712,9 @@ díbirt		Nf3-SINGULAR;
 !      more than one syllable ending in -(e)acht
 
 
-aisteoireacht	Nf3-1;	! acting ----test this e a
 beannacht	Nf3-1;	! blessing
 cumhacht	Nf3-1;	! power
 Gaeltacht+Prop:Gaeltacht	Nf3-1;	!
-iarracht	Nf3-1;	!
 litríocht	Nf3-1;	!
 scoláireacht	Nf3-1;	! scholarship
 
@@ -636,7 +724,6 @@ scoláireacht	Nf3-1;	! scholarship
 !	monosyllabic words ending in irt
 !
 buairt		Nf3-2;	! sorrow (worry)		
-iarraidh	Nf3-2;	! request
 
 !--------------------------------------------------------------------------
 !  STRONG PLURALS -  ADD "(E)ANNA"
@@ -654,7 +741,6 @@ tagairt		Nf3-4;	! reference
 
 bagairt		Nf3-4;
 
-íobairt		Nf3-4;
 !--------------------------------------------------------------------------
 ! 	words ending in áint, úint
 
@@ -702,9 +788,6 @@ scríbhneoir	Nm3-1;	! writer
 ! (13) STRONG PLURALS -  ADD "ANNA"
 !	monosyllabic, broad ending
 
-acht		Nm3-2;	!
-am		Nm3-2;	! time
-áth		Nm3-2;	!
 bláth		Nm3-2;	! flower
 ceacht		Nm3-2;	! lesson
 cead		Nm3-2;	!
@@ -722,8 +805,6 @@ tráth		Nm3-2;	!
 !  STRONG PLURALS -  ADD "AÍ"
 !	monosyllabic, broad ending
 
-ab		Nm3-3;	!
-imeacht		Nm3-3;	!
 rás		Nm3-3;	! a race
 rud		Nm3-3;	! thing
 
@@ -749,7 +830,6 @@ crios		Nm3-4a;	! belt
 !  STRONG PLURALS -  ADD "ACHA"
 !	monosyllabic, broad ending
 
-anam		Nm3-5;	! soul
 
 !--------------------------------------------------------------------------
 !  STRONG PLURALS -  BROADEN ADD "A"
@@ -788,15 +868,9 @@ gleann		Nm3-7;	! glen
 !  PL = +Í
 
 
-aigne		Nf4-SINGULAR;	!
-aire		Nf4-SINGULAR;	!
-áirithe		Nf4-SINGULAR;	!
-aithne		Nf4-SINGULAR;	!
 déanaí		Nf4-SINGULAR;	!
 faide		Nf4-SINGULAR;	! length
-imní		Nf4-SINGULAR;	!
 !ní		Nf4-SINGULAR;	! wash - > this is a verbal noun: see vn-lex-stems.txt
-óige		Nf4-SINGULAR;	!
 saoire		Nf4-SINGULAR;	!
 saoirse		Nf4-SINGULAR;	!
 taithí		Nf4-SINGULAR;	!
@@ -805,9 +879,6 @@ plé		Nf4-SINGULAR;	! discussion
 bearna		Nf4-1;	! gap
 beatha		Nf4-1;	! life
 cuma		Nf4-1;	!
-eagla		Nf4-1;	! fear
-eala		Nf4-1;	! swam
-easpa		Nf4-1;	! lack
 lorga		Nf4-1;	! shin
 réalta		Nf4-1;	! star
 tábla		Nf4-1;	! table (e.g.of contents)
@@ -817,9 +888,6 @@ tábla		Nf4-1;	! table (e.g.of contents)
 !  PL = +AÍ
 
 
-aice		Nf4-2;	!
-aicme		Nf4-2;	! class
-aiste		Nf4-2;	! essay
 !=bealtaine	Nf4-2;	!
 Bealtaine	Nf4-SINGULAR;	!
 comhairle	Nf4-2;	! advice
@@ -837,7 +905,6 @@ tréimhse	Nf4-2;	!
 ! nouns ending in -le and -ne (exceptions to above class)
 !PL = E - > TE
 
-Aoine		Nf4-3;	! Friday
 féile		Nf4-3;	! feast, festival
 léine		Nf4-3;	! shirt
 líne		Nf4-3;	!
@@ -852,7 +919,6 @@ tine		Nf4-3;	! fire
 
 bé		Nf4-4;	! maiden
 dé		Nf4-4;	! god
-iomaí		Nf4-4;	! couch, bed
 slí		Nf4-4;	! way, road
 
 ! nouns ending in -aoi	! plurals +the
@@ -873,7 +939,6 @@ snáithe		Nf4-6; ! thread syn. snáth
 treo		Nm4-6; !
 
 
-oíche		Nf4-7;	! night
 
 
 ! various ending in vowel	! plurals +nna
@@ -881,7 +946,6 @@ bá		Nf4-8;	! bay
 fleá		Nf4-8;	! feast
 glao		Nf4-8;	! call
 grua		Nf4-8;	! cheek
-iomhá		Nf4-8;	! image
 má		Nf4-8;	! plain
 meá		Nf4-8;	! weight
 rogha		Nf4-8;	! bay
@@ -912,7 +976,6 @@ méid		Nm4-SINGULAR;	!
 nua		Nm4-SINGULAR;	!
 
 
-asailín		Nm4-1;	! small ass
 bádín		Nm4-1;	! small boat
 báisín		Nm4-1;	! basin
 balla		Nm4-1;	! wall
@@ -928,7 +991,6 @@ dalta		Nm4-1;	! child, pupil
 dáta		Nm4-1;	!
 dílleachta	Nm4-1;	! orphen
 dráma		Nm4-1;	!
-earra		Nm4-1;	! article eg for sale
 féirín		Nm4-1;	! small gift
 freagra		Nm4-1;	!
 gairdín		Nm4-1;	! garden (small field?)
@@ -936,7 +998,6 @@ garda		Nm4-1;	! guard
 gasóigín	Nm4-1;	! young shoot, boy scout
 grúpa		Nm4-1;	! group
 hata		Nm4-1;	! hat
-ispín		Nm4-1;	! sausage (!?)
 liosta		Nm4-1;	! list
 nóta		Nm4-1;	! note
 paidrín		Nm4-1;	! prayer (rosary)
@@ -963,8 +1024,6 @@ veidhlín	Nm4-1;	! violin (loanword)
 !--------------------------------------------------------------------------
 ! nouns ending in -e 		! plurals e - > í
 
-ailtire		Nm4-2;	! architect
-aire		Nm4-2;	!
 bairille	Nm4-2;	! barrel
 béile		Nm4-2;	! meal
 bríste		Nm4-2;	! trousers
@@ -989,7 +1048,6 @@ pasáiste	Nm4-2;	! passage
 pointe		Nm4-2;	! point
 spiaire		Nm4-2;	! spy
 staighre	Nm4-2;	! stairs
-uisce		Nm4-2;	! water
 
 !--------------------------------------------------------------------------
 ! nouns ending in -le and -ne (exceptions to above class - and things were looking so good!)
@@ -1004,26 +1062,19 @@ sloinne		Nm4-3;	! surname
 ! plurals í- >i, é- >éi ú- >u +the
 
 
-ainmhí		Nm4-4;	! animal
 ceannaí		Nm4-4;	! buyer (merchant)
 ciontú		Nm4-4;	! conviction
 finné		Nm4-4;	! witness
 garraí		Nm4-4;	! field or garden
-iompú		Nm4-4;	! turning
-ionaclú		Nm4-4;	! innoculation
-laghdú		Nm4-4;	! decrease
 
 moncaí		Nm4-4;	! monkey
 ní		Nm4-4;	! thing
-oibrí		Nm4-4;	! worker
 páirtí		Nm4-4;	! party
 < t r í ú %_:%  p á i r t í >		Nm4-4;	! third party	
 
 
 séimhiú		Nm4-4;	! lenition
 
-ullmhú		Nm4-4;	! preparation
-urú		Nm4-4;	! eclipse
 
 ! nouns ending in -í 		! plurals +the
 
@@ -1032,13 +1083,13 @@ croí		Nm4-4;	! heart				!=! FIX FILE
 dlí		Nm4-4;	! law				!=! FIX FILE
 draoi		Nm4-4;	! druid, wizard
 gnó		Nm4-4;	! business			!=! FIX FILE
+laghdú		Nm4-4;	! decrease
 rí		Nm4-4;	! king				!=! FIX FILE
 saoi		Nm4-4;	! master, expert
 
 !--------------------------------------------------------------------------
 ! various ending in vowel	! plurals +nna
 
-ae		Nm4-6;	! liver
 bia		Nm4-6;	! food
 bogha		Nm4-6;	! bough
 bua		Nm4-6;	! victory
@@ -1125,7 +1176,6 @@ maidin		Nf5-2;	! maidin SEE ALSO Nf2.8 as not always syncopated
 nathair		Nf5-2;	! snake
 cathaoir	Nf5-2;	! chair			SLENDER GEN SG
 litir		Nf5-2;	! letter		SLENDER GEN SG
-uimhir		Nf5-2;	! number		SLENDER GEN SG
 láthair		Nf5-2;	! place, site	SLENDER GEN SG
 
 !--------------------------------------------------------------------------
@@ -1143,7 +1193,6 @@ pearsa		Nf5-3;	! person
 ! nouns ending in -ir, -n(n)
 
 máthair         Nf5-4;	! mother		
-abhainn         Nf5-4;	! river			!=!=SEE FIX FILE
 !=nollaig		Nf5-4;  ! Christmas MOVED FROM Nf3-4; EUD Apr 2017
 Nollaig		Nf5-4;  ! Christmas MOVED FROM Nf3-4; EUD Apr 2017
 !--------------------------------------------------------------------------
@@ -1162,14 +1211,12 @@ ceathracha		Nm5-1;	! forty
 caoga			Nm5-1;	! fifty
 seasca			Nm5-1;	! sixty
 seachtó			Nm5-1;	! seventy
-ochtó			Nm5-1;	! eighty
 nócha			Nm5-1;	! ninety
 
 !--------------------------------------------------------------------------
 
 ! nouns ending in -ir, -n(n)
 
-athair			Nm5-2;	! father
 bráthair		Nm5-2;	! brother (clerical)
 deartháir     		Nm5-2;	! brother		!=!=SEE FIX FILE
 
@@ -1178,7 +1225,6 @@ deartháir     		Nm5-2;	! brother		!=!=SEE FIX FILE
 ! nouns ending ú / aí
 ! gen sing +aithe
 
-athrú			Nm5-3;	! change
 leasú			Nm5-3;	! ammendment, improvement	SLENDER GEN SG
 méadú			Nm5-3;	! increase			SLENDER GEN SG
 sleamhnú		Nm5-3;	! slide				SLENDER GEN SG NO PL.
