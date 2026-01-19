@@ -1300,11 +1300,11 @@ COPY:lex-dairire ("dáiríre" Masc Com Sg SUGGEST) EXCEPT (Masc Com Sg Ecl) TARG
 	## I ndáiríre ní chaithfidh tú tada a rá.
 	#$ Dáiríre ní chaithfidh tú tada a rá.
 
-	#A rule to correct the mistake "beirt daoine" to "beirt".
-#ADD:lex-beirt (&lex-beirt) TARGET ("beirt" Noun Fem Com Sg) IF (1 ("duine" Noun Masc Com Pl));
-#ADD:lex-beirt (&lex-beirt) TARGET ("duine" Noun Masc Com Pl) IF (-1 ("beirt" Noun Fem Com Sg))(NEGATE 0 &msyn-gen-noun-noun);
+	#A rule to correct the mistake "beirt daoine" to "beirt". 
+#ADD:lex-beirt (&lex-beirt) TARGET ("beirt" Noun Fem Com Sg) IF (1 ("bean" Noun Fem Com Sg));
+#ADD:lex-beirt (&lex-beirt) TARGET ("bean" Noun Fem Com Sg) IF (-1 ("beirt" Noun Fem Com Sg))(NEGATE 0 &msyn-gen-noun-noun);
 #ADDRELATION:lex-beirt (DELETE1) ("beirt" Noun Fem Com Sg &lex-beirt) TO (1 ("duine" Noun Masc Com Pl &lex-beirt)) ; 
-#COPY:lex-beirt("beirt" Noun Fem Com Sg SUGGEST) EXCEPT ("duine" Noun Masc Com Pl) TARGET (Noun &lex-beirt);
+#COPY:lex-beirt("bean" Noun Fem Gen Strong Pl Len SUGGEST) EXCEPT ("duine" Noun Masc Com Pl) TARGET (Noun &lex-beirt);
 
 ADD:syn-gen-two-defart (&syn-gen-two-defart) TARGET ("an" Art Sg Def) IF
 	(*1 (Noun Fem Com DefArt) BARRIER NOT-A)
