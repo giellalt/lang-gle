@@ -1416,13 +1416,9 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Adj Base) I
 	(-3 ("idir" Prep Simp))
 	(-2 (Noun Com))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
-<<<<<<< HEAD
-	(NEGATE 0 (Place Prop Noun Com Sg));
-=======
-	(NEGATE 0 &lex-3456 OR &lex-78910)
 	(NEGATE 0 (Place Prop Noun Com Sg))
-	(NEGATE 0 (Fem Com Sg));
->>>>>>> 5431758cd4e6a322871a6a53d98682563ec2509a
+	(NEGATE 0 &lex-3456 OR &lex-78910)
+	(NEGATE 0 (Place Prop Noun Com Sg));
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
@@ -1438,7 +1434,7 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (0 ("<[bcdfgmpstBCDFGMPST].*>"r))
         (NEGATE 0 Ecl)
-        (NEGATE 0 (Fem Com Sg));
+        (NEGATE 0 (Fem Com Sg DefArt));
     		## Thug sé buille de bata do an chaora. INCORRECT
     		#$ Thug sé buille de bhata don chaora. INCORRECT
 
@@ -1829,13 +1825,10 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 (Com Pl))
-<<<<<<< HEAD
 	(NEGATE 0 (Masc Gen Strong Pl))
-	(NEGATE -1 ("beirt" Noun Fem Com Sg));
-=======
+	(NEGATE -1 ("beirt" Noun Fem Com Sg))
 	(NEGATE 0 (Prop Len)) # cheann Bhríd
 	(NEGATE 0 (Masc Gen Strong Pl));
->>>>>>> 5431758cd4e6a322871a6a53d98682563ec2509a
 COPY:msyn-gen-noun-noun (Fem Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Fem));
 COPY:msyn-gen-noun-noun (Masc Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Masc));
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
@@ -1852,30 +1845,24 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
-<<<<<<< HEAD
 	(NEGATE 0 (Noun Gen Sg))
-	(NEGATE -1 ("beirt" Noun Fem Com Sg));
-=======
+	(NEGATE -1 ("beirt" Noun Fem Com Sg))
 	(NEGATE 0 (Prop Len)) # cheann Bhríd
 	(NEGATE 0 (Noun Gen Sg));
->>>>>>> 5431758cd4e6a322871a6a53d98682563ec2509a
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., slí beatha -> slí bheatha. Noun Fem Gen Weak Pl Len
-<<<<<<< HEAD
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
-=======
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
->>>>>>> 5431758cd4e6a322871a6a53d98682563ec2509a
 COPY:msyn-gen-noun-noun (Fem Gen Weak Pl Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	#ar feadh an bhliain -> ar feadh na bliana.
