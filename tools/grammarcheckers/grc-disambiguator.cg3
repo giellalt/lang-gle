@@ -997,8 +997,10 @@ SELECT (Num Card) IF (0 ("<dó>")) (-1 ("a"));
 #REMOVE (Num Card) IF (0 ("<trí>")) (NOT -1 (Art) OR ("a"));
 SELECT (Num Card) IF (0 ("<trí>")) (-1 (Art) OR ("a"));
 
-#trí mhí, trí chinn, 
-SELECT (Num Card) IF (0 ("<trí>")) (1 TIME OR MEASURE OR THING);
+#trí mhí, trí cinn, 
+SELECT (Num Card) IF (0 ("<trí>")) (1 TIME OR MEASURE OR THING)(NEGATE 1 ("ceann") LINK 1 ("de") LINK 1 Pl)(NEGATE 1 ("ceann") LINK 1 (Prop Sg Len));
+	#$ trí cheann de na málaí
+	#$ trí cheann Bhríd
 
 # níos mó ná deich ...
 SELECT (Num Card) IF (3 ("<níos>")) (2 ("<mó>") OR ("<lú>")) (1 ("<ná>"));
