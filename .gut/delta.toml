@@ -1,6 +1,6 @@
 template = "https://github.com/giellalt/template-lang-und"
-rev_id = 274
-template_sha = "43a0f0c0afaa856365e2bf3d3cb7eae06d27cc4d"
+rev_id = 276
+template_sha = "c9932c142bad82b28a2c8b49e60ad8895a749b1e"
 
 [replacements]
 __GLOTTOLOG_ID__ = "iris1253"
