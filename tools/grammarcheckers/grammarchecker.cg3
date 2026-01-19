@@ -801,16 +801,20 @@ LIST NUMBERS78910 = "seacht" "ocht" "naoi" "deich" "7" "8" "9" "10" ;
 
 
 LIST SPECIAL-AFTER-NUM-N = "bliain" "seachtain" "ceann" "cloigeann" "fiche" "pingin" "orlach" "trian" "troigh" ;
-
-ADD:lex-3456 (&lex-3456) TARGET SPECIAL-AFTER-NUM-N IF (0 (Com Sg))(-1 NUMBERS3456); # IT WORKS
-	## trí bliain dearg
 	
-COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com Sg) TARGET (&lex-3456)(NEGATE 0 SUGGEST);
+	# Noun after 3456
+
+ADD:lex-3456 (&lex-3456) TARGET SPECIAL-AFTER-NUM-N IF (0 (Com Sg))(-1 NUMBERS3456)(NEGATE 0 ("ceann") LINK -1 ("trí" Prep Simp)); # IT WORKS
+	## Ní fhéadfaí glacadh leis sin cúig bliain ó shin. INCORRECT
+	#$ Ní fhéadfaí glacadh leis sin cúig bliana ó shin. CORRECT
+	
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com Sg) OR (Com Sg Len) TARGET (&lex-3456)(NEGATE 0 SUGGEST);
 
 ADD:lex-3456 (&lex-3456) TARGET NUMBERS3456 IF (1 (Noun &lex-3456));
 
 ADDRELATION ($2 LEFT) (Noun &lex-3456) TO (-1 (Card &lex-3456));
 
+	# Noun after 78910
 
 ADD:lex-78910 (&lex-78910) TARGET SPECIAL-AFTER-NUM-N IF (0 (Com Sg))(-1 NUMBERS78910); # IT WORKS
 	## Foilsíodh an tuairisc sin seacht bliain ó shin.
@@ -822,9 +826,6 @@ ADD:lex-78910 (&lex-78910) TARGET NUMBERS78910 IF (1 (Noun &lex-78910));
 ADDRELATION ($2 LEFT) (Noun &lex-78910) TO (-1 (Card &lex-78910));
 
 
-#ADD:lex-3456 (&lex-3456) TARGET ("ceann" Noun Masc Com Sg) OR ("ceann" Noun Masc Com Sg Len) IF (-1 NUMBERS3456)(NEGATE -1 ("trí" Prep Simp)); # IT WORKS
-#COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com Sg &lex-3456) OR (Com Sg Len &lex-3456) TARGET (&lex-3456);
-#
 #ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
 #COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 #
@@ -1355,11 +1356,13 @@ ADD:msyn-t-after-sa (&msyn-t-after-sa) TARGET (Noun Fem Com Sg) IF
 	(NEGATE 0 ("<abcdefghilmnoprtu.*>"r) + Fem);
 COPY:msyn-t-after-sa (DefArt SUGGEST) EXCEPT (&msyn-t-after-sa) TARGET (&msyn-t-after-sa) ;
 
-
+	# This rule needs to be after &lex-3456 and &lex-78910
+	
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF
 	(-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
 	(NEGATE 0 ("cúl"))
+	(NEGATE 0 &lex-3456 OR &lex-78910)
 	(NEGATE 0 Len)
 	(NEGATE 0 (Noun Fem Com Len))
 	(NEGATE 0 (Place Prop Noun Fem Com Sg))
@@ -1374,6 +1377,7 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Adj Base) I
 	(-3 ("idir" Prep Simp))
 	(-2 (Noun Com))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 &lex-3456 OR &lex-78910)
 	(NEGATE 0 (Place Prop Noun Com Sg))
 	(NEGATE 0 (Fem Com Sg));
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
@@ -1386,6 +1390,7 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 	# ------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
 	(NEGATE 0 Len)
+	(NEGATE 0 &lex-3456 OR &lex-78910)
 	(NEGATE 0 ("cúl"))
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
         (0 ("<[bcdfgmpstBCDFGMPST].*>"r))
@@ -1636,6 +1641,7 @@ COPY:msyn-len-after-verb-particle-q-past (Len SUGGEST) EXCEPT (VTI Imper 3P Sg &
 ADD:msyn-lenition-after-thar (&msyn-lenition-after-thar) TARGET (Noun) IF
 	(-1 ("thar") OR ("Thar"))
 	(NEGATE 0 NO-LEN-AFTER-THAR-N)
+	(NEGATE 0 (Noun Com Ecl))
 	(NEGATE *1 (Noun Gen) BARRIER (*) - Art);
 COPY:msyn-lenition-after-thar (Len SUGGEST) EXCEPT (&msyn-lenition-after-thar) TARGET (&msyn-lenition-after-thar);
 ADDRELATION:msyn-lenition-after-thar ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-lenition-after-thar));
@@ -1780,6 +1786,7 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
 	(NEGATE 0 (Gen Sg))
 	(NEGATE 0 (Com Pl))
+	(NEGATE 0 (Prop Len)) # cheann Bhríd
 	(NEGATE 0 (Masc Gen Strong Pl));
 COPY:msyn-gen-noun-noun (Fem Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Fem));
 COPY:msyn-gen-noun-noun (Masc Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) IF (0 (Noun Masc));
@@ -1797,16 +1804,17 @@ ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
 	(NEGATE 0 Prop LINK -1 MODIFYERPROP)
+	(NEGATE 0 (Prop Len)) # cheann Bhríd
 	(NEGATE 0 (Noun Gen Sg));
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR (Gen Sg Len &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., slí beatha -> slí bheatha. Noun Fem Gen Weak Pl Len
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
 COPY:msyn-gen-noun-noun (Fem Gen Weak Pl Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	#ar feadh an bhliain -> ar feadh na bliana.
