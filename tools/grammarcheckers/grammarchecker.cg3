@@ -1259,10 +1259,13 @@ COPY:lex-ina-ainneoin-sin ("i" Prep Poss 3P Sg Masc SUGGEST) EXCEPT ("sin" Pron 
 	#$ Os a choinne sin, dúradh go raibh sé an-fhial.
 
 ADD:lex-os-a-choinne-sin (&lex-os-a-choinne-sin) TARGET ("os_coinne" Prep Cmpd) IF (1 ("sin" Cop Pro Dem));
-ADDCOHORT ("<choinne>" "coinne" Noun Fem Com Sg Len ADDED-BEFORE-BLANK &lex-os-a-choinne-sin) AFTER &lex-os-a-choinne-sin (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
-ADDCOHORT ("<a>" "a" Det Poss 3P ADDED-BEFORE-BLANK &lex-os-a-choinne-sin) AFTER &lex-os-a-choinne-sin (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
-ADDRELATION ($2 LEFT) (Cop Pro Dem &lex-os-a-choinne-sin) TO (*-1 &lex-os-a-choinne-sin + ("os" Prep Simp));	
 COPY:lex-os-a-choinne-sin ("os" Prep Simp SUGGEST) EXCEPT ("os_coinne" Prep Cmpd) TARGET (&lex-os-a-choinne-sin) ;
+
+ADDCOHORT ("<choinne>" "coinne" Noun Fem Com Sg Len ADDED &lex-os-a-choinne-sin) AFTER ("os" SUGGEST) (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
+
+ADDCOHORT ("<a>" "a" Det Poss 3P ADDED &lex-os-a-choinne-sin) AFTER ("os" SUGGEST) (NEGATE 0 ADDED OR ADDED-BEFORE-BLANK);
+
+ADDRELATION ($2 RIGHT) ("os" &lex-os-a-choinne-sin) TO (*1 ("coinne" &lex-os-a-choinne-sin));	
 
 
 	#A rule to correct the error "díriú isteach" ar... It should be only "díriú ar".
