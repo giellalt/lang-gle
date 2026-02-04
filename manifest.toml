@@ -26,7 +26,7 @@ version = "0.2.0"
 
 [package.grammar]
 name = "Irish"
-version = "0.3.2"
+version = "0.3.3"
 
 [package.tts-textproc]
 name = "Irish"
