@@ -250,6 +250,7 @@ SET TIME-N-SET = N + Sem/Time ;  			#!! * TIME-N-SET
 #!! ## Noun errors (Len vs. not Len) after prepositions
 
 #!! The following prepositions cause the following noun to be eclipsed and there are different rules for each preposition.
+
 LIST ECLIPSE-PREP =  "<ag>" ("ag" Prep Simp SUGGEST) "<ar>" ("ar" Prep Simp SUGGEST) "<as>" ("as" Prep Simp SUGGEST) "<i>" "<I>" ("i" Prep Simp SUGGEST) "<chuig>" ("chuig" Prep Simp SUGGEST) "<le>" ("le" Prep Simp SUGGEST) "<roimh>"; #!!= * @CODE@
 #  "<ó>"  "<faoi> "<de>" "<do>" "<thar>" "<trí>" "<um>"
 
@@ -1488,12 +1489,13 @@ ADDRELATION:msyn-no-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-no-len
 #        (NEGATE 0 ("<si.*>"r) + Fem)
 #        (NEGATE 0 ("<sr.*>"r) + Fem)
 
-ADD:msyn-ecl-after-prep-plus-art (&msyn-ecl-after-prep-plus-art) TARGET (Noun Com Sg) + <ComGen> OR (Noun Com Sg DefArt) IF
+ADD:msyn-ecl-after-prep-plus-art (&msyn-ecl-after-prep-plus-art) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
 	(-1 (Art Def))
-	(-2 (ECLIPSE-PREP + Prep + Simp))
+	(-2 ECLIPSE-PREP + (Prep Simp)) 
 	(0 ("<[bcfgpBCFGP].*>"r) LINK NOT 0 ("<[bcfgpBCFGP][hH].*>"r))
 	(NOT 0 ("i" Prep Art Sg SA))
 	(NOT 0 Ecl OR ECL-NON-ECL-N);
+ 
 
 COPY:msyn-ecl-after-prep-plus-art (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-plus-art) OR (DefArt &msyn-ecl-after-prep-plus-art) OR (Len &msyn-ecl-after-prep-plus-art) TARGET (&msyn-ecl-after-prep-plus-art);
 ADDRELATION:msyn-ecl-after-prep-plus-art ($2) ECLIPSE-PREP FROM (*1 Noun LINK 0 &msyn-ecl-after-prep-plus-art);
@@ -2454,7 +2456,8 @@ COPY:lex-correct-art ("na" Art Gen Sg Def Fem SUGGEST) EXCEPT ("an" Art Sg Def &
 	##Éadaí an mná -> #$Éadaí na mná = this rule interferes with other rules at the moment. It could be useful to have if someone has written a simple error (an instead of na).
 ADD:lex-correct-art (&lex-correct-art) TARGET ("an" Art Sg Def) IF 
 	(-1 (Noun))
-	(1 (Noun Fem Gen Sg DefArt));
+	(1 (Noun Fem Gen Sg DefArt))
+	(NEGATE 0 &msyn-gen-noun-defart-noun);
 COPY:lex-correct-art ("na" Art Gen Sg Def Fem SUGGEST) EXCEPT ("an" Art Sg Def &lex-correct-art) TARGET (&lex-correct-art) ;
 
 	##Éadaí na fhir -> #$Éadaí an fhir
