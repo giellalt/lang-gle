@@ -715,6 +715,7 @@ LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@
 LIST &msyn-sa = &msyn-sa ; #!!= * @CODE@
 LIST &msyn-san = &msyn-san ; #!!= * @CODE@
 LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    #!!= * @CODE@
+LIST &msyn-vn-vti = &msyn-vn-vti ;    #!!= * @CODE@
 LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	#!!= * @CODE@
 LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; #!!= * @CODE@
 LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; #!!= * @CODE@
