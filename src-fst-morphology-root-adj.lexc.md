@@ -1,4 +1,5 @@
 
+#Irish morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
 
 # Multichar_Symbols definitions
@@ -13,6 +14,18 @@ in this system in terms of following symbols.
 - **+Wh		  ** = wh word?
 
 Subj is used for subjunctive
+
+- **LEXICON Root           **  Where all adjectives start
+- **AdjectiveAndPrefix ;   **  and splits according to affix
+
+- **LEXICON AdjectiveAndPrefix  **
+- **an- AllAdjectives ;         ** they may get an an- prefix
+- **ró- AllAdjectives ;         ** ... a ró- prefix
+- **    AllAdjectives ;         ** ... or no prefix
+- This is for testing only. We might want tags
+for these prefixes or perhaps a flag that makes
+it possible to block an- or ró- forms of certain
+adjectives in the lexicon.
 
 * * *
 
