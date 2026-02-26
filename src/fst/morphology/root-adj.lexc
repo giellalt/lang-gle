@@ -13,7 +13,7 @@
 ! giellatekno@hum.uit.no or feedback@divvun.no
 
 ! ========================================================================== !
-! !!            !!!Irish morphological analyser                      !
+!!             #Irish morphological analyser                      !
 ! ========================================================================== !
 !! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Irish LANGUAGE.
  
@@ -765,7 +765,19 @@ Multichar_Symbols  !!≈ # @CODE@ definitions
 ^Verb
 ^áil
 
-LEXICON Root
+LEXICON Root           !!= - **@CODE@**  Where all adjectives start
+AdjectiveAndPrefix ;   !!= - **@CODE@**  and splits according to affix
+
+LEXICON AdjectiveAndPrefix  !!= - **@CODE@**
+an- AllAdjectives ;         !!= - **@CODE@** they may get an an- prefix
+ró- AllAdjectives ;         !!= - **@CODE@** ... a ró- prefix
+    AllAdjectives ;         !!= - **@CODE@** ... or no prefix
+                            !! - This is for testing only. We might want tags
+			    !!   for these prefixes or perhaps a flag that makes
+			    !!   it possible to block an- or ró- forms of certain
+			    !!   adjectives in the lexicon.
+
+LEXICON AllAdjectives
 	AdjA;				! ORIGINAL TEST LEXICON
 	AdjIrregular;			! ORIGINAL TEST LEXICON
 	Adj-BaseOnly;	!AdjBASE;	! ORIGINAL TEST LEXICON
