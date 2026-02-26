@@ -3719,6 +3719,7 @@ Other gen tags:
 * LIST &msyn-sa = &msyn-sa ; 
 * LIST &msyn-san = &msyn-san ; 
 * LIST &msyn-teastaigh-ó = &msyn-teastaigh-ó ;    
+* LIST &msyn-vn-vti = &msyn-vn-vti ;    
 * LIST &lex-da-bharr-sin = &lex-da-bharr-sin ; 	
 * LIST &lex-os-a-choinne-sin = &lex-os-a-choinne-sin ; 
 * LIST &lex-ina-ainneoin-sin = &lex-ina-ainneoin-sin ; 
