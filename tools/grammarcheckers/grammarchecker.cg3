@@ -1396,6 +1396,7 @@ COPY:msyn-lenition-after-sa (Len SUGGEST) EXCEPT (Com &msyn-lenition-after-sa) T
 	#sa sráid -> sa tsráid, sa sochaí -> sa tsochaí.
 ADD:msyn-t-after-sa (&msyn-t-after-sa) TARGET (Noun Fem Com Sg) IF 
 	(-1 ("i" Prep Art Sg SA))
+	(0 ("<[sS].*>"r))
 	(NEGATE 0 (Noun Fem Com Sg DefArt))
 	(NEGATE 0 ("<abcdefghilmnoprtu.*>"r) + Fem);
 COPY:msyn-t-after-sa (DefArt SUGGEST) EXCEPT (&msyn-t-after-sa) TARGET (&msyn-t-after-sa) ;
@@ -1717,7 +1718,6 @@ ADDRELATION:msyn-ecl-after-trí-defart ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &m
 COPY:msyn-ecl-after-trí-defart (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-trí-defart) OR (DefArt &msyn-ecl-after-trí-defart) OR (Len &msyn-ecl-after-trí-defart) TARGET (&msyn-ecl-after-trí-defart);
 
 ADD:msyn-ecl-after-trí-defart (&msyn-ecl-after-trí-defart) TARGET (Noun Fem Com Sg) + <ComGen> IF
-	(-1 Art)
 	#(-2 (ECLIPSE-TRID + Prep + Simp) OR ("trí" Pron Prep 3P Sg Masc))
 	(0 ("<sr.*>"r) + Fem)
 	(NEGATE 0 (Fem Com Sg DefArt));
