@@ -46,6 +46,7 @@ LIST 3P = 3P ;
 LIST Com = Com ;
 LIST Part = Part ;
 LIST Inf = Inf ;
+LIST Imper = Imper ; #!! Imperative
 LIST Verbal = Verbal ;
 LIST Pl = Pl ;
 LIST Sg = Sg ;
@@ -450,7 +451,8 @@ REMOVE (Verb Vow PastInd) IF (NOT -1 (Part Vb)) ;
 # A Sheáin, déan é.
 # (a) Déan an rud seo
 # ... agus déan an rud sin
-REMOVE (Verb Imper) IF (NOT -1 BOS OR (Part Vb Imp) OR (Punct) OR (Item) OR (Conj Coord))  ;
+REMOVE (Verb Imper) IF (NOT -1 BOS OR (Part Vb Imp) OR (Punct) OR (Item) OR (Conj Coord) OR (Part Vb Neg Past))  ;
+	#$ Níor chaill fear an mhisnigh riamh é.
 
 # TYPE 3
 # 11 SEP
