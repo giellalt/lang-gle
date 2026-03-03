@@ -1829,7 +1829,7 @@ LIST MODIFYERPROP = "ainm" "príomhchathair" ;
 
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(*-1 (Noun Com) BARRIER NOT-A)	
-	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
+	(-1 (Noun Com) LINK NEGATE 0 (Num Card) OR Verb)
 	(NEGATE -1 ("céad" Noun Masc Com Sg Len))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
@@ -1848,10 +1848,11 @@ COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TAR
 	## bosca bruscar > #$ bosca bruscair.
 	## ceadúnas tiomáint > #$ ceadúnas tiomána.
 	## fear mór peil > #$ fear mór peile
+	#$ Níor chaill fear an mhisnigh riamh é.
 	
 ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF
 	(*-1 (Noun Com) BARRIER NOT-A)
-	(-1 (Noun Com) LINK NEGATE 0 (Num Card))
+	(-1 (Noun Com) LINK NEGATE 0 (Num Card) OR Verb)
 	(NEGATE -1 ("céad" Noun Masc Com Sg Len))
 	(NEGATE 0 Prop LINK -1 Noun LINK 2 Noun OR Abr)
 	(NEGATE 0 Prop LINK -1 Prop OR Foreign)
@@ -1864,20 +1865,20 @@ COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR 
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., slí beatha -> slí bheatha. Noun Fem Gen Weak Pl Len
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg))(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
 COPY:msyn-gen-noun-noun (Fem Gen Weak Pl Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	#ar feadh an bhliain -> ar feadh na bliana.
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Prep Cmpd));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Prep Cmpd) LINK NEGATE 0 Verb);
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 #!! #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
