@@ -1,6 +1,6 @@
 # -*- cg-pre-pipe: "./modes/glegram-dev6-cg.mode" -*-
 # Divvun & Giellatekno - open source grammars for Sámi and other languages
-# Copyright © 2000-2025 UiT The Arctic University of Norway
+# Copyright © 2000-2026 UiT The Arctic University of Norway
 # http://giellatekno.uit.no & http://divvun.no
 #
 # This program is free software; you can redistribute and/or modify
@@ -1363,6 +1363,11 @@ COPY:syn-gen-two-defart (Noun Fem Com Sg SUGGEST) EXCEPT (Noun Fem Com Sg DefArt
 
 #!! ### rule to correct lenition (séimhiú) errors for nouns after certain prepositions
 
+LIST NO-LEN-AFTER-AR-N = "ball" "barr" "béal maidine" "bith" "bogadh" "buile" "cairde" "clé" "cnoc" "colbha" "corr" "cois" "cosa" "crith" "crochadh" "cuairt" "cúl" "deil" "deireadh" "deis" "díol" "doimhne" "doimhneacht" "fad" "fáil" "fán" "feadh" "fiar" "fiuchadh" "forbhás" "fónamh" "fuaidreamh" "fud" "gor" "machaire" "maidin" "malairt" "maos" "marcaíocht" "meitheal" "meisce" "muir" "sála" "seachrán" "sodar" "son" "srian" "tarraingt" "teachtaireacht" "teaghrán" "tí" "tír" "tiús" "tosach" "triomú" "tuarastal";
+
+LIST NO-LEN-AFTER-THAR-N = "barr" "bóchna" "bráid" "bord" "ceann" "cionn" "claí" "cnoc" "cuimse" "droichead" "fóir" "fulaingt" "meán" "míde" "modh" "muir" "paróiste" "sáile" "sliabh" "smacht" "tír" "toinn" ;
+
+
 	## Cuir an bia sa cuisneoir -> cuir an bia sa chuisneoir.  
 ADD:msyn-lenition-after-sa (&msyn-lenition-after-sa) TARGET (Noun Masc Sg) IF 
 	(-1 ("i" Prep Art Sg SA))
@@ -1407,12 +1412,15 @@ COPY:msyn-t-after-sa (DefArt SUGGEST) EXCEPT (&msyn-t-after-sa) TARGET (&msyn-t-
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com) OR (Subst Noun) IF
 	(-1 ART-LEN-PREP LINK NEGATE 0 (Det Poss))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
+	(NEGATE 0 NO-LEN-AFTER-AR-N)
 	(NEGATE 0 ("cúl"))
 	(NEGATE 0 &lex-3456 OR &lex-78910)
 	(NEGATE 0 Len)
 	(NEGATE 0 (Noun Fem Com Len))
 	(NEGATE 0 (Place Prop Noun Fem Com Sg))
 	(NEGATE 0 (Place Prop Noun Masc Com Sg));
+	#$ Tá m'athair ar buile.
+	
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (&msyn-len-after-prep) TARGET (&msyn-len-after-prep) ;
 ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (1 Noun LINK 0 (&msyn-len-after-prep)) ;
 COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE NUMBER TARGET (Noun &msyn-len-after-prep) ;
@@ -1435,6 +1443,7 @@ COPY:msyn-len-after-prep (Len SUGGEST) EXCEPT (Com &msyn-len-after-prep) BEFORE 
 	# ------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com Sg DefArt) IF
 	(NEGATE 0 Len)
+	(NEGATE 0 NO-LEN-AFTER-AR-N)
 	(NEGATE 0 &lex-3456 OR &lex-78910)
 	(NEGATE 0 ("cúl"))
         (-1 ART-LEN-PREP + (Prep Simp) LINK NEGATE 0 (Det Poss))       			# one word to the left of the noun you TARGET is the word in LIST/SET ART-LEN-PREP and also has Prep and Simp tags
@@ -1443,7 +1452,8 @@ ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Com Sg) OR (Noun Com
         (NEGATE 0 (Fem Com Sg DefArt));
     		## Thug sé buille de bata do an chaora. INCORRECT
     		#$ Thug sé buille de bhata don chaora. INCORRECT
-
+			#$ Tá m'athair ar buile.
+	
 	# PREP Art N
 	# -----------
 ADD:msyn-len-after-prep (&msyn-len-after-prep) TARGET (Noun Masc Com Sg) OR (Noun Masc Com Sg DefArt) IF
@@ -1463,11 +1473,6 @@ ADDRELATION:msyn-len-after-prep ($2) (Prep) FROM (2 Noun LINK 0 (&msyn-len-after
 
 
 #!! ### rule to take away lenition for nouns after certain prepositions
-
-LIST NO-LEN-AFTER-AR-N = "ball" "barr" "béal maidine" "bith" "bogadh" "buile" "cairde" "clé" "cnoc" "colbha" "corr" "cois" "cosa" "crith" "crochadh" "cuairt" "cúl" "deil" "deireadh" "deis" "díol" "doimhne" "doimhneacht" "fad" "fáil" "fán" "feadh" "fiar" "fiuchadh" "forbhás" "fónamh" "fuaidreamh" "fud" "gor" "machaire" "maidin" "malairt" "maos" "marcaíocht" "meitheal" "meisce" "muir" "sála" "seachrán" "sodar" "son" "srian" "tarraingt" "teachtaireacht" "teaghrán" "tí" "tír" "tiús" "tosach" "triomú" "tuarastal";
-
-LIST NO-LEN-AFTER-THAR-N = "barr" "bóchna" "bráid" "bord" "ceann" "cionn" "claí" "cnoc" "cuimse" "droichead" "fóir" "fulaingt" "meán" "míde" "modh" "muir" "paróiste" "sáile" "sliabh" "smacht" "tír" "toinn" ;
-
 
 ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("ar" Prep Simp))(0 NO-LEN-AFTER-AR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art) (NEGATE *1 (Noun Gen) BARRIER (*) - Art)(NEGATE 0 ("cúl") LINK -1 ("ar"))(NEGATE 0 (Fem Com Sg));
 ADD:msyn-no-len-after-prep (&msyn-no-len-after-prep) TARGET (Noun Com Sg Len) IF (-1 ("thar" Prep Simp))(0 NO-LEN-AFTER-THAR-N) (NEGATE *1 (Noun Gen) BARRIER (*) - Art);
