@@ -3848,6 +3848,8 @@ Rules to insert an h after the negative copula "ní" and certain prepositions
 
 
 
+Imperative
+
 * Len
 * hPref, for h prefixation
 * Ecl
