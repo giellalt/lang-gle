@@ -1,7 +1,7 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
-
+  Variants: [glegram-dev]
+  
 Tests:
   - "Ag {an}£{at} aonach." # - incorrect ("ag" at)
   - "Ar an {sráideánach}£{tsráideánach}."

@@ -1,7 +1,7 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
-
+  Variants: [glegram-dev]
+  
 Tests:
   - "Ar an tsráid."
   - "Ar {an}£{on{ aonach."

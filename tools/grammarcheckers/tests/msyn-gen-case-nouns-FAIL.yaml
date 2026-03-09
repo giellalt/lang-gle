@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variant: [glegram-dev]
 
 Tests:
 
