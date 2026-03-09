@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Is beag cumhachta atá ag an Uachtarán {i ndáiríre}£{ndáiríre} ach amháin i gcás go bhfuil amhras air nó uirthi faoi {dhlíthe}${dhéithe} a reachtaíonn an Dáil" # original

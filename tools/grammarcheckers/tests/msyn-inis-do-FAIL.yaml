@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   ## Inis le. - incorrect ("le" with)

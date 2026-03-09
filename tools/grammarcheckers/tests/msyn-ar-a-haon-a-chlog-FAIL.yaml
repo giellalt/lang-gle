@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   ## Ag a haon a chlog. - incorrect ("ag" at)
