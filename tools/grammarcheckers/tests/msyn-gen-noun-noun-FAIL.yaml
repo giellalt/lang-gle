@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variants: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
 # 1. When two nouns come together, the second noun has to be in the genitive case.
