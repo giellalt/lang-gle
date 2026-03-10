@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Ina leabhar \" The Irish Crisis \" a foilsíodh in 1848 rinne Trevelyan cur síos ar an ngorta mar “ bhuille díreach ó Dhia uilefheasach uilethrócaireach ” buille a nocht “ fréamh dhomhain dhaingean an olcais shóisialta ”"

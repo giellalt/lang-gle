@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Sar i bhfad thosaigh sé ag seinm i gcaife gar don Ollscoil darbh ainm “ The 10 o ’ clock Scholar ”"

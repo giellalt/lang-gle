@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Is léir gur chuala roinnt údar an focal C. S. Lewis mar shampla mar is droch-chréatúir iad na boggarts ina leabhar agus tá siad sa tsraith leabhar Harry Potter le J. K. Rowling fosta mar “ \" the shape shifters \" ”"

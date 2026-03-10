@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Ansin d'ardaigh Tip a dhá lámh shín sé a mhéaracha go léir i dtreo na spéire agus ar seisean de ghlór ard \" Peá"

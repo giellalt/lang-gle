@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" \" Ozma an t-ainm atá uirthi \" a d'fhreagair Glinda"

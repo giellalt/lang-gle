@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Toghadh Cathal Brugha ina Cheann Comhairle ( nó cathaoirleach ) agus cuireadh cúpla cáipéis i láthair Dhearbhaigh an Forógra Neamhspleáchais gurb rialtas ar stát ardcheannasach í an Dáil leis an ainm Dáil Éireann agus ansin bhunaigh an Dáil comhaireacht faoin ainm \" An Aireacht \""

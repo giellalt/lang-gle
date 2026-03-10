@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Tá Strasbourg í féin galánta téigh ag spaisteoireacht timpeall ar sheansráideanna na cathrach go háirithe i gceantar beag traidisiúnta darb ainm Petite France ’"

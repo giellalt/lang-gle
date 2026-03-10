@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "De réir an tOllamh Dáibhí Ó Cróinín \" is mícheart é a rá gur ' Cruithnigh Ghaelach ' iad na Cruithne nó go raibh dlúth nasc eatarthu \" fad a dúirt an tOllamh Kenneth H. Jackson Cruthin \" nár Chruithnigh iad na Cruithne ní raibh nasc eatarthu ó thaobh teanga de nó eile agus níor glaoigh riamh scríbhneoirí Gaelacha \" Picti \" orthu \""

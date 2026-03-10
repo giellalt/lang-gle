@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "94 \" Óir ní mise a rinne an abhainn ná ní mise a chuir sa tslí orainn í dá bhí sin níor chóir caitheamh anuas ar éinne ach an té a bheadh cantalach liomsa as titim isteach san uisce"

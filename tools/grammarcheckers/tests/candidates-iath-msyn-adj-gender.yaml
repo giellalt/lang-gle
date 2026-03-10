@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Chonaic siad balla mór ard cloch glas a bhí breactha le smaragaidí os a gcomhair amach agus toisc go raibh eagla ar 54 nach mbeadh a fhios ag an gCapall Sábhadóireachta gur chóir dó stopadh as a stuaim féin agus go mbuailfeadh an bheirt acu faoin mballa lig Seán ' faí ' as in ard a chinn agus a ghutha"

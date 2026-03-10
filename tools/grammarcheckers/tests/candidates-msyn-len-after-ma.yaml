@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" “ Is má tá aon gaol aige le nóiníní / is as a chluasa a fhásfaidh siad / ( nuair a bheidh sé ocht dtroigh síos ) ”"

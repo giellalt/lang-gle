@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "D ’ fhreagair Colmcille \" Tabharfaidh mé an ríocht sin duit is ina theannta sin geallaim duit nach bhfaighidh an té a ghuíonn chugam aon ní uaim go dtí go nguíonn sé chugat freisin \" ’"

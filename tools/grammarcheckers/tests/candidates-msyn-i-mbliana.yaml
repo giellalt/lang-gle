@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Maoirsíonn an t-ard - aighne María Consuelo Porras an t-ionchúiseamh a chuir rúnaí stáit na Stát Aontaithe Antony Blinken ar an liosta dubh níos luaithe i mbliana agus é ag maíomh an méid seo a leanas faoi iompar María Consuelo Porras “ \" ( She ) repeatedly obstructed and undermined anti-corruption investigations to protect her political allies and gain undue political favor ” \""

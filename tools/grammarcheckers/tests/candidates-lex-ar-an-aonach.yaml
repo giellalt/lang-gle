@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Ghlac sé ann tairbhe óna hUlaid ag Craobh Tealcha agus i ndiaidh sin chuaigh sé ó dheas go dtí an suíomh tionóil traidisiúnta Conaille Muirtheimne ag \" i n-oenach Conaille \""

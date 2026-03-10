@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Dúirt an píobaire Conal Mac Conmara is é ag cur síos ar sheinnt le banna píb in Acaill ’ Faigheann tú serious goosebumps ’ agus tú ag siúl isteach sa séipéal Lá Fhéile Pádraig nuair atá do bhanna ag dul go maith ’ ’"

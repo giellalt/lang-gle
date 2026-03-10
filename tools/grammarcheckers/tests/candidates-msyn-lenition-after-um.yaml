@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Rinne an tOllamh Lorraine Hanlon Stiúrthóir EIRSAT-1 agus Ionad UCD um Thaighde ar an Spás coimisiúnú ar All Ways Home ’"

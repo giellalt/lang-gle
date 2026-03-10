@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Níorbh é sin an t-ainm a bhí air ó cheart óir deireadh Mambaí go minic gurbh é Tipirtéirias an t-ainm a bhí air i ndáiríre ach ní bheifí ag súil go ndéarfadh éinne focal chomh mór sin nuair ba leor ' Tip '"

@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Tar éis dó foghlaim faoin bpianbhreith báis i bPríosún Mhuinseo scríobh sé litir chuig cara leis chuir sé in iúl a “ sad grá from me to all the girls in UCD ”"

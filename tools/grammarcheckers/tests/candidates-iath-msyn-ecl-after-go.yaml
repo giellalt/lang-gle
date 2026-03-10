@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Seans gur thug tú faoi deara má bhíonn airgead ag duine gan mheabhair chinn nach féidir leis leas a bhaint as ach má bhíonn meabhair chinn ag duine gan airgead go mbeidh ar a chumas an saol a chaitheamh go sóch go deireadh a ré"

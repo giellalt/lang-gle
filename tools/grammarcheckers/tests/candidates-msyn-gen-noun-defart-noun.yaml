@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Síonchaite go dona is ea an inscríbhinn ach léitear ANM [ NI ] [ A ] Q [ MINE ] / [ UCOI Q ̣ ̣"

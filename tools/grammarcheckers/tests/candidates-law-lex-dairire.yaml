@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Agus i ndáiríre is chun íomhá dó fhéinig a chruthú a thosaigh Montaigne le scríobh na n \" Aistí \" nó mar a deir sé é Is mise ábhar mo leabhair ’"

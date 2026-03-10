@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Scríobh sé chuige bliain i ndiaidh dó bualadh leis le rá a fhad a mhairfeas an chuimhne atá agam ort ní mhothóidh mé aon tuirse ná eagla roimh an bhás ’ agus go raibh sé ina phríosúnach ag an cavalieri armtha ’"

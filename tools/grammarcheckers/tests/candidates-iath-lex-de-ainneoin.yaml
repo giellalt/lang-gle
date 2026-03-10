@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "“ Ach níl a fhios agam ó thalamh an domhain cá bhfuil sí in ainneoin mo chuid iarrachtaí"

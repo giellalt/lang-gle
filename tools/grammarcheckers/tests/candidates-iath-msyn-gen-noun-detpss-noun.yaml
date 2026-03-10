@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" Ach má thugann tú cead mo chinn dom is féidir liom an bheirt againn a shábháil go héasca"

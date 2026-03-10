@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Cuirtear an chosaint seo ar bhonn foirmiúil trí phrionsabal an \" non-refoulement \" a shainítear in Airteagal 33 ( 1 ) den Choinbhinsiún mar seo a leanas Ní dhéanfaidh aon Stát Conarthach dídeanaí a dhíbirt nó a fhilleadh ( refouler ’ ) ar aon bhealach chuig teorainneacha críocha ina mbeadh a shaol nó a shaoirse faoi bhagairt mar gheall ar a chine a reiligiún a náisiúntacht nó mar gheall ar é a bheith mar chuid de ghrúpa sóisialta nó tuairim pholaitiúil ar leith a bheith aige ’"

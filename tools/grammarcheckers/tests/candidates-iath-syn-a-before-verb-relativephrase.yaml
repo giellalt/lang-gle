@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Agus é ag cartadh leis an chiseán tháinig sé ar an mboiscín ina raibh \" Púdar na Beatha \""

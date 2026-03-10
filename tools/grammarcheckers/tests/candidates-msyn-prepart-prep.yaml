@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Ghlac sí Duais Litríocht Sparánacht ó An Chomhairle Ealaíon agus Duais \" Ireland Funds Monaco \""

@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Ach ní raibh eolas dá laghad ag Jellia ar an ábhar sin agus d'éirigh sí an-neirbhíseach leis an gceistiú agus thosaigh sí ag gol rud a chuir an-ionadh ar Glinda"

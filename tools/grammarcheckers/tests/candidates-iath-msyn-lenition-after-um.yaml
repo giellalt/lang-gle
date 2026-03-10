@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" Dá bhrí sin a fhaid a bhí an tOllamh ag baint na gcailíní beaga - ar mhó de gheit a baineadh astu ná de ghortú a baineadh dóibh den talamh agus a fhaid a bhí na daltaí uime shiúil mé go deas réidh amach as teach na scoile chuaigh mé timpeall cor sa bhóthar agus d'éalaigh mé liom isteach i ndoire a bhí in aice láimhe"

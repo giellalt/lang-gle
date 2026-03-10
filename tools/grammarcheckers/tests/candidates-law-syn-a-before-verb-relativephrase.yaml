@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Sa deireadh athraíonn Giúróir a Trí a aigne chomh maith agus críochnaíonn an scannán leis ag caoineadh agus ag rá “ neamhchiontach … …"

@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Gan an treoraí cúramach sin seans nach mbaineadh an Fear Bréige agus a chomrádaithe an Chathair Iathghlas amach in aon chor óir ba mhó bac a chuir Mambaí rompu lena cuid asarlaíochta"

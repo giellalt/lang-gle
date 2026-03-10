@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "In ainneoin choimirce aistir dearbhaithe ag an eaglais rinneadh feall air agus \" bádh é go cruálach i linn \""

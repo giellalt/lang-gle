@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Ó mhí na Mhárta 2017 tá a cheanncheathrú lonnaithe ar Ché an Phoirt Thuaidh áit ar féidir leis an bpobal monaí agus airgeadra Éireannach neamhreatha ( roimh agus iardheachúlú ) a mhalartú le haghaidh Euro chomh maith le nótaí bainc Euro ardluacha agus airgeadra “ lotaithe ”"

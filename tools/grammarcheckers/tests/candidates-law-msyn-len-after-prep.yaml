@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Thuill Eilish áit ar Cairteacha na n-Albam \" 21 Under 21 2018 \" ’ don amhrán “ Lovely ” agus tháinig an chnagshingil amach san 78ú háit ar Cairteacha na n-Albam \" The Hot 100 \" ’"

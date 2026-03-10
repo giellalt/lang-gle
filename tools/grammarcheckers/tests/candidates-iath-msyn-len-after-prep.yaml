@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" Níl a fhios againn conas balún a dhéanamh gan amhras ach is 167 le rud ar bith atá in ann eitilt tríd an aer muid a iompar go héasca"

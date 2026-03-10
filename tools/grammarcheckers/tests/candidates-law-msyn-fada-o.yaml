@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Is guta fada é an / ø / in kjølen ach gur fhuaimniú goirid atá i gCuiltheann toisc nach féidir le guta fada a bheith ró - “ lth ”"

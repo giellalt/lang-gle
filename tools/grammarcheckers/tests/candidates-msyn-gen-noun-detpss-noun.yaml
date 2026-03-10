@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Bhí cúlra staire an úrscéil ina ábhar do chlár teilifíse sa tsraith ’ Le Dessous des Cartes ar Arte ’ ’"

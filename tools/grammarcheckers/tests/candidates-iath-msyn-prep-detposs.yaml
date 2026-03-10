@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" Bhí Tip ceangailte chomh daingean sin leis an gcorda nárbh fhéidir leis a chloigeann a chasadh chun go bhféachfadh sé ar a chompánaigh agus ar seisean leis an gCapall Sábhadóireachta \" Déan céaslóireacht le do chosa i dtreo an bhruaigh"

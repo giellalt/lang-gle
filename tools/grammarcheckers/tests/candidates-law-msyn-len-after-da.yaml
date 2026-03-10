@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Cuireadh faoi i dTeamhair í agus dá bharr mínítear i \" Leabhar Gabhála na hÉireann \" an t-ainm \" Temair \" mar \" Tea-múr \" \""

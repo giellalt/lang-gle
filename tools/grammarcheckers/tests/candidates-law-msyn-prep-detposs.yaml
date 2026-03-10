@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Bhí sé leata ar fhocail Gaeilge a sheoladh isteach in a chuid dánta as sin amach mar atá in “ Slán Libh ” nó “ Amhrán na bhFiann ” gan trácht ar a leagan Gaeilge féin de “ Ar Thaobh Ghlas A Ghleanna ”"

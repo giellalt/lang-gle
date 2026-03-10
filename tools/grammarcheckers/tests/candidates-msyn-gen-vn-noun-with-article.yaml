@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Bhí RTÉ ag craoladh ceol sollúnta tar éis bhás an iar-uachtaráin agus ceannaire an Éirí Amach Eamon de Valera agus léigh Kenny amach teideal píosa ceoil thraidisiúnta darbh ainm ' The ol ' divil is dead ’"

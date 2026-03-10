@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" \" Níor thug mé faoi deara riamh go milleann uisce puimcín \" arsa Tip \" mura bhfuil an t-uisce sin ar fiuchadh"

@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Mar gheall ar a dtábhacht do na bundúchasaigh áitiúla mar fhoinse bia séasúrach mar ábhair seilge áineasa agus mar dhíol spéise do thurasóirí cinntíodh a láithreacht fairsing agus chobhsaí i dtuaisceart na hAstráile ina “ bainistíocht chosanta ”"

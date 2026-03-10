@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Anois ní craoltar aon fhógra ar an stáisiún mura bhfuil caighdeán na Gaeilge agus na foghraíochta ann sách ard ’"

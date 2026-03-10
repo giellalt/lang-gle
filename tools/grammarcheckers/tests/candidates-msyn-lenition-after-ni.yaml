@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Tabhair faoi deara nach mbaineann prionsabal na coimhdeacht ach le “ réimsí nach dtig [ faoi ] inniúlacht eisiach [ an Aontais Eorpaigh ] ”"

@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Agus dúirt an scríbhneoir Ernest Hemingway tríd an rothaíocht is fearr a fhoghlaimítear cruth tíre ’"

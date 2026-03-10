@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Gí go bhfuil na hoifigí rialtais na bancanna agus an calafort suite in Pape'ete tá áiseanna tábhachtacha eile suite in Fa'a ' ā"

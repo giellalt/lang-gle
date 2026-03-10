@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "Bhí sé ar tí blúire bia a lorg uirthi nuair a sheas an cailín in airde agus í ag baint na ngrabhróg dá gúna"

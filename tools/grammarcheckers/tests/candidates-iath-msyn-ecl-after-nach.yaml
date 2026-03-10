@@ -1,6 +1,6 @@
 Config:
   Spec: ../pipespec.xml
-  Variant: glegram-dev
+  Variants: [glegram-dev]
 
 Tests:
   - "\" \" Ach - gabh mo leithscéal má táim fiosrach - nach bhfuil sibh go léir ábhairín - á"
