@@ -919,7 +919,8 @@ ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 N
 
 ADD:msyn-adj-masc-gender (&msyn-adj-masc-gender) TARGET (Adj Fem Com Sg Len) IF
 	(-1 (Noun Masc Com Sg))
-	(NEGATE -1 ("is" Cop Pres Neg));
+	(NEGATE -1 ("is" Cop Pres Neg))
+	(NEGATE 0 (Adj Masc));
 ADD:msyn-adj-masc-gender (&msyn-adj-gender) TARGET (Noun Masc Com Sg) IF (1 (Adj &msyn-adj-masc-gender))(NEGATE 0 (Masc Com));
 COPY:msyn-adj-masc-gender (Adj Masc Com Sg SUGGEST) EXCEPT (Adj Fem Com Sg Len) TARGET (Adj &msyn-adj-masc-gender);
 ADDRELATION:msyn-adj-masc-gender ($2 RIGHT) (Adj &msyn-adj-masc-gender) TO (-1 Noun + &msyn-adj-masc-gender);
@@ -2185,7 +2186,7 @@ ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGE
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Adj Com Sg) IF
 	(-1 (Noun Com))
 	(-2 Art)
-	(*-1 (Verbal Noun VTI));
+	(*-1 (Verbal Noun VTI) BARRIER Verb LINK -1 ("ag"));
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
 
@@ -2218,7 +2219,7 @@ ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun 
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Adj Fem Com Sg Len) IF
 	(-1 (Noun Com))
 	(-2 Art)
-	(*-1 (Verbal Noun VTI));
+	(*-1 (Verbal Noun VTI) BARRIER Verb LINK -1 ("ag"));
 COPY:msyn-gen-vn-noun-with-article (Sg SUGGEST) EXCEPT (Com Sg DefArt &msyn-gen-vn-noun-with-article) TARGET (Com &msyn-gen-vn-noun-with-article);
 COPY:msyn-gen-vn-noun-with-article (Base SUGGEST) EXCEPT (Len &msyn-gen-vn-noun-with-article) TARGET (Adj &msyn-gen-vn-noun-with-article);
 
@@ -2276,7 +2277,7 @@ ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGE
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Adj Com Sg) IF
 	(-1 (Noun Com))
 	(-2 Art)
-	(*-1 (Verbal Noun VTI));
+	(*-1 (Verbal Noun VTI) BARRIER Verb LINK -1 ("ag"));
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
 
@@ -2290,7 +2291,7 @@ ADD:msyn-gen-vn-mascnoun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGE
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-mascnoun-with-article) TARGET (Adj Com Sg) IF
 	(-1 (Noun Com))
 	(-2 Art)
-	(*-1 (Verbal Noun VTI));
+	(*-1 (Verbal Noun VTI) BARRIER Verb LINK -1 ("ag"));
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg &msyn-gen-vn-mascnoun-with-article) TARGET (Com &msyn-gen-vn-mascnoun-with-article);
 COPY:msyn-gen-vn-mascnoun-with-article (Gen Sg Len SUGGEST) EXCEPT (Com Sg) TARGET (Adj &msyn-gen-vn-mascnoun-with-article);
 
@@ -2310,26 +2311,30 @@ COPY:msyn-gen-vn-noun (Com SUGGEST) EXCEPT (Gen &msyn-gen-vn-noun) TARGET (Noun 
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj Base) IF
 	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
-	(*-2 (Verbal Noun VTI));
+	(NEGATE 0 ("<[lnrLNR].*>"r))
+	(*-2 (Verbal Noun VTI) BARRIER (Prep Simp));
 COPY:msyn-gen-vn-noun (Base Len SUGGEST) EXCEPT (Base) TARGET (Adj &msyn-gen-vn-noun);
 	
 	#A rule for changing feminine adjectives from genitive to common.
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
 	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
-	(*-2 (Verbal Noun VTI) BARRIER (Det Poss))
+    (NEGATE 0 ("<[lnrLNR].*>"r))
+	(*-2 (Verbal Noun VTI) BARRIER (Det Poss) OR (Prep Simp))
 	(NEGATE 0 (Adj Fem Com Sg Len));
 COPY:msyn-gen-vn-noun (Fem Com Sg Len SUGGEST) EXCEPT (Fem Gen Sg Len) TARGET (Adj &msyn-gen-vn-noun);
 
 	#A rule for changing masculine adjectives from genitive to common. Adj Masc Com Sg
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
 	(-1 (Noun Masc Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
-	(*-2 (Verbal Noun VTI))
+	(NEGATE 0 ("<[lnrLNR].*>"r))
+	(*-2 (Verbal Noun VTI) BARRIER (Prep Simp))
 	(NEGATE 0 (Masc Com Sg));
 COPY:msyn-gen-vn-noun (Masc Com Sg SUGGEST) EXCEPT (Masc Gen Sg Len) TARGET (Adj &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj Base) IF
 	(-1 (Noun Masc Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
-	(*-2 (Verbal Noun VTI));
+	(NEGATE 0 ("<[lnrLNR].*>"r))
+	(*-2 (Verbal Noun VTI) BARRIER (Prep Simp));
 COPY:msyn-gen-vn-noun (Base SUGGEST) EXCEPT (Base Len) TARGET (Adj &msyn-gen-vn-noun);
 
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Noun Fem Gen Weak Pl) IF
