@@ -1866,20 +1866,25 @@ COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) OR 
 COPY:msyn-gen-noun-noun (Gen Pl SUGGEST) EXCEPT (Com Pl &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., slí beatha -> slí bheatha. Noun Fem Gen Weak Pl Len
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg))(NEGATE 0 (Fam Prop) LINK -1 (PersName) OR (Fam Prop));
+	#$ Ar Jessie Buckley na hÉireann a bronnadh an gradam don aisteoir baineann is fearr i bpríomhpháirt ag Searmanas na nGradam Oscar in Amharclann an Dolby in Los Angeles aréir.
+
+
+
+
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg));
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE -1 ("beirt" Noun Fem Com Sg))(NEGATE 0 (Fam Prop) LINK -1 (PersName) OR (Fam Prop));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len))(NEGATE 0 (Fam Prop) LINK -1 (PersName) OR (Fam Prop));
 COPY:msyn-gen-noun-noun (Fem Gen Sg Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	# A rule to correct for feminine genitive case nouns, e.g., Tá aithne shúl agam air. aithne súil -> aithne shúl
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len));
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com Sg) IF (-1 (Noun Fem Com Sg) LINK NEGATE 0 Verb)(NEGATE 0 (Noun Fem Com Sg))(NEGATE 0 (Prop Len))(NEGATE 0 (Fam Prop) LINK -1 (PersName) OR (Fam Prop));
 COPY:msyn-gen-noun-noun (Fem Gen Weak Pl Len SUGGEST) EXCEPT (Fem Com Sg &msyn-gen-noun-noun) OR (Fem Gen Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 	
 	#ar feadh an bhliain -> ar feadh na bliana.
-ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Prep Cmpd) LINK NEGATE 0 Verb);
+ADD:msyn-gen-noun-noun (&msyn-gen-noun-noun) TARGET (Noun Com) IF (-1 (Prep Cmpd) LINK NEGATE 0 Verb)(NEGATE 0 (Fam Prop) LINK -1 (PersName) OR (Fam Prop));
 COPY:msyn-gen-noun-noun (Gen Sg SUGGEST) EXCEPT (Com Sg &msyn-gen-noun-noun) TARGET (&msyn-gen-noun-noun) ;
 
 #!! #### Genitive rule 2. Noun DefArt Noun => Noun DefArt Noun.Gen
@@ -1897,7 +1902,7 @@ COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &ms
 
 	#The genitive rule for singular feminine nouns after the article, e.g., éadaí an bhean -> éadaí na mná.
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Fem Com Sg) OR (Noun Fem Com Sg DefArt) IF 
-	(*-2 (Noun Com) BARRIER NOT-A)
+	(*-2 (Noun Com) - Prop BARRIER NOT-A)
 	(-1 (Art Sg Def))
 	(NEGATE 0 (Noun Fem Gen Strong Pl Ecl))
 	(NEGATE 0 (Gen Sg))
@@ -1907,7 +1912,7 @@ COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Com Sg DefArt &ms
 	
 	#The genitive rule for genitive nouns after the article, e.g., diallait an capaill -> diallait an chapaill.
 ADD:msyn-gen-noun-defart-noun (&msyn-gen-noun-defart-noun) TARGET (Noun Gen Sg) IF
-	(*-2 (Noun Com) BARRIER NOT-A)
+	(*-2 (Noun Com) - Prop BARRIER NOT-A)
 	(-1 (Art Sg Def))
 	(NEGATE 0 (Noun Gen Sg DefArt));
 COPY:msyn-gen-noun-defart-noun (Gen Sg DefArt SUGGEST) EXCEPT (Gen Sg &msyn-gen-noun-defart-noun) TARGET (&msyn-gen-noun-defart-noun);
@@ -2045,6 +2050,7 @@ ADDRELATION:msyn-gen-noun-detpss-noun ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-
 	#A rule to eclipse a singular noun after "ár" (Det Poss 1P Pl), "dár" (Prep Poss 1P Pl) and "bhur" (Det Poss 2p Pl), e.g., ár athair - ár n-athair, dár athair - dár n-athair.
 ADD:msyn-árbhur-ecl (&msyn-árbhur-ecl) TARGET (Noun Com Sg) IF 
 	(0 ("<[áabcdéefgíióoptúu].*>"r) OR ("<[ÁABCDÉEFGÍIÓOPTÚU].*>"r))
+	(NEGATE 0 Ecl)
 	(-1 ("ár" Det Poss 1P Pl) OR ("bhur" Det Poss 2P Pl) OR (Prep Poss 1P Pl) LINK NOT 0 &msyn-gen-noun-noun);
 COPY:msyn-árbhur-ecl (Com Sg Ecl SUGGEST) EXCEPT (Com Sg &msyn-árbhur-ecl) OR (Com Len &msyn-árbhur-ecl) TARGET (&msyn-árbhur-ecl);
 ADDRELATION:msyn-árbhur-ecl ($2) Noun + Com FROM (2 Noun LINK 0 &msyn-árbhur-ecl);
@@ -2205,7 +2211,7 @@ COPY:msyn-gen-vn-femnoun-with-article ("na" Gen Sg Def Fem SUGGEST) EXCEPT ("an"
 
 
 ADD:msyn-gen-vn-noun-with-article (&msyn-gen-vn-noun-with-article) TARGET (Noun Com) IF
-	(*-1 (Verbal Noun VTI))						#LINK NEGATE -1 (Art Sg Def))#(BARRIER (*) - Prep Art LINK -1 ("ag")) 
+	(*-1 (Verbal Noun VTI) BARRIER (Det Poss) OR (Prep Simp))						#LINK NEGATE -1 (Art Sg Def))#(BARRIER (*) - Prep Art LINK -1 ("ag")) 
 	(NEGATE 0 (Sg))
 	#(NEGATE 0 Prop LINK *-1 (Art Def) BARRIER (*) - Noun)
 	(NEGATE -2 (Verb VTI));
@@ -2310,7 +2316,7 @@ COPY:msyn-gen-vn-noun (Base Len SUGGEST) EXCEPT (Base) TARGET (Adj &msyn-gen-vn-
 	#A rule for changing feminine adjectives from genitive to common.
 ADD:msyn-gen-vn-noun (&msyn-gen-vn-noun) TARGET (Adj) IF
 	(-1 (Noun Fem Sg Com)) 			#BARRIER (*) LINK -1 ("ag"))
-	(*-2 (Verbal Noun VTI))
+	(*-2 (Verbal Noun VTI) BARRIER (Det Poss))
 	(NEGATE 0 (Adj Fem Com Sg Len));
 COPY:msyn-gen-vn-noun (Fem Com Sg Len SUGGEST) EXCEPT (Fem Gen Sg Len) TARGET (Adj &msyn-gen-vn-noun);
 
