@@ -186,6 +186,11 @@ CONSTRAINTS
 
 SELECT:i_bliana ("bliain" Noun Fem Gen Sg) - DefArt IF (-1 ("i" Prep Simp));
 	## Beidh toghchán ann i bliana.
+	
+# soir Adv vs. sor Noun Masc
+
+SELECT:soir_adv ("soir" Adv Dir) IF (0 ("sor" Noun));
+	## Ní raibh aon ghnó agat soir Bóthar na Scrathóg.
 
 
 # "í" Pron Pers 3P Sg Fem (not "í" Noun Fem Sg)
