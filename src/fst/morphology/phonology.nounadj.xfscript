@@ -94,6 +94,9 @@ read regex [ a e -> %^AE ]			!!≈ - @CODE@  Long vowel symbol
 .o.
 !!Vowel+ @-> %^X... || _ Cons* [Nountag|%^Adj]
 [..] -> %^X || Cons _ Vowel+ Cons* [Nountag|%^Adj]
+.o.
+!! Ini
+[..] -> h || [m|d|s] %' f _ Vowel 
 
 !***************************************************************************!
 ! (2) These markers are no longer required
