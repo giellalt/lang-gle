@@ -1457,6 +1457,7 @@ Regex
 
 - [a|e|i|o|u] -> [%^FY] || Cons (a|e) _ ?^<3 [Nountag+ |%^Adj] %^Coim 
 - %^Coim -> [] 
+Ini
 
 - %^M -> [] 
 - %^F -> [] 
@@ -2066,7 +2067,7 @@ Tag list:
 - **+Sem/Veh		    	** =
 - **+Sem/Year		    	** =
 - **+Sg						** = Singular
-- **+Short					** = Short determiner, e.g. m', d'
+- **+Short+					** = Short determiner, e.g. m', d'
 - **+Simp					** = Simple preposition
 - **+Slender				** = Adj qualifies a plural noun ending in a slender consonant
 - **+Span 					** =
@@ -2215,20 +2216,6 @@ given the proper use of these flags.
 - **	AdjG;				** = additions from gaois.ie bitex
 
 - **	Nouns; 			** = ORIGINAL TEST LEXICON
-- **	Dative;			** = ORIGINAL TEST LEXICON
-- **	Other;			** = ORIGINAL TEST LEXICON
-- **	NounsB;			** = nouns
-- **	NounsC;			** = FP nouns (automatic)
-- **	NounsD;			** = FP nouns (manual Decl 1-3)
-- **	NounsE;			** = FP nouns (manual Decs 4-5)
-- **	NounsF;			** = FP nouns (manual Irregular)
-- **	NounsH;			** = Various from corpora
-- **	NounsIrregular;	** = 
-- **	Substantive;  	** = 
-- **	NounsFGB1;		** = FGB (O Donaill) automatic (in NCI corpus) 
-- **	NounsFGB2;		** = FGB (O Donaill) automatic (additional)
-- **	NounsVariants;		** = Variants extracted from FGB
-- **	NounsEqualVariants;	** = Variants extracted from FGB (2011 EUD)
 
 - **	NounsG;			** = Proper Nouns - MOVED from Nouns TO Proper Nouns
 - **	NP-LEX-FAM;			** = Family Names (Irish)
@@ -2561,128 +2548,49 @@ In the case of an initial "s", a "t" will be placed before it
 	2nd. Declension - All Feminine -  nouns end in broad or slender consonant
 	3rd. Declension - Feminine & Masculine - nouns end in a broad or slender consonant.
 	4th. Declension - Feminine & Masculine - all end in a vowel or "ín"
--  **LEXICON Nouns** 
-###					1st DECLENSION 
-(1) WEAK PLURALS 
-Nom												
-	an cat (the cat)				na cait	(the cats)		}
-	an suipéar (the supper)			na suipéir (the suppers)}
-Gen
-	ceol an éin (the birds's song)	ceol na n-éan (the birds' song)	
-	am an suipéir (the supper's time) an na suipéar (the suppers' time)
-Voc
-	
 
--  **airgeadas Nm1-SINGULAR;** 
--  **áireamh Nm1-SINGULAR;** 
--  **amhras Nm1-SINGULAR;** 
--  **aonar Nm1-SINGULAR;** 
-etc. 
+-  **LEXICON Nouns** We immediately split into C- and (f)v- initial
 
-(2) WEAK PLURALS
-EXAMPLE:
-Nom	
-Gen	
-Voc	
-	
-
--  **bruas Nm1-2;**  (thick) lip 
--  **cág Nm1-2;**  jackdaw 
--  **ceart Nm1-2;**  right
--  **cor Nm1-2;** 
--  **fionn Nm1-2;**  fair, white
--  **gnáth Nm1-2;** 
--  **íol Nm1-2;**  idol 
-
-(3) STRONG PLURALS - ADD "TA"
-	LONG VOWEL (áéíóú ao ae o[mh] u[mh] i[á|ó] u[á|ó] a[rd|rl|rn|rr])
-
--  **ál Nm1-3;**  clutch, brood
--  **aon Nm1-3;**  one, ace 
-etc.
-
-(4) STRONG PLURALS - ADD "THA"
--  **glór Nm1-4;**  voice
--  **múr Nm1-4;**  wall, shower
-
-(5) STRONG PLURALS - ADD (A)Í
-
--  **bealach Nm1-5;**  way, road
--  **cogadh Nm1-5;** 
 -  **Domhnach Nm1-5;**  Sunday
-etc
-
-(6) STRONG PLURALS - ADD  "ANNA"
-
--  **bás Nm1-6;** 
-
-(7) STRONG PLURALS - ADD "Í"
-
-(8) STRONG PLURALS - SYNCOPATE + ADD "ANNA"
-
-(9) STRONG PLURALS - SYNCOPATE, ATTENUATE + ADD "E"
-
-(10) STRONG PLURALS - SYNCOPATE + ADD "EACHA"
-
-			1 MASC.
-		list the categories here ......
 
 -  **baint Nf2-SINGULAR;** 
+-  **bealach Nm1-5;**  way, road
+-  **binn Nf2-2;**  peak		
+-  **bruas Nm1-2;**  (thick) lip 
+-  **bás Nm1-6;** 
+-  **ceart Nm1-2;**  right
+-  **cliath Nf2-2;** 
+-  **cogadh Nm1-5;** 
+-  **coinneáil Nf3-SINGULAR;** 
+-  **cor Nm1-2;** 
+-  **cág Nm1-2;**  jackdaw 
+etc.
+etc
+-  **deoir Nf2-2;**  tear
+-  **glór Nm1-4;**  voice
+-  **gnáth Nm1-2;** 
+
+-  **múr Nm1-4;**  wall, shower
 -  **réir Nf2-SINGULAR;** 
 -  **spéis Nf2-SINGULAR;** 
 -  **suim Nf2-SINGULAR;** 
 -  **teilifís Nf2-SINGULAR;** 
 -  **titim Nf2-SINGULAR;** 
 
-(1) WEAK PLURALS (no longer used)
-(2) WEAK PLURALS (ie Nom, Gen & Voc plurals are not the same)
-ONE SYLLABLE - Broad/Slender
--  **binn Nf2-2;**  peak		
--  **cliath Nf2-2;** 
--  **deoir Nf2-2;**  tear
+-  **airgeadas Nm1-SINGULAR;** 
+-  **amhras Nm1-SINGULAR;** 
+-  **aon Nm1-3;**  one, ace 
+-  **aonar Nm1-SINGULAR;** 
 
-(3) WEAK PLURALS 
+-  **fionn Nm1-2;**  fair, white
 
-- (4) WEAK PLURALS 
-- 	MORE THAN ONE SYLLABLE, 
-- 	ENDS IN (E)ACH WHICH CHANGES TO (A)Í IN GEN. SG. (USES ^ATH TAG & D4)
-- 	
-- 	Nom Pl : Append "a"		(PL-3)
-- 	Gen Pl : No change		(PL-0)
-- 	Voc Pl : Append "a"		(PL-3)
-
-(5) STRONG PLURALS - ADD "TE"
-
-(7) STRONG PLURALS - ADD "Í"
-more than one syllable - SLENDER
-
-BROAD & SLENDER
-(8) STRONG PLURALS - ADD -(E)ACHA
-
-) STRONG PLURALS - ADD "THA"
-
-3 Masculine words in 2nd Declension 
-
-###					3rd DECLENSION 
-
-3rd declension FEMININE NOUNS 
--  **coinneáil Nf3-SINGULAR;** 
--  **éisteacht Nf3-SINGULAR;** 
 -  **imirt Nf3-4;**  -SINGULAR;
 
-3rd declension MASCULINE NOUNS 
-
-###					4th DECLENSION 
-
-###					5th DECLENSION 
-
-####                   5th Declension MASCULINE NOUNS 
-
-=======================end of 5th declension==========================!
-
--  **LEXICON NounsB** 
-
--  **LEXICON NounsC** 
+-  **áireamh Nm1-SINGULAR;** 
+-  **ál Nm1-3;**  clutch, brood
+etc. 
+-  **éisteacht Nf3-SINGULAR;** 
+-  **íol Nm1-2;**  idol 
 
 * * *
 

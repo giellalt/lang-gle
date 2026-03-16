@@ -34,6 +34,7 @@ Regex
 
 - [a|e|i|o|u] -> [%^FY] || Cons (a|e) _ ?^<3 [Nountag+ |%^Adj] %^Coim 
 - %^Coim -> [] 
+Ini
 
 - %^M -> [] 
 - %^F -> [] 

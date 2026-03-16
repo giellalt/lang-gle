@@ -204,7 +204,7 @@ Tag list:
 - **+Sem/Veh		    	** =
 - **+Sem/Year		    	** =
 - **+Sg						** = Singular
-- **+Short					** = Short determiner, e.g. m', d'
+- **+Short+					** = Short determiner, e.g. m', d'
 - **+Simp					** = Simple preposition
 - **+Slender				** = Adj qualifies a plural noun ending in a slender consonant
 - **+Span 					** =
@@ -353,20 +353,6 @@ given the proper use of these flags.
 - **	AdjG;				** = additions from gaois.ie bitex
 
 - **	Nouns; 			** = ORIGINAL TEST LEXICON
-- **	Dative;			** = ORIGINAL TEST LEXICON
-- **	Other;			** = ORIGINAL TEST LEXICON
-- **	NounsB;			** = nouns
-- **	NounsC;			** = FP nouns (automatic)
-- **	NounsD;			** = FP nouns (manual Decl 1-3)
-- **	NounsE;			** = FP nouns (manual Decs 4-5)
-- **	NounsF;			** = FP nouns (manual Irregular)
-- **	NounsH;			** = Various from corpora
-- **	NounsIrregular;	** = 
-- **	Substantive;  	** = 
-- **	NounsFGB1;		** = FGB (O Donaill) automatic (in NCI corpus) 
-- **	NounsFGB2;		** = FGB (O Donaill) automatic (additional)
-- **	NounsVariants;		** = Variants extracted from FGB
-- **	NounsEqualVariants;	** = Variants extracted from FGB (2011 EUD)
 
 - **	NounsG;			** = Proper Nouns - MOVED from Nouns TO Proper Nouns
 - **	NP-LEX-FAM;			** = Family Names (Irish)
