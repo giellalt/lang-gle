@@ -233,7 +233,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Sem/Veh		    	!!= - **@CODE@** =
 +Sem/Year		    	!!= - **@CODE@** =
 +Sg						!!= - **@CODE@** = Singular
-+Short					!!= - **@CODE@** = Short determiner, e.g. m', d'
++Short+					!!= - **@CODE@** = Short determiner, e.g. m', d'
 +Simp					!!= - **@CODE@** = Simple preposition
 +Slender				!!= - **@CODE@** = Adj qualifies a plural noun ending in a slender consonant
 +Span 					!!= - **@CODE@** =
@@ -394,20 +394,6 @@ LEXICON Root			!!= - **@CODE@** =
 ! Nouns
 
 	Nouns; 			!!= - **@CODE@** = ORIGINAL TEST LEXICON
-	Dative;			!!= - **@CODE@** = ORIGINAL TEST LEXICON
-	Other;			!!= - **@CODE@** = ORIGINAL TEST LEXICON
-	NounsB;			!!= - **@CODE@** = nouns
-	NounsC;			!!= - **@CODE@** = FP nouns (automatic)
-	NounsD;			!!= - **@CODE@** = FP nouns (manual Decl 1-3)
-	NounsE;			!!= - **@CODE@** = FP nouns (manual Decs 4-5)
-	NounsF;			!!= - **@CODE@** = FP nouns (manual Irregular)
-	NounsH;			!!= - **@CODE@** = Various from corpora
-	NounsIrregular;	!!= - **@CODE@** = 
-	Substantive;  	!!= - **@CODE@** = 
-	NounsFGB1;		!!= - **@CODE@** = FGB (O Donaill) automatic (in NCI corpus) 
-	NounsFGB2;		!!= - **@CODE@** = FGB (O Donaill) automatic (additional)
-	NounsVariants;		!!= - **@CODE@** = Variants extracted from FGB
-	NounsEqualVariants;	!!= - **@CODE@** = Variants extracted from FGB (2011 EUD)
 
 ! Proper Nouns
 	NounsG;			!!= - **@CODE@** = Proper Nouns - MOVED from Nouns TO Proper Nouns
