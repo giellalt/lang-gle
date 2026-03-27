@@ -1112,10 +1112,10 @@ ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 
 #!! ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
 ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF
-	(-1 (Part Vb Neg"+NG") OR (Part Vb Neg))
+	(-1 ("ní" Part Vb Neg"+NG") OR ("ní" Part Vb Neg))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
 	(NEGATE 0 ("<[aeilnoru].*>"r))
-	(NEGATE 0 Len)
+	(NEGATE 0 Len OR Ecl)
 	(NEGATE 0 ("faigh" Verb))
 	(NEGATE -1 (Part Vb NegQ));
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
