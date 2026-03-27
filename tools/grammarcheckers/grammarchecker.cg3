@@ -1669,7 +1669,7 @@ COPY:msyn-ecl-after-mura (Cond CM SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET 
 ADD:msyn-ecl-after-nach (&msyn-ecl-after-nach) TARGET (Verb) IF
 	(-1 ("nach"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
-COPY:msyn-ecl-after-nach (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach);
+COPY:msyn-ecl-after-nach (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) OR (Neg Len &msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach);
 
 ## Rule for eclipse after "an" Part Vb Q. 
 
@@ -2748,6 +2748,7 @@ COPY:msyn-lenition-after-coppast (Len SUGGEST) EXCEPT (&msyn-lenition-after-copp
 ADD:msyn-ecl-after-prep-i (&msyn-ecl-after-prep-i) TARGET (Noun Com) OR (Subst Noun Sg) IF
 	(-1 ("i" Prep Simp))
 	(0 ("<[bcdfgptBCDFGPT].*>"r))
+	(NEGATE 0C (Foreign English))
 	(NEGATE 0 (Noun Com Ecl));
 COPY:msyn-ecl-after-prep-i (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-i) TARGET (&msyn-ecl-after-prep-i);
 
