@@ -1,0 +1,8 @@
+Config:
+  Spec: ../pipespec.xml
+  Variants: [glegram-dev]
+  
+Tests:
+  - "cé go meastar nach {beidh}£{mbeidh} ach cúpla míle díobh." 
+  - "cé go meastar nach mbeidh ach cúpla míle díobh."
+  - "cé go meastar nach {bheidh}£{mbeidh} ach cúpla míle díobh."
