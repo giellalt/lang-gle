@@ -52,7 +52,7 @@ LIST Pl = Pl ;
 LIST Sg = Sg ;
 LIST Verb = Verb ;
 
-LIST Foreign = Foreign
+LIST Foreign = Foreign ;
 LIST English = English ;
 
 LIST Len = Len ; #!! * Len
@@ -169,6 +169,11 @@ REMOVE:no-mascgensghpref (Noun Masc Gen Sg hPref) IF (0 Noun) ;
 REMOVE:no-adjmasccomsglen (Adj Masc Com Sg Len) IF (NEGATE -1 (Noun Masc Com)) ;
 	## Tá hata ar an bhfear beag.
 	#$ Tá hata ar an bhfear bheag.
+	
+# Remove any English if there is an Irish alternative
+
+REMOVE:Irish-if-possible English IF (0 (*) - English);
+	## Fuair sé turn beag aréir, he took a little turn for the worse last night.
 
 # ==================================================================== #
 # DISAMBIGUATION RULES
