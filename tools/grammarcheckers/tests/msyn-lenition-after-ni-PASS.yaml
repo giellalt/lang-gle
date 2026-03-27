@@ -1,0 +1,7 @@
+Config:
+  Spec: ../pipespec.xml
+  Variants: [glegram-dev]
+  
+Tests:
+  - "Ní {ceannaíonn}£{cheannaíonn} sí caife gach lá." 
+  - "cé go meastar nach mbeidh ach cúpla míle díobh."
