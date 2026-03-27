@@ -622,6 +622,7 @@ LIST &msyn-gen-case-nouns = &msyn-gen-case-nouns ;   #!!= * @CODE@ is the old ge
 
 #!! ###  Other tags
 
+LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
 LIST &use-ie.i. = &use-ie.i. ;    #!!= * @CODE@
 LIST &msyn-inis-de = &msyn-inis-de ;    #!!= * @CODE@
 #LIST &spell-conservatively = spell-conservatively ;    #!!= * @CODE@
@@ -680,6 +681,8 @@ LIST &msyn-lenition-after-nior = &msyn-lenition-after-nior ; #!!= * @CODE@
 LIST &msyn-len-after-da = &msyn-len-after-da ; #!!= * @CODE@
 LIST &msyn-len-after-ma = &msyn-len-after-ma ; #!!= * @CODE@
 LIST &msyn-maidir-leis = &msyn-maidir-leis ;
+LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@
+LIST &msyn-no-lenition-fem-possession = &msyn-no-lenition-fem-possession ;
 LIST &msyn-ecl-after-maidir-leis = &msyn-ecl-after-maidir-leis ;
 LIST &msyn-eclipse-after-numbers = &msyn-eclipse-after-numbers ; #!!= * @CODE@
 LIST &msyn-lenition-after-numbers = &msyn-lenition-after-numbers ; #!!= * @CODE@
@@ -702,7 +705,6 @@ LIST &msyn-ecl-after-go = &msyn-ecl-after-go ;	 #!!= * @CODE@
 LIST &msyn-hpref-after-go-part = &msyn-hpref-after-go-part ;
 LIST &msyn-ecl-after-goPrepSimp = &msyn-ecl-after-goPrepSimp ;
 LIST &msyn-ecl-after-nach = &msyn-ecl-after-nach ; #!!= * @CODE@
-LIST &msyn-lenition-after-possessive-adjective = &msyn-lenition-after-possessive-adjective ;      #!!= * @CODE@
 LIST &msyn-noun-defart = &msyn-noun-defart ;    #!!= * @CODE@
 LIST &msyn-ce-plus-defart = &msyn-ce-plus-defart ; #!!= * @CODE@
 LIST &msyn-prepart-prep = &msyn-prepart-prep ;    #!!= * @CODE@
@@ -729,7 +731,6 @@ LIST &lex-dairire = &lex-dairire ; #!!= * @CODE@
 LIST &lex-ar-leibheal = &lex-ar-leibheal ; #!!= * @CODE@
 LIST &syn-eire = &syn-eire ; #!!= * @CODE@
 LIST &syn-not-initial = &syn-not-initial ; #!!= * @CODE@
-LIST &punct-question-mark = &punct-question-mark ; #!!= * @CODE@
 LIST &typo = &typo ; #!!= * @CODE@
 LIST &syn-a-before-verb-relativephrase = &syn-a-before-verb-relativephrase ;    #!!= * @CODE@
 LIST ADDED = ADDED ;  #!!= * @CODE@ tag ensuring ... hmm
@@ -749,6 +750,27 @@ ADD:fixedcase-np <fixedcase> TARGET Prop ;     	#!!= * @CODE@ ,  Never change ca
 SECTION      #!!= # @CODE@
 
 #!! ## spellchecking
+
+LIST QUESTION-WORDS = ("an" Part Vb Q) ("cathain" Adv Q Wh) ("ar" Part Vb Q Past) ("céard" Cop Pro Q) ("cad" Cop Pro Q) ("nár" Part Vb NegQ) ("cé" Pron Q) ("cé" Cop Pro Q) ("cé" Cop Q Art Sg) ("conas" Adv Q Wh) ("cad" Cop Pro Q) ("cé" Cop Pro Q Cop Vow) ("cá" Adv Q Wh) ("is" Cop Past NegQ VF) ("cá" Adv Q Wh Past) ("cá" Part Vb Q Past) ("cén") ("Ar" Part Vb Q Past); 
+
+ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin) IF
+	(*-1 BOS LINK 1 QUESTION-WORDS)
+	(NOT 0 Q);
+COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin) TARGET (Punct Fin &punct-question-mark);
+
+ADD:punct-question-mark &punct-question-mark TARGET QUESTION-WORDS IF (*1 (Punct &punct-question-mark))
+	(-1 BOS);
+ADDRELATION ($2 LEFT) (Punct &punct-question-mark) TO (*-1 &punct-question-mark + QUESTION-WORDS);
+
+	## cathain a tharla sé. 
+	## An bhfuil sí sa bhaile. 
+	## Céard atá ann. 
+	## Cé hí sin. 
+	## Cad é an scéal.
+	## Cá bhfuil tú.
+	## An fíor é.
+	## Ar bhris tú é.
+	## Cén t-am é.
 
 ADD:spell-it-all (&typo SUGGESTWF) (<spelled>) ;      		#!!= * @CODE@ = add rule marking typos
 
@@ -827,36 +849,33 @@ ADD:lex-78910 (&lex-78910) TARGET NUMBERS78910 IF (1 (Noun &lex-78910));
 
 ADDRELATION ($2 LEFT) (Noun &lex-78910) TO (-1 (Card &lex-78910));
 
+ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+#
+ADD:lex-3456 (&lex-3456) TARGET ("cloigeann") IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Pl SUGGEST) EXCEPT (Sg &lex-3456) TARGET (&lex-3456);
+#
+ADD:lex-3456 (&lex-3456) TARGET ("cloigeann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+#
+ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+#
+ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+#
+#
+ADD:lex-3456 (&lex-3456) TARGET ("pingin" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
+#
+ADD:lex-3456 (&lex-3456) TARGET ("pingin" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
-#ADD:lex-3456 (&lex-3456) TARGET ("ceann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
-#COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+ADD:lex-3456 (&lex-3456) TARGET ("uair" Noun Com Sg Len) OR ("uair" Noun Fem Gen Sg Len) IF (-1 NUMBERS3456); # IT WORKS
+COPY:lex-3456 (Gen Sg hPref SUGGEST) EXCEPT (Com Sg Len &lex-3456) OR (Gen Sg Len &lex-3456) TARGET (&lex-3456);
 #
-#ADD:lex-3456 (&lex-3456) TARGET ("cloigeann") IF (-1 NUMBERS3456); # IT WORKS
-#COPY:lex-3456 (Pl SUGGEST) EXCEPT (Sg &lex-3456) TARGET (&lex-3456);
-#
-#ADD:lex-3456 (&lex-3456) TARGET ("cloigeann" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
-#COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
-#
-#ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
-#COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
-#
-#ADD:lex-3456 (&lex-3456) TARGET ("fiche" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
-#COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
-#
-#
-#ADD:lex-3456 (&lex-3456) TARGET ("pingin" Com Sg) IF (-1 NUMBERS3456); # IT WORKS
-#COPY:lex-3456 (Gen Sg SUGGEST) EXCEPT (Com &lex-3456) TARGET (&lex-3456);
-#
-#ADD:lex-3456 (&lex-3456) TARGET ("pingin" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
-#COPY:lex-3456 (Com Pl Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
-#
-#
-
-#ADD:lex-3456 (&lex-3456) TARGET ("uair" Noun Com Sg Len) OR ("uair" Noun Fem Gen Sg Len) IF (-1 NUMBERS3456); # IT WORKS
-#COPY:lex-3456 (Gen Sg hPref SUGGEST) EXCEPT (Com Sg Len &lex-3456) OR (Gen Sg Len &lex-3456) TARGET (&lex-3456);
-#
-#ADD:lex-3456 (&lex-3456) TARGET ("uair" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
-#COPY:lex-3456 (Gen Sg Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
+ADD:lex-3456 (&lex-3456) TARGET ("uair" Com Sg) IF (-1 NUMBERS78910); # IT WORKS
+COPY:lex-3456 (Gen Sg Ecl SUGGEST) EXCEPT (Com Sg &lex-3456) TARGET (&lex-3456);
 
 
 
@@ -869,7 +888,9 @@ ADD:msyn-lenition-after-numbers (&msyn-lenition-after-numbers) TARGET (Noun Com 
 	(NEGATE -1 ("beirt" Noun Fem Com Sg));
 COPY:msyn-lenition-after-numbers (Len &SUGGEST) EXCEPT (&msyn-lenition-after-numbers) TARGET (&msyn-lenition-after-numbers) ;
 
-ADD:msyn-eclipse-after-numbers (&msyn-eclipse-after-numbers) TARGET (Noun Com Sg) IF (-1 NUM-ECL)(NEGATE 0 &lex-3456 OR &lex-78910);
+ADD:msyn-eclipse-after-numbers (&msyn-eclipse-after-numbers) TARGET (Noun Com Sg) IF (-1 NUM-ECL)
+	(NEGATE 0 &lex-3456 OR &lex-78910)
+	(0 ("<[bcdfgptBCDFGPT].*>"r));
 
 COPY:msyn-eclipse-after-numbers (Ecl &SUGGEST) EXCEPT (&msyn-eclipse-after-numbers) TARGET (&msyn-eclipse-after-numbers) ;
 
@@ -1105,17 +1126,20 @@ ADDRELATION:msyn-lenition-after-possessive-adjective ($2) (Det) FROM (1 Noun LIN
 
 #!! **ADD:msyn-h-after-fem-possessive-adjective**: rule to add h to noun following possessor
 
-ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF (-1 Det + Poss + 3P + Sg + Fem)(NOT 0 Len) ;
+ADD:msyn-h-after-fem-possessive-adjective (&msyn-h-after-fem-possessive-adjective) TARGET (Noun Com) IF 
+	(-1 Det + Poss + 3P + Sg + Fem)
+	(0 ("<[aáeéiíoóuúAÁEÉIÍOÓUÚ].*>"r))
+	(NOT 0 Len) ;
 COPY:msyn-h-after-fem-possessive-adjective (hPref &SUGGEST) EXCEPT (&msyn-h-after-fem-possessive-adjective) TARGET (&msyn-h-after-fem-possessive-adjective) ;
 ADDRELATION:msyn-h-after-fem-possessive-adjective ($2) (Noun) FROM (-1 Det LINK 0 (&msyn-adj-nom-acc)) ;
 
 #!! ### RULE TO LENITE VERBS AFTER THE NEGATIVE PARTICLE NÍ
 
 ADD:msyn-lenition-after-ni (&msyn-lenition-after-ni) TARGET (Verb PresInd) OR (Verb VTI Vow PresInd Len) OR (Verb VD PresInd Len) OR (Verb PresInd Auto) OR (Verb FutInd) OR (Verb FutInd Auto) OR (Verb Cond) OR (Verb PastImp) IF
-	(-1 ("ní" Part Vb Neg"+NG") OR ("ní" Part Vb Neg))
+	(-1 (Part Vb Neg"+NG") OR (Part Vb Neg))
 	(0 ("<[bcdfgmpstBCDFGMPST].*>"r))
 	(NEGATE 0 ("<[aeilnoru].*>"r))
-	(NEGATE 0 Len OR Ecl)
+	(NEGATE 0 Len)
 	(NEGATE 0 ("faigh" Verb))
 	(NEGATE -1 (Part Vb NegQ));
 COPY:msyn-lenition-after-ni (Len &SUGGEST) EXCEPT (&msyn-lenition-after-ni) TARGET (&msyn-lenition-after-ni) ;
@@ -1669,7 +1693,16 @@ COPY:msyn-ecl-after-mura (Cond CM SUGGEST) EXCEPT (&msyn-ecl-after-mura) TARGET 
 ADD:msyn-ecl-after-nach (&msyn-ecl-after-nach) TARGET (Verb) IF
 	(-1 ("nach"))
 	(0 ("<[bcdfgptBCDFGPT].*>"r));
-COPY:msyn-ecl-after-nach (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) OR (Neg Len &msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach);
+COPY:msyn-ecl-after-nach (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&msyn-ecl-after-nach);
+
+# A rule to ensure that the noun after the Det Poss 3P Sg Fem is without lenition.
+##Croitheann an bhean a cheann.
+#$Croitheann an bhean a ceann.
+
+ADD:msyn-no-lenition-fem-possession (&msyn-no-lenition-fem-possession) TARGET (Noun Len) IF
+	(-1 (Det Poss 3P Sg)))
+	(-2 (Noun Fem));
+COPY:msyn-no-lenition-fem-possession (Noun Com SUGGEST) EXCEPT (&msyn-no-lenition-fem-possession) TARGET (&msyn-no-lenition-fem-possession);
 
 ## Rule for eclipse after "an" Part Vb Q. 
 
@@ -2748,7 +2781,6 @@ COPY:msyn-lenition-after-coppast (Len SUGGEST) EXCEPT (&msyn-lenition-after-copp
 ADD:msyn-ecl-after-prep-i (&msyn-ecl-after-prep-i) TARGET (Noun Com) OR (Subst Noun Sg) IF
 	(-1 ("i" Prep Simp))
 	(0 ("<[bcdfgptBCDFGPT].*>"r))
-	(NEGATE 0C (Foreign English))
 	(NEGATE 0 (Noun Com Ecl));
 COPY:msyn-ecl-after-prep-i (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-prep-i) TARGET (&msyn-ecl-after-prep-i);
 
@@ -2907,27 +2939,6 @@ COPY:msyn-cop-past-neg-vowel (Cop Past Neg VF SUGGEST) EXCEPT (Cop Past Neg &msy
 
 ADD:casefix (<fixedcase>) TARGET (SUGGEST) IF (NEGATE -1 BOS) ;
 
-LIST QUESTION-WORDS = ("an" Part Vb Q) ("cathain" Adv Q Wh) ("ar" Part Vb Q Past) ("céard" Cop Pro Q) ("cad" Cop Pro Q) ("nár" Part Vb NegQ) ("cé" Pron Q) ("cé" Cop Pro Q) ("cé" Cop Q Art Sg) ("conas" Adv Q Wh) ("cad" Cop Pro Q) ("cé" Cop Pro Q Cop Vow) ("cá" Adv Q Wh) ("is" Cop Past NegQ VF) ("cá" Adv Q Wh Past) ("cá" Part Vb Q Past) ("cén") ("Ar" Part Vb Q Past); 
-
-ADD:punct-question-mark &punct-question-mark TARGET ("." Punct Fin) IF
-	(*-1 BOS LINK 1 QUESTION-WORDS)
-	(NOT 0 Q);
-COPY:punct-question-mark ("?" Punct Fin Q SUGGEST) EXCEPT ("." Punct Fin) TARGET (Punct Fin &punct-question-mark);
-
-ADD:punct-question-mark &punct-question-mark TARGET QUESTION-WORDS IF (*1 (Punct &punct-question-mark))
-	(-1 BOS);
-ADDRELATION ($2 LEFT) (Punct &punct-question-mark) TO (*-1 &punct-question-mark + QUESTION-WORDS);
-
-	## cathain a tharla sé. 
-	## An bhfuil sí sa bhaile. 
-	## Céard atá ann. 
-	## Cé hí sin. 
-	## Cad é an scéal.
-	## Cá bhfuil tú.
-	## An fíor é.
-	## Ar bhris tú é.
-	## Cén t-am é.
-
 	#A rule to correct "mo" to "m'" when the Det Poss 1P Sg is before nouns beginning with a vowel or FH, e.g., mo iasc -> m'iasc, mo fhuinneog -> m'fhuinneog.
 	
 ADD:msyn-contracted-possessive-adjective-before-vowel (&msyn-contracted-possessive-adjective-before-vowel) TARGET (Noun Com) IF (-1 (Det Poss Sg) LINK 0 1P OR 2P)(0 ("<[áaéeíióoúu].*>"r) OR ("<[ÁAÉEÍIÓOÚU].*>"r) OR ("<fh.*>"r) OR ("<Fh.*>"r));
@@ -2940,8 +2951,11 @@ COPY:msyn-contracted-possessive-adjective-before-vowel (Short &SUGGEST) TARGET (
 
 ADDRELATION:msyn-contracted-possessive-adjective-before-vowel ($2 RIGHT) (Det Poss &msyn-contracted-possessive-adjective-before-vowel) TO (1 (Noun &msyn-contracted-possessive-adjective-before-vowel)) ;
 	## Tá do fhear céile ann. 
-	## Tá do iníon ann. 
-	## Tá mo athair sa chistin. 
+	## Tá d'fhear céile ann. 
+	## Tá do iníon ann.
+	## Tá d'iníon ann. 
+	## Tá mo athair sa chistin.
+	## Tá m'athair sa chistin.  
 	
 
 LIST <SpaceOnRightSide> = <SpaceOnRightSide> ;
@@ -2955,11 +2969,8 @@ ADDRELATION:no-space-after-poss-short (RIGHT) (Det Poss &no-space-after-poss-sho
 COPY:no-space-after-poss-short (VSTR:"$1$2"S SUGGESTWF) TARGET ("<(.*)>"r Det Poss &no-space-after-poss-short) IF
         (1 ("<(.*)>"r))
         (NOT 0 SUGGESTWF) ;     # don't COPY more than once
-
-	## áddejumi )	
 	## mo iasc -> m'iasc, 
 	## mo fhuinneog -> m'fhuinneog
-
 
 	#A rule to ensure that the correct form of "dhá" is used after the singular article "an", "an dhá" becomes "an dá".
 ADD:msyn-num-card-dó &msyn-num-card-dó TARGET ("dó" Num Card) IF (-1 (Art Def))(NEGATE 0 (Num Card DefArt));
@@ -3131,4 +3142,3 @@ ADD:&msyn-claochlaigh (&msyn-claochlaigh) TARGET ("níor" Part Vb Neg Past) IF (
 ADD:&msyn-claochlaigh (&msyn-claochlaigh) TARGET ("claochlaigh" Verb VTI PastInd Neg Len) IF (-1 ("níor" Part Vb Neg Past));
 ADDRELATION:msyn-claochlaigh (DELETE1) (Verb VTI &msyn-claochlaigh) TO (-1 (Part Vb Neg Past &msyn-claochlaigh));
 COPY:msyn-claochlaigh ("claochlaigh" Verb VTI PastInd Neg Len) EXCEPT ("níor" Part Vb Neg Past) TARGET (Verb &msyn-claochlaigh);
-
