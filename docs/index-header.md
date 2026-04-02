@@ -18,6 +18,7 @@ Center location data taken from [Glottolog](https://glottolog.org/). Area extent
 
 </div>
 
+
 This page documents the work on the [Irish language model](http://github.com/giellalt/lang-gle). 
 
 The analyser behind this source code is written by Elaine Uí Dhonnchadha.
