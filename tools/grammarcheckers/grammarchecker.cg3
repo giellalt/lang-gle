@@ -1751,7 +1751,7 @@ COPY:msyn-tri-plus-defart (Pron Prep 3P Sg Masc SUGGEST) EXCEPT (Prep Simp) TARG
 
 ADD:msyn-ecl-after-trí-defart (&msyn-ecl-after-trí-defart) TARGET (Noun Com Sg) OR (Noun Gen Sg) OR (Noun Com Sg DefArt) + <ComGen> IF
 	(-1 Art)
-	(-2 (ECLIPSE-TRID + Prep + Simp) OR ("trí" Pron Prep 3P Sg Masc))
+	(-2 (ECLIPSE-TRID) OR ("trí" Pron Prep 3P Sg Masc))
 	(0 ("<[bcfgpsBCFGPS].*>"r) LINK NOT 0 ("<[bcfgpsBCFGPS][hH].*>"r))
 	(NEGATE 0 (Fem Com Sg DefArt))
 	(NOT 0 Ecl OR ECL-NON-ECL-N) ;

@@ -1187,7 +1187,8 @@ REMOVE (Adj Base Len) IF (-1C (Noun)) (NOT -1 (Noun Len) OR (Noun Fem) OR (Noun 
 LIST CASE = Gen Com ;
 
 SELECT (Adj Fem) IF (0C ADJ-NOT-VA) (-1C (Fem))  ;
-SELECT (Adj Masc + $$CASE) IF (0C ADJ-NOT-VA) (-1C (Masc) + $$CASE) ;
+SELECT (Adj Masc Gen) IF (0C ADJ-NOT-VA) (-1C (Masc Gen)) ;
+SELECT (Adj Masc Com) IF (0C ADJ-NOT-VA) (-1C (Masc Com)) ;
 SELECT (Adj Sg) IF (0C ADJ-NOT-VA) (-1C (Sg)) (NOT -1 ("déag")) (NOT -2 (Num))  ;
 SELECT:GRAM (Adj Pl) - (Gen Weak) IF (0C ADJ-NOT-VA) (-1C (Pl))  ;
 SELECT (Adj Pl) IF (0C ADJ-NOT-VA) (-1C ("déag"))  ;
