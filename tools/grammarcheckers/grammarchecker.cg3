@@ -1700,7 +1700,7 @@ COPY:msyn-ecl-after-nach (Q Ecl SUGGEST) EXCEPT (&msyn-ecl-after-nach) TARGET (&
 #$Croitheann an bhean a ceann.
 
 ADD:msyn-no-lenition-fem-possession (&msyn-no-lenition-fem-possession) TARGET (Noun Len) IF
-	(-1 (Det Poss 3P Sg)))
+	(-1 (Det Poss 3P Sg))
 	(-2 (Noun Fem));
 COPY:msyn-no-lenition-fem-possession (Noun Com SUGGEST) EXCEPT (&msyn-no-lenition-fem-possession) TARGET (&msyn-no-lenition-fem-possession);
 
