@@ -4,7 +4,7 @@ Config:
   
 Tests:
   - "Ar an tsráid."
-  - "Ar {an}£{on{ aonach."
+  - "Ar {an}£{on} aonach."
   - "chuig an {cailín}£{gcailín}."
   - "{Ag}£{Ar} an aonach."
   - "Beidh an fear ar an aonach."
