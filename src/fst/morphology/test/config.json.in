@@ -1,0 +1,20 @@
+{
+    "analyser": "@abs_builddir@/../../analyser-gt-norm.hfstol",
+    "generator": "@abs_builddir@/../../generator-gt-norm.hfstol",
+    "nouns": {
+        "lexcfile": "@abs_srcdir@/../stems/nouns.lexc",
+        "lemmatags": ["+N+Masc+Com+Sg", "+N+Fem+Com+Sg"]
+    },
+    "adjectives": {
+        "lexcfile": "@abs_srcdir@/../stems/adjectives.lexc",
+        "lemmatags": ["+Adj+Base"]
+    },
+    "propernouns": {
+        "lexcfile": "@abs_srcdir@/../stems/propernouns.lexc",
+        "lemmatags": ["+N+Prop+Masc+Sg+Nom", "+N+Prop+Fem+Com+Sg"]
+    },
+    "verbs": {
+        "lexcfile": "@abs_srcdir@/../stems/verbs.lexc",
+        "lemmatags": ["+Verb+VTI+Vow+PastInd+Len", "+Verb+VI+Vow+PastInd+Len"]
+    }
+}
