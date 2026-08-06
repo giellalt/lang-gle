@@ -718,6 +718,7 @@ LIST &msyn-prep-detposs = &msyn-prep-detposs ;    #!!= * @CODE@
 LIST &msyn-le-plus-defart = &msyn-le-plus-defart ; #!!= * @CODE@
 LIST &msyn-tri-plus-defart = &msyn-tri-plus-defart ;  #!!= * @CODE@
 LIST &msyn-ecl-after-trí-defart = &msyn-ecl-after-trí-defart ; #!!= * @CODE@
+LIST &msyn-ecl-after-thar-defart = &msyn-ecl-after-thar-defart ; #!!= * @CODE@
 LIST &msyn-possadj-nom-gen = &msyn-possadj-nom-gen ;    #!!= * @CODE@
 LIST &msyn-prep-pron = &msyn-prep-pron ;    #!!= * @CODE@
 LIST &msyn-sa = &msyn-sa ; #!!= * @CODE@
@@ -1785,6 +1786,15 @@ ADD:msyn-ecl-after-trí-defart (&msyn-ecl-after-trí-defart) TARGET (Noun Fem Co
 ADDRELATION:msyn-ecl-after-trí-defart ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &msyn-ecl-after-trí-defart);
 COPY:msyn-ecl-after-trí-defart (Ecl SUGGEST) EXCEPT (DefArt &msyn-ecl-after-trí-defart) OR (Len &msyn-ecl-after-trí-defart) TARGET (Noun Fem Com &msyn-ecl-after-trí-defart);
 
+	##A rule to correct "thar an claí" to "thar an gclaí", etc.	
+ADD:msyn-ecl-after-thar-defart (&msyn-ecl-after-thar-defart) TARGET (Noun Com Sg) OR (Noun Gen Sg) OR (Noun Com Sg DefArt) + <ComGen> IF
+	(-1 Art)
+	(-2 ("thar" Prep Simp))
+	(0 ("<[bcfgpsBCFGPS].*>"r) LINK NOT 0 ("<[bcfgpsBCFGPS][hH].*>"r))
+	(NEGATE 0 (Fem Com Sg DefArt))
+	(NOT 0 Ecl OR ECL-NON-ECL-N) ;
+ADDRELATION:msyn-ecl-after-thar-defart ($2) ECLIPSE-TRID FROM (*1 Noun LINK 0 &msyn-ecl-after-thar-defart);
+COPY:msyn-ecl-after-thar-defart (Ecl SUGGEST) EXCEPT (&msyn-ecl-after-thar-defart) OR (DefArt &msyn-ecl-after-thar-defart) OR (Len &msyn-ecl-after-thar-defart) TARGET (&msyn-ecl-after-thar-defart);
 
 ## Bhí mé ag labhairt le an fear.
 #$ Bhí mé ag labhairt leis an bhfear.
