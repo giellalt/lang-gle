@@ -35,29 +35,39 @@
 ~€
 
 ## Inclusions: this is the real alphabet definition:
+##
+## The five vowels carrying a síneadh fada are letters of Irish and belong
+## here. They were missing, so the a/á, e/é, i/í, o/ó and u/ú transition pairs
+## below were the only thing that could put them into the error model at all.
+##
+## č, î and ï were listed here. They are template leftovers: in this repository
+## they occur only in downcasing filters, hyphenation, foreign character
+## classes and stray North Sámi text, never in an Irish stem lexicon.
 a
+á
 b
 c
-č
 d
 e
+é
 f
 g
 h
 i
-î
-ï
+í
 j
 k
 l
 m
 n
 o
+ó
 p
 r
 s
 t
 u
+ú
 v
 w
 x
